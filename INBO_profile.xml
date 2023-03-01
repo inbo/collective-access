@@ -7,7 +7,7 @@
     <locale lang="nl" country="BE">Nederlands</locale>
   </locales>
   <lists>
-    <!--Management lists2-->
+    <!--Management lists-->
       <list code="workflow_statuses" hierarchical="0" system="0" vocabulary="0" defaultSort="1">
         <labels>
           <label locale="en_US">
@@ -734,7 +734,7 @@
               </label>
             </labels>
             <settings>
-              <setting name="render_in_new_menu">0</setting>
+              <setting name="render_in_new_menu">1</setting>
               <setting name="render_in_find_menu">1</setting>
             </settings>
           </item>
@@ -2988,9 +2988,33 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_projectt">
+          <restriction code="r_project">
             <table>ca_occurrences</table>
             <type>project</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="observationUrl" datatype="Url">
+        <labels>
+          <label locale="en_US">
+            <name>Project URL</name>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">90</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_observation">
+            <table>ca_occurrences</table>
+            <type>observation</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -3026,11 +3050,11 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="dateTimeRemarks" datatype="Text">
+	    <metadataElement code="verbatimDateTimeLocalityRemarks" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>dateTimeRemarks</name>
-            <description>Comments or notes on the date and/or time.</description>
+            <name>Verbatim date, time, locality remarks, as originally recorded.</name>
+            <description>Comments or notes on the date, time, locality, as originally recorded.</description>
           </label>
         </labels>
         <settings>
@@ -3095,7 +3119,32 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="verbatimCoordinates" datatype="Text">
+	    <metadataElement code="verbatimCoordinatesPlus" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Verbatim coordinates plus</name>
+            <description>The verbatim original spatial coordinates of the Location + all other specified verbatim information lik coordinate ellipsoid, geodeticDatum, or full Spatial Reference System (SRS) for these coordinates.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+	      <typeRestrictions>
+          <restriction code="r_observation">
+            <table>ca_occurrences</table>
+            <type>observation</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="verbatimCoordinates" datatype="Text">
         <labels>
           <label locale="en_US">
             <name>verbatimCoordinates</name>
@@ -3269,11 +3318,11 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="placeRemarks" datatype="Text">
+	    <metadataElement code="standardisedDateTimeLocalityRemarks" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>placeRemarks</name>
-            <description>Comments or notes on locality/place.</description>
+            <name>Standardised date, time, locality remarks</name>
+            <description>Comments or notes on standardised date, time, locality remarks.</description>
           </label>
         </labels>
         <settings>
@@ -5030,7 +5079,7 @@
                 <setting name="label" locale="en_US">CMS ID</setting>
               </settings>
             </placement>
-			      <placement code="status">
+			      <placement code="status" typeRestrictions="observation, expedition, project,sampling">
               <bundle>status</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Cataloguing status</setting>
@@ -5040,7 +5089,15 @@
 			      <placement code="preferred_labels_observation" typeRestrictions="observation">
               <bundle>preferred_labels</bundle>
               <settings>
-                <setting name="label" locale="en_US">Observation name (e.g. 2022-06 everzwijn 33)</setting>
+                <setting name="label" locale="en_US">Observation name: this can be an informative name to increase findability. Recommended: date place species fieldNumber. For example: e.g. 2022-06-00 Deinze everzwijn EV33.</setting>
+              </settings>
+            </placement>
+            <placement code="observationUrl" typeRestrictions="observation">
+              <bundle>ca_attributes_observationUrl</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Observation recorded in another database (e.g. waarnemingen.be, GBIF)</setting>
+				        <setting name="add_label" locale="en_US">Add url</setting>
+              </settings>
               </settings>
             </placement>
 			      <placement code="preferred_labels_expedition" typeRestrictions="expedition">
@@ -5061,42 +5118,6 @@
                 <setting name="label" locale="en_US">Sampling event name (e.g. 2022 silica-gel populieren)</setting>
               </settings>
             </placement>
-			      <placement code="preferred_labels_identification" typeRestrictions="identification">
-              <bundle>preferred_labels</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Identification event name (e.g. 2022-12 eDNA resultaat)</setting>
-              </settings>
-            </placement>
-			      <placement code="preferred_labels_valuation" typeRestrictions="valuation">
-              <bundle>preferred_labels</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Valuation event name (e.g. 2022 EV wolf high value samples)</setting>
-              </settings>
-            </placement>
-			      <placement code="preferred_labels_georeference" typeRestrictions="georeference">
-              <bundle>preferred_labels</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Georeference event name (e.g. 2022-12 EV georef)</setting>
-              </settings>
-            </placement>
-			      <placement code="preferred_labels_verification" typeRestrictions="verification">
-              <bundle>preferred_labels</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Verification record name (e.g. 2022-08 verified EV)</setting>
-              </settings>
-            </placement>
-			      <placement code="preferred_labels_curation" typeRestrictions="curation">
-              <bundle>preferred_labels</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Curation event name (e.g. 2022-11 heat treatment boomschijven)</setting>
-              </settings>
-            </placement>
-			      <placement code="preferred_labels_measurement" typeRestrictions="measurement">
-              <bundle>preferred_labels</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Measurement event name (e.g. 2022-02 Qubit meting grote modderkruiper 157)</setting>
-              </settings>
-            </placement>
 			      <placement code="dateRange">
               <bundle>ca_attribute_dateRange</bundle>
 			        <!--http://rs.tdwg.org/dwc/terms/measurementDeterminedDate-->
@@ -5114,10 +5135,10 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="verbatimCoordinates" typeRestrictions="observation">
-              <bundle>ca_attribute_verbatimCoordinates</bundle>
+			      <placement code="verbatimCoordinatesPlus" typeRestrictions="observation">
+              <bundle>ca_attribute_verbatimCoordinatesPlus</bundle>
               <settings>
-                <setting name="label" locale="en_US">The original description of the coordinates</setting>
+                <setting name="label" locale="en_US">The original description of the coordinates and related information.</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
@@ -5181,6 +5202,133 @@
                 <setting name="add_label" locale="en_US">Add sampled object</setting>
               </settings>
             </placement>
+            <placement code="ca_entities" typeRestrictions="identification,measurement,curation,georeference,verification,measurement,curation,valuation">
+              <bundle>ca_entities</bundle>
+              <settings>
+                <setting name="restrict_to_type">individual</setting>
+                <setting name="label" locale="en_US">Executed by</setting>
+				        <setting name="add_label" locale="en_US">Add individual</setting>
+              </settings>
+            </placement>
+			      <placement code="method_publication"  typeRestrictions="identification,measurement,curation">
+              <bundle>ca_attribute_publication</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Documented procedure (e.g. article, SOP, identification key)</setting>
+				        <!--http://rs.tdwg.org/dwc/terms/identificationReferences-->
+              </settings>
+            </placement>
+			      <placement code="eventProcedure" typeRestrictions="identification,measurement,curation">
+              <bundle>ca_eventProcedure</bundle>
+              <settings>
+                <setting name="label" locale="en_US">If no reference: short description of procedure (if relevant)</setting>
+                <!--http://rs.tdwg.org/dwc/iri/samplingProtocol-->
+                <!--http://rs.tdwg.org/dwc/terms/measurementMethod-->
+              </settings>
+            </placement>
+            <placement code="p_georeference_c_place" typeRestrictions="georeference">
+              <bundle>ca_places</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Hiërarchy of place</setting>
+			        </settings>
+            </placement>
+			      <placement code="georeferenceResult" typeRestrictions="georeference">
+              <bundle>ca_attribute_georeferenceResult</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Mapping of locality/coördinates.</setting>
+			        </settings>
+            </placement>
+            <placement code="verificationResult" typeRestrictions="verification">
+              <bundle>ca_attribute_verificationResult</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Verification result</setting>
+			        </settings>
+            </placement>
+            <placement code="measurementType" typeRestrictions="measurement">
+              <bundle>ca_attribute_measurementType</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Further specification on the type of measurement</setting>
+			        </settings>
+            </placement>
+			      <placement code="ratioOfAbsorbance260_230" typeRestrictions="measurement">
+              <bundle>ca_attribute_ratioOfAbsorbance260_230</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Ratio of absorbance 260/230</setting>
+			        </settings>
+            </placement>
+			      <placement code="ratioOfAbsorbance260_280" typeRestrictions="measurement">
+              <bundle>ca_attribute_ratioOfAbsorbance260_280</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Ratio of absorbance 260/280</setting>
+			        </settings>
+            </placement>
+			      <placement code="measurementValue" typeRestrictions="measurement">
+              <bundle>ca_attribute_measurementValue</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Measurement value</setting>
+			          </settings>
+            </placement>
+			      <placement code="concentrationUnit" typeRestrictions="measurement">
+              <bundle>ca_attribute_concentrationUnit</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Concentration unit</setting>
+			        </settings>
+            </placement>
+			      <placement code="lengthUnit" typeRestrictions="measurement">
+              <bundle>ca_attribute_lengthUnitt</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Length unit</setting>
+			        </settings>
+            </placement>
+			      <placement code="volumeUnit" typeRestrictions="measurement">
+              <bundle>ca_attribute_volumeUnit</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Volume unit</setting>
+			        </settings>
+            </placement>
+			      <placement code="weightUnit" typeRestrictions="measurement">
+              <bundle>ca_attribute_weightUnit</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Weight unit</setting>
+			        </settings>
+            </placement>
+			      <placement code="fragmentLength" typeRestrictions="measurement">
+              <bundle>ca_attribute_fragmentLength</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Fragment length</setting>
+			        </settings>
+            </placement>
+            <placement code="measurementAccuracy" typeRestrictions="measurement">
+              <bundle>ca_attribute_measurementAccuracy</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Measurement accuracy</setting>
+			        </settings>
+            </placement>
+			      <placement code="valuationArgument" typeRestrictions="valuation">
+              <bundle>ca_attribute_valuationArgument</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Arguments why object (lot) is valuable</setting>
+			        </settings>
+            </placement>
+			      <placement code="valuationDescription" typeRestrictions="valuation">
+              <bundle>ca_attribute_description</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Extra information describing the checked arguments (e.g. explain: "rare" for your object (lot))</setting>
+			        </settings>
+            </placement>
+            <placement code="p_sampling_c_object" typeRestrictions="sampling">
+              <bundle>ca_objects</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Sampled object</setting>
+				        <setting name="add_label" locale="en_US">Add sampled object</setting>
+			        </settings>
+            </placement>
+			      <placement code="p_sampling_c_objectLot" typeRestrictions="sampling">
+              <bundle>ca_object_lots</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Sampled object lot</setting>
+				        <setting name="add_label" locale="en_US">Add sampled object lot</setting>
+			        </settings>
+            </placement>
 			      <placement code="identificationQualifier" typeRestrictions="identification">
               <bundle>ca_attribute_identificationQualifier</bundle>
 			        <settings>
@@ -5193,10 +5341,23 @@
                 <setting name="label" locale="en_US">Scientific name</setting>
 			        </settings>
             </placement>
-			      <placement code="ca_remarks" typeRestrictions="valuation">
+			      <placement code="scientificNameUrl" typeRestrictions="identification">
+              <bundle>ca_attribute_scientificNameUrl</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Scientific name URL</setting>
+			        </settings>
+            </placement>
+            <placement code="ca_object_representations" typeRestrictions="measurement,sampling,curation,identification">
+              <bundle>ca_object_representations</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Media</setting>
+				        <setting name="add_label" locale="en_US">Add media</setting>
+			        </settings>
+            </placement>
+			      <placement code="ca_remarks">
               <bundle>ca_attribute_remarks</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Any remaining notes or remarks on the event.</setting>
+                <setting name="label" locale="en_US">Notes or remarks on the event.</setting>
 				        <setting name="add_label" locale="en_US">Add remark on the event.</setting>
               </settings>
 			      </placement>			
@@ -5208,6 +5369,11 @@
               <name>Date time place</name>
             </label>
           </labels>
+          <typeRestrictions>
+            <restriction code="r_expedition" type="expedition"/>
+            <restriction code="r_observation" type="observation"/>
+            <restriction code="r_project" type="project"/>	
+          </typeRestrictions>
           <bundlePlacements>
 			      <placement code="verbatimEventDate" typeRestrictions="expedition,observation">
               <bundle>ca_attribute_verbatimEventDate</bundle>
@@ -5217,22 +5383,6 @@
               <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-            <placement code="dateRange">
-              <bundle>ca_attribute_dateRange</bundle>
-              <!--http://rs.tdwg.org/dwc/terms/measurementDeterminedDate-->
-              <!--http://rs.tdwg.org/dwc/terms/dateIdentified-->
-              <settings>
-                <setting name="label" locale="en_US">Date (range) and time (range) of event, standardised.</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
-			      <placement code="dateTimeRemarks" typeRestrictions="expedition,observation">
-              <bundle>ca_attribute_dateTimeRemarks</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Remarks regarding the date/time, as originally recorded.</setting>
-              	<setting name="add_label" locale="en_US">Add remark on the place/location.</setting>
-			        </settings>
-			      </placement>
 			      <placement code="verbatimLocality" typeRestrictions="expedition,observation">
               <bundle>ca_attribute_verbatimLocality</bundle>
               <settings>
@@ -5241,10 +5391,17 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
+            <placement code="verbatimCoordinatesPlus" typeRestrictions="observation">
+              <bundle>ca_attribute_verbatimCoordinatesPlus</bundle>
+              <settings>
+                <setting name="label" locale="en_US">The original description of the coordinates and related information.</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
 			      <placement code="verbatimCoordinates" typeRestrictions="observation">
               <bundle>ca_attribute_verbatimCoordinates</bundle>
               <settings>
-                <setting name="label" locale="en_US">The original description of the coordinates</setting>
+                <setting name="label" locale="en_US">The original description of the coordinates only.</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
@@ -5283,7 +5440,23 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="PlaceOfEvent" typeRestrictions="expedition,observation">
+            <placement code="verbatimDateTimeLocalityRemarks" typeRestrictions="expedition,observation">
+              <bundle>ca_attribute_verbatimDateTimeLocalityRemarks</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Remarks regarding the date, time or locality, as originally recorded.</setting>
+              	<setting name="add_label" locale="en_US">Add remark on the date, time or locality, as originally recorded.</setting>
+			        </settings>
+			      </placement>
+			      <placement code="dateRange">
+              <bundle>ca_attribute_dateRange</bundle>
+              <!--http://rs.tdwg.org/dwc/terms/measurementDeterminedDate-->
+              <!--http://rs.tdwg.org/dwc/terms/dateIdentified-->
+              <settings>
+                <setting name="label" locale="en_US">Date (range) and time (range) of event, standardised.</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+            <placement code="PlaceOfEvent" typeRestrictions="expedition,observation">
               <bundle>ca_places</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The place information, standardized</setting>
@@ -5298,11 +5471,11 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="placeRemarks" typeRestrictions="expedition,observation">
-              <bundle>ca_attribute_placeRemarks</bundle>
+			      <placement code="standardisedDateTimeLocalityRemarks" typeRestrictions="expedition,observation">
+              <bundle>ca_attribute_standardisedDateTimeLocalityRemarks</bundle>
 			        <settings>
-				      <setting name="label" locale="en_US">Remarks regarding the place/location, as originally recorded.</setting>
-              	<setting name="add_label" locale="en_US">Add remark on the place/location.</setting>
+				      <setting name="label" locale="en_US">Remarks regarding the standardised date, time, place or georeference.</setting>
+              	<setting name="add_label" locale="en_US">Add remark on the standardised date, time, place or georeference.</setting>
 			        </settings>
 			      </placement>
 		      </bundlePlacements>
@@ -5317,7 +5490,7 @@
             <restriction code="r_observation" type="observation"/>
           </typeRestrictions>
           <bundlePlacements>
-            <placement code="verbatimIdentification" typeRestrictions="observation">
+            <placement code="verbatimIdentification">
               <bundle>ca_attribute_verbatimIdentification</bundle>
               <settings>
                 <setting name="label" locale="en_US">The identification of the observation, not standardised.</setting>
@@ -5325,7 +5498,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="lastIdentification" typeRestrictions="observation">
+			      <placement code="lastIdentification">
               <bundle>ca_attribute_lastIdentification</bundle>
               <settings>
                 <setting name="label" locale="en_US">The last result of the identification events linkd to the observation, standardised.</setting>
@@ -5338,7 +5511,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Identification event (standardised)</setting>
                 <setting name="add_label" locale="en_US">Add new identification</setting>
-                <setting name="restrict_to_types">identification</setting>
+                <setting name="restrict_to_type">individual</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -5495,6 +5668,12 @@
               <name>Execution</name>
             </label>
           </labels>
+          <typeRestrictions>
+            <restriction code="r_observation" type="observation"/>
+            <restriction code="r_expedition" type="expedition"/>
+            <restriction code="r_project" type="project"/>
+            <restriction code="r_sampling" type="sampling"/>
+          </typeRestrictions>
           <bundlePlacements>
             <placement code="ca_entities">
               <bundle>ca_entities</bundle>
@@ -5504,14 +5683,14 @@
 				        <setting name="add_label" locale="en_US">Add individual</setting>
               </settings>
             </placement>
-			      <placement code="ca_objects"  typeRestrictions="sampling,identification,measurement,curation,observation">
+			      <placement code="ca_objects" typeRestrictions="observation">
               <bundle>ca_attribute_publication</bundle>
               <settings>
                 <setting name="label" locale="en_US">Documented procedure (e.g. article, SOP, identification key)</setting>
 				        <!--http://rs.tdwg.org/dwc/terms/identificationReferences-->
               </settings>
             </placement>
-			      <placement code="eventProcedure" typeRestrictions="sampling,identification,measurement,curation,observation">
+			      <placement code="eventProcedure" typeRestrictions="observation">
               <bundle>ca_eventProcedure</bundle>
               <settings>
                 <setting name="label" locale="en_US">If no reference: short description of procedure (if relevant)</setting>
@@ -5534,6 +5713,12 @@
               <name>Product</name>
             </label>
           </labels>
+          <typeRestrictions>
+            <restriction code="r_sampling" type="sampling"/>
+            <restriction code="r_expedition" type="expedition"/>
+            <restriction code="r_observation" type="observation"/>
+            <restriction code="r_project" type="project"/>	
+          </typeRestrictions>
           <bundlePlacements>
 		        <placement code="p_project_c_expedition_observation" typeRestrictions="project">
               <bundle>ca_occurrences</bundle>
@@ -5589,7 +5774,7 @@
 				        <setting name="restrict_to_types">sampling</setting>
 			        </settings>
             </placement>
-			      <placement code="p_sampling_c_object" typeRestrictions="sampling">
+            <placement code="p_sampling_c_object" typeRestrictions="sampling">
               <bundle>ca_objects</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Sampled object</setting>
@@ -5601,114 +5786,6 @@
 			        <settings>
                 <setting name="label" locale="en_US">Sampled object lot</setting>
 				        <setting name="add_label" locale="en_US">Add sampled object lot</setting>
-			        </settings>
-            </placement>
-			      <placement code="identificationQualifier" typeRestrictions="identification">
-              <bundle>ca_attribute_identificationQualifier</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Identification qualifier</setting>
-			        </settings>
-            </placement>
-			      <placement code="scientificName" typeRestrictions="identification">
-              <bundle>ca_attribute_scientificName</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Scientific name</setting>
-			        </settings>
-            </placement>
-			      <placement code="scientificNameUrl" typeRestrictions="identification">
-              <bundle>ca_attribute_scientificNameUrl</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Scientific name URL</setting>
-			        </settings>
-            </placement>
-			      <placement code="valuationArgument" typeRestrictions="valuation">
-              <bundle>ca_attribute_valuationArgument</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Arguments why object (lot) is valuable</setting>
-			        </settings>
-            </placement>
-			      <placement code="valuationDescription" typeRestrictions="valuation">
-              <bundle>ca_attribute_description</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Extra information describing the checked arguments (e.g. explain: "rare" for your object (lot))</setting>
-			        </settings>
-            </placement>
-			      <placement code="verificationResult" typeRestrictions="verification">
-              <bundle>ca_attribute_verificationResult</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Verification result</setting>
-			        </settings>
-            </placement>
-			      <placement code="p_georeference_c_place" typeRestrictions="georeference">
-              <bundle>ca_places</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Hiërarchy of place</setting>
-			        </settings>
-            </placement>
-			      <placement code="measurementType" typeRestrictions="measurement">
-              <bundle>ca_attribute_measurementType</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Further specification on the type of measurement</setting>
-			        </settings>
-            </placement>
-			      <placement code="ratioOfAbsorbance260_230" typeRestrictions="measurement">
-              <bundle>ca_attribute_ratioOfAbsorbance260_230</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Ratio of absorbance 260/230</setting>
-			        </settings>
-            </placement>
-			      <placement code="ratioOfAbsorbance260_280" typeRestrictions="measurement">
-              <bundle>ca_attribute_ratioOfAbsorbance260_280</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Ratio of absorbance 260/280</setting>
-			        </settings>
-            </placement>
-			      <placement code="measurementValue" typeRestrictions="measurement">
-              <bundle>ca_attribute_measurementValue</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Measurement value</setting>
-			          </settings>
-            </placement>
-			      <placement code="concentrationUnit" typeRestrictions="measurement">
-              <bundle>ca_attribute_concentrationUnit</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Concentration unit</setting>
-			        </settings>
-            </placement>
-			      <placement code="lengthUnit" typeRestrictions="measurement">
-              <bundle>ca_attribute_lengthUnitt</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Length unit</setting>
-			        </settings>
-            </placement>
-			      <placement code="volumeUnit" typeRestrictions="measurement">
-              <bundle>ca_attribute_volumeUnit</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Volume unit</setting>
-			        </settings>
-            </placement>
-			      <placement code="weightUnit" typeRestrictions="measurement">
-              <bundle>ca_attribute_weightUnit</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Weight unit</setting>
-			        </settings>
-            </placement>
-			      <placement code="fragmentLength" typeRestrictions="measurement">
-              <bundle>ca_attribute_fragmentLength</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Fragment length</setting>
-			        </settings>
-            </placement>
-			      <placement code="measurementAccuracy" typeRestrictions="measurement">
-              <bundle>ca_attribute_measurementAccuracy</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Measurement accuracy</setting>
-			        </settings>
-            </placement>
-			      <placement code="georeferenceResult" typeRestrictions="georeference">
-              <bundle>ca_attribute_georeferenceResult</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Mapping of locality/coördinates.</setting>
 			        </settings>
             </placement>			
           </bundlePlacements>
@@ -5746,8 +5823,8 @@
           <typeRestrictions>
             <restriction code="r_sampling" type="sampling"/>
             <restriction code="r_expedition" type="expedition"/>
-            <restriction code="r_observation" type="observation"/>
-            <restriction code="r_project" type="project"/>	
+            <restriction code="r_project" type="project"/>
+            <!--permits to enter a specific restricted area should be logged under expedition, sampling or project-->	
           </typeRestrictions>
           <bundlePlacements>
 			      <placement code="eventAdminFile">
@@ -5772,6 +5849,12 @@
               <name>Remarks</name>
             </label>
           </labels>
+          <typeRestrictions>
+            <restriction code="r_sampling" type="sampling"/>
+            <restriction code="r_expedition" type="expedition"/>
+            <restriction code="r_observation" type="observation"/>
+            <restriction code="r_project" type="project"/>	
+          </typeRestrictions>
           <bundlePlacements>
 			      <placement code="ca_remarks">
               <bundle>ca_attribute_remarks</bundle>
@@ -5788,6 +5871,12 @@
               <name>CMS management</name>
             </label>
           </labels>
+          <typeRestrictions>
+            <restriction code="r_sampling" type="sampling"/>
+            <restriction code="r_expedition" type="expedition"/>
+            <restriction code="r_observation" type="observation"/>
+            <restriction code="r_project" type="project"/>	
+          </typeRestrictions>
           <bundlePlacements>
 			      <placement code="status">
               <bundle>status</bundle>
