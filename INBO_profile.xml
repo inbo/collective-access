@@ -3050,7 +3050,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="verbatimDateTimeLocalityRemarks" datatype="Text">
+	    <metadataElement code="verbatimDTLRemarks" datatype="Text">
         <labels>
           <label locale="en_US">
             <name>Verbatim date, time, locality remarks, as originally recorded.</name>
@@ -3318,7 +3318,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="standardisedDateTimeLocalityRemarks" datatype="Text">
+	    <metadataElement code="standardisedDTLRemarks" datatype="Text">
         <labels>
           <label locale="en_US">
             <name>Standardised date, time, locality remarks</name>
@@ -5098,7 +5098,6 @@
                 <setting name="label" locale="en_US">Observation recorded in another database (e.g. waarnemingen.be, GBIF)</setting>
 				        <setting name="add_label" locale="en_US">Add url</setting>
               </settings>
-              </settings>
             </placement>
 			      <placement code="preferred_labels_expedition" typeRestrictions="expedition">
               <bundle>preferred_labels</bundle>
@@ -5193,13 +5192,6 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="hideIfSelected_sampledFrom_observation">event_ui/event_parent/ca_attribute_samplingParentType</setting>
                 <setting name="hideIfSelected_sampledFrom_object">event_ui/event_parent/ca_attribute_samplingParentType</setting>
-              </settings>
-            </placement>
-			      <placement code="p_sampling_c_object" typeRestrictions="sampling">
-              <bundle>ca_objects</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Sampled object</setting>
-                <setting name="add_label" locale="en_US">Add sampled object</setting>
               </settings>
             </placement>
             <placement code="ca_entities" typeRestrictions="identification,measurement,curation,georeference,verification,measurement,curation,valuation">
@@ -5440,8 +5432,8 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-            <placement code="verbatimDateTimeLocalityRemarks" typeRestrictions="expedition,observation">
-              <bundle>ca_attribute_verbatimDateTimeLocalityRemarks</bundle>
+            <placement code="verbatimDTLRemarks" typeRestrictions="expedition,observation">
+              <bundle>ca_attribute_verbatimDTLRemarks</bundle>
               <settings>
                 <setting name="label" locale="en_US">Remarks regarding the date, time or locality, as originally recorded.</setting>
               	<setting name="add_label" locale="en_US">Add remark on the date, time or locality, as originally recorded.</setting>
@@ -5471,8 +5463,8 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="standardisedDateTimeLocalityRemarks" typeRestrictions="expedition,observation">
-              <bundle>ca_attribute_standardisedDateTimeLocalityRemarks</bundle>
+			      <placement code="standardisedDTLRemarks" typeRestrictions="expedition,observation">
+              <bundle>ca_attribute_standardisedDTLRemarks</bundle>
 			        <settings>
 				      <setting name="label" locale="en_US">Remarks regarding the standardised date, time, place or georeference.</setting>
               	<setting name="add_label" locale="en_US">Add remark on the standardised date, time, place or georeference.</setting>
@@ -5766,7 +5758,7 @@
                 <setting name="label" locale="en_US">Degree of establishment of observation</setting>
 			        </settings>
             </placement>
-			      <placement code="p_obseration_c_sampling" typeRestrictions="observation">
+			      <placement code="p_observation_c_sampling" typeRestrictions="observation">
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Resulting sampling</setting>
