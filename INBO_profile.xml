@@ -4550,22 +4550,22 @@
           <bundlePlacements>
             <placement code="idno">
               <bundle>idno</bundle>
-			  <settings>
+			        <settings>
                 <setting name="label" locale="en_US">CMS ID</setting>
               </settings>
             </placement>
-			<placement code="status">
+			      <placement code="status">
               <bundle>status</bundle>
-			  <settings>
+			        <settings>
                 <setting name="label" locale="en_US">Cataloguing status</setting>
-				<setting name="minRelationshipsPerRow">1</setting>
+				        <setting name="minRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			<placement code="type_id">
+			      <placement code="type_id">
               <bundle>type_id</bundle>
-			  <settings>
+			        <settings>
                 <setting name="label" locale="en_US">Type object</setting>
-				<setting name="minRelationshipsPerRow">1</setting>
+				        <setting name="minRelationshipsPerRow">1</setting>
               </settings>
             </placement>
             <placement code="preferred_labels">
@@ -4574,16 +4574,16 @@
                 <setting name="label" locale="en_US">Object record name (= short human understandable description)</setting>
               </settings>
             </placement>
-			<placement code="barcode">
+			      <placement code="barcode">
               <bundle>ca_attribute_barcode</bundle>
-			  <settings>
+			        <settings>
                 <setting name="label" locale="en_US">Barcode or identifier on object (e.g. field ID)</setting>
-				<setting name="add_label" locale="en_US">Add barcode</setting>
+				        <setting name="add_label" locale="en_US">Add barcode</setting>
               </settings>
             </placement>
           </bundlePlacements>
         </screen>
-		<screen idno="object_media" default="0">
+		    <screen idno="object_media" default="0">
           <labels>
             <label locale="en_US">
               <name>Media</name>
@@ -4592,14 +4592,14 @@
           <bundlePlacements>
             <placement code="ca_object_representations">
               <bundle>ca_object_representations</bundle>
-			  <settings>
+			        <settings>
                 <setting name="label" locale="en_US">Media</setting>
-				<setting name="add_label" locale="en_US">Add media</setting>
-			  </settings>
+				        <setting name="add_label" locale="en_US">Add media</setting>
+			        </settings>
             </placement>
           </bundlePlacements>
         </screen>
-		<screen idno="object_storage" default="0">
+		    <screen idno="object_storage" default="0">
           <labels>
             <label locale="en_US">
               <name>Storage location</name>
@@ -4611,7 +4611,7 @@
             </placement>
           </bundlePlacements>
         </screen>
-		<screen idno="object_representation" default="0">
+		    <screen idno="object_representation" default="0">
           <labels>
             <label locale="en_US">
               <name>Representation</name>
@@ -4620,101 +4620,101 @@
           <bundlePlacements>
             <placement code="samplingParentType">
               <bundle>ca_attributes_samplingParentType</bundle>
-			  <settings>
+			        <settings>
                 <setting name="label" locale="en_US">Type of the parent of which the sample is made</setting>
-				<setting name="minRelationshipsPerRow">1</setting>
-				<setting name="maxRelationshipsPerRow">1</setting>
+				        <setting name="minRelationshipsPerRow">1</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			<placement code="ca_occurrence">
+			      <placement code="ca_occurrence">
               <bundle>ca_occurrences</bundle>
-			  <settings>
+			        <settings>
                 <setting name="label" locale="en_US">The object represents</setting>
-				<setting name="restrict_to_types">observation</setting>
-				<setting name="minRelationshipsPerRow">0</setting>
-				<setting name="maxRelationshipsPerRow">1</setting>
-				<setting name="hideIfSelected_sampledFrom_naturalScienceObject">object_ui/object_representation/ca_attribute_samplingParentType</setting>
-				<setting name="hideIfSelected_sampledFrom_objectLot">object_ui/object_representation/ca_attribute_samplingParentType</setting>
-				<setting name="display_template">
-					<![CDATA[
-						<unit>
-							<l>ID:^ca_occurrences.idno</l>,
-							DateTime: ^ca_occurrences.dateRange,
-							<ifdef code="ca_occurrences.lastIdentification">
-								Scientific name: ^ca_occurrences.lastIdentification,
-							</ifdef>
-							<ifnotdef code="ca_occurrences.lastIdentification">
-								Verbatim identification: ^ca_occurrences.verbatimIdentification,
-							</ifnotdef>
-							Verbatim Locality: ^ca.occurrences.verbatimLocality
-						</unit>
-					]]>
-				</setting>
+                  <setting name="restrict_to_types">observation</setting>
+                  <setting name="minRelationshipsPerRow">0</setting>
+                  <setting name="maxRelationshipsPerRow">1</setting>
+                  <setting name="hideIfSelected_sampledFrom_naturalScienceObject">object_ui/object_representation/ca_attribute_samplingParentType</setting>
+                  <setting name="hideIfSelected_sampledFrom_objectLot">object_ui/object_representation/ca_attribute_samplingParentType</setting>
+                  <setting name="display_template">
+                    <![CDATA[
+                      <unit>
+                        <l>ID:^ca_occurrences.idno</l>,
+                        DateTime: ^ca_occurrences.dateRange,
+                        <ifdef code="ca_occurrences.lastIdentification">
+                          Scientific name: ^ca_occurrences.lastIdentification,
+                        </ifdef>
+                        <ifnotdef code="ca_occurrences.lastIdentification">
+                          Verbatim identification: ^ca_occurrences.verbatimIdentification,
+                        </ifnotdef>
+                        Verbatim Locality: ^ca.occurrences.verbatimLocality
+                      </unit>
+                    ]]>
+                </setting>
               </settings>
             </placement>
             <placement code="ca_object">
               <bundle>ca_objects</bundle>
-			  <settings>
+			        <settings>
                 <setting name="label" locale="en_US">The object is a subsample of</setting>
-				<setting name="restrict_to_types">naturalScienceObject</setting>
-				<setting name="minRelationshipsPerRow">0</setting>
-				<setting name="maxRelationshipsPerRow">1</setting>
-				<setting name="hideIfSelected_sampledFrom_observation">object_ui/object_representation/ca_attribute_samplingParentType</setting>
-				<setting name="hideIfSelected_sampledFrom_objectLot">object_ui/object_representation/ca_attribute_samplingParentType</setting>
-				<setting name="display_template">
-					<![CDATA[
-						<unit relativeTo="ca_occurrence" restrictToTypes="observation">
-							<l>ID:^ca_occurrences.idno</l>,
-							DateTime: ^ca_occurrences.dateRange,
-							Verbatim Locality: ^ca.occurrences.verbatimLocality,
-							<ifdef code="ca_occurrences.lastIdentification">
-								Scientific name: ^ca_occurrences.lastIdentification,
-							</ifdef>
-							<ifnotdef code="ca_occurrences.lastIdentification">
-								Verbatim identification: ^ca_occurrences.verbatimIdentification,
-							</ifnotdef>
-						</unit>
-					]]>
-				</setting>
+                  <setting name="restrict_to_types">naturalScienceObject</setting>
+                  <setting name="minRelationshipsPerRow">0</setting>
+                  <setting name="maxRelationshipsPerRow">1</setting>
+                  <setting name="hideIfSelected_sampledFrom_observation">object_ui/object_representation/ca_attribute_samplingParentType</setting>
+                  <setting name="hideIfSelected_sampledFrom_objectLot">object_ui/object_representation/ca_attribute_samplingParentType</setting>
+                  <setting name="display_template">
+                    <![CDATA[
+                      <unit relativeTo="ca_occurrence" restrictToTypes="observation">
+                        <l>ID:^ca_occurrences.idno</l>,
+                        DateTime: ^ca_occurrences.dateRange,
+                        Verbatim Locality: ^ca.occurrences.verbatimLocality,
+                        <ifdef code="ca_occurrences.lastIdentification">
+                          Scientific name: ^ca_occurrences.lastIdentification,
+                        </ifdef>
+                        <ifnotdef code="ca_occurrences.lastIdentification">
+                          Verbatim identification: ^ca_occurrences.verbatimIdentification,
+                        </ifnotdef>
+                      </unit>
+                    ]]>
+                </setting>
               </settings>
             </placement>
-			<placement code="ca_object_lot">
+			      <placement code="ca_object_lot">
               <bundle>ca_object_lots</bundle>
-			  <settings>
+			        <settings>
                 <setting name="label" locale="en_US">The object is a sample of</setting>
-				<setting name="minRelationshipsPerRow">0</setting>
-				<setting name="maxRelationshipsPerRow">1</setting>
-				<setting name="hideIfSelected_sampledFrom_naturalScienceObject">object_ui/object_representation/ca_attribute_samplingParentType</setting>
-				<setting name="hideIfSelected_sampledFrom_observation">object_ui/object_representation/ca_attribute_samplingParentType</setting>
-				<setting name="display_template">
-					<![CDATA[
-						<unit relativeTo="ca_occurrence" restrictToTypes="observation">
-							<l>ID:^ca_occurrences.idno</l>,
-							DateTime: ^ca_occurrences.dateRange,
-							<ifdef code="ca_occurrences.lastIdentification">
-								Scientific name: ^ca_occurrences.lastIdentification,
-							</ifdef>
-							<ifnotdef code="ca_occurrences.lastIdentification">
-								Verbatim identification: ^ca_occurrences.verbatimIdentification,
-							</ifnotdef>
-							Verbatim Locality: ^ca.occurrences.verbatimLocality
-						</unit>
-					]]>
-				</setting>
+                  <setting name="minRelationshipsPerRow">0</setting>
+                  <setting name="maxRelationshipsPerRow">1</setting>
+                  <setting name="hideIfSelected_sampledFrom_naturalScienceObject">object_ui/object_representation/ca_attribute_samplingParentType</setting>
+                  <setting name="hideIfSelected_sampledFrom_observation">object_ui/object_representation/ca_attribute_samplingParentType</setting>
+                  <setting name="display_template">
+                    <![CDATA[
+                      <unit relativeTo="ca_occurrence" restrictToTypes="observation">
+                        <l>ID:^ca_occurrences.idno</l>,
+                        DateTime: ^ca_occurrences.dateRange,
+                        <ifdef code="ca_occurrences.lastIdentification">
+                          Scientific name: ^ca_occurrences.lastIdentification,
+                        </ifdef>
+                        <ifnotdef code="ca_occurrences.lastIdentification">
+                          Verbatim identification: ^ca_occurrences.verbatimIdentification,
+                        </ifnotdef>
+                        Verbatim Locality: ^ca.occurrences.verbatimLocality
+                      </unit>
+                    ]]>
+                  </setting>
               </settings>
             </placement>
-			<placement code="ca_occurrence_sampling">
+			      <placement code="ca_occurrence_sampling">
               <bundle>ca_occurrences</bundle>
-			  <settings>
+			        <settings>
                 <setting name="label" locale="en_US">Sampling event that lead to object</setting>
-				<setting name="restrict_to_types">sampling</setting>
-				<setting name="minRelationshipsPerRow">0</setting>
-				<setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="restrict_to_types">sampling</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
           </bundlePlacements>
         </screen>
-		<screen idno="object_fieldwork" default="0">
+		    <screen idno="object_fieldwork" default="0">
           <labels>
             <label locale="en_US">
               <name>Fieldwork</name>
@@ -4723,114 +4723,114 @@
           <bundlePlacements>
             <placement code="ca_occurrence">
               <bundle>ca_occurrences</bundle>
-			  <settings>
+			        <settings>
                 <setting name="label" locale="en_US">Expedition, field campaign, ...</setting>
-				<setting name="add_label" locale="en_US">Add new expedition</setting>
-				<setting name="restrict_to_types">expedition</setting>
+				        <setting name="add_label" locale="en_US">Add new expedition</setting>
+				        <setting name="restrict_to_types">expedition</setting>
               </settings>
             </placement>
           </bundlePlacements>
         </screen>
-		<screen idno="object_identification_events" default="0">
+		    <screen idno="object_identification_events" default="0">
           <labels>
             <label locale="en_US">
               <name>Identification</name>
             </label>
           </labels>
-		  <typeRestrictions>
-			<restriction code="r_animalLiving" type="animalLiving"/>
-			<restriction code="r_animalSpecimen" type="animalSpecimen"/>
-			<restriction code="r_sampleAmphibianLarva" type="sampleAmphibianLarva"/>
-			<restriction code="r_sampleAmphibianEmbryo" type="sampleAmphibianEmbryo"/>
-			<restriction code="r_sampleAmphibianFrogspawn" type="sampleAmphibianFrogspawn"/>
-			<restriction code="r_sampleInvertebrateLarva" type="sampleInvertebrateLarva"/>
-			<restriction code="r_sampleMammalTooth" type="sampleMammalTooth"/>
-			<restriction code="r_fruit" type="fruit"/>
-			<restriction code="r_herbariumSpecimen" type="herbariumSpecimen"/>
-			<restriction code="r_livingPlant" type="livingPlant"/>
-			<restriction code="r_seedLot" type="seedLot"/>
-			<restriction code="r_dnaSample" type="dnaSample"/>
-		  </typeRestrictions>
+          <typeRestrictions>
+            <restriction code="r_animalLiving" type="animalLiving"/>
+            <restriction code="r_animalSpecimen" type="animalSpecimen"/>
+            <restriction code="r_sampleAmphibianLarva" type="sampleAmphibianLarva"/>
+            <restriction code="r_sampleAmphibianEmbryo" type="sampleAmphibianEmbryo"/>
+            <restriction code="r_sampleAmphibianFrogspawn" type="sampleAmphibianFrogspawn"/>
+            <restriction code="r_sampleInvertebrateLarva" type="sampleInvertebrateLarva"/>
+            <restriction code="r_sampleMammalTooth" type="sampleMammalTooth"/>
+            <restriction code="r_fruit" type="fruit"/>
+            <restriction code="r_herbariumSpecimen" type="herbariumSpecimen"/>
+            <restriction code="r_livingPlant" type="livingPlant"/>
+            <restriction code="r_seedLot" type="seedLot"/>
+            <restriction code="r_dnaSample" type="dnaSample"/>
+          </typeRestrictions>
           <bundlePlacements>
             <placement code="lastIdentification">
               <bundle>ca_attribute_lastIdentification</bundle>
-			  <settings>
-				<setting name="label" locale="en_US">The last result of the identification events linkd to the observation, standardised.</setting>
-				<setting name="minRelationshipsPerRow">0</setting>
-				<setting name="maxRelationshipsPerRow">1</setting>
+              <settings>
+                <setting name="label" locale="en_US">The last result of the identification events linkd to the observation, standardised.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			<placement code="ca_occurrences_id">
+			      <placement code="ca_occurrences_id">
               <bundle>ca_occurrences</bundle>
-			  <settings>
+			        <settings>
                 <setting name="label" locale="en_US">Object identification event</setting>
-				<setting name="add_label" locale="en_US">Add new identification</setting>
-				<setting name="restrict_to_types">identification</setting>
-				<setting name="list_format">list</setting>
-				<setting name="display_template">
-					<![CDATA[
-						<unit>
-							<l>ID:^ca_occurrences.idno</l>,
-							Date: ^ca_occurrences.dateRange,
-							Scientific name:
-							<ifdef code="ca_occurrences.identificationQualifier">
-								^ca_occurrences.identificationQualifier 
-							</ifdef>
-							^ca_occurrences.scientificName, 
-							<unit relativeTo="ca_entities">IDed by: ^ca_entities.preferred_labels.displayname</unit>
-						</unit>
-					]]>  
-				</setting>
-			  </settings>
+                <setting name="add_label" locale="en_US">Add new identification</setting>
+                <setting name="restrict_to_types">identification</setting>
+                <setting name="list_format">list</setting>
+                <setting name="display_template">
+                  <![CDATA[
+                    <unit>
+                      <l>ID:^ca_occurrences.idno</l>,
+                      Date: ^ca_occurrences.dateRange,
+                      Scientific name:
+                      <ifdef code="ca_occurrences.identificationQualifier">
+                        ^ca_occurrences.identificationQualifier 
+                      </ifdef>
+                      ^ca_occurrences.scientificName, 
+                      <unit relativeTo="ca_entities">IDed by: ^ca_entities.preferred_labels.displayname</unit>
+                    </unit>
+                  ]]>  
+                </setting>
+			        </settings>
             </placement>
           </bundlePlacements>
         </screen>
-		<screen idno="object_measurements" default="0">
+		    <screen idno="object_measurements" default="0">
           <labels>
             <label locale="en_US">
               <name>Measurements</name>
             </label>
           </labels>
           <bundlePlacements>
-			<placement code="ca_occurrences">
+			      <placement code="ca_occurrences">
               <bundle>ca_occurrences</bundle>
-			  <settings>
+			        <settings>
                 <setting name="label" locale="en_US">Measurement event</setting>
-				<setting name="add_label" locale="en_US">Add new measurement</setting>
-				<setting name="restrict_to_types">measurement</setting>
-			  </settings>
+                <setting name="add_label" locale="en_US">Add new measurement</setting>
+                <setting name="restrict_to_types">measurement</setting>
+                </settings>
             </placement>
           </bundlePlacements>
         </screen>
         <screen idno="object_derivates" default="0">
-		  <labels>
+		      <labels>
             <label locale="en_US">
               <name>Derivatives</name>
             </label>
           </labels>
           <bundlePlacements>
-              <placement code="ca_objects_naturalScienceObject">
+            <placement code="ca_objects_naturalScienceObject">
               <bundle>ca_objects</bundle>
-			  <settings>
+			        <settings>
                 <setting name="label" locale="en_US">From the object, subsample is taken</setting>
-				<setting name="add_label" locale="en_US">Add new subsample</setting>
-				<setting name="restrict_to_types">naturalScienceObject</setting>
+                <setting name="add_label" locale="en_US">Add new subsample</setting>
+                <setting name="restrict_to_types">naturalScienceObject</setting>
               </settings>
             </placement>
             <placement code="ca_objects_dataset">
               <bundle>ca_objects</bundle>
-			  <settings>
+			        <settings>
                 <setting name="label" locale="en_US">The object (data) resulted in dataset</setting>
-				<setting name="add_label" locale="en_US">Add new dataset</setting>
-				<setting name="restrict_to_types">dataset</setting>
+				        <setting name="add_label" locale="en_US">Add new dataset</setting>
+				        <setting name="restrict_to_types">dataset</setting>
               </settings>
             </placement>
-			<placement code="ca_objects_literature">
+			      <placement code="ca_objects_literature">
               <bundle>ca_objects</bundle>
-			  <settings>
+			        <settings>
                 <setting name="label" locale="en_US">The object (data) resulted in literature</setting>
-				<setting name="add_label" locale="en_US">Add new literature</setting>
-				<setting name="restrict_to_types">literature</setting>
+                <setting name="add_label" locale="en_US">Add new literature</setting>
+                <setting name="restrict_to_types">literature</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -4844,11 +4844,11 @@
           <bundlePlacements>
             <placement code="ca_occurrences">
               <bundle>ca_occurrences</bundle>
-			  <settings>
+			        <settings>
                 <setting name="label" locale="en_US">Valuation event</setting>
-				<setting name="add_label" locale="en_US">Add valuation</setting>
-				<setting name="restrict_to_types">valuation</setting>
-			  </settings>
+                <setting name="add_label" locale="en_US">Add valuation</setting>
+                <setting name="restrict_to_types">valuation</setting>
+			        </settings>
             </placement>
           </bundlePlacements>
         </screen>
@@ -4861,96 +4861,96 @@
           <bundlePlacements>
             <placement code="barcode">
               <bundle>ca_attribute_barcode</bundle>
-			  <settings>
+			        <settings>
                 <setting name="label" locale="en_US">Barcode or identifier on object</setting>
-				<setting name="add_label" locale="en_US">Add barcode</setting>
+				        <setting name="add_label" locale="en_US">Add barcode</setting>
               </settings>
             </placement>
-			<placement code="ca_occurrences">
+			      <placement code="ca_occurrences">
               <bundle>ca_occurrences</bundle>
-			  <settings>
+			        <settings>
                 <setting name="label" locale="en_US">Curation event</setting>
-				<setting name="add_label" locale="en_US">Add curation</setting>
-				<setting name="restrict_to_types">curation</setting>
-			  </settings>
+                <setting name="add_label" locale="en_US">Add curation</setting>
+                <setting name="restrict_to_types">curation</setting>
+              </settings>
             </placement>
           </bundlePlacements>
         </screen>
-		<screen idno="object_administration" default="0">
+		    <screen idno="object_administration" default="0">
           <labels>
             <label locale="en_US">
               <name>Admin</name>
             </label>
           </labels>
           <bundlePlacements>
-			<placement code="ca_collections">
+			      <placement code="ca_collections">
               <bundle>ca_collection</bundle>
-			  <settings>
+			        <settings>
                 <setting name="label" locale="en_US">Object belongs to collection</setting>
               </settings>
-			</placement>
-			<placement code="ca_entities_org">
+            </placement>
+            <placement code="ca_entities_org">
               <bundle>ca_entity</bundle>
-			   <settings>
+			        <settings>
                 <setting name="label" locale="en_US">Owner (organization)</setting>
-				<setting name="restrict_to_types">org</setting>
+				        <setting name="restrict_to_types">org</setting>
               </settings>
             </placement>
-			<placement code="ca_entities_ind">
+			      <placement code="ca_entities_ind">
               <bundle>ca_entity</bundle>
-			   <settings>
+			        <settings>
                 <setting name="label" locale="en_US">Previous owner (organization/individual)</setting>
-				<setting name="add_label" locale="en_US">Add previous owner</setting>
+				        <setting name="add_label" locale="en_US">Add previous owner</setting>
               </settings>
             </placement>
-			<placement code="ca_occurrences">
+			      <placement code="ca_occurrences">
               <bundle>ca_occurrences</bundle>
-			  <settings>
+			        <settings>
                 <setting name="label" locale="en_US">Project that generated the object</setting>
-				<setting name="restrict_to_types">project</setting>
+				        <setting name="restrict_to_types">project</setting>
               </settings>
-			</placement>
-			<placement code="objectEmbargo">
+			      </placement>
+			      <placement code="objectEmbargo">
               <bundle>ca_attribute_blockedUntil</bundle>
-			</placement>
+			      </placement>
             <placement code="access">
               <bundle>access</bundle>
             </placement>
           </bundlePlacements>
         </screen>
-		<screen idno="object_remarks" default="0">
+		    <screen idno="object_remarks" default="0">
           <labels>
             <label locale="en_US">
               <name>Remarks</name>
             </label>
           </labels>
           <bundlePlacements>
-			<placement code="remarks">
+			      <placement code="remarks">
               <bundle>ca_attribute_remarks</bundle>
-			  <settings>
+			        <settings>
                 <setting name="label" locale="en_US">Notes or remarks on the object.</setting>
-				<setting name="add_label" locale="en_US">Add remark on object</setting>
+				        <setting name="add_label" locale="en_US">Add remark on object</setting>
               </settings>
-			</placement>
+			      </placement>
           </bundlePlacements>
         </screen>
-		<screen idno="object_CMS_management" default="0">
+		    <screen idno="object_CMS_management" default="0">
           <labels>
             <label locale="en_US">
               <name>CMS management</name>
             </label>
           </labels>
           <bundlePlacements>
-			<placement code="status">
+			      <placement code="status">
               <bundle>status</bundle>
-			  <settings>
-				<setting name="label" locale="en_US">Cataloguing status</setting>
-				<setting name="minRelationshipsPerRow">1</setting>
+              <settings>
+                <setting name="label" locale="en_US">Cataloguing status</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
               </settings>
             </placement>
           </bundlePlacements>
         </screen>
-	</screens>
+	    </screens>
     </userInterface>
     <userInterface code="event_ui" type="ca_occurrences">
       <labels>
