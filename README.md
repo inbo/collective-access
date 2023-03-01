@@ -1,5 +1,8 @@
 # CollectiveAccessINBO
 
+File coding
+- xml-file: INBO_profiel.xml 0.26.03 | 0 = production | 26 = number of tests | 03 = version of the new code, not yet tested
+
 Currently loaded:
 - xml-file:	INBO_profiel_025.xml
 - INBO test	18.203.229.50/ca - user name: administrator - pass:	2c32e9fc
