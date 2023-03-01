@@ -3888,650 +3888,650 @@
           </restriction>
         </typeRestrictions>
 	    </metadataElement>
-	<!--Event:administration-->
-	<metadataElement code="eventAdminObligation" datatype="Container">
-      <labels>
-        <label locale="en_US">
-          <name>Obligations results from the eventAdminFile</name>
-        </label>
-      </labels>
-	  <elements>
-		<metadataElement code="obligationType" datatype="List" list="obligation_type">
-		  <labels>
-			<label locale="en_US">
-			  <name>obligationType</name>
-			  <description>Type of obligation</description>
-			</label>
-		  </labels>
-		  <settings>
-		    <setting name="render">checklist</setting>
-			<setting name="fieldWidth">70</setting>
-			<setting name="fieldHeight">1</setting>
-			<setting name="minChars">0</setting>
-			<setting name="maxChars">65535</setting>
-		  </settings>
-		</metadataElement>
-		<metadataElement code="obligationdeadline" datatype="Text">
-		  <labels>
-			<label locale="en_US">
-			  <name>obligationdeadline</name>
-			  <description>Specify if there is a deadline. Examples: "2026", "2026-12-12", "no deadline", "asap".</description>
-			</label>
-		  </labels>
-		  <settings>
-			<setting name="fieldWidth">70</setting>
-			<setting name="fieldHeight">1</setting>
-			<setting name="minChars">0</setting>
-			<setting name="maxChars">65535</setting>
-		  </settings>
-		</metadataElement>
-		<metadataElement code="obligationStatus" datatype="List" list="obligation_status">
-		  <labels>
-			<label locale="en_US">
-			  <name>obligationStatus</name>
-			  <description>Status of meeting the obligation</description>
-			</label>
-		  </labels>
-		  <settings>
-			<setting name="fieldWidth">70</setting>
-			<setting name="fieldHeight">1</setting>
-			<setting name="minChars">0</setting>
-			<setting name="maxChars">65535</setting>
-		  </settings>
-		</metadataElement>
-		<metadataElement code="statusDate" datatype="DateRange">
-		  <labels>
-			<label locale="en_US">
-			  <name>statusDate</name>
-			  <description>Date at which current status was achieved.</description>
-			</label>
-		  </labels>
-		  <settings>
-			<setting name="fieldWidth">70</setting>
-			<setting name="fieldHeight">1</setting>
-			<setting name="minChars">0</setting>
-			<setting name="maxChars">65535</setting>
-		  </settings>
-		</metadataElement>
-		<metadataElement code="obligationDocumentation" datatype="File">
-		  <labels>
-			<label locale="en_US">
-			  <name>obligationDocumentation</name>
-			  <description>File that proves that the obligation was met.</description>
-			</label>
-		  </labels>
-		  <settings>
-			<setting name="fieldWidth">70</setting>
-			<setting name="fieldHeight">1</setting>
-			<setting name="minChars">0</setting>
-			<setting name="maxChars">65535</setting>
-		  </settings>
-		</metadataElement>
-	  </elements>
-	  <typeRestrictions>
-		  <restriction code="r_occurrence">
-          <table>ca_occurrences</table>
-		  <includeSubtypes>1</includeSubtypes>
-          <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">1</setting>
-            <setting name="minimumAttributeBundlesToDisplay">1</setting>
-          </settings>
-		  </restriction>
-		  </typeRestrictions>
-    </metadataElement>
-	<!--Entity:record-->
-	<metadataElement code="RORID" datatype="Url">
-      <labels>
-        <label locale="en_US">
-          <name>RORID</name>
-          <description>Research Organization Registry (ROR) identification</description>
-        </label>
-      </labels>
-      <documentationUrl>https://ror.org</documentationUrl>
-      <settings>
-        <setting name="fieldWidth">70</setting>
-        <setting name="fieldHeight">5</setting>
-        <setting name="minChars">0</setting>
-        <setting name="maxChars">65535</setting>
-      </settings>
-	  <typeRestrictions>
-        <restriction code="r_org">
-          <table>ca_entities</table>
-		  <type>org</type>
-          <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">1</setting>
-            <setting name="minimumAttributeBundlesToDisplay">1</setting>
-          </settings>
-        </restriction>
-      </typeRestrictions>
-    </metadataElement>
-	<metadataElement code="WikidataID" datatype="Url">
-      <labels>
-        <label locale="en_US">
-          <name>WikidataID</name>
-          <description>Wikidata identification</description>
-        </label>
-      </labels>
-      <documentationUrl>https://www.wikidata.org/</documentationUrl>
-      <settings>
-        <setting name="fieldWidth">70</setting>
-        <setting name="fieldHeight">5</setting>
-        <setting name="minChars">0</setting>
-        <setting name="maxChars">65535</setting>
-      </settings>
-	  <typeRestrictions>
-		  <restriction code="r_entity">
-          <table>ca_entities</table>
-          <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">1</setting>
-            <setting name="minimumAttributeBundlesToDisplay">1</setting>
-          </settings>
-		  </restriction>
-		  </typeRestrictions>
-    </metadataElement>
-	<metadataElement code="ORCID" datatype="Url">
-      <labels>
-        <label locale="en_US">
-          <name>ORCID</name>
-          <description>ORCID</description>
-        </label>
-      </labels>
-      <documentationUrl>https://orcid.org/</documentationUrl>
-      <settings>
-        <setting name="fieldWidth">70</setting>
-        <setting name="fieldHeight">5</setting>
-        <setting name="minChars">0</setting>
-        <setting name="maxChars">65535</setting>
-      </settings>
-	  <typeRestrictions>
-        <restriction code="r_ind">
-          <table>ca_entities</table>
-		  <type>ind</type>
-          <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">1</setting>
-            <setting name="minimumAttributeBundlesToDisplay">1</setting>
-          </settings>
-        </restriction>
-      </typeRestrictions>
-    </metadataElement>
-	<!--Entity:contact-->
-	<metadataElement code="address" datatype="Container">
-      <labels>
-        <label locale="en_US">
-          <name>Address</name>
-        </label>
-      </labels>
-      <settings/>
-      <elements>
-        <metadataElement code="line1" datatype="Container">
-          <labels>
+	  <!--Event:administration-->
+	    <metadataElement code="eventAdminObligation" datatype="Container">
+        <labels>
+          <label locale="en_US">
+            <name>Obligations results from the eventAdminFile</name>
+          </label>
+        </labels>
+	      <elements>
+		      <metadataElement code="obligationType" datatype="List" list="obligation_type">
+            <labels>
             <label locale="en_US">
-              <name>Address line 1</name>
+              <name>obligationType</name>
+              <description>Type of obligation</description>
             </label>
-          </labels>
-          <settings/>
-          <elements>
-            <metadataElement code="address1" datatype="Text">
-              <labels>
-                <label locale="en_US">
-                  <name>Address line 1</name>
-                </label>
-              </labels>
-              <settings>
-                <setting name="fieldWidth">70</setting>
-                <setting name="fieldHeight">1</setting>
-                <setting name="minChars">0</setting>
-                <setting name="maxChars">255</setting>
-              </settings>
-            </metadataElement>
-          </elements>
-        </metadataElement>
-        <metadataElement code="line2" datatype="Container">
-          <labels>
-            <label locale="en_US">
-              <name>Address line 2</name>
-            </label>
-          </labels>
-          <settings/>
-          <elements>
-            <metadataElement code="address2" datatype="Text">
-              <labels>
-                <label locale="en_US">
-                  <name>Address line 2</name>
-                </label>
-              </labels>
-              <settings>
-                <setting name="fieldWidth">70</setting>
-                <setting name="fieldHeight">1</setting>
-                <setting name="minChars">0</setting>
-                <setting name="maxChars">255</setting>
-              </settings>
-            </metadataElement>
-          </elements>
-        </metadataElement>
-        <metadataElement code="line3" datatype="Container">
-          <labels>
-            <label locale="en_US">
-              <name>Address line 3</name>
-            </label>
-          </labels>
-          <settings/>
-          <elements>
-            <metadataElement code="city" datatype="Text">
-              <labels>
-                <label locale="en_US">
-                  <name>City</name>
-                </label>
-              </labels>
-              <settings>
-                <setting name="fieldWidth">20</setting>
-                <setting name="fieldHeight">1</setting>
-                <setting name="minChars">0</setting>
-                <setting name="maxChars">255</setting>
-              </settings>
-            </metadataElement>
-            <metadataElement code="state_or_province" datatype="Text">
-              <labels>
-                <label locale="en_US">
-                  <name>State/province</name>
-                </label>
-              </labels>
-              <settings>
-                <setting name="fieldWidth">15</setting>
-                <setting name="fieldHeight">1</setting>
-                <setting name="minChars">0</setting>
-                <setting name="maxChars">255</setting>
-              </settings>
-            </metadataElement>
-            <metadataElement code="postalcode" datatype="Text">
-              <labels>
-                <label locale="en_US">
-                  <name>Postal/zip code</name>
-                </label>
-              </labels>
-              <settings>
-                <setting name="fieldWidth">10</setting>
-                <setting name="fieldHeight">1</setting>
-                <setting name="minChars">0</setting>
-                <setting name="maxChars">255</setting>
-              </settings>
-            </metadataElement>
-            <metadataElement code="entity_country" datatype="Text">
-              <labels>
-                <label locale="en_US">
-                  <name>Country</name>
-                </label>
-              </labels>
-              <settings>
-                <setting name="fieldWidth">15</setting>
-                <setting name="fieldHeight">1</setting>
-                <setting name="minChars">0</setting>
-                <setting name="maxChars">255</setting>
-              </settings>
-            </metadataElement>
-          </elements>
-        </metadataElement>
-		</elements>
-		  <typeRestrictions>
-			<restriction code="r_entity">
-			  <table>ca_entities</table>
-			  <includeSubtypes>1</includeSubtypes>
-			  <settings>
-				<setting name="minAttributesPerRow">0</setting>
-				<setting name="maxAttributesPerRow">1</setting>
-				<setting name="minimumAttributeBundlesToDisplay">1</setting>
-			  </settings>
-			</restriction>
-		  </typeRestrictions>
-    </metadataElement>
-	<metadataElement code="telephone" datatype="Text">
-      <labels>
-        <label locale="en_US">
-          <name>Telephone/fax</name>
-        </label>
-      </labels>
-      <settings>
-        <setting name="fieldWidth">70</setting>
-        <setting name="fieldHeight">1</setting>
-        <setting name="minChars">0</setting>
-        <setting name="maxChars">65535</setting>
-      </settings>
-      <typeRestrictions>
-        <restriction code="r_entity">
-          <table>ca_entities</table>
-		  <includeSubtypes>1</includeSubtypes>
-          <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">10</setting>
-            <setting name="minimumAttributeBundlesToDisplay">1</setting>
-          </settings>
-        </restriction>
-      </typeRestrictions>
-    </metadataElement>
-	<metadataElement code="email" datatype="Text">
-      <labels>
-        <label locale="en_US">
-          <name>Email address</name>
-        </label>
-      </labels>
-      <settings>
-        <setting name="fieldWidth">70</setting>
-        <setting name="fieldHeight">1</setting>
-        <setting name="minChars">0</setting>
-        <setting name="maxChars">65535</setting>
-      </settings>
-      <typeRestrictions>
-        <restriction code="r_entity">
-          <table>ca_entities</table>
-		  <includeSubtypes>1</includeSubtypes>
-          <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">10</setting>
-            <setting name="minimumAttributeBundlesToDisplay">1</setting>
-          </settings>
-        </restriction>
-      </typeRestrictions>
-    </metadataElement>
-	<!--Places:record-->
-	<metadataElement code="gettyID" datatype="Url">
-      <labels>
-        <label locale="en_US">
-          <name>gettyID</name>
-          <description>Getty Thesaurus of Geographic Names</description>
-        </label>
-      </labels>
-      <documentationUrl>https://www.getty.edu/research/tools/vocabularies/tgn/</documentationUrl>
-      <settings>
-        <setting name="fieldWidth">70</setting>
-        <setting name="fieldHeight">5</setting>
-        <setting name="minChars">0</setting>
-        <setting name="maxChars">65535</setting>
-      </settings>
-	  <typeRestrictions>
-        <restriction code="r_place">
-          <table>ca_places</table>
-          <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">1</setting>
-            <setting name="minimumAttributeBundlesToDisplay">1</setting>
-          </settings>
-        </restriction>
-      </typeRestrictions>
-    </metadataElement>
-	<!--Collection:record-->
-	<metadataElement code="GRSciColl" datatype="Url">
-      <labels>
-        <label locale="en_US">
-          <name>GRSciColl</name>
-          <description>Global Registry of Scientific Collections</description>
-        </label>
-      </labels>
-      <documentationUrl>https://www.gbif.org/grscicoll</documentationUrl>
-      <settings>
-        <setting name="fieldWidth">70</setting>
-        <setting name="fieldHeight">5</setting>
-        <setting name="minChars">0</setting>
-        <setting name="maxChars">65535</setting>
-      </settings>
-	  <typeRestrictions>
-        <restriction code="r_collection">
-          <table>ca_collections</table>
-          <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">1</setting>
-            <setting name="minimumAttributeBundlesToDisplay">1</setting>
-          </settings>
-        </restriction>
-      </typeRestrictions>
-    </metadataElement>
+            </labels>
+            <settings>
+              <setting name="render">checklist</setting>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+		      <metadataElement code="obligationdeadline" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>obligationdeadline</name>
+                <description>Specify if there is a deadline. Examples: "2026", "2026-12-12", "no deadline", "asap".</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+		      </metadataElement>
+		      <metadataElement code="obligationStatus" datatype="List" list="obligation_status">
+            <labels>
+              <label locale="en_US">
+                <name>obligationStatus</name>
+                <description>Status of meeting the obligation</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+		      <metadataElement code="statusDate" datatype="DateRange">
+            <labels>
+              <label locale="en_US">
+                <name>statusDate</name>
+                <description>Date at which current status was achieved.</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+		      </metadataElement>
+		      <metadataElement code="obligationDocumentation" datatype="File">
+            <labels>
+              <label locale="en_US">
+                <name>obligationDocumentation</name>
+                <description>File that proves that the obligation was met.</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+		      </metadataElement>
+	      </elements>
+        <typeRestrictions>
+          <restriction code="r_occurrence">
+            <table>ca_occurrences</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	  <!--Entity:record-->
+	    <metadataElement code="RORID" datatype="Url">
+        <labels>
+          <label locale="en_US">
+            <name>RORID</name>
+            <description>Research Organization Registry (ROR) identification</description>
+          </label>
+        </labels>
+        <documentationUrl>https://ror.org</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">5</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_org">
+            <table>ca_entities</table>
+            <type>org</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="WikidataID" datatype="Url">
+        <labels>
+          <label locale="en_US">
+            <name>WikidataID</name>
+            <description>Wikidata identification</description>
+          </label>
+        </labels>
+        <documentationUrl>https://www.wikidata.org/</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">5</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_entity">
+            <table>ca_entities</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="ORCID" datatype="Url">
+        <labels>
+          <label locale="en_US">
+            <name>ORCID</name>
+            <description>ORCID</description>
+          </label>
+        </labels>
+        <documentationUrl>https://orcid.org/</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">5</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_ind">
+            <table>ca_entities</table>
+            <type>ind</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	  <!--Entity:contact-->
+	    <metadataElement code="address" datatype="Container">
+        <labels>
+          <label locale="en_US">
+            <name>Address</name>
+          </label>
+        </labels>
+        <settings/>
+        <elements>
+          <metadataElement code="line1" datatype="Container">
+            <labels>
+              <label locale="en_US">
+                <name>Address line 1</name>
+              </label>
+            </labels>
+            <settings/>
+            <elements>
+              <metadataElement code="address1" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>Address line 1</name>
+                  </label>
+                </labels>
+                <settings>
+                  <setting name="fieldWidth">70</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">255</setting>
+                </settings>
+              </metadataElement>
+            </elements>
+          </metadataElement>
+          <metadataElement code="line2" datatype="Container">
+            <labels>
+              <label locale="en_US">
+                <name>Address line 2</name>
+              </label>
+            </labels>
+            <settings/>
+            <elements>
+              <metadataElement code="address2" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>Address line 2</name>
+                  </label>
+                </labels>
+                <settings>
+                  <setting name="fieldWidth">70</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">255</setting>
+                </settings>
+              </metadataElement>
+            </elements>
+          </metadataElement>
+          <metadataElement code="line3" datatype="Container">
+            <labels>
+              <label locale="en_US">
+                <name>Address line 3</name>
+              </label>
+            </labels>
+            <settings/>
+            <elements>
+              <metadataElement code="city" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>City</name>
+                  </label>
+                </labels>
+                <settings>
+                  <setting name="fieldWidth">20</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">255</setting>
+                </settings>
+              </metadataElement>
+              <metadataElement code="state_or_province" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>State/province</name>
+                  </label>
+                </labels>
+                <settings>
+                  <setting name="fieldWidth">15</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">255</setting>
+                </settings>
+              </metadataElement>
+              <metadataElement code="postalcode" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>Postal/zip code</name>
+                  </label>
+                </labels>
+                <settings>
+                  <setting name="fieldWidth">10</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">255</setting>
+                </settings>
+              </metadataElement>
+              <metadataElement code="entity_country" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>Country</name>
+                  </label>
+                </labels>
+                <settings>
+                  <setting name="fieldWidth">15</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">255</setting>
+                </settings>
+              </metadataElement>
+            </elements>
+          </metadataElement>
+		    </elements>
+        <typeRestrictions>
+          <restriction code="r_entity">
+            <table>ca_entities</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="telephone" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Telephone/fax</name>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_entity">
+            <table>ca_entities</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">10</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="email" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Email address</name>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_entity">
+            <table>ca_entities</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">10</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	  <!--Places:record-->
+	    <metadataElement code="gettyID" datatype="Url">
+        <labels>
+          <label locale="en_US">
+            <name>gettyID</name>
+            <description>Getty Thesaurus of Geographic Names</description>
+          </label>
+        </labels>
+        <documentationUrl>https://www.getty.edu/research/tools/vocabularies/tgn/</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">5</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+	      <typeRestrictions>
+          <restriction code="r_place">
+            <table>ca_places</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	  <!--Collection:record-->
+	    <metadataElement code="GRSciColl" datatype="Url">
+        <labels>
+          <label locale="en_US">
+            <name>GRSciColl</name>
+            <description>Global Registry of Scientific Collections</description>
+          </label>
+        </labels>
+        <documentationUrl>https://www.gbif.org/grscicoll</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">5</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_collection">
+            <table>ca_collections</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
     <!--Object Lot-->
-	<metadataElement code="decompositionCategory" datatype="List" list="decomposition_category">
-      <labels>
-        <label locale="en_US">
-          <name>Decomposition cateogry</name>
-        </label>
-      </labels>
-	<settings>
-        <setting name="fieldWidth">40</setting>
-        <setting name="doesNotTakeLocale">1</setting>
-      </settings>
-	<typeRestrictions>
-        <restriction code="r_cadaver">
-          <table>ca_object_lots</table>
-		  <type>cadaver</type>
-          <settings>
-            <setting name="minAttributesPerRow">1</setting>
-            <setting name="maxAttributesPerRow">1</setting>
-            <setting name="minimumAttributeBundlesToDisplay">1</setting>
-          </settings>
-        </restriction>
-      </typeRestrictions>
-    </metadataElement>
-	<metadataElement code="samplingEffort" datatype="Text">
-      <labels>
-        <label locale="en_US">
-          <name>samplingEffort</name>
-          <description>The amount of effort expended during an Event.</description>
-        </label>
-      </labels>
-      <documentationUrl>http://rs.tdwg.org/dwc/terms/samplingEffort</documentationUrl>
-      <settings>
-        <setting name="fieldWidth">70</setting>
-        <setting name="fieldHeight">1</setting>
-        <setting name="minChars">0</setting>
-        <setting name="maxChars">65535</setting>
-      </settings>
-      <typeRestrictions>
-        <restriction code="r_population">
-          <table>ca_object_lots</table>
-          <type>population</type>
-          <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">1</setting>
-            <setting name="minimumAttributeBundlesToDisplay">1</setting>
-          </settings>
-        </restriction>
-      </typeRestrictions>
-    </metadataElement>
-	<!--Loans-->
-	<metadataElement code="loan_authorization_date" datatype="DateRange">
-      <labels>
-        <label locale="en_US">
-          <name>Authorization date</name>
-          <description>The date when the loan was authorized.</description>
-        </label>
-      </labels>
-      <settings>
-        <setting name="fieldWidth">40</setting>
-        <setting name="fieldHeight">1</setting>
-        <setting name="minChars">0</setting>
-        <setting name="maxChars">255</setting>
-      </settings>
-      <typeRestrictions>
-        <restriction code="ca_loans">
-          <table>ca_loans</table>
-          <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">1</setting>
-            <setting name="minimumAttributeBundlesToDisplay">1</setting>
-          </settings>
-        </restriction>
-      </typeRestrictions>
-    </metadataElement>
-    <metadataElement code="loan_in_date" datatype="DateRange">
-      <labels>
-        <label locale="en_US">
-          <name>Loan in date</name>
-          <description>The date a loan will enter the institution.</description>
-        </label>
-      </labels>
-      <settings>
-        <setting name="fieldWidth">40</setting>
-        <setting name="fieldHeight">1</setting>
-        <setting name="minChars">0</setting>
-        <setting name="maxChars">255</setting>
-      </settings>
-      <typeRestrictions>
-        <restriction code="ca_loans">
-          <table>ca_loans</table>
-          <type>in</type>
-          <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">1</setting>
-            <setting name="minimumAttributeBundlesToDisplay">1</setting>
-          </settings>
-        </restriction>
-      </typeRestrictions>
-    </metadataElement>
-    <metadataElement code="loan_out_date" datatype="DateRange">
-      <labels>
-        <label locale="en_US">
-          <name>Loan out date</name>
-          <description>The date a loan will enter the institution.</description>
-        </label>
-      </labels>
-      <settings>
-        <setting name="fieldWidth">40</setting>
-        <setting name="fieldHeight">1</setting>
-        <setting name="minChars">0</setting>
-        <setting name="maxChars">255</setting>
-      </settings>
-      <typeRestrictions>
-        <restriction code="ca_loans">
-          <table>ca_loans</table>
-          <type>out</type>
-          <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">1</setting>
-            <setting name="minimumAttributeBundlesToDisplay">1</setting>
-          </settings>
-        </restriction>
-      </typeRestrictions>
-    </metadataElement>
-    <metadataElement code="loan_return_date" datatype="DateRange">
-      <labels>
-        <label locale="en_US">
-          <name>Loan return date</name>
-          <description>The date a loan is due back to the lending institution.</description>
-	    </label>
-	  </labels>
-      <settings>
-        <setting name="fieldWidth">40</setting>
-        <setting name="fieldHeight">1</setting>
-        <setting name="minChars">0</setting>
-        <setting name="maxChars">255</setting>
-      </settings>
-      <typeRestrictions>
-        <restriction code="ca_loans">
-          <table>ca_loans</table>
-          <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">1</setting>
-            <setting name="minimumAttributeBundlesToDisplay">1</setting>
-          </settings>
-        </restriction>
-      </typeRestrictions>
-    </metadataElement>
-    <metadataElement code="loan_renewal_date" datatype="DateRange">
-      <labels>
-        <label locale="en_US">
-          <name>Loan renewal application date</name>
-          <description>The date to apply for a renewal to the loan.</description>
-        </label>
-      </labels>
-      <settings>
-        <setting name="fieldWidth">40</setting>
-        <setting name="fieldHeight">1</setting>
-        <setting name="minChars">0</setting>
-        <setting name="maxChars">255</setting>
-      </settings>
-      <typeRestrictions>
-        <restriction code="ca_loans">
-          <table>ca_loans</table>
-          <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">1</setting>
-            <setting name="minimumAttributeBundlesToDisplay">1</setting>
-          </settings>
-        </restriction>
-      </typeRestrictions>
-    </metadataElement>
-    <metadataElement code="loan_conditions" datatype="Text">
-      <labels>
-        <label locale="en_US">
-          <name>Loan conditions</name>
-          <description>A statement of the conditions on a loan.</description>
-        </label>
-      </labels>
-      <settings>
-        <setting name="fieldWidth">70</setting>
-        <setting name="fieldHeight">3</setting>
-        <setting name="minChars">0</setting>
-        <setting name="maxChars">65535</setting>
-      </settings>
-      <typeRestrictions>
-        <restriction code="ca_loans">
-          <table>ca_loans</table>
-          <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">1</setting>
-            <setting name="minimumAttributeBundlesToDisplay">1</setting>
-          </settings>
-        </restriction>
-      </typeRestrictions>
-    </metadataElement>
-    <metadataElement code="loan_note" datatype="Text">
-      <labels>
-        <label locale="en_US">
-          <name>Loan note</name>
-          <description>General information about the loan.</description>
-        </label>
-      </labels>
-      <settings>
-        <setting name="fieldWidth">70</setting>
-        <setting name="fieldHeight">3</setting>
-        <setting name="minChars">0</setting>
-        <setting name="maxChars">65535</setting>
-      </settings>
-      <typeRestrictions>
-        <restriction code="ca_loans">
-          <table>ca_loans</table>
-          <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">1</setting>
-            <setting name="minimumAttributeBundlesToDisplay">1</setting>
-          </settings>
-        </restriction>
-      </typeRestrictions>
-    </metadataElement>
-    <metadataElement code="loan_purpose" datatype="Text">
-      <labels>
-        <label locale="en_US">
-          <name>Loan purpose</name>
-          <description>General information about the purpose of loan.</description>
-        </label>
-      </labels>
-      <settings>
-        <setting name="fieldWidth">70</setting>
-        <setting name="fieldHeight">3</setting>
-        <setting name="minChars">0</setting>
-        <setting name="maxChars">65535</setting>
-      </settings>
-      <typeRestrictions>
-        <restriction code="ca_loans">
-          <table>ca_loans</table>
-          <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">1</setting>
-            <setting name="minimumAttributeBundlesToDisplay">1</setting>
-          </settings>
-        </restriction>
-      </typeRestrictions>
-    </metadataElement>
+	    <metadataElement code="decompositionCategory" datatype="List" list="decomposition_category">
+        <labels>
+          <label locale="en_US">
+            <name>Decomposition cateogry</name>
+          </label>
+        </labels>
+	      <settings>
+          <setting name="fieldWidth">40</setting>
+          <setting name="doesNotTakeLocale">1</setting>
+        </settings>
+	      <typeRestrictions>
+          <restriction code="r_cadaver">
+            <table>ca_object_lots</table>
+            <type>cadaver</type>
+            <settings>
+              <setting name="minAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="samplingEffort" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>samplingEffort</name>
+            <description>The amount of effort expended during an Event.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/dwc/terms/samplingEffort</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_population">
+            <table>ca_object_lots</table>
+            <type>population</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	  <!--Loans-->
+	    <metadataElement code="loan_authorization_date" datatype="DateRange">
+        <labels>
+          <label locale="en_US">
+            <name>Authorization date</name>
+            <description>The date when the loan was authorized.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">40</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">255</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="ca_loans">
+            <table>ca_loans</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="loan_in_date" datatype="DateRange">
+        <labels>
+          <label locale="en_US">
+            <name>Loan in date</name>
+            <description>The date a loan will enter the institution.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">40</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">255</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="ca_loans">
+            <table>ca_loans</table>
+            <type>in</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="loan_out_date" datatype="DateRange">
+        <labels>
+          <label locale="en_US">
+            <name>Loan out date</name>
+            <description>The date a loan will enter the institution.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">40</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">255</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="ca_loans">
+            <table>ca_loans</table>
+            <type>out</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="loan_return_date" datatype="DateRange">
+        <labels>
+          <label locale="en_US">
+            <name>Loan return date</name>
+            <description>The date a loan is due back to the lending institution.</description>
+          </label>
+	      </labels>
+        <settings>
+          <setting name="fieldWidth">40</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">255</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="ca_loans">
+            <table>ca_loans</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="loan_renewal_date" datatype="DateRange">
+        <labels>
+          <label locale="en_US">
+            <name>Loan renewal application date</name>
+            <description>The date to apply for a renewal to the loan.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">40</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">255</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="ca_loans">
+            <table>ca_loans</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="loan_conditions" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Loan conditions</name>
+            <description>A statement of the conditions on a loan.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">3</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="ca_loans">
+            <table>ca_loans</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="loan_note" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Loan note</name>
+            <description>General information about the loan.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">3</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="ca_loans">
+            <table>ca_loans</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="loan_purpose" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Loan purpose</name>
+            <description>General information about the purpose of loan.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">3</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="ca_loans">
+            <table>ca_loans</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
   </elementSets>
   <userInterfaces>
     <userInterface code="object_ui" type="ca_objects">
