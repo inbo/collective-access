@@ -2578,9 +2578,8 @@
           <setting name="mustBeUnique">0</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_naturalScienceObject">
+          <restriction code="r_object">
             <table>ca_objects</table>
-            <type>naturalScienceObject</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -2899,9 +2898,8 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_naturalScienceObject">
+          <restriction code="r_object">
             <table>ca_objects</table>
-		        <type>naturalScienceObject</type>
 		        <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -2911,6 +2909,71 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
+    <!--Object:derivates-->
+      <metadataElement code="dataset" datatype="Url">
+        <labels>
+          <label locale="en_US">
+            <name>dataset</name>
+            <description>A dataset</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">5</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_objectLots">
+            <table>ca_objectLots</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="publication" datatype="Url">
+        <labels>
+          <label locale="en_US">
+            <name>Publication</name>
+            <description>A publication (e.g. an article, a SOP, a thesis)</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">5</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_objectLots">
+            <table>ca_objectLots</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>  
     <!--Event:record-->
 	    <metadataElement code="projectUrl" datatype="Url">
         <labels>
@@ -3867,9 +3930,8 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_naturalScienceObject">
+          <restriction code="r_object">
             <table>ca_objects</table>
-            <type>naturalScienceObject</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -4288,7 +4350,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-    <!--Object Lot-->
+    <!--ObjectLot-->
 	    <metadataElement code="decompositionCategory" datatype="List" list="decomposition_category">
         <labels>
           <label locale="en_US">
@@ -4633,7 +4695,7 @@
                   <setting name="restrict_to_types">observation</setting>
                   <setting name="minRelationshipsPerRow">0</setting>
                   <setting name="maxRelationshipsPerRow">1</setting>
-                  <setting name="hideIfSelected_sampledFrom_naturalScienceObject">object_ui/object_representation/ca_attribute_samplingParentType</setting>
+                  <setting name="hideIfSelected_sampledFrom_object">object_ui/object_representation/ca_attribute_samplingParentType</setting>
                   <setting name="hideIfSelected_sampledFrom_objectLot">object_ui/object_representation/ca_attribute_samplingParentType</setting>
                   <setting name="display_template">
                     <![CDATA[
@@ -4656,7 +4718,6 @@
               <bundle>ca_objects</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The object is a subsample of</setting>
-                  <setting name="restrict_to_types">naturalScienceObject</setting>
                   <setting name="minRelationshipsPerRow">0</setting>
                   <setting name="maxRelationshipsPerRow">1</setting>
                   <setting name="hideIfSelected_sampledFrom_observation">object_ui/object_representation/ca_attribute_samplingParentType</setting>
@@ -4684,7 +4745,7 @@
                 <setting name="label" locale="en_US">The object is a sample of</setting>
                   <setting name="minRelationshipsPerRow">0</setting>
                   <setting name="maxRelationshipsPerRow">1</setting>
-                  <setting name="hideIfSelected_sampledFrom_naturalScienceObject">object_ui/object_representation/ca_attribute_samplingParentType</setting>
+                  <setting name="hideIfSelected_sampledFrom_object">object_ui/object_representation/ca_attribute_samplingParentType</setting>
                   <setting name="hideIfSelected_sampledFrom_observation">object_ui/object_representation/ca_attribute_samplingParentType</setting>
                   <setting name="display_template">
                     <![CDATA[
@@ -4809,28 +4870,25 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="ca_objects_naturalScienceObject">
+            <placement code="ca_objects">
               <bundle>ca_objects</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">From the object, subsample is taken</setting>
+                <setting name="label" locale="en_US">From the object, a subsample is derived</setting>
                 <setting name="add_label" locale="en_US">Add new subsample</setting>
-                <setting name="restrict_to_types">naturalScienceObject</setting>
               </settings>
             </placement>
-            <placement code="ca_objects_dataset">
-              <bundle>ca_objects</bundle>
+            <placement code="datasets">
+              <bundle>ca_attribute_dataset</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The object (data) resulted in dataset</setting>
-				        <setting name="add_label" locale="en_US">Add new dataset</setting>
-				        <setting name="restrict_to_types">dataset</setting>
+                <setting name="label" locale="en_US">From the object, a dataset is derived</setting>
+                <setting name="add_label" locale="en_US">Add new dataset</setting>
               </settings>
             </placement>
-			      <placement code="ca_objects_literature">
-              <bundle>ca_objects</bundle>
+            <placement code="publications">
+              <bundle>ca_attribute_dataset</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The object (data) resulted in literature</setting>
-                <setting name="add_label" locale="en_US">Add new literature</setting>
-                <setting name="restrict_to_types">literature</setting>
+                <setting name="label" locale="en_US">From the object, a publication is derived</setting>
+                <setting name="add_label" locale="en_US">Add new publication</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -5092,15 +5150,14 @@
                 <setting name="restrict_to_types">observation</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="hideIfSelected_sampledFrom_naturalScienceObject">event_ui/event_parent/ca_attribute_samplingParentType</setting>
+                <setting name="hideIfSelected_sampledFrom_object">event_ui/event_parent/ca_attribute_samplingParentType</setting>
                 <setting name="hideIfSelected_sampledFrom_objectLot">event_ui/event_parent/ca_attribute_samplingParentType</setting>
               </settings>
             </placement>
-			      <placement code="c_sampling_p_naturalScienceObject" typeRestrictions="sampling">
+			      <placement code="c_sampling_p_object" typeRestrictions="sampling">
               <bundle>ca_objects</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Sampling from Natural Science object</setting>
-                <setting name="restrict_to_types">naturalScienceObject</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="hideIfSelected_sampledFrom_observation">event_ui/event_parent/ca_attribute_samplingParentType</setting>
@@ -5114,15 +5171,14 @@
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="hideIfSelected_sampledFrom_observation">event_ui/event_parent/ca_attribute_samplingParentType</setting>
-                <setting name="hideIfSelected_sampledFrom_naturalScienceObject">event_ui/event_parent/ca_attribute_samplingParentType</setting>
+                <setting name="hideIfSelected_sampledFrom_object">event_ui/event_parent/ca_attribute_samplingParentType</setting>
               </settings>
             </placement>
-			      <placement code="p_sampling_c_naturalScienceObject" typeRestrictions="sampling">
+			      <placement code="p_sampling_c_object" typeRestrictions="sampling">
               <bundle>ca_objects</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Sampled object</setting>
                 <setting name="add_label" locale="en_US">Add sampled object</setting>
-                <setting name="restrict_to_types">naturalScienceObject</setting>
               </settings>
             </placement>
 			      <placement code="identificationQualifier" typeRestrictions="identification">
@@ -5309,15 +5365,14 @@
                 <setting name="restrict_to_types">observation</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="hideIfSelected_sampledFrom_naturalScienceObject">event_ui/event_parent/ca_attribute_samplingParentType</setting>
+                <setting name="hideIfSelected_sampledFrom_object">event_ui/event_parent/ca_attribute_samplingParentType</setting>
                 <setting name="hideIfSelected_sampledFrom_objectLot">event_ui/event_parent/ca_attribute_samplingParentType</setting>
               </settings>
             </placement>
-			      <placement code="c_sampling_p_naturalScienceObject" typeRestrictions="sampling">
+			      <placement code="c_sampling_p_object" typeRestrictions="sampling">
               <bundle>ca_objects</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Sampling from Natural Science object</setting>
-                <setting name="restrict_to_types">naturalScienceObject</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="hideIfSelected_sampledFrom_observation">event_ui/event_parent/ca_attribute_samplingParentType</setting>
@@ -5331,7 +5386,7 @@
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="hideIfSelected_sampledFrom_observation">event_ui/event_parent/ca_attribute_samplingParentType</setting>
-                <setting name="hideIfSelected_sampledFrom_naturalScienceObject">event_ui/event_parent/ca_attribute_samplingParentType</setting>
+                <setting name="hideIfSelected_sampledFrom_object">event_ui/event_parent/ca_attribute_samplingParentType</setting>
               </settings>
             </placement>
 			      <placement code="c_observation_p_expedition" typeRestrictions="observation">
@@ -5343,11 +5398,10 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="c_curation_p_naturalScienceObject" typeRestrictions="curation">
+			      <placement code="c_curation_p_object" typeRestrictions="curation">
               <bundle>ca_objects</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Curation of object</setting>
-				        <setting name="restrict_to_types">naturalScienceObject</setting>
               </settings>
             </placement>
 			      <placement code="c_curation_p_objectLot" typeRestrictions="curation">
@@ -5360,7 +5414,6 @@
               <bundle>ca_objects</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Valuation of object</setting>
-				        <setting name="restrict_to_types">naturalScienceObject</setting>
               </settings>
             </placement>
 			      <placement code="c_valuation_p_objectLot" typeRestrictions="valuation">
@@ -5373,7 +5426,6 @@
               <bundle>ca_objects</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Identification of object</setting>
-                <setting name="restrict_to_types">naturalScienceObject</setting>
                 <setting name="hideIfSelected_sampledFrom_observation">event_ui/event_parent/ca_attribute_samplingParentType</setting>
                 <setting name="hideIfSelected_sampledFrom_objectLot">event_ui/event_parent/ca_attribute_samplingParentType</setting>
               </settings>
@@ -5382,7 +5434,7 @@
               <bundle>ca_objects_lots</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Identification of object lot</setting>
-                <setting name="hideIfSelected_sampledFrom_naturalScienceObject">event_ui/event_parent/ca_attribute_samplingParentType</setting>
+                <setting name="hideIfSelected_sampledFrom_object">event_ui/event_parent/ca_attribute_samplingParentType</setting>
                 <setting name="hideIfSelected_sampledFrom_observation">event_ui/event_parent/ca_attribute_samplingParentType</setting>
               </settings>
             </placement>
@@ -5391,7 +5443,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Identification of observation</setting>
                 <setting name="restrict_to_types">observation</setting>
-                <setting name="hideIfSelected_sampledFrom_naturalScienceObject">event_ui/event_parent/ca_attribute_samplingParentType</setting>
+                <setting name="hideIfSelected_sampledFrom_object">event_ui/event_parent/ca_attribute_samplingParentType</setting>
                 <setting name="hideIfSelected_sampledFrom_objectLot">event_ui/event_parent/ca_attribute_samplingParentType</setting>
               </settings>
             </placement>
@@ -5423,11 +5475,10 @@
 				        <setting name="restrict_to_types">observation</setting>
               </settings>
             </placement>
-			      <placement code="c_measurement_p_naturalScienceObject" typeRestrictions="measurement">
+			      <placement code="c_measurement_p_object" typeRestrictions="measurement">
               <bundle>ca_objects</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Measurement on object</setting>
-				        <setting name="restrict_to_types">naturalScienceObject</setting>
               </settings>
             </placement>
 			      <placement code="c_measurement_p_objectLot" typeRestrictions="measurement">
@@ -5454,10 +5505,9 @@
               </settings>
             </placement>
 			      <placement code="ca_objects"  typeRestrictions="sampling,identification,measurement,curation,observation">
-              <bundle>ca_objects</bundle>
+              <bundle>ca_attribute_publication</bundle>
               <settings>
                 <setting name="label" locale="en_US">Documented procedure (e.g. article, SOP, identification key)</setting>
-				        <setting name="restrict_to_type">literature</setting>
 				        <!--http://rs.tdwg.org/dwc/terms/identificationReferences-->
               </settings>
             </placement>
@@ -5539,12 +5589,11 @@
 				        <setting name="restrict_to_types">sampling</setting>
 			        </settings>
             </placement>
-			      <placement code="p_sampling_c_naturalScienceObject" typeRestrictions="sampling">
+			      <placement code="p_sampling_c_object" typeRestrictions="sampling">
               <bundle>ca_objects</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Sampled object</setting>
 				        <setting name="add_label" locale="en_US">Add sampled object</setting>
-				        <setting name="restrict_to_types">naturalScienceObject</setting>
 			        </settings>
             </placement>
 			      <placement code="p_sampling_c_objectLot" typeRestrictions="sampling">
@@ -6404,28 +6453,25 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="ca_occurrences_naturalScienceObject">
+            <placement code="ca_occurrences_object">
               <bundle>ca_objects</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The object lot contains</setting>
                 <setting name="add_label" locale="en_US">Add new object</setting>
-                <setting name="restrict_to_types">naturalScienceObject</setting>
               </settings>
             </placement>
-            <placement code="ca_objects_dataset">
-              <bundle>ca_objects</bundle>
+            <placement code="datasets">
+              <bundle>ca_attribute_dataset</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The object lot (data) resulted in dataset</setting>
+                <setting name="label" locale="en_US">From the object lot, a dataset is derived</setting>
                 <setting name="add_label" locale="en_US">Add new dataset</setting>
-                <setting name="restrict_to_types">dataset</setting>
               </settings>
             </placement>
-			      <placement code="ca_objects_literature">
-              <bundle>ca_objects</bundle>
+            <placement code="publication">
+              <bundle>ca_attribute_dataset</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The object lot (data) resulted in literature</setting>
-                <setting name="add_label" locale="en_US">Add new literature</setting>
-                <setting name="restrict_to_types">literature</setting>
+                <setting name="label" locale="en_US">From the object lot, a publication is derived</setting>
+                <setting name="add_label" locale="en_US">Add new publication</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -6780,22 +6826,8 @@
             </label>
           </labels>
           <subTypeLeft>
-            animalLiving,animalSpecimen,
-            sampleAmphibianLarva,sampleAmphibianEmbryo,sampleAmphibianFinclip,sampleAmphibianFrogspawn,sampleAmphibianSwabCloaca,sampleAmphibianSwabMouthcambium,sampleAmphibianToeclip,
-            sampleFishFinclip,sampleInvertebrateLarva,sampleInvertebrateLeg,sampleInvertebrateWingclip,
-            sampleMammalBaculum,sampleMammalBlood,sampleMammalEarpunch,sampleMammalFeces,sampleMammalHair,sampleMammalLiver,sampleMammalMuscle,sampleMammalSkin,sampleMammalSkull,sampleMammalTooth,
-            cambium,fruit,herbariumSpecimen,leafSample,livingPlant,seedLot,treeSlice,
-            dnaSample,
-            eDnaWaterFilter,soilSample,waterSample
 		      </subTypeLeft>
           <subTypeRight>
-            animalLiving,animalSpecimen,
-            sampleAmphibianLarva,sampleAmphibianEmbryo,sampleAmphibianFinclip,sampleAmphibianFrogspawn,sampleAmphibianSwabCloaca,sampleAmphibianSwabMouthcambium,sampleAmphibianToeclip,
-            sampleFishFinclip,sampleInvertebrateLarva,sampleInvertebrateLeg,sampleInvertebrateWingclip,
-            sampleMammalBaculum,sampleMammalBlood,sampleMammalEarpunch,sampleMammalFeces,sampleMammalHair,sampleMammalLiver,sampleMammalMuscle,sampleMammalSkin,sampleMammalSkull,sampleMammalTooth,
-            cambium,fruit,herbariumSpecimen,leafSample,livingPlant,seedLot,treeSlice,
-            dnaSample,
-            eDnaWaterFilter,soilSample,waterSample
 		      </subTypeRight>
         </type>
 	   </types>
@@ -6810,13 +6842,6 @@
             </label>
           </labels>
           <subTypeLeft>
-          animalLiving,animalSpecimen,
-          sampleAmphibianLarva,sampleAmphibianEmbryo,sampleAmphibianFinclip,sampleAmphibianFrogspawn,sampleAmphibianSwabCloaca,sampleAmphibianSwabMouthcambium,sampleAmphibianToeclip,
-          sampleFishFinclip,sampleInvertebrateLarva,sampleInvertebrateLeg,sampleInvertebrateWingclip,
-          sampleMammalBaculum,sampleMammalBlood,sampleMammalEarpunch,sampleMammalFeces,sampleMammalHair,sampleMammalLiver,sampleMammalMuscle,sampleMammalSkin,sampleMammalSkull,sampleMammalTooth,
-          cambium,fruit,herbariumSpecimen,leafSample,livingPlant,seedLot,treeSlice,
-          dnaSample,
-          eDnaWaterFilter,soilSample,waterSample
 		      </subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
@@ -6832,35 +6857,8 @@
             </label>
           </labels>
           <subTypeLeft>
-          animalLiving,animalSpecimen,
-          sampleAmphibianLarva,sampleAmphibianEmbryo,sampleAmphibianFinclip,sampleAmphibianFrogspawn,sampleAmphibianSwabCloaca,sampleAmphibianSwabMouthcambium,sampleAmphibianToeclip,
-          sampleFishFinclip,sampleInvertebrateLarva,sampleInvertebrateLeg,sampleInvertebrateWingclip,
-          sampleMammalBaculum,sampleMammalBlood,sampleMammalEarpunch,sampleMammalFeces,sampleMammalHair,sampleMammalLiver,sampleMammalMuscle,sampleMammalSkin,sampleMammalSkull,sampleMammalTooth,
-          cambium,fruit,herbariumSpecimen,leafSample,livingPlant,seedLot,treeSlice,
-          dnaSample,
-          eDnaWaterFilter,soilSample,waterSample
           </subTypeLeft>
           <subTypeRight>org</subTypeRight>
-        </type>
-		    <type code="compiler" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>compiled by</typename>
-              <typename_reverse>compiled</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>dataset</subTypeLeft>
-          <subTypeRight>ind</subTypeRight>
-        </type>
-		    <type code="author" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>written by</typename>
-              <typename_reverse>wrote</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>literature</subTypeLeft>
-          <subTypeRight>ind</subTypeRight>
         </type>
       </types>
     </relationshipTable>
@@ -6874,13 +6872,6 @@
             </label>
           </labels>
           <subTypeLeft>
-          animalLiving,animalSpecimen,
-          sampleAmphibianLarva,sampleAmphibianEmbryo,sampleAmphibianFinclip,sampleAmphibianFrogspawn,sampleAmphibianSwabCloaca,sampleAmphibianSwabMouthcambium,sampleAmphibianToeclip,
-          sampleFishFinclip,sampleInvertebrateLarva,sampleInvertebrateLeg,sampleInvertebrateWingclip,
-          sampleMammalBaculum,sampleMammalBlood,sampleMammalEarpunch,sampleMammalFeces,sampleMammalHair,sampleMammalLiver,sampleMammalMuscle,sampleMammalSkin,sampleMammalSkull,sampleMammalTooth,
-          cambium,fruit,herbariumSpecimen,leafSample,livingPlant,seedLot,treeSlice,
-          dnaSample,
-          eDnaWaterFilter,soilSample,waterSample
           </subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
@@ -6896,13 +6887,6 @@
             </label>
           </labels>
           <subTypeLeft>
-          animalLiving,animalSpecimen,
-          sampleAmphibianLarva,sampleAmphibianEmbryo,sampleAmphibianFinclip,sampleAmphibianFrogspawn,sampleAmphibianSwabCloaca,sampleAmphibianSwabMouthcambium,sampleAmphibianToeclip,
-          sampleFishFinclip,sampleInvertebrateLarva,sampleInvertebrateLeg,sampleInvertebrateWingclip,
-          sampleMammalBaculum,sampleMammalBlood,sampleMammalEarpunch,sampleMammalFeces,sampleMammalHair,sampleMammalLiver,sampleMammalMuscle,sampleMammalSkin,sampleMammalSkull,sampleMammalTooth,
-          cambium,fruit,herbariumSpecimen,leafSample,livingPlant,seedLot,treeSlice,
-          dnaSample,
-          eDnaWaterFilter,soilSample,waterSample
           </subTypeLeft>
           <subTypeRight>observation</subTypeRight>
         </type>
@@ -6914,13 +6898,6 @@
             </label>
           </labels>
           <subTypeLeft>
-          animalLiving,animalSpecimen,
-          sampleAmphibianLarva,sampleAmphibianEmbryo,sampleAmphibianFinclip,sampleAmphibianFrogspawn,sampleAmphibianSwabCloaca,sampleAmphibianSwabMouthcambium,sampleAmphibianToeclip,
-          sampleFishFinclip,sampleInvertebrateLarva,sampleInvertebrateLeg,sampleInvertebrateWingclip,
-          sampleMammalBaculum,sampleMammalBlood,sampleMammalEarpunch,sampleMammalFeces,sampleMammalHair,sampleMammalLiver,sampleMammalMuscle,sampleMammalSkin,sampleMammalSkull,sampleMammalTooth,
-          cambium,fruit,herbariumSpecimen,leafSample,livingPlant,seedLot,treeSlice,
-          dnaSample,
-          eDnaWaterFilter,soilSample,waterSample
           </subTypeLeft>
           <subTypeRight>sampling,expedition,project</subTypeRight>
         </type>
@@ -6932,13 +6909,6 @@
             </label>
           </labels>
           <subTypeLeft>
-          animalLiving,animalSpecimen,
-          sampleAmphibianLarva,sampleAmphibianEmbryo,sampleAmphibianFinclip,sampleAmphibianFrogspawn,sampleAmphibianSwabCloaca,sampleAmphibianSwabMouthcambium,sampleAmphibianToeclip,
-          sampleFishFinclip,sampleInvertebrateLarva,sampleInvertebrateLeg,sampleInvertebrateWingclip,
-          sampleMammalBaculum,sampleMammalBlood,sampleMammalEarpunch,sampleMammalFeces,sampleMammalHair,sampleMammalLiver,sampleMammalMuscle,sampleMammalSkin,sampleMammalSkull,sampleMammalTooth,
-          cambium,fruit,herbariumSpecimen,leafSample,livingPlant,seedLot,treeSlice,
-          dnaSample,
-          eDnaWaterFilter,soilSample,waterSample
 		      </subTypeLeft>
           <subTypeRight>
           fluorometry,spectrophotometry,gel,volume,weight,length,circumference,
@@ -6959,13 +6929,6 @@
             </label>
           </labels>
           <subTypeLeft>
-          animalLiving,animalSpecimen,
-          sampleAmphibianLarva,sampleAmphibianEmbryo,sampleAmphibianFinclip,sampleAmphibianFrogspawn,sampleAmphibianSwabCloaca,sampleAmphibianSwabMouthcambium,sampleAmphibianToeclip,
-          sampleFishFinclip,sampleInvertebrateLarva,sampleInvertebrateLeg,sampleInvertebrateWingclip,
-          sampleMammalBaculum,sampleMammalBlood,sampleMammalEarpunch,sampleMammalFeces,sampleMammalHair,sampleMammalLiver,sampleMammalMuscle,sampleMammalSkin,sampleMammalSkull,sampleMammalTooth,
-          cambium,fruit,herbariumSpecimen,leafSample,livingPlant,seedLot,treeSlice,
-          dnaSample,
-          eDnaWaterFilter,soilSample,waterSample
           </subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
@@ -6981,13 +6944,6 @@
             </label>
           </labels>
           <subTypeLeft>
-          animalLiving,animalSpecimen,
-          sampleAmphibianLarva,sampleAmphibianEmbryo,sampleAmphibianFinclip,sampleAmphibianFrogspawn,sampleAmphibianSwabCloaca,sampleAmphibianSwabMouthcambium,sampleAmphibianToeclip,
-          sampleFishFinclip,sampleInvertebrateLarva,sampleInvertebrateLeg,sampleInvertebrateWingclip,
-          sampleMammalBaculum,sampleMammalBlood,sampleMammalEarpunch,sampleMammalFeces,sampleMammalHair,sampleMammalLiver,sampleMammalMuscle,sampleMammalSkin,sampleMammalSkull,sampleMammalTooth,
-          cambium,fruit,herbariumSpecimen,leafSample,livingPlant,seedLot,treeSlice,
-          dnaSample,
-          eDnaWaterFilter,soilSample,waterSample
           </subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
