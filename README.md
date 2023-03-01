@@ -1,6 +1,6 @@
 # CollectiveAccessINBO
 
-- xml-file:	INBO_profiel_001.xml
+- xml-file:	INBO_profiel_025.xml
 - handleiding	https://manual.collectiveaccess.org/providence/user/dataModelling/profiles/XMLSchema.html
 - demo-website	https://demo.collectiveaccess.org/
 - INBO test	18.203.229.50/ca - user: administrator - pass:	2c32e9fc
