@@ -3002,7 +3002,7 @@
       <metadataElement code="observationUrl" datatype="Url">
         <labels>
           <label locale="en_US">
-            <name>Project URL</name>
+            <name>Observation URL</name>
           </label>
         </labels>
         <settings>
@@ -3123,7 +3123,7 @@
         <labels>
           <label locale="en_US">
             <name>Verbatim coordinates plus</name>
-            <description>The verbatim original spatial coordinates of the Location + all other specified verbatim information lik coordinate ellipsoid, geodeticDatum, or full Spatial Reference System (SRS) for these coordinates.</description>
+            <description>The verbatim original spatial coordinates of the Location + all other specified verbatim information like coordinate ellipsoid, geodeticDatum, or full Spatial Reference System (SRS) for these coordinates.</description>
           </label>
         </labels>
         <settings>
@@ -5086,14 +5086,8 @@
 				        <setting name="minRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="preferred_labels_observation" typeRestrictions="observation">
-              <bundle>preferred_labels</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Observation name: this can be an informative name to increase findability. Recommended: date place species fieldNumber. For example: e.g. 2022-06-00 Deinze everzwijn EV33.</setting>
-              </settings>
-            </placement>
             <placement code="observationUrl" typeRestrictions="observation">
-              <bundle>ca_attributes_observationUrl</bundle>
+              <bundle>ca_attribute_observationUrl</bundle>
               <settings>
                 <setting name="label" locale="en_US">Observation recorded in another database (e.g. waarnemingen.be, GBIF)</setting>
 				        <setting name="add_label" locale="en_US">Add url</setting>
@@ -5503,7 +5497,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Identification event (standardised)</setting>
                 <setting name="add_label" locale="en_US">Add new identification</setting>
-                <setting name="restrict_to_type">individual</setting>
+                <setting name="restrict_to_types">identification</setting>
               </settings>
             </placement>
           </bundlePlacements>
