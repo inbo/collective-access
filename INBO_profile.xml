@@ -2562,6 +2562,55 @@
           </item>
         </items>
       </list>
+      <list code="scientific_name_rank" hierarchical="0" system="0" vocabulary="1">
+        <labels>
+          <label locale="en_US">
+            <name>Scientific name rank</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="family" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Family</name_singular>
+                <name_plural>Families</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="genus" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Genus</name_singular>
+                <name_plural>Genera</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="species" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Species</name_singular>
+                <name_plural>Species</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="subspecies" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Subspecies</name_singular>
+                <name_plural>Subspecies</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="variety" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Variety</name_singular>
+                <name_plural>Varieties</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
   </lists>
   <elementSets>
     <!--General-->
@@ -2972,10 +3021,72 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
+          <restriction code="r_identification">
+            <table>ca_occurrences</table>
+            <type>identification</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_sampling">
+            <table>ca_occurrences</table>
+            <type>sampling</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_measurement">
+            <table>ca_occurrences</table>
+            <type>measurement</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_curation">
+            <table>ca_occurrences</table>
+            <type>curation</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
         </typeRestrictions>
       </metadataElement>  
     <!--Event:record-->
-	    <metadataElement code="projectUrl" datatype="Url">
+	    <metadataElement code="recordNumber" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>recordNumber</name>
+            <description>An identifier given to the Occurrence at the time it was recorded. Often serves as a link between field notes and an Occurrence record, such as a specimen collector's number.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/dwc/terms/recordNumber</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_occurrences">
+            <table>ca_occurrences</table>
+            <type>observation</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="projectUrl" datatype="Url">
         <labels>
           <label locale="en_US">
             <name>Project URL</name>
@@ -3017,7 +3128,7 @@
             <type>observation</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">10</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -3343,7 +3454,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	  <!--Event:observation_identification_events-->
+	  <!--Event:observation-->
 	    <metadataElement code="verbatimIdentification" datatype="Text">
         <labels>
           <label locale="en_US">
@@ -3370,108 +3481,6 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="lastIdentification" datatype="Taxonomy">
-        <labels>
-          <label locale="en_US">
-            <name>lastIdentification</name>
-            <description>Last identification (standardised) executed on the observation. Assumed to be most likely the correct identification.</description>
-          </label>
-        </labels>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_observation">
-            <table>ca_occurrences</table>
-            <type>observation</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>		
-	  <!--Event:execution-->
-      <metadataElement code="eventProcedure" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>eventProcedure</name>
-            <description>Description of the procedure that took place (e.g. the measurement procedure, sampling procedure, identification procedure, ...)</description>
-          </label>
-        </labels>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-	        <restriction code="r_occurrence">
-            <table>ca_occurrences</table>
-		        <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">255</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-	      </typeRestrictions>
-      </metadataElement>
-	    <metadataElement code="executionRemarks" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>executionRemarks</name>
-            <description>Comments or notes on the execution of the event.</description>
-          </label>
-        </labels>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_occurrences">
-            <table>ca_occurrences</table>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-	    <metadataElement code="samplingParentType" datatype="List" list="sampling_parent_type">
-        <labels>
-          <label locale="en_US">
-            <name>samplingParentType</name>
-            <description>Type of 'thing' the sample was taken from.</description>
-          </label>
-        </labels>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_occurrences">
-            <table>ca_occurrences</table>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-    <!--Event:product-->
 	    <metadataElement code="sex" datatype="List" list="sex">
 			  <labels>
           <label locale="en_US">
@@ -3602,6 +3611,238 @@
           </restriction>
         </typeRestrictions>
 	    </metadataElement>
+    <!--Event:identification-->
+	    <metadataElement code="lastIdentification" datatype="Taxonomy">
+        <labels>
+          <label locale="en_US">
+            <name>lastIdentification</name>
+            <description>Last identification (standardised) executed on the observation. Assumed to be most likely the correct identification.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_observation">
+            <table>ca_occurrences</table>
+            <type>observation</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="identificationQualifier" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>identificationQualifier</name>
+            <description>A brief phrase or a standard term (cf., aff.) to express the determiner's doubts about the Identification.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/dwc/terms/identificationQualifier</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+		    <typeRestrictions>
+          <restriction code="r_identification">
+            <table>ca_occurrences</table>
+            <type>identification</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+	    </metadataElement>
+	    <metadataElement code="scientificName" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>scientificName</name>
+            <description>The full scientific name, with authorship and date information if known. When forming part of an Identification, this should be the name in lowest level taxonomic rank that can be determined. This term should not contain identification qualifications, which should instead be supplied in the IdentificationQualifier term.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/dwc/terms/scientificName</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">1</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_identification">
+            <table>ca_occurrences</table>
+            <type>identification</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="scientificNameRank" datatype="List" list="scientific_name_rank">
+        <labels>
+          <label locale="en_US">
+            <name>scientificNameRank</name>
+            <description>The taxonomic rank of the most specific name in the scientificName.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/dwc/terms/scientificNameRank</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">1</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_identification">
+            <table>ca_occurrences</table>
+            <type>identification</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="scientificNameUrl" datatype="Url">
+        <labels>
+          <label locale="en_US">
+            <name>scientificName</name>
+            <description>Recommended is to link to Catalogue of life: https://www.catalogueoflife.org/. If the registered name is not in CoL, add the closest identification possible and add this in the remarks.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">1</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_identification">
+            <table>ca_occurrences</table>
+            <type>identification</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="vernacularName" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>vernacularName</name>
+            <description>A common or vernacular name.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/dwc/terms/vernacularName</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_identification">
+            <table>ca_occurrences</table>
+            <type>identification</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>		
+	  <!--Event:execution-->
+      <metadataElement code="eventProcedure" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>eventProcedure</name>
+            <description>Description of the procedure that took place (e.g. the measurement procedure, sampling procedure, identification procedure, ...)</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+	        <restriction code="r_occurrence">
+            <table>ca_occurrences</table>
+		        <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">255</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+	      </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="executionRemarks" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>executionRemarks</name>
+            <description>Comments or notes on the execution of the event.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_occurrences">
+            <table>ca_occurrences</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="samplingParentType" datatype="List" list="sampling_parent_type">
+        <labels>
+          <label locale="en_US">
+            <name>samplingParentType</name>
+            <description>Type of 'thing' the sample was taken from.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_occurrences">
+            <table>ca_occurrences</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+    <!--Event:measurement-->
 	    <metadataElement code="measurementType" datatype="Text">
         <labels>
           <label locale="en_US">
@@ -3864,84 +4105,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="identificationQualifier" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>identificationQualifier</name>
-            <description>A brief phrase or a standard term (cf., aff.) to express the determiner's doubts about the Identification.</description>
-          </label>
-        </labels>
-        <documentationUrl>http://rs.tdwg.org/dwc/terms/identificationQualifier</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-		    <typeRestrictions>
-          <restriction code="r_identification">
-            <table>ca_occurrences</table>
-            <type>identification</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-	    </metadataElement>
-	    <metadataElement code="scientificName" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>scientificName</name>
-            <description>The full scientific name, with authorship and date information if known. When forming part of an Identification, this should be the name in lowest level taxonomic rank that can be determined. This term should not contain identification qualifications, which should instead be supplied in the IdentificationQualifier term.</description>
-          </label>
-        </labels>
-        <documentationUrl>http://rs.tdwg.org/dwc/terms/scientificName</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">1</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_identification">
-            <table>ca_occurrences</table>
-            <type>identification</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-	    <metadataElement code="scientificNameUrl" datatype="Url">
-        <labels>
-          <label locale="en_US">
-            <name>scientificName</name>
-            <description>The full scientific name, with authorship and date information if known. When forming part of an Identification, this should be the name in lowest level taxonomic rank that can be determined. This term should not contain identification qualifications, which should instead be supplied in the IdentificationQualifier term.</description>
-          </label>
-        </labels>
-        <documentationUrl>http://rs.tdwg.org/dwc/terms/scientificName</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_identification">
-            <table>ca_occurrences</table>
-            <type>identification</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
+    <!--Event:verification-->
 	    <metadataElement code="verificationResult" datatype="List" list="verification_result">
         <labels>
           <label locale="en_US">
@@ -3964,6 +4128,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
+    <!--Event:valuation-->
 	    <metadataElement code="valuationArgument" datatype="List" list="value_arguments">
         <labels>
         <label locale="en_US">
@@ -5079,18 +5244,11 @@
                 <setting name="label" locale="en_US">CMS ID</setting>
               </settings>
             </placement>
-			      <placement code="status" typeRestrictions="observation, expedition, project,sampling">
+			      <placement code="status" typeRestrictions="observation, expedition, project, sampling">
               <bundle>status</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Cataloguing status</setting>
 				        <setting name="minRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
-            <placement code="observationUrl" typeRestrictions="observation">
-              <bundle>ca_attribute_observationUrl</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Observation recorded in another database (e.g. waarnemingen.be, GBIF)</setting>
-				        <setting name="add_label" locale="en_US">Add url</setting>
               </settings>
             </placement>
 			      <placement code="preferred_labels_expedition" typeRestrictions="expedition">
@@ -5117,10 +5275,11 @@
               <!--http://rs.tdwg.org/dwc/terms/dateIdentified-->
               <settings>
                 <setting name="label" locale="en_US">Date (range) and time (range) of event, standardised.</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="verbatimLocality" typeRestrictions="expedition,observation">
+			      <placement code="verbatimLocality" typeRestrictions="expedition, observation">
               <bundle>ca_attribute_verbatimLocality</bundle>
               <settings>
                 <setting name="label" locale="en_US">The original description of a place</setting>
@@ -5139,8 +5298,23 @@
               <bundle>ca_attribute_verbatimIdentification</bundle>
               <settings>
                 <setting name="label" locale="en_US">The identification of the observation, not standardised.</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+            <placement code="recordNumber" typeRestrictions="observation">
+              <bundle>ca_attribute_recordNumber</bundle>
+              <settings>
+                <setting name="label" locale="en_US">The code given to the observation in the field to uniquely identify it.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+            <placement code="observationUrl" typeRestrictions="observation">
+              <bundle>ca_attribute_observationUrl</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Observation recorded in another database (e.g. waarnemingen.be, GBIF)</setting>
+				        <setting name="add_label" locale="en_US">Add url</setting>
               </settings>
             </placement>
 			      <placement code="projectUrl" typeRestrictions="project">
@@ -5188,7 +5362,7 @@
                 <setting name="hideIfSelected_sampledFrom_object">event_ui/event_parent/ca_attribute_samplingParentType</setting>
               </settings>
             </placement>
-            <placement code="ca_entities" typeRestrictions="identification,measurement,curation,georeference,verification,measurement,curation,valuation">
+            <placement code="ca_entities" typeRestrictions="identification, measurement, curation, georeference, verification, measurement, curation, valuation">
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="restrict_to_type">individual</setting>
@@ -5196,14 +5370,15 @@
 				        <setting name="add_label" locale="en_US">Add individual</setting>
               </settings>
             </placement>
-			      <placement code="method_publication"  typeRestrictions="identification,measurement,curation">
+			      <placement code="publication"  typeRestrictions="identification, measurement, curation">
               <bundle>ca_attribute_publication</bundle>
               <settings>
                 <setting name="label" locale="en_US">Documented procedure (e.g. article, SOP, identification key)</setting>
+                <setting name="add_label" locale="en_US">Add publication</setting>
 				        <!--http://rs.tdwg.org/dwc/terms/identificationReferences-->
               </settings>
             </placement>
-			      <placement code="eventProcedure" typeRestrictions="identification,measurement,curation">
+			      <placement code="eventProcedure" typeRestrictions="identification, measurement, curation">
               <bundle>ca_eventProcedure</bundle>
               <settings>
                 <setting name="label" locale="en_US">If no reference: short description of procedure (if relevant)</setting>
@@ -5327,13 +5502,26 @@
                 <setting name="label" locale="en_US">Scientific name</setting>
 			        </settings>
             </placement>
+            <placement code="scientificNameRank" typeRestrictions="identification">
+              <bundle>ca_attribute_scientificNameRank</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Scientific name rank</setting>
+			        </settings>
+            </placement>scientificNameRank
+            <placement code="vernacularName" typeRestrictions="identification">
+              <bundle>ca_attribute_vernacularName</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Vernacular name</setting>
+                <setting name="add_label" locale="en_US">Add vernacular name</setting>
+			        </settings>
+            </placement>
 			      <placement code="scientificNameUrl" typeRestrictions="identification">
               <bundle>ca_attribute_scientificNameUrl</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Scientific name URL</setting>
 			        </settings>
             </placement>
-            <placement code="ca_object_representations" typeRestrictions="measurement,sampling,curation,identification">
+            <placement code="ca_object_representations" typeRestrictions="measurement, sampling, curation, identification">
               <bundle>ca_object_representations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Media</setting>
@@ -5492,12 +5680,24 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="ca_occurrence_id">
+            <placement code="ca_occurrence_id">
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Identification event (standardised)</setting>
                 <setting name="add_label" locale="en_US">Add new identification</setting>
                 <setting name="restrict_to_types">identification</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="display_template">
+                  <![CDATA[
+                    <unit>
+                      <l>ID:^ca_occurrences.idno</l>,
+                      DateTime: ^ca_occurrences.dateRange,
+                      Vernacular name: ^ca.occurrences.vernacularName
+                      Scientific name: (^ca.occurrences.scientificName)
+                    </unit>
+                  ]]>
+                </setting>
               </settings>
             </placement>
           </bundlePlacements>
