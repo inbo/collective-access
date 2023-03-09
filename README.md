@@ -22,5 +22,5 @@ Additional functionalities that this application could cover
 
 ----
 
-INBO test:	18.203.229.50/ca. 
-Currently loaded: INBO_profiel_028.xml
+The INBO test is currently available here:	18.203.229.50/ca. 
+The INBO specific configuration is in the INBO_profiel_XXX.xml files, currently loaded on the website is INBO_profiel_028.xml.
