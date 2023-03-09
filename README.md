@@ -8,7 +8,7 @@ The INBO collections that will make use of this application
 - the autopsy collection (??k tissue samples of mammal autopsies)
 
 More information
-- handleiding	https://manual.collectiveaccess.org/providence/user/dataModelling/profiles/XMLSchema.html
+- manual	https://manual.collectiveaccess.org/providence/user/dataModelling/profiles/XMLSchema.html
 - demo-website	https://demo.collectiveaccess.org/
 - collective-access https://www.collectiveaccess.org/
 
@@ -17,11 +17,10 @@ The basic functionalities this application covers
 - log re-use of objects ~ loans, both internal and external
 
 Additional functionalities that this application could cover
-- log the value
-- log curatorial activities
+- log the value of the objects so future decision making can occur without the lead scientists' involvement
+- log curatorial activities that can influence the quality of the objects
 
 ----
 
-Currently loaded:
-- xml-file:	INBO_profiel_028.xml
-- INBO test:	18.203.229.50/ca
+INBO test:	18.203.229.50/ca. 
+Currently loaded: INBO_profiel_028.xml
