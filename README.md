@@ -5,6 +5,7 @@ The INBO collections that will make use of this application
 - the soil archive (35k soil samples)
 - the Genbos living plant collection (400 plots = ? woody plants)
 - the Genbos seed collection (500 seed lots)
+- the autopsy collection (??k tissue samples of mammal autopsies)
 
 More information
 - handleiding	https://manual.collectiveaccess.org/providence/user/dataModelling/profiles/XMLSchema.html
