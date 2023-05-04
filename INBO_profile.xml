@@ -623,64 +623,6 @@
           </label>
         </labels>
         <items>
-          <item idno="inboSoilArchive" enabled="1" default="1">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>INBO Soil Archive</name_singular>
-                <name_plural>INBO Soil Archive</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="inboDnaCollection" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>INBO DNA collection</name_singular>
-                <name_plural>INBO DNA collection</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="inboGenBosCollection" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>INBO GenBos collection</name_singular>
-                <name_plural>INBO GenBos collection</name_plural>
-              </label>
-            </labels>
-            <items>
-              <item idno="zaadtuin" enabled="1" default="0">
-                <labels>
-                  <label locale="nl_BE" preferred="1">
-                    <name_singular>Zaadtuin</name_singular>
-                   <name_plural>Zaadtuinen</name_plural>
-                  </label>
-                </labels>
-              </item>
-              <item idno="basiscollectie" enabled="1" default="0">
-                <labels>
-                  <label locale="nl_BE" preferred="1">
-                    <name_singular>Basiscollectie</name_singular>
-                    <name_plural>Basiscollecties</name_plural>
-                  </label>
-                </labels>
-              </item>
-              <item idno="proefperceel" enabled="1" default="0">
-                <labels>
-                  <label locale="nl_BE" preferred="1">
-                    <name_singular>Proefperceel</name_singular>
-                    <name_plural>Proefpercelen</name_plural>
-                  </label>
-                </labels>
-              </item>
-            </items>
-          </item>
-          <item idno="inboFaunaAutopsyCollection" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>INBO Fauna Autopsy collection</name_singular>
-                <name_plural>INBO Fauna Autopsy collection</name_plural>
-              </label>
-            </labels>
-          </item>
         </items>
       </list>
       <list code="occurrence_types" hierarchical="1" system="0" vocabulary="0">
@@ -6307,7 +6249,7 @@
         </label>
       </labels>
       <screens>
-        <screen idno="place_record" default="1">
+        <screen idno="place_recordStart" default="1">
           <labels>
             <label locale="en_US">
               <name>Place record</name>
@@ -6319,6 +6261,9 @@
 			        <settings>
                 <setting name="label" locale="en_US">CMS ID</setting>
               </settings>
+            </placement>
+            <placement code="type_id">
+              <bundle>type_id</bundle>
             </placement>
 			      <placement code="status">
               <bundle>Cataloguing status</bundle>
@@ -6348,22 +6293,19 @@
             </placement>
           </bundlePlacements>
         </screen>
-        <screen idno="place_history" default="0">
+        <screen idno="place_description" default="0">
           <labels>
             <label locale="en_US">
-              <name>Place history</name>
+              <name>Place description</name>
             </label>
           </labels>
 		      <bundlePlacements>
 		        <placement code="ca_attribute_description">
               <bundle>ca_attribute_description</bundle>
             </placement>
-		        <placement code="ca_attribute_description_source">
-              <bundle>ca_attribute_description_source</bundle>
-            </placement>
 		      </bundlePlacements>
         </screen>
-		    <screen idno="place_remarks" default="0">
+		    <screen idno="place_recordStop" default="0">
           <labels>
             <label locale="en_US">
               <name>Place remarks</name>
@@ -6377,15 +6319,6 @@
 				        <setting name="add_label" locale="en_US">Add remark on the place</setting>
               </settings>
 			      </placement>
-          </bundlePlacements>
-        </screen>
-		    <screen idno="place_CMS_management" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>CMS management</name>
-            </label>
-          </labels>
-          <bundlePlacements>
 			      <placement code="status">
               <bundle>Cataloguing status</bundle>
 			        <settings>
@@ -6403,7 +6336,7 @@
         </label>
       </labels>
       <screens>
-        <screen idno="collection_record" default="1">
+        <screen idno="collection_recordStart" default="1">
           <labels>
             <label locale="en_US">
               <name>Collection record</name>
@@ -6441,18 +6374,48 @@
             </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="collection_description" default="0">
+		    <screen idno="collection_context" default="0">
           <labels>
             <label locale="en_US">
-              <name>Alternate names for collection</name>
+              <name>Context of the collection</name>
             </label>
           </labels>
           <bundlePlacements>
             <placement code="ca_attribute_description">
               <bundle>ca_attribute_description</bundle>
             </placement>
-            <placement code="ca_attribute_description_source">
-              <bundle>ca_attribute_description_source</bundle>
+            <placement code="ca_entities_CurrentCurator">
+              <bundle>ca_entities_ind</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Current curator of collection</setting>
+                <setting name="restrict_to_types">ind</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+            <placement code="ca_entities_CurrentAssistantCurator">
+              <bundle>ca_entities_ind</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Current assistant-curator of collection</setting>
+                <setting name="add_label" locale="en_US">Add new assistant-curator</setting>
+                <setting name="restrict_to_types">ind</setting>
+              </settings>
+            </placement>
+            <placement code="ca_entities_Formercurator">
+              <bundle>ca_entities_ind</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Former curator of collection</setting>
+                <setting name="add_label" locale="en_US">Add new former curator</setting>
+                <setting name="restrict_to_types">ind</setting>
+              </settings>
+            </placement>
+            <placement code="ca_entities_FormerAssistantCurator">
+              <bundle>ca_entities_ind</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Former assitant-curator of collection</setting>
+                <setting name="add_label" locale="en_US">Add new former assistant-curator</setting>
+                <setting name="restrict_to_types">ind</setting>
+              </settings>
             </placement>
           </bundlePlacements>
         </screen>
@@ -6465,6 +6428,10 @@
           <bundlePlacements>
             <placement code="ca_storage_locations">
               <bundle>ca_storage_locations</bundle>
+              <settings>
+                <setting name="restrict_to_type">cabinetFridgeFreezer,room,building</setting>
+                <setting name="label" locale="en_US">Smallest possible storage location that withholds the full collection</setting>
+              </settings>
             </placement>
           </bundlePlacements>
         </screen>
@@ -6477,32 +6444,26 @@
           <bundlePlacements>
             <placement code="ca_object_representations">
               <bundle>ca_object_representations</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Photos or videos of the collection (NOT separate objects!)</setting>
+                <setting name="add_label" locale="en_US">Add photo or video</setting>
+              </settings>
             </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="collection_remarks" default="0">
+		    <screen idno="collection_recordStop" default="0">
           <labels>
             <label locale="en_US">
               <name>Collection remarks</name>
             </label>
           </labels>
           <bundlePlacements>
-			      <placement code="ca_remarks">
+			      <placement code="remarks">
               <bundle>ca_attribute_remarks</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Any remaining notes or remarks on the collection</setting>
-				        <setting name="add_label" locale="en_US">Add remark on the collection</setting>
               </settings>
 			      </placement>
-          </bundlePlacements>
-        </screen>
-		    <screen idno="collection_CMS_management" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>CMS management</name>
-            </label>
-          </labels>
-          <bundlePlacements>
 			      <placement code="status">
               <bundle>Cataloguing status</bundle>
 			        <settings>
@@ -6520,7 +6481,7 @@
         </label>
       </labels>
       <screens>
-        <screen idno="storageLocation_record" default="1">
+        <screen idno="storageLocation_recordStart" default="1">
           <labels>
             <label locale="en_US">
               <name>Storage Location record</name>
@@ -6533,11 +6494,17 @@
                 <setting name="label" locale="en_US">CMS ID</setting>
               </settings>
             </placement>
+            <placement code="type_id">
+              <bundle>type_id</bundle>
+            </placement>
 			      <placement code="status">
               <bundle>Cataloguing status</bundle>
             </placement>
-			      <placement code="hierarchy_navigation">
-              <bundle>hierarchy_navigation</bundle>
+			      <placement code="alocfree" typeRestrictions="spot">
+              <bundle>ca_attribute_alocfree</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Spot reserved for object coming to the collection soon</setting>
+              </settings>
             </placement>
 			      <placement code="preferred_labels">
               <bundle>preferred_labels</bundle>
@@ -6557,18 +6524,33 @@
             </placement>
           </bundlePlacements>
         </screen>
-        <screen idno="storageLocation_contents" default="0">
+        <screen idno="storageLocation_information" default="0">
           <labels>
             <label locale="en_US">
-              <name>Contents</name>
+              <name>Information on the context and content of the storage location</name>
             </label>
           </labels>
           <bundlePlacements>
             <placement code="hierarchy_navigation">
               <bundle>hierarchy_navigation</bundle>
             </placement>
-            <placement code="ca_objects">
+            <placement code="ca_objects" typeRestrictions="spot">
               <bundle>ca_objects</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Object stored at spot</setting>
+              </settings>
+            </placement>
+            <placement code="ca_collections" typeRestrictions="cabinetFridgeFreezer,room,building">
+              <bundle>ca_objects</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Collection present in the building/room/freezer/cabinet</setting>
+              </settings>
+            </placement>
+            <placement code="preservationTemperature" typeRestrictions="cabinetFridgeFreezer">
+              <bundle>ca_objects</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Preservation temperature of the cabinet, fridge or freezer</setting>
+              </settings>
             </placement>
           </bundlePlacements>
         </screen>
@@ -6578,6 +6560,13 @@
               <name>Visualisation of storage location</name>
             </label>
           </labels>
+          <typeRestrictions>
+            <restriction code="r_box" type="box"/>
+            <restriction code="r_drawerShelf" type="drawerShelf"/>
+            <restriction code="r_cabinetFridgeFreezer" type="cabinetFridgeFreezer"/>
+            <restriction code="r_room" type="room"/>
+            <restriction code="r_building" type="building"/>						
+          </typeRestrictions>
           <bundlePlacements>
             <placement code="file">
               <bundle>ca_attribute_file</bundle>
@@ -6588,7 +6577,7 @@
             </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="storageLocation_CMS_management" default="0">
+		    <screen idno="storageLocation_recordStop" default="0">
           <labels>
             <label locale="en_US">
               <name>CMS management</name>
@@ -6601,6 +6590,12 @@
 				        <setting name="minRelationshipsPerRow">1</setting>
               </settings>
             </placement>
+			      <placement code="remarks">
+              <bundle>ca_attribute_remarks</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Any remaining notes or remarks on the storage location</setting>
+              </settings>
+			      </placement>
           </bundlePlacements>
         </screen>
       </screens>
