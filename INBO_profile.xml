@@ -4908,7 +4908,7 @@
 		    <screen idno="object_taxonomic_identification" default="0">
           <labels>
             <label locale="en_US">
-              <name>Taxonomic identification</name>
+              <name>Taxonomic identification of the object</name>
             </label>
           </labels>
           <typeRestrictions>
@@ -6552,6 +6552,15 @@
                 <setting name="label" locale="en_US">Preservation temperature of the cabinet, fridge or freezer</setting>
               </settings>
             </placement>
+            <placement code="maintenancePerson" typeRestrictions="cabinetFridgeFreezer,room,building">
+              <bundle>ca_entities_ind</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Current responsible for maintenance of storag space</setting>
+				        <setting name="add_label" locale="en_US">Add individual</setting>
+                <setting name="restrict_to_types">ind</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+              </settings>
+            </placement>
           </bundlePlacements>
         </screen>
 		    <screen idno="storageLocation_visualisation" default="0">
@@ -6607,7 +6616,7 @@
         </label>
       </labels>
       <screens>
-        <screen idno="objectLot_record" default="1">
+        <screen idno="objectLot_recordStart" default="1">
           <labels>
             <label locale="en_US">
               <name>Object lot record</name>
@@ -6623,44 +6632,121 @@
 			      <placement code="status">
               <bundle>Cataloguing status</bundle>
             </placement>
+			      <placement code="object_lot_type">
+              <bundle>object_lot_type</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Object lot type</setting>
+				        <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
 			      <placement code="preferred_labels">
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Object lot title</setting>
               </settings>
             </placement>
-			      <placement code="ca_occurrence_repr" typeRestrictions="cadaver">
-              <bundle>ca_occurrences</bundle>
+			      <placement code="nonpreferred_labels">
+              <bundle>nonpreferred_labels</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The object lot represents</setting>
-				        <setting name="restrict_to_types">observation</setting>
+                <setting name="label" locale="en_US">Other identifiers (non-preferred)</setting>
+				        <setting name="add_label" locale="en_US">Add other non preferred identifier</setting>
               </settings>
             </placement>
-			      <placement code="ca_occurrence_id" typeRestrictions="cadaver,population">
-              <bundle>ca_occurrences</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Identification event</setting>
-                  <setting name="add_label" locale="en_US">Add new identification</setting>
-                  <setting name="restrict_to_types">identification</setting>
-                  <setting name="list_format">list</setting>
-                  <setting name="display_template">
-                    <![CDATA[<unit>
-                    <l>ID: ^ca_occurrences.idno</l>,
-                    Date: ^ca_occurrences.dateRange,
-                    Scientific name:<ifdef code="identificationQualifier"> ^ca_occurrences.identificationQualifier </ifdef> ^ca_occurrences.scientificName,
-                    <unit relativeTo="ca_entities">IDed by: ^ca_entities.preferred_labels.displayname</unit></unit>
-                    ]]>  
-                  </setting>
+          </bundlePlacements>
+        </screen>
+        <screen idno="objectLot_place" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Date, time, place</name>
+            </label>
+          </labels>
+          <typeRestrictions>
+            <restriction code="r_plot" type="plot"/>
+            <restriction code="r_population" type="population"/>
+          </typeRestrictions>
+          <bundlePlacements>
+			      <placement code="verbatimLocality" typeRestrictions="fieldwork,observation,project">
+              <bundle>ca_attribute_verbatimLocality</bundle>
+              <settings>
+                <setting name="label" locale="en_US">The original description of a locality, a place, the geographic coverage, ...</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
+            <placement code="standardized_ca_place" typeRestrictions="fieldwork,observation,project">
+              <bundle>ca_places</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The place of the event, standardized using the CMS</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+            <placement code="verbatimLatitudeY" typeRestrictions="observation">
+              <bundle>ca_attribute_verbatimLatitudeY</bundle>
+              <settings>
+                <setting name="label" locale="en_US">The original description of the latitude (Y).</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+            <placement code="verbatimLongitudeX" typeRestrictions="observation">
+              <bundle>ca_attribute_verbatimLongitudeX</bundle>
+              <settings>
+                <setting name="label" locale="en_US">The original description of the longitud (X).</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+			      <placement code="verbatimCoordinateSystem" typeRestrictions="observation">
+              <bundle>ca_attribute_verbatimCoordinateSystem</bundle>
+              <settings>
+                <setting name="label" locale="en_US">The coordinate system of the original coordinates</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+		      </bundlePlacements>
+		    </screen>
+		    <screen idno="objectLot_context" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Object lot context</name>
+            </label>
+          </labels>
+          <bundlePlacements>
             <placement code="ca_attribute_description">
               <bundle>ca_attribute_description</bundle>
             </placement>
-			      <placement code="nonpreferred_labels">
-              <bundle>nonpreferred_labels</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Alternate lot title</setting>
-                <setting name="add_label" locale="en_US">Add lot title</setting>
+            <placement code="ca_object_lot_geneticEntity" typeRestrictions="proefperceelHerkomst">
+              <bundle>ca_object_lots</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The plot contains the genetic entity</setting>
+                  <setting name="restrict_to_types">geneticEntity</setting>
+				          <setting name="add_label" locale="en_US">Add new genetic entity</setting>
+                  <setting name="minRelationshipsPerRow">0</setting>
+              </settings>
+            </placement>
+            <placement code="ca_object_lot_plot" typeRestrictions="geneticEntity">
+              <bundle>ca_object_lots</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The genetic entity can be found on the plot</setting>
+				        <setting name="add_label" locale="en_US">Add new plot</setting>
+                <setting name="restrict_to_types">plot</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+			      <placement code="ca_occurrence_project">
+              <bundle>ca_occurrences</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Project that uses the object lot</setting>
+				        <setting name="restrict_to_types">project</setting>
+				        <setting name="add_label" locale="en_US">Add project</setting>
+              </settings>
+			      </placement>
+            <placement code="ca_occurrence_fieldwork" typeRestrictions="population,soilSurvey">
+              <bundle>ca_occurrences</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Fieldwork (e.g. expedition, survey event) that included the population/plot</setting>
+				        <setting name="add_label" locale="en_US">Add new fieldwork</setting>
+				        <setting name="restrict_to_types">fieldwork</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -6678,25 +6764,6 @@
                 <setting name="label" locale="en_US">Media</setting>
 				        <setting name="add_label" locale="en_US">Add media</setting>
 			        </settings>
-            </placement>
-          </bundlePlacements>
-        </screen>
-		    <screen idno="objectLot_representation" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>Object lot representation</name>
-            </label>
-          </labels>
-		      <typeRestrictions>
-            <restriction code="r_cadaver" type="cadaver"/>
-          </typeRestrictions>
-          <bundlePlacements>
-            <placement code="ca_occurrence_repr">
-              <bundle>ca_occurrences</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The object lot represents</setting>
-				        <setting name="restrict_to_types">observation</setting>
-              </settings>
             </placement>
           </bundlePlacements>
         </screen>
@@ -6739,33 +6806,63 @@
             </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="objectLot_identification_events" default="0">
+		    <screen idno="objectLot_taxonomic_identification" default="0">
           <labels>
             <label locale="en_US">
               <name>Object lot identification events</name>
             </label>
           </labels>
           <typeRestrictions>
-            <restriction code="r_cadaver" type="cadaver"/>
+            <restriction code="r_geneticEntity" type="geneticEntity"/>
+            <restriction code="r_proefperceelHerkomst" type="proefperceelHerkomst"/>
             <restriction code="r_population" type="population"/>
           </typeRestrictions>
           <bundlePlacements>
-            <placement code="ca_occurrence_id">
+			      <placement code="ca_occurrences_preferred_taxonomic_identification">
               <bundle>ca_occurrences</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Identification event</setting>
+                <setting name="label" locale="en_US">Preferred taxonomic identification (event)</setting>
+                <setting name="restrict_to_types">identification</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="display_template">
+                  <![CDATA[
+                    <unit>
+                      <l>ID:^ca_occurrences.idno</l>,
+                      Date: ^ca_occurrences.dateRange,
+                      Scientific name:
+                      <ifdef code="ca_occurrences.identificationQualifier">
+                        ^ca_occurrences.identificationQualifier 
+                      </ifdef>
+                      ^ca_occurrences.scientificName, 
+                      <unit relativeTo="ca_entities">IDed by: ^ca_entities.preferred_labels.displayname</unit>
+                    </unit>
+                  ]]>  
+                </setting>
+			        </settings>
+            </placement>
+            <placement code="ca_occurrences_nonpreferred_taxonomic_identification">
+              <bundle>ca_occurrences</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Nonpreferred taxonomic identification (event)</setting>
                 <setting name="add_label" locale="en_US">Add new identification</setting>
                 <setting name="restrict_to_types">identification</setting>
                 <setting name="list_format">list</setting>
                 <setting name="display_template">
-                  <![CDATA[<unit>
-                  <l>ID: ^ca_occurrences.idno</l>,
-                  Date: ^ca_occurrences.dateRange,
-                  Scientific name:<ifdef code="identificationQualifier"> ^ca_occurrences.identificationQualifier </ifdef> ^ca_occurrences.scientificName,
-                  <unit relativeTo="ca_entities">IDed by: ^ca_entities.preferred_labels.displayname</unit></unit>
+                  <![CDATA[
+                    <unit>
+                      <l>ID:^ca_occurrences.idno</l>,
+                      Date: ^ca_occurrences.dateRange,
+                      Scientific name:
+                      <ifdef code="ca_occurrences.identificationQualifier">
+                        ^ca_occurrences.identificationQualifier 
+                      </ifdef>
+                      ^ca_occurrences.scientificName, 
+                      <unit relativeTo="ca_entities">IDed by: ^ca_entities.preferred_labels.displayname</unit>
+                    </unit>
                   ]]>  
                 </setting>
-              </settings>
+			        </settings>
             </placement>
           </bundlePlacements>
         </screen>
@@ -6796,26 +6893,20 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="ca_occurrences_object">
+            <placement code="ca_object">
               <bundle>ca_objects</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The object lot contains</setting>
+                <setting name="label" locale="en_US">The object lot resulted in object</setting>
                 <setting name="add_label" locale="en_US">Add new object</setting>
               </settings>
             </placement>
-            <placement code="datasets">
-              <bundle>ca_attribute_dataset</bundle>
+            <placement code="ca_occurrences_observation">
+              <bundle>ca_occurrences</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">From the object lot, a dataset is derived</setting>
-                <setting name="add_label" locale="en_US">Add new dataset</setting>
-              </settings>
-            </placement>
-            <placement code="publication">
-              <bundle>ca_attribute_dataset</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">From the object lot, a publication is derived</setting>
-                <setting name="add_label" locale="en_US">Add new publication</setting>
-              </settings>
+                <setting name="label" locale="en_US">Resulting observation</setting>
+				        <setting name="add_label" locale="en_US">Add observation</setting>
+				        <setting name="restrict_to_types">observation</setting>
+			        </settings>
             </placement>
           </bundlePlacements>
         </screen>
