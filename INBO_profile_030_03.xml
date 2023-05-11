@@ -573,11 +573,11 @@
               </label>
             </labels>
           </item>
-          <item idno="environmentalSample" enabled="1" default="0">
+          <item idno="waterSample" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>Environmental</name_singular>
-                <name_plural>Environmental</name_plural>
+                <name_singular>Water sample</name_singular>
+                <name_plural>Water samples</name_plural>
               </label>
             </labels>
             <items>
@@ -586,14 +586,6 @@
                   <label locale="en_US" preferred="1">
                     <name_singular>eDNA Water filter</name_singular>
                     <name_plural>eDNA Water filters</name_plural>
-                  </label>
-                </labels>
-              </item>
-              <item idno="soilSample" enabled="1" default="0">
-                <labels>
-                  <label locale="en_US" preferred="1">
-                    <name_singular>Soil sample</name_singular>
-                    <name_plural>Soil samples</name_plural>
                   </label>
                 </labels>
               </item>
@@ -606,6 +598,14 @@
                 </labels>
               </item>
             </items>
+          </item>
+          <item idno="soilSample" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Soil sample</name_singular>
+                <name_plural>Soil samples</name_plural>
+              </label>
+            </labels>
           </item>
         </items>
       </list>
@@ -795,16 +795,66 @@
                 <name_plural>Observations</name_plural>
               </label>
             </labels>
+                <items>
+                  <item idno="observationAnimal" enabled="1" default="0">
+                    <labels>
+                      <label locale="en_US" preferred="1">
+                        <name_singular>Observation of an animal</name_singular>
+                        <name_plural>Observations of animals</name_plural>
+                      </label>
+                    </labels>
+                    <settings>
+                      <setting name="render_in_new_menu">1</setting>
+                      <setting name="render_in_find_menu">1</setting>
+                    </settings>
+                  </item>
+                  <item idno="observationPlant" enabled="1" default="0">
+                    <labels>
+                      <label locale="en_US" preferred="1">
+                        <name_singular>Observation of a plant</name_singular>
+                        <name_plural>Observations of plants</name_plural>
+                      </label>
+                    </labels>
+                    <settings>
+                      <setting name="render_in_new_menu">1</setting>
+                      <setting name="render_in_find_menu">1</setting>
+                    </settings>
+                  </item>
+                  <item idno="observationSoil" enabled="1" default="0">
+                    <labels>
+                      <label locale="en_US" preferred="1">
+                        <name_singular>Observation of soil</name_singular>
+                        <name_plural>Observations of soils</name_plural>
+                      </label>
+                    </labels>
+                    <settings>
+                      <setting name="render_in_new_menu">1</setting>
+                      <setting name="render_in_find_menu">1</setting>
+                    </settings>
+                  </item>
+                  <item idno="observationWater" enabled="1" default="0">
+                    <labels>
+                      <label locale="en_US" preferred="1">
+                        <name_singular>Observation of water</name_singular>
+                        <name_plural>Observations of water</name_plural>
+                      </label>
+                    </labels>
+                    <settings>
+                      <setting name="render_in_new_menu">1</setting>
+                      <setting name="render_in_find_menu">1</setting>
+                    </settings>
+                  </item>
+                </items>
             <settings>
              <setting name="render_in_new_menu">1</setting>
              <setting name="render_in_find_menu">1</setting>
             </settings>
           </item>
-          <item idno="expedition" enabled="1" default="1">
+          <item idno="fieldwork" enabled="1" default="1">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>Expedition</name_singular>
-                <name_plural>Expeditions</name_plural>
+                <name_singular>Fieldwork (e.g. expedition, survey event)</name_singular>
+                <name_plural>Fieldwork (e.g. expeditions, survey events)</name_plural>
               </label>
             </labels>
             <settings>
@@ -843,21 +893,43 @@
                 <name_plural>Identifications</name_plural>
               </label>
             </labels>
+                <items>
+                  <item idno="identificationBotanical" enabled="1" default="0">
+                    <labels>
+                      <label locale="en_US" preferred="1">
+                        <name_singular>Identification event following the Botanical Nomenclatural Code</name_singular>
+                        <name_plural>Identification events following the Botanical Nomenclatural Code</name_plural>
+                      </label>
+                    </labels>
+                  </item>
+                  <item idno="identificationZoological" enabled="1" default="0">
+                    <labels>
+                      <label locale="en_US" preferred="1">
+                        <name_singular>Identification event following the Zoological Nomenclatural Code</name_singular>
+                        <name_plural>Identification events following the Zoological Nomenclatural Code</name_plural>
+                      </label>
+                    </labels>
+                  </item>
+                  <item idno="identificationBacteriological" enabled="1" default="0">
+                    <labels>
+                      <label locale="en_US" preferred="1">
+                        <name_singular>Identification event following the Bacteriological Nomenclatural Code</name_singular>
+                        <name_plural>Identification events following the Bacteriological Nomenclatural Code</name_plural>
+                      </label>
+                    </labels>
+                  </item>
+                  <item idno="identificationViral" enabled="1" default="0">
+                    <labels>
+                      <label locale="en_US" preferred="1">
+                        <name_singular>Identification event following the Viral Nomenclatural Code</name_singular>
+                        <name_plural>Identification events following the Viral Nomenclatural Code</name_plural>
+                      </label>
+                    </labels>
+                  </item>
+                </items>
             <settings>
                <setting name="render_in_new_menu">0</setting>
                <setting name="render_in_find_menu">1</setting>
-            </settings>
-          </item>
-          <item idno="georeference" enabled="1" default="1">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>Georeference on observation</name_singular>
-                <name_plural>Georeferences  on observation</name_plural>
-              </label>
-            </labels>
-            <settings>
-              <setting name="render_in_new_menu">0</setting>
-              <setting name="render_in_find_menu">1</setting>
             </settings>
           </item>
           <item idno="measurement" enabled="1" default="1">
@@ -868,13 +940,36 @@
               </label>
             </labels>
             <items>
-              <item idno="fluorometry" enabled="1" default="1">
+              <item idno="measurementGenetic" enabled="1" default="1">
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>Fluorometry</name_singular>
-                    <name_plural>Fluorometry</name_plural>
+                    <name_singular>Measurement of the genetic lab</name_singular>
+                    <name_plural>Measurements of the genetic lab</name_plural>
                   </label>
                 </labels>
+                <items>
+                  <item idno="fluorometry" enabled="1" default="1">
+                    <labels>
+                      <label locale="en_US" preferred="1">
+                        <name_singular>Fluorometry</name_singular>
+                        <name_plural>Fluorometry</name_plural>
+                      </label>
+                    </labels>
+                  </item>
+                  <item idno="spectrophotometry" enabled="1" default="1">
+                  <labels>
+                    <label locale="en_US" preferred="1">
+                      <name_singular>Spectophotometry</name_singular>
+                      <name_plural>Spectophotometry</name_plural>
+                    </label>
+                  </labels>
+                  </item>
+                </items>
+                <settings>
+                  <setting name="render_in_new_menu">0</setting>
+                  <setting name="render_in_find_menu">1</setting>
+                </settings>
+              </item>
                 <settings>
                   <setting name="render_in_new_menu">0</setting>
                   <setting name="render_in_find_menu">1</setting>
@@ -953,18 +1048,6 @@
                 </settings>
               </item>
             </items>
-          </item>
-          <item idno="verification" enabled="1" default="1">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>Verification on georeference or identification</name_singular>
-                <name_plural>Verification  on georeference or identification</name_plural>
-              </label>
-            </labels>
-              <settings>
-                <setting name="render_in_new_menu">0</setting>
-                <setting name="render_in_find_menu">1</setting>
-              </settings>
           </item>
           <item idno="curation" enabled="1" default="1">
             <labels>
@@ -2819,20 +2902,6 @@
   </lists>
   <elementSets>
     <!--General-->
-	    <metadataElement code="remarks" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>remarks</name>
-            <description>Comments or notes</description>
-          </label>
-        </labels>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">5</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-      </metadataElement>
 	    <metadataElement code="georeferenceResult" datatype="Geocode">
         <labels>
           <label locale="en_US">
@@ -3094,7 +3163,7 @@
             </labels>
             <settings/>
           </metadataElement>
-          <metadataElement code="restrictionRemark" datatype="Text">
+          <metadataElement code="restrictionSpecification" datatype="Text">
             <labels>
               <label locale="en_US">
                 <name>Further specification of the restriction</name>
@@ -5377,17 +5446,10 @@
 		    <screen idno="object_recordStop" default="1">
           <labels>
             <label locale="en_US">
-              <name>Remarks</name>
+              <name>End of manually editing the record</name>
             </label>
           </labels>
           <bundlePlacements>
-			      <placement code="remarks">
-              <bundle>ca_attribute_remarks</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Notes or remarks on the object.</setting>
-				        <setting name="add_label" locale="en_US">Add remark on object</setting>
-              </settings>
-			      </placement>
             <placement code="status">
               <bundle>status</bundle>
               <settings>
@@ -5444,14 +5506,6 @@
               <bundle>ca_attribute_externalRecord</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">URL to the INBO database that has more detailed information on the measurement(s)</setting>
-              </settings>
-            </placement>
-            <placement code="observation_type" typeRestrictions="observation">
-              <bundle>ca_attribute_observationType</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Observation type</setting>
-				        <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
             <placement code="curation_type" typeRestrictions="curation">
@@ -5884,7 +5938,7 @@
 				        <setting name="add_label" locale="en_US">Add file</setting>
 			        </settings>
             </placement>
-            <placement code="ca_occurrences_preferred_taxonomic_identification">
+            <placement code="ca_occurrences_preferred_taxonomic_identification" typeRestrictions="observationAnimal,observationPlant">
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Observation preferred taxonomic identification (event)</setting>
@@ -5907,7 +5961,7 @@
                 </setting>
 			        </settings>
             </placement>
-            <placement code="ca_occurrences_nonpreferred_taxonomic_identification">
+            <placement code="ca_occurrences_nonpreferred_taxonomic_identification" typeRestrictions="observationAnimal,observationPlant">
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Observation nonpreferred taxonomic identification (event)</setting>
@@ -5930,43 +5984,43 @@
                 </setting>
 			        </settings>
             </placement>
-			      <placement code="sex">
+			      <placement code="sex" typeRestrictions="observationAnimal,observationPlant">
               <bundle>ca_attribute_sex</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Sex of observation</setting>
 			        </settings>
             </placement>
-			      <placement code="lifeStage">
+			      <placement code="lifeStage" typeRestrictions="observationAnimal,observationPlant">
               <bundle>ca_attribute_lifeStage</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Lifestage of observation</setting>
 			        </settings>
             </placement>
-			      <placement code="reproductiveCondition">
+			      <placement code="reproductiveCondition" typeRestrictions="observationAnimal,observationPlant">
               <bundle>ca_attribute_reproductiveCondition</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Reproductive condition of observation</setting>
 			        </settings>
             </placement>
-			      <placement code="behavior">
+			      <placement code="behavior" typeRestrictions="observationAnimal,observationPlant">
               <bundle>ca_attribute_behavior</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Behavior of observation</setting>
 			        </settings>
             </placement>
-			      <placement code="degreeOfEstablishment">
+			      <placement code="degreeOfEstablishment" typeRestrictions="observationAnimal,observationPlant">
               <bundle>ca_attribute_degreeOfEstablishment</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Degree of establishment of observation</setting>
 			        </settings>
             </placement>
-			      <placement code="profileRecordedData">
+			      <placement code="profileRecordedData" typeRestrictions="observationSoil">
               <bundle>ca_attribute_profileRecordedData</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Recorded data of the profile of the observation</setting>
 			        </settings>
             </placement>
-			      <placement code="layerRecordedData">
+			      <placement code="layerRecordedData" typeRestrictions="observationSoil">
               <bundle>ca_attribute_layerRecordedData</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Recorded data of the layer of the observation</setting>
@@ -6347,7 +6401,7 @@
 		    <screen idno="event_recordStop" default="0">
           <labels>
             <label locale="en_US">
-              <name>Remarks</name>
+              <name>End of manually editing the record</name>
             </label>
           </labels>
           <bundlePlacements>
@@ -6358,13 +6412,6 @@
 				        <setting name="add_label" locale="en_US">Add remark on the event.</setting>
               </settings>
 			      </placement>
-            <placement code="status">
-              <bundle>status</bundle>
-			          <settings>
-                <setting name="label" locale="en_US">Cataloguing status</setting>
-				        <setting name="minRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
           </bundlePlacements>
         </screen>
 	    </screens>
@@ -6486,17 +6533,10 @@
 		    <screen idno="entity_recordStop" default="0">
           <labels>
             <label locale="en_US">
-              <name>Entity remarks</name>
+              <name>End of manually editing the record</name>
             </label>
           </labels>
           <bundlePlacements>
-			      <placement code="ca_remarks">
-              <bundle>ca_attribute_remarks</bundle>
-			          <settings>
-                <setting name="label" locale="en_US">Any remaining notes or remarks on the entity.</setting>
-				        <setting name="add_label" locale="en_US">Add remark on the entity.</setting>
-              </settings>
-			      </placement>
             <placement code="status">
               <bundle>Cataloguing status</bundle>
 			        <settings>
@@ -6573,17 +6613,10 @@
 		    <screen idno="place_recordStop" default="0">
           <labels>
             <label locale="en_US">
-              <name>Place remarks</name>
+              <name>End of manually editing the record</name>
             </label>
           </labels>
           <bundlePlacements>
-			      <placement code="ca_remarks">
-              <bundle>ca_attribute_remarks</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Any remaining notes or remarks on the place.</setting>
-				        <setting name="add_label" locale="en_US">Add remark on the place</setting>
-              </settings>
-			      </placement>
 			      <placement code="status">
               <bundle>Cataloguing status</bundle>
 			        <settings>
@@ -6719,16 +6752,10 @@
 		    <screen idno="collection_recordStop" default="0">
           <labels>
             <label locale="en_US">
-              <name>Collection remarks</name>
+              <name>End of manually editing the record</name>
             </label>
           </labels>
           <bundlePlacements>
-			      <placement code="remarks">
-              <bundle>ca_attribute_remarks</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Any remaining notes or remarks on the collection</setting>
-              </settings>
-			      </placement>
 			      <placement code="status">
               <bundle>Cataloguing status</bundle>
 			        <settings>
@@ -6854,7 +6881,7 @@
 		    <screen idno="storageLocation_recordStop" default="0">
           <labels>
             <label locale="en_US">
-              <name>CMS management</name>
+              <name>End of manually editing the record</name>
             </label>
           </labels>
           <bundlePlacements>
@@ -6864,12 +6891,6 @@
 				        <setting name="minRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="remarks">
-              <bundle>ca_attribute_remarks</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Any remaining notes or remarks on the storage location</setting>
-              </settings>
-			      </placement>
           </bundlePlacements>
         </screen>
       </screens>
@@ -7198,17 +7219,10 @@
 		    <screen idno="objectLot_recordStop" default="0">
           <labels>
             <label locale="en_US">
-              <name>Object lot remarks</name>
+              <name>End of manually editing the record</name>
             </label>
           </labels>
           <bundlePlacements>
-			      <placement code="ca_remarks">
-              <bundle>ca_attribute_remarks</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Any remaining notes or remarks on the object lot</setting>
-				        <setting name="add_label" locale="en_US">Add remark on the object lot</setting>
-              </settings>
-			      </placement>
 			      <placement code="status">
               <bundle>Cataloguing status</bundle>
 			        <settings>
@@ -7325,17 +7339,10 @@
 		    <screen idno="loan_recordStop" default="0">
           <labels>
             <label locale="en_US">
-              <name>Loan remarks</name>
+              <name>End of manually editing the record</name>
             </label>
           </labels>
           <bundlePlacements>
-			      <placement code="ca_remarks">
-              <bundle>ca_attribute_remarks</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Any remaining notes or remarks on the loan</setting>
-				        <setting name="add_label" locale="en_US">Add remark on the object loan</setting>
-              </settings>
-			      </placement>
 			      <placement code="status">
               <bundle>Cataloguing status</bundle>
             </placement>
