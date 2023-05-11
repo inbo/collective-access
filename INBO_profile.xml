@@ -5040,21 +5040,21 @@
                 <setting name="label" locale="en_US">Object belongs to collection</setting>
               </settings>
             </placement>
-            <placement code="ca_entities_org">
+            <placement code="ca_entities_currentOwner">
               <bundle>ca_entity</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Current owner (organization)</setting>
 				        <setting name="restrict_to_types">org</setting>
               </settings>
             </placement>
-			      <placement code="ca_entities">
+			      <placement code="ca_entities_previousOwner">
               <bundle>ca_entity</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Previous owner (organization/individual)</setting>
 				        <setting name="add_label" locale="en_US">Add previous owner</setting>
               </settings>
             </placement>
-            <placement code="ca_entities_ind">
+            <placement code="ca_entities_Contact">
               <bundle>ca_entity</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Contact</setting>
@@ -5080,10 +5080,10 @@
             </placement>
           </bundlePlacements>
         </screen>
-        <screen idno="object_reuse" default="0">
+        <screen idno="object_use" default="0">
           <labels>
             <label locale="en_US">
-              <name>Object management</name>
+              <name>Object use</name>
             </label>
           </labels>
           <bundlePlacements>
@@ -5593,6 +5593,12 @@
 				        <setting name="add_label" locale="en_US">Add media</setting>
 			        </settings>
             </placement>
+			      <placement code="samplingEffort" typeRestrictions="sampling">
+              <bundle>ca_samplingEffort</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Sampling effort (e.g. level of population: sampled until 30 samples of population)</setting>
+              </settings>
+			      </placement>
           </bundlePlacements>
         </screen>
 		    <screen idno="observationEvent_result" default="1">
@@ -6064,7 +6070,7 @@
           </typeRestrictions>
           <bundlePlacements>
 			      <placement code="eventAdminFile">
-              <bundle>ca_attribute_eventAdminFile</bundle>
+              <bundle>ca_attribute_file</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">File associated with fieldwork, sampling, project that specifies conditions for usage of objects or associated data</setting>
 				        <setting name="add_label" locale="en_US">Add file</setting>
@@ -6655,10 +6661,10 @@
             </placement>
           </bundlePlacements>
         </screen>
-        <screen idno="objectLot_place" default="0">
+        <screen idno="objectLot_datePlace" default="0">
           <labels>
             <label locale="en_US">
-              <name>Date, time, place</name>
+              <name>Date and place</name>
             </label>
           </labels>
           <typeRestrictions>
@@ -6666,7 +6672,7 @@
             <restriction code="r_population" type="population"/>
           </typeRestrictions>
           <bundlePlacements>
-			      <placement code="verbatimLocality" typeRestrictions="fieldwork,observation,project">
+			      <placement code="verbatimLocality">
               <bundle>ca_attribute_verbatimLocality</bundle>
               <settings>
                 <setting name="label" locale="en_US">The original description of a locality, a place, the geographic coverage, ...</setting>
@@ -6674,34 +6680,60 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-            <placement code="standardized_ca_place" typeRestrictions="fieldwork,observation,project">
+            <placement code="standardized_ca_place">
               <bundle>ca_places</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The place of the event, standardized using the CMS</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-            <placement code="verbatimLatitudeY" typeRestrictions="observation">
+            <placement code="verbatimLatitudeY">
               <bundle>ca_attribute_verbatimLatitudeY</bundle>
               <settings>
                 <setting name="label" locale="en_US">The original description of the latitude (Y).</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-            <placement code="verbatimLongitudeX" typeRestrictions="observation">
+            <placement code="verbatimLongitudeX">
               <bundle>ca_attribute_verbatimLongitudeX</bundle>
               <settings>
                 <setting name="label" locale="en_US">The original description of the longitud (X).</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="verbatimCoordinateSystem" typeRestrictions="observation">
+			      <placement code="verbatimCoordinateSystem">
               <bundle>ca_attribute_verbatimCoordinateSystem</bundle>
               <settings>
                 <setting name="label" locale="en_US">The coordinate system of the original coordinates</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
+			      <placement code="standardizedDateRange">
+              <bundle>ca_attribute_dateRange</bundle>
+              <!--http://rs.tdwg.org/dwc/terms/measurementDeterminedDate-->
+              <!--http://rs.tdwg.org/dwc/terms/dateIdentified-->
+              <settings>
+                <setting name="label" locale="en_US">Date (range) of the grouping of objects, standardised using the CMS. Usually this consist of a start date (e.g. FieldMarkDate voor soil surveys, when population was discovered).</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+			      <placement code="BelgianSoilMap" typeRestrictions="soilSurvey">
+              <bundle>ca_attribute_BelgianSoilMap</bundle>
+              <settings>
+                <setting name="label" locale="nl_BE">Bodemtype afgeleid uit de (digitale of analoge) bodemkaart van België (incl substraten, varianten) op basis van de plotcoördinaat</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+			      <placement code="WRBSoilMap" typeRestrictions="soilSurvey">
+              <bundle>ca_attribute_WRBSoilMap</bundle>
+              <settings>
+                <setting name="label" locale="nl_BE">WRB bodemtype uit de digitale Belgische WRB (2014) bodemkaart op basis van plotcoördinaat.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
 		      </bundlePlacements>
 		    </screen>
 		    <screen idno="objectLot_context" default="0">
@@ -6736,7 +6768,7 @@
 			      <placement code="ca_occurrence_project">
               <bundle>ca_occurrences</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Project that uses the object lot</setting>
+                <setting name="label" locale="en_US">Project that uses the object lot (population, plot or genetic entity)</setting>
 				        <setting name="restrict_to_types">project</setting>
 				        <setting name="add_label" locale="en_US">Add project</setting>
               </settings>
@@ -6749,60 +6781,45 @@
 				        <setting name="restrict_to_types">fieldwork</setting>
               </settings>
             </placement>
+            <placement code="ca_entities_plotOwner" typeRestrictions="plot">
+              <bundle>ca_entity</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Owner of the plot</setting>
+                <setting name="restrict_to_types">ind</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+            <placement code="ca_entities_plotManager" typeRestrictions="plot">
+              <bundle>ca_entity</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Manager of the plot</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="objectLot_media" default="0">
+		    <screen idno="objectLot_visuals" default="0">
           <labels>
             <label locale="en_US">
               <name>Media</name>
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="ca_object_representations">
-              <bundle>ca_object_representations</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Media</setting>
-				        <setting name="add_label" locale="en_US">Add media</setting>
-			        </settings>
-            </placement>
-          </bundlePlacements>
-        </screen>
-		    <screen idno="objectLot_files" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>Media and files</name>
-            </label>
-          </labels>
-          <bundlePlacements>
 			      <placement code="file">
               <bundle>ca_attribute_file</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Files associated with object lot (e.g. map, form)</setting>
+                <setting name="label" locale="en_US">Files associated with object lot organisation (e.g. map, sketch)</setting>
 				        <setting name="add_label" locale="en_US">Add file</setting>
 			        </settings>
             </placement>
-          </bundlePlacements>
-        </screen>
-		    <screen idno="objectLot_sampling_event" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>Sampling event</name>
-            </label>
-          </labels>
-          <bundlePlacements>
-            <placement code="ca_occurrences_sampling">
-              <bundle>ca_occurrences</bundle>
-			          <settings>
-                <setting name="label" locale="en_US">Sampling</setting>
-				        <setting name="restrict_to_types">sampling</setting>
-              </settings>
-            </placement>
-			      <placement code="ca_occurrences_expedition">
-              <bundle>ca_occurrences</bundle>
+            <placement code="ca_object_representations">
+              <bundle>ca_object_representations</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Expedition</setting>
-				        <setting name="restrict_to_types">expedition</setting>
-              </settings>
+                <setting name="label" locale="en_US">Visual representation of the object lot (i.e. photos, videos, sounds)</setting>
+				        <setting name="add_label" locale="en_US">Add media</setting>
+			        </settings>
             </placement>
           </bundlePlacements>
         </screen>
@@ -6866,26 +6883,6 @@
             </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="objectLot_measurements" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>Measurements</name>
-            </label>
-          </labels>
-          <typeRestrictions>
-          <restriction code="r_cadaver" type="cadaver"/>
-          </typeRestrictions>
-          <bundlePlacements>
-			      <placement code="ca_occurrences">
-              <bundle>ca_occurrences</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Measurement event</setting>
-                <setting name="add_label" locale="en_US">Add new measurement</setting>
-                <setting name="restrict_to_types">measurement</setting>
-              </settings>
-            </placement>
-          </bundlePlacements>
-        </screen>
         <screen idno="objectLot_derivates" default="0">
 		      <labels>
             <label locale="en_US">
@@ -6910,51 +6907,36 @@
             </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="objectLot_administration" default="0">
+        <screen idno="objectLot_use" default="0">
           <labels>
             <label locale="en_US">
-              <name>Object lot administration</name>
+              <name>Object lot use</name>
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="ca_occurrences">
-                <bundle>ca_occurrences</bundle>
-                <settings>
-                  <setting name="label" locale="en_US">Project that generated the object</setting>
-                  <setting name="restrict_to_types">project</setting>
-                </settings>
+			      <placement code="file">
+              <bundle>ca_attribute_file</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Files that have a consequence on the use of the object lot (e.g. permit, contract)</setting>
+				        <setting name="add_label" locale="en_US">Add file</setting>
+			        </settings>
+            </placement>
+            <placement code="restriction_use">
+              <bundle>ca_attribute_restrictionUse</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Restriction for re-use</setting>
+                <setting name="add_label" locale="en_US">Add new restriction</setting>
+              </settings>
+            </placement>
+            <placement code="restriction_use_remarks">
+              <bundle>ca_attribute_restrictionUseRemarks</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Restriction for re-use, remarks/specification</setting>
+              </settings>
             </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="objectLot_quality" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>Object lot quality indicators</name>
-            </label>
-          </labels>
-          <bundlePlacements>
-			      <placement code="condition" typeRestrictions="cadaver, population">
-              <bundle>ca_attribute_condition</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Condition</setting>
-              </settings>
-			      </placement>
-			      <placement code="samplingEffort" typeRestrictions="population">
-              <bundle>ca_samplingEffort</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Sampling effort: representative of true population?</setting>
-              </settings>
-			      </placement>
-			      <placement code="remarks">
-              <bundle>ca_attribute_remarks</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Notes or remarks on the object lot</setting>
-				        <setting name="add_label" locale="en_US">Add remark on object lot</setting>
-              </settings>
-			      </placement>
-          </bundlePlacements>
-        </screen>
-		    <screen idno="objectLot_remarks" default="0">
+		    <screen idno="objectLot_recordStop" default="0">
           <labels>
             <label locale="en_US">
               <name>Object lot remarks</name>
@@ -6968,15 +6950,6 @@
 				        <setting name="add_label" locale="en_US">Add remark on the object lot</setting>
               </settings>
 			      </placement>
-          </bundlePlacements>
-        </screen>
-		    <screen idno="objectLot_CMS_management" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>CMS management</name>
-            </label>
-          </labels>
-          <bundlePlacements>
 			      <placement code="status">
               <bundle>Cataloguing status</bundle>
 			        <settings>
@@ -6994,7 +6967,7 @@
         </label>
       </labels>
       <screens>
-        <screen idno="loan_record" default="1">
+        <screen idno="loan_recordStart" default="1">
           <labels>
             <label locale="en_US">
               <name>Loan record</name>
@@ -7014,8 +6987,29 @@
                 <setting name="add_label" locale="en_US">Add loan title</setting>
               </settings>
             </placement>
-            <placement code="ca_entities">
-              <bundle>ca_entities</bundle>
+			      <placement code="nonpreferred_labels">
+              <bundle>nonpreferred_labels</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Other identifiers (non-preferred)</setting>
+				        <setting name="add_label" locale="en_US">Add other non preferred identifier</setting>
+              </settings>
+            </placement>
+			      <placement code="loan_type">
+              <bundle>loan_type</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Type of loan: incoming, outgoing, (permanent) transfer</setting>
+              </settings>
+            </placement>
+            <placement code="ca_entities_requester">
+              <bundle>ca_entity</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Contact</setting>
+				        <setting name="add_label" locale="en_US">Add contact</setting>
+                <setting name="restrict_to_types">ind</setting>
+              </settings>
+            </placement>
+			      <placement code="status">
+              <bundle>Cataloguing status</bundle>
             </placement>
             <placement code="ca_attribute_loan_authorization_date">
               <bundle>ca_attribute_loan_authorization_date</bundle>
@@ -7041,9 +7035,16 @@
             <placement code="ca_attribute_loan_purpose">
               <bundle>ca_attribute_loan_purpose</bundle>
             </placement>
+			      <placement code="loan_file">
+              <bundle>ca_attribute_file</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">File associated with loan (loan agreement, material transfer agreement, ...)</setting>
+				        <setting name="add_label" locale="en_US">Add file</setting>
+			        </settings>
+            </placement>
           </bundlePlacements>
         </screen>
-        <screen idno="loan_relationships" default="0">
+        <screen idno="loan_content" default="0">
           <labels>
             <label locale="en_US">
               <name>Relationships</name>
@@ -7053,12 +7054,16 @@
             <placement code="ca_objects">
               <bundle>ca_objects</bundle>
             </placement>
-            <placement code="ca_entities">
-              <bundle>ca_entities</bundle>
+            <placement code="ca_object_representations">
+              <bundle>ca_object_representations</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Visual representation of the loan (i.e. photo, video), to document condition, volume, ...</setting>
+				        <setting name="add_label" locale="en_US">Add media</setting>
+			        </settings>
             </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="loan_remarks" default="0">
+		    <screen idno="loan_recordStop" default="0">
           <labels>
             <label locale="en_US">
               <name>Loan remarks</name>
@@ -7072,6 +7077,9 @@
 				        <setting name="add_label" locale="en_US">Add remark on the object loan</setting>
               </settings>
 			      </placement>
+			      <placement code="status">
+              <bundle>Cataloguing status</bundle>
+            </placement>
           </bundlePlacements>
         </screen>
       </screens>
@@ -7167,6 +7175,12 @@
             </label>
           </labels>
           <bundlePlacements>
+            <placement code="idno">
+              <bundle>idno</bundle>
+			          <settings>
+                <setting name="label" locale="en_US">CMS ID</setting>
+              </settings>
+            </placement>			
             <placement code="preferred_labels">
               <bundle>preferred_labels</bundle>
               <settings>
@@ -7189,6 +7203,16 @@
             </placement>
             <placement code="ca_attribute_caption">
               <bundle>ca_attribute_caption</bundle>
+            </placement>
+            <placement code="ca_attribute_DateRange">
+              <bundle>ca_attribute_DateRange</bundle>
+            </placement>
+            <placement code="ca_entities_photographer">
+              <bundle>ca_entity</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Photographer</setting>
+                <setting name="restrict_to_types">ind</setting>
+              </settings>
             </placement>
           </bundlePlacements>
         </screen>
