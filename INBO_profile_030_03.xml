@@ -97,6 +97,14 @@
               </label>
             </labels>
             <items>
+              <item idno="animalBulk" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>Bulk sample of animals</name_singular>
+                    <name_plural>Bulk samples of animals</name_plural>
+                  </label>
+                </labels>
+              </item>
               <item idno="animalEntire" enabled="1" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
@@ -301,7 +309,15 @@
                       </label>
                     </labels>
                   </item>
-                  <item idno="sampleMammalConjuctiva" enabled="1" default="0">
+                  <item idno="sampleMammalBrain" enabled="1" default="0">
+                    <labels>
+                      <label locale="en_US" preferred="1">
+                        <name_singular>Brain sample</name_singular>
+                        <name_plural>Brain samples</name_plural>
+                      </label>
+                    </labels>
+                  </item>
+                  <item idno="sampleMammalConjuctivum" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>Conjuctivum sample</name_singular>
@@ -437,7 +453,15 @@
                       </label>
                     </labels>
                   </item>
-                  <item idno="sampleMammalSkin" enabled="1" default="0">
+                  <item idno="sampleMammalSkinComplete" enabled="1" default="0">
+                    <labels>
+                      <label locale="en_US" preferred="1">
+                        <name_singular>Skin</name_singular>
+                        <name_plural>Skins</name_plural>
+                      </label>
+                    </labels>
+                  </item>
+                  <item idno="sampleMammalSkinPiece" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>Skin sample</name_singular>
@@ -461,11 +485,27 @@
                       </label>
                     </labels>
                   </item>
+                  <item idno="sampleMammalStomach" enabled="1" default="0">
+                    <labels>
+                      <label locale="en_US" preferred="1">
+                        <name_singular>Stomach sample</name_singular>
+                        <name_plural>Stomach samples</name_plural>
+                      </label>
+                    </labels>
+                  </item>                  
                   <item idno="sampleMammalStomachContent" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>Stomach content</name_singular>
                         <name_plural>Stomach contents</name_plural>
+                      </label>
+                    </labels>
+                  </item>
+                  <item idno="sampleMammalSwabBitewound" enabled="1" default="0">
+                    <labels>
+                      <label locale="en_US" preferred="1">
+                        <name_singular>Swab of a bite wound</name_singular>
+                        <name_plural>Swabs of bite wounds</name_plural>
                       </label>
                     </labels>
                   </item>
@@ -3406,6 +3446,26 @@
           </restriction>
           <restriction code="r_object_lot">
             <table>ca_object_lots</table>
+		        <includeSubtypes>1</includeSubtypes>
+              <settings>
+                <setting name="fieldWidth">70</setting>
+                <setting name="fieldHeight">6</setting>
+                <setting name="minChars">0</setting>
+                <setting name="maxChars">65535</setting>
+              </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="relationSpecification" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Further specification on the relation between the two objects.</name>
+          </label>
+        </labels>
+        <settings/>
+        <typeRestrictions>
+          <restriction code="r_objectxobject">
+            <table>ca_objects_x_objects</table>
 		        <includeSubtypes>1</includeSubtypes>
               <settings>
                 <setting name="fieldWidth">70</setting>
@@ -8225,21 +8285,149 @@
         </screen>
       </screens>
     </userInterface>
+    <userInterface code="object_relationship_ui" type="ca_object_x_object">
+      <labels>
+        <label locale="en_US">
+          <name>Interstitial Object Editor</name>
+        </label>
+      </labels>
+      <screens>
+        <screen idno="basic" default="1">
+          <labels>
+            <label locale="en_US">
+              <name>Basic info</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="ca_attribute_relationSpecification">
+              <bundle>ca_attribute_relationSpecification</bundle>
+            </placement>
+          </bundlePlacements>
+        </screen>
+      </screens>
+    </userInterface>
   </userInterfaces>
   <relationshipTypes>
     <relationshipTable name="ca_objects_x_objects">
       <types>
-        <type code="subsample" default="0">
+        <type code="dnaSubSample" default="0">
           <labels>
             <label locale="en_US">
               <typename>is a subsample of</typename>
               <typename_reverse>is subsampled to</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>
-		      </subTypeLeft>
-          <subTypeRight>
-		      </subTypeRight>
+          <subTypeLeft>dnaSample</subTypeLeft>
+          <subTypeRight>dnaSample</subTypeRight>
+        </type>
+        <type code="dnaExtraction" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>dnaSample</subTypeLeft>
+          <subTypeRight>sampleAmphibian,sampleFish,SampleInvertebrate,sampleMammalBlood,samplMammalEarpunch,
+          sampleMammalEmbryo,sampleMammalFeces,sampleMammalHair,sampleMammalHeart,sampleMammalLiver,sampleMammalMuscle,
+          sampleMammalSkinPiece,sampleMammalSwabBitewound,sampleMammalTongue,sampleMammalUterus,sampleReptile,leafSample,
+          eDnaWaterFilter,soilSample</subTypeRight>
+        </type>
+        <type code="waterToFilter" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>was filtered on</typename>
+              <typename_reverse>has filtered</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>waterSample</subTypeLeft>
+          <subTypeRight>eDnaWaterFilter</subTypeRight>
+        </type>
+        <type code="plantChildOf" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>is a child of</typename>
+              <typename_reverse>is a parent of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>livingPlant,seedLot</subTypeLeft>
+          <subTypeRight>livingPlant</subTypeRight>
+        </type>
+        <type code="livingPlantSampled" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sampled from</typename>
+              <typename_reverse>is a sample of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>seedLot,leafSample,stemDisc</subTypeLeft>
+          <subTypeRight>livingPlant</subTypeRight>
+        </type>
+        <type code="livingAnimalSampled" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>is sampled from</typename>
+              <typename_reverse>is a sample of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleAmphibian,sampleFish,sampleInvertebrate,sampleMammalBlood,sampleMammalEarpunch,sampleMammalFeces,
+          sampleMammalHair</subTypeLeft>
+          <subTypeRight>animalEntireLiving</subTypeRight>
+        </type>
+        <type code="livingAnimalDeceased" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>deceased to</typename>
+              <typename_reverse>derived from</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>animalEntireLiving</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mammalAutopsySample" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalBaculum,sampleMammalBladder,sampleMammalBlood,sampleMammalBrain,sampleMammalConjuctivum,
+          sampleMammalCyste,sampleMammalEmbryo,sampleMammalFat,sampleMammalHair,sampleMammalHead,sampleMammalHeart,
+          sampleMammalIntestine,sampleMammalKidney,sampleMammalLiver,sampleMammalLowerJaw,sampleMammalLung,sampleMammalLymphNode,
+          sampleMammalMuscle,sampleMammalParasite,sampleMammalSkinComplete,sampleMammalSkinPiece,sampleMammalSkull,
+          sampleMammalSpleen,sampleMammalStomach,sampleMammalStomachContent,sampleMammalTongue,sampleMammalTooth,
+          sampleMammalUterus</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="soilSubSample" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>is a subsample of</typename>
+              <typename_reverse>is subsampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>soilSample</subTypeLeft>
+          <subTypeRight>soilSample</subTypeRight>
+        </type>
+        <type code="animalSeparatedFrom" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>is separated from</typename>
+              <typename_reverse>used to include</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>animalEntire,animalBulk</subTypeLeft>
+          <subTypeRight>animalBulk</subTypeRight>
+        </type>
+        <type code="relatedTo" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>is related to</typename>
+              <typename_reverse>is related to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight></subTypeRight>
         </type>
 	   </types>
     </relationshipTable>
