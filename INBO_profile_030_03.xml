@@ -3428,6 +3428,7 @@
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>room temperature</name_singular>
+                <name_plural>room temperature</name_plural>
               </label>
             </labels>
           </item>
@@ -3435,6 +3436,7 @@
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>4°C</name_singular>
+                <name_plural>4°C</name_plural>
               </label>
             </labels>
           </item>
@@ -3442,6 +3444,7 @@
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>-20°C</name_singular>
+                <name_plural>-20°C</name_plural>
               </label>
             </labels>
           </item>
@@ -3449,30 +3452,15 @@
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>-80°C</name_singular>
+                <name_plural>-80°C</name_plural>
               </label>
             </labels>
           </item>
-
         </items>
       </list>
   </lists>
   <elementSets>
     <!--General-->
-		  <metadataElement code="description" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>obligationType</name>
-            <description>Type of obligation</description>
-          </label>
-        </labels>
-        <documentationUrl>http://dublincore.org/documents/dcmi-terms/#terms-description</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-          </settings>
-      </metadataElement>
 	    <metadataElement code="descriptionContainer" datatype="Container">
         <labels>
           <label locale="en_US">
@@ -3484,8 +3472,8 @@
 		      <metadataElement code="description" datatype="Text">
             <labels>
             <label locale="en_US">
-              <name>obligationType</name>
-              <description>Type of obligation</description>
+              <name>description</name>
+              <description>Description</description>
             </label>
             </labels>
             <documentationUrl>http://dublincore.org/documents/dcmi-terms/#terms-description</documentationUrl>
@@ -3879,19 +3867,23 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="useDatePicker">1</setting>
+          <setting name="canBeUsedInSort">1</setting>
+          <setting name="canBeUsedInSearchForm">1</setting>
+          <setting name="canBeUsedInDisplay">1</setting>
+          <setting name="default_text">presentDate</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_object">
+          <restriction code="r_preparationDate">
             <table>ca_objects</table>
-		        <includeSubtypes>1</includeSubtypes>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
-              <setting name="minAttributesPerRow">0</setting>
+              <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
         </typeRestrictions>
-        ca_attribute_restrictionUse
       </metadataElement>
     <!--Object:derivates-->
       <metadataElement code="dataset" datatype="Url">
@@ -4958,28 +4950,47 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="catalogueOfLifeContainer" datatype="Container">
+		  <metadataElement code="catalogueOfLife" datatype="URL">
+        <labels>
+          <label locale="en_US">
+           <name>catalogueOfLife</name>
+            <description>CoL URL</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">5</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_catalogueOfLife_observation">
+            <table>ca_occurrences</table>
+            <type>observation</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_catalogueOfLife_object">
+            <table>ca_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="matchContainer" datatype="Container">
         <labels>
           <label locale="en_US">
             <name>catalogueOfLifeContainer</name>
-            <description>Lookup in the Catalogue of life (https://www.catalogueoflife.org/) and indication of the match. If the registered name is not in CoL, add the closest corrct identification match as possible.</description>
+            <description>Optional fields to specify the match or mismatch with Catalogue of Life.</description>
           </label>
         </labels>
 	      <elements>
-		      <metadataElement code="catalogueOfLife" datatype="URL">
-            <labels>
-            <label locale="en_US">
-              <name>catalogueOfLife</name>
-              <description>CoL URL</description>
-            </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
 		      <metadataElement code="match" datatype="List" list="match">
             <labels>
               <label locale="en_US">
@@ -5008,16 +5019,18 @@
             </settings>
           </metadataElement>
 	      </elements>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">1</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
         <typeRestrictions>
-          <restriction code="r_identification">
+          <restriction code="r_matchContainer_observation">
             <table>ca_occurrences</table>
-            <type>identification</type>
+            <type>observation</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_matchContainer_object">
+            <table>ca_objects</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -6036,7 +6049,7 @@
             </settings>
           </restriction>
         </typeRestrictions>
-      </metadataElement>preservationTemperature
+      </metadataElement>
 	    <metadataElement code="preservationTemperature" datatype="List" list="preservation_temperature">
         <labels>
           <label locale="en_US">
@@ -6103,32 +6116,6 @@
             <type>cadaver</type>
             <settings>
               <setting name="minAttributesPerRow">1</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-	    <metadataElement code="samplingEffort" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>samplingEffort</name>
-            <description>The amount of effort expended during an Event.</description>
-          </label>
-        </labels>
-        <documentationUrl>http://rs.tdwg.org/dwc/terms/samplingEffort</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_population">
-            <table>ca_object_lots</table>
-            <type>population</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
