@@ -698,37 +698,27 @@
               </label>
             </labels>
           </item>
-          <item idno="plot" enabled="1" default="1">
+          <item idno="plotTransect" enabled="1" default="1">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>plot</name_singular>
-                <name_plural>plots</name_plural>
+                <name_singular>in-situ plot or transect</name_singular>
+                <name_plural>in-situ plots or transects</name_plural>
               </label>
             </labels>
-            <items>
-              <item idno="soilPlot" enabled="1" default="1">
-                <labels>
-                  <label locale="en_US" preferred="1">
-                    <name_singular>soil plot</name_singular>
-                    <name_plural>soil plots</name_plural>
-                  </label>
-                </labels>
-              </item>
-              <item idno="plantPlot" enabled="1" default="1">
-                <labels>
-                  <label locale="en_US" preferred="1">
-                    <name_singular>plant plot</name_singular>
-                    <name_plural>plant plots</name_plural>
-                  </label>
-                </labels>
-              </item>
-            </items>
           </item>
-          <item idno="geneticEntity" enabled="1" default="1">
+          <item idno="provenanceRegion" enabled="1" default="1">
             <labels>
               <label locale="en_US" preferred="1">
-              <name_singular>genetic entity</name_singular>
-                <name_plural>genetic entities</name_plural>
+              <name_singular>provenance region</name_singular>
+              <name_plural>provenance regions</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="provenance" enabled="1" default="1">
+            <labels>
+              <label locale="en_US" preferred="1">
+              <name_singular>provenance</name_singular>
+              <name_plural>provenances</name_plural>
               </label>
             </labels>
           </item>
@@ -1301,11 +1291,11 @@
           </label>
         </labels>
         <items>
-          <item idno="site" enabled="1" default="0">
+          <item idno="plantedSite" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>plot</name_singular>
-                <name_plural>plots</name_plural>
+                <name_singular>planted site</name_singular>
+                <name_plural>planted sites</name_plural>
               </label>
             </labels>
           </item>
@@ -1926,7 +1916,7 @@
           </label>
         </labels>
         <items>
-          <item idno="clearMismatch" enabled="1" default="0">
+          <item idno="mismatch" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>mismatch</name_singular>
@@ -1934,19 +1924,27 @@
               </label>
             </labels>
           </item>		
-          <item idno="tooVague" enabled="1" default="0">
+          <item idno="vague" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>Too vague</name_singular>
-                <name_plural>Too vague</name_plural>
+                <name_singular>vague</name_singular>
+                <name_plural>vague</name_plural>
               </label>
             </labels>
           </item>
           <item idno="unlikely" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>Unlikely result</name_singular>
-                <name_plural>Unlikely result</name_plural>
+                <name_singular>unlikely</name_singular>
+                <name_plural>unlikely</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="verified" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>verified</name_singular>
+                <name_plural>verified</name_plural>
               </label>
             </labels>
           </item>
@@ -4249,9 +4247,9 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_expedition">
+          <restriction code="r_fieldwork">
             <table>ca_occurrences</table>
-            <type>expedition</type>
+            <type>fieldwork</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -6198,13 +6196,6 @@
                 </setting>
 			        </settings>
             </placement>
-			      <placement code="identificationQualityFlag">
-              <bundle>ca_attribute_qualityFlag</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Expression of quality on the identification result</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-			      </placement>
             <placement code="ca_occurrences_nonpreferred_taxonomic_identification">
               <bundle>ca_occurrences</bundle>
 			        <settings>
@@ -6449,13 +6440,13 @@
 				        <setting name="minRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="preferred_labels" typeRestrictions="observation,expedition,project,sampling">
+			      <placement code="preferred_labels" typeRestrictions="observation,fieldwork,project,sampling">
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Event identifier (preferred)</setting>
               </settings>
             </placement>
-            <placement code="nonpreferred_labels" typeRestrictions="observation,expedition,project,sampling">
+            <placement code="nonpreferred_labels" typeRestrictions="observation,fieldwork,project,sampling">
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Event identifier (nonpreferred)</setting>
@@ -6567,13 +6558,6 @@
               <bundle>ca_attribute_georeference</bundle>
               <settings>
                 <setting name="label" locale="en_US">The georeference of the event, standardized using the CMS.</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-			      </placement>
-			      <placement code="georeferenceQualityFlag" typeRestrictions="observation">
-              <bundle>ca_attribute_qualityFlag</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Expression of quality on the standardized georeference result</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
@@ -6944,7 +6928,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Resulting fieldwork (expeditions, survey events, ...)</setting>
 				        <setting name="add_label" locale="en_US">Add fieldwork</setting>
-				        <setting name="restrict_to_types">expedition</setting>
+				        <setting name="restrict_to_types">fieldwork</setting>
 			        </settings>
             </placement>
             <placement code="ca_occurrences_observation">
@@ -7207,9 +7191,9 @@
           </labels>
           <typeRestrictions>
             <restriction code="r_sampling" type="sampling"/>
-            <restriction code="r_expedition" type="expedition"/>
+            <restriction code="r_fieldwork" type="fieldwork"/>
             <restriction code="r_project" type="project"/>
-            <!--permits to enter a specific restricted area should be logged under expedition, sampling or project-->	
+            <!--permits to enter a specific restricted area should be logged under fieldwork, sampling or project-->	
           </typeRestrictions>
           <bundlePlacements>
 			      <placement code="eventAdminFile">
@@ -7784,7 +7768,7 @@
             </label>
           </labels>
           <typeRestrictions>
-            <restriction code="r_plot" type="plot"/>
+            <restriction code="r_plotTransect" type="plotTransect"/>
             <restriction code="r_population" type="population"/>
           </typeRestrictions>
           <bundlePlacements>
@@ -7846,25 +7830,6 @@
             <placement code="ca_attribute_descriptionContainer">
               <bundle>ca_attribute_descriptionContainer</bundle>
             </placement>
-            <placement code="ca_object_lot_geneticEntity" typeRestrictions="plantPlot">
-              <bundle>ca_object_lots</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The plot contains the genetic entity</setting>
-                  <setting name="restrict_to_types">geneticEntity</setting>
-				          <setting name="add_label" locale="en_US">Add new genetic entity</setting>
-                  <setting name="minRelationshipsPerRow">0</setting>
-              </settings>
-            </placement>
-            <placement code="ca_object_lot_plot" typeRestrictions="geneticEntity">
-              <bundle>ca_object_lots</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The genetic entity can be found on the plot</setting>
-				        <setting name="add_label" locale="en_US">Add new plot</setting>
-                <setting name="restrict_to_types">plot</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
 			      <placement code="ca_occurrence_project">
               <bundle>ca_occurrences</bundle>
 			        <settings>
@@ -7873,29 +7838,12 @@
 				        <setting name="add_label" locale="en_US">Add project</setting>
               </settings>
 			      </placement>
-            <placement code="ca_occurrence_fieldwork" typeRestrictions="population,soilPlot">
+            <placement code="ca_occurrence_fieldwork" typeRestrictions="population,plotTransect">
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Fieldwork (e.g. expedition, survey event) that included the population/plot</setting>
 				        <setting name="add_label" locale="en_US">Add new fieldwork</setting>
 				        <setting name="restrict_to_types">fieldwork</setting>
-              </settings>
-            </placement>
-            <placement code="ca_entities_plotOwner" typeRestrictions="plot">
-              <bundle>ca_entity</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Owner of the plot</setting>
-                <setting name="restrict_to_types">ind</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
-            <placement code="ca_entities_plotManager" typeRestrictions="plot">
-              <bundle>ca_entity</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Manager of the plot</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -7931,7 +7879,6 @@
           </labels>
           <typeRestrictions>
             <restriction code="r_geneticEntity" type="geneticEntity"/>
-            <restriction code="r_plantPlot" type="plantPlot"/>
             <restriction code="r_population" type="population"/>
           </typeRestrictions>
           <bundlePlacements>
@@ -8467,261 +8414,211 @@
     </relationshipTable>
 	  <relationshipTable name="ca_objects_x_object_lots">
       <types>
-        <type code="subsample" default="1">
+        <type code="objectsGrouping" default="1">
           <labels>
             <label locale="en_US">
-              <typename>is a sample from</typename>
-              <typename_reverse>is sampled to</typename_reverse>
+              <typename>is grouped in</typename>
+              <typename_reverse>groups</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>
-		      </subTypeLeft>
+          <subTypeLeft></subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
     <relationshipTable name="ca_objects_x_entities">
       <types>
-        <type code="owner" default="0">
+        <type code="currentOwner" default="0">
           <labels>
             <label locale="en_US">
-              <typename>is/was owned by</typename>
-              <typename_reverse>owns/owned</typename_reverse>
+              <typename>is owned by</typename>
+              <typename_reverse>owns</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>
-          </subTypeLeft>
+          <subTypeLeft></subTypeLeft>
           <subTypeRight>org</subTypeRight>
+        </type>
+        <type code="previousOwner" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>was owned by</typename>
+              <typename_reverse>owned</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight></subTypeRight>
+        </type>
+        <type code="knowsMost" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>is best known by</typename>
+              <typename_reverse>knows most about</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>ind</subTypeRight>
         </type>
       </types>
     </relationshipTable>
     <relationshipTable name="ca_objects_x_collections">
       <types>
-        <type code="part_of" default="1">
+        <type code="partOf" default="1">
           <labels>
             <label locale="en_US">
               <typename>is part of</typename>
               <typename_reverse>contains</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>
-          </subTypeLeft>
+          <subTypeLeft></subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
     <relationshipTable name="ca_objects_x_occurrences">
       <types>
-        <type code="sampled" default="0">
+        <type code="represents" default="0">
           <labels>
             <label locale="en_US">
-              <typename>is a sample of</typename>
-              <typename_reverse>was sampled to</typename_reverse>
+              <typename>represents</typename>
+              <typename_reverse>is represented by</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>
-          </subTypeLeft>
+          <subTypeLeft></subTypeLeft>
           <subTypeRight>observation</subTypeRight>
         </type>
-		    <type code="resulted" default="0">
+		    <type code="resultingObjects" default="0">
           <labels>
             <label locale="en_US">
               <typename>is result of</typename>
               <typename_reverse>resulted in</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>
-          </subTypeLeft>
-          <subTypeRight>sampling,expedition,project</subTypeRight>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>sampling,fieldwork,project</subTypeRight>
         </type>
-		    <type code="subjected" default="0">
+		    <type code="executedOnObject" default="0">
           <labels>
             <label locale="en_US">
-              <typename>subjected to</typename>
-              <typename_reverse>executed on</typename_reverse>
+              <typename>is subjected to</typename>
+              <typename_reverse>is executed on</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>
-		      </subTypeLeft>
-          <subTypeRight>
-          fluorometry,spectrophotometry,gel,volume,weight,length,circumference,
-          disposal,treatmentCold,treatmentHeat,treatmentChemical,renewalContainer,renewalBuffer,renewalLabel,transfer,
-          identification,
-          valuation
-          </subTypeRight>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>identification,measurement,valuation,curation,sampling</subTypeRight>
+        </type>
+		    <type code="reused" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>is reused in</typename>
+              <typename_reverse>reused</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>project</subTypeRight>
         </type>
       </types>
     </relationshipTable>
 	  <relationshipTable name="ca_objects_x_storage_locations">
       <types>
-        <type code="stored" default="1">
+        <type code="storedObject" default="1">
           <labels>
             <label locale="en_US">
               <typename>is stored at</typename>
               <typename_reverse>stores</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>
-          </subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-	  <relationshipTable name="ca_objects_x_representation_annotations">
-      <types>
-        <type code="depicts" default="1">
-          <labels>
-            <label locale="en_US">
-              <typename>is depicted by</typename>
-              <typename_reverse>depicts</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>
-          </subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-	  <relationshipTable name="ca_object_lots_x_object_lots">
-      <types>
-        <type code="linked" default="1">
-          <labels>
-            <label locale="en_US">
-              <typename>is linked to</typename>
-              <typename_reverse>is linked to</typename_reverse>
-            </label>
-          </labels>
           <subTypeLeft></subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-	  <relationshipTable name="ca_object_lots_x_entities">
-      <types>
-        <type code="owner" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is/was owned by</typename>
-              <typename_reverse>owns/owned</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>plot</subTypeLeft>
-          <subTypeRight>org</subTypeRight>
-        </type>
-		    <type code="manage" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is managed by</typename>
-              <typename_reverse>manages</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>plot</subTypeLeft>
-          <subTypeRight>org</subTypeRight>
-        </type>
-		    <type code="provide" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is provided by</typename>
-              <typename_reverse>provided</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>cadaver</subTypeLeft>
-          <subTypeRight>ind</subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-	  <relationshipTable name="ca_object_lots_x_collections">
-      <types>
-        <type code="part_of" default="1">
-          <labels>
-            <label locale="en_US">
-              <typename>is part of</typename>
-              <typename_reverse>contains</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
 	  <relationshipTable name="ca_object_lots_x_occurrences">
       <types>
-        <type code="sampled" default="0">
+        <type code="observationsGrouping" default="1">
           <labels>
             <label locale="en_US">
-              <typename>is a sample of</typename>
-              <typename_reverse>was sampled to</typename_reverse>
+              <typename>groups</typename>
+              <typename_reverse>is grouped in</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
           <subTypeRight>observation</subTypeRight>
         </type>
-		    <type code="resulted" default="0">
+		    <type code="samplingFieldworkFocus" default="0">
           <labels>
             <label locale="en_US">
-              <typename>is result of</typename>
-              <typename_reverse>resulted in</typename_reverse>
+              <typename>was focus of</typename>
+              <typename_reverse>was focussed on</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>sampling,expedition,project</subTypeRight>
+          <subTypeLeft>provenanceRegion,population,plotTransect</subTypeLeft>
+          <subTypeRight>sampling,fieldwork</subTypeRight>
         </type>
-		    <type code="subjected" default="0">
+		    <type code="projectFocus" default="0">
           <labels>
             <label locale="en_US">
-              <typename>subjected to</typename>
-              <typename_reverse>executed on</typename_reverse>
+              <typename>was focus of</typename>
+              <typename_reverse>was focussed on</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>
-            fluorometry,spectrophotometry,gel,volume,weight,length,circumference,
-            disposal,treatmentCold,treatmentHeat,treatmentChemical,renewalContainer,renewalBuffer,renewalLabel,transfer,
-            identification,
-            valuation
-          </subTypeRight>
+          <subTypeLeft>provenance,provenanceRegion,population,plotTransect</subTypeLeft>
+          <subTypeRight>project</subTypeRight>
         </type>
       </types>
     </relationshipTable>
 	  <relationshipTable name="ca_object_lots_x_storage_locations">
       <types>
-        <type code="located" default="1">
+        <type code="inLivingCollectionAt" default="1">
           <labels>
             <label locale="en_US">
-              <typename>is located at</typename>
-              <typename_reverse>holds</typename_reverse>
+              <typename>is in living collection at</typename>
+              <typename_reverse>contains</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>plot</subTypeLeft>
-          <subTypeRight></subTypeRight>
+          <subTypeLeft>provenance</subTypeLeft>
+          <subTypeRight>plantedSite</subTypeRight>
         </type>
       </types>
     </relationshipTable>
-	  <relationshipTable name="ca_object_lots_x_representation_annotations">
+	  <relationshipTable name="ca_object_lots_x_places">
       <types>
-        <type code="depicts" default="1">
+        <type code="locationObjectLot" default="1">
           <labels>
             <label locale="en_US">
-              <typename>is depicted by</typename>
-              <typename_reverse>depicts</typename_reverse>
+              <typename>is located at</typename>
+              <typename_reverse>location of</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft> </subTypeLeft>
-          <subTypeRight></subTypeRight>
+          <subTypeLeft>org</subTypeLeft>
+          <subTypeRight/>
         </type>
       </types>
     </relationshipTable>
 	  <relationshipTable name="ca_collections_x_collections">
       <types>
-        <type code="related" default="1">
+        <type code="subcollection" default="1">
           <labels>
             <label locale="en_US">
-              <typename>is related to</typename>
-              <typename_reverse>is related to</typename_reverse>
+              <typename>is a subcollection of</typename>
+              <typename_reverse>contains subcollection(s)</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft> </subTypeLeft>
+          <subTypeLeft></subTypeLeft>
           <subTypeRight></subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>
+	  <relationshipTable name="ca_collections_x_storage_locations">
+      <types>
+        <type code="storedCollection" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is stored at</typename>
+              <typename_reverse>stores</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>plantedSite,building,floor,room,cabinetFridgeFreezer,drawerShelf,box</subTypeRight>
         </type>
       </types>
     </relationshipTable>
@@ -8730,18 +8627,8 @@
         <type code="currentAffilition" default="0">
           <labels>
             <label locale="en_US">
-              <typename>current affiliation with</typename>
+              <typename>affiliated with</typename>
               <typename_reverse>employs</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>ind</subTypeLeft>
-          <subTypeRight>org</subTypeRight>
-        </type>
-        <type code="pastAffiliation" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>past affiliation with</typename>
-              <typename_reverse>employed</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>ind</subTypeLeft>
@@ -8751,21 +8638,21 @@
     </relationshipTable>
 	  <relationshipTable name="ca_entities_x_collections">
       <types>
-        <type code="part_of" default="0">
+        <type code="currentCurator" default="1">
           <labels>
             <label locale="en_US">
-              <typename>contains</typename>
-              <typename_reverse>is part of</typename_reverse>
+              <typename>curates</typename>
+              <typename_reverse>is curated by</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>org</subTypeLeft>
+          <subTypeLeft>ind</subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
-		    <type code="manage" default="0">
+        <type code="currentAssistantCurator" default="1">
           <labels>
             <label locale="en_US">
-              <typename>manages</typename>
-              <typename_reverse>is managed by</typename_reverse>
+              <typename>co-curates</typename>
+              <typename_reverse>is co-curated by</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>ind</subTypeLeft>
@@ -8787,23 +8674,9 @@
         </type>
       </types>
     </relationshipTable>
-	  <relationshipTable name="ca_entities_x_representation_annotations">
-      <types>
-        <type code="recognizable" default="1">
-          <labels>
-            <label locale="en_US">
-              <typename>can be recognized on</typename>
-              <typename_reverse>depicts</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>ind</subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
 	  <relationshipTable name="ca_entities_x_places">
       <types>
-        <type code="location" default="1">
+        <type code="locationOrg" default="1">
           <labels>
             <label locale="en_US">
               <typename>is located at</typename>
@@ -8815,124 +8688,94 @@
         </type>
       </types>
     </relationshipTable>
-	  <relationshipTable name="ca_collections_x_collections">
-      <types>
-        <type code="related" default="1">
-          <labels>
-            <label locale="en_US">
-              <typename>is related to</typename>
-              <typename_reverse>is related to</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft> </subTypeLeft>
-          <subTypeRight/>
-        </type>
-      </types>
-    </relationshipTable>
     <relationshipTable name="ca_occurrences_x_occurrences">
       <types>
-		    <type code="resulted_identification" default="0">
+		    <type code="resultingObservation" default="0">
           <labels>
             <label locale="en_US">
-              <typename>is identified</typename>
-              <typename_reverse>identifies</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>observation</subTypeLeft>
-          <subTypeRight>identification</subTypeRight>
-        </type>
-		    <type code="resulted_observation" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is recorded during</typename>
+              <typename>was result of</typename>
               <typename_reverse>resulted in</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>observation</subTypeLeft>
-          <subTypeRight>expedition,project</subTypeRight>
+          <subTypeRight>fieldwork,project,sampling</subTypeRight>
         </type>
-		    <type code="resulted_expedition" default="0">
+		    <type code="executedOnObservation" default="0">
           <labels>
             <label locale="en_US">
-              <typename>is executed within</typename>
+              <typename>was subjected to</typename>
+              <typename_reverse>was executed on</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>observation</subTypeLeft>
+          <subTypeRight>measurement,identification,sampling</subTypeRight>
+        </type>
+		    <type code="subproject" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>was a subproject of</typename>
+              <typename_reverse>was the overarching project of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>project</subTypeLeft>
+          <subTypeRight>project</subTypeRight>
+        </type>
+		    <type code="resultingFieldwork" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>was result of</typename>
               <typename_reverse>resulted in</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>expedition</subTypeLeft>
-          <subTypeRight>expedition,project</subTypeRight>
+          <subTypeLeft>fieldwork</subTypeLeft>
+          <subTypeRight>fieldwork,project</subTypeRight>
         </type>
-		    <type code="subjected_observation" default="0">
+		    <type code="subfieldwork" default="0">
           <labels>
             <label locale="en_US">
-              <typename>subjected to</typename>
-              <typename_reverse>executed on</typename_reverse>
+              <typename>was subfieldwork of</typename>
+              <typename_reverse>was the overarching fieldwork (e.g. expedition) of</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>observation</subTypeLeft>
-          <subTypeRight>
-          fluorometry,spectrophotometry,gel,volume,weight,length,circumference,
-          identification</subTypeRight>
-        </type>
-		    <type code="georeference_observation" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>georeferenced</typename>
-              <typename_reverse>executed on</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>observation</subTypeLeft>
-          <subTypeRight>georeference</subTypeRight>
-        </type>
-		    <type code="executed_verification" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>subjected to</typename>
-              <typename_reverse>executed on</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>georeference,identification</subTypeLeft>
-          <subTypeRight>verification</subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-	  <relationshipTable name="ca_occurrences_x_representation_annotations">
-      <types>
-        <type code="depicts" default="1">
-          <labels>
-            <label locale="en_US">
-              <typename>is depicted by</typename>
-              <typename_reverse>depicts</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight></subTypeRight>
+          <subTypeLeft>fieldwork</subTypeLeft>
+          <subTypeRight>fieldwork</subTypeRight>
         </type>
       </types>
     </relationshipTable>
     <relationshipTable name="ca_occurrences_x_places">
       <types>
-        <type code="location" default="1">
+        <type code="locationOccurrence" default="1">
           <labels>
             <label locale="en_US">
               <typename>occurred at</typename>
               <typename_reverse>was location of</typename_reverse>
             </label>
          </labels>
-          <subTypeLeft>observation</subTypeLeft>
+          <subTypeLeft>observation,fieldwork</subTypeLeft>
+          <subTypeRight></subTypeRight>
+        </type>
+        <type code="locationFocus" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>focused on location</typename>
+              <typename_reverse>was focal location of</typename_reverse>
+            </label>
+         </labels>
+          <subTypeLeft>project</subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
 	  <relationshipTable name="ca_places_x_places">
       <types>
-        <type code="related" default="1">
+        <type code="nested" default="1">
           <labels>
             <label locale="en_US">
-              <typename>is related to</typename>
-              <typename_reverse>is related to</typename_reverse>
+              <typename>is nested in</typename>
+              <typename_reverse>contains</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft> </subTypeLeft>
+          <subTypeLeft></subTypeLeft>
           <subTypeRight/>
         </type>
       </types>
