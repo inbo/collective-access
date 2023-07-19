@@ -861,7 +861,11 @@
                 <name_plural>Observations</name_plural>
               </label>
             </labels>
-                <items>
+            <settings>
+             <setting name="render_in_new_menu">1</setting>
+             <setting name="render_in_find_menu">1</setting>
+            </settings>
+            <items>
                   <item idno="observationAnimal" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
@@ -910,11 +914,7 @@
                       <setting name="render_in_find_menu">1</setting>
                     </settings>
                   </item>
-                </items>
-            <settings>
-             <setting name="render_in_new_menu">1</setting>
-             <setting name="render_in_find_menu">1</setting>
-            </settings>
+            </items>
           </item>
           <item idno="fieldwork" enabled="1" default="1">
             <labels>
@@ -959,6 +959,10 @@
                 <name_plural>Identifications</name_plural>
               </label>
             </labels>
+            <settings>
+               <setting name="render_in_new_menu">1</setting>
+               <setting name="render_in_find_menu">1</setting>
+            </settings>
                 <items>
                   <item idno="identificationBotanical" enabled="1" default="0">
                     <labels>
@@ -993,10 +997,6 @@
                     </labels>
                   </item>
                 </items>
-            <settings>
-               <setting name="render_in_new_menu">0</setting>
-               <setting name="render_in_find_menu">1</setting>
-            </settings>
           </item>
           <item idno="measurement" enabled="1" default="1">
             <labels>
@@ -1005,6 +1005,10 @@
                 <name_plural>Measurements on object or observation</name_plural>
               </label>
             </labels>
+            <settings>
+               <setting name="render_in_new_menu">1</setting>
+               <setting name="render_in_find_menu">1</setting>
+            </settings>
             <items>
               <item idno="measurementGenetic" enabled="1" default="1">
                 <labels>
@@ -1063,10 +1067,6 @@
                     </labels>
                   </item>
                 </items>
-                <settings>
-                  <setting name="render_in_new_menu">0</setting>
-                  <setting name="render_in_find_menu">1</setting>
-                </settings>
               </item>
               <item idno="measurementGeneral" enabled="1" default="1">
                 <labels>
@@ -1133,10 +1133,6 @@
                     </labels>
                   </item>
                 </items>
-                <settings>
-                  <setting name="render_in_new_menu">0</setting>
-                  <setting name="render_in_find_menu">1</setting>
-                </settings>
               </item>
             </items>
           </item>
@@ -1148,7 +1144,7 @@
               </label>
             </labels>
             <settings>
-              <setting name="render_in_new_menu">0</setting>
+              <setting name="render_in_new_menu">1</setting>
               <setting name="render_in_find_menu">1</setting>
             </settings>
             <items>
@@ -1278,7 +1274,7 @@
               </label>
             </labels>
             <settings>
-              <setting name="render_in_new_menu">0</setting>
+              <setting name="render_in_new_menu">1</setting>
               <setting name="render_in_find_menu">1</setting>
             </settings>
           </item>
@@ -1785,42 +1781,48 @@
           <item idno="restrictionAccess" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name>Restriction on access</name>
+                <name_singular>Restriction on access</name_singular>
+                <name_plural>Restrictions on access</name_plural>
               </label>
             </labels>
             <items>
                 <item idno="noDestructiveSampling" enabled="1" default="0">
                   <labels>
                     <label locale="en_US" preferred="1">
-                    <name>No destructive sampling</name>
+                    <name_singular>No destructive sampling</name_singular>
+                    <name_plural>No destructive sampling</name_plural>
                     </label>
                   </labels>
                 </item>
                 <item idno="noMolecularAnalyses" enabled="1" default="0">
                   <labels>
                     <label locale="en_US" preferred="1">
-                    <name>No molecular analyses</name>
+                    <name_singular>No molecular analyses</name_singular>
+                    <name_plural>No molecular analyses</name_plural>
                     </label>
                   </labels>
                 </item>
                 <item idno="noOpenPublishingSequenceData" enabled="1" default="0">
                   <labels>
                     <label locale="en_US" preferred="1">
-                    <name>No open publishing of sequence data</name>
+                    <name_singular>No open publishing of sequence data</name_singular>
+                    <name_plural>No open publishing of sequence data</name_plural>
                     </label>
                   </labels>
                 </item>
                 <item idno="noImagingCT" enabled="1" default="0">
                   <labels>
                     <label locale="en_US" preferred="1">
-                    <name>No imaging or CT-scans</name>
+                    <name_singular>No imaging or CT-scans</name_singular>
+                    <name_plural>No imaging or CT-scans</name_plural>
                     </label>
                   </labels>
                 </item>
                 <item idno="restrictedPhysicalAccess" enabled="1" default="0">
                   <labels>
                     <label locale="en_US" preferred="1">
-                    <name>Physical access only under specified conditions (e.g. dangerous for health)</name>
+                    <name_singular>Physical access only under specified conditions (e.g. dangerous for health)</name_singular>
+                    <name_plural>Physical access only under specified conditions (e.g. dangerous for health)</name_plural>
                     </label>
                   </labels>
                 </item>																																
@@ -1829,28 +1831,32 @@
           <item idno="restrictionTransfer" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name>Restriction on transfer</name>
+                <name_singular>Restriction on transfer</name_singular>
+                <name_plural>Restriction on transfer</name_plural>
               </label>
             </labels>
             <items>
               <item idno="noInternalTransfer" enabled="1" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
-                  <name>No transfer within the institute (internal loans)</name>
+                    <name_singular>No transfer within the institute (internal loans)</name_singular>
+                    <name_plural>No transfers within the institute (internal loans)</name_plural>
                   </label>
                 </labels>
               </item>
               <item idno="noExternalTransfer" enabled="1" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
-                  <name>No transfer to third parties (external loans)</name>
+                    <name_singular>No transfer outside the institute (external loans)</name_singular>
+                    <name_plural>No transfer outside the institute (external loans)</name_plural>
                   </label>
                 </labels>
               </item>
               <item idno="noOwnershipTransfer" enabled="1" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
-                  <name>No transfer of ownership</name>
+                    <name_singular>No transfer of ownership</name_singular>
+                    <name_plural>No transfer of ownership</name_plural>
                   </label>
                 </labels>
               </item>
@@ -1859,21 +1865,24 @@
           <item idno="restrictionResearch" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name>Restriction on research</name>
+                <name_singular>Restriction on research</name_singular>
+                <name_plural>Restrictions on research</name_plural>
               </label>
             </labels>
             <items>
               <item idno="noCommercialResearch" enabled="1" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
-                  <name>No commercial research</name>
+                    <name_singular>No commercial research</name_singular>
+                    <name_plural>No commercial research</name_plural>
                   </label>
                 </labels>
               </item>
               <item idno="RestrictedNonCommercialResearch" enabled="1" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
-                  <name>Non-commercial research is restricted</name>
+                    <name_singular>Non-commercial research is restricted</name_singular>
+                    <name_plural>Non-commercial research is restricted</name_plural>
                   </label>
                 </labels>
               </item>
