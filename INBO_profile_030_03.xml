@@ -1149,6 +1149,15 @@
                 <name_plural>planted sites</name_plural>
               </label>
             </labels>
+            <items>
+              <item idno="spotPlantedSite" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>spot within a planted site</name_singular>
+                    <name_plural>spots within a planted site</name_plural>
+                  </label>
+                </labels>
+              </item>
           </item>
           <item idno="building" enabled="1" default="0">
             <labels>
@@ -1157,55 +1166,67 @@
                 <name_plural>buildings</name_plural>
               </label>
             </labels>
+            <items>
+              <item idno="floor" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>floor</name_singular>
+                    <name_plural>floors</name_plural>
+                  </label>
+                </labels>
+                <items>
+                  <item idno="room" enabled="1" default="0">
+                    <labels>
+                      <label locale="en_US" preferred="1">
+                        <name_singular>room</name_singular>
+                        <name_plural>rooms</name_plural>
+                      </label>
+                    </labels>
+                    <items>
+                      <item idno="cabinetFridgeFreezer" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>cabinet, fridge or freezer</name_singular>
+                            <name_plural>cabinets, fridges and freezers</name_plural>
+                          </label>
+                        </labels>
+                        <items>
+                          <item idno="drawerShelf" enabled="1" default="0">
+                            <labels>
+                              <label locale="en_US" preferred="1">
+                                <name_singular>drawer or shelf</name_singular>
+                                <name_plural>drawers and shelves</name_plural>
+                              </label>
+                            </labels>
+                            <items>
+                              <item idno="box" enabled="1" default="0">
+                                <labels>
+                                  <label locale="en_US" preferred="1">
+                                    <name_singular>box</name_singular>
+                                    <name_plural>boxes</name_plural>
+                                  </label>
+                                </labels>
+                                <items>
+                                  <item idno="spot" enabled="1" default="0">
+                                    <labels>
+                                      <label locale="en_US" preferred="1">
+                                        <name_singular>spot</name_singular>
+                                        <name_plural>spots</name_plural>
+                                      </label>
+                                    </labels>
+                                  </item>
+                                </items>
+                              </item>
+                            </items>
+                          </item>
+                        </items>
+                      </item>
+                    </items>
+                  </item>
+                </items>
+              </item>
+            </items>
 		      </item>
-		      <item idno="floor" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>floor</name_singular>
-                <name_plural>floors</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="room" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>room</name_singular>
-                <name_plural>rooms</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="cabinetFridgeFreezer" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>cabinet, fridge or freezer</name_singular>
-                <name_plural>cabinets, fridges and freezers</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="drawerShelf" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>drawer or shelf</name_singular>
-                <name_plural>drawers and shelves</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="box" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                 <name_singular>box</name_singular>
-                 <name_plural>boxes</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="spot" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>spot</name_singular>
-                <name_plural>spots</name_plural>
-              </label>
-            </labels>
-          </item>
          </items>
 	    </list>
       <list code="loan_types" hierarchical="0" system="0" vocabulary="0">
@@ -7969,7 +7990,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-            <placement code="verbatimLatitudeY" typeRestrictions="observation">
+            <placement code="observationVerbatimLatitudeY" typeRestrictions="observation">
               <bundle>ca_attribute_verbatimLatitudeY</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim latitude (Y)</setting>
@@ -7978,7 +7999,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-            <placement code="verbatimLongitudeX" typeRestrictions="observation">
+            <placement code="observationVerbatimLongitudeX" typeRestrictions="observation">
               <bundle>ca_attribute_verbatimLongitudeX</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim longitude (X)</setting>
@@ -7996,7 +8017,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="verbatimGeoreferenceProtocol" typeRestrictions="observation">
+			      <placement code="observationerbatimGeoreferenceProtocol" typeRestrictions="observation">
               <bundle>ca_attribute_verbatimGeoreferenceProtocol</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim georeference procedure</setting>
@@ -8005,7 +8026,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="standardized_georeferenceWGS84" typeRestrictions="observation">
+			      <placement code="observationStandardizedGeoreferenceWGS84" typeRestrictions="observation">
               <bundle>ca_attribute_georeference</bundle>
               <settings>
                 <setting name="label" locale="en_US">Standardized georeference data</setting>
@@ -8023,7 +8044,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="minimumElevationInMetres" typeRestrictions="observation">
+			      <placement code="observationMinimumElevationInMetres" typeRestrictions="observation">
               <bundle>ca_attribute_minimumElevationInMetres</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The minimum elevation in metres.</setting>
@@ -8031,7 +8052,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="maximumElevationInMetres" typeRestrictions="observation">
+			      <placement code="observationMaximumElevationInMetres" typeRestrictions="observation">
               <bundle>ca_attribute_maximumElevationInMetres</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The maximum elevation in metres.</setting>
@@ -9023,6 +9044,15 @@
                 <setting name="maxRelationshipsPerRow">2</setting>
               </settings>
             </placement>
+            <placement code="plantedSiteOwner" typeRestrictions="plantedSite">
+              <bundle>ca_entities</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Owner of the site</setting>
+                <setting name="restrict_to_types">ind</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
             <placement code="file" typeRestrictions="box,drawerShelf,cabinetFridgeFreezer,room,floor,building,plantedSite">
               <bundle>ca_attribute_file</bundle>
 			        <settings>
@@ -9031,6 +9061,57 @@
 				        <setting name="add_label" locale="en_US">Add file</setting>
 			        </settings>
             </placement>
+            <placement code="plantedSitePlace" typeRestrictions="plantedSite">
+              <bundle>ca_places</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Place of the site</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+			      <placement code="plantedSiteMinimumElevationInMetres" typeRestrictions="observation">
+              <bundle>ca_attribute_minimumElevationInMetres</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The minimum elevation of the plantedSite in metres.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+			      <placement code="plantedSiteMaximumElevationInMetres" typeRestrictions="observation">
+              <bundle>ca_attribute_maximumElevationInMetres</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The maximum elevation of the plantedSite in metres.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+            <placement code="plantedSiteverbatimLatitudeY" typeRestrictions="spotPlantedSite">
+              <bundle>ca_attribute_verbatimLatitudeY</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Verbatim latitude (Y)</setting>
+                <setting name="description" locale="en_US">The original description of the latitude (Y).</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+            <placement code="plantedSiteverbatimLongitudeX" typeRestrictions="spotPlantedSite">
+              <bundle>ca_attribute_verbatimLongitudeX</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Verbatim longitude (X)</setting>
+                <setting name="description" locale="en_US">The original description of the longitude (X).</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+			      <placement code="plantedSiteStandardizedGeoreferenceWGS84" typeRestrictions="spotPlantedSite">
+              <bundle>ca_attribute_georeference</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Standardized georeference data</setting>
+                <setting name="description" locale="en_US">The georeferenced location of the spot where the living plant in collection is found in the plantedPlot, standardized using the CMS.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
           </bundlePlacements>
         </screen>
       </screens>
@@ -9042,10 +9123,10 @@
         </label>
       </labels>
       <screens>
-        <screen idno="objectLot_recordStart" default="1">
+        <screen idno="objectLot_record" default="1">
           <labels>
             <label locale="en_US">
-              <name>Object lot record</name>
+              <name>In-situ construct record</name>
             </label>
           </labels>
           <bundlePlacements>
@@ -9059,30 +9140,33 @@
               <bundle>status</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Cataloguing status</setting>
-				        <setting name="minRelationshipsPerRow">1</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
 			      <placement code="object_lot_type">
-              <bundle>object_lot_type</bundle>
+              <bundle>type_id</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Object lot type</setting>
+                <setting name="label" locale="en_US">Group type</setting>
+                <setting name="description" locale="en_US">The group constructs allow making groups of objects and observations, and storing data on the group level. This complements the grouping of observations and objects by place, or the grouping of objects by storage location. Examples of such group types are: a population, an in-situ plot (e.g. from a survey), a transect, a provenance region or provenance. Careful: do not confuse the in-situ plot with an ex-situ plot, like an exprimental plot for plant breeding purposes. Ex-situ plots are considered the storage space of the living plants in collection. Note: transects and in-situ plots are not logged under places, as places only holds geographical concepts as defined from a central repository, like countries, provinces and cities.</setting>
 				        <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="readonly">1</setting>
               </settings>
             </placement>
 			      <placement code="preferred_labels">
               <bundle>preferred_labels</bundle>
               <settings>
-                <setting name="label" locale="en_US">Object lot title</setting>
+                <setting name="label" locale="en_US">Group preferred name</setting>
               </settings>
             </placement>
 			      <placement code="nonpreferred_labels">
               <bundle>nonpreferred_labels</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Other identifiers (non-preferred)</setting>
-				        <setting name="add_label" locale="en_US">Add other non preferred identifier</setting>
+                <setting name="label" locale="en_US">Group non-preferred name</setting>
+				        <setting name="add_label" locale="en_US">Add other non-preferred name</setting>
               </settings>
+            </placement>
+            <placement code="ca_attribute_descriptionContainer">
+              <bundle>ca_attribute_descriptionContainer</bundle>
             </placement>
           </bundlePlacements>
         </screen>
@@ -9092,87 +9176,36 @@
               <name>Date and place</name>
             </label>
           </labels>
-          <typeRestrictions>
-            <restriction code="r_plotTransect" type="plotTransect"/>
-            <restriction code="r_population" type="population"/>
-          </typeRestrictions>
           <bundlePlacements>
-			      <placement code="verbatimLocality">
+			      <placement code="groupverbatimLocality">
               <bundle>ca_attribute_verbatimLocality</bundle>
               <settings>
-                <setting name="label" locale="en_US">The original description of a locality, a place, the geographic coverage, ...</setting>
+                <setting name="label" locale="en_US">The original description of the locality, a place, the geographic coverage, ... of the group.</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-            <placement code="standardized_ca_place">
+            <placement code="groupPlace">
               <bundle>ca_places</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The place of the event, standardized using the CMS</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-			      </placement>
-            <placement code="verbatimLatitudeY">
-              <bundle>ca_attribute_verbatimLatitudeY</bundle>
-              <settings>
-                <setting name="label" locale="en_US">The original description of the latitude (Y).</setting>
+                <setting name="label" locale="en_US">The place of the group</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-            <placement code="verbatimLongitudeX">
-              <bundle>ca_attribute_verbatimLongitudeX</bundle>
-              <settings>
-                <setting name="label" locale="en_US">The original description of the longitud (X).</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-			      </placement>
-			      <placement code="verbatimCoordinateSystem">
-              <bundle>ca_attribute_verbatimCoordinateSystem</bundle>
-              <settings>
-                <setting name="label" locale="en_US">The coordinate system of the original coordinates</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-			      </placement>
-			      <placement code="standardizedDateRange">
+			      <placement code="groupDateRange">
               <bundle>ca_attribute_dateRange</bundle>
               <!--http://rs.tdwg.org/dwc/terms/dateIdentified-->
               <settings>
-                <setting name="label" locale="en_US">Date (range) of the grouping of objects, standardised using the CMS. Usually this consist of a start date (e.g. FieldMarkDate voor soil surveys, when population was discovered).</setting>
+                <setting name="label" locale="en_US">Date (range) of the group</setting>
+                <setting name="description" locale="en_US">Usually this consist of a start date. For example: the FieldMarkDate voor soil surveys, the date when a population was discovered, the date where a provenance region concept was defined, the date were a certain provenance concept was instated for the first time,..</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
 		      </bundlePlacements>
 		    </screen>
-		    <screen idno="objectLot_context" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>Object lot context</name>
-            </label>
-          </labels>
-          <bundlePlacements>
-            <placement code="ca_attribute_descriptionContainer">
-              <bundle>ca_attribute_descriptionContainer</bundle>
-            </placement>
-			      <placement code="ca_occurrence_project">
-              <bundle>ca_occurrences</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Project that uses the object lot (population, plot or genetic entity)</setting>
-				        <setting name="restrict_to_types">project</setting>
-				        <setting name="add_label" locale="en_US">Add project</setting>
-              </settings>
-			      </placement>
-            <placement code="ca_occurrence_fieldwork" typeRestrictions="population,plotTransect">
-              <bundle>ca_occurrences</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Fieldwork (e.g. expedition, survey event) that included the population/plot</setting>
-				        <setting name="add_label" locale="en_US">Add new fieldwork</setting>
-				        <setting name="restrict_to_types">fieldwork</setting>
-              </settings>
-            </placement>
-          </bundlePlacements>
-        </screen>
-		    <screen idno="objectLot_visuals" default="0">
+		    <screen idno="objectLot_media" default="0">
           <labels>
             <label locale="en_US">
               <name>Media</name>
@@ -9182,7 +9215,7 @@
 			      <placement code="file">
               <bundle>ca_attribute_file</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Files associated with object lot organisation (e.g. map, sketch)</setting>
+                <setting name="label" locale="en_US">Files associated with the group (e.g. map, sketch, publication)</setting>
 				        <setting name="add_label" locale="en_US">Add file</setting>
 			        </settings>
             </placement>
