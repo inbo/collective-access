@@ -1236,21 +1236,39 @@
           </label>
         </labels>
         <items>
-          <item idno="in" enabled="1" default="0">
+          <item idno="internal" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>loan in</name_singular>
-                <name_plural>loans in</name_plural>
+                <name_singular>Internal loan (outgoing)</name_singular>
+                <name_plural>Internal loan (outgoing)</name_plural>
               </label>
             </labels>
           </item>
-          <item idno="out" enabled="1" default="1">
+          <item idno="external" enabled="1" default="1">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>loan out</name_singular>
-                <name_plural>loans out</name_plural>
+                <name_singular>External loan</name_singular>
+                <name_plural>External loans</name_plural>
               </label>
             </labels>
+            <items>
+              <item idno="external_in" enabled="1" default="1">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>Incoming external loan</name_singular>
+                    <name_plural>Incoming external loans</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="external_out" enabled="1" default="1">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>Outgoing external loan</name_singular>
+                    <name_plural>Outgoing external loans</name_plural>
+                  </label>
+                </labels>
+              </item>
+            </items>
           </item>
         </items>
       </list>
@@ -3449,6 +3467,80 @@
           </item>
         </items>
       </list>
+      <list code="provenance_category" hierarchical="0" system="0" vocabulary="1">
+        <labels>
+          <label locale="en_US">
+            <name>Provenance category</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="seedSource" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Seed source</name_singular>
+                <name_plural>Seed sources</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="seedStand" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>(Seed) Stand)</name_singular>
+                <name_plural>(Seed) Stands</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="seedOrchard" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Seed orchard</name_singular>
+                <name_plural>Seed orchards</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="clone" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Clone</name_singular>
+                <name_plural>Clones</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="cloneBank" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Clone bank</name_singular>
+                <name_plural>Clones banks</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
+      <list code="loan_status" hierarchical="0" system="0" vocabulary="1">
+        <labels>
+          <label locale="en_US">
+            <name>Loan status</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="outstanding" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Seed source</name_singular>
+                <name_plural>Seed sources</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="concluded" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>(Seed) Stand)</name_singular>
+                <name_plural>(Seed) Stands</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>loan_status
   </lists>
   <elementSets>
     <!--General-->
@@ -3956,6 +4048,31 @@
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+    <!--ObjectLot-->
+      <metadataElement code="provenanceCategory" datatype="List" list="provenance_category">
+        <labels>
+          <label locale="en_US">
+            <name>Provenance category</name>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_plantObject">
+            <table>ca_objects</table>
+            <type>plantObject</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">255</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -7032,6 +7149,30 @@
         </typeRestrictions>
       </metadataElement>
 	  <!--Loans-->
+	    <metadataElement code="loanStatus" datatype="List" list="loan_status">
+        <labels>
+          <label locale="en_US">
+            <name>Loan status</name>
+            <description>Indication if the loan is still open or concluded.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">5</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+	      <typeRestrictions>
+          <restriction code="r_loan">
+            <table>ca_loans</table>
+            <settings>
+              <setting name="minAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
 	    <metadataElement code="loan_authorization_date" datatype="DateRange">
         <labels>
           <label locale="en_US">
@@ -7218,6 +7359,80 @@
         <typeRestrictions>
           <restriction code="ca_loans">
             <table>ca_loans</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	  <!--Sets-->
+      <metadataElement code="set_description" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Set description</name>
+            <description>Narrative description for set.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">3</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="ca_set">
+            <table>ca_sets</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	  <!--SetItem-->
+      <metadataElement code="set_item_description" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Set item description</name>
+            <description>Narrative description for item in this set.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">3</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="ca_set_item">
+            <table>ca_set_items</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	  <!--Media-->
+      <metadataElement code="caption" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Caption</name>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">3</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="ca_object_representation">
+            <table>ca_object_representations</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -9126,7 +9341,7 @@
         <screen idno="objectLot_record" default="1">
           <labels>
             <label locale="en_US">
-              <name>In-situ construct record</name>
+              <name>Group record</name>
             </label>
           </labels>
           <bundlePlacements>
@@ -9168,20 +9383,14 @@
             <placement code="ca_attribute_descriptionContainer">
               <bundle>ca_attribute_descriptionContainer</bundle>
             </placement>
-          </bundlePlacements>
-        </screen>
-        <screen idno="objectLot_datePlace" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>Date and place</name>
-            </label>
-          </labels>
-          <bundlePlacements>
+            <placement code="verbatimIdentification" typeRestrictions="population,provenance,provenanceRegion">
+              <bundle>ca_attribute_verbatimIdentification</bundle>
+            </placement>
 			      <placement code="groupverbatimLocality">
               <bundle>ca_attribute_verbatimLocality</bundle>
               <settings>
                 <setting name="label" locale="en_US">The original description of the locality, a place, the geographic coverage, ... of the group.</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
@@ -9203,8 +9412,25 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-		      </bundlePlacements>
-		    </screen>
+			      <placement code="provenanceCategory" typeRestrictions="provenance">
+              <bundle>ca_attribute_provenanceCategory</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Provenance category</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+			      <placement code="provenanceRegion" typeRestrictions="provenance">
+              <bundle>ca_object_lots</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Provenance Region</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+				        <setting name="restrict_to_types">ProvenanceRegion</setting>
+              </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
 		    <screen idno="objectLot_media" default="0">
           <labels>
             <label locale="en_US">
@@ -9228,124 +9454,38 @@
             </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="objectLot_taxonomic_identification" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>Object lot identification events</name>
-            </label>
-          </labels>
-          <typeRestrictions>
-            <restriction code="r_geneticEntity" type="geneticEntity"/>
-            <restriction code="r_population" type="population"/>
-          </typeRestrictions>
-          <bundlePlacements>
-			      <placement code="ca_occurrences_preferred_taxonomic_identification">
-              <bundle>ca_occurrences</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Preferred taxonomic identification (event)</setting>
-                <setting name="restrict_to_types">identification</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="display_template">
-                  <![CDATA[
-                    <unit>
-                      <l>ID:^ca_occurrences.idno</l>,
-                      Date: ^ca_occurrences.dateRange,
-                      Scientific name:
-                      <ifdef code="ca_occurrences.identificationQualifier">
-                        ^ca_occurrences.identificationQualifier 
-                      </ifdef>
-                      ^ca_occurrences.scientificName, 
-                      <unit relativeTo="ca_entities">IDed by: ^ca_entities.preferred_labels.displayname</unit>
-                    </unit>
-                  ]]>  
-                </setting>
-			        </settings>
-            </placement>
-            <placement code="ca_occurrences_nonpreferred_taxonomic_identification">
-              <bundle>ca_occurrences</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Nonpreferred taxonomic identification (event)</setting>
-                <setting name="add_label" locale="en_US">Add new identification</setting>
-                <setting name="restrict_to_types">identification</setting>
-                <setting name="list_format">list</setting>
-                <setting name="display_template">
-                  <![CDATA[
-                    <unit>
-                      <l>ID:^ca_occurrences.idno</l>,
-                      Date: ^ca_occurrences.dateRange,
-                      Scientific name:
-                      <ifdef code="ca_occurrences.identificationQualifier">
-                        ^ca_occurrences.identificationQualifier 
-                      </ifdef>
-                      ^ca_occurrences.scientificName, 
-                      <unit relativeTo="ca_entities">IDed by: ^ca_entities.preferred_labels.displayname</unit>
-                    </unit>
-                  ]]>  
-                </setting>
-			        </settings>
-            </placement>
-          </bundlePlacements>
-        </screen>
         <screen idno="objectLot_derivates" default="0">
 		      <labels>
             <label locale="en_US">
-              <name>Derivatives of the object lot</name>
+              <name>Linked objects and observations</name>
             </label>
           </labels>
           <bundlePlacements>
             <placement code="ca_object">
               <bundle>ca_objects</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The object lot resulted in object</setting>
+                <setting name="label" locale="en_US">Object that belongs to the group</setting>
                 <setting name="add_label" locale="en_US">Add new object</setting>
+                <setting name="list_format">list</setting>
               </settings>
             </placement>
             <placement code="ca_occurrences_observation">
               <bundle>ca_occurrences</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Resulting observation</setting>
+                <setting name="label" locale="en_US">Observation that belongs to the group</setting>
 				        <setting name="add_label" locale="en_US">Add observation</setting>
 				        <setting name="restrict_to_types">observation</setting>
+                <setting name="list_format">list</setting>
 			        </settings>
             </placement>
-          </bundlePlacements>
-        </screen>
-        <screen idno="objectLot_use" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>Object lot use</name>
-            </label>
-          </labels>
-          <bundlePlacements>
-			      <placement code="file">
-              <bundle>ca_attribute_file</bundle>
+            <placement code="ca_storage_location" typeRestrictions="provenance,provenanceRegion">
+              <bundle>ca_storage_locations</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Files that have a consequence on the use of the object lot (e.g. permit, contract)</setting>
-				        <setting name="add_label" locale="en_US">Add file</setting>
+                <setting name="label" locale="en_US">Plants with this provenance (region) are planted in the ex-situ plots</setting>
+				        <setting name="add_label" locale="en_US">Add ex-situ plot</setting>
+				        <setting name="restrict_to_types">plantedSite</setting>
+                <setting name="list_format">list</setting>
 			        </settings>
-            </placement>
-            <placement code="restriction_use">
-              <bundle>ca_attribute_restrictionUse</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Restriction for re-use</setting>
-                <setting name="add_label" locale="en_US">Add new restriction</setting>
-              </settings>
-            </placement>
-          </bundlePlacements>
-        </screen>
-		    <screen idno="objectLot_recordStop" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>End of manually editing the record</name>
-            </label>
-          </labels>
-          <bundlePlacements>
-			      <placement code="status">
-              <bundle>Cataloguing status</bundle>
-			        <settings>
-				        <setting name="minRelationshipsPerRow">1</setting>
-              </settings>
             </placement>
           </bundlePlacements>
         </screen>
@@ -9358,7 +9498,7 @@
         </label>
       </labels>
       <screens>
-        <screen idno="loan_recordStart" default="1">
+        <screen idno="loan_record" default="1">
           <labels>
             <label locale="en_US">
               <name>Loan record</name>
@@ -9375,36 +9515,74 @@
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Loan title</setting>
-                <setting name="add_label" locale="en_US">Add loan title</setting>
               </settings>
             </placement>
 			      <placement code="nonpreferred_labels">
               <bundle>nonpreferred_labels</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Other identifiers (non-preferred)</setting>
+                <setting name="label" locale="en_US">Other identifiers for the loan (non-preferred)</setting>
 				        <setting name="add_label" locale="en_US">Add other non preferred identifier</setting>
               </settings>
             </placement>
 			      <placement code="loan_type">
               <bundle>loan_type</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Type of loan: incoming, outgoing, (permanent) transfer</setting>
+                <setting name="label" locale="en_US">Type of loan</setting>
               </settings>
             </placement>
+			      <placement code="loanStatus">
+              <bundle>ca_attribute_loanStatus</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Loan status</setting>
+				        <setting name="minRelationshipsPerRow">1</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
+        <screen idno="loan_log" default="1">
+          <labels>
+            <label locale="en_US">
+              <name>Loan log</name>
+            </label>
+          </labels>
+          <bundlePlacements>
             <placement code="ca_entities_requester">
               <bundle>ca_entity</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Contact</setting>
-				        <setting name="add_label" locale="en_US">Add contact</setting>
+                <setting name="label" locale="en_US">Requester</setting>
                 <setting name="restrict_to_types">ind</setting>
+				        <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="status">
-              <bundle>status</bundle>
+            <placement code="ca_entities_requesterBackup">
+              <bundle>ca_entity</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Cataloguing status</setting>
+                <setting name="label" locale="en_US">Requester back-up</setting>
+                <setting name="description" locale="en_US">Every loan needs a secondary individual that is registered as a back-up contact. All communication occurs with the requestor and the back-up in cc. This is implemented in case the first individual cannot be reached or becomes disassociated with the organization at the time of loan. This second individual is co-responsible for follow up of the loan agreement and also signs the agreement.</setting>
+                <setting name="restrict_to_types">ind</setting>
 				        <setting name="minRelationshipsPerRow">1</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+            <placement code="ca_entities_requestingInstitute">
+              <bundle>ca_entity</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Institute of request</setting>
+                <setting name="description" locale="en_US">Every loan needs to be linked to an organization. If the requestor of the loan changes its affiliation, the material stays in the organization that is on the loan agreement. No loans to unaffiliated individuals.</setting>
+                <setting name="restrict_to_types">org</setting>
+				        <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+            <placement code="loan_address" typeRestrictions="external_out">
+              <bundle>ca_attribute_address</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Address</setting>
+                <setting name="description" locale="en_US">The full address to which the loan will be, or was, send. This should also include the internal structure of the organization at hand (e.g. research group, department, team, ..) as specified in the request.</setting>
+				        <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
             <placement code="ca_attribute_loan_authorization_date">
@@ -9434,7 +9612,8 @@
 			      <placement code="loan_file">
               <bundle>ca_attribute_file</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">File associated with loan (loan agreement, material transfer agreement, ...)</setting>
+                <setting name="label" locale="en_US">File associated with loan</setting>
+                <setting name="description" locale="en_US">For example: loan agreement, material transfer agreement, prints of mail communication, evidence of mailing the material, ...</setting>
 				        <setting name="add_label" locale="en_US">Add file</setting>
 			        </settings>
             </placement>
@@ -9443,108 +9622,25 @@
         <screen idno="loan_content" default="0">
           <labels>
             <label locale="en_US">
-              <name>Relationships</name>
+              <name>Loan content</name>
 			      </label>
           </labels>
           <bundlePlacements>
             <placement code="ca_objects">
               <bundle>ca_objects</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Objects of loan</setting>
+                <setting name="description" locale="en_US">Either the full object, or in case of destructive sampling, a part of the listed object (e.g. DNA samples, soil samples, living plants, tissues).</setting>
+				        <setting name="add_label" locale="en_US">Add object</setting>
+			        </settings>
             </placement>
             <placement code="ca_object_representations">
               <bundle>ca_object_representations</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Visual representation of the loan (i.e. photo, video), to document condition, volume, ...</setting>
+                <setting name="label" locale="en_US">Visual representation of the loan</setting>
+                <setting name="description" locale="en_US">This can be photos or videos, to document condition, volume, ...; either before sending out the loan, or when receiving the loan.</setting>
 				        <setting name="add_label" locale="en_US">Add media</setting>
 			        </settings>
-            </placement>
-          </bundlePlacements>
-        </screen>
-		    <screen idno="loan_recordStop" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>End of manually editing the record</name>
-            </label>
-          </labels>
-          <bundlePlacements>
-			      <placement code="status">
-              <bundle>Cataloguing status</bundle>
-            </placement>
-          </bundlePlacements>
-        </screen>
-      </screens>
-    </userInterface>
-    <userInterface code="set_cataloguers_ui" type="ca_sets">
-      <labels>
-        <label locale="en_US">
-          <name>Set editor</name>
-        </label>
-      </labels>
-      <screens>
-        <screen idno="basic" default="1">
-          <labels>
-            <label locale="en_US">
-              <name>Basic info</name>
-            </label>
-          </labels>
-          <bundlePlacements>
-            <placement code="preferred_labels">
-              <bundle>preferred_labels</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Set title</setting>
-                <setting name="add_label" locale="en_US">Add set title</setting>
-              </settings>
-            </placement>
-            <placement code="set_code">
-              <bundle>set_code</bundle>
-            </placement>
-            <placement code="access">
-              <bundle>access</bundle>
-            </placement>
-            <placement code="status">
-              <bundle>status</bundle>
-            </placement>
-            <placement code="ca_attribute_description">
-              <bundle>ca_attribute_description</bundle>
-            </placement>
-          </bundlePlacements>
-        </screen>
-        <screen idno="items" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>Items</name>
-            </label>
-          </labels>
-          <bundlePlacements>
-            <placement code="ca_set_items">
-              <bundle>ca_set_items</bundle>
-            </placement>
-          </bundlePlacements>
-        </screen>
-      </screens>
-    </userInterface>
-    <userInterface code="set_item_cataloguers_ui" type="ca_set_items">
-      <labels>
-        <label locale="en_US">
-          <name>Set item editor</name>
-        </label>
-      </labels>
-      <screens>
-        <screen idno="basic" default="1">
-          <labels>
-            <label locale="en_US">
-              <name>Basic info</name>
-            </label>
-          </labels>
-          <bundlePlacements>
-            <placement code="preferred_labels">
-              <bundle>preferred_labels</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Set caption</setting>
-                <setting name="add_label" locale="en_US">Add caption</setting>
-              </settings>
-            </placement>
-            <placement code="ca_attribute_caption">
-              <bundle>ca_attribute_caption</bundle>
             </placement>
           </bundlePlacements>
         </screen>
@@ -9590,8 +9686,11 @@
             <placement code="access">
               <bundle>access</bundle>
             </placement>
-            <placement code="ca_attribute_description">
-              <bundle>ca_attribute_description</bundle>
+            <placement code="ca_attribute_descriptionContainer">
+              <bundle>ca_attribute_descriptionContainer</bundle>
+            </placement>
+            <placement code="ca_attribute_caption">
+              <bundle>ca_attribute_caption</bundle>
             </placement>
             <placement code="ca_attribute_DateRange">
               <bundle>ca_attribute_DateRange</bundle>
@@ -9622,22 +9721,408 @@
         </screen>
       </screens>
     </userInterface>
-    <userInterface code="object_relationship_ui" type="ca_object_x_object">
+    <userInterface code="representation_annotation_ui" type="ca_representation_annotations">
       <labels>
         <label locale="en_US">
-          <name>Interstitial Object Editor</name>
+          <name>Representation annotation editor</name>
         </label>
       </labels>
       <screens>
-        <screen idno="basic" default="1">
+        <screen idno="representation_annotation_record" default="1">
           <labels>
             <label locale="en_US">
-              <name>Basic info</name>
+              <name>Annotation record</name>
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="ca_attribute_relationSpecification">
-              <bundle>ca_attribute_relationSpecification</bundle>
+            <placement code="preferred_labels">
+              <bundle>preferred_labels</bundle>
+            </placement>
+            <placement code="ca_representation_annotation_properties">
+              <bundle>ca_representation_annotation_properties</bundle>
+            </placement>
+            <placement code="access">
+              <bundle>access</bundle>
+            </placement>
+            <placement code="status">
+              <bundle>status</bundle>
+            </placement>
+            <placement code="ca_attribute_descriptionContainer">
+              <bundle>ca_attribute_descriptionContainer</bundle>
+            </placement>           
+          </bundlePlacements>
+        </screen>
+      </screens>
+    </userInterface>
+    <userInterface code="list_ui" type="ca_lists">
+      <labels>
+        <label locale="en_US">
+          <name>List editor</name>
+        </label>
+      </labels>
+      <screens>
+        <screen idno="list_record" default="1">
+          <labels>
+            <label locale="en_US">
+              <name>List record</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="preferred_labels">
+              <bundle>preferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">List title</setting>
+              </settings>
+            </placement>
+            <placement code="list_code">
+              <bundle>list_code</bundle>
+            </placement>
+            <placement code="default_sort">
+              <bundle>default_sort</bundle>
+            </placement>
+            <placement code="is_hierarchical">
+              <bundle>is_hierarchical</bundle>
+            </placement>
+            <placement code="is_system_list">
+              <bundle>is_system_list</bundle>
+            </placement>
+            <placement code="use_as_vocabulary">
+              <bundle>use_as_vocabulary</bundle>
+            </placement>
+          </bundlePlacements>
+        </screen>
+        <screen idno="items" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Items</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="ca_set_items">
+              <bundle>ca_set_items</bundle>
+            </placement>
+          </bundlePlacements>
+        </screen>
+      </screens>
+    </userInterface>
+    <userInterface code="list_item_ui" type="ca_list_items">
+      <labels>
+        <label locale="en_US">
+          <name>List item editor</name>
+        </label>
+      </labels>
+      <screens>
+        <screen idno="list_item_record" default="1">
+          <labels>
+            <label locale="en_US">
+              <name>List item record</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="hier_location">
+              <bundle>hierarchy_location</bundle>
+            </placement>
+            <placement code="preferred_labels">
+              <bundle>preferred_labels</bundle>
+            </placement>
+            <placement code="idno">
+              <bundle>idno</bundle>
+            </placement>
+            <placement code="item_value">
+              <bundle>item_value</bundle>
+            </placement>
+            <placement code="is_enabled">
+              <bundle>is_enabled</bundle>
+            </placement>
+            <placement code="is_default">
+              <bundle>is_default</bundle>
+            </placement>
+            <placement code="rank">
+              <bundle>rank</bundle>
+            </placement>
+            <placement code="color">
+              <bundle>color</bundle>
+            </placement>
+            <placement code="icon">
+              <bundle>icon</bundle>
+            </placement>
+            <placement code="ca_settings">
+              <bundle>settings</bundle>
+            </placement>
+            <placement code="access">
+              <bundle>access</bundle>
+            </placement>
+            <placement code="status">
+              <bundle>status</bundle>
+            </placement>
+          </bundlePlacements>
+        </screen>
+        <screen idno="items" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Items</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="ca_set_items">
+              <bundle>ca_set_items</bundle>
+            </placement>
+          </bundlePlacements>
+        </screen>
+      </screens>
+    </userInterface>
+    <userInterface code="set_ui" type="ca_sets">
+      <labels>
+        <label locale="en_US">
+          <name>Set editor</name>
+        </label>
+      </labels>
+      <screens>
+        <screen idno="set_record" default="1">
+          <labels>
+            <label locale="en_US">
+              <name>Set record</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="preferred_labels">
+              <bundle>preferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Set title</setting>
+              </settings>
+            </placement>
+            <placement code="set_code">
+              <bundle>set_code</bundle>
+            </placement>
+            <placement code="access">
+              <bundle>access</bundle>
+            </placement>
+            <placement code="status">
+              <bundle>status</bundle>
+            </placement>
+            <placement code="ca_attribute_set_description">
+              <bundle>ca_attribute_set_description</bundle>
+            </placement>
+          </bundlePlacements>
+        </screen>
+        <screen idno="items" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Items</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="ca_set_items">
+              <bundle>ca_set_items</bundle>
+            </placement>
+          </bundlePlacements>
+        </screen>
+      </screens>
+    </userInterface>
+    <userInterface code="set_item_ui" type="ca_set_items">
+      <labels>
+        <label locale="en_US">
+          <name>Set item editor</name>
+        </label>
+      </labels>
+      <screens>
+        <screen idno="Set item record" default="1">
+          <labels>
+            <label locale="en_US">
+              <name>Set item record</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="preferred_labels">
+              <bundle>preferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Set caption</setting>
+              </settings>
+            </placement>
+            <placement code="ca_attribute_set_item_description">
+              <bundle>ca_attribute_set_item_description</bundle>
+            </placement>
+          </bundlePlacements>
+        </screen>
+      </screens>
+    </userInterface>
+    <userInterface code="relationship_types_ui" type="ca_relationship_types">
+      <labels>
+        <label locale="en_US">
+          <name>Relationship types editor</name>
+        </label>
+      </labels>
+      <screens>
+        <screen idno="relationship_type_record" default="1">
+          <labels>
+            <label locale="en_US">
+              <name>Relationship type record</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="preferred_labels">
+              <bundle>preferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Relationship name</setting>
+              </settings>
+            </placement>
+            <placement code="type_code">
+              <bundle>type_code</bundle>
+            </placement>
+            <placement code="is_default">
+              <bundle>is_default</bundle>
+            </placement>
+            <placement code="sub_type_left_id">
+              <bundle>sub_type_left_id</bundle>
+            </placement>
+            <placement code="include_subtypes_left">
+              <bundle>include_subtypes_left</bundle>
+            </placement>
+            <placement code="sub_type_right_id">
+              <bundle>sub_type_right_id</bundle>
+            </placement>
+            <placement code="include_subtypes_right">
+              <bundle>include_subtypes_right</bundle>
+            </placement>
+            <placement code="rank">
+              <bundle>rank</bundle>
+            </placement>
+            <placement code="hierarchy_location">
+              <bundle>hierarchy_location</bundle>
+            </placement>
+          </bundlePlacements>
+        </screen>
+      </screens>
+    </userInterface>
+    <userInterface code="search_forms_ui" type="ca_search_forms">
+      <labels>
+        <label locale="en_US">
+          <name>Search forms editor</name>
+        </label>
+      </labels>
+      <screens>
+        <screen idno="search_form_record" default="1">
+          <labels>
+            <label locale="en_US">
+              <name>Search form record</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="preferred_labels">
+              <bundle>preferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Form name</setting>
+              </settings>
+            </placement>
+            <placement code="form_code">
+              <bundle>form_code</bundle>
+            </placement>
+            <placement code="is_system">
+              <bundle>is_system</bundle>
+            </placement>
+            <placement code="ca_search_form_placements">
+              <bundle>ca_search_form_placements</bundle>
+            </placement>
+            <placement code="ca_settings">
+              <bundle>settings</bundle>
+            </placement>
+            <placement code="ca_search_form_type_restrictions">
+              <bundle>ca_search_form_type_restrictions</bundle>
+            </placement>
+            <placement code="ca_users">
+              <bundle>ca_users</bundle>
+            </placement>
+            <placement code="ca_user_groups">
+              <bundle>ca_user_groups</bundle>
+            </placement>
+          </bundlePlacements>
+        </screen>
+      </screens>
+    </userInterface>
+    <userInterface code="bundle_display_ui" type="ca_bundle_displays">
+      <labels>
+        <label locale="en_US">
+          <name>Display list editor</name>
+        </label>
+      </labels>
+      <screens>
+        <screen idno="bundle_display_record" default="1">
+          <labels>
+            <label locale="en_US">
+              <name>Display list record</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="preferred_labels">
+              <bundle>preferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Display list name</setting>
+              </settings>
+            </placement>
+            <placement code="display_code">
+              <bundle>display_code</bundle>
+            </placement>
+            <placement code="is_system">
+              <bundle>is_system</bundle>
+            </placement>
+            <placement code="settings">
+              <bundle>settings</bundle>
+            </placement>
+            <placement code="ca_bundle_display_type_restrictions">
+              <bundle>ca_bundle_display_type_restrictions</bundle>
+            </placement>
+            <placement code="ca_users">
+              <bundle>ca_users</bundle>
+            </placement>
+            <placement code="ca_user_groups">
+              <bundle>ca_user_groups</bundle>
+            </placement>
+          </bundlePlacements>
+        </screen>
+      </screens>
+    </userInterface>
+    <userInterface code="metadata_alert_rule_ui" type="ca_metadata_alert_rules">
+      <labels>
+        <label locale="en_US">
+          <name>Metadata alert rule editor</name>
+        </label>
+      </labels>
+      <screens>
+        <screen idno="metadata_alert_rules_record" default="1">
+          <labels>
+            <label locale="en_US">
+              <name>Metadata alert rule record</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="preferred_labels">
+              <bundle>preferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Metadata alert rule name</setting>
+              </settings>
+            </placement>
+            <placement code="ca_metadata_alert_triggers">
+              <bundle>ca_metadata_alert_triggers</bundle>
+            </placement>
+            <placement code="ca_users">
+              <bundle>ca_users</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Recipient users</setting>
+                <setting name="add_label" locale="en_US">Add user</setting>
+              </settings>
+            </placement>
+            <placement code="ca_user_groups">
+              <bundle>ca_user_groups</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Recipient user groups</setting>
+                <setting name="add_label" locale="en_US">Add group</setting>
+              </settings>
+            </placement>
+            <placement code="ca_metadata_alert_rule_type_restrictions">
+              <bundle>ca_metadata_alert_rule_type_restrictions</bundle>
+            </placement>
+            <placement code="code">
+              <bundle>code</bundle>
             </placement>
           </bundlePlacements>
         </screen>
@@ -10098,27 +10583,27 @@
         </type>
       </types>
     </relationshipTable>
-    <relationshipTable name="ca_occurrences_x_places">
+    <relationshipTable name="ca_places_x_occurrences">
       <types>
         <type code="locationOccurrence" default="1">
           <labels>
             <label locale="en_US">
-              <typename>occurred at</typename>
-              <typename_reverse>was location of</typename_reverse>
+              <typename>was location of</typename>
+              <typename_reverse>occurred at</typename_reverse>
             </label>
          </labels>
-          <subTypeLeft>observation,fieldwork</subTypeLeft>
-          <subTypeRight></subTypeRight>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>observation,fieldwork</subTypeRight>
         </type>
         <type code="locationFocus" default="1">
           <labels>
             <label locale="en_US">
-              <typename>focused on location</typename>
-              <typename_reverse>was focal location of</typename_reverse>
+              <typename>was focal location of</typename>
+              <typename_reverse>focused on location</typename_reverse>
             </label>
          </labels>
-          <subTypeLeft>project</subTypeLeft>
-          <subTypeRight></subTypeRight>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>project</subTypeRight>
         </type>
       </types>
     </relationshipTable>
@@ -10276,7 +10761,171 @@
     </group>
   </groups>
   <!-- <displays> -->
-  <!-- <searchForms> -->
+  <searchForms>
+    <searchForm code="ca_objects_adv_search" type="ca_objects" system="1">
+      <labels>
+        <label locale="en_US">
+          <name>Extended search</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="form_width">3</setting>
+      </settings>
+      <bundlePlacements>
+        <placement code="preferred_labels">
+          <bundle>ca_object_labels.name</bundle>
+          <settings>
+            <setting name="label" locale="en_US">Title</setting>
+          </settings>
+        </placement>
+        <placement code="idno">
+          <bundle>ca_objects.idno</bundle>
+        </placement>
+        <placement code="type_id">
+          <bundle>ca_objects.type_id</bundle>
+        </placement>
+      </bundlePlacements>
+    </searchForm>
+    <searchForm code="ca_entities_adv_search" type="ca_entities" system="1">
+      <labels>
+        <label locale="en_US">
+          <name>Extended search</name>
+        </label>
+        <label locale="en_CA">
+          <name>Extended search</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="form_width">3</setting>
+      </settings>
+      <bundlePlacements>
+        <placement code="forename">
+          <bundle>ca_entity_labels.forename</bundle>
+        </placement>
+        <placement code="middlename">
+          <bundle>ca_entity_labels.middlename</bundle>
+        </placement>
+        <placement code="surname">
+          <bundle>ca_entity_labels.surname</bundle>
+        </placement>
+        <placement code="idno">
+          <bundle>ca_entities.idno</bundle>
+        </placement>
+        <placement code="type_id">
+          <bundle>ca_entities.type_id</bundle>
+        </placement>
+        <placement code="access">
+          <bundle>ca_entities.access</bundle>
+        </placement>
+        <placement code="status">
+          <bundle>ca_entities.status</bundle>
+        </placement>
+      </bundlePlacements>
+    </searchForm>
+    <searchForm code="ca_places_adv_search" type="ca_places" system="1">
+      <labels>
+        <label locale="en_US">
+          <name>Extended search</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="form_width">3</setting>
+      </settings>
+      <bundlePlacements>
+        <placement code="name">
+          <bundle>ca_place_labels.name</bundle>
+        </placement>
+        <placement code="idno">
+          <bundle>ca_places.idno</bundle>
+        </placement>
+        <placement code="type_id">
+          <bundle>ca_places.type_id</bundle>
+        </placement>
+        <placement code="access">
+          <bundle>ca_places.access</bundle>
+        </placement>
+        <placement code="status">
+          <bundle>ca_places.status</bundle>
+        </placement>
+      </bundlePlacements>
+    </searchForm>
+    <searchForm code="ca_occurrences_adv_search" type="ca_occurrences" system="1">
+      <labels>
+        <label locale="en_US">
+          <name>Extended search</name>
+        </label>
+        <label locale="en_CA">
+          <name>Extended search</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="form_width">3</setting>
+      </settings>
+      <bundlePlacements>
+        <placement code="forename">
+          <bundle>ca_occurrence_labels.name</bundle>
+          <settings>
+            <setting name="label" locale="en_US">Title</setting>
+          </settings>
+        </placement>
+        <placement code="idno">
+          <bundle>ca_occurrences.idno</bundle>
+        </placement>
+        <placement code="access">
+          <bundle>ca_places.access</bundle>
+        </placement>
+        <placement code="status">
+          <bundle>ca_places.status</bundle>
+        </placement>
+      </bundlePlacements>
+    </searchForm>
+    <searchForm code="ca_collections_adv_search" type="ca_collections" system="1">
+      <labels>
+        <label locale="en_US">
+          <name>Extended search</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="form_width">3</setting>
+      </settings>
+      <bundlePlacements>
+        <placement code="name">
+          <bundle>ca_collection_labels.name</bundle>
+        </placement>
+        <placement code="idno">
+          <bundle>ca_collections.idno</bundle>
+        </placement>
+        <placement code="type_id">
+          <bundle>ca_collections.type_id</bundle>
+        </placement>
+        <placement code="access">
+          <bundle>ca_collections.access</bundle>
+        </placement>
+        <placement code="status">
+          <bundle>ca_collections.status</bundle>
+        </placement>
+      </bundlePlacements>
+    </searchForm>
+    <searchForm code="ca_storage_locations_adv_search" type="ca_storage_locations" system="1">
+      <labels>
+        <label locale="en_US">
+          <name>Extended search</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="form_width">3</setting>
+      </settings>
+      <bundlePlacements>
+        <placement code="name">
+          <bundle>ca_storage_location_labels.name</bundle>
+        </placement>
+        <placement code="type_id">
+          <bundle>ca_storage_locations.type_id</bundle>
+        </placement>
+      </bundlePlacements>
+    </searchForm>
+    <searchForm code="ca_loans_adv_search" type="ca_loans" system="1">
+  </searchForms> 
   <!-- <logins> -->
   <!-- <metadataAlerts> -->
 </profile>
