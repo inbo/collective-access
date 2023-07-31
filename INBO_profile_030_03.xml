@@ -1826,6 +1826,31 @@
           </item>
         </items>
       </list>
+      <list code="origin_of_object" hierarchical="0" system="0" vocabulary="1">
+        <labels>
+          <label locale="en_US">
+            <name>Origin of the object</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="observation" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Object derived from observation (i.e. environment or organism)</name_singular>
+                <name_plural>Objects derived from observation (i.e. environment or organism)</name_plural>
+              </label>
+            </labels>
+          </item>		
+          <item idno="object" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Object derived from another object</name_singular>
+                <name_plural>Objects derived from another object</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
       <list code="seed_class" hierarchical="0" system="0" vocabulary="1">
         <labels>
           <label locale="en_US">
@@ -4064,6 +4089,30 @@
         </settings>
         <typeRestrictions>
           <restriction code="r_objects">
+            <table>ca_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="originOfObject" datatype="List" list="origin_of_object">
+        <labels>
+          <label locale="en_US">
+            <name>Origin of object</name>
+		        <description>The parent of the object, whether directly sampled from the environment or an organisms, or subsampled from an already existing object in collection.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_object">
             <table>ca_objects</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -8187,6 +8236,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Project that generated the object</setting>
 				        <setting name="restrict_to_types">project</setting>
+                <setting name="restrict_to_relationship_types">resultingObjects</setting>
               </settings>
 			      </placement>
             <placement code="ca_occurrence_fieldwork">
@@ -8197,6 +8247,7 @@
 				        <setting name="restrict_to_types">fieldwork</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="restrict_to_relationship_types">resultingObjects</setting>
               </settings>
             </placement>
             <placement code="ca_occurrence_observation">
@@ -8206,14 +8257,24 @@
                 <setting name="restrict_to_types">observation</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="restrict_to_relationship_types">represents</setting>
               </settings>
             </placement>
-            <placement code="ca_objects_subsample">
+            <placement code="ca_attributes_originOfObject">
+              <bundle>ca_attributes_originOfObject</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The direct parent of the object is of the type</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+            <placement code="ca_objects_parentObject">
               <bundle>ca_objects</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The object is a subsample of</setting>
+                <setting name="label" locale="en_US">The direct parent of the object is the object</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="restrict_to_relationship_types">dnaSubSample</setting>
               </settings>
             </placement>
             <placement code="ca_objects_siblingsample">
@@ -8222,6 +8283,7 @@
                 <setting name="label" locale="en_US">The object is a sibling sample of</setting>
                 <setting name="description" locale="en_US">If relevant to log explicitly, here the object can be linked to related samples. For example: tissue samples from the same cadaver, insect samples from the sample trap, ...</setting>
 				        <setting name="add_label" locale="en_US">Add sibling sample</setting>
+                <setting name="restrict_to_relationship_types">relatedTo</setting>
               </settings>
             </placement>
 			      <placement code="ca_object_lot_population">
@@ -8660,6 +8722,7 @@
 				        <setting name="restrict_to_types">org</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="restrict_to_relationship_types">currentOwner</setting>
               </settings>
             </placement>
 			      <placement code="ca_entities_previousOwner">
@@ -8668,6 +8731,7 @@
                 <setting name="label" locale="en_US">Previous owner</setting>
                 <setting name="description" locale="en_US">This can be both an individual (i.e. personal collection that was donated) or organization.</setting>
 				        <setting name="add_label" locale="en_US">Add previous owner</setting>
+                <setting name="restrict_to_relationship_types">previousOwner</setting>
               </settings>
             </placement>
             <placement code="ca_entities_Contact">
@@ -8679,6 +8743,7 @@
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">2</setting>
+                <setting name="restrict_to_relationship_types">knowsMost</setting>
               </settings>
             </placement>
             <placement code="ca_occurrences_valuation">
