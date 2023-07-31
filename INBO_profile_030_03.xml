@@ -3587,7 +3587,7 @@
             <table>ca_places</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">10</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -3607,27 +3607,40 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_valuation">
+          <restriction code="r_occurrences">
             <table>ca_occurrences</table>
-            <type>valuation</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_project">
-            <table>ca_occurrences</table>
-            <type>project</type>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_fieldwork">
-            <table>ca_occurrences</table>
-            <type>fieldwork</type>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_entities">
+            <table>ca_entities</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_loans">
+            <table>ca_loans</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -3640,7 +3653,6 @@
         <labels>
           <label locale="en_US">
             <name>File</name>
-            <description>File linked to the storage location (e.g. map), administration (e.g. permit), ...</description>
           </label>
         </labels>
         <settings>
@@ -3654,34 +3666,47 @@
               <table>ca_storage_locations</table>
               <settings>
                 <setting name="minAttributesPerRow">0</setting>
-                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="maxAttributesPerRow">20</setting>
                 <setting name="minimumAttributeBundlesToDisplay">1</setting>
               </settings>
             </restriction>
-            <restriction code="r_sampling">
+            <restriction code="r_occurrences">
               <table>ca_occurrences</table>
-              <type>sampling</type>
               <settings>
                 <setting name="minAttributesPerRow">0</setting>
-                <setting name="maxAttributesPerRow">1</setting>
-                <setting name="minimumAttributeBundlesToDisplay">1</setting>
-              </settings>
-            </restriction>
-            <restriction code="r_observation">
-              <table>ca_occurrences</table>
-              <type>observation</type>
-              <settings>
-                <setting name="minAttributesPerRow">0</setting>
-                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="maxAttributesPerRow">20</setting>
                 <setting name="minimumAttributeBundlesToDisplay">1</setting>
               </settings>
             </restriction>
             <restriction code="r_objectLot">
               <table>ca_object_lots</table>
-              <includeSubtypes>1</includeSubtypes>
               <settings>
                 <setting name="minAttributesPerRow">0</setting>
-                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="maxAttributesPerRow">20</setting>
+                <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              </settings>
+            </restriction>
+            <restriction code="r_loans">
+              <table>ca_loans</table>
+              <settings>
+                <setting name="minAttributesPerRow">0</setting>
+                <setting name="maxAttributesPerRow">20</setting>
+                <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              </settings>
+            </restriction>
+            <restriction code="r_objects">
+              <table>ca_objects</table>
+              <settings>
+                <setting name="minAttributesPerRow">0</setting>
+                <setting name="maxAttributesPerRow">20</setting>
+                <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              </settings>
+            </restriction>
+            <restriction code="r_collections">
+              <table>ca_collections</table>
+              <settings>
+                <setting name="minAttributesPerRow">0</setting>
+                <setting name="maxAttributesPerRow">20</setting>
                 <setting name="minimumAttributeBundlesToDisplay">1</setting>
               </settings>
             </restriction>
@@ -3726,9 +3751,8 @@
 		      </metadataElement>
 	      </elements>
         <typeRestrictions>
-          <restriction code="r_object">
+          <restriction code="r_objects">
             <table>ca_objects</table>
-            <type>object</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -3755,13 +3779,189 @@
             <table>ca_objects</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_occurrences">
+            <table>ca_occurrences</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_entities">
+            <table>ca_entities</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_loans">
+            <table>ca_loans</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="externalRecord" datatype="Url">
+        <labels>
+          <label locale="en_US">
+            <name>External record</name>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">90</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_occurrences">
+            <table>ca_occurrences</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_loans">
+            <table>ca_loans</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_entities">
+            <table>ca_entities</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_collections">
+            <table>ca_collections</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="dataset" datatype="Url">
+        <labels>
+          <label locale="en_US">
+            <name>Dataset</name>
+            <description>A dataset</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">5</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_entities">
+            <table>ca_entities</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_loans">
+            <table>ca_loans</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_occurrences">
+            <table>ca_occurrences</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="verbatimNotes" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Verbatim Notes</name>
+		        <description>Any unstructured information (e.g. notes, comments) literally transcribed from the original source.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
           <restriction code="r_observation">
-            <table>ca_occurrences</table>
-            <type>identification</type>
+            <table>ca_objects</table>
+            <type>observation</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -3769,7 +3969,7 @@
             </settings>
           </restriction>
           <restriction code="r_fieldwork">
-            <table>ca_occurrences</table>
+            <table>ca_objects</table>
             <type>fieldwork</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -3777,17 +3977,8 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_identification">
-            <table>ca_occurrences</table>
-            <type>identification</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
           <restriction code="r_sampling">
-            <table>ca_occurrences</table>
+            <table>ca_objects</table>
             <type>sampling</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -3796,7 +3987,7 @@
             </settings>
           </restriction>
           <restriction code="r_curation">
-            <table>ca_occurrences</table>
+            <table>ca_objects</table>
             <type>curation</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -3805,8 +3996,181 @@
             </settings>
           </restriction>
           <restriction code="r_valuation">
-            <table>ca_occurrences</table>
+            <table>ca_objects</table>
             <type>valuation</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_identification">
+            <table>ca_objects</table>
+            <type>identification</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+    <!--Object-->
+	    <metadataElement code="blockedUntil" datatype="DateRange">
+        <labels>
+          <label locale="en_US">
+            <name>Blocked Until</name>
+		        <description>Sample or specimen data can not be ordered/loaned until the given date, but are visible via portals</description>
+          </label>
+        </labels>
+	      <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/blockedUntil</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">40</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="preparationDate" datatype="DateRange">
+        <labels>
+          <label locale="en_US">
+            <name>Preparation Date</name>
+		        <description>The date of preparation/extraction. When used for an object that was taken from the field, preparation date, observation date and sampling date are the usually the same.</description>
+          </label>
+        </labels>
+	      <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/preparationDate</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">40</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+          <setting name="useDatePicker">1</setting>
+          <setting name="canBeUsedInSort">1</setting>
+          <setting name="canBeUsedInSearchForm">1</setting>
+          <setting name="canBeUsedInDisplay">1</setting>
+          <setting name="default_text">presentDate</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="seedlotRelation" datatype="List" list="seedlot_relation">
+        <labels>
+          <label locale="en_US">
+            <name>Seedlot relation</name>
+		        <description>The relation between the individual seeds of the seedlot</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_seedLot">
+            <table>ca_objects</table>
+            <type>seedLot</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="relationSpecification" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Relation specification</name>
+		        <description>Specification on the type of relation.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_seedLot">
+            <table>ca_objects</table>
+            <type>seedLot</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="seedClass" datatype="List" list="seed_class">
+        <labels>
+          <label locale="en_US">
+            <name>Seed class</name>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_seedLot">
+            <table>ca_objects</table>
+            <type>seedLot</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="decompositionCategory" datatype="List" list="decomposition_category">
+        <labels>
+          <label locale="en_US">
+            <name>Decomposition category</name>
+		        <description>Decomposition category of the organism at the time of collection. DCC1: extremely fresh (e.g. animal/plant was still alive at collection, or the animal was euthanized and collection occurred immediately after). DCC2: fresh (i.e. animal that has only recently died, no signs of decomposition / the collected leaves were fallen off the tree but still green). DCC3: moderate decomposition (for example: mammal its belly is swollen, hair detaches, fly eggs, .. / leaves start to turn brown). DCC4: advanced decomposition (for example: mammal its belly is swollen, hair detaches, maggots, ... / leaves are completely brown). DCC5: mummified (animal is (partly) decomposed).</description>
+          </label>
+        </labels>
+	      <settings>
+          <setting name="fieldWidth">40</setting>
+          <setting name="doesNotTakeLocale">1</setting>
+        </settings>
+	      <typeRestrictions>
+          <restriction code="r_animalObject">
+            <table>ca_objects</table>
+            <type>animalObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_plantObject">
+            <table>ca_objects</table>
+            <type>plantObject</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -3841,213 +4205,11 @@
           </metadataElement>
 		    </elements>
         <typeRestrictions>
-          <restriction code="r_object">
-            <table>ca_objects</table>
-		        <includeSubtypes>1</includeSubtypes>
-              <settings>
-                <setting name="fieldWidth">70</setting>
-                <setting name="fieldHeight">6</setting>
-                <setting name="minChars">0</setting>
-                <setting name="maxChars">65535</setting>
-              </settings>
-          </restriction>
-          <restriction code="r_object_lot">
-            <table>ca_object_lots</table>
-		        <includeSubtypes>1</includeSubtypes>
-              <settings>
-                <setting name="fieldWidth">70</setting>
-                <setting name="fieldHeight">6</setting>
-                <setting name="minChars">0</setting>
-                <setting name="maxChars">65535</setting>
-              </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-    <!--Object-->
-	    <metadataElement code="blockedUntil" datatype="DateRange">
-        <labels>
-          <label locale="en_US">
-            <name>Blocked Until</name>
-		        <description>Sample or specimen data can not be ordered/loaned until the given date, but are visible via portals</description>
-          </label>
-        </labels>
-	      <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/blockedUntil</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">40</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_object">
-            <table>ca_objects</table>
-		        <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-      <metadataElement code="preparationDate" datatype="DateRange">
-        <labels>
-          <label locale="en_US">
-            <name>Preparation Date</name>
-		        <description>The date of preparation/extraction. When used for an object that was taken from the field, preparation date, observation date and sampling date are the usually the same.</description>
-          </label>
-        </labels>
-	      <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/preparationDate</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">40</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-          <setting name="useDatePicker">1</setting>
-          <setting name="canBeUsedInSort">1</setting>
-          <setting name="canBeUsedInSearchForm">1</setting>
-          <setting name="canBeUsedInDisplay">1</setting>
-          <setting name="default_text">presentDate</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_preparationDate">
-            <table>ca_objects</table>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">1</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-      <metadataElement code="seedlotRelation" datatype="List" list="seedlot_relation">
-        <labels>
-          <label locale="en_US">
-            <name>Seedlot relation</name>
-		        <description>The relation between the individual seeds of the seedlot</description>
-          </label>
-        </labels>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_seedlot">
-            <table>ca_objects</table>
-            <type>seedlot</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">255</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-      <metadataElement code="relationSpecification" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>Relation specification</name>
-		        <description>Specification on the type of relation.</description>
-          </label>
-        </labels>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_seedlot">
-            <table>ca_objects</table>
-            <type>seedlot</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">255</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-      <metadataElement code="seedClass" datatype="List" list="seed_class">
-        <labels>
-          <label locale="en_US">
-            <name>Seed class</name>
-          </label>
-        </labels>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_seedlot">
-            <table>ca_objects</table>
-            <type>seedlot</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">255</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-      <metadataElement code="verbatimNotes" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>Verbatim Notes</name>
-		        <description>Any unstructured information on the object (e.g. notes, comments) literally transcribed from the original source (e.g. paper inventory).</description>
-          </label>
-        </labels>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_verbatimNotes_objects">
-            <table>ca_objects</table>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">255</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-    <!--Object:derivates-->
-      <metadataElement code="dataset" datatype="Url">
-        <labels>
-          <label locale="en_US">
-            <name>Dataset</name>
-            <description>A dataset</description>
-          </label>
-        </labels>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">5</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_objectLots">
-            <table>ca_object_lots</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">20</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -4067,18 +4229,18 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_plantObject">
-            <table>ca_objects</table>
-            <type>plantObject</type>
+          <restriction code="r_occurrences">
+            <table>ca_occurrences</table>
+            <type>provenance</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">255</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
         </typeRestrictions>
       </metadataElement>
-    <!--Object/Observation:measurement-->
+    <!--Measurement-->
 	    <metadataElement code="dnaConcentrationContainer" datatype="Container">
         <labels>
           <label locale="en_US">
@@ -4131,6 +4293,20 @@
             </labels>
             <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/concentrationUnit</documentationUrl>
           </metadataElement>
+          <metadataElement code="dnaConcentrationPublishedProcedure" datatype="Url">
+            <labels>
+              <label locale="en_US">
+                <name>Published procedure</name>
+                <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
           <metadataElement code="dnaConcentrationProcedure" datatype="Text">
             <labels>
               <label locale="en_US">
@@ -4168,10 +4344,9 @@
             <table>ca_objects</table>
             <type>dnaSample</type>
             <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
         </typeRestrictions>
@@ -4234,6 +4409,20 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
+          <metadataElement code="spectrophotometryPublishedProcedure" datatype="Url">
+            <labels>
+              <label locale="en_US">
+                <name>Published procedure</name>
+                <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
           <metadataElement code="spectrophotometryProcedure" datatype="Text">
             <labels>
               <label locale="en_US">
@@ -4271,10 +4460,9 @@
             <table>ca_objects</table>
             <type>dnaSample</type>
             <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
         </typeRestrictions>
@@ -4354,6 +4542,20 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
+          <metadataElement code="gelPublishedProcedure" datatype="Url">
+            <labels>
+              <label locale="en_US">
+                <name>Published procedure</name>
+                <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
           <metadataElement code="gelProcedure" datatype="Text">
             <labels>
               <label locale="en_US">
@@ -4392,10 +4594,9 @@
             <table>ca_objects</table>
             <type>dnaSample</type>
             <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
         </typeRestrictions>
@@ -4451,6 +4652,20 @@
             </labels>
             <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/volumeUnit</documentationUrl>
           </metadataElement>
+          <metadataElement code="dnaVolumePublishedProcedure" datatype="Url">
+            <labels>
+              <label locale="en_US">
+                <name>Published procedure</name>
+                <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
           <metadataElement code="dnaVolumeProcedure" datatype="Text">
             <labels>
               <label locale="en_US">
@@ -4489,10 +4704,9 @@
             <table>ca_objects</table>
             <type>dnaSample</type>
             <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
         </typeRestrictions>
@@ -4504,7 +4718,7 @@
           </label>
         </labels>
 	      <elements>
-          <metadataElement code="VolumeDateRange" datatype="DateRange">
+          <metadataElement code="volumeDateRange" datatype="DateRange">
             <labels>
               <label locale="en_US">
                 <name>Date (range) and time (range)</name>
@@ -4524,7 +4738,7 @@
               <setting name="default_text">presentDate</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="VolumeAppliesTo" datatype="Text">
+          <metadataElement code="volumeAppliesTo" datatype="Text">
             <labels>
               <label locale="en_US">
                 <name>measurementAppliesTo</name>
@@ -4533,7 +4747,7 @@
             </labels>
             <documentationUrl>http://rs.tdwg.org/abcd/terms/appliesTo</documentationUrl>
           </metadataElement>
-          <metadataElement code="VolumeLowerValue" datatype="Numeric">
+          <metadataElement code="volumeLowerValue" datatype="Numeric">
             <labels>
               <label locale="en_US">
                 <name>Lower value</name>
@@ -4548,7 +4762,7 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="VolumeUpperValue" datatype="Numeric">
+          <metadataElement code="volumeUpperValue" datatype="Numeric">
             <labels>
               <label locale="en_US">
                 <name>Upper value</name>
@@ -4562,7 +4776,7 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="VolumeUnit" datatype="List" list="volume_unit">
+          <metadataElement code="volumeUnit" datatype="List" list="volume_unit">
             <labels>
             <label locale="en_US">
               <name>Unit</name>
@@ -4571,7 +4785,21 @@
             </labels>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
           </metadataElement>
-          <metadataElement code="VolumeProcedure" datatype="Text">
+          <metadataElement code="volumePublishedProcedure" datatype="Url">
+            <labels>
+              <label locale="en_US">
+                <name>Published procedure</name>
+                <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="volumeProcedure" datatype="Text">
             <labels>
               <label locale="en_US">
                 <name>Procedure</name>
@@ -4585,7 +4813,7 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="VolumeAccuracy" datatype="Text">
+          <metadataElement code="volumeAccuracy" datatype="Text">
             <labels>
               <label locale="en_US">
                 <name>measurementAccuracy</name>
@@ -4594,7 +4822,7 @@
             </labels>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementAccuracy</documentationUrl>
           </metadataElement>
-          <metadataElement code="VolumeRemarks" datatype="Text">
+          <metadataElement code="volumeRemarks" datatype="Text">
             <labels>
             <label locale="en_US">
               <name>Remarks</name>
@@ -4610,20 +4838,18 @@
             <type>waterObject</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_waterObject">
+          <restriction code="r_dnaSample">
             <table>ca_objects</table>
             <type>dnaSample</type>
             <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">50</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
         </typeRestrictions>
@@ -4653,6 +4879,20 @@
               <setting name="canBeUsedInSearchForm">1</setting>
               <setting name="canBeUsedInDisplay">1</setting>
               <setting name="default_text">presentDate</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="weightPublishedProcedure" datatype="Url">
+            <labels>
+              <label locale="en_US">
+                <name>Published procedure</name>
+                <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
           <metadataElement code="weightProcedure" datatype="Text">
@@ -4736,14 +4976,22 @@
           </metadataElement>
 	      </elements>
         <typeRestrictions>
-          <restriction code="r_dnaSample">
+          <restriction code="r_objects">
             <table>ca_objects</table>
-            <type>dnaSample</type>
             <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">50</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_observation">
+            <table>ca_occurrences</table>
+            <type>observation</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">50</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
         </typeRestrictions>
@@ -4773,6 +5021,20 @@
               <setting name="canBeUsedInSearchForm">1</setting>
               <setting name="canBeUsedInDisplay">1</setting>
               <setting name="default_text">presentDate</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="lengthPublishedProcedure" datatype="Url">
+            <labels>
+              <label locale="en_US">
+                <name>Published procedure</name>
+                <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
           <metadataElement code="lengthProcedure" datatype="Text">
@@ -4856,14 +5118,22 @@
           </metadataElement>
 	      </elements>
         <typeRestrictions>
-          <restriction code="r_dnaSample">
+          <restriction code="r_objects">
             <table>ca_objects</table>
-            <type>dnaSample</type>
             <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">50</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_observation">
+            <table>ca_occurrences</table>
+            <type>observation</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">50</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
         </typeRestrictions>
@@ -4893,6 +5163,20 @@
               <setting name="canBeUsedInSearchForm">1</setting>
               <setting name="canBeUsedInDisplay">1</setting>
               <setting name="default_text">presentDate</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="agePublishedProcedure" datatype="Url">
+            <labels>
+              <label locale="en_US">
+                <name>Published procedure</name>
+                <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
           <metadataElement code="ageProcedure" datatype="Text">
@@ -4967,14 +5251,32 @@
           </metadataElement>
 	      </elements>
         <typeRestrictions>
-          <restriction code="r_dnaSample">
+          <restriction code="r_stemDisc">
             <table>ca_objects</table>
-            <type>dnaSample</type>
+            <type>stemDisc</type>
             <settings>
               <setting name="fieldWidth">70</setting>
               <setting name="fieldHeight">1</setting>
               <setting name="minChars">0</setting>
               <setting name="maxChars">65535</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_observationAnimal">
+            <table>ca_occurrences</table>
+            <type>observationAnimal</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">10</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_observationPlant">
+            <table>ca_occurrences</table>
+            <type>observationPlant</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">10</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
         </typeRestrictions>
@@ -5004,6 +5306,20 @@
               <setting name="canBeUsedInSearchForm">1</setting>
               <setting name="canBeUsedInDisplay">1</setting>
               <setting name="default_text">presentDate</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="germinationPublishedProcedure" datatype="Url">
+            <labels>
+              <label locale="en_US">
+                <name>Published procedure</name>
+                <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
           <metadataElement code="germinationProcedure" datatype="Text">
@@ -5078,14 +5394,13 @@
           </metadataElement>
 	      </elements>
         <typeRestrictions>
-          <restriction code="r_dnaSample">
+          <restriction code="r_seedLot">
             <table>ca_objects</table>
-            <type>dnaSample</type>
+            <type>seedLot</type>
             <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">10</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
         </typeRestrictions>
@@ -5115,6 +5430,20 @@
               <setting name="canBeUsedInSearchForm">1</setting>
               <setting name="canBeUsedInDisplay">1</setting>
               <setting name="default_text">presentDate</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="purityPublishedProcedure" datatype="Url">
+            <labels>
+              <label locale="en_US">
+                <name>Published procedure</name>
+                <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
           <metadataElement code="purityProcedure" datatype="Text">
@@ -5189,44 +5518,9 @@
           </metadataElement>
 	      </elements>
         <typeRestrictions>
-          <restriction code="r_dnaSample">
+          <restriction code="r_seedLot">
             <table>ca_objects</table>
-            <type>dnaSample</type>
-            <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-    <!--Event:record-->
-      <metadataElement code="externalRecord" datatype="Url">
-        <labels>
-          <label locale="en_US">
-            <name>External record</name>
-          </label>
-        </labels>
-        <settings>
-          <setting name="fieldWidth">90</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_observation">
-            <table>ca_occurrences</table>
-            <type>observation</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">10</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_project">
-            <table>ca_occurrences</table>
-            <type>project</type>
+            <type>seedLot</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">10</setting>
@@ -5235,7 +5529,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-    <!--Event:dateTimePlace-->
+    <!--DateTimePlace-->
 	    <metadataElement code="dateRange" datatype="DateRange">
         <labels>
           <label locale="en_US">
@@ -5258,20 +5552,41 @@
         <typeRestrictions>
           <restriction code="r_occurrences">
             <table>ca_occurrences</table>
-            <includeSubtypes>1</includeSubtypes>
             <settings>
-              <setting name="minAttributesPerRow">1</setting>
+              <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_plot">
-            <table>ca_object_lots</table>
-            <type>plot</type>
-            <includeSubtypes>1</includeSubtypes>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
             <settings>
-              <setting name="minAttributesPerRow">1</setting>
+              <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_loans">
+            <table>ca_loans</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_entities">
+            <table>ca_entities</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -5318,57 +5633,39 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_observation">
+          <restriction code="r_occurrences">
             <table>ca_occurrences</table>
-            <type>observation</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_project">
-            <table>ca_occurrences</table>
-            <type>project</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_sampling">
-            <table>ca_occurrences</table>
-            <type>sampling</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_fieldwork">
-            <table>ca_occurrences</table>
-            <type>fieldwork</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_plot">
-            <table>ca_object_lots</table>
-            <type>plot</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
-              <setting name="minAttributesPerRow">1</setting>
+              <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_population">
+          <restriction code="r_object_lots">
             <table>ca_object_lots</table>
-            <type>population</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
-              <setting name="minAttributesPerRow">1</setting>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_plantedSite">
+            <table>ca_storage_location</table>
+            <type>plantedSite</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_building">
+            <table>ca_storage_location</table>
+            <type>building</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
@@ -5390,30 +5687,39 @@
           <setting name="maxChars">65535</setting>
         </settings>
 	      <typeRestrictions>
-          <restriction code="r_observation">
+          <restriction code="r_occurrences">
             <table>ca_occurrences</table>
-            <type>observation</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_plot">
+          <restriction code="r_object_lots">
             <table>ca_object_lots</table>
-            <type>plot</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
-              <setting name="minAttributesPerRow">1</setting>
+              <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_population">
-            <table>ca_object_lots</table>
-            <type>population</type>
+          <restriction code="r_plantedSite">
+            <table>ca_storage_location</table>
+            <type>plantedSite</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
-              <setting name="minAttributesPerRow">1</setting>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_building">
+            <table>ca_storage_location</table>
+            <type>building</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
@@ -5435,30 +5741,39 @@
           <setting name="maxChars">65535</setting>
         </settings>
 	      <typeRestrictions>
-          <restriction code="r_observation">
+          <restriction code="r_occurrences">
             <table>ca_occurrences</table>
-            <type>observation</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_plot">
+          <restriction code="r_object_lots">
             <table>ca_object_lots</table>
-            <type>plot</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
-              <setting name="minAttributesPerRow">1</setting>
+              <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_population">
-            <table>ca_object_lots</table>
-            <type>population</type>
+          <restriction code="r_plantedSite">
+            <table>ca_storage_location</table>
+            <type>plantedSite</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
-              <setting name="minAttributesPerRow">1</setting>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_building">
+            <table>ca_storage_location</table>
+            <type>building</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
@@ -5480,30 +5795,39 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_observation">
+          <restriction code="r_occurrences">
             <table>ca_occurrences</table>
-            <type>observation</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_plot">
+          <restriction code="r_object_lots">
             <table>ca_object_lots</table>
-            <type>plot</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
-              <setting name="minAttributesPerRow">1</setting>
+              <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_population">
-            <table>ca_object_lots</table>
-            <type>population</type>
+          <restriction code="r_plantedSite">
+            <table>ca_storage_location</table>
+            <type>plantedSite</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
-              <setting name="minAttributesPerRow">1</setting>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_building">
+            <table>ca_storage_location</table>
+            <type>building</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
@@ -5525,9 +5849,37 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_observation">
+          <restriction code="r_occurrences">
             <table>ca_occurrences</table>
-            <type>observation</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_plantedSite">
+            <table>ca_storage_location</table>
+            <type>plantedSite</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_building">
+            <table>ca_storage_location</table>
+            <type>building</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -5551,9 +5903,37 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_observation">
+          <restriction code="r_occurrences">
             <table>ca_occurrences</table>
-            <type>observation</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_plantedSite">
+            <table>ca_storage_location</table>
+            <type>plantedSite</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_building">
+            <table>ca_storage_location</table>
+            <type>building</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -5577,9 +5957,37 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_observation">
+          <restriction code="r_occurrences">
             <table>ca_occurrences</table>
-            <type>observation</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_plantedSite">
+            <table>ca_storage_location</table>
+            <type>plantedSite</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_building">
+            <table>ca_storage_location</table>
+            <type>building</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -5603,9 +6011,37 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_observation">
+          <restriction code="r_occurrences">
             <table>ca_occurrences</table>
-            <type>observation</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_plantedSite">
+            <table>ca_storage_location</table>
+            <type>plantedSite</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_building">
+            <table>ca_storage_location</table>
+            <type>building</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -5629,9 +6065,37 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_observation">
+          <restriction code="r_occurrences">
             <table>ca_occurrences</table>
-            <type>observation</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_plantedSite">
+            <table>ca_storage_location</table>
+            <type>plantedSite</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_building">
+            <table>ca_storage_location</table>
+            <type>building</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -5655,9 +6119,20 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_sampling">
-            <table>ca_occurrences</table>
-            <type>sampling</type>
+          <restriction code="r_soilObject">
+            <table>ca_objects</table>
+            <type>soilObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_waterObject">
+            <table>ca_objects</table>
+            <type>waterObject</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -5681,9 +6156,20 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_sampling">
-            <table>ca_occurrences</table>
-            <type>sampling</type>
+          <restriction code="r_soilObject">
+            <table>ca_objects</table>
+            <type>soilObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_waterObject">
+            <table>ca_objects</table>
+            <type>waterObject</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -5707,9 +6193,20 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_sampling">
-            <table>ca_occurrences</table>
-            <type>sampling</type>
+          <restriction code="r_soilObject">
+            <table>ca_objects</table>
+            <type>soilObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_waterObject">
+            <table>ca_objects</table>
+            <type>waterObject</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -5733,9 +6230,10 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_sampling">
-            <table>ca_occurrences</table>
-            <type>sampling</type>
+          <restriction code="r_plantObject">
+            <table>ca_objects</table>
+            <type>plantObject</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -5758,9 +6256,10 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_sampling">
-            <table>ca_occurrences</table>
-            <type>sampling</type>
+          <restriction code="r_plantObject">
+            <table>ca_objects</table>
+            <type>plantObject</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -5783,9 +6282,10 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_sampling">
-            <table>ca_occurrences</table>
-            <type>sampling</type>
+          <restriction code="r_plantObject">
+            <table>ca_objects</table>
+            <type>plantObject</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -5812,6 +6312,7 @@
           <restriction code="r_observation">
             <table>ca_occurrences</table>
             <type>observation</type>
+            <includeSubtypes> 1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -5846,6 +6347,7 @@
           <restriction code="r_observation">
             <table>ca_occurrences</table>
             <type>observation</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -5868,6 +6370,25 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
+          <restriction code="r_observation">
+            <table>ca_occurrences</table>
+            <type>observation</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_plotTransect">
+            <table>ca_object_lots</table>
+            <type>plotTransect</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
           <restriction code="r_fieldwork">
             <table>ca_occurrences</table>
             <type>fieldwork</type>
@@ -5892,9 +6413,37 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_observation">
+          <restriction code="r_occurrences">
             <table>ca_occurrences</table>
-            <includeSubtypes>observation</includeSubtypes>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_plantedSite">
+            <table>ca_storage_location</table>
+            <type>plantedSite</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_building">
+            <table>ca_storage_location</table>
+            <type>building</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -5919,12 +6468,21 @@
           <setting name="maxChars">65535</setting>
 			  </settings>
 			  <typeRestrictions>
-          <restriction code="r_observation">
+          <restriction code="r_observationPlant">
             <table>ca_occurrences</table>
-            <type>observation</type>
+            <type>observationPlant</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">255</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_observationAnimal">
+            <table>ca_occurrences</table>
+            <type>observationAnimal</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -5945,12 +6503,21 @@
           <setting name="maxChars">65535</setting>
 			  </settings>
 			  <typeRestrictions>
-          <restriction code="r_observation">
+          <restriction code="r_observationPlant">
             <table>ca_occurrences</table>
-            <type>observation</type>
+            <type>observationPlant</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">255</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_observationAnimal">
+            <table>ca_occurrences</table>
+            <type>observationAnimal</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -5971,9 +6538,18 @@
           <setting name="maxChars">65535</setting>
 			  </settings>
 			  <typeRestrictions>
-          <restriction code="r_observation">
+          <restriction code="r_observationPlant">
             <table>ca_occurrences</table>
-            <type>observation</type>
+            <type>observationPlant</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_observationAnimal">
+            <table>ca_occurrences</table>
+            <type>observationAnimal</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">255</setting>
@@ -5997,18 +6573,18 @@
           <setting name="maxChars">65535</setting>
 			  </settings>
 			  <typeRestrictions>
-          <restriction code="r_observation">
+          <restriction code="r_observationAnimal">
             <table>ca_occurrences</table>
-            <type>observation</type>
+            <type>observationAnimal</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">255</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
 			  </typeRestrictions>
 	    </metadataElement>
-    <!--Event:identification-->
+    <!--identification-->
 	    <metadataElement code="verbatimIdentification" datatype="Text">
         <labels>
           <label locale="en_US">
@@ -6024,27 +6600,79 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_verbatimIdentification_object">
+          <restriction code="r_verbatimIdentification_animalObject">
             <table>ca_objects</table>
-		        <includeSubtypes>animalLiving, animalSpecimen, sampleAmphibianLarva, sampleAmphibianEmbryo, 
-            sampleAmphibianFrogspawn, sampleInvertebrateLarva, sampleMammalTooth, fruit, herbariumSpecimen, 
-            livingPlant, seedLot, dnaSample</includeSubtypes>
-              <settings>
-                <setting name="fieldWidth">70</setting>
-                <setting name="fieldHeight">6</setting>
-                <setting name="minChars">0</setting>
-                <setting name="maxChars">65535</setting>
-              </settings>
+		        <type>animalObject</types>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
           </restriction>
-          <restriction code="r_verbatimIdentification_observation">
+          <restriction code="r_verbatimIdentification_plantObject">
+            <table>ca_objects</table>
+		        <type>plantObject, dnaSample</types>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_verbatimIdentification_dnaSample">
+            <table>ca_objects</table>
+		        <type>dnaSample</types>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_verbatimIdentification_observationAnimal">
             <table>ca_occurrences</table>
-		        <includeSubtypes>observation</includeSubtypes>
-              <settings>
-                <setting name="fieldWidth">70</setting>
-                <setting name="fieldHeight">6</setting>
-                <setting name="minChars">0</setting>
-                <setting name="maxChars">65535</setting>
-              </settings>
+		        <type>observationAnimal</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_verbatimIdentification_observationPlant">
+            <table>ca_occurrences</table>
+		        <type>observationAnimal</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_verbatimIdentification_population">
+            <table>ca_object_lots</table>
+		        <type>population</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_verbatimIdentification_provenance">
+            <table>ca_object_lots</table>
+		        <type>provenance</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_verbatimIdentification_provenanceRegion">
+            <table>ca_object_lots</table>
+		        <type>provenanceRegion</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
           </restriction>
         </typeRestrictions>
       </metadataElement>
@@ -6066,6 +6694,7 @@
           <restriction code="r_identification">
             <table>ca_occurrences</table>
             <type>identification</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -6172,7 +6801,7 @@
             <type>identificationBotanical</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">20</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -6181,7 +6810,7 @@
             <type>identificationZoological</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">20</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -6203,6 +6832,7 @@
           <restriction code="r_identification">
             <table>ca_occurrences</table>
             <type>identification</type>
+            <includeSubtypes> 1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -6219,27 +6849,79 @@
         </labels>
         <settings/>
         <typeRestrictions>
-          <restriction code="r_standardizedTaxID_object">
+          <restriction code="r_standardizedIdentification_animalObject">
             <table>ca_objects</table>
-		        <includeSubtypes>animalLiving, animalSpecimen, sampleAmphibianLarva, sampleAmphibianEmbryo, 
-            sampleAmphibianFrogspawn, sampleInvertebrateLarva, sampleMammalTooth, fruit, herbariumSpecimen, 
-            livingPlant, seedLot, dnaSample</includeSubtypes>
-              <settings>
-                <setting name="fieldWidth">70</setting>
-                <setting name="fieldHeight">6</setting>
-                <setting name="minChars">0</setting>
-                <setting name="maxChars">65535</setting>
-              </settings>
+		        <type>animalObject</types>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
           </restriction>
-          <restriction code="r_standardizedTaxID_observation">
+          <restriction code="r_standardizedIdentification_plantObject">
+            <table>ca_objects</table>
+		        <type>plantObject, dnaSample</types>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_standardizedIdentification_dnaSample">
+            <table>ca_objects</table>
+		        <type>dnaSample</types>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_standardizedIdentification_observationAnimal">
             <table>ca_occurrences</table>
-		        <includeSubtypes>observation</includeSubtypes>
-              <settings>
-                <setting name="fieldWidth">70</setting>
-                <setting name="fieldHeight">6</setting>
-                <setting name="minChars">0</setting>
-                <setting name="maxChars">65535</setting>
-              </settings>
+		        <type>observationAnimal</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_standardizedIdentification_observationPlant">
+            <table>ca_occurrences</table>
+		        <type>observationAnimal</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_standardizedIdentification_population">
+            <table>ca_object_lots</table>
+		        <type>population</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_standardizedIdentification_provenance">
+            <table>ca_object_lots</table>
+		        <type>provenance</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_standardizedIdentification_provenanceRegion">
+            <table>ca_object_lots</table>
+		        <type>provenanceRegion</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
           </restriction>
         </typeRestrictions>
       </metadataElement> 	     	    
@@ -6280,17 +6962,74 @@
           </metadataElement>
 	      </elements>
         <typeRestrictions>
-          <restriction code="r_matchContainer_observation">
-            <table>ca_occurrences</table>
-            <type>observation</type>
+          <restriction code="r_matchContainer_animalObject">
+            <table>ca_objects</table>
+		        <type>animalObject</types>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_matchContainer_object">
+          <restriction code="r_matchContainer_plantObject">
             <table>ca_objects</table>
+		        <type>plantObject, dnaSample</types>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_matchContainer_dnaSample">
+            <table>ca_objects</table>
+		        <type>dnaSample</types>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_matchContainer_observationAnimal">
+            <table>ca_occurrences</table>
+		        <type>observationAnimal</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_matchContainer_observationPlant">
+            <table>ca_occurrences</table>
+		        <type>observationAnimal</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_matchContainer_population">
+            <table>ca_object_lots</table>
+		        <type>population</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_matchContainer_provenance">
+            <table>ca_object_lots</table>
+		        <type>provenance</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_matchContainer_provenanceRegion">
+            <table>ca_object_lots</table>
+		        <type>provenanceRegion</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -6316,9 +7055,10 @@
           <restriction code="r_identification">
             <table>ca_occurrences</table>
             <type>identification</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">20</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -6523,9 +7263,10 @@
 	        <restriction code="r_observation">
             <table>ca_occurrences</table>
 		        <type>observation</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">255</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -6534,7 +7275,7 @@
 		        <type>fieldwork</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">255</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -6543,16 +7284,17 @@
 		        <type>sampling</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">255</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
 	        <restriction code="r_identification">
             <table>ca_occurrences</table>
 		        <type>identification</type>
+            <includeSubtypes> 1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">255</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -6561,16 +7303,17 @@
 		        <type>valuation</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">255</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
 	        <restriction code="r_curation">
             <table>ca_occurrences</table>
 		        <type>curation</type>
+            <includeSubtypes> 1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">255</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -6596,7 +7339,7 @@
 		        <type>sampling</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">255</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -6618,9 +7361,9 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_object">
-            <table>ca_objects</table>
-            <includeSubtypes>1</includeSubtypes>
+          <restriction code="r_valuation">
+            <table>ca_occurrences</table>
+            <type>valuation</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -6643,9 +7386,9 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_object">
-            <table>ca_objects</table>
-            <includeSubtypes>1</includeSubtypes>
+          <restriction code="r_valuation">
+            <table>ca_occurrences</table>
+            <type>valuation</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -6735,95 +7478,17 @@
 		      </metadataElement>
 	      </elements>
         <typeRestrictions>
-          <restriction code="r_occurrence">
+          <restriction code="r_occurrences">
             <table>ca_occurrences</table>
-            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">20</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
         </typeRestrictions>
       </metadataElement>
 	  <!--Entity-->
-	    <metadataElement code="RORID" datatype="Url">
-        <labels>
-          <label locale="en_US">
-            <name>RORID</name>
-            <description>Research Organization Registry (ROR) identification</description>
-          </label>
-        </labels>
-        <documentationUrl>https://ror.org</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">5</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_org">
-            <table>ca_entities</table>
-            <type>org</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-	    <metadataElement code="WikidataID" datatype="Url">
-        <labels>
-          <label locale="en_US">
-            <name>WikidataID</name>
-            <description>Wikidata identification</description>
-          </label>
-        </labels>
-        <documentationUrl>https://www.wikidata.org/</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">5</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_entity">
-            <table>ca_entities</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-	    <metadataElement code="ORCID" datatype="Url">
-        <labels>
-          <label locale="en_US">
-            <name>ORCID</name>
-            <description>ORCID</description>
-          </label>
-        </labels>
-        <documentationUrl>https://orcid.org/</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">5</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_ind">
-            <table>ca_entities</table>
-            <type>ind</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
 	    <metadataElement code="address" datatype="Container">
         <labels>
           <label locale="en_US">
@@ -6832,30 +7497,7 @@
         </labels>
         <settings/>
         <elements>
-          <metadataElement code="line1" datatype="Container">
-            <labels>
-              <label locale="en_US">
-                <name>Address line 1</name>
-              </label>
-            </labels>
-            <settings/>
-            <elements>
-              <metadataElement code="address1" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Address line 1</name>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">255</setting>
-                </settings>
-              </metadataElement>
-            </elements>
-          </metadataElement>
-          <metadataElement code="line2" datatype="Container">
+          <metadataElement code="directedTo" datatype="Container">
             <labels>
               <label locale="en_US">
                 <name>Address line 2</name>
@@ -6863,10 +7505,39 @@
             </labels>
             <settings/>
             <elements>
-              <metadataElement code="address2" datatype="Text">
+              <metadataElement code="addressee" datatype="Text">
                 <labels>
                   <label locale="en_US">
-                    <name>Address line 2</name>
+                    <name>Addressee</name>
+                    <description>This can be name, "To whom it may concern", "To the members of organization X", ...</description>
+                  </label>
+                </labels>
+                <settings>
+                  <setting name="fieldWidth">70</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">255</setting>
+                </settings>
+              </metadataElement>
+              <metadataElement code="addresseeRole" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>Role of the addressee within the organization</name>
+                    <description>This can be, "Professor of X", "Curator of Y". Can also be left blank</description>
+                  </label>
+                </labels>
+                <settings>
+                  <setting name="fieldWidth">70</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">255</setting>
+                </settings>
+              </metadataElement>
+              <metadataElement code="addresseeLocation" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>Location of the addressee within the building</name>
+                    <description>Here the department, research group, lab, ... can be entered, so that from the reception, the written communication or package is directed to the correct subdivision of the organization.</description>
                   </label>
                 </labels>
                 <settings>
@@ -6878,10 +7549,61 @@
               </metadataElement>
             </elements>
           </metadataElement>
-          <metadataElement code="line3" datatype="Container">
+          <metadataElement code="addressWithinCity" datatype="Container">
             <labels>
               <label locale="en_US">
-                <name>Address line 3</name>
+                <name>Street</name>
+              </label>
+            </labels>
+            <settings/>
+            <elements>
+              <metadataElement code="street" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>Street name</name>
+                  </label>
+                </labels>
+                <settings>
+                  <setting name="fieldWidth">70</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">255</setting>
+                </settings>
+              </metadataElement>
+              <metadataElement code="number" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>Number</name>
+                    <description>Usually the number of the building within the street.</description>
+                  </label>
+                </labels>
+                <settings>
+                  <setting name="fieldWidth">70</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">255</setting>
+                </settings>
+              </metadataElement>
+              <metadataElement code="box" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>Number of mailbox</name>
+                    <description>Usually the number of the mailbox within the building. For example in appartement buildings, or shared buildings there can be separate mailboxes. This field can also be used for entering PO box numbers.</description>
+                  </label>
+                </labels>
+                <settings>
+                  <setting name="fieldWidth">70</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">255</setting>
+                </settings>
+              </metadataElement>
+            </elements>
+          </metadataElement>
+          <metadataElement code="addressWithinWorld" datatype="Container">
+            <labels>
+              <label locale="en_US">
+                <name>City</name>
               </label>
             </labels>
             <settings/>
@@ -6889,7 +7611,7 @@
               <metadataElement code="city" datatype="Text">
                 <labels>
                   <label locale="en_US">
-                    <name>City</name>
+                    <name>City or municipality</name>
                   </label>
                 </labels>
                 <settings>
@@ -6944,7 +7666,14 @@
         <typeRestrictions>
           <restriction code="r_entity">
             <table>ca_entities</table>
-            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_loan">
+            <table>ca_loans</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -6966,9 +7695,8 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_entity">
+          <restriction code="ca_entities">
             <table>ca_entities</table>
-            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">10</setting>
@@ -6990,9 +7718,8 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_entity">
+          <restriction code="r_ca_entities">
             <table>ca_entities</table>
-            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">10</setting>
@@ -7001,7 +7728,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="affiliationSubstructure" datatype="Text">
+	    <metadataElement code="affiliationSpecification" datatype="Text">
         <labels>
           <label locale="en_US">
             <name>Further specification of the affiliation, substructure of the organization the individual belongs to (e.g. Department, Research group, Team, ...)</name>
@@ -7014,35 +7741,9 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_entity">
+          <restriction code="r_ca_entities_ind">
             <table>ca_entities</table>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">10</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-	  <!--Places:record-->
-	    <metadataElement code="gettyID" datatype="Url">
-        <labels>
-          <label locale="en_US">
-            <name>gettyID</name>
-            <description>Getty Thesaurus of Geographic Names</description>
-          </label>
-        </labels>
-        <documentationUrl>https://www.getty.edu/research/tools/vocabularies/tgn/</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">5</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-	      <typeRestrictions>
-          <restriction code="r_place">
-            <table>ca_places</table>
+            <type>ind</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -7051,7 +7752,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	  <!--Storage location-->
+	  <!--Storage locations-->
 	    <metadataElement code="alocfree" datatype="List" list="availability">
         <labels>
           <label locale="en_US">
@@ -7069,7 +7770,7 @@
           <restriction code="r_storage_location">
             <table>ca_storage_locations</table>
             <settings>
-              <setting name="minAttributesPerRow">1</setting>
+              <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
@@ -7092,56 +7793,7 @@
           <restriction code="r_storage_location">
             <table>ca_storage_locations</table>
             <settings>
-              <setting name="minAttributesPerRow">1</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-	  <!--Collection:record-->
-	    <metadataElement code="GRSciColl" datatype="Url">
-        <labels>
-          <label locale="en_US">
-            <name>GRSciColl</name>
-            <description>Global Registry of Scientific Collections</description>
-          </label>
-        </labels>
-        <documentationUrl>https://www.gbif.org/grscicoll</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">5</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_collection">
-            <table>ca_collections</table>
-            <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-    <!--ObjectLot-->
-	    <metadataElement code="decompositionCategory" datatype="List" list="decomposition_category">
-        <labels>
-          <label locale="en_US">
-            <name>Decomposition cateogry</name>
-          </label>
-        </labels>
-	      <settings>
-          <setting name="fieldWidth">40</setting>
-          <setting name="doesNotTakeLocale">1</setting>
-        </settings>
-	      <typeRestrictions>
-          <restriction code="r_cadaver">
-            <table>ca_object_lots</table>
-            <type>cadaver</type>
-            <settings>
-              <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
@@ -7187,7 +7839,7 @@
           <setting name="maxChars">255</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="ca_loans">
+          <restriction code="r_loans">
             <table>ca_loans</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -7211,9 +7863,9 @@
           <setting name="maxChars">255</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="ca_loans">
+          <restriction code="r_loans_external_in">
             <table>ca_loans</table>
-            <type>in</type>
+            <type>external_in</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -7236,9 +7888,9 @@
           <setting name="maxChars">255</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="ca_loans">
+          <restriction code="r_loans_external_out">
             <table>ca_loans</table>
-            <type>out</type>
+            <type>external_out</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -7261,7 +7913,7 @@
           <setting name="maxChars">255</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="ca_loans">
+          <restriction code="r_loans">
             <table>ca_loans</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -7285,7 +7937,7 @@
           <setting name="maxChars">255</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="ca_loans">
+          <restriction code="r_loans">
             <table>ca_loans</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -7309,7 +7961,7 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="ca_loans">
+          <restriction code="r_loans">
             <table>ca_loans</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -7333,7 +7985,7 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="ca_loans">
+          <restriction code="r_loans">
             <table>ca_loans</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -7357,7 +8009,7 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="ca_loans">
+          <restriction code="r_loans">
             <table>ca_loans</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -7549,17 +8201,25 @@
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The object represents the observation</setting>
-                  <setting name="restrict_to_types">observation</setting>
-                  <setting name="minRelationshipsPerRow">1</setting>
-                  <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="restrict_to_types">observation</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-            <placement code="ca_objects">
+            <placement code="ca_objects_subsample">
               <bundle>ca_objects</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The object is a subsample of</setting>
-                  <setting name="minRelationshipsPerRow">0</setting>
-                  <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+            <placement code="ca_objects_siblingsample">
+              <bundle>ca_objects</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The object is a sibling sample of</setting>
+                <setting name="description" locale="en_US">If relevant to log explicitly, here the object can be linked to related samples. For example: tissue samples from the same cadaver, insect samples from the sample trap, ...</setting>
+				        <setting name="add_label" locale="en_US">Add sibling sample</setting>
               </settings>
             </placement>
 			      <placement code="ca_object_lot_population">
@@ -7592,8 +8252,8 @@
               <bundle>ca_object_lots</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The object is part of the in-situ plot or transect</setting>
-                  <setting name="restrict_to_types">plotTransect</setting>
-				          <setting name="add_label" locale="en_US">Add in-situ plot or transect</setting>
+                <setting name="restrict_to_types">plotTransect</setting>
+				        <setting name="add_label" locale="en_US">Add in-situ plot or transect</setting>
               </settings>
             </placement>
 			      <placement code="seedlot_relation" typeRestrictions="seedLot">
@@ -7616,6 +8276,15 @@
               <bundle>ca_attribute_seedClass</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Seedclass of the seedlot</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+			      <placement code="decompositionCategory" typeRestrictions="animalBulk,animalEntireCadaver,animalEntireSpecimen,sampleAmphibian,sampleFish,sampleInvertebrate,sampleMammal,sampleReptile">
+              <bundle>ca_attribute_decompositionCategory</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Decomposition category of the animal(s) at the time of collection</setting>
+		            <setting name="description" locale="en_US">DCC1: extremely fresh (e.g. animal was still alive at collection, or the animal was euthanized and collection occurred immediately after). DCC2: fresh (i.e. animal that has only recently died, no signs of decomposition). DCC3: moderate decomposition (for example: mammal its belly is swollen, hair detaches, fly eggs, ..). DCC4: advanced decomposition (for example: mammal its belly is swollen, hair detaches, maggots, ...). DCC5: mummified (animal is (partly) decomposed).</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
@@ -7717,8 +8386,8 @@
               <bundle>ca_object_representations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Multimedia representation of the object</setting>
-                <setting name="description" locale="en_US">Multimedia representation can be photos, scans, videos, sounds,..</setting>
-				        <setting name="add_label" locale="en_US">Add visual representation</setting>
+                <setting name="description" locale="en_US">Multimedia representation of the object (not the organism/observation it represents!) can be photos, scans, videos, sounds,..</setting>
+				        <setting name="add_label" locale="en_US">Add multimedia</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -8123,7 +8792,7 @@
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Event identifier (preferred)</setting>
-                <setting name="description" locale="en_US">The identifier for the event used in notes, datasets, publication, ... if there are multiple identifiers for the event, this is the preferred identifier for the event.</setting>
+                <setting name="description" locale="en_US">The identifier for the event used in notes, datasets, publication, ... if there are multiple identifiers for the event, this is the preferred identifier. You can add context information to make the record more unique and findable in the database e.g. if your sample is numbered 52.04, you can name it 52.04 (EV Magnolia ). This aligns with the concept of the record Number in DwC: http://rs.tdwg.org/dwc/terms/recordNumber</setting>
               </settings>
             </placement>
             <placement code="nonpreferred_labels" typeRestrictions="observation,fieldwork,project,sampling">
@@ -8300,7 +8969,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="landUseType" typeRestrictions="fieldwork">
+			      <placement code="landUseType" typeRestrictions="observation">
               <bundle>ca_attribute_landUseType</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Land use type</setting>
@@ -8724,6 +9393,7 @@
               <bundle>ca_attribute_vernacularName</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Vernacular name</setting>
+				        <setting name="add_label" locale="en_US">Add vernacular name</setting>
 			        </settings>
             </placement>            
             <placement code="scientificName" typeRestrictions="identificationBotanical,identificationZoological,identificationBacteriological">
@@ -8938,13 +9608,31 @@
               </settings>
             </placement>
 			      <placement code="ROR" typeRestrictions="org">
-              <bundle>ca_attribute_RORID</bundle>
+              <bundle>ca_attribute_externalRecord</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">ROR</setting>
+                <setting name="description" locale="en_US">Research Organization Registry (ROR) - see: https://ror.org/.</setting>
+				        <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
             </placement>
 			      <placement code="WikidataID">
-              <bundle>ca_attribute_WikidataID</bundle>
+              <bundle>ca_attribute_externalRecord</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Wikidata-ID</setting>
+                <setting name="description" locale="en_US">See: https://wikidata.org/.</setting>
+				        <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
             </placement>
 			      <placement code="ORCID" typeRestrictions="ind">
-              <bundle>ca_attribute_ORCID</bundle>
+              <bundle>ca_attribute_externalRecord</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">ORCID</setting>
+                <setting name="description" locale="en_US">ORCID stands for Open Researcher and Contributor ID. See: https://orcid.org/.</setting>
+				        <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
             </placement>
           </bundlePlacements>
 		    </screen>
@@ -8992,8 +9680,8 @@
                 <setting name="description" locale="en_US">Organization to which the individual is affiliated.</setting>
               </settings>
             </placement>
-            <placement code="affiliationSubstructure" typeRestrictions="ind">
-              <bundle>ca_attribute_affiliationSubstructure</bundle>
+            <placement code="affiliationSpecification" typeRestrictions="ind">
+              <bundle>ca_attribute_affiliationSpecification</bundle>
               <settings>
                 <setting name="label" locale="en_US">Specification of the affiliation</setting>
                 <setting name="description" locale="en_US">This can be substructure of the organization the individual belongs to (e.g. Department, Research group, Team, ...)</setting>
@@ -9045,7 +9733,6 @@
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Place name</setting>
-                <setting name="add_label" locale="en_US">Add translation of place name</setting>
               </settings>
             </placement>
 			      <placement code="nonpreferred_labels">
@@ -9058,8 +9745,14 @@
 			      <placement code="hierarchy_navigation">
               <bundle>hierarchy_navigation</bundle>
             </placement>
-			      <placement code="ca_attribute_gettyID">
-              <bundle>ca_attribute_gettyID</bundle>
+			      <placement code="gettyID">
+              <bundle>ca_attribute_externalRecord</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">gettyID</setting>
+                <setting name="description" locale="en_US">Getty Thesaurus of Geographic Names - see: https://www.getty.edu/research/tools/vocabularies/tgn/.</setting>
+				        <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
             </placement>
 		        <placement code="descriptionContainer">
               <bundle>ca_attribute_descriptionContainer</bundle>
@@ -9110,9 +9803,10 @@
               </settings>
             </placement>
             <placement code="GRSciColl">
-              <bundle>ca_attribute_GRSciColl</bundle>
+              <bundle>ca_attribute_externalRecord</bundle>
               <settings>
-                <setting name="label" locale="en_US">GRSCiColl-ID (URL)</setting>
+                <setting name="label" locale="en_US">GRSCiColl record</setting>
+                <setting name="description" locale="en_US">Global Registry of Scientific Collections. See: https://www.gbif.org/grscicoll. </setting>
               </settings>
             </placement>
 			      <placement code="hierarchy_navigation">
@@ -9275,6 +9969,15 @@
                 <setting name="description" locale="en_US">This could be a map that visualises the storage location.</setting>
 				        <setting name="add_label" locale="en_US">Add file</setting>
 			        </settings>
+            </placement>
+			      <placement code="plantedSiteverbatimLocality" typeRestrictions="plantedSite">
+              <bundle>ca_attribute_verbatimLocality</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Verbatim locality</setting>
+                <setting name="description" locale="en_US">The original description of the location of the planted plot.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
             </placement>
             <placement code="plantedSitePlace" typeRestrictions="plantedSite">
               <bundle>ca_places</bundle>
