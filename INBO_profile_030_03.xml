@@ -1158,6 +1158,7 @@
                   </label>
                 </labels>
               </item>
+            </items>
           </item>
           <item idno="building" enabled="1" default="0">
             <labels>
@@ -1848,6 +1849,7 @@
               </label>
             </labels>
           </item>
+        </items>
       </list>
       <list code="vertical_datum" hierarchical="0" system="0" vocabulary="1">
         <labels>
@@ -3540,7 +3542,7 @@
             </labels>
           </item>
         </items>
-      </list>loan_status
+      </list>
   </lists>
   <elementSets>
     <!--General-->
@@ -4241,7 +4243,7 @@
         </typeRestrictions>
       </metadataElement>
     <!--Measurement-->
-	    <metadataElement code="dnaConcentrationContainer" datatype="Container">
+	    <metadataElement code="dnaConcContainer" datatype="Container">
         <labels>
           <label locale="en_US">
             <name>DNA concentration measurement</name>
@@ -4249,7 +4251,7 @@
           </label>
         </labels>
 	      <elements>
-          <metadataElement code="dnaConcentrationDateRange" datatype="DateRange">
+          <metadataElement code="dnaConcDateRange" datatype="DateRange">
             <labels>
               <label locale="en_US">
                 <name>Date (range) and time (range)</name>
@@ -4293,7 +4295,7 @@
             </labels>
             <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/concentrationUnit</documentationUrl>
           </metadataElement>
-          <metadataElement code="dnaConcentrationPublishedProcedure" datatype="Url">
+          <metadataElement code="dnaConcPublishedProcedure" datatype="Url">
             <labels>
               <label locale="en_US">
                 <name>Published procedure</name>
@@ -4307,7 +4309,7 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="dnaConcentrationProcedure" datatype="Text">
+          <metadataElement code="dnaConcProcedure" datatype="Text">
             <labels>
               <label locale="en_US">
                 <name>eventProcedure</name>
@@ -4321,7 +4323,7 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="dnaConcentrationAccuracy" datatype="Text">
+          <metadataElement code="dnaConcAccuracy" datatype="Text">
             <labels>
               <label locale="en_US">
                 <name>measurementAccuracy</name>
@@ -4330,7 +4332,7 @@
             </labels>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementAccuracy</documentationUrl>
           </metadataElement>
-          <metadataElement code="dnaConcentrationRemarks" datatype="Text">
+          <metadataElement code="dnaConcRemarks" datatype="Text">
             <labels>
             <label locale="en_US">
               <name>Remarks</name>
@@ -4351,7 +4353,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="dnaSpectrophotometryContainer" datatype="Container">
+	    <metadataElement code="dnaSpectroContainer" datatype="Container">
         <labels>
           <label locale="en_US">
             <name>DNA ratio of absorbance measurement</name>
@@ -4359,7 +4361,7 @@
           </label>
         </labels>
 	      <elements>
-          <metadataElement code="spectrophotometryDateRange" datatype="DateRange">
+          <metadataElement code="dnaSpectroDateRange" datatype="DateRange">
             <labels>
               <label locale="en_US">
                 <name>Date (range) and time (range)</name>
@@ -4401,7 +4403,7 @@
                 <description>Ratio of absorbance at 280 nm and 230 nm assessing DNA purity (mostly secondary measure, indicates mainly EDTA, carbohydrates, phenol), (DNA samples only).</description>
               </label>
             </labels>
-            <documentationUrlhttp://data.ggbn.org/schemas/ggbn/terms/ratioOfAbsorbance260_280</documentationUrl>
+            <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/ratioOfAbsorbance260_280</documentationUrl>
             <settings>
               <setting name="fieldWidth">70</setting>
               <setting name="fieldHeight">1</setting>
@@ -4409,7 +4411,7 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="spectrophotometryPublishedProcedure" datatype="Url">
+          <metadataElement code="dnaSpectroPublishedProcedure" datatype="Url">
             <labels>
               <label locale="en_US">
                 <name>Published procedure</name>
@@ -4423,7 +4425,7 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="spectrophotometryProcedure" datatype="Text">
+          <metadataElement code="dnaSpectroProcedure" datatype="Text">
             <labels>
               <label locale="en_US">
                 <name>Procedure</name>
@@ -4437,7 +4439,7 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="spectrophotometryAccuracy" datatype="Text">
+          <metadataElement code="dnaSpectroAccuracy" datatype="Text">
             <labels>
               <label locale="en_US">
                 <name>measurementAccuracy</name>
@@ -4446,7 +4448,7 @@
             </labels>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementAccuracy</documentationUrl>
           </metadataElement>
-          <metadataElement code="spectrophotometryRemarks" datatype="Text">
+          <metadataElement code="dnaSpectroRemarks" datatype="Text">
             <labels>
             <label locale="en_US">
               <name>Remarks</name>
@@ -6602,7 +6604,7 @@
         <typeRestrictions>
           <restriction code="r_verbatimIdentification_animalObject">
             <table>ca_objects</table>
-		        <type>animalObject</types>
+		        <type>animalObject</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -6612,7 +6614,7 @@
           </restriction>
           <restriction code="r_verbatimIdentification_plantObject">
             <table>ca_objects</table>
-		        <type>plantObject, dnaSample</types>
+		        <type>plantObject</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -6622,7 +6624,7 @@
           </restriction>
           <restriction code="r_verbatimIdentification_dnaSample">
             <table>ca_objects</table>
-		        <type>dnaSample</types>
+		        <type>dnaSample</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -6851,7 +6853,7 @@
         <typeRestrictions>
           <restriction code="r_standardizedIdentification_animalObject">
             <table>ca_objects</table>
-		        <type>animalObject</types>
+		        <type>animalObject</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -6861,7 +6863,7 @@
           </restriction>
           <restriction code="r_standardizedIdentification_plantObject">
             <table>ca_objects</table>
-		        <type>plantObject, dnaSample</types>
+		        <type>plantObject</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -6871,7 +6873,7 @@
           </restriction>
           <restriction code="r_standardizedIdentification_dnaSample">
             <table>ca_objects</table>
-		        <type>dnaSample</types>
+		        <type>dnaSample</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -6964,7 +6966,7 @@
         <typeRestrictions>
           <restriction code="r_matchContainer_animalObject">
             <table>ca_objects</table>
-		        <type>animalObject</types>
+		        <type>animalObject</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -6974,7 +6976,7 @@
           </restriction>
           <restriction code="r_matchContainer_plantObject">
             <table>ca_objects</table>
-		        <type>plantObject, dnaSample</types>
+		        <type>plantObject</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -6984,7 +6986,7 @@
           </restriction>
           <restriction code="r_matchContainer_dnaSample">
             <table>ca_objects</table>
-		        <type>dnaSample</types>
+		        <type>dnaSample</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -8619,7 +8621,6 @@
 			        <settings>
                 <setting name="label" locale="en_US">The date of deaccession</setting>
                 <setting name="description" locale="en_US">If unknown the value will be null. The date is stored as an historic daterange and may be any valid historic date.</setting>
-                </setting>
               </settings>
             </placement>
             <placement code="deaccession_type_id">
@@ -8992,7 +8993,7 @@
             <restriction code="r_fieldwork" type="fieldwork"/>
           </typeRestrictions>
           <bundlePlacements>
-            <placement code="ca_occurrence_project" typeRestrictions="observation,fieldwork">
+            <placement code="ca_occurrence_projectresult" typeRestrictions="observation,fieldwork">
               <bundle>ca_occurrences</bundle>
               <settings>
                 <setting name="restrict_to_type">project</setting>
@@ -9000,7 +9001,7 @@
 				        <setting name="add_label" locale="en_US">Add project</setting>
               </settings>
             </placement>
-            <placement code="ca_occurrence_project" typeRestrictions="project">
+            <placement code="ca_occurrence_subproject" typeRestrictions="project">
               <bundle>ca_occurrences</bundle>
               <settings>
                 <setting name="restrict_to_type">project</setting>
@@ -10629,7 +10630,7 @@
         </label>
       </labels>
       <screens>
-        <screen idno="Set item record" default="1">
+        <screen idno="Set_item_record" default="1">
           <labels>
             <label locale="en_US">
               <name>Set item record</name>
@@ -11627,7 +11628,6 @@
         </placement>
       </bundlePlacements>
     </searchForm>
-    <searchForm code="ca_loans_adv_search" type="ca_loans" system="1">
   </searchForms> 
   <!-- <logins> -->
   <!-- <metadataAlerts> -->
