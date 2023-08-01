@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.30</profileName>
+  <profileName>[INBO] INBO natural science collection v0.31</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <locales>
     <locale lang="en" country="US">English</locale>
@@ -15,27 +15,19 @@
           </label>
         </labels>
         <items>
-          <item idno="quick_add" rank="1" enabled="1" default="1" value="0">
+          <item idno="incomplete" rank="1" enabled="1" default="1" value="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>entered via quick add</name_singular>
-                <name_plural>entered via quick add</name_plural>
+                <name_singular>Incomplete (e.g. entered via quick add, only skeleton record)</name_singular>
+                <name_plural>Incompletes (e.g. entered via quick add, only skeleton record)</name_plural>
               </label>
             </labels>
           </item>
           <item idno="complete" rank="2" enabled="1" default="0" value="2">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>completed</name_singular>
-                <name_plural>completed</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="reviewed" rank="3" enabled="1" default="0" value="7">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>completed/imported and reviewed</name_singular>
-                <name_plural>completed/imported and reviewed</name_plural>
+                <name_singular>Complete - all information is added</name_singular>
+                <name_plural>Completes - all information is added</name_plural>
               </label>
             </labels>
           </item>
@@ -847,7 +839,7 @@
           </label>
         </labels>
         <items>
-          <item idno="observation" enabled="1" default="1">
+          <item idno="observation" rank="1" enabled="1" default="1">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>Observation</name_singular>
@@ -909,11 +901,11 @@
                   </item>
             </items>
           </item>
-          <item idno="fieldwork" enabled="1" default="1">
+          <item idno="fieldwork" rank="3" enabled="1" default="1">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>Fieldwork (e.g. expedition, survey event)</name_singular>
-                <name_plural>Fieldwork (e.g. expeditions, survey events)</name_plural>
+                <name_singular>Fieldwork</name_singular>
+                <name_plural>Fieldwork</name_plural>
               </label>
             </labels>
             <settings>
@@ -921,7 +913,7 @@
               <setting name="render_in_find_menu">1</setting>
             </settings>
           </item>
-          <item idno="project" enabled="1" default="1">
+          <item idno="project" rank="2" enabled="1" default="1">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>Project</name_singular>
@@ -933,7 +925,7 @@
             <setting name="render_in_find_menu">1</setting>
             </settings>
           </item>
-          <item idno="sampling" enabled="1" default="1">
+          <item idno="sampling" rank="4" enabled="1" default="1">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>Sampling</name_singular>
@@ -945,7 +937,7 @@
               <setting name="render_in_find_menu">1</setting>
             </settings>
           </item>
-          <item idno="identification" enabled="1" default="1">
+          <item idno="identification" rank="5" enabled="1" default="1">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>Identification</name_singular>
@@ -960,42 +952,42 @@
                   <item idno="identificationBotanical" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Identification event following the Botanical Nomenclatural Code</name_singular>
-                        <name_plural>Identification events following the Botanical Nomenclatural Code</name_plural>
+                        <name_singular>Botanical</name_singular>
+                        <name_plural>Botanical</name_plural>
                       </label>
                     </labels>
                   </item>
                   <item idno="identificationZoological" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Identification event following the Zoological Nomenclatural Code</name_singular>
-                        <name_plural>Identification events following the Zoological Nomenclatural Code</name_plural>
+                        <name_singular>Zoological</name_singular>
+                        <name_plural>Zoological</name_plural>
                       </label>
                     </labels>
                   </item>
                   <item idno="identificationBacteriological" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Identification event following the Bacteriological Nomenclatural Code</name_singular>
-                        <name_plural>Identification events following the Bacteriological Nomenclatural Code</name_plural>
+                        <name_singular>Bacteriological</name_singular>
+                        <name_plural>Bacteriological</name_plural>
                       </label>
                     </labels>
                   </item>
                   <item idno="identificationViral" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Identification event following the Viral Nomenclatural Code</name_singular>
-                        <name_plural>Identification events following the Viral Nomenclatural Code</name_plural>
+                        <name_singular>Viral</name_singular>
+                        <name_plural>Viral</name_plural>
                       </label>
                     </labels>
                   </item>
                 </items>
           </item>
-          <item idno="curation" enabled="1" default="1">
+          <item idno="curation" rank="6" enabled="1" default="1">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>Curation on object</name_singular>
-                <name_plural>Curations on object</name_plural>
+                <name_singular>Curation/name_singular>
+                <name_plural>Curations</name_plural>
               </label>
             </labels>
             <settings>
@@ -1010,10 +1002,6 @@
                     <name_plural>Disposal</name_plural>
                   </label>
                 </labels>
-                <settings>
-                  <setting name="render_in_new_menu">0</setting>
-                  <setting name="render_in_find_menu">0</setting>
-                </settings>
               </item>
               <item idno="treatment" enabled="1" default="1">
                 <labels>
@@ -1114,18 +1102,14 @@
                     <name_plural>Transfer</name_plural>
                   </label>
                 </labels>
-                <settings>
-                  <setting name="render_in_new_menu">0</setting>
-                  <setting name="render_in_find_menu">0</setting>
-                </settings>
               </item>
             </items>
           </item>
-          <item idno="valuation" enabled="1" default="1">
+          <item idno="valuation" rank="7" enabled="1" default="1">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>Valuation of object</name_singular>
-                <name_plural>Valuations of objects</name_plural>
+                <name_singular>Valuation</name_singular>
+                <name_plural>Valuations</name_plural>
               </label>
             </labels>
             <settings>
@@ -8261,37 +8245,34 @@
                 <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observation"> ^ca_occurrences.dateRange<br/>^ca_entities_verbatimLocality<br/>^ca_entities_verbatimIdentification<br/></unit>]]></setting>
               </settings>
             </placement>
-            <placement code="ca_attributes_originOfObject">
-              <bundle>ca_attributes_originOfObject</bundle>
+            <placement code="originOfObject">
+              <bundle>ca_attribute_originOfObject</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The direct parent of the object is of the type</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-            <placement code="ca_objects_parentObject_trial1">
+            <placement code="ca_objects_parentDNA" typeRestrictions="dnaSample">
               <bundle>ca_objects</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The direct parent of the object is the object (trial 1: via ca_objects)</setting>
+                <setting name="label" locale="en_US">The dna sample is a subsample of</setting>
+                <setting name="restrict_to_relationship_types">dnaSubSample</setting>
+                <setting name="restrict_to_types">dnaSample</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="hideIfSelected_originOfObject_observation">object_ui/object_context/ca_attribute_originOfObject/observation</setting>
               </settings>
             </placement>
-            <placement code="ca_objects_parentObject_trial2">
-              <bundle>parent_id</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The direct parent of the object is the object (trial 2: via parent_id)</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
-            <placement code="ca_objects_parentObject_trial3" typeRestrictions="dnaSample">
+            <placement code="ca_objects_parentTissue" typeRestrictions="dnaSample">
               <bundle>ca_objects</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The dna sample is a subsample of (trial 3: via dnaSubSamplePARENT)</setting>
+                <setting name="label" locale="en_US">The dna sample is extracted from</setting>
                 <setting name="restrict_to_relationship_types">dnaSubSamplePARENT</setting>
+                <setting name="restrict_to_types">dnaSample</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="hideIfSelected_originOfObject_observation">object_ui/object_context/ca_attribute_originOfObject/observation</setting>
               </settings>
             </placement>
 			      <placement code="ca_object_lot_population">
@@ -8536,8 +8517,8 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="dnaConcentration_container" typeRestrictions="dnaSample">
-              <bundle>ca_attribute_dnaConcentrationContainer</bundle>
+            <placement code="dnaConc" typeRestrictions="dnaSample">
+              <bundle>ca_attribute_dnaConcContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Concentration measurement on DNA</setting>
                 <setting name="description" locale="en_US">The DNA concentration allows to estimate how much DNA is present in the buffer (depends on the volume). This is a measure of quantity. Concentration is commonly measured usuing fluorometry, for example with a Qubit; or in capillary gels such as those present in the BioAnalyzer or FragmentAnalyzer.</setting>
@@ -8545,8 +8526,8 @@
                 <setting name="list_format">list</setting>
               </settings>
             </placement>
-            <placement code="spectrophotometry_container" typeRestrictions="dnaSample">
-              <bundle>ca_attribute_spectrophotometryContainer</bundle>
+            <placement code="dnaSpectro" typeRestrictions="dnaSample">
+              <bundle>ca_attribute_dnaSpectroContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Spectophotometry measurement on DNA</setting>
                 <setting name="description" locale="en_US">Using spectrophotometry DNA ratio of absorbance (230/260 and 260/280) is measured. This is a measure of quality. Spectrophotometry measurements are commonly executed with a Nanodrop.</setting>
@@ -8554,7 +8535,7 @@
                 <setting name="list_format">list</setting>
               </settings>
             </placement>
-            <placement code="dnaGel_container" typeRestrictions="dnaSample">
+            <placement code="dnaGel" typeRestrictions="dnaSample">
               <bundle>ca_attribute_dnaGelContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">DNA gel measurement</setting>
@@ -8563,7 +8544,7 @@
                 <setting name="list_format">list</setting>
               </settings>
             </placement>
-            <placement code="dnaVolume_container" typeRestrictions="dnaSample">
+            <placement code="dnaVolume" typeRestrictions="dnaSample">
               <bundle>ca_attribute_dnaVolumeContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">DNA sample volume measurement</setting>
@@ -8572,15 +8553,15 @@
                 <setting name="list_format">list</setting>
               </settings>
             </placement>
-            <placement code="volume_container" typeRestrictions="waterObject,dnaSample">
-              <bundle>ca_attribute_dnaVolumeContainer</bundle>
+            <placement code="volume" typeRestrictions="waterObject,dnaSample">
+              <bundle>ca_attribute_volumeContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Volume measurement</setting>
 				        <setting name="add_label" locale="en_US">Add volume measurement</setting>
                 <setting name="list_format">list</setting>
               </settings>
             </placement>
-            <placement code="length_container" typeRestrictions="animalObject,plantObject">
+            <placement code="length" typeRestrictions="animalObject,plantObject">
               <bundle>ca_attribute_lengthContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Length measurement</setting>
@@ -8589,7 +8570,7 @@
                 <setting name="list_format">list</setting>
               </settings>
             </placement>
-            <placement code="weight_container" typeRestrictions="animalObject,plantObject,soilObject,dnaSample">
+            <placement code="weight" typeRestrictions="animalObject,plantObject,soilObject,dnaSample">
               <bundle>ca_attribute_weightContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Weight measurement</setting>
@@ -8597,7 +8578,15 @@
                 <setting name="list_format">list</setting>
               </settings>
             </placement>
-            <placement code="germination_container" typeRestrictions="seedLot">
+            <placement code="age" typeRestrictions="stemDisc">
+              <bundle>ca_attribute_ageContainer</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Age</setting>
+				        <setting name="add_label" locale="en_US">Add age</setting>
+                <setting name="list_format">list</setting>
+              </settings>
+            </placement>
+            <placement code="germination" typeRestrictions="seedLot">
               <bundle>ca_attribute_germinationContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Germination measurement</setting>
@@ -8605,7 +8594,7 @@
                 <setting name="list_format">list</setting>
               </settings>
             </placement>
-            <placement code="purity_container" typeRestrictions="seedLot">
+            <placement code="purity" typeRestrictions="seedLot">
               <bundle>ca_attribute_purityContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Purity measurement</setting>
@@ -8630,23 +8619,12 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="ca_objects_subsamples">
-              <bundle>ca_objects</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">From the object, a new Natural Science object is created</setting>
-                <setting name="description" locale="en_US">This could be in the manner of a subsample (e.g. a cadaver -> tissue sample -> DNA sample) or in the manner of progeny (e.g. living plant in collection -> seedLot).</setting>
-                <setting name="add_label" locale="en_US">Add new Natural Science object</setting>
-                <setting name="list_format">list</setting>
-              </settings>
-            </placement>
-            <placement code="ca_objects_subsamples_trial3" typeRestrictions="dnaSample">
-              <bundle>ca_objects</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The dna sample is subsampled to (trial 3: via dnaSubSampleCHILD)</setting>
-                <setting name="restrict_to_relationship_types">dnaSubSampleCHILD</setting>
-                <setting name="add_label" locale="en_US">Add new subsample</setting>
-                <setting name="list_format">list</setting>
-              </settings>
+			      <placement code="hierarchy_navigation">
+              <bundle>hierarchy_navigation</bundle>
+              	<settings>
+                  <setting name="label" locale="en_US">Objects derived from this object</setting>
+                  <setting name="add_label" locale="en_US">Add new object</setting>
+                </settings>
             </placement>
             <placement code="datasets">
               <bundle>ca_attribute_dataset</bundle>
@@ -8848,7 +8826,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-            <placement code="externalRecord_observation" typeRestrictions="observation">
+            <placement code="externalRecord_observation" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater">
               <bundle>ca_attribute_externalRecord</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">External database containing observation</setting>
@@ -8871,14 +8849,14 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="preferred_labels" typeRestrictions="observation,fieldwork,project,sampling">
+			      <placement code="preferred_labels" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater,fieldwork,project,sampling">
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Event identifier (preferred)</setting>
                 <setting name="description" locale="en_US">The identifier for the event used in notes, datasets, publication, ... if there are multiple identifiers for the event, this is the preferred identifier. You can add context information to make the record more unique and findable in the database e.g. if your sample is numbered 52.04, you can name it 52.04 (EV Magnolia ). This aligns with the concept of the record Number in DwC: http://rs.tdwg.org/dwc/terms/recordNumber</setting>
               </settings>
             </placement>
-            <placement code="nonpreferred_labels" typeRestrictions="observation,fieldwork,project,sampling">
+            <placement code="nonpreferred_labels" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater,fieldwork,project,sampling">
               <bundle>nonpreferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Other event identifier (nonpreferred)</setting>
@@ -8894,7 +8872,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="verbatimLocality" typeRestrictions="fieldwork,observation,project">
+			      <placement code="verbatimLocality" typeRestrictions="fieldwork,observationPlant,observationAnimal,observationSoil,observationWater,project">
               <bundle>ca_attribute_verbatimLocality</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim locality</setting>
@@ -9081,6 +9059,7 @@
                 <setting name="restrict_to_type">project</setting>
                 <setting name="label" locale="en_US">Result of the project</setting>
 				        <setting name="add_label" locale="en_US">Add project</setting>
+                <setting name="restrict_to_relationship_types">resultingObservation,resultingFieldwork</setting>
               </settings>
             </placement>
             <placement code="ca_occurrence_subproject" typeRestrictions="project">
@@ -9090,6 +9069,7 @@
                 <setting name="label" locale="en_US">Was a subproject of the overarching project</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="restrict_to_relationship_types">subproject</setting>
               </settings>
             </placement>
 		        <placement code="descriptionContainer" typeRestrictions="project,fieldwork">
@@ -9104,8 +9084,9 @@
               <settings>
                 <setting name="restrict_to_type">fieldwork</setting>
                 <setting name="label" locale="en_US">Overarching fieldwork</setting>
-              <setting name="minRelationshipsPerRow">0</setting>
-              <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="restrict_to_relationship_types">resultingObservation,resultingFieldwork</setting>
               </settings>
             </placement>
 			      <placement code="ca_object_lot_population" typeRestrictions="observation">
@@ -9163,14 +9144,16 @@
 			        <settings>
                 <setting name="label" locale="en_US">Object subjected to event</setting>
                 <setting name="description" locale="en_US">Object that was subjected to the event (sampling, identification, valuation or curation)</setting>
+                <setting name="restrict_to_relationship_types">executedOnObject</setting>
               </settings>
             </placement>
             <placement code="ca_occurrence_observation" typeRestrictions="sampling,identification">
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Observation subjected to event</setting>
-                <setting name="description" locale="en_US">Observation that was subjected to the event (sampling, identification, valuation or curation)</setting>
+                <setting name="description" locale="en_US">Observation that was subjected to the event (sampling, identification)</setting>
                 <setting name="restrict_to_types">observation</setting>
+                <setting name="restrict_to_relationship_types">executedOnObservation</setting>
               </settings>
             </placement>
 			      <placement code="eventPublishedProcedure" typeRestrictions="observation,fieldwork,sampling,identification,valuation,curation">
@@ -9212,7 +9195,7 @@
 			      </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="observationEvent_result" default="1">
+		    <screen idno="observationEvent_result" default="0">
           <labels>
             <label locale="en_US">
               <name>Result(s)</name>
@@ -9263,6 +9246,7 @@
                 <setting name="add_label" locale="en_US">Add new identification event</setting>
                 <setting name="restrict_to_types">identification</setting>
                 <setting name="list_format">list</setting>
+                <setting name="restrict_to_relationship_types">executedOnObservation</setting>
                 <setting name="display_template">
                   <![CDATA[
                     <unit>
@@ -9319,6 +9303,7 @@
 				        <setting name="add_label" locale="en_US">Add sampling event</setting>
 				        <setting name="restrict_to_types">sampling</setting>
                 <setting name="list_format">list</setting>
+                <setting name="restrict_to_relationship_types">executedOnObservation</setting>
 			        </settings>
             </placement>
 			      <placement code="ca_object">
@@ -9327,11 +9312,12 @@
                 <setting name="label" locale="en_US">Objects resulting from observation</setting>
 				        <setting name="add_label" locale="en_US">Add object</setting>
                 <setting name="list_format">list</setting>
+                <setting name="restrict_to_relationship_types">represents</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
         </screen>
-        <screen idno="projectEvent_result" default="1">
+        <screen idno="projectEvent_result" default="0">
           <labels>
             <label locale="en_US">
               <name>Result(s)</name>
@@ -9348,6 +9334,7 @@
                 <setting name="description" locale="en_US">A log of subprojects, that resulted from this overarching project.</setting>
 				        <setting name="add_label" locale="en_US">Add subproject</setting>
 				        <setting name="restrict_to_types">project</setting>
+                <setting name="restrict_to_relationship_types">subproject</setting>
                 <setting name="list_format">list</setting>
 			        </settings>
             </placement>
@@ -9358,6 +9345,7 @@
                 <setting name="description" locale="en_US">Fieldwork that is classified under this project. This can be day trips, expeditions, survey events, ...</setting>
 				        <setting name="add_label" locale="en_US">Add fieldwork</setting>
 				        <setting name="restrict_to_types">fieldwork</setting>
+                <setting name="restrict_to_relationship_types">resultingFieldwork</setting>
                 <setting name="list_format">list</setting>
 			        </settings>
             </placement>
@@ -9368,6 +9356,7 @@
 				        <setting name="add_label" locale="en_US">Add observation</setting>
 				        <setting name="restrict_to_types">observation</setting>
                 <setting name="list_format">list</setting>
+                <setting name="restrict_to_relationship_types">resultingObservation</setting>
 			        </settings>
             </placement>
 			      <placement code="ca_object_lot">
@@ -9376,6 +9365,7 @@
                 <setting name="label" locale="en_US">Object grouping of focus</setting>
                 <setting name="description" locale="en_US">A log of the object groupings of focus of this project; if relevant to log. These can be populations, in-situ plots or transects. For plant-themed projects, this could be provenance regions or specific provenances.</setting>
                 <setting name="add_label" locale="en_US">Add object grouping</setting>
+                <setting name="restrict_to_relationship_types">projectFocus</setting>
                 <setting name="list_format">list</setting>
               </settings>
             </placement>
@@ -9385,11 +9375,12 @@
                 <setting name="label" locale="en_US">Resulting objects</setting>
 				        <setting name="add_label" locale="en_US">Add object</setting>
                 <setting name="list_format">list</setting>
+                <setting name="restrict_to_relationship_types">resultingObjects</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
         </screen>
-        <screen idno="fieldworkEvent_result" default="1">
+        <screen idno="fieldworkEvent_result" default="0">
           <labels>
             <label locale="en_US">
               <name>Result(s)</name>
@@ -9407,6 +9398,7 @@
 				        <setting name="add_label" locale="en_US">Add fieldwork</setting>
 				        <setting name="restrict_to_types">fieldwork</setting>
                 <setting name="list_format">list</setting>
+                <setting name="restrict_to_relationship_types">resultingFieldwork</setting>
 			        </settings>
             </placement>
             <placement code="ca_occurrences_observation">
@@ -9416,6 +9408,7 @@
 				        <setting name="add_label" locale="en_US">Add observation</setting>
 				        <setting name="restrict_to_types">observation</setting>
                 <setting name="list_format">list</setting>
+                <setting name="restrict_to_relationship_types">resultingObservation</setting>
 			        </settings>
             </placement>
 			      <placement code="ca_object_lot">
@@ -9425,6 +9418,7 @@
                 <setting name="description" locale="en_US">A log of the object groupings of focus of this fieldwork; if relevant to log. These can be populations, in-situ plots or transects. For plant-themed fieldwork, this could be provenance regions or specific provenances.</setting>
                 <setting name="add_label" locale="en_US">Add object grouping</setting>
                 <setting name="list_format">list</setting>
+                <setting name="restrict_to_relationship_types">samplingFieldworkFocus</setting>
               </settings>
             </placement>
             <placement code="ca_object">
@@ -9433,11 +9427,12 @@
                 <setting name="label" locale="en_US">Resulting objects</setting>
 				        <setting name="add_label" locale="en_US">Add object</setting>
                 <setting name="list_format">list</setting>
+                <setting name="restrict_to_relationship_types">resultingObjects</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
         </screen>
-        <screen idno="samplingEvent_result" default="1">
+        <screen idno="samplingEvent_result" default="0">
           <labels>
             <label locale="en_US">
               <name>Result(s)</name>
@@ -9452,11 +9447,12 @@
 			        <settings>
                 <setting name="label" locale="en_US">Resulting objects</setting>
 				        <setting name="add_label" locale="en_US">Add object</setting>
+                <setting name="restrict_to_relationship_types">resultingObjects</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
         </screen>
-        <screen idno="identificationEvent_result" default="1">
+        <screen idno="identificationEvent_result" default="0">
           <labels>
             <label locale="en_US">
               <name>Result(s)</name>
@@ -9560,7 +9556,7 @@
             </placement>
           </bundlePlacements>
         </screen>
-        <screen idno="valuationEvent_result" default="1">
+        <screen idno="valuationEvent_result" default="0">
           <labels>
             <label locale="en_US">
               <name>Result(s)</name>
@@ -9580,7 +9576,7 @@
             </placement>
           </bundlePlacements>
         </screen>
-        <screen idno="curationEvent_result" default="1">
+        <screen idno="curationEvent_result" default="0">
           <labels>
             <label locale="en_US">
               <name>Result(s)</name>
@@ -9761,6 +9757,7 @@
                 <setting name="restrict_to_type">org</setting>
                 <setting name="label" locale="en_US">Current affiliation</setting>
                 <setting name="description" locale="en_US">Organization to which the individual is affiliated.</setting>
+                <setting name="restrict_to_relationship_types">currentAffilition</setting>
               </settings>
             </placement>
             <placement code="affiliationSpecification" typeRestrictions="ind">
@@ -9914,6 +9911,7 @@
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="restrict_to_relationship_types">currentCurator</setting>
               </settings>
             </placement>
             <placement code="ca_entities_CurrentAssistantCurator">
@@ -9922,6 +9920,7 @@
                 <setting name="label" locale="en_US">Current assistant-curator of collection</setting>
                 <setting name="add_label" locale="en_US">Add new assistant-curator</setting>
                 <setting name="restrict_to_types">ind</setting>
+                <setting name="restrict_to_relationship_types">assistantCurator</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -9941,6 +9940,7 @@
                 <setting name="label" locale="en_US">Storage location of collection</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="restrict_to_relationship_types">storedCollection</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -10034,6 +10034,7 @@
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">2</setting>
+                <setting name="restrict_to_relationship_types">maintainsStorageLocation</setting>
               </settings>
             </placement>
             <placement code="plantedSiteOwner" typeRestrictions="plantedSite">
@@ -10043,6 +10044,7 @@
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="restrict_to_relationship_types">ownerPlantedSite</setting>
               </settings>
             </placement>
             <placement code="file" typeRestrictions="box,drawerShelf,cabinetFridgeFreezer,room,floor,building,plantedSite">
@@ -10253,6 +10255,7 @@
                 <setting name="label" locale="en_US">Object that belongs to the group</setting>
                 <setting name="add_label" locale="en_US">Add new object</setting>
                 <setting name="list_format">list</setting>
+                <setting name="restrict_to_relationship_types">objectsGrouping</setting>
               </settings>
             </placement>
             <placement code="ca_occurrences_observation">
@@ -10262,6 +10265,7 @@
 				        <setting name="add_label" locale="en_US">Add observation</setting>
 				        <setting name="restrict_to_types">observation</setting>
                 <setting name="list_format">list</setting>
+                <setting name="restrict_to_relationship_types">observationsGrouping</setting>
 			        </settings>
             </placement>
             <placement code="ca_storage_location" typeRestrictions="provenance,provenanceRegion">
@@ -10271,13 +10275,14 @@
 				        <setting name="add_label" locale="en_US">Add ex-situ plot</setting>
 				        <setting name="restrict_to_types">plantedSite</setting>
                 <setting name="list_format">list</setting>
+                <setting name="restrict_to_relationship_types">inLivingCollectionAt</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
         </screen>
       </screens>
     </userInterface>
-	  <userInterface code="loan_ui" type="ca_loans">
+	  <userInterface code="loan_cataloguers_ui" type="ca_loans">
       <labels>
         <label locale="en_US">
           <name>Loan editor</name>
@@ -10928,26 +10933,6 @@
           <subTypeLeft>dnaSample</subTypeLeft>
           <subTypeRight>dnaSample</subTypeRight>
         </type>
-        <type code="dnaSubSamplePARENT" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is a subsample of</typename>
-              <typename_reverse>is subsampled to</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>dnaSample</subTypeLeft>
-          <subTypeRight>dnaSample</subTypeRight>
-        </type>
-        <type code="dnaSubSampleCHILD" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is subsampled to</typename>
-              <typename_reverse>is a subsample of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>dnaSample</subTypeLeft>
-          <subTypeRight>dnaSample</subTypeRight>
-        </type>
         <type code="dnaExtraction" default="0">
           <labels>
             <label locale="en_US">
@@ -11332,6 +11317,34 @@
           </labels>
           <subTypeLeft>org</subTypeLeft>
           <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+	  <relationshipTable name="ca_entities_x_storage_locations">
+      <types>
+        <type code="ownerPlantedSite" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>owns</typename>
+              <typename_reverse>is owned by</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>plantedSite</subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>
+	  <relationshipTable name="ca_entities_x_storage_locations">
+      <types>
+        <type code="maintainsStorageLocation" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>maintains</typename>
+              <typename_reverse>is maintained by</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>cabinetFridgeFreezer,room,building,plantedSite</subTypeRight>
         </type>
       </types>
     </relationshipTable>
