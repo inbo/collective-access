@@ -8258,6 +8258,9 @@
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="restrict_to_relationship_types">represents</setting>
+                <setting name="display_template"><unit relativeTo="ca_occurrences" restrictToTypes="observation">
+                ^ca_occurrences.dateRange<br/>^ca_entities_verbatimLocality<br/>^ca_entities_verbatimIdentification<br/></unit>
+                </setting>
               </settings>
             </placement>
             <placement code="ca_attributes_originOfObject">
@@ -8268,22 +8271,29 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-            <placement code="ca_objects_parentObject">
+            <placement code="ca_objects_parentObject_trial1">
               <bundle>ca_objects</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The direct parent of the object is the object</setting>
+                <setting name="label" locale="en_US">The direct parent of the object is the object (trial 1: via ca_objects)</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_relationship_types">dnaSubSample</setting>
               </settings>
             </placement>
-            <placement code="ca_objects_siblingsample">
+            <placement code="ca_objects_parentObject_trial2">
+              <bundle>parent_id</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The direct parent of the object is the object (trial 2: via parent_id)</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+            <placement code="ca_objects_parentObject_trial3" typeRestrictions="dnaSample">
               <bundle>ca_objects</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The object is a sibling sample of</setting>
-                <setting name="description" locale="en_US">If relevant to log explicitly, here the object can be linked to related samples. For example: tissue samples from the same cadaver, insect samples from the sample trap, ...</setting>
-				        <setting name="add_label" locale="en_US">Add sibling sample</setting>
-                <setting name="restrict_to_relationship_types">relatedTo</setting>
+                <setting name="label" locale="en_US">The dna sample is a subsample of (trial 3: via dnaSubSamplePARENT)</setting>
+                <setting name="restrict_to_relationship_types">dnaSubSamplePARENT</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
 			      <placement code="ca_object_lot_population">
@@ -8622,12 +8632,21 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="ca_objects">
+            <placement code="ca_objects_subsamples">
               <bundle>ca_objects</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">From the object, a new Natural Science object is created</setting>
                 <setting name="description" locale="en_US">This could be in the manner of a subsample (e.g. a cadaver -> tissue sample -> DNA sample) or in the manner of progeny (e.g. living plant in collection -> seedLot).</setting>
                 <setting name="add_label" locale="en_US">Add new Natural Science object</setting>
+                <setting name="list_format">list</setting>
+              </settings>
+            </placement>
+            <placement code="ca_objects_subsamples_trial3" typeRestrictions="dnaSample">
+              <bundle>ca_objects</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The dna sample is subsampled to (trial 3: via dnaSubSampleCHILD)</setting>
+                <setting name="restrict_to_relationship_types">dnaSubSampleCHILD</setting>
+                <setting name="add_label" locale="en_US">Add new subsample</setting>
                 <setting name="list_format">list</setting>
               </settings>
             </placement>
@@ -10906,6 +10925,26 @@
             <label locale="en_US">
               <typename>is a subsample of</typename>
               <typename_reverse>is subsampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>dnaSample</subTypeLeft>
+          <subTypeRight>dnaSample</subTypeRight>
+        </type>
+        <type code="dnaSubSamplePARENT" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>is a subsample of</typename>
+              <typename_reverse>is subsampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>dnaSample</subTypeLeft>
+          <subTypeRight>dnaSample</subTypeRight>
+        </type>
+        <type code="dnaSubSampleCHILD" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>is subsampled to</typename>
+              <typename_reverse>is a subsample of</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>dnaSample</subTypeLeft>
