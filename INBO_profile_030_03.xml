@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.33</profileName>
+  <profileName>[INBO] INBO natural science collection v0.34</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <locales>
     <locale lang="en" country="US">English</locale>
@@ -649,8 +649,8 @@
               <item idno="mineralSoilSample" enabled="1" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>mineralSoilSample</name_singular>
-                    <name_plural>mineralSoilSample</name_plural>
+                    <name_singular>Mineral soil sample</name_singular>
+                    <name_plural>Mineral soil samples</name_plural>
                   </label>
                 </labels>
               </item>
@@ -665,8 +665,8 @@
               <item idno="organicSoilSample" enabled="1" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>Organic top layeer soil sample</name_singular>
-                    <name_plural>Organic top layeer soil samples</name_plural>
+                    <name_singular>Organic top layer soil sample</name_singular>
+                    <name_plural>Organic top layer soil samples</name_plural>
                   </label>
                 </labels>
               </item>
@@ -6685,7 +6685,7 @@
           </restriction>
           <restriction code="r_verbatimIdentification_observationPlant">
             <table>ca_occurrences</table>
-		        <type>observationAnimal</type>
+		        <type>observationPlant</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -8173,7 +8173,7 @@
                 <setting name="label" locale="en_US">Project that generated the object</setting>
 				        <setting name="restrict_to_types">project</setting>
                 <setting name="restrict_to_relationship_types">resultingObjects</setting>
-                <setting name="display_template">^ca_occurrences.idno (^ca_occurrences.preferred_labels.name)</setting>
+                <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
               </settings>
 			      </placement>
             <placement code="ca_occurrence_fieldwork">
@@ -8185,6 +8185,7 @@
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="restrict_to_relationship_types">resultingObjects</setting>
+                <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
               </settings>
             </placement>
             <placement code="ca_occurrence_observation">
@@ -8192,11 +8193,10 @@
 			        <settings>
                 <setting name="label" locale="en_US">The object represents the observation</setting>
                 <setting name="restrict_to_types">observation</setting>
-                <setting name="includeSubtypes">1</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="restrict_to_relationship_types">represents</setting>
-                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater"> ^ca_occurrences.idno<br/>^ca_occurrences.dateRange<br/>^ca_occurrences_verbatimLocality<br/>^ca_occurrences_verbatimIdentification<br/></unit>]]></setting>
+                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater"> ^ca_occurrences.idno ^ca_occurrences.dateRange ^ca_occurrences.verbatimLocality ^ca_occurrences.verbatimIdentification</unit>]]></setting>
               </settings>
             </placement>
 			      <placement code="ca_object_lot">
@@ -8287,18 +8287,6 @@
                 <setting name="label" locale="en_US">Parent type</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
-            <placement code="ca_occurrence_observation">
-              <bundle>ca_occurrences</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The object is sampled from the observation</setting>
-                <setting name="restrict_to_types">observation</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_relationship_types">represents</setting>
-                <setting name="hideIfSelected_object">object_ui/object_preparation/ca_attribute_originOfObject</setting>
-                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observation"> ^ca_occurrences.dateRange<br/>^ca_entities_verbatimLocality<br/>^ca_entities_verbatimIdentification<br/></unit>]]></setting>
               </settings>
             </placement>
             <placement code="ca_objects_parentDNA" typeRestrictions="dnaSample">
@@ -9183,7 +9171,7 @@
             </label>
           </labels>
           <typeRestrictions>
-            <restriction code="r_observation" type="observation,observationPlant,observationAnimal,observationSoil,observationWater"/>
+            <restriction code="r_observation" type="observation"/>
           </typeRestrictions>
           <bundlePlacements>
             <placement code="ca_object_representations">
@@ -9436,7 +9424,7 @@
             </label>
           </labels>
           <typeRestrictions>
-            <restriction code="r_identification" type="identification,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial"/>	
+            <restriction code="r_identification" type="identification"/>	
           </typeRestrictions>
           <bundlePlacements>
 			      <placement code="verbatimIdentification">
@@ -9569,7 +9557,7 @@
             </label>
           </labels>
           <typeRestrictions>
-            <restriction code="r_curation" type="curation,disposal,treatmentCold,treatmentHot,treatmentChemical,renewalContainer,renewalLabel,renewalBuffer,transfer"/>	
+            <restriction code="r_curation" type="curation"/>	
           </typeRestrictions>
           <bundlePlacements>
             <placement code="curationResult">
