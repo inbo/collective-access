@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.32</profileName>
+  <profileName>[INBO] INBO natural science collection v0.33</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <locales>
     <locale lang="en" country="US">English</locale>
@@ -105,10 +105,6 @@
                         <name_plural>Animals, living</name_plural>
                       </label>
                     </labels>
-                    <settings>
-                      <setting name="render_in_new_menu">0</setting>
-                      <setting name="render_in_find_menu">0</setting>
-                    </settings>
                   </item>
                   <item idno="animalEntireCadaver" enabled="1" default="0">
                     <labels>
@@ -117,10 +113,6 @@
                         <name_plural>Cadaver</name_plural>
                       </label>
                     </labels>
-                    <settings>
-                      <setting name="render_in_new_menu">0</setting>
-                      <setting name="render_in_find_menu">0</setting>
-                    </settings>
                   </item>
                   <item idno="animalEntireSpecimen" enabled="1" default="0">
                     <labels>
@@ -129,10 +121,6 @@
                         <name_plural>Animals specimens</name_plural>
                       </label>
                     </labels>
-                    <settings>
-                      <setting name="render_in_new_menu">0</setting>
-                      <setting name="render_in_find_menu">0</setting>
-                    </settings>
                   </item>
                 </items>
               </item>
@@ -221,8 +209,8 @@
                   <item idno="sampleFishMuscle" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Finclip</name_singular>
-                        <name_plural>Finclips</name_plural>
+                        <name_singular>Muscle sample</name_singular>
+                        <name_plural>Muscle samples</name_plural>
                       </label>
                     </labels>
                   </item>
@@ -566,7 +554,7 @@
               </item>
             </items>
           </item>
-          <item idno="plantObject" rank="2" enabled="1" default="0">
+          <item idno="plantObject" rank="2" enabled="0" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>Plant</name_singular>
@@ -624,7 +612,7 @@
               </label>
             </labels>
           </item>
-          <item idno="waterObject" rank="5" enabled="1" default="0">
+          <item idno="waterObject" rank="5" enabled="0" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>Water object</name_singular>
@@ -650,7 +638,7 @@
               </item>
             </items>
           </item>
-          <item idno="soilObject" rank="4" enabled="1" default="0">
+          <item idno="soilObject" rank="4" enabled="0" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>Soil sample</name_singular>
@@ -693,7 +681,7 @@
         </label>
         </labels>
 		    <items>
-          <item idno="population" enabled="1" default="1">
+          <item idno="population" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>population</name_singular>
@@ -710,7 +698,7 @@
           </label>
         </labels>
         <items>
-          <item idno="ind" enabled="1" default="1">
+          <item idno="ind" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>Individual</name_singular>
@@ -735,23 +723,143 @@
           </label>
         </labels>
 		    <items>
-          <item idno="administrative" enabled="1" default="1">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>Administrative place</name_singular>
-                <name_plural>Administrative places</name_plural>
-              </label>
-            </labels>
-            <items>
-              <item idno="continent" enabled="1" default="0">
+              <item idno="continent" rank="1" enabled="1" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>continent</name_singular>
                     <name_plural>continents</name_plural>
                   </label>
                 </labels>
+                <items>
+                  <item idno="islandGroup" rank="3" enabled="1" default="0">
+                    <labels>
+                      <label locale="en_US" preferred="1">
+                        <name_singular>island group</name_singular>
+                        <name_plural>island groups</name_plural>
+                      </label>
+                    </labels>
+                    <items>
+                      <item idno="island" rank="4" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>island</name_singular>
+                            <name_plural>islands</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                    </items>
+                  </item>
+                  <item idno="country" rank="5" enabled="1" default="1">
+                    <labels>
+                      <label locale="en_US" preferred="1">
+                        <name_singular>country</name_singular>
+                        <name_plural>countries</name_plural>
+                      </label>
+                    </labels>
+                    <items>
+                      <item idno="stateProvince" rank="6" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>state/province</name_singular>
+                            <name_plural>state/province</name_plural>
+                          </label>
+                        </labels>
+                        <items>
+                          <item idno="countyShireDepartment" rank="7" enabled="1" default="0">
+                            <labels>
+                              <label locale="en_US" preferred="1">
+                                <name_singular>county, shire, department, ...</name_singular>
+                                <name_plural>counties, shires, departments, ...</name_plural>
+                              </label>
+                            </labels>
+                            <items>
+                              <item idno="cityMunicipalityVillage3" rank="8" enabled="1" default="0">
+                                <labels>
+                                  <label locale="en_US" preferred="1">
+                                    <name_singular>city, municipality, village, ...</name_singular>
+                                    <name_plural>cities, municipalities, villages, ...</name_plural>
+                                  </label>
+                                </labels>
+                                <items>
+                                  <item idno="plotTransect3" enabled="1" default="0">
+                                    <labels>
+                                      <label locale="en_US" preferred="1">
+                                        <name_singular>In-situ plot or transect</name_singular>
+                                        <name_plural>In-situ plots or transects</name_plural>
+                                      </label>
+                                    </labels>
+                                  </item>
+                                  <item idno="provenance3" enabled="1" default="0">
+                                    <labels>
+                                      <label locale="en_US" preferred="1">
+                                        <name_singular>Provenance</name_singular>
+                                        <name_plural>Provenances</name_plural>
+                                      </label>
+                                    </labels>
+                                  </item>
+                                </items>                        
+                              </item>
+                            </items/
+                          </item>
+                          <item idno="cityMunicipalityVillage2" rank="8" enabled="1" default="0">
+                            <labels>
+                              <label locale="en_US" preferred="1">
+                                <name_singular>city, municipality, village, ...</name_singular>
+                                <name_plural>cities, municipalities, villages, ...</name_plural>
+                              </label>
+                            </labels>
+                            <items>
+                              <item idno="plotTransect2" enabled="1" default="0">
+                                <labels>
+                                  <label locale="en_US" preferred="1">
+                                    <name_singular>In-situ plot or transect</name_singular>
+                                    <name_plural>In-situ plots or transects</name_plural>
+                                  </label>
+                                </labels>
+                              </item>
+                              <item idno="provenance2" enabled="1" default="0">
+                                <labels>
+                                  <label locale="en_US" preferred="1">
+                                    <name_singular>Provenance</name_singular>
+                                    <name_plural>Provenances</name_plural>
+                                  </label>
+                                </labels>
+                              </item>
+                            </items>                        
+                          </item>
+                        </items>
+                      </item>
+                      <item idno="cityMunicipalityVillage1" rank="8" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>city, municipality, village, ...</name_singular>
+                            <name_plural>cities, municipalities, villages, ...</name_plural>
+                          </label>
+                        </labels>
+                        <items>
+                          <item idno="plotTransect1" enabled="1" default="0">
+                            <labels>
+                              <label locale="en_US" preferred="1">
+                                <name_singular>In-situ plot or transect</name_singular>
+                                <name_plural>In-situ plots or transects</name_plural>
+                              </label>
+                            </labels>
+                          </item>
+                          <item idno="provenance1" enabled="1" default="0">
+                            <labels>
+                              <label locale="en_US" preferred="1">
+                                <name_singular>Provenance</name_singular>
+                                <name_plural>Provenances</name_plural>
+                              </label>
+                            </labels>
+                          </item>
+                        </items>
+                      </item>
+                    </items>
+                  </item>
+                </items>
               </item>
-              <item idno="waterBody" enabled="1" default="1">
+              <item idno="waterBody" rank="2" enabled="1" default="1">
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>Administrative place</name_singular>
@@ -759,72 +867,7 @@
                   </label>
                 </labels>
               </item>
-              <item idno="islandGroup" enabled="1" default="0">
-                <labels>
-                  <label locale="en_US" preferred="1">
-                    <name_singular>island group</name_singular>
-                    <name_plural>island groups</name_plural>
-                  </label>
-                </labels>
-              </item>
-              <item idno="island" enabled="1" default="0">
-                <labels>
-                  <label locale="en_US" preferred="1">
-                    <name_singular>island</name_singular>
-                    <name_plural>islands</name_plural>
-                  </label>
-                </labels>
-              </item>
-              <item idno="country" enabled="1" default="1">
-                <labels>
-                  <label locale="en_US" preferred="1">
-                    <name_singular>country</name_singular>
-                    <name_plural>countries</name_plural>
-                  </label>
-                </labels>
-              </item>
-              <item idno="stateProvince" enabled="1" default="0">
-                <labels>
-                  <label locale="en_US" preferred="1">
-                    <name_singular>state/province</name_singular>
-                    <name_plural>state/province</name_plural>
-                  </label>
-                </labels>
-              </item>
-              <item idno="countyShireDepartment" enabled="1" default="0">
-                <labels>
-                  <label locale="en_US" preferred="1">
-                    <name_singular>county, shire, department, ...</name_singular>
-                    <name_plural>counties, shires, departments, ...</name_plural>
-                  </label>
-                </labels>
-              </item>
-              <item idno="cityMunicipalityVillage" enabled="1" default="0">
-                <labels>
-                  <label locale="en_US" preferred="1">
-                    <name_singular>city, municipality, village, ...</name_singular>
-                    <name_plural>cities, municipalities, villages, ...</name_plural>
-                  </label>
-                </labels>
-              </item>
             </items>
-          </item>
-          <item idno="plotTransect" enabled="1" default="1">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>In-situ plot or transect</name_singular>
-                <name_plural>In-situ plots or transects</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="provenance" enabled="1" default="1">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>Provenance</name_singular>
-                <name_plural>Provenances</name_plural>
-              </label>
-            </labels>
-          </item>
 		    </items>
       </list>
       <list code="collection_types" hierarchical="1" system="0" vocabulary="0">
@@ -843,7 +886,7 @@
           </label>
         </labels>
         <items>
-          <item idno="observation" rank="1" enabled="1" default="1">
+          <item idno="observation" rank="1" enabled="0" default="1">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>Observation</name_singular>
@@ -905,7 +948,7 @@
                   </item>
             </items>
           </item>
-          <item idno="event" rank="2" enabled="1" default="1">
+          <item idno="event" rank="2" enabled="0" default="1">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>Event</name_singular>
@@ -941,7 +984,7 @@
                 <setting name="render_in_find_menu">1</setting>
                 </settings>
               </item>
-              <item idno="identification" rank="3" enabled="1" default="1">
+              <item idno="identification" rank="3" enabled="0" default="1">
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>Identification</name_singular>
@@ -987,7 +1030,7 @@
                       </item>
                     </items>
               </item>
-              <item idno="curation" rank="4" enabled="1" default="1">
+              <item idno="curation" rank="4" enabled="0" default="1">
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>Curation</name_singular>
@@ -1007,7 +1050,7 @@
                       </label>
                     </labels>
                   </item>
-                  <item idno="treatment" enabled="1" default="1">
+                  <item idno="treatment" enabled="0" default="1">
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>Treatment</name_singular>
@@ -1053,7 +1096,7 @@
                       </item>
                     </items>
                   </item>
-                  <item idno="renewal" enabled="1" default="1">
+                  <item idno="renewal" enabled="0" default="1">
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>Renewal</name_singular>
@@ -1235,7 +1278,7 @@
               </label>
             </labels>
           </item>
-          <item idno="external" enabled="1" default="1">
+          <item idno="external" enabled="0" default="1">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>External loan</name_singular>
@@ -6317,7 +6360,7 @@
           <restriction code="r_observation">
             <table>ca_occurrences</table>
             <type>observation</type>
-            <includeSubtypes> 1</includeSubtypes>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -8131,7 +8174,7 @@
                 <setting name="label" locale="en_US">Project that generated the object</setting>
 				        <setting name="restrict_to_types">project</setting>
                 <setting name="restrict_to_relationship_types">resultingObjects</setting>
-                <setting name="display_template">^ca_occurrences.idno (^ca_occurrences.preferred_label)</setting>
+                <setting name="display_template">^ca_occurrences.idno (^ca_occurrences.preferred_labels.name)</setting>
               </settings>
 			      </placement>
             <placement code="ca_occurrence_fieldwork">
@@ -8149,7 +8192,8 @@
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The object represents the observation</setting>
-                <setting name="restrict_to_types">observationPlant,observationAnimal,observationSoil,observationWater</setting>
+                <setting name="restrict_to_types">observation</setting>
+                <setting name="includeSubtypes">1</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="restrict_to_relationship_types">represents</setting>
@@ -8250,7 +8294,7 @@
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The object is sampled from the observation</setting>
-                <setting name="restrict_to_types">observationPlant,observationAnimal,observationSoil,observationWater</setting>
+                <setting name="restrict_to_types">observation</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="restrict_to_relationship_types">represents</setting>
@@ -8266,7 +8310,7 @@
                 <setting name="restrict_to_types">dnaSample</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="hideIfSelected_observation">object_ui/object_preparation/ca_attribute_originOfObject</setting>
+                <setting name="hideIfSelected_observation">object_ui/object_preparation/originOfObject</setting>
               </settings>
             </placement>
             <placement code="ca_objects_parentTissue" typeRestrictions="dnaSample">
@@ -8443,9 +8487,9 @@
                 <setting name="label" locale="en_US">Log of identification events of this object</setting>
                 <setting name="description" locale="en_US">Logging identifications as separate events allows to enter more detailed information, such as a date, comments, method, executor, ... If multiple identification events occurred for the object, it is recommended to work with the identification events, rather than to simply overwrite the previous identifications. This allows a more explicit log of the taxonomic IDs linked to this object. From this log the most likely identification (often the most recent) can then be copied to the "verbatim identification" and "standardized identification" fields.</setting>
                 <setting name="add_label" locale="en_US">Add new identification event</setting>
-                <setting name="restrict_to_types">identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial</setting>
+                <setting name="restrict_to_types">identification</setting>
                 <setting name="list_format">list</setting>
-                <setting name="display_template"><![CDATA[<unit>^ca_occurrences.idno<br/>^ca_occurrences_verbatimIdentification<br/>(^ca_occurrences.dateRange)<br/></unit>]]></setting>
+                <setting name="display_template"><![CDATA[<unit unit relativeTo="ca_occurrences" restrictToTypes="identification,identificationBotanical,identificationZoological,identificationViral,identificationBacteriological">^ca_occurrences.idno<br/>^ca_occurrences_verbatimIdentification<br/>(^ca_occurrences.dateRange)<br/></unit>]]></setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -8559,12 +8603,15 @@
             </label>
           </labels>
           <bundlePlacements>
-			      <placement code="hierarchy_navigation">
-              <bundle>hierarchy_navigation</bundle>
+			      <placement code="ca_objects_results">
+              <bundle>ca_objects</bundle>
               	<settings>
                   <setting name="label" locale="en_US">Objects derived from this object</setting>
                   <setting name="add_label" locale="en_US">Add new object</setting>
                 </settings>
+            </placement>
+			      <placement code="hierarchy_navigation">
+              <bundle>hierarchy_navigation</bundle>
             </placement>
             <placement code="datasets">
               <bundle>ca_attribute_dataset</bundle>
@@ -8751,13 +8798,13 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="idno" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater,fieldwork,project,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial,disposal,treatmentCold,treatmentHot,treatmentChemical,renewalContainer,renewalLabel,renewalBuffer,transfer,valuation">
+            <placement code="idno">
               <bundle>idno</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">CMS-ID</setting>
               </settings>
             </placement>
-            <placement code="externalRecord_observation" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater">
+            <placement code="externalRecord_observation" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
               <bundle>ca_attribute_externalRecord</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">External database containing observation</setting>
@@ -8772,7 +8819,7 @@
               <setting name="description" locale="en_US">For example: the project-URL in PURE</setting>
               </settings>
             </placement>
-			      <placement code="status" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater,fieldwork,project,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial,disposal,treatmentCold,treatmentHot,treatmentChemical,renewalContainer,renewalLabel,renewalBuffer,transfer,valuation">
+			      <placement code="status">
               <bundle>status</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Cataloguing status</setting>
@@ -8780,21 +8827,21 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="preferred_labels" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater,fieldwork,project">
+			      <placement code="preferred_labels" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater,fieldwork,project">
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Event identifier (preferred)</setting>
                 <setting name="description" locale="en_US">The identifier for the event used in notes, datasets, publication, ... if there are multiple identifiers for the event, this is the preferred identifier. You can add context information to make the record more unique and findable in the database e.g. if your sample is numbered 52.04, you can name it 52.04 (EV Magnolia ). This aligns with the concept of the record Number in DwC: http://rs.tdwg.org/dwc/terms/recordNumber</setting>
               </settings>
             </placement>
-            <placement code="nonpreferred_labels" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater,fieldwork,project">
+            <placement code="nonpreferred_labels" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater,fieldwork,project">
               <bundle>nonpreferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Other event identifier (nonpreferred)</setting>
 				        <setting name="add_label" locale="en_US">Add other non-preferred identifier</setting>
               </settings>
             </placement>
-			      <placement code="dateRange" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater,fieldwork,project,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial,disposal,treatmentCold,treatmentHot,treatmentChemical,renewalContainer,renewalLabel,renewalBuffer,transfer,valuation">
+			      <placement code="dateRange">
               <bundle>ca_attribute_dateRange</bundle>
               <!--http://rs.tdwg.org/dwc/terms/dateIdentified-->
               <settings>
@@ -8803,7 +8850,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="verbatimLocality" typeRestrictions="fieldwork,observationPlant,observationAnimal,observationSoil,observationWater,project">
+			      <placement code="verbatimLocality" typeRestrictions="fieldwork,observation,observationPlant,observationAnimal,observationSoil,observationWater,project">
               <bundle>ca_attribute_verbatimLocality</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim locality</setting>
@@ -8812,7 +8859,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="verbatimIdentification" typeRestrictions="observationPlant,observationAnimal">
+			      <placement code="verbatimIdentification" typeRestrictions="observation,observationPlant,observationAnimal">
               <bundle>ca_attribute_verbatimIdentification</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim taxonomic identification</setting>
@@ -8830,7 +8877,7 @@
             </label>
           </labels>
           <bundlePlacements>
-			      <placement code="verbatimEventDate" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater,fieldwork,project,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial,disposal,treatmentCold,treatmentHot,treatmentChemical,renewalContainer,renewalLabel,renewalBuffer,transfer,valuation">
+			      <placement code="verbatimEventDate">
               <bundle>ca_attribute_verbatimEventDate</bundle>
               <settings>
               <setting name="label" locale="en_US">Verbatim event date and time</setting>
@@ -8839,7 +8886,7 @@
               <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="dateRange" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater,fieldwork,project,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial,disposal,treatmentCold,treatmentHot,treatmentChemical,renewalContainer,renewalLabel,renewalBuffer,transfer,valuation">
+			      <placement code="dateRange">
               <bundle>ca_attribute_dateRange</bundle>
               <!--http://rs.tdwg.org/dwc/terms/dateIdentified-->
               <settings>
@@ -8848,7 +8895,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="verbatimLocality" typeRestrictions="fieldwork,observationPlant,observationAnimal,observationSoil,observationWaterproject">
+			      <placement code="verbatimLocality" typeRestrictions="fieldwork,observation,observationPlant,observationAnimal,observationSoil,observationWaterproject">
               <bundle>ca_attribute_verbatimLocality</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim locality</setting>
@@ -8857,7 +8904,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-            <placement code="ca_places_admin" typeRestrictions="fieldwork,observationPlant,observationAnimal,observationSoil,observationWaterproject">
+            <placement code="ca_places_admin" typeRestrictions="fieldwork,observation,observationPlant,observationAnimal,observationSoil,observationWaterproject">
               <bundle>ca_places</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The administrative place of the event</setting>
@@ -8889,7 +8936,7 @@
                 <setting name="list_format">list</setting>
               </settings>
             </placement>
-            <placement code="observationVerbatimLatitudeY" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater">
+            <placement code="observationVerbatimLatitudeY" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
               <bundle>ca_attribute_verbatimLatitudeY</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim latitude (Y)</setting>
@@ -8898,7 +8945,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-            <placement code="observationVerbatimLongitudeX" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater">
+            <placement code="observationVerbatimLongitudeX" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
               <bundle>ca_attribute_verbatimLongitudeX</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim longitude (X)</setting>
@@ -8907,7 +8954,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="verbatimSRS" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater">
+			      <placement code="verbatimSRS" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
               <bundle>ca_attribute_verbatimSRS</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim SRS</setting>
@@ -8925,7 +8972,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="observationStandardizedGeoreferenceWGS84" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater">
+			      <placement code="observationStandardizedGeoreferenceWGS84" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
               <bundle>ca_attribute_georeference</bundle>
               <settings>
                 <setting name="label" locale="en_US">Standardized georeference data</setting>
@@ -8934,7 +8981,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="verbatimElevation" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater">
+			      <placement code="verbatimElevation" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
               <bundle>ca_attribute_verbatimElevation</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim elevation</setting>
@@ -8943,7 +8990,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="observationMinimumElevationInMetres" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater">
+			      <placement code="observationMinimumElevationInMetres" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
               <bundle>ca_attribute_minimumElevationInMetres</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The minimum elevation in metres.</setting>
@@ -8951,7 +8998,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="observationMaximumElevationInMetres" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater">
+			      <placement code="observationMaximumElevationInMetres" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
               <bundle>ca_attribute_maximumElevationInMetres</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The maximum elevation in metres.</setting>
@@ -8959,7 +9006,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="verticalDatum" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater">
+			      <placement code="verticalDatum" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
               <bundle>ca_attribute_verticalDatum</bundle>
               <settings>
                 <setting name="label" locale="en_US">Vertical datum</setting>
@@ -8968,7 +9015,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="waterbodyType" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater">
+			      <placement code="waterbodyType" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
               <bundle>ca_attribute_waterbodyType</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Waterbody type</setting>
@@ -8976,7 +9023,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="habitat" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater">
+			      <placement code="habitat" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
               <bundle>ca_attribute_habitat</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Habitat description</setting>
@@ -8984,7 +9031,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="landUseType" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater">
+			      <placement code="landUseType" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
               <bundle>ca_attribute_landUseType</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Land use type</setting>
@@ -9002,12 +9049,12 @@
             </label>
           </labels>
           <typeRestrictions>
-            <restriction code="r_observation" type="observationPlant,observationAnimal,observationSoil,observationWater"/>
+            <restriction code="r_observation" type="observation,observationPlant,observationAnimal,observationSoil,observationWater"/>
             <restriction code="r_project" type="project"/>
             <restriction code="r_fieldwork" type="fieldwork"/>
           </typeRestrictions>
           <bundlePlacements>
-            <placement code="ca_occurrence_projectresult" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater,fieldwork">
+            <placement code="ca_occurrence_projectresult" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater,fieldwork">
               <bundle>ca_occurrences</bundle>
               <settings>
                 <setting name="restrict_to_type">project</setting>
@@ -9033,7 +9080,7 @@
                 <setting name="description" locale="en_US">Description of the project or fieldwork/expedition/survey event.</setting>
               </settings>
 			      </placement>
-            <placement code="ca_occurrence_fieldwork" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater,fieldwork">
+            <placement code="ca_occurrence_fieldwork" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater,fieldwork">
               <bundle>ca_occurrences</bundle>
               <settings>
                 <setting name="restrict_to_type">fieldwork</setting>
@@ -9043,14 +9090,14 @@
                 <setting name="restrict_to_relationship_types">resultingObservation,resultingFieldwork</setting>
               </settings>
             </placement>
-			      <placement code="ca_object_lot_population" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater">
+			      <placement code="ca_object_lot_population" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
               <bundle>ca_object_lots</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Related population</setting>
                   <setting name="restrict_to_types">population</setting>
               </settings>
             </placement>
-            <placement code="ca_places" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater">
+            <placement code="ca_places" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
               <bundle>ca_places</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Related in-situ plot or transect</setting>
@@ -9067,7 +9114,7 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="ca_entities_executor" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater,fieldwork,project,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial,disposal,treatmentCold,treatmentHot,treatmentChemical,renewalContainer,renewalLabel,renewalBuffer,transfer,valuation">
+            <placement code="ca_entities_executor">
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="restrict_to_type">ind</setting>
@@ -9075,7 +9122,7 @@
 				        <setting name="add_label" locale="en_US">Add individual</setting>
               </settings>
             </placement>
-            <placement code="ca_object" typeRestrictions="identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial,valuation,disposal,treatmentCold,treatmentHot,treatmentChemical,renewalContainer,renewalLabel,renewalBuffer,transfer">
+            <placement code="ca_object" typeRestrictions="identification,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial,valuation,disposal,treatmentCold,treatmentHot,treatmentChemical,renewalContainer,renewalLabel,renewalBuffer,transfer">
               <bundle>ca_objects</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object(s) subjected to event</setting>
@@ -9083,16 +9130,16 @@
                 <setting name="restrict_to_relationship_types">executedOnObject</setting>
               </settings>
             </placement>
-            <placement code="ca_occurrence_observation_identification" typeRestrictions="identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial">
+            <placement code="ca_occurrence_observation_identification" typeRestrictions="identification,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial">
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Observation(s) subjected to event</setting>
                 <setting name="description" locale="en_US">Observation that was subjected to the identification</setting>
-                <setting name="restrict_to_types">observationPlant,observationAnimal,observationSoil,observationWater</setting>
+                <setting name="restrict_to_types">observation</setting>
                 <setting name="restrict_to_relationship_types">executedOnObservation</setting>
               </settings>
             </placement>
-			      <placement code="eventPublishedProcedure" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater,fieldwork,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial,valuation,disposal,treatmentCold,treatmentHot,treatmentChemical,renewalContainer,renewalLabel,renewalBuffer,transfer">
+			      <placement code="eventPublishedProcedure" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater,fieldwork,identification,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial,valuation,curation,disposal,treatmentCold,treatmentHot,treatmentChemical,renewalContainer,renewalLabel,renewalBuffer,transfer">
               <bundle>ca_attribute_publication</bundle>
               <settings>
                 <setting name="label" locale="en_US">Procedure doi</setting>
@@ -9102,7 +9149,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="eventProcedure" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater,fieldwork,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial,valuation,disposal,treatmentCold,treatmentHot,treatmentChemical,renewalContainer,renewalLabel,renewalBuffer,transfer">
+			      <placement code="eventProcedure" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater,fieldwork,identification,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial,valuation,curation,disposal,treatmentCold,treatmentHot,treatmentChemical,renewalContainer,renewalLabel,renewalBuffer,transfer">
               <bundle>ca_attribute_eventProcedure</bundle>
               <settings>
                 <setting name="label" locale="en_US">Description of event procedure</setting>
@@ -9111,7 +9158,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-            <placement code="ca_object_representations" typeRestrictions="disposal,treatmentCold,treatmentHot,treatmentChemical,renewalContainer,renewalLabel,renewalBuffer,transfer">
+            <placement code="ca_object_representations" typeRestrictions="curation,disposal,treatmentCold,treatmentHot,treatmentChemical,renewalContainer,renewalLabel,renewalBuffer,transfer">
               <bundle>ca_object_representations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Photo or video of the used procedure</setting>
@@ -9137,10 +9184,10 @@
             </label>
           </labels>
           <typeRestrictions>
-            <restriction code="r_observation" type="observationPlant,observationAnimal,observationSoil,observationWater"/>
+            <restriction code="r_observation" type="observation,observationPlant,observationAnimal,observationSoil,observationWater"/>
           </typeRestrictions>
           <bundlePlacements>
-            <placement code="ca_object_representations" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater">
+            <placement code="ca_object_representations">
               <bundle>ca_object_representations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Observation multimedia</setting>
@@ -9148,7 +9195,7 @@
 				        <setting name="add_label" locale="en_US">Add multimedia</setting>
 			        </settings>
             </placement>
-            <placement code="file" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater">
+            <placement code="file">
               <bundle>ca_attribute_file</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">File(s) associated with the observation</setting>
@@ -9255,7 +9302,7 @@
                 <setting name="list_format">list</setting>
               </settings>
             </placement>
-			      <placement code="ca_object" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater">
+			      <placement code="ca_object">
               <bundle>ca_objects</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Objects resulting from observation</setting>
@@ -9303,7 +9350,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Resulting observation</setting>
 				        <setting name="add_label" locale="en_US">Add observation</setting>
-				        <setting name="restrict_to_types">observationPlant,observationAnimal,observationSoil,observationWater</setting>
+				        <setting name="restrict_to_types">observation</setting>
                 <setting name="list_format">list</setting>
                 <setting name="restrict_to_relationship_types">resultingObservation</setting>
 			        </settings>
@@ -9356,7 +9403,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Resulting observation</setting>
 				        <setting name="add_label" locale="en_US">Add observation</setting>
-				        <setting name="restrict_to_types">observationPlant,observationAnimal,observationSoil,observationWater</setting>
+				        <setting name="restrict_to_types">observation</setting>
                 <setting name="list_format">list</setting>
                 <setting name="restrict_to_relationship_types">resultingObservation</setting>
 			        </settings>
@@ -9383,17 +9430,17 @@
             </placement>
           </bundlePlacements>
         </screen>
-        <screen idno="identificationEvent_result" default="1">
+        <screen idno="identificationEvent_result" default="0">
           <labels>
             <label locale="en_US">
               <name>Result(s)</name>
             </label>
           </labels>
           <typeRestrictions>
-            <restriction code="r_identification" type="identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial"/>	
+            <restriction code="r_identification" type="identification,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial"/>	
           </typeRestrictions>
           <bundlePlacements>
-			      <placement code="verbatimIdentification" typeRestrictions="identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial">
+			      <placement code="verbatimIdentification">
               <bundle>ca_attribute_verbatimIdentification</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim taxonomic identification</setting>
@@ -9402,13 +9449,13 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-            <placement code="identificationQualifier" typeRestrictions="identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial">
+            <placement code="identificationQualifier">
               <bundle>ca_attribute_identificationQualifier</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Identification Qualifier</setting>
 			        </settings>
             </placement>
-            <placement code="scientificName" typeRestrictions="identificationBotanical,identificationZoological,identificationBacteriological">
+            <placement code="scientificName">
               <bundle>ca_attribute_scientificName</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Scientific name</setting>
@@ -9469,25 +9516,25 @@
                 <setting name="label" locale="en_US">Name approbation</setting>
 			        </settings>
             </placement>            
-            <placement code="confidenceLevel" typeRestrictions="identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial">
+            <placement code="confidenceLevel">
               <bundle>ca_attribute_confidenceLevel</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Confidence level</setting>
 			        </settings>
             </placement>
-            <placement code="standardizedIdentification" typeRestrictions="identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial">
+            <placement code="standardizedIdentification">
               <bundle>ca_attribute_standardizedIdentification</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Standardized identification</setting>
 			        </settings>
             </placement>
-            <placement code="nameMatch" typeRestrictions="identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial">
+            <placement code="nameMatch">
               <bundle>ca_attribute_matchContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Name match</setting>
 			        </settings>
             </placement>
-            <placement code="scientificNameOtherDbUrl" typeRestrictions="identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial">
+            <placement code="scientificNameOtherDbUrl">
               <bundle>ca_attribute_scientificNameOtherDbUrl</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Supplementary standardized taxonomic reference (URL)</setting>
@@ -9523,7 +9570,7 @@
             </label>
           </labels>
           <typeRestrictions>
-            <restriction code="r_curation" type="disposal,treatmentCold,treatmentHot,treatmentChemical,renewalContainer,renewalLabel,renewalBuffer,transfer"/>	
+            <restriction code="r_curation" type="curation,disposal,treatmentCold,treatmentHot,treatmentChemical,renewalContainer,renewalLabel,renewalBuffer,transfer"/>	
           </typeRestrictions>
           <bundlePlacements>
             <placement code="curationResult">
@@ -9532,14 +9579,14 @@
                 <setting name="label" locale="en_US">Result of curation event</setting>
 			        </settings>
             </placement>
-            <placement code="file" typeRestrictions="disposal,treatmentCold,treatmentHot,treatmentChemical,renewalContainer,renewalLabel,renewalBuffer,transfer">
+            <placement code="file">
               <bundle>ca_attribute_file</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Relevant curation notes, documents, ...</setting>
 				        <setting name="add_label" locale="en_US">Add file</setting>
 			        </settings>
             </placement>
-            <placement code="ca_object_representations" typeRestrictions="disposal,treatmentCold,treatmentHot,treatmentChemical,renewalContainer,renewalLabel,renewalBuffer,transfer">
+            <placement code="ca_object_representations">
               <bundle>ca_object_representations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Photo or video of curation result</setting>
@@ -11098,7 +11145,7 @@
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
-          <subTypeRight>observation</subTypeRight>
+          <subTypeRight>observation,observationPlant,observationAnimal,observationSoil,observationWater</subTypeRight>
         </type>
 		    <type code="resultingObjects" default="0">
           <labels>
@@ -11118,7 +11165,7 @@
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
-          <subTypeRight>identification,valuation,curation</subTypeRight>
+          <subTypeRight>identification,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial,valuation,curation,disposal,treatmentCold,treatmentHot,treatmentChemical,renewalContainer,renewalLabel,renewalBuffer,transfer</subTypeRight>
         </type>
 		    <type code="reused" default="0">
           <labels>
@@ -11170,7 +11217,7 @@
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
-          <subTypeRight>observation</subTypeRight>
+          <subTypeRight>observation,observationPlant,observationAnimal,observationSoil,observationWater</subTypeRight>
         </type>
 		    <type code="fieldworkFocus" default="0">
           <labels>
@@ -11339,7 +11386,7 @@
               <typename_reverse>resulted in</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>observation</subTypeLeft>
+          <subTypeLeft>observation,observationPlant,observationAnimal,observationSoil,observationWater</subTypeLeft>
           <subTypeRight>fieldwork,project</subTypeRight>
         </type>
 		    <type code="executedOnObservation" default="0">
@@ -11349,8 +11396,8 @@
               <typename_reverse>was executed on</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>observation</subTypeLeft>
-          <subTypeRight>identification</subTypeRight>
+          <subTypeLeft>observation,observationPlant,observationAnimal,observationSoil,observationWater</subTypeLeft>
+          <subTypeRight>identification,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial</subTypeRight>
         </type>
 		    <type code="subproject" default="0">
           <labels>
