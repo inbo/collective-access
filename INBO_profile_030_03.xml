@@ -66,6 +66,27 @@
           </item>
         </items>
       </list>
+      <list code="place_hierarchies" hierarchical="1" system="0" vocabulary="0">
+        <labels>
+          <label locale="en_US">
+            <name>Place hierarchies</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="places" enabled="1" default="1">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Place Authority</name_singular>
+                <name_plural>Place Authority</name_plural>
+              </label>
+              <label locale="fr_FR" preferred="1">
+                <name_singular>Autorité lieu</name_singular>
+                <name_plural>Autorités lieux</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
     <!--Main menu lists-->
       <list code="object_types" hierarchical="1" system="0" vocabulary="0" defaultSort="1">
         <labels>
@@ -529,8 +550,8 @@
               <item idno="sampleUnknown" enabled="0" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>Animal sample with source uknown</name_singular>
-                    <name_plural>Animal samples with source uknown</name_plural>
+                    <name_singular>Animal source unknown</name_singular>
+                    <name_plural>Animal source unknown</name_plural>
                   </label>
                 </labels>
                 <items>	
@@ -723,143 +744,23 @@
           </label>
         </labels>
 		    <items>
-              <item idno="continent" rank="1" enabled="1" default="0">
+          <item idno="administrative" enabled="1" default="1">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Administrative place</name_singular>
+                <name_plural>Administrative places</name_plural>
+              </label>
+            </labels>
+            <items>
+              <item idno="continent" enabled="1" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>continent</name_singular>
                     <name_plural>continents</name_plural>
                   </label>
                 </labels>
-                <items>
-                  <item idno="islandGroup" rank="3" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>island group</name_singular>
-                        <name_plural>island groups</name_plural>
-                      </label>
-                    </labels>
-                    <items>
-                      <item idno="island" rank="4" enabled="1" default="0">
-                        <labels>
-                          <label locale="en_US" preferred="1">
-                            <name_singular>island</name_singular>
-                            <name_plural>islands</name_plural>
-                          </label>
-                        </labels>
-                      </item>
-                    </items>
-                  </item>
-                  <item idno="country" rank="5" enabled="1" default="1">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>country</name_singular>
-                        <name_plural>countries</name_plural>
-                      </label>
-                    </labels>
-                    <items>
-                      <item idno="stateProvince" rank="6" enabled="1" default="0">
-                        <labels>
-                          <label locale="en_US" preferred="1">
-                            <name_singular>state/province</name_singular>
-                            <name_plural>state/province</name_plural>
-                          </label>
-                        </labels>
-                        <items>
-                          <item idno="countyShireDepartment" rank="7" enabled="1" default="0">
-                            <labels>
-                              <label locale="en_US" preferred="1">
-                                <name_singular>county, shire, department, ...</name_singular>
-                                <name_plural>counties, shires, departments, ...</name_plural>
-                              </label>
-                            </labels>
-                            <items>
-                              <item idno="cityMunicipalityVillage3" rank="8" enabled="1" default="0">
-                                <labels>
-                                  <label locale="en_US" preferred="1">
-                                    <name_singular>city, municipality, village, ...</name_singular>
-                                    <name_plural>cities, municipalities, villages, ...</name_plural>
-                                  </label>
-                                </labels>
-                                <items>
-                                  <item idno="plotTransect3" enabled="1" default="0">
-                                    <labels>
-                                      <label locale="en_US" preferred="1">
-                                        <name_singular>In-situ plot or transect</name_singular>
-                                        <name_plural>In-situ plots or transects</name_plural>
-                                      </label>
-                                    </labels>
-                                  </item>
-                                  <item idno="provenance3" enabled="1" default="0">
-                                    <labels>
-                                      <label locale="en_US" preferred="1">
-                                        <name_singular>Provenance</name_singular>
-                                        <name_plural>Provenances</name_plural>
-                                      </label>
-                                    </labels>
-                                  </item>
-                                </items>                        
-                              </item>
-                            </items>
-                          </item>
-                          <item idno="cityMunicipalityVillage2" rank="8" enabled="1" default="0">
-                            <labels>
-                              <label locale="en_US" preferred="1">
-                                <name_singular>city, municipality, village, ...</name_singular>
-                                <name_plural>cities, municipalities, villages, ...</name_plural>
-                              </label>
-                            </labels>
-                            <items>
-                              <item idno="plotTransect2" enabled="1" default="0">
-                                <labels>
-                                  <label locale="en_US" preferred="1">
-                                    <name_singular>In-situ plot or transect</name_singular>
-                                    <name_plural>In-situ plots or transects</name_plural>
-                                  </label>
-                                </labels>
-                              </item>
-                              <item idno="provenance2" enabled="1" default="0">
-                                <labels>
-                                  <label locale="en_US" preferred="1">
-                                    <name_singular>Provenance</name_singular>
-                                    <name_plural>Provenances</name_plural>
-                                  </label>
-                                </labels>
-                              </item>
-                            </items>                        
-                          </item>
-                        </items>
-                      </item>
-                      <item idno="cityMunicipalityVillage1" rank="8" enabled="1" default="0">
-                        <labels>
-                          <label locale="en_US" preferred="1">
-                            <name_singular>city, municipality, village, ...</name_singular>
-                            <name_plural>cities, municipalities, villages, ...</name_plural>
-                          </label>
-                        </labels>
-                        <items>
-                          <item idno="plotTransect1" enabled="1" default="0">
-                            <labels>
-                              <label locale="en_US" preferred="1">
-                                <name_singular>In-situ plot or transect</name_singular>
-                                <name_plural>In-situ plots or transects</name_plural>
-                              </label>
-                            </labels>
-                          </item>
-                          <item idno="provenance1" enabled="1" default="0">
-                            <labels>
-                              <label locale="en_US" preferred="1">
-                                <name_singular>Provenance</name_singular>
-                                <name_plural>Provenances</name_plural>
-                              </label>
-                            </labels>
-                          </item>
-                        </items>
-                      </item>
-                    </items>
-                  </item>
-                </items>
               </item>
-              <item idno="waterBody" rank="2" enabled="1" default="1">
+              <item idno="waterBody" enabled="1" default="1">
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>Administrative place</name_singular>
@@ -867,6 +768,72 @@
                   </label>
                 </labels>
               </item>
+              <item idno="islandGroup" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>island group</name_singular>
+                    <name_plural>island groups</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="island" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>island</name_singular>
+                    <name_plural>islands</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="country" enabled="1" default="1">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>country</name_singular>
+                    <name_plural>countries</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="stateProvince" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>state/province</name_singular>
+                    <name_plural>state/province</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="countyShireDepartment" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>county, shire, department, ...</name_singular>
+                    <name_plural>counties, shires, departments, ...</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="cityMunicipalityVillage" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>city, municipality, village, ...</name_singular>
+                    <name_plural>cities, municipalities, villages, ...</name_plural>
+                  </label>
+                </labels>
+              </item>
+            </items>
+          </item>
+          <item idno="plotTransect" enabled="1" default="1">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>In-situ plot or transect</name_singular>
+                <name_plural>In-situ plots or transects</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="provenance" enabled="1" default="1">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Provenance</name_singular>
+                <name_plural>Provenances</name_plural>
+              </label>
+            </labels>
+          </item>
 		    </items>
       </list>
       <list code="collection_types" hierarchical="1" system="0" vocabulary="0">
@@ -8119,20 +8086,36 @@
                 <setting name="label" locale="en_US">CMS-ID</setting>
               </settings>
             </placement>
+            <placement code="type_id1">
+              <bundle>type_id</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Type of object (trial 1)</setting>
+              </settings>
+            </placement>
+            <placement code="type_id2">
+              <bundle>ca_objects.type_id</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Type of object (trial2)</setting>
+              </settings>
+            </placement>
+            <placement code="type_id3">
+              <bundle>ca_list_items.object_types</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Type of object (trial3)</setting>
+              </settings>
+            </placement>
+            <placement code="type_id4">
+              <bundle>ca_list_items</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Type of object (trial4)</setting>
+                <setting name="display_template">^ca_list_items.object_types</setting>
+              </settings>
+            </placement>
             <placement code="preferred_labels">
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Preferred ID of the object</setting>
                 <setting name="description" locale="en_US">This is the preferred identifier of the object, this identifier has to be physically present on/with the object, on the label or written on the object.</setting>
-              </settings>
-            </placement>
-            <placement code="preparationDate">
-              <bundle>ca_attribute_preparationDate</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Preparation date of the object</setting>
-                <setting name="description" locale="en_US">This is the date that the object was created. This can be a date, a month, a year; a range. Mandatory field.</setting>
-				        <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
 			      <placement code="nonpreferred_labels">
@@ -8148,6 +8131,15 @@
                 <setting name="label" locale="en_US">External record that represents object</setting>
                 <setting name="description" locale="en_US">This is an URL. This could be the object published on GBIF, or the object published on DiSSCo.</setting>
 				        <setting name="add_label" locale="en_US">Add another URL</setting>
+              </settings>
+            </placement>
+            <placement code="preparationDate">
+              <bundle>ca_attribute_preparationDate</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Preparation date of the object</setting>
+                <setting name="description" locale="en_US">This is the date that the object was created. This can be a date, a month, a year; a range. Mandatory field.</setting>
+				        <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
 			      <placement code="status">
@@ -8280,7 +8272,19 @@
 				        <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
-            </placement>		      
+            </placement>		 
+            <placement code="ca_objects_parentid1">
+              <bundle>ca_objects.parent_id</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The object was directly derived from this parent object (trial1)</setting>
+              </settings>
+            </placement> 
+            <placement code="ca_objects_parentid2">
+              <bundle>parent_id</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The object was directly derived from this parent object (trial2)</setting>
+              </settings>
+            </placement>         
             <placement code="originOfObject">
               <bundle>ca_attribute_originOfObject</bundle>
 			        <settings>
@@ -8791,6 +8795,20 @@
                 <setting name="label" locale="en_US">CMS-ID</setting>
               </settings>
             </placement>
+			      <placement code="preferred_labels">
+              <bundle>preferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Event identifier (preferred)</setting>
+                <setting name="description" locale="en_US">The identifier for the event used in notes, datasets, publication, ... if there are multiple identifiers for the event, this is the preferred identifier. You can add context information to make the record more unique and findable in the database e.g. if your sample is numbered 52.04, you can name it 52.04 (EV Magnolia ). This aligns with the concept of the record Number in DwC: http://rs.tdwg.org/dwc/terms/recordNumber</setting>
+              </settings>
+            </placement>
+            <placement code="nonpreferred_labels">
+              <bundle>nonpreferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Other event identifier (nonpreferred)</setting>
+				        <setting name="add_label" locale="en_US">Add other non-preferred identifier</setting>
+              </settings>
+            </placement>
             <placement code="externalRecord_observation" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
               <bundle>ca_attribute_externalRecord</bundle>
 			        <settings>
@@ -8804,28 +8822,6 @@
 			        <settings>
               <setting name="label" locale="en_US">External database containing project</setting>
               <setting name="description" locale="en_US">For example: the project-URL in PURE</setting>
-              </settings>
-            </placement>
-			      <placement code="status">
-              <bundle>status</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Cataloguing status</setting>
-				        <setting name="minRelationshipsPerRow">1</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
-			      <placement code="preferred_labels" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater,fieldwork,project">
-              <bundle>preferred_labels</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Event identifier (preferred)</setting>
-                <setting name="description" locale="en_US">The identifier for the event used in notes, datasets, publication, ... if there are multiple identifiers for the event, this is the preferred identifier. You can add context information to make the record more unique and findable in the database e.g. if your sample is numbered 52.04, you can name it 52.04 (EV Magnolia ). This aligns with the concept of the record Number in DwC: http://rs.tdwg.org/dwc/terms/recordNumber</setting>
-              </settings>
-            </placement>
-            <placement code="nonpreferred_labels" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater,fieldwork,project">
-              <bundle>nonpreferred_labels</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Other event identifier (nonpreferred)</setting>
-				        <setting name="add_label" locale="en_US">Add other non-preferred identifier</setting>
               </settings>
             </placement>
 			      <placement code="dateRange">
@@ -8853,6 +8849,14 @@
                 <setting name="description" locale="en_US">The taxonomic identification of the observed organism, as specific as known at the time of observation. This can be a species name, genus name, family name. This can be the vernacular name in English (e.g. human), Dutch (e.g. mens), ... or the binomial nomenclature (e.g. Homo sapiens).</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+			      <placement code="status">
+              <bundle>status</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Cataloguing status</setting>
+				        <setting name="minRelationshipsPerRow">1</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
           </bundlePlacements>
