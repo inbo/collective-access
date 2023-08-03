@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.34</profileName>
+  <profileName>[INBO] INBO natural science collection v0.35</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <locales>
     <locale lang="en" country="US">English</locale>
@@ -76,12 +76,8 @@
           <item idno="places" enabled="1" default="1">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>Place Authority</name_singular>
-                <name_plural>Place Authority</name_plural>
-              </label>
-              <label locale="fr_FR" preferred="1">
-                <name_singular>Autorité lieu</name_singular>
-                <name_plural>Autorités lieux</name_plural>
+                <name_singular>Planet Earth</name_singular>
+                <name_plural>Planet Earth</name_plural>
               </label>
             </labels>
           </item>
@@ -3697,6 +3693,14 @@
             </restriction>
             <restriction code="r_collections">
               <table>ca_collections</table>
+              <settings>
+                <setting name="minAttributesPerRow">0</setting>
+                <setting name="maxAttributesPerRow">20</setting>
+                <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              </settings>
+            </restriction>
+            <restriction code="r_places">
+              <table>ca_places</table>
               <settings>
                 <setting name="minAttributesPerRow">0</setting>
                 <setting name="maxAttributesPerRow">20</setting>
@@ -7457,6 +7461,14 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
+          <restriction code="r_places">
+            <table>ca_places</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
         </typeRestrictions>
       </metadataElement>
 	  <!--Entity-->
@@ -8086,29 +8098,22 @@
                 <setting name="label" locale="en_US">CMS-ID</setting>
               </settings>
             </placement>
-            <placement code="type_id1">
-              <bundle>type_id</bundle>
+            <placement code="object_type1">
+              <bundle>ca_objects.object_types</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Type of object (trial 1)</setting>
+                <setting name="label" locale="en_US">Object type (trial 1)</setting>
               </settings>
             </placement>
-            <placement code="type_id2">
-              <bundle>ca_objects.type_id</bundle>
+            <placement code="object_type2">
+              <bundle>ca_objects.object_type</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Type of object (trial2)</setting>
+                <setting name="label" locale="en_US">Object type (trial 2)</setting>
               </settings>
             </placement>
-            <placement code="type_id3">
-              <bundle>ca_list_items.object_types</bundle>
+            <placement code="object_type3">
+              <bundle>object_type</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Type of object (trial3)</setting>
-              </settings>
-            </placement>
-            <placement code="type_id4">
-              <bundle>ca_list_items</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Type of object (trial4)</setting>
-                <setting name="display_template">^ca_list_items.object_types</setting>
+                <setting name="label" locale="en_US">Object type (trial 3)</setting>
               </settings>
             </placement>
             <placement code="preferred_labels">
@@ -8188,7 +8193,7 @@
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="restrict_to_relationship_types">represents</setting>
-                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater"> ^ca_occurrences.idno ^ca_occurrences.dateRange ^ca_occurrences.verbatimLocality ^ca_occurrences.verbatimIdentification</unit>]]></setting>
+                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater"> <ifdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.verbatimIdentification</ifdef> <ifnotdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.preferred_labels.name</ifnotdef> observed on: ^ca_occurrences.dateRange, observed at: ^ca_occurrences.verbatimLocality (^ca_occurrences.idno)</unit>]]></setting>
               </settings>
             </placement>
 			      <placement code="ca_object_lot">
@@ -8273,18 +8278,19 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>		 
-            <placement code="ca_objects_parentid1">
-              <bundle>ca_objects.parent_id</bundle>
+            <placement code="ca_objects_parent">
+              <bundle>ca_objects.parent</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The object was directly derived from this parent object (trial1)</setting>
+                <setting name="label" locale="en_US">The object was directly derived from this parent object</setting>
               </settings>
-            </placement> 
-            <placement code="ca_objects_parentid2">
-              <bundle>parent_id</bundle>
+            </placement>                  
+            <placement code="ca_objects_siblings">
+              <bundle>ca_objects.siblings</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The object was directly derived from this parent object (trial2)</setting>
+                <setting name="label" locale="en_US">The object has the following siblings</setting>
+				        <setting name="add_label" locale="en_US">Add sibling</setting>
               </settings>
-            </placement>         
+            </placement>                  
             <placement code="originOfObject">
               <bundle>ca_attribute_originOfObject</bundle>
 			        <settings>
@@ -8301,51 +8307,7 @@
                 <setting name="restrict_to_types">dnaSample</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="hideIfSelected_observation">object_ui/object_preparation/originOfObject</setting>
-              </settings>
-            </placement>
-            <placement code="ca_objects_parentTissue" typeRestrictions="dnaSample">
-              <bundle>ca_objects</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The dna sample is extracted from</setting>
-                <setting name="restrict_to_relationship_types">dnaSubSamplePARENT</setting>
-                <setting name="restrict_to_types">dnaSample</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="hideIfSelected_observation">object_ui/object_preparation/ca_attribute_originOfObject</setting>
-              </settings>
-            </placement>
-            <placement code="ca_objects_mineralSoilSample" typeRestrictions="mineralSoilSample">
-              <bundle>ca_objects</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The mineral soil sample is a subsample from</setting>
-                <setting name="restrict_to_relationship_types">soilSubSample</setting>
-                <setting name="restrict_to_types">mineralSoilSample</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="hideIfSelected_observation">object_ui/object_preparation/ca_attribute_originOfObject</setting>
-              </settings>
-            </placement>
-            <placement code="ca_objects_peatSoilSample" typeRestrictions="peatSoilSample">
-              <bundle>ca_objects</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The mineral soil sample is a subsample from</setting>
-                <setting name="restrict_to_relationship_types">soilSubSample</setting>
-                <setting name="restrict_to_types">peatSoilSample</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="hideIfSelected_observation">object_ui/object_preparation/ca_attribute_originOfObject</setting>
-              </settings>
-            </placement>
-            <placement code="ca_objects_organicSoilSample" typeRestrictions="organicSoilSample">
-              <bundle>ca_objects</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The mineral soil sample is a subsample from</setting>
-                <setting name="restrict_to_relationship_types">soilSubSample</setting>
-                <setting name="restrict_to_types">organicSoilSample</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="hideIfSelected_observation">object_ui/object_preparation/ca_attribute_originOfObject</setting>
+                <setting name="hideIfSelected_observation">object_ui/object_preparation/ca_originOfObject</setting>
               </settings>
             </placement>
 			      <placement code="samplingProtocolPublished">
@@ -8601,6 +8563,13 @@
                   <setting name="add_label" locale="en_US">Add new object</setting>
                 </settings>
             </placement>
+            <placement code="ca_objects_children">
+              <bundle>ca_objects.children</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The object has the following child object(s)</setting>
+				        <setting name="add_label" locale="en_US">Add child object</setting>
+              </settings>
+            </placement>                  
 			      <placement code="hierarchy_navigation">
               <bundle>hierarchy_navigation</bundle>
             </placement>
@@ -8802,14 +8771,14 @@
                 <setting name="description" locale="en_US">The identifier for the event used in notes, datasets, publication, ... if there are multiple identifiers for the event, this is the preferred identifier. You can add context information to make the record more unique and findable in the database e.g. if your sample is numbered 52.04, you can name it 52.04 (EV Magnolia ). This aligns with the concept of the record Number in DwC: http://rs.tdwg.org/dwc/terms/recordNumber</setting>
               </settings>
             </placement>
-            <placement code="nonpreferred_labels">
+            <placement code="nonpreferred_labels" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater,fieldwork,project,valuation,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial,disposal,treatmentCold,treatmentHot,treatmentChemical,renewalContainer,renewalLabel,renewalBuffer,transfer">
               <bundle>nonpreferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Other event identifier (nonpreferred)</setting>
 				        <setting name="add_label" locale="en_US">Add other non-preferred identifier</setting>
               </settings>
             </placement>
-            <placement code="externalRecord_observation" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
+            <placement code="externalRecord_observation" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater">
               <bundle>ca_attribute_externalRecord</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">External database containing observation</setting>
@@ -9040,7 +9009,11 @@
             </label>
           </labels>
           <typeRestrictions>
-            <restriction code="r_observation" type="observation,observationPlant,observationAnimal,observationSoil,observationWater"/>
+            <restriction code="r_observation" type="observation"/>
+            <restriction code="r_observationPlant" type="observationPlant"/>
+            <restriction code="r_observationAnimal" type="observationAnimal"/>
+            <restriction code="r_observationSoil" type="observationSoil"/>
+            <restriction code="r_observationWater" type="observationWater"/>
             <restriction code="r_project" type="project"/>
             <restriction code="r_fieldwork" type="fieldwork"/>
           </typeRestrictions>
@@ -9176,6 +9149,10 @@
           </labels>
           <typeRestrictions>
             <restriction code="r_observation" type="observation"/>
+            <restriction code="r_observationWater" type="observationWater"/>
+            <restriction code="r_observationSoil" type="observationSoil"/>
+            <restriction code="r_observationPlant" type="observationPlant"/>
+            <restriction code="r_observationAnimal" type="observationAnimal"/>
           </typeRestrictions>
           <bundlePlacements>
             <placement code="ca_object_representations">
@@ -9428,7 +9405,11 @@
             </label>
           </labels>
           <typeRestrictions>
-            <restriction code="r_identification" type="identification"/>	
+            <restriction code="r_identification" type="identification"/>
+            <restriction code="r_identificationZoological" type="identificationZoological"/>	
+            <restriction code="r_identificationBotanical" type="identificationBotanical"/>			
+            <restriction code="r_identificationViral" type="identificationViral"/>		
+            <restriction code="r_identificationBacteriological" type="identificationBacteriological"/>				
           </typeRestrictions>
           <bundlePlacements>
 			      <placement code="verbatimIdentification">
@@ -9562,6 +9543,14 @@
           </labels>
           <typeRestrictions>
             <restriction code="r_curation" type="curation"/>	
+            <restriction code="r_disposal" type="disposal"/>
+            <restriction code="r_treatmentCold" type="treatmentCold"/>
+            <restriction code="r_treatmentHot" type="treatmentHot"/>
+            <restriction code="r_treatmentChemical" type="treatmentChemical"/>
+            <restriction code="r_renewalContainer" type="renewalContainer"/>
+            <restriction code="r_renewalLabel" type="renewalLabel"/>	
+            <restriction code="r_renewalBuffer" type="renewalBuffer"/>	
+            <restriction code="r_transfer" type="transfer"/>																																																																																																																													
           </typeRestrictions>
           <bundlePlacements>
             <placement code="curationResult">
@@ -9824,8 +9813,8 @@
             </label>
           </labels>
           <typeRestrictions>
-            <restriction code="r_plotTransect" type="plotTransect"/>
-            <restriction code="r_provenance" type="provenance"/>
+            <restriction code="plotTransect" type="plotTransect"/>
+            <restriction code="provenance" type="provenance"/>
           </typeRestrictions>
           <bundlePlacements>
             <placement code="ca_object">
@@ -11186,11 +11175,11 @@
     </relationshipTable>
 	  <relationshipTable name="ca_objects_x_places">
       <types>
-        <type code="objectsGrouping" default="1">
+        <type code="objectsPlace" default="1">
           <labels>
             <label locale="en_US">
-              <typename>is grouped in</typename>
-              <typename_reverse>groups</typename_reverse>
+              <typename>was located in</typename>
+              <typename_reverse>was location of</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
