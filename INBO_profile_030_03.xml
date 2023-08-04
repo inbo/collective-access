@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.35</profileName>
+  <profileName>[INBO] INBO natural science collection v0.36</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <locales>
     <locale lang="en" country="US">English</locale>
@@ -4017,6 +4017,7 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="useDatePicker">1</setting>
         </settings>
         <typeRestrictions>
           <restriction code="r_objects">
@@ -5555,11 +5556,9 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
-          <setting name="useDatePicker">1</setting>
           <setting name="canBeUsedInSort">1</setting>
           <setting name="canBeUsedInSearchForm">1</setting>
           <setting name="canBeUsedInDisplay">1</setting>
-          <setting name="default_text">presentDate</setting>
         </settings>
         <typeRestrictions>
           <restriction code="r_occurrences">
@@ -8096,31 +8095,26 @@
               <bundle>idno</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">CMS-ID</setting>
+                <setting name="description" locale="en_US">This is a unique identifier for the record, automatically assigned by the system. OBJ+number. The number is the next available number in the sequence.</setting>
               </settings>
             </placement>
             <placement code="object_type1">
-              <bundle>ca_objects.object_types</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Object type (trial 1)</setting>
+              <bundle>ca_objects.type_id</bundle>
+              <settings>
+                <setting name="readonly">1</setting>
               </settings>
             </placement>
             <placement code="object_type2">
-              <bundle>ca_objects.object_type</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Object type (trial 2)</setting>
-              </settings>
-            </placement>
-            <placement code="object_type3">
-              <bundle>object_type</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Object type (trial 3)</setting>
+              <bundle>type_id</bundle>
+              <settings>
+                <setting name="readonly">1</setting>
               </settings>
             </placement>
             <placement code="preferred_labels">
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Preferred ID of the object</setting>
-                <setting name="description" locale="en_US">This is the preferred identifier of the object, this identifier has to be physically present on/with the object, on the label or written on the object.</setting>
+                <setting name="description" locale="en_US">This is the preferred identifier of the object, this identifier has to be physically present on/with the object, on the label or written on the object. For example: DNA-sample: 19-009625.</setting>
               </settings>
             </placement>
 			      <placement code="nonpreferred_labels">
@@ -8142,9 +8136,20 @@
               <bundle>ca_attribute_preparationDate</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Preparation date of the object</setting>
-                <setting name="description" locale="en_US">This is the date that the object was created. This can be a date, a month, a year; a range. Mandatory field.</setting>
+                <setting name="description" locale="en_US">This is the date that the object was created. This can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
 				        <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+            <placement code="ca_occurrence_observation">
+              <bundle>ca_occurrences</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The object represents the observation</setting>
+                <setting name="restrict_to_types">observation</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="restrict_to_relationship_types">represents</setting>
+                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater"> <ifdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.verbatimIdentification</ifdef> <ifnotdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.preferred_labels.name</ifnotdef> observed on: ^ca_occurrences.dateRange<ifdef code="ca_occurrences.verbatimLocality">, observed at: ^ca_occurrences.verbatimLocality (^ca_occurrences.idno)</ifdef></unit>]]></setting>
               </settings>
             </placement>
 			      <placement code="status">
@@ -8169,6 +8174,8 @@
 			        <settings>
                 <setting name="label" locale="en_US">Project that generated the object</setting>
 				        <setting name="restrict_to_types">project</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="restrict_to_relationship_types">resultingObjects</setting>
                 <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
               </settings>
@@ -8193,7 +8200,7 @@
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="restrict_to_relationship_types">represents</setting>
-                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater"> <ifdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.verbatimIdentification</ifdef> <ifnotdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.preferred_labels.name</ifnotdef> observed on: ^ca_occurrences.dateRange, observed at: ^ca_occurrences.verbatimLocality (^ca_occurrences.idno)</unit>]]></setting>
+                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater"> <ifdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.verbatimIdentification</ifdef> <ifnotdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.preferred_labels.name</ifnotdef> observed on: ^ca_occurrences.dateRange<ifdef code="ca_occurrences.verbatimLocality">, observed at: ^ca_occurrences.verbatimLocality (^ca_occurrences.idno)</ifdef></unit>]]></setting>
               </settings>
             </placement>
 			      <placement code="ca_object_lot">
@@ -8206,16 +8213,9 @@
             <placement code="ca_places_plotTransect">
               <bundle>ca_places</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The object is part of the in-situ plot or transect</setting>
-				        <setting name="add_label" locale="en_US">Add in-situ plot or transect</setting>
-                <setting name="restrict_to_types">plotTransect</setting>
-              </settings>
-            </placement>
-            <placement code="ca_places_provenance">
-              <bundle>ca_places</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The object is part of the provenance</setting>
-                <setting name="restrict_to_types">provenance</setting>
+                <setting name="label" locale="en_US">The object is part of the in-situ plot,transect or provenance</setting>
+				        <setting name="add_label" locale="en_US">Add place</setting>
+                <setting name="restrict_to_types">plotTransect,provenance</setting>
               </settings>
             </placement>
 			      <placement code="seedlot_relation" typeRestrictions="seedLot">
@@ -8279,18 +8279,38 @@
               </settings>
             </placement>		 
             <placement code="ca_objects_parent">
-              <bundle>ca_objects.parent</bundle>
+              <bundle>ca_objects.parent.preferred_labels.name</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The object was directly derived from this parent object</setting>
+                <setting name="label" locale="en_US">ca_objects.parent.preferred_labels.name</setting>
               </settings>
             </placement>                  
             <placement code="ca_objects_siblings">
-              <bundle>ca_objects.siblings</bundle>
+              <bundle>ca_objects.siblings.preferred_labels.name</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The object has the following siblings</setting>
+                <setting name="label" locale="en_US">ca_objects.siblings.preferred_labels.name</setting>
 				        <setting name="add_label" locale="en_US">Add sibling</setting>
               </settings>
-            </placement>                  
+            </placement>
+            <placement code="ca_objects">
+              <bundle>ca_objects</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">ca_objects</setting>
+				        <setting name="add_label" locale="en_US">Add sibling</setting>
+				        <setting name="show_hierarchy" locale="en_US">1</setting>
+              </settings>
+            </placement>
+            <placement code="hierarchy_location">
+              <bundle>hierarchy_location</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">hierarchy_location</setting>
+              </settings>
+            </placement>
+            <placement code="ca_objects_history">
+              <bundle>ca_objects_history</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">ca_objects_history</setting>
+              </settings>
+            </placement>                                                                                                                                                
             <placement code="originOfObject">
               <bundle>ca_attribute_originOfObject</bundle>
 			        <settings>
@@ -8307,7 +8327,7 @@
                 <setting name="restrict_to_types">dnaSample</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="hideIfSelected_observation">object_ui/object_preparation/ca_originOfObject</setting>
+                <setting name="hideIfSelected_observation">object_ui/object_preparation/ca_attribute_originOfObject</setting>
               </settings>
             </placement>
 			      <placement code="samplingProtocolPublished">
@@ -8564,7 +8584,7 @@
                 </settings>
             </placement>
             <placement code="ca_objects_children">
-              <bundle>ca_objects.children</bundle>
+              <bundle>ca_objects.children.preferred_labels.name</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The object has the following child object(s)</setting>
 				        <setting name="add_label" locale="en_US">Add child object</setting>
@@ -8625,12 +8645,14 @@
 			        <settings>
                 <setting name="label" locale="en_US">The date of deaccession</setting>
                 <setting name="description" locale="en_US">If unknown the value will be null. The date is stored as an historic daterange and may be any valid historic date.</setting>
+                <setting name="hideIfSelected_0">object_ui/object_management/is_deaccessioned</setting>
               </settings>
             </placement>
             <placement code="deaccession_type_id">
               <bundle>deaccession_type_id</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The deaccession type</setting>
+                <setting name="hideIfSelected_0">object_ui/object_management/is_deaccessioned</setting>
               </settings>
             </placement>
             <placement code="deaccession_notes">
@@ -8638,6 +8660,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Deaccession notes</setting>
                 <setting name="description" locale="en_US">Any notes regarding the deaccession process.</setting>
+                <setting name="hideIfSelected_0">object_ui/object_management/is_deaccessioned</setting>
               </settings>
             </placement>
             <placement code="ca_storage_location">
@@ -8646,6 +8669,7 @@
                 <setting name="label" locale="en_US">Object is stored at</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="hideIfSelected_1">object_ui/object_management/is_deaccessioned</setting>
               </settings>
             </placement>
             <placement code="ca_collection">
@@ -8659,8 +8683,8 @@
             <placement code="ca_entities_currentOwner">
               <bundle>ca_entities</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Current owner</setting>
-                <setting name="description" locale="en_US">This is always an organization. Personal collections are not inventoried, only when donated to an organization.</setting>
+                <setting name="label" locale="en_US">Current/last owner</setting>
+                <setting name="description" locale="en_US">This is always an organization. Personal collections are not inventoried, only when donated to an organization. This is either the current owner, or the last owner if disposed.</setting>
 				        <setting name="restrict_to_types">org</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
@@ -8758,13 +8782,13 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="idno">
+            <placement code="idno" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater,fieldwork,project,valuation,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial,disposal,treatmentCold,treatmentHot,treatmentChemical,renewalContainer,renewalLabel,renewalBuffer,transfer">
               <bundle>idno</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">CMS-ID</setting>
               </settings>
             </placement>
-			      <placement code="preferred_labels">
+			      <placement code="preferred_labels" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater,fieldwork,project,valuation,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial,disposal,treatmentCold,treatmentHot,treatmentChemical,renewalContainer,renewalLabel,renewalBuffer,transfer">
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Event identifier (preferred)</setting>
@@ -8793,7 +8817,7 @@
               <setting name="description" locale="en_US">For example: the project-URL in PURE</setting>
               </settings>
             </placement>
-			      <placement code="dateRange">
+			      <placement code="dateRange" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater,fieldwork,project,valuation,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial,disposal,treatmentCold,treatmentHot,treatmentChemical,renewalContainer,renewalLabel,renewalBuffer,transfer">
               <bundle>ca_attribute_dateRange</bundle>
               <!--http://rs.tdwg.org/dwc/terms/dateIdentified-->
               <settings>
@@ -8820,7 +8844,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="status">
+			      <placement code="status" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater,fieldwork,project,valuation,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial,disposal,treatmentCold,treatmentHot,treatmentChemical,renewalContainer,renewalLabel,renewalBuffer,transfer">
               <bundle>status</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Cataloguing status</setting>
@@ -9784,6 +9808,19 @@
             </placement>
 			      <placement code="hierarchy_navigation">
               <bundle>hierarchy_navigation</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Hierarchy navigation</setting>
+                <setting name="open_hierarchy">1</setting>
+                <setting name="autoshrink">1</setting>
+              </settings>
+            </placement>
+			      <placement code="hierarchy_location">
+              <bundle>hierarchy_location</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Hierarchy location</setting>
+                <setting name="open_hierarchy">1</setting>
+                <setting name="autoshrink">1</setting>
+              </settings>
             </placement>
 			      <placement code="gettyID" typeRestrictions="administrative">
               <bundle>ca_attribute_externalRecord</bundle>
