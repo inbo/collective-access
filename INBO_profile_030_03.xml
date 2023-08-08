@@ -3298,7 +3298,7 @@
           </item>
         </items>
       </list>
-      <list code="availibility" hierarchical="0" system="0" vocabulary="1">
+      <list code="availability" hierarchical="0" system="0" vocabulary="1">
         <labels>
           <label locale="en_US">
             <name>Availibility</name>
@@ -4194,7 +4194,6 @@
               <setting name="canBeUsedInSort">1</setting>
               <setting name="canBeUsedInSearchForm">1</setting>
               <setting name="canBeUsedInDisplay">1</setting>
-              <setting name="default_text">presentDate</setting>
             </settings>
           </metadataElement>
           <metadataElement code="concentration" datatype="Numeric">
@@ -4304,7 +4303,6 @@
               <setting name="canBeUsedInSort">1</setting>
               <setting name="canBeUsedInSearchForm">1</setting>
               <setting name="canBeUsedInDisplay">1</setting>
-              <setting name="default_text">presentDate</setting>
             </settings>
           </metadataElement>
           <metadataElement code="ratioOfAbsorbance260230" datatype="Numeric">
@@ -4419,7 +4417,6 @@
               <setting name="canBeUsedInSort">1</setting>
               <setting name="canBeUsedInSearchForm">1</setting>
               <setting name="canBeUsedInDisplay">1</setting>
-              <setting name="default_text">presentDate</setting>
             </settings>
           </metadataElement>
           <metadataElement code="fragmentLength" datatype="Numeric">
@@ -4553,7 +4550,6 @@
               <setting name="canBeUsedInSort">1</setting>
               <setting name="canBeUsedInSearchForm">1</setting>
               <setting name="canBeUsedInDisplay">1</setting>
-              <setting name="default_text">presentDate</setting>
             </settings>
           </metadataElement>
           <metadataElement code="dnaVolume" datatype="Numeric">
@@ -4663,7 +4659,6 @@
               <setting name="canBeUsedInSort">1</setting>
               <setting name="canBeUsedInSearchForm">1</setting>
               <setting name="canBeUsedInDisplay">1</setting>
-              <setting name="default_text">presentDate</setting>
             </settings>
           </metadataElement>
           <metadataElement code="volumeAppliesTo" datatype="Text">
@@ -4806,7 +4801,6 @@
               <setting name="canBeUsedInSort">1</setting>
               <setting name="canBeUsedInSearchForm">1</setting>
               <setting name="canBeUsedInDisplay">1</setting>
-              <setting name="default_text">presentDate</setting>
             </settings>
           </metadataElement>
           <metadataElement code="weightPublishedProcedure" datatype="Url">
@@ -4948,7 +4942,6 @@
               <setting name="canBeUsedInSort">1</setting>
               <setting name="canBeUsedInSearchForm">1</setting>
               <setting name="canBeUsedInDisplay">1</setting>
-              <setting name="default_text">presentDate</setting>
             </settings>
           </metadataElement>
           <metadataElement code="lengthPublishedProcedure" datatype="Url">
@@ -5090,7 +5083,6 @@
               <setting name="canBeUsedInSort">1</setting>
               <setting name="canBeUsedInSearchForm">1</setting>
               <setting name="canBeUsedInDisplay">1</setting>
-              <setting name="default_text">presentDate</setting>
             </settings>
           </metadataElement>
           <metadataElement code="agePublishedProcedure" datatype="Url">
@@ -5233,7 +5225,6 @@
               <setting name="canBeUsedInSort">1</setting>
               <setting name="canBeUsedInSearchForm">1</setting>
               <setting name="canBeUsedInDisplay">1</setting>
-              <setting name="default_text">presentDate</setting>
             </settings>
           </metadataElement>
           <metadataElement code="germinationPublishedProcedure" datatype="Url">
@@ -5357,7 +5348,6 @@
               <setting name="canBeUsedInSort">1</setting>
               <setting name="canBeUsedInSearchForm">1</setting>
               <setting name="canBeUsedInDisplay">1</setting>
-              <setting name="default_text">presentDate</setting>
             </settings>
           </metadataElement>
           <metadataElement code="purityPublishedProcedure" datatype="Url">
@@ -6426,6 +6416,41 @@
           </label>
 			  </labels>
 			  <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
+			  <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+			  </settings>
+			  <typeRestrictions>
+          <restriction code="r_observationPlant">
+            <table>ca_occurrences</table>
+            <type>observationPlant</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_observationAnimal">
+            <table>ca_occurrences</table>
+            <type>observationAnimal</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+			  </typeRestrictions>
+	    </metadataElement>
+	    <metadataElement code="age" datatype="Text">
+			  <labels>
+          <label locale="en_US">
+            <name>age</name>
+            <description>Age of the organism at the time of collection or observation.</description>
+          </label>
+			  </labels>
+			  <documentationUrl>http://rs.tdwg.org/abcd/terms/age</documentationUrl>
 			  <settings>
           <setting name="fieldWidth">70</setting>
           <setting name="fieldHeight">1</setting>
@@ -7674,6 +7699,30 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
+	    <metadataElement code="reservationSpecification" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Specification of the reservation</name>
+            <description>Specification on the reservation of the spot</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+	      <typeRestrictions>
+          <restriction code="r_storage_location">
+            <table>ca_storage_locations</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
 	    <metadataElement code="preservationTemperature" datatype="List" list="preservation_temperature">
         <labels>
           <label locale="en_US">
@@ -8017,7 +8066,7 @@
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Preferred ID of the object</setting>
-                <setting name="description" locale="en_US">This is the preferred identifier of the object, this identifier has to be physically present on/with the object, on the label or written on the object. For example: DNA-sample: 19-009625.</setting>
+                <setting name="description" locale="en_US">This is the preferred identifier of the object, this identifier has to be physically present on/with the object, on the label or written on the object. For DNA-samples this is the LIMS-code e.g. 19-009625. For soil samples, this is the AID - Archive ID e.g. IL/A01/053.</setting>
               </settings>
             </placement>
 			      <placement code="nonpreferred_labels">
@@ -8100,7 +8149,7 @@
                 <setting name="label" locale="en_US">Project that generated the object</setting>
 				        <setting name="restrict_to_types">project</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">3</setting>
                 <setting name="restrict_to_relationship_types">resultingObjects</setting>
                 <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
               </settings>
@@ -8138,7 +8187,7 @@
             <placement code="ca_places_plotTransect">
               <bundle>ca_places</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The object is part of the in-situ plot,transect or provenance</setting>
+                <setting name="label" locale="en_US">The object is part of the in-situ plot, transect or provenance.</setting>
 				        <setting name="add_label" locale="en_US">Add place</setting>
                 <setting name="restrict_to_types">plotTransect,provenance</setting>
               </settings>
@@ -8190,7 +8239,7 @@
         <screen idno="object_hierarchy" default="0">
           <labels>
             <label locale="en_US">
-              <name>Context</name>
+              <name>Hierarchy</name>
             </label>
           </labels>
           <bundlePlacements>
@@ -8218,32 +8267,6 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>		 
-            <placement code="ca_objects_parent">
-              <bundle>ca_objects.hierarchy.preferred_labels</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Parent object</setting>
-                <setting name="description" locale="en_US">If the current object was obtained from another object (e.g. subsample of, a bulk sample that is split into new bulks or separate samples, a DNA sample obtained from a tissue sample, ..) indicate from which sample this was obtained. If directly obtained from the field (e.g. environment, organism), leave blank.</setting>
-                <setting name="display_template">^ca_objects.hierarchy.preferred_labels</setting>
-              </settings>
-            </placement>
-			      <placement code="samplingProtocolPublished">
-              <bundle>ca_attribute_publication</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Sampling procedure doi</setting>
-                <setting name="description" locale="en_US">Procedure doi if published, such as in an article, a standardized opering procedure (SOP), an identification key</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
-			      <placement code="samplingProtocol">
-              <bundle>ca_attribute_samplingProtocol</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Sampling procedure</setting>
-                <setting name="description" locale="en_US">Text field to (concisely) describe the procedure (if relevant). Can be if: no doi-reference for procedure description or to add notes/addenda on the given published procedure.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
 			      <placement code="verbatimSamplingDepth" typeRestrictions="eDnaWaterFilter,watersample,mineralSoilSample,peatSoilSample,organicSoilSample">
               <bundle>ca_attribute_verbatimDepth</bundle>
               <settings>
@@ -8292,6 +8315,32 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
+            <placement code="ca_objects_parent">
+              <bundle>ca_objects.hierarchy.preferred_labels</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Parent object</setting>
+                <setting name="description" locale="en_US">If the current object was obtained from another object (e.g. subsample of, a bulk sample that is split into new bulks or separate samples, a DNA sample obtained from a tissue sample, ..) indicate from which sample this was obtained. If directly obtained from the field (e.g. environment, organism), leave blank.</setting>
+                <setting name="display_template">^ca_objects.hierarchy.preferred_labels</setting>
+              </settings>
+            </placement>
+			      <placement code="samplingProtocolPublished">
+              <bundle>ca_attribute_publication</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Sampling procedure doi</setting>
+                <setting name="description" locale="en_US">Procedure doi if published, such as in an article, a standardized opering procedure (SOP), an identification key</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+			      <placement code="samplingProtocol">
+              <bundle>ca_attribute_samplingProtocol</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Sampling procedure</setting>
+                <setting name="description" locale="en_US">Text field to (concisely) describe the procedure (if relevant). Can be if: no doi-reference for procedure description or to add notes/addenda on the given published procedure.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
           </bundlePlacements>
         </screen>
 		    <screen idno="object_multimedia" default="0">
@@ -8377,6 +8426,7 @@
                 <setting name="description" locale="en_US">The DNA concentration allows to estimate how much DNA is present in the buffer (depends on the volume). This is a measure of quantity. Concentration is commonly measured usuing fluorometry, for example with a Qubit; or in capillary gels such as those present in the BioAnalyzer or FragmentAnalyzer.</setting>
 				        <setting name="add_label" locale="en_US">Add another concentration measurement</setting>
                 <setting name="list_format">list</setting>
+                <setting name="lineBreakAfterNumberOfElements">2</setting>
               </settings>
             </placement>
             <placement code="dnaSpectro" typeRestrictions="dnaSample">
@@ -8386,6 +8436,7 @@
                 <setting name="description" locale="en_US">Using spectrophotometry DNA ratio of absorbance (230/260 and 260/280) is measured. This is a measure of quality. Spectrophotometry measurements are commonly executed with a Nanodrop.</setting>
 				        <setting name="add_label" locale="en_US">Add another spectrophotometry measurement</setting>
                 <setting name="list_format">list</setting>
+                <setting name="lineBreakAfterNumberOfElements">2</setting>
               </settings>
             </placement>
             <placement code="dnaGel" typeRestrictions="dnaSample">
@@ -8395,6 +8446,7 @@
 				        <setting name="add_label" locale="en_US">Add DNA gel measurement</setting>
                 <setting name="description" locale="en_US">This can be a classic agarose gel, or a capillary gel in e.g. in the BioAnalyzer or Fragment analyzer.</setting>
                 <setting name="list_format">list</setting>
+                <setting name="lineBreakAfterNumberOfElements">2</setting>
               </settings>
             </placement>
             <placement code="dnaVolume" typeRestrictions="dnaSample">
@@ -8404,6 +8456,7 @@
 				        <setting name="add_label" locale="en_US">Add volume measurement</setting>
                 <setting name="description" locale="en_US">This can be an exact measurement of volume, or derived measurement volume. This allows to track the volume through time. Example of the latter: we started with 100 µL and we took out 20 µL - hence the new "measured" volume is 80 µL.</setting>
                 <setting name="list_format">list</setting>
+                <setting name="lineBreakAfterNumberOfElements">2</setting>
               </settings>
             </placement>
             <placement code="volume" typeRestrictions="eDnaWaterFilter,waterSample,dnaSample">
@@ -8412,6 +8465,7 @@
                 <setting name="label" locale="en_US">Volume measurement</setting>
 				        <setting name="add_label" locale="en_US">Add volume measurement</setting>
                 <setting name="list_format">list</setting>
+                <setting name="lineBreakAfterNumberOfElements">2</setting>
               </settings>
             </placement>
             <placement code="length" typeRestrictions="animalObject,plantObject">
@@ -8421,6 +8475,7 @@
                 <setting name="description" locale="en_US">This can be any type of measurement, expressed in length. For example: both the length of an animal bone and the width of an animal bone can be entered via this data element as two separate measurements with a length unit. Dbh (diameter at breast height), circumference and height of a tree in collection can all three be entered here.</setting>
 				        <setting name="add_label" locale="en_US">Add length measurement</setting>
                 <setting name="list_format">list</setting>
+                <setting name="lineBreakAfterNumberOfElements">2</setting>
               </settings>
             </placement>
             <placement code="weight" typeRestrictions="animalObject,plantObject,mineralSoilSample,peatSoilSample,organicSoilSample,dnaSample">
@@ -8429,6 +8484,7 @@
                 <setting name="label" locale="en_US">Weight measurement</setting>
 				        <setting name="add_label" locale="en_US">Add weight measurement</setting>
                 <setting name="list_format">list</setting>
+                <setting name="lineBreakAfterNumberOfElements">2</setting>
               </settings>
             </placement>
             <placement code="age" typeRestrictions="stemDisc">
@@ -8437,6 +8493,7 @@
                 <setting name="label" locale="en_US">Age</setting>
 				        <setting name="add_label" locale="en_US">Add age</setting>
                 <setting name="list_format">list</setting>
+                <setting name="lineBreakAfterNumberOfElements">2</setting>
               </settings>
             </placement>
             <placement code="germination" typeRestrictions="seedLot">
@@ -8445,6 +8502,7 @@
                 <setting name="label" locale="en_US">Germination measurement</setting>
 				        <setting name="add_label" locale="en_US">Add germination measurement</setting>
                 <setting name="list_format">list</setting>
+                <setting name="lineBreakAfterNumberOfElements">2</setting>
               </settings>
             </placement>
             <placement code="purity" typeRestrictions="seedLot">
@@ -8453,6 +8511,7 @@
                 <setting name="label" locale="en_US">Purity measurement</setting>
 				        <setting name="add_label" locale="en_US">Add purity measurement</setting>
                 <setting name="list_format">list</setting>
+                <setting name="lineBreakAfterNumberOfElements">2</setting>
               </settings>
             </placement>
             <placement code="ca_object_representations">
@@ -8461,6 +8520,7 @@
                 <setting name="label" locale="en_US">Multimedia of the measurement</setting>
                 <setting name="description" locale="en_US">Add a photo, scan or video of the measurement if relevant. For example: a !well-annotated! DNA sample gel image.</setting>
 				        <setting name="add_label" locale="en_US">Add visual representation</setting>
+                <setting name="lineBreakAfterNumberOfElements">2</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -8542,7 +8602,7 @@
               </settings>
             </placement>
 			      <placement code="ca_entities_previousOwner">
-              <bundle>ca_entity</bundle>
+              <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Previous owner</setting>
                 <setting name="description" locale="en_US">This can be both an individual (i.e. personal collection that was donated) or organization.</setting>
@@ -8551,7 +8611,7 @@
               </settings>
             </placement>
             <placement code="ca_entities_Contact">
-              <bundle>ca_entity</bundle>
+              <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Contact</setting>
                 <setting name="description" locale="en_US">A person that can be contacted in case more information on the object is asked, or needed. Ideally this is at least one person from within INBO, and optionally a second (external) contact can be listed. Better would be that all information is recorded in the database, so a contact person becomes unnecessary.</setting>
@@ -8618,6 +8678,15 @@
               <settings>
                 <setting name="label" locale="en_US">The object or a subsample of the object is loaned or donated</setting>
                 <setting name="add_label" locale="en_US">Add new donation/loan</setting>
+                <setting name="list_format">list</setting>
+              </settings>
+            </placement>
+            <placement code="used">
+              <bundle>ca_occurrences</bundle>
+              <settings>
+                <setting name="label" locale="en_US">The object or a subsample of the object was used in the lab-projects</setting>
+                <setting name="add_label" locale="en_US">Add new project</setting>
+				        <setting name="restrict_to_types">project</setting>
                 <setting name="list_format">list</setting>
               </settings>
             </placement>
@@ -8899,25 +8968,13 @@
             <restriction code="r_fieldwork" type="fieldwork"/>
           </typeRestrictions>
           <bundlePlacements>
-            <placement code="ca_occurrence_projectresult" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater,fieldwork">
-              <bundle>ca_occurrences</bundle>
-              <settings>
-                <setting name="restrict_to_type">project</setting>
-                <setting name="label" locale="en_US">Result of the project</setting>
-				        <setting name="add_label" locale="en_US">Add project</setting>
-                <setting name="restrict_to_relationship_types">resultingObservation,resultingFieldwork</setting>
+            <placement code="hierarchy_location">
+              <bundle>hierarchy_location</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Event hierarchy</setting>
+                <setting name="description" locale="en_US">The event (observation, project, fieldwork) can be put into the context.</setting>
               </settings>
-            </placement>
-            <placement code="ca_occurrence_subproject" typeRestrictions="project">
-              <bundle>ca_occurrences</bundle>
-              <settings>
-                <setting name="restrict_to_type">project</setting>
-                <setting name="label" locale="en_US">Was a subproject of the overarching project</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_relationship_types">subproject</setting>
-              </settings>
-            </placement>
+			      </placement>
 		        <placement code="descriptionContainer" typeRestrictions="project,fieldwork">
               <bundle>ca_attribute_descriptionContainer</bundle>
               <settings>
@@ -8925,16 +8982,6 @@
                 <setting name="description" locale="en_US">Description of the project or fieldwork/expedition/survey event.</setting>
               </settings>
 			      </placement>
-            <placement code="ca_occurrence_fieldwork" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater,fieldwork">
-              <bundle>ca_occurrences</bundle>
-              <settings>
-                <setting name="restrict_to_type">fieldwork</setting>
-                <setting name="label" locale="en_US">Overarching fieldwork</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_relationship_types">resultingObservation,resultingFieldwork</setting>
-              </settings>
-            </placement>
 			      <placement code="ca_object_lot_population" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
               <bundle>ca_object_lots</bundle>
 			        <settings>
@@ -9128,6 +9175,12 @@
               <bundle>ca_attribute_lifeStage</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Lifestage of organism</setting>
+			        </settings>
+            </placement>
+			      <placement code="age" typeRestrictions="observationAnimal,observationPlant">
+              <bundle>ca_attribute_age</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Age of organism</setting>
 			        </settings>
             </placement>
 			      <placement code="reproductiveCondition" typeRestrictions="observationAnimal,observationPlant">
@@ -9932,7 +9985,15 @@
 			      <placement code="alocfree" typeRestrictions="spot">
               <bundle>ca_attribute_alocfree</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Spot reserved for object coming to the collection soon</setting>
+                <setting name="label" locale="en_US">Spot availability</setting>
+              </settings>
+            </placement>
+			      <placement code="reservationSpecification" typeRestrictions="spot">
+              <bundle>ca_attribute_reservationSpecification</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Specification on reservation</setting>
+                <setting name="hideIfSelected_free">storage_locations_ui/storageLocation_record/ca_attribute_alocfree</setting>
+                <setting name="hideIfSelected_occupied">storage_locations_ui/storageLocation_record/ca_attribute_alocfree</setting>
               </settings>
             </placement>
 			      <placement code="preferred_labels">
@@ -11040,8 +11101,8 @@
 		    <type code="reused" default="0">
           <labels>
             <label locale="en_US">
-              <typename>is reused in</typename>
-              <typename_reverse>reused</typename_reverse>
+              <typename>is (re)used in</typename>
+              <typename_reverse>(re)used</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
