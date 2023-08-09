@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.37</profileName>
+  <profileName>[INBO] INBO natural science collection v0.38</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <locales>
     <locale lang="en" country="US">English</locale>
@@ -1046,7 +1046,7 @@
           </item>
         </items>
       </list>
-      <list code="storage_location_types" hierarchical="1" system="0" vocabulary="0">
+      <list code="storage_location_types" hierarchical="1" system="0" vocabulary="0" defaultSort="1">
         <labels>
           <label locale="en_US">
             <name>Storage location types</name>
@@ -1060,16 +1060,14 @@
                 <name_plural>planted sites</name_plural>
               </label>
             </labels>
-            <items>
-              <item idno="spotPlantedSite" enabled="1" default="0">
-                <labels>
-                  <label locale="en_US" preferred="1">
-                    <name_singular>spot within a planted site</name_singular>
-                    <name_plural>spots within a planted site</name_plural>
-                  </label>
-                </labels>
-              </item>
-            </items>
+          </item>
+          <item idno="spotPlantedSite" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>spot within a planted site</name_singular>
+                <name_plural>spots within a planted site</name_plural>
+              </label>
+            </labels>
           </item>
           <item idno="building" enabled="1" default="0">
             <labels>
@@ -1078,67 +1076,55 @@
                 <name_plural>buildings</name_plural>
               </label>
             </labels>
-            <items>
-              <item idno="floor" enabled="1" default="0">
-                <labels>
-                  <label locale="en_US" preferred="1">
-                    <name_singular>floor</name_singular>
-                    <name_plural>floors</name_plural>
-                  </label>
-                </labels>
-                <items>
-                  <item idno="room" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>room</name_singular>
-                        <name_plural>rooms</name_plural>
-                      </label>
-                    </labels>
-                    <items>
-                      <item idno="cabinetFridgeFreezer" enabled="1" default="0">
-                        <labels>
-                          <label locale="en_US" preferred="1">
-                            <name_singular>cabinet, fridge or freezer</name_singular>
-                            <name_plural>cabinets, fridges and freezers</name_plural>
-                          </label>
-                        </labels>
-                        <items>
-                          <item idno="drawerShelf" enabled="1" default="0">
-                            <labels>
-                              <label locale="en_US" preferred="1">
-                                <name_singular>drawer or shelf</name_singular>
-                                <name_plural>drawers and shelves</name_plural>
-                              </label>
-                            </labels>
-                            <items>
-                              <item idno="box" enabled="1" default="0">
-                                <labels>
-                                  <label locale="en_US" preferred="1">
-                                    <name_singular>box</name_singular>
-                                    <name_plural>boxes</name_plural>
-                                  </label>
-                                </labels>
-                                <items>
-                                  <item idno="spot" enabled="1" default="0">
-                                    <labels>
-                                      <label locale="en_US" preferred="1">
-                                        <name_singular>spot</name_singular>
-                                        <name_plural>spots</name_plural>
-                                      </label>
-                                    </labels>
-                                  </item>
-                                </items>
-                              </item>
-                            </items>
-                          </item>
-                        </items>
-                      </item>
-                    </items>
-                  </item>
-                </items>
-              </item>
-            </items>
-		      </item>
+          </item>
+          <item idno="floor" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>floor</name_singular>
+                <name_plural>floors</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="room" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>room</name_singular>
+                <name_plural>rooms</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="cabinetFridgeFreezer" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>cabinet, fridge or freezer</name_singular>
+                <name_plural>cabinets, fridges and freezers</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="drawerShelf" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>drawer or shelf</name_singular>
+                <name_plural>drawers and shelves</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="box" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>box</name_singular>
+                <name_plural>boxes</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="spot" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>spots</name_singular>
+                <name_plural>spots</name_plural>
+              </label>
+            </labels>
+          </item>
          </items>
 	    </list>
       <list code="loan_types" hierarchical="0" system="0" vocabulary="0">
@@ -3293,39 +3279,6 @@
               <label locale="en_US" preferred="1">
                 <name_singular>DC5: mummified</name_singular>
                 <name_plural>DC5: mummified</name_plural>
-              </label>
-            </labels>
-          </item>
-        </items>
-      </list>
-      <list code="availability" hierarchical="0" system="0" vocabulary="1">
-        <labels>
-          <label locale="en_US">
-            <name>Availibility</name>
-          </label>
-        </labels>
-        <items>
-          <item idno="free" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>not executed</name_singular>
-                <name_plural>not executed</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="reserved" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>executed</name_singular>
-                <name_plural>executed</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="occupied" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>in progress</name_singular>
-                <name_plural>in progress</name_plural>
               </label>
             </labels>
           </item>
@@ -7675,54 +7628,6 @@
         </typeRestrictions>
       </metadataElement>
 	  <!--Storage locations-->
-	    <metadataElement code="alocfree" datatype="List" list="availability">
-        <labels>
-          <label locale="en_US">
-            <name>Availability of the spot</name>
-            <description>Indication if the spot is free, reserved or occupied</description>
-          </label>
-        </labels>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">5</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-	      <typeRestrictions>
-          <restriction code="r_storage_location">
-            <table>ca_storage_locations</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-	    <metadataElement code="reservationSpecification" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>Specification of the reservation</name>
-            <description>Specification on the reservation of the spot</description>
-          </label>
-        </labels>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-	      <typeRestrictions>
-          <restriction code="r_storage_location">
-            <table>ca_storage_locations</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
 	    <metadataElement code="preservationTemperature" datatype="List" list="preservation_temperature">
         <labels>
           <label locale="en_US">
@@ -8103,7 +8008,9 @@
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="restrict_to_relationship_types">represents</setting>
-                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater"> <ifdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.verbatimIdentification</ifdef> <ifnotdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.preferred_labels.name</ifnotdef> observed on: ^ca_occurrences.dateRange<ifdef code="ca_occurrences.verbatimLocality">, observed at: ^ca_occurrences.verbatimLocality (^ca_occurrences.idno)</ifdef></unit>]]></setting>
+                <setting name="readonly">0</setting>
+                <setting name="dontShowDeleteButton">0</setting>
+                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater"> <ifdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.verbatimIdentification</ifdef> <ifnotdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.preferred_labels.name</ifnotdef>, observed on: ^ca_occurrences.dateRange<ifdef code="ca_occurrences.verbatimLocality">, observed at: ^ca_occurrences.verbatimLocality (^ca_occurrences.idno)</ifdef></unit>]]></setting>
               </settings>
             </placement>
 			      <placement code="status">
@@ -8118,7 +8025,7 @@
               <bundle>ca_storage_locations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="hideIfSelected_1">object_ui/object_management/is_deaccessioned</setting>
               </settings>
@@ -8190,6 +8097,7 @@
                 <setting name="label" locale="en_US">The object is part of the in-situ plot, transect or provenance.</setting>
 				        <setting name="add_label" locale="en_US">Add place</setting>
                 <setting name="restrict_to_types">plotTransect,provenance</setting>
+                <setting name="useHierarchicalBrowser">0</setting>
               </settings>
             </placement>
 			      <placement code="seedlot_relation" typeRestrictions="seedLot">
@@ -8317,11 +8225,11 @@
               </settings>
 			      </placement>
             <placement code="ca_objects_parent">
-              <bundle>ca_objects.hierarchy.preferred_labels</bundle>
+              <bundle>ca_objects.parent_id</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Parent object</setting>
                 <setting name="description" locale="en_US">If the current object was obtained from another object (e.g. subsample of, a bulk sample that is split into new bulks or separate samples, a DNA sample obtained from a tissue sample, ..) indicate from which sample this was obtained. If directly obtained from the field (e.g. environment, organism), leave blank.</setting>
-                <setting name="display_template">^ca_objects.hierarchy.preferred_labels</setting>
+                <setting name="display_template">^ca_objects.parent_id.preferred_labels</setting>
               </settings>
             </placement>
 			      <placement code="samplingProtocolPublished">
@@ -8726,6 +8634,7 @@
               <settings>
                 <setting name="label" locale="en_US">Other event identifier (nonpreferred)</setting>
 				        <setting name="add_label" locale="en_US">Add other non-preferred identifier</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
             <placement code="externalRecord_observation" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater">
@@ -8734,13 +8643,15 @@
                 <setting name="label" locale="en_US">External database containing observation</setting>
                 <setting name="description" locale="en_US">For example: the URL(s) of waarnemingen.be, GBIF, ... that represent this observation.</setting>
 				        <setting name="add_label" locale="en_US">Add another external record </setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
             <placement code="externalRecord_project" typeRestrictions="project">
               <bundle>ca_attribute_externalRecord</bundle>
 			        <settings>
-              <setting name="label" locale="en_US">External database containing project</setting>
-              <setting name="description" locale="en_US">For example: the project-URL in PURE</setting>
+                <setting name="label" locale="en_US">External database containing project</setting>
+                <setting name="description" locale="en_US">For example: the project-URL in PURE</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
 			      <placement code="dateRange" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater,fieldwork,project,valuation,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial,disposal,treatment,renewal,transfer">
@@ -9980,20 +9891,6 @@
                 <setting name="label" locale="en_US">Cataloguing status</setting>
 				        <setting name="minRelationshipsPerRow">1</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
-			      <placement code="alocfree" typeRestrictions="spot">
-              <bundle>ca_attribute_alocfree</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Spot availability</setting>
-              </settings>
-            </placement>
-			      <placement code="reservationSpecification" typeRestrictions="spot">
-              <bundle>ca_attribute_reservationSpecification</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Specification on reservation</setting>
-                <setting name="hideIfSelected_free">storage_locations_ui/storageLocation_record/ca_attribute_alocfree</setting>
-                <setting name="hideIfSelected_occupied">storage_locations_ui/storageLocation_record/ca_attribute_alocfree</setting>
               </settings>
             </placement>
 			      <placement code="preferred_labels">
