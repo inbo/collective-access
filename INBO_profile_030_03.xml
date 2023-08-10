@@ -831,6 +831,40 @@
           </label>
         </labels>
         <items>
+          <item idno="internalCollection" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>INBO collection</name_singular>
+                <name_plural>INBO collections</name_plural>
+              </label>
+            </labels>
+            <items>
+              <item idno="workingCollection" enabled="1" default="1">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>Working/Reference collection</name_singular>
+                    <name_plural>Working/Reference collections</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="archiveCollection" enabled="1" default="1">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>Archive collection</name_singular>
+                    <name_plural>Archive collections</name_plural>
+                  </label>
+                </labels>
+              </item>
+            </items>
+          </item>
+          <item idno="externalCollection" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>External collection</name_singular>
+                <name_plural>External collection</name_plural>
+              </label>
+            </labels>
+          </item>
         </items>
       </list>
       <list code="occurrence_types" hierarchical="1" system="0" vocabulary="0" defaultSort="1">
@@ -1137,12 +1171,12 @@
           <item idno="internal" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>Internal loan (outgoing)</name_singular>
-                <name_plural>Internal loan (outgoing)</name_plural>
+                <name_singular>Internal loan</name_singular>
+                <name_plural>Internal loan</name_plural>
               </label>
             </labels>
           </item>
-          <item idno="external" enabled="0" default="1">
+          <item idno="external" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>External loan</name_singular>
@@ -4793,7 +4827,7 @@
             </labels>
             <documentationUrl>http://rs.tdwg.org/abcd/terms/appliesTo</documentationUrl>
           </metadataElement>
-          <metadataElement code="weightLowerValue" datatype="Numeric">
+          <metadataElement code="weightLowerValue" datatype="Text">
             <labels>
               <label locale="en_US">
                 <name>Lower value</name>
@@ -4808,7 +4842,7 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="weightUpperValue" datatype="Numeric">
+          <metadataElement code="weightUpperValue" datatype="Text">
             <labels>
               <label locale="en_US">
                 <name>Upper value</name>
@@ -8010,7 +8044,7 @@
                 <setting name="restrict_to_relationship_types">represents</setting>
                 <setting name="readonly">0</setting>
                 <setting name="dontShowDeleteButton">0</setting>
-                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater"> <ifdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.verbatimIdentification</ifdef> <ifnotdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.preferred_labels.name</ifnotdef>, observed on: ^ca_occurrences.dateRange<ifdef code="ca_occurrences.verbatimLocality">, observed at: ^ca_occurrences.verbatimLocality (^ca_occurrences.idno)</ifdef></unit>]]></setting>
+                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater"> <ifdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.verbatimIdentification</ifdef> <ifnotdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.preferred_labels.name</ifnotdef>, observed on: ^ca_occurrences.dateRange, observed at:<ifdef code="ca_occurrences.verbatimLocality"> ^ca_occurrences.verbatimLocality</ifdef><ifdef code="ca_occurrences.observationVerbatimLongitudeX"> ^ca_occurrences.observationVerbatimLongitudeX</ifdef><ifdef code="ca_occurrences.observationVerbatimLatitudeY"> ^ca_occurrences.observationVerbatimLatitudeY</ifdef> (^ca_occurrences.idno)</unit>]]></setting>
               </settings>
             </placement>
 			      <placement code="status">
@@ -8595,6 +8629,7 @@
                 <setting name="label" locale="en_US">The object or a subsample of the object was used in the lab-projects</setting>
                 <setting name="add_label" locale="en_US">Add new project</setting>
 				        <setting name="restrict_to_types">project</setting>
+                <setting name="restrict_to_relationship_types">reused</setting>
                 <setting name="list_format">list</setting>
               </settings>
             </placement>
@@ -8757,20 +8792,20 @@
                 <setting name="list_format">list</setting>
               </settings>
             </placement>
-            <placement code="observationVerbatimLatitudeY" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
-              <bundle>ca_attribute_verbatimLatitudeY</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Verbatim latitude (Y)</setting>
-                <setting name="description" locale="en_US">The original description of the latitude (Y).</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-			      </placement>
             <placement code="observationVerbatimLongitudeX" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
               <bundle>ca_attribute_verbatimLongitudeX</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim longitude (X)</setting>
                 <setting name="description" locale="en_US">The original description of the longitude (X).</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+            <placement code="observationVerbatimLatitudeY" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
+              <bundle>ca_attribute_verbatimLatitudeY</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Verbatim latitude (Y)</setting>
+                <setting name="description" locale="en_US">The original description of the latitude (Y).</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
