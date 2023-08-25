@@ -11744,25 +11744,25 @@
           <subTypeLeft>observation,observationPlant,observationAnimal,observationSoil,observationWater</subTypeLeft>
           <subTypeRight>identification,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial</subTypeRight>
         </type>
-        <type code="observationSameIndividal" default="0">
+        <type code="observationSameIndividual" default="0">
           <labels>
             <label locale="en_US">
-              <typename>observation of the same individual</typename>
-              <typename_reverse>observation of the same individual</typename_reverse>
+              <typename>same individual</typename>
+              <typename_reverse>same individual</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>observation</subTypeLeft>
-          <subTypeRight>observation</subTypeRight>
+          <subTypeLeft>observation,observationPlant,observationAnimal,observationSoil,observationWater</subTypeLeft>
+          <subTypeRight>observation,observationPlant,observationAnimal,observationSoil,observationWater</subTypeRight>
         </type>
         <type code="observationSibling" default="0">
           <labels>
             <label locale="en_US">
-              <typename>observation of sibling</typename>
-              <typename_reverse>observation of sibling</typename_reverse>
+              <typename>sibling</typename>
+              <typename_reverse>sibling</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>observation</subTypeLeft>
-          <subTypeRight>observation</subTypeRight>
+          <subTypeLeft>observation,observationPlant,observationAnimal,observationSoil,observationWater</subTypeLeft>
+          <subTypeRight>observation,observationPlant,observationAnimal,observationSoil,observationWater</subTypeRight>
         </type>
         <type code="observationRelatedTo" default="0">
           <labels>
@@ -11771,8 +11771,8 @@
               <typename_reverse>is related to</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>observation</subTypeLeft>
-          <subTypeRight>observation</subTypeRight>
+          <subTypeLeft>observation,observationPlant,observationAnimal,observationSoil,observationWater</subTypeLeft>
+          <subTypeRight>observation,observationPlant,observationAnimal,observationSoil,observationWater</subTypeRight>
         </type>
 		    <type code="subproject" default="0">
           <labels>
@@ -11797,8 +11797,8 @@
 		    <type code="subfieldwork" default="0">
           <labels>
             <label locale="en_US">
-              <typename>was subfieldwork of</typename>
-              <typename_reverse>was the overarching fieldwork (e.g. expedition) of</typename_reverse>
+              <typename>subfieldwork</typename>
+              <typename_reverse>overarching fieldwork</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>fieldwork</subTypeLeft>
@@ -12067,7 +12067,7 @@
           </settings>
         </placement>
         <placement code="ca_occurrence_observation_verbatimTaxon" typeRestrictions="dnaSample">
-          <bundle>ca_occurrences</bundle>standardizedIdentification
+          <bundle>ca_occurrences</bundle>
 			    <settings>
             <setting name="label" locale="en_US">samplingPoint_verbatimTaxon</setting>
             <setting name="restrict_to_types">observationPlant,observationAnimal</setting>
