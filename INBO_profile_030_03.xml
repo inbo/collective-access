@@ -83,7 +83,7 @@
           </item>
         </items>
       </list>
-    <!--Main menu lists-->
+    <!--Types lists-->
       <list code="object_types" hierarchical="1" system="0" vocabulary="0" defaultSort="1">
         <labels>
          <label locale="en_US">
@@ -165,7 +165,7 @@
                       </label>
                     </labels>
                   </item>
-                  <item idno="sampleAmphibianFinclip" enabled="1" default="0">
+                  <item idno="sampleAmphibianTailclip" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>Finclip</name_singular>
@@ -190,6 +190,14 @@
                     </labels>
                   </item>
                   <item idno="sampleAmphibianSwabMouth" enabled="1" default="0">
+                    <labels>
+                      <label locale="en_US" preferred="1">
+                        <name_singular>Swab mouth</name_singular>
+                        <name_plural>Swabs mouth</name_plural>
+                      </label>
+                    </labels>
+                  </item>
+                  <item idno="sampleAmphibianSwabEar" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>Swab mouth</name_singular>
@@ -877,8 +885,8 @@
           <item idno="observation" rank="1" enabled="0" default="1">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>Observation</name_singular>
-                <name_plural>Observations</name_plural>
+                <name_singular>Sampling point/ Observation event</name_singular>
+                <name_plural>Sampling points/ Observations event</name_plural>
               </label>
             </labels>
             <settings>
@@ -913,8 +921,8 @@
                   <item idno="observationSoil" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Soil observation</name_singular>
-                        <name_plural>Soil observations</name_plural>
+                        <name_singular>Soil sampling point</name_singular>
+                        <name_plural>Soil sampling points</name_plural>
                       </label>
                     </labels>
                     <settings>
@@ -925,8 +933,8 @@
                   <item idno="observationWater" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Water observation</name_singular>
-                        <name_plural>Water observation</name_plural>
+                        <name_singular>Water sampling point</name_singular>
+                        <name_plural>Water sampling points</name_plural>
                       </label>
                     </labels>
                     <settings>
@@ -936,11 +944,11 @@
                   </item>
             </items>
           </item>
-          <item idno="event" rank="2" enabled="0" default="1">
+          <item idno="contextEvents" rank="2" enabled="0" default="1">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>Event</name_singular>
-                <name_plural>Events</name_plural>
+                <name_singular>Context event</name_singular>
+                <name_plural>Context events</name_plural>
               </label>
             </labels>
             <settings>
@@ -951,8 +959,8 @@
               <item idno="fieldwork" rank="2" enabled="1" default="1">
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>Fieldwork</name_singular>
-                    <name_plural>Fieldwork</name_plural>
+                    <name_singular>Fieldwork / Expedition</name_singular>
+                    <name_plural>Fieldwork / Expeditions</name_plural>
                   </label>
                 </labels>
                 <settings>
@@ -972,6 +980,20 @@
                 <setting name="render_in_find_menu">1</setting>
                 </settings>
               </item>
+            </items>
+          </item>
+          <item idno="collectionEvents" rank="3" enabled="0" default="1">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Collection event</name_singular>
+                <name_plural>Collection events</name_plural>
+              </label>
+            </labels>
+            <settings>
+             <setting name="render_in_new_menu">1</setting>
+             <setting name="render_in_find_menu">1</setting>
+            </settings>
+            <items>
               <item idno="identification" rank="3" enabled="0" default="1">
                 <labels>
                   <label locale="en_US" preferred="1">
@@ -1161,6 +1183,22 @@
           </item>
          </items>
 	    </list>
+      <list code="object_representation_types" hierarchical="1" system="0" vocabulary="0">
+        <labels>
+          <label locale="en_US">
+            <name>Object representation types</name>
+        </labels>
+        <items>
+          <item idno="multimedia" enabled="1" default="1">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>multimedia</name_singular>
+                <name_plural>multimedia</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
       <list code="loan_types" hierarchical="0" system="0" vocabulary="0">
         <labels>
           <label locale="en_US">
@@ -1201,6 +1239,239 @@
                 </labels>
               </item>
             </items>
+          </item>
+        </items>
+      </list>
+      <list code="object_label_types" hierarchical="0" system="0" vocabulary="0">
+        <labels>
+          <label locale="en_US">
+            <name>Object label types</name>
+          </label>
+        </labels>
+        <items>
+            <item idno="descriptive" enabled="1" default="1">
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>descriptive label</name_singular>
+                  <name_plural>descriptive labels</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="preparationID" enabled="1" default="0">
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>preparation ID (given at the time the object was generated, usually unique in the research/project context)</name_singular>
+                  <name_plural>preparation ID</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="subCollectionID" enabled="1" default="0">
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>subcollection ID (given at the time it was added to subcollection, so its unique in the subcollection context)</name_singular>
+                  <name_plural>subcollection IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="INBOCollectionID" enabled="1" default="0">
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>INBO collection ID (given at the time it was added to CMS, so its unique in the complete INBO collection)</name_singular>
+                  <name_plural>INBO collection IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="LabwareLIMSID" enabled="1" default="0">
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>Labware-LIMS-generated ID (unique numbering system of INBO-LIMS)</name_singular>
+                  <name_plural>Labware-LIMS-generated ID</name_plural>
+                </label>
+              </labels>
+            </item>
+        </items>
+      </list>
+      <list code="object_lot_label_types" hierarchical="0" system="0" vocabulary="0">
+        <labels>
+          <label locale="en_US">
+            <name>Object lot label type values</name>
+          </label>
+        </labels>
+        <items>
+            <item idno="descriptive" enabled="1" default="1">
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>descriptive label</name_singular>
+                  <name_plural>descriptive labels</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="recordID" enabled="1" default="0">
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>record ID (given at the time the group concept was first noted, usually unique in the research/project context)</name_singular>
+                  <name_plural>record IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="INBOCollectionID" enabled="1" default="0">
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>INBO collection ID (given at the time it was added to CMS, so its unique in the complete INBO collection)</name_singular>
+                  <name_plural>INBO collection IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+        </items>
+      </list>
+      <list code="entity_label_types" hierarchical="0" system="0" vocabulary="0">
+        <labels>
+          <label locale="en_US">
+            <name>Entity label types</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="uf" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>use for</name_singular>
+                <name_plural>use for</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
+      <list code="place_label_types" hierarchical="0" system="0" vocabulary="0">
+        <labels>
+          <label locale="en_US">
+            <name>Place label type values</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="uf" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>use for</name_singular>
+                <name_plural>use for</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
+      <list code="occurrence_label_types" hierarchical="0" system="0" vocabulary="0">
+        <labels>
+          <label locale="en_US">
+            <name>Occurrence label types</name>
+          </label>
+        </labels>
+        <items>
+            <item idno="descriptive" enabled="1" default="1">
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>descriptive label</name_singular>
+                  <name_plural>descriptive labels</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="recordID" enabled="1" default="0">
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>record ID (given at the time the event was recorded, usually unique in the research/project context)</name_singular>
+                  <name_plural>record ID</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="INBOCollectionID" enabled="1" default="0">
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>INBO collection ID (given at the time the event was added to CMS, so its unique in the complete INBO collection)</name_singular>
+                  <name_plural>INBO collection IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="LabwareLIMSID" enabled="1" default="0">
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>Labware-LIMS-generated ID (unique numbering system of INBO-LIMS)</name_singular>
+                  <name_plural>Labware-LIMS-generated ID</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="JIRAID" enabled="1" default="0">
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>JIRA ID (unique numbering system of INBO-JIRA)</name_singular>
+                  <name_plural>JIRA IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+        </items>
+      </list>
+      <list code="collection_label_types" hierarchical="0" system="0" vocabulary="0">
+        <labels>
+          <label locale="en_US">
+            <name>Collection label types</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="uf" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>use for</name_singular>
+                <name_plural>use for</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
+      <list code="storage_location_label_types" hierarchical="0" system="0" vocabulary="0">
+        <labels>
+          <label locale="en_US">
+            <name>Storage location label type values</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="uf" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>use for</name_singular>
+                <name_plural>use for</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
+      <list code="object_representation_label_types" hierarchical="0" system="0" vocabulary="0">
+        <labels>
+          <label locale="en_US">
+            <name>Storage location label type values</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="uf" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>use for</name_singular>
+                <name_plural>use for</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
+      <list code="loan_label_types" hierarchical="0" system="0" vocabulary="0">
+        <labels>
+          <label locale="en_US">
+            <name>Storage location label type values</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="uf" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>use for</name_singular>
+                <name_plural>use for</name_plural>
+              </label>
+            </labels>
           </item>
         </items>
       </list>
@@ -4253,6 +4524,9 @@
             </labels>
           </metadataElement>
 	      </elements>
+			  <settings>
+          <setting name="lineBreakAfterNumberOfElements">2</setting>
+        </settings>
         <typeRestrictions>
           <restriction code="r_dnaSample">
             <table>ca_objects</table>
@@ -4368,6 +4642,9 @@
             </labels>
           </metadataElement>
 	      </elements>
+			  <settings>
+          <setting name="lineBreakAfterNumberOfElements">2</setting>
+        </settings>
         <typeRestrictions>
           <restriction code="r_dnaSample">
             <table>ca_objects</table>
@@ -4501,6 +4778,9 @@
             <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/gelRemarks</documentationUrl>
           </metadataElement>
 	      </elements>
+			  <settings>
+          <setting name="lineBreakAfterNumberOfElements">2</setting>
+        </settings>
         <typeRestrictions>
           <restriction code="r_dnaSample">
             <table>ca_objects</table>
@@ -4610,6 +4890,9 @@
             <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/gelRemarks</documentationUrl>
           </metadataElement>
 	      </elements>
+			  <settings>
+          <setting name="lineBreakAfterNumberOfElements">2</setting>
+        </settings>
         <typeRestrictions>
           <restriction code="r_dnaSample">
             <table>ca_objects</table>
@@ -4742,6 +5025,9 @@
             <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/gelRemarks</documentationUrl>
           </metadataElement>
 	      </elements>
+			  <settings>
+          <setting name="lineBreakAfterNumberOfElements">2</setting>
+        </settings>
         <typeRestrictions>
           <restriction code="r_waterObject">
             <table>ca_objects</table>
@@ -4884,6 +5170,9 @@
             <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/gelRemarks</documentationUrl>
           </metadataElement>
 	      </elements>
+			  <settings>
+          <setting name="lineBreakAfterNumberOfElements">2</setting>
+        </settings>
         <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
@@ -5025,6 +5314,9 @@
             <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/gelRemarks</documentationUrl>
           </metadataElement>
 	      </elements>
+			  <settings>
+          <setting name="lineBreakAfterNumberOfElements">2</setting>
+        </settings>
         <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
@@ -5157,6 +5449,9 @@
             <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/gelRemarks</documentationUrl>
           </metadataElement>
 	      </elements>
+			  <settings>
+          <setting name="lineBreakAfterNumberOfElements">2</setting>
+        </settings>
         <typeRestrictions>
           <restriction code="r_stemDisc">
             <table>ca_objects</table>
@@ -5299,6 +5594,9 @@
             <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/gelRemarks</documentationUrl>
           </metadataElement>
 	      </elements>
+			  <settings>
+          <setting name="lineBreakAfterNumberOfElements">2</setting>
+        </settings>
         <typeRestrictions>
           <restriction code="r_seedLot">
             <table>ca_objects</table>
@@ -5422,6 +5720,9 @@
             <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/gelRemarks</documentationUrl>
           </metadataElement>
 	      </elements>
+			  <settings>
+          <setting name="lineBreakAfterNumberOfElements">2</setting>
+        </settings>
         <typeRestrictions>
           <restriction code="r_seedLot">
             <table>ca_objects</table>
@@ -8171,6 +8472,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="restrict_to_relationship_types">resultingObjects</setting>
                 <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
             <placement code="ca_occurrence_observation">
@@ -8189,6 +8491,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">The object belongs to the population</setting>
                 <setting name="restrict_to_types">population</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
             <placement code="ca_places_plotTransect">
@@ -8198,6 +8501,7 @@
 				        <setting name="add_label" locale="en_US">Add place</setting>
                 <setting name="restrict_to_types">plotTransect,provenance</setting>
                 <setting name="useHierarchicalBrowser">0</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
 			      <placement code="seedlot_relation" typeRestrictions="seedLot">
@@ -8240,6 +8544,7 @@
                 <setting name="description" locale="en_US">Any relevant unstructured information on the object (e.g. notes, comments) literally transcribed from the original source (e.g. paper inventory, field notes).</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -8337,7 +8642,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Parent object</setting>
                 <setting name="description" locale="en_US">If the current object was obtained from another object (e.g. subsample of, a bulk sample that is split into new bulks or separate samples, a DNA sample obtained from a tissue sample, ..) indicate from which sample this was obtained. If directly obtained from the field (e.g. environment, organism), leave blank.</setting>
-                <setting name="display_template">^ca_objects.parent_id.preferred_labels</setting>
+                <setting name="display_template">^ca_objects.parent_id.preferred_labels.name</setting>
               </settings>
             </placement>
 			      <placement code="samplingProtocolPublished">
@@ -8443,7 +8748,7 @@
                 <setting name="description" locale="en_US">The DNA concentration allows to estimate how much DNA is present in the buffer (depends on the volume). This is a measure of quantity. Concentration is commonly measured usuing fluorometry, for example with a Qubit; or in capillary gels such as those present in the BioAnalyzer or FragmentAnalyzer.</setting>
 				        <setting name="add_label" locale="en_US">Add another concentration measurement</setting>
                 <setting name="list_format">list</setting>
-                <setting name="lineBreakAfterNumberOfElements">2</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
             <placement code="dnaSpectro" typeRestrictions="dnaSample">
@@ -8453,7 +8758,7 @@
                 <setting name="description" locale="en_US">Using spectrophotometry DNA ratio of absorbance (230/260 and 260/280) is measured. This is a measure of quality. Spectrophotometry measurements are commonly executed with a Nanodrop.</setting>
 				        <setting name="add_label" locale="en_US">Add another spectrophotometry measurement</setting>
                 <setting name="list_format">list</setting>
-                <setting name="lineBreakAfterNumberOfElements">2</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
             <placement code="dnaGel" typeRestrictions="dnaSample">
@@ -8463,7 +8768,7 @@
 				        <setting name="add_label" locale="en_US">Add DNA gel measurement</setting>
                 <setting name="description" locale="en_US">This can be a classic agarose gel, or a capillary gel in e.g. in the BioAnalyzer or Fragment analyzer.</setting>
                 <setting name="list_format">list</setting>
-                <setting name="lineBreakAfterNumberOfElements">2</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
             <placement code="dnaVolume" typeRestrictions="dnaSample">
@@ -8473,16 +8778,16 @@
 				        <setting name="add_label" locale="en_US">Add volume measurement</setting>
                 <setting name="description" locale="en_US">This can be an exact measurement of volume, or derived measurement volume. This allows to track the volume through time. Example of the latter: we started with 100 µL and we took out 20 µL - hence the new "measured" volume is 80 µL.</setting>
                 <setting name="list_format">list</setting>
-                <setting name="lineBreakAfterNumberOfElements">2</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="volume" typeRestrictions="eDnaWaterFilter,waterSample,dnaSample">
+            <placement code="volume" typeRestrictions="eDnaWaterFilter,waterSample">
               <bundle>ca_attribute_volumeContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Volume measurement</setting>
 				        <setting name="add_label" locale="en_US">Add volume measurement</setting>
                 <setting name="list_format">list</setting>
-                <setting name="lineBreakAfterNumberOfElements">2</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
             <placement code="length" typeRestrictions="animalObject,plantObject">
@@ -8492,7 +8797,7 @@
                 <setting name="description" locale="en_US">This can be any type of measurement, expressed in length. For example: both the length of an animal bone and the width of an animal bone can be entered via this data element as two separate measurements with a length unit. Dbh (diameter at breast height), circumference and height of a tree in collection can all three be entered here.</setting>
 				        <setting name="add_label" locale="en_US">Add length measurement</setting>
                 <setting name="list_format">list</setting>
-                <setting name="lineBreakAfterNumberOfElements">2</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
             <placement code="weight" typeRestrictions="animalObject,plantObject,mineralSoilSample,peatSoilSample,organicSoilSample,dnaSample">
@@ -8501,7 +8806,7 @@
                 <setting name="label" locale="en_US">Weight measurement</setting>
 				        <setting name="add_label" locale="en_US">Add weight measurement</setting>
                 <setting name="list_format">list</setting>
-                <setting name="lineBreakAfterNumberOfElements">2</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
             <placement code="age" typeRestrictions="stemDisc">
@@ -8510,7 +8815,7 @@
                 <setting name="label" locale="en_US">Age</setting>
 				        <setting name="add_label" locale="en_US">Add age</setting>
                 <setting name="list_format">list</setting>
-                <setting name="lineBreakAfterNumberOfElements">2</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
             <placement code="germination" typeRestrictions="seedLot">
@@ -8519,7 +8824,7 @@
                 <setting name="label" locale="en_US">Germination measurement</setting>
 				        <setting name="add_label" locale="en_US">Add germination measurement</setting>
                 <setting name="list_format">list</setting>
-                <setting name="lineBreakAfterNumberOfElements">2</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
             <placement code="purity" typeRestrictions="seedLot">
@@ -8528,7 +8833,7 @@
                 <setting name="label" locale="en_US">Purity measurement</setting>
 				        <setting name="add_label" locale="en_US">Add purity measurement</setting>
                 <setting name="list_format">list</setting>
-                <setting name="lineBreakAfterNumberOfElements">2</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
             <placement code="ca_object_representations">
@@ -8537,7 +8842,7 @@
                 <setting name="label" locale="en_US">Multimedia of the measurement</setting>
                 <setting name="description" locale="en_US">Add a photo, scan or video of the measurement if relevant. For example: a !well-annotated! DNA sample gel image.</setting>
 				        <setting name="add_label" locale="en_US">Add visual representation</setting>
-                <setting name="lineBreakAfterNumberOfElements">2</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -8587,6 +8892,14 @@
 			        <settings>
                 <setting name="label" locale="en_US">Indication of the quality of the object record</setting>
 				        <setting name="add_label" locale="en_US">Add another quality indication</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="is_deaccessioned">
+              <bundle>is_deaccessioned</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">A flag indicating whether the object is deaccessioned</setting>
+                <setting name="description" locale="en_US">Will be 1 when deaccessioned or 0 (the default) when not deaccessioned. This should be visible in the object curation log. Types of deaccesioning are: disposal or transfer.</setting>
               </settings>
             </placement>
             <placement code="ca_storage_location">
@@ -8595,7 +8908,6 @@
                 <setting name="label" locale="en_US">Object is stored at</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="hideIfSelected_1">object_ui/object_management/is_deaccessioned</setting>
               </settings>
             </placement>
             <placement code="ca_collection">
@@ -8646,6 +8958,7 @@
                 <setting name="add_label" locale="en_US">Add valuation event</setting>
                 <setting name="restrict_to_types">valuation</setting>
                 <setting name="list_format">list</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
 			      <placement code="ca_occurrences_curation">
@@ -8656,13 +8969,7 @@
                 <setting name="add_label" locale="en_US">Add curation event</setting>
                 <setting name="restrict_to_types">curation</setting>
                 <setting name="list_format">list</setting>
-              </settings>
-            </placement>
-            <placement code="is_deaccessioned">
-              <bundle>is_deaccessioned</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">A flag indicating whether the object is deaccessioned</setting>
-                <setting name="description" locale="en_US">Will be 1 when deaccessioned or 0 (the default) when not deaccessioned. This should be visible in the object curation log. Types of deaccesioning are: disposal or transfer.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -8695,13 +9002,14 @@
                 <setting name="label" locale="en_US">The object or a subsample of the object is loaned or donated</setting>
                 <setting name="add_label" locale="en_US">Add new donation/loan</setting>
                 <setting name="list_format">list</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
             <placement code="labUse">
               <bundle>ca_occurrences</bundle>
               <settings>
                 <setting name="label" locale="en_US">Lab-projects</setting>
-                <setting name="description" locale="en_US">The object or a subsample of the object was used in INBO lab-projects. This allows you to enter LIMS-project codes or other lab-project codes.</setting>
+                <setting name="description" locale="en_US">The object or a subsample of the object was (re-)used in INBO lab-projects. This allows you to enter LIMS-project codes or other lab-project codes.</setting>
                 <setting name="add_label" locale="en_US">Add new project</setting>
 				        <setting name="restrict_to_types">project</setting>
                 <setting name="restrict_to_relationship_types">INBOlabUse</setting>
@@ -11698,7 +12006,89 @@
       </roles>
     </group>
   </groups>
-  <!-- <displays> -->
+  <displays>
+    <display code="object_display" type="ca_objects" system="1">
+      <labels>
+        <label locale="en_US">
+          <name>Object Display</name>
+        </label>
+      </labels>
+      <bundlePlacements>
+        <placement code="idno">
+          <bundle>ca_objects.idno</bundle>
+			    <settings>
+            <setting name="label" locale="en_US">CMS-ID</setting>
+          </settings>
+        </placement>
+        <placement code="preferred_labels">
+          <bundle>ca_objects.preferred_labels</bundle>
+			    <settings>
+            <setting name="label" locale="en_US">label</setting>
+          </settings>
+        </placement>
+        <placement code="preparationDate">
+          <bundle>ca_objects.preparationDate</bundle>
+			    <settings>
+            <setting name="label" locale="en_US">prep_date</setting>
+          </settings>
+        </placement>
+        <placement code="ca_occurrence_observation_name">
+          <bundle>ca_occurrences</bundle>
+			    <settings>
+            <setting name="label" locale="en_US">samplingPoint_idno</setting>
+            <setting name="restrict_to_types">observation</setting>
+            <setting name="restrict_to_relationship_types">represents</setting>
+            <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater">^ca_occurrences.preferred_labels.name</unit>]]></setting>
+          </settings>
+        </placement>
+        <placement code="ca_occurrence_observation_date">
+          <bundle>ca_occurrences</bundle>
+			    <settings>
+            <setting name="label" locale="en_US">samplingPoint_date</setting>
+            <setting name="restrict_to_types">observation</setting>
+            <setting name="restrict_to_relationship_types">represents</setting>
+            <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater">^ca_occurrences.dateRange</unit>]]></setting>
+          </settings>
+        </placement>
+        <placement code="ca_occurrence_observation_place">
+          <bundle>ca_occurrences</bundle>
+			    <settings>
+            <setting name="label" locale="en_US">samplingPoint_place</setting>
+            <setting name="restrict_to_types">observation</setting>
+            <setting name="restrict_to_relationship_types">represents</setting>
+            <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater">[<unit relativeTo="ca_places">^ca_places.preferred_labels.name</unit>]</unit>]]></setting>
+          </settings>
+        </placement>
+        <placement code="ca_object_depth" typeRestrictions="eDnaWaterFilter,watersample,mineralSoilSample,peatSoilSample,organicSoilSample">
+          <bundle>ca_objects.verbatimDepth</bundle>
+			    <settings>
+            <setting name="label" locale="en_US">depth</setting>
+          </settings>
+        </placement>
+        <placement code="ca_occurrence_observation_verbatimTaxon" typeRestrictions="dnaSample">
+          <bundle>ca_occurrences</bundle>standardizedIdentification
+			    <settings>
+            <setting name="label" locale="en_US">samplingPoint_verbatimTaxon</setting>
+            <setting name="restrict_to_types">observationPlant,observationAnimal</setting>
+            <setting name="restrict_to_relationship_types">represents</setting>
+            <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater">^ca_occurrences.verbatimIdentification</unit>]]></setting>
+          </settings>
+        </placement>
+        <placement code="ca_occurrence_observation_standTaxon" typeRestrictions="dnaSample">
+          <bundle>ca_occurrences</bundle>
+			    <settings>
+            <setting name="label" locale="en_US">samplingPoint_standTaxon</setting>
+            <setting name="restrict_to_types">observationPlant,observationAnimal</setting>
+            <setting name="restrict_to_relationship_types">represents</setting>
+            <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater">^ca_occurrences.standardizedIdentification</unit>]]></setting>
+          </settings>
+        </placement>
+        <placement code="is_deaccessioned">
+          <bundle>ca_objects.is_deaccessioned</bundle>
+        </placement>
+      </bundlePlacements>
+    </display>
+  </displays>
   <searchForms>
     <searchForm code="ca_objects_adv_search" type="ca_objects" system="1">
       <labels>
