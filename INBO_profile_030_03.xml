@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.39</profileName>
+  <profileName>[INBO] INBO natural science collection v0.40</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <locales>
     <locale lang="en" country="US">English</locale>
@@ -882,7 +882,7 @@
           </label>
         </labels>
         <items>
-          <item idno="observation" rank="1" enabled="0" default="1">
+          <item idno="observation" rank="1" enabled="1" default="1">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>Sampling point/ Observation event</name_singular>
@@ -944,7 +944,7 @@
                   </item>
             </items>
           </item>
-          <item idno="contextEvents" rank="2" enabled="0" default="1">
+          <item idno="contextEvents" rank="2" enabled="1" default="1">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>Context event</name_singular>
@@ -982,11 +982,11 @@
               </item>
             </items>
           </item>
-          <item idno="collectionEvents" rank="3" enabled="0" default="1">
+          <item idno="objectEvents" rank="3" enabled="1" default="1">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>Collection event</name_singular>
-                <name_plural>Collection events</name_plural>
+                <name_singular>Object event</name_singular>
+                <name_plural>Object events</name_plural>
               </label>
             </labels>
             <settings>
@@ -994,53 +994,7 @@
              <setting name="render_in_find_menu">1</setting>
             </settings>
             <items>
-              <item idno="identification" rank="3" enabled="0" default="1">
-                <labels>
-                  <label locale="en_US" preferred="1">
-                    <name_singular>Identification</name_singular>
-                    <name_plural>Identifications</name_plural>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="render_in_new_menu">1</setting>
-                  <setting name="render_in_find_menu">1</setting>
-                </settings>
-                    <items>
-                      <item idno="identificationBotanical" enabled="1" default="0">
-                        <labels>
-                          <label locale="en_US" preferred="1">
-                            <name_singular>Botanical</name_singular>
-                            <name_plural>Botanical</name_plural>
-                          </label>
-                        </labels>
-                      </item>
-                      <item idno="identificationZoological" enabled="1" default="0">
-                        <labels>
-                          <label locale="en_US" preferred="1">
-                            <name_singular>Zoological</name_singular>
-                            <name_plural>Zoological</name_plural>
-                          </label>
-                        </labels>
-                      </item>
-                      <item idno="identificationBacteriological" enabled="1" default="0">
-                        <labels>
-                          <label locale="en_US" preferred="1">
-                            <name_singular>Bacteriological</name_singular>
-                            <name_plural>Bacteriological</name_plural>
-                          </label>
-                        </labels>
-                      </item>
-                      <item idno="identificationViral" enabled="1" default="0">
-                        <labels>
-                          <label locale="en_US" preferred="1">
-                            <name_singular>Viral</name_singular>
-                            <name_plural>Viral</name_plural>
-                          </label>
-                        </labels>
-                      </item>
-                    </items>
-              </item>
-              <item idno="curation" rank="4" enabled="0" default="1">
+              <item idno="curation" rank="4" enabled="1" default="1">
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>Curation</name_singular>
@@ -1100,6 +1054,52 @@
               </item>
             </items>
           </item>
+          <item idno="identification" rank="4" enabled="1" default="1">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Identification</name_singular>
+                <name_plural>Identifications</name_plural>
+              </label>
+            </labels>
+            <settings>
+              <setting name="render_in_new_menu">0</setting>
+              <setting name="render_in_find_menu">0</setting>
+            </settings>
+                <items>
+                  <item idno="identificationBotanical" enabled="1" default="0">
+                    <labels>
+                      <label locale="en_US" preferred="1">
+                        <name_singular>Botanical</name_singular>
+                        <name_plural>Botanical</name_plural>
+                      </label>
+                    </labels>
+                  </item>
+                  <item idno="identificationZoological" enabled="1" default="0">
+                    <labels>
+                      <label locale="en_US" preferred="1">
+                        <name_singular>Zoological</name_singular>
+                        <name_plural>Zoological</name_plural>
+                      </label>
+                    </labels>
+                  </item>
+                  <item idno="identificationBacteriological" enabled="1" default="0">
+                    <labels>
+                      <label locale="en_US" preferred="1">
+                        <name_singular>Bacteriological</name_singular>
+                        <name_plural>Bacteriological</name_plural>
+                      </label>
+                    </labels>
+                  </item>
+                  <item idno="identificationViral" enabled="1" default="0">
+                    <labels>
+                      <label locale="en_US" preferred="1">
+                        <name_singular>Viral</name_singular>
+                        <name_plural>Viral</name_plural>
+                      </label>
+                    </labels>
+                  </item>
+                </items>
+              </item>
         </items>
       </list>
       <list code="storage_location_types" hierarchical="1" system="0" vocabulary="0" defaultSort="1">
@@ -1258,34 +1258,34 @@
                 </label>
               </labels>
             </item>
-            <item idno="preparationID" enabled="1" default="0">
+            <item idno="preparationID" enabled="1" default="0"><!--given at the time the object was generated, usually unique in the research/project context-->
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>preparation ID (given at the time the object was generated, usually unique in the research/project context)</name_singular>
+                  <name_singular>preparation ID</name_singular>
                   <name_plural>preparation ID</name_plural>
                 </label>
               </labels>
             </item>
-            <item idno="subCollectionID" enabled="1" default="0">
+            <item idno="subCollectionID" enabled="1" default="0"><!--given at the time it was added to subcollection, so its unique in the subcollection context-->
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>subcollection ID (given at the time it was added to subcollection, so its unique in the subcollection context)</name_singular>
+                  <name_singular>subcollection ID</name_singular>
                   <name_plural>subcollection IDs</name_plural>
                 </label>
               </labels>
             </item>
-            <item idno="INBOCollectionID" enabled="1" default="0">
+            <item idno="INBOCollectionID" enabled="1" default="0"><!--given at the time it was added to CMS, so its unique in the complete INBO collection)-->
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>INBO collection ID (given at the time it was added to CMS, so its unique in the complete INBO collection)</name_singular>
+                  <name_singular>INBO collection ID</name_singular>
                   <name_plural>INBO collection IDs</name_plural>
                 </label>
               </labels>
             </item>
-            <item idno="LabwareLIMSID" enabled="1" default="0">
+            <item idno="LabwareLIMSID" enabled="1" default="0"><!--unique numbering system of INBO-LIMS-->
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>Labware-LIMS-generated ID (unique numbering system of INBO-LIMS)</name_singular>
+                  <name_singular>Labware-LIMS-generated ID</name_singular>
                   <name_plural>Labware-LIMS-generated ID</name_plural>
                 </label>
               </labels>
@@ -8373,7 +8373,7 @@
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Preferred ID of the object</setting>
-                <setting name="description" locale="en_US">This is the preferred identifier of the object, this identifier has to be physically present on/with the object, on the label or written on the object. For DNA-samples this is the LIMS-code e.g. 19-009625. For soil samples, this is the AID - Archive ID e.g. IL/A01/053.</setting>
+                <setting name="description" locale="en_US">This is the preferred identifier of the object, this identifier has to be physically present on/with the object, on the label or written on the object. For DNA-samples this is the LIMS-code e.g. 19-009625. For soil samples, this is the SID = sample ID.</setting>
               </settings>
             </placement>
 			      <placement code="nonpreferred_labels">
@@ -11242,7 +11242,7 @@
         </screen>
       </screens>
     </userInterface>
-    <userInterface code="interstitial_observation_ui" type="ca_ocurrences_x_ocurrences">
+    <userInterface code="interstitial_observation_ui" type="ca_occurrences_x_occurrences">
       <labels>
         <label locale="en_US">
           <name>Interstitial Occurrence Editor</name>
@@ -11285,10 +11285,23 @@
             </label>
           </labels>
           <subTypeLeft>dnaSample</subTypeLeft>
-          <subTypeRight>sampleAmphibian,sampleFish,SampleInvertebrate,sampleMammalBlood,samplMammalEarpunch,
-          sampleMammalEmbryo,sampleMammalFeces,sampleMammalHair,sampleMammalHeart,sampleMammalLiver,sampleMammalMuscle,
-          sampleMammalSkinPiece,sampleMammalSwabBitewound,sampleMammalTongue,sampleMammalUterus,sampleReptile,leafSample,
-          eDnaWaterFilter,soilSample</subTypeRight>
+          <subTypeRight>
+          animalBulk,animalEntireLiving,animalCadaver,animalSpecimen,
+          sampleAmphibianLarva,sampleAmphibianEmbryo,sampleAmphibianTailclip,sampleAmphibianFrogspawn,
+          sampleAmphibianSwabCloaca,sampleAmphibianSwabMouth,sampleAmphibianSwabEar,sampleAmphibianToeclip,
+          sampleFishFinclip,sampleFishMuscle,
+          sampleInvertebrateLarva,SampleInvertebrateLeg,SampleInvertebrateWingclip,
+          sampleMammalBladder,sampleMammalBlood,sampleMammalBrain,sampleMammalConjuctivum,sampleMammalCyste,sampleMammalEarpunch,
+          sampleMammalEmbryo,sampleMammalFeces,sampleMammalHeart,sampleMammalHair,
+          sampleMammalIntestine,sampleMammalLiver,sampleMammalLung,sampleMammalLymphNode,sampleMammalKidney,
+          sampleMammalMuscle,sampleMammalSkinPiece,sampleMammalSkinComplete,sampleMammalSpleen,sampleMammalStomach,
+          sampleMammalTongue,sampleMammalUterus,
+          sampleReptileSkin, sampleReptileTailclip,
+          sampleUnknownSwab,sampleUnknownFeces,
+          leafSample,
+          eDnaWaterFilter,
+          soilSample
+          </subTypeRight>
         </type>
         <type code="waterToFilter" default="0">
           <labels>
