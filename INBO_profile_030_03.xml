@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.40</profileName>
+  <profileName>[INBO] INBO natural science collection v0.41</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <locales>
     <locale lang="en" country="US">English</locale>
@@ -168,8 +168,8 @@
                   <item idno="sampleAmphibianTailclip" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Finclip</name_singular>
-                        <name_plural>Finclips</name_plural>
+                        <name_singular>Tailclip</name_singular>
+                        <name_plural>Tailclips</name_plural>
                       </label>
                     </labels>
                   </item>
@@ -200,8 +200,8 @@
                   <item idno="sampleAmphibianSwabEar" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Swab mouth</name_singular>
-                        <name_plural>Swabs mouth</name_plural>
+                        <name_singular>Swab ear</name_singular>
+                        <name_plural>Swabs ear</name_plural>
                       </label>
                     </labels>
                   </item>
@@ -2688,6 +2688,14 @@
               <label locale="en_US" preferred="1">
                 <name_singular>larva</name_singular>
                 <name_plural>larvae</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="subadult" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>subadult</name_singular>
+                <name_plural>subadults</name_plural>
               </label>
             </labels>
           </item>
@@ -8564,7 +8572,7 @@
                 <setting name="description" locale="en_US">If the object resulted from any other object (not directly from the observation), the parent can be set here. Similarily, if the object has resulted in any other objects (e.g. subsamples, DNA extracts), these can be linked here.</setting>
               </settings>
             </placement>
-            <placement code="ca_objects">
+            <placement code="ca_objects_container">
               <bundle>ca_objects</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Indirect relationships</setting>
@@ -9818,7 +9826,7 @@
             </placement>
           </bundlePlacements>
         </screen>
-        <screen idno="curationEvent_result" default="1">
+        <screen idno="curationEvent_result" default="0">
           <labels>
             <label locale="en_US">
               <name>Result(s)</name>
@@ -9832,21 +9840,21 @@
             <restriction code="r_transfer" type="transfer"/>																																																																																																																													
           </typeRestrictions>
           <bundlePlacements>
-            <placement code="curationResult">
+            <placement code="curationResult" typeRestrictions="disposal,treatment,renewal,transfer">
               <bundle>ca_attribute_curationResult</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Result of curation event</setting>
                 <setting name="description" locale="en_US">Here you can specify further. For example: disposal because of depletion of DNA/soil, disease (plant), rot (seedlot), ...; treatment: cold treatment -80°C for parasites; renewal: of containers, of labels, of buffer + in the file you can specify the manufacturers information on the new mateiral.; reason why this particular group of samples was transferred.</setting>
 			        </settings>
             </placement>
-            <placement code="file">
+            <placement code="file" typeRestrictions="disposal,treatment,renewal,transfer">
               <bundle>ca_attribute_file</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Relevant curation notes, documents, ...</setting>
 				        <setting name="add_label" locale="en_US">Add file</setting>
 			        </settings>
             </placement>
-            <placement code="ca_object_representations">
+            <placement code="ca_object_representations" typeRestrictions="disposal,treatment,renewal,transfer">
               <bundle>ca_object_representations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Photo or video of curation result</setting>
@@ -12052,7 +12060,8 @@
             <setting name="label" locale="en_US">samplingPoint_idno</setting>
             <setting name="restrict_to_types">observation</setting>
             <setting name="restrict_to_relationship_types">represents</setting>
-            <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater">^ca_occurrences.preferred_labels.name</unit>]]></setting>
+            <setting name="display_template">^ca_occurrences.preferred_labels.name<br/>
+            (^ca_occurrences.idno</setting>
           </settings>
         </placement>
         <placement code="ca_occurrence_observation_date">
@@ -12061,7 +12070,7 @@
             <setting name="label" locale="en_US">samplingPoint_date</setting>
             <setting name="restrict_to_types">observation</setting>
             <setting name="restrict_to_relationship_types">represents</setting>
-            <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater">^ca_occurrences.dateRange</unit>]]></setting>
+            <setting name="display_template">^ca_occurrences.dateRange</setting>
           </settings>
         </placement>
         <placement code="ca_occurrence_observation_place">
@@ -12070,7 +12079,7 @@
             <setting name="label" locale="en_US">samplingPoint_place</setting>
             <setting name="restrict_to_types">observation</setting>
             <setting name="restrict_to_relationship_types">represents</setting>
-            <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater">[<unit relativeTo="ca_places">^ca_places.preferred_labels.name</unit>]</unit>]]></setting>
+            <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater">^ca_places.preferred_labels.name</unit>]]></setting>
           </settings>
         </placement>
         <placement code="ca_object_depth" typeRestrictions="eDnaWaterFilter,watersample,mineralSoilSample,peatSoilSample,organicSoilSample">
@@ -12085,7 +12094,7 @@
             <setting name="label" locale="en_US">samplingPoint_verbatimTaxon</setting>
             <setting name="restrict_to_types">observationPlant,observationAnimal</setting>
             <setting name="restrict_to_relationship_types">represents</setting>
-            <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater">^ca_occurrences.verbatimIdentification</unit>]]></setting>
+            <setting name="display_template">^ca_occurrences.verbatimIdentification</setting>
           </settings>
         </placement>
         <placement code="ca_occurrence_observation_standTaxon" typeRestrictions="dnaSample">
@@ -12094,7 +12103,7 @@
             <setting name="label" locale="en_US">samplingPoint_standTaxon</setting>
             <setting name="restrict_to_types">observationPlant,observationAnimal</setting>
             <setting name="restrict_to_relationship_types">represents</setting>
-            <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater">^ca_occurrences.standardizedIdentification</unit>]]></setting>
+            <setting name="display_template">^ca_occurrences.standardizedIdentification</setting>
           </settings>
         </placement>
         <placement code="is_deaccessioned">
