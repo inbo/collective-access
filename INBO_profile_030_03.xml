@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.41</profileName>
+  <profileName>[INBO] INBO natural science collection v0.42</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <locales>
     <locale lang="en" country="US">English</locale>
@@ -491,6 +491,14 @@
                       </label>
                     </labels>
                   </item>
+                  <item idno="sampleMammalSwabBite" enabled="1" default="0">
+                    <labels>
+                      <label locale="en_US" preferred="1">
+                        <name_singular>Swab of a bite wound</name_singular>
+                        <name_plural>Swabs of bite wounds</name_plural>
+                      </label>
+                    </labels>
+                  </item>
                   <item idno="sampleMammalTongue" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
@@ -543,32 +551,6 @@
                   </item>
                 </items>
               </item>
-              <item idno="sampleUnknown" enabled="0" default="0">
-                <labels>
-                  <label locale="en_US" preferred="1">
-                    <name_singular>Animal source unknown</name_singular>
-                    <name_plural>Animal source unknown</name_plural>
-                  </label>
-                </labels>
-                <items>	
-                  <item idno="sampleUnknownSwab" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Swab of a (bite) wound</name_singular>
-                        <name_plural>Swabs of (bite) wounds</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleUnknownFeces" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>feces</name_singular>
-                        <name_plural>feces</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                </items>
-              </item>
             </items>
           </item>
           <item idno="plantObject" rank="2" enabled="0" default="0">
@@ -603,11 +585,11 @@
                   </label>
                 </labels>
               </item>
-              <item idno="seedLot" enabled="1" default="0">
+              <item idno="seedlot" enabled="1" default="0">
                   <labels>
                     <label locale="en_US" preferred="1">
-                      <name_singular>Seed lot</name_singular>
-                      <name_plural>Seed lots</name_plural>
+                      <name_singular>Seedlot</name_singular>
+                      <name_plural>Seedlots</name_plural>
                     </label>
                   </labels>
               </item>
@@ -829,6 +811,56 @@
                 <name_plural>Provenances</name_plural>
               </label>
             </labels>
+            <items>
+              <item idno="provenanceRegion" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>Provenance region</name_singular>
+                    <name_plural>Provenance regions</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="seedSource" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>Seed source</name_singular>
+                    <name_plural>Seed sources</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="seedStand" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>(Seed) stand</name_singular>
+                    <name_plural>(Seed) stands</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="seedOrchard" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>Seed orchard</name_singular>
+                    <name_plural>Seed orchard</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="clone" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>Clone</name_singular>
+                    <name_plural>Clones</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="cloneBank" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>Clone bank</name_singular>
+                    <name_plural>Clone banks</name_plural>
+                  </label>
+                </labels>
+              </item>
+            </items>
           </item>
 		    </items>
       </list>
@@ -1287,6 +1319,14 @@
                 <label locale="en_US" preferred="1">
                   <name_singular>Labware-LIMS-generated ID</name_singular>
                   <name_plural>Labware-LIMS-generated ID</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="unknownTypeID" enabled="1" default="0"><!--A numbering system associated with the object but it is not known to which system it refers-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>Unknown type of ID</name_singular>
+                  <name_plural>Unknown type of IDs</name_plural>
                 </label>
               </labels>
             </item>
@@ -4280,9 +4320,9 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_seedLot">
+          <restriction code="r_seedlot">
             <table>ca_objects</table>
-            <type>seedLot</type>
+            <type>seedlot</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -4305,9 +4345,9 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_seedLot">
+          <restriction code="r_seedlot">
             <table>ca_objects</table>
-            <type>seedLot</type>
+            <type>seedlot</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -4329,9 +4369,9 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_seedLot">
+          <restriction code="r_seedlot">
             <table>ca_objects</table>
-            <type>seedLot</type>
+            <type>seedlot</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -5607,9 +5647,9 @@
           </metadataElement>
 	      </elements>
         <typeRestrictions>
-          <restriction code="r_seedLot">
+          <restriction code="r_seedlot">
             <table>ca_objects</table>
-            <type>seedLot</type>
+            <type>seedlot</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">10</setting>
@@ -5733,9 +5773,9 @@
           </metadataElement>
 	      </elements>
         <typeRestrictions>
-          <restriction code="r_seedLot">
+          <restriction code="r_seedlot">
             <table>ca_objects</table>
-            <type>seedLot</type>
+            <type>seedlot</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">10</setting>
@@ -8417,9 +8457,7 @@
                 <setting name="restrict_to_types">observation</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_relationship_types">represents</setting>
-                <setting name="readonly">0</setting>
-                <setting name="dontShowDeleteButton">0</setting>
+                <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
                 <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater"> <ifdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.verbatimIdentification</ifdef> <ifnotdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.preferred_labels.name</ifnotdef>, ^ca_occurrences.dateRange,<ifdef code="ca_occurrences.verbatimLocality"> ^ca_occurrences.verbatimLocality</ifdef><ifdef code="ca_occurrences.observationVerbatimLongitudeX"> X:^ca_occurrences.verbatimLongitudeX</ifdef><ifdef code="ca_occurrences.verbatimLatitudeY"> Y:^ca_occurrences.verbatimLatitudeY</ifdef> (^ca_occurrences.idno)</unit>]]></setting>
               </settings>
             </placement>
@@ -8491,7 +8529,7 @@
                 <setting name="restrict_to_types">observation</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_relationship_types">represents</setting>
+                <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
                 <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater"> <ifdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.verbatimIdentification</ifdef> <ifnotdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.preferred_labels.name</ifnotdef> observed on: ^ca_occurrences.dateRange<ifdef code="ca_occurrences.verbatimLocality">, observed at: ^ca_occurrences.verbatimLocality (^ca_occurrences.idno)</ifdef></unit>]]></setting>
               </settings>
             </placement>
@@ -8503,7 +8541,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="ca_places_plotTransect">
+            <placement code="ca_places_plotTransectProvenance">
               <bundle>ca_places</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The object is part of the in-situ plot, transect or provenance.</setting>
@@ -8513,7 +8551,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="seedlot_relation" typeRestrictions="seedLot">
+			      <placement code="seedlot_relation" typeRestrictions="seedlot">
               <bundle>ca_attribute_seedlotRelation</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Relation of the seeds in the seedlot</setting>
@@ -8521,7 +8559,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="seedlot_relationSpecification" typeRestrictions="seedLot">
+			      <placement code="seedlot_relationSpecification" typeRestrictions="seedlot">
               <bundle>ca_attribute_relationSpecification</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Specification of the relationtype of the seeds in the seedlot</setting>
@@ -8529,7 +8567,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="seedClass" typeRestrictions="seedLot">
+			      <placement code="seedClass" typeRestrictions="seedlot">
               <bundle>ca_attribute_seedClass</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Seedclass of the seedlot</setting>
@@ -8691,54 +8729,116 @@
             </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="object_taxonomy" default="0">
+		    <screen idno="object_taxonomy_nonenvironmental" default="0">
           <labels>
             <label locale="en_US">
               <name>Taxonomy</name>
             </label>
           </labels>
           <typeRestrictions>
-            <restriction code="r_animalLiving" type="animalLiving"/>
-            <restriction code="r_animalSpecimen" type="animalSpecimen"/>
-            <restriction code="r_sampleAmphibianLarva" type="sampleAmphibianLarva"/>
-            <restriction code="r_sampleAmphibianEmbryo" type="sampleAmphibianEmbryo"/>
-            <restriction code="r_sampleAmphibianFrogspawn" type="sampleAmphibianFrogspawn"/>
-            <restriction code="r_sampleInvertebrateLarva" type="sampleInvertebrateLarva"/>
-            <restriction code="r_sampleMammalTooth" type="sampleMammalTooth"/>
-            <restriction code="r_fruit" type="fruit"/>
-            <restriction code="r_herbariumSpecimen" type="herbariumSpecimen"/>
-            <restriction code="r_livingPlant" type="livingPlant"/>
-            <restriction code="r_seedLot" type="seedLot"/>
-            <restriction code="r_dnaSample" type="dnaSample"/>
+                <restriction code="r_animalBulk" type="animalBulk"/>
+                <restriction code="r_animalEntireLiving" type="animalEntireLiving"/>
+                <restriction code="r_animalEntireCadaver" type="animalEntireCadaver"/>       
+                <restriction code="r_animalEntireSpecimen" type="animalEntireSpecimen"/>
+                <restriction code="r_sampleAmphibianLarva" type="sampleAmphibianLarva"/>
+                <restriction code="r_sampleAmphibianEmbryo" type="sampleAmphibianEmbryo"/>
+                <restriction code="r_sampleAmphibianTailclip" type="sampleAmphibianTailclip"/>
+                <restriction code="r_sampleAmphibianFrogspawn" type="sampleAmphibianFrogspawn"/>
+                <restriction code="r_sampleAmphibianSwabCloaca" type="sampleAmphibianSwabCloaca"/>
+                <restriction code="r_sampleAmphibianSwabMouth" type="sampleAmphibianSwabMouth"/>
+                <restriction code="r_sampleAmphibianSwabEar" type="sampleAmphibianSwabEar"/>
+                <restriction code="r_sampleAmphibianToeclip" type="sampleAmphibianToeclip"/>
+                <restriction code="r_sampleFishFinclip" type="sampleFishFinclip"/>
+                <restriction code="r_sampleFishMuscle" type="sampleFishMuscle"/>
+                <restriction code="r_sampleInvertebrateLarva" type="sampleInvertebrateLarva"/>
+                <restriction code="r_sampleInvertebrateLeg" type="sampleInvertebrateLeg"/>
+                <restriction code="r_sampleInvertebrateWingclip" type="sampleInvertebrateWingclip"/>
+                <restriction code="r_sampleReptileSkin" type="sampleReptileSkin"/>
+                <restriction code="r_sampleReptileTailclip" type="sampleReptileTailclip"/>
+                <restriction code="r_sampleMammalBaculum" type="sampleMammalBaculum"/>
+                <restriction code="r_sampleMammalBladder" type="sampleMammalBladder"/>
+                <restriction code="r_sampleMammalBlood" type="sampleMammalBlood"/>
+                <restriction code="r_sampleMammalBrain" type="sampleMammalBrain"/>
+                <restriction code="r_sampleMammalConjuctivum" type="sampleMammalConjuctivum"/>
+                <restriction code="r_sampleMammalCyste" type="sampleMammalCyste"/>
+                <restriction code="r_sampleMammalEarpunch" type="sampleMammalEarpunch"/>
+                <restriction code="r_sampleMammalEmbryo" type="sampleMammalEmbryo"/>
+                <restriction code="r_sampleMammalFeces" type="sampleMammalFeces"/>
+                <restriction code="r_sampleMammalHead" type="sampleMammalBaculum"/>
+                <restriction code="r_sampleMammalHeart" type="sampleMammalHeart"/>
+                <restriction code="r_sampleMammalHair" type="sampleMammalHair"/>
+                <restriction code="r_sampleMammalIntestine" type="sampleMammalIntestine"/>
+                <restriction code="r_sampleMammalLiver" type="sampleMammalLiver"/>
+                <restriction code="r_sampleMammalLung" type="sampleMammalLung"/>
+                <restriction code="r_sampleMammalLymphNode" type="sampleMammalLymphNode"/>
+                <restriction code="r_sampleMammalKidney" type="sampleMammalKidney"/>
+                <restriction code="r_sampleMammalMuscle" type="sampleMammalMuscle"/>
+                <restriction code="r_sampleMammalSkinPiece" type="sampleMammalSkinPiece"/>
+                <restriction code="r_sampleMammalSkinComplete" type="sampleMammalSkinComplete"/>
+                <restriction code="r_sampleMammalSkull" type="sampleMammalSkull"/>
+                <restriction code="r_sampleMammalSpleen" type="sampleMammalSpleen"/>
+                <restriction code="r_sampleMammalStomach" type="sampleMammalStomach"/>
+                <restriction code="r_sampleMammalSwabBite" type="sampleMammalSwabBite"/>
+                <restriction code="r_sampleMammalTongue" type="sampleMammalTongue"/>
+                <restriction code="r_sampleMammalTooth" type="sampleMammalSkull"/>
+                <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
+                <restriction code="r_leafSample" type="leafSample"/>
+                <restriction code="r_littertrapSample" type="littertrapSample"/>
+                <restriction code="r_herbariumSpecimen" type="herbariumSpecimen"/>
+                <restriction code="r_livingPlant" type="livingPlant"/>
+                <restriction code="r_seedlot" type="seedlot"/>
+                <restriction code="r_stemDisc" type="stemDisc"/>
+                <restriction code="r_dnaSample" type="dnaSample"/>
           </typeRestrictions>
           <bundlePlacements>
-			      <placement code="verbatimIdentification">
-              <bundle>ca_attribute_verbatimIdentification</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The verbatim taxonomic identification of the object</setting>
-                <setting name="description" locale="en_US">The taxonomic identification of the object. This can be a species name, genus name, family name. This can be the vernacular name in English (e.g. human), Dutch (e.g. mens), ... or the binomial nomenclature (e.g. Homo sapiens). For objects sampled from organisms this will equal the taxonomic identification of the linked observation at the time the object was created.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-			        </settings>
-            </placement>
-			      <placement code="standardizedIdentification">
-              <bundle>ca_attribute_standardizedIdentification</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The standardized taxonomic identification of the object</setting>
-                <setting name="description" locale="en_US">The (closest) taxonomic identification, from a central repository. Lookup from GBIF/Catalogue of life.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-			        </settings>
-            </placement>
-            <placement code="ca_occurrence_identification">
+			      <placement code="ca_occurrences_verbatimIdentification">
               <bundle>ca_occurrences</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Log of identification events of this object</setting>
-                <setting name="description" locale="en_US">Logging identifications as separate events allows to enter more detailed information, such as a date, comments, method, executor, ... If multiple identification events occurred for the object, it is recommended to work with the identification events, rather than to simply overwrite the previous identifications. This allows a more explicit log of the taxonomic IDs linked to this object. From this log the most likely identification (often the most recent) can then be copied to the "verbatim identification" and "standardized identification" fields.</setting>
-                <setting name="add_label" locale="en_US">Add new identification event</setting>
-                <setting name="restrict_to_types">identification</setting>
-                <setting name="list_format">list</setting>
-                <setting name="display_template"><![CDATA[<unit unit relativeTo="ca_occurrences" restrictToTypes="identification,identificationBotanical,identificationZoological,identificationViral,identificationBacteriological">^ca_occurrences.idno<br/>^ca_occurrences_verbatimIdentification<br/>(^ca_occurrences.dateRange)<br/></unit>]]></setting>
+                <setting name="label" locale="en_US">The verbatim taxonomic identification of the observation from which the object was derived.</setting>
+                <setting name="description" locale="en_US">This can be a species name, genus name, family name. This can be the vernacular name in English (e.g. human), Dutch (e.g. mens), ... or the binomial nomenclature (e.g. Homo sapiens).  If this identification is incorrect according to you, go to the observation record and log a new identification event.</setting>
+                <setting name="readonly">1</setting>
+                <setting name="dontShowDeleteButton">1</setting>
+                <setting name="restrict_to_types">observationAnimal,observationPlant</setting>
+                <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
+                <setting name="display_template">^ca_occurrences.verbatimIdentification</setting>
+			        </settings>
+            </placement>
+			      <placement code="ca_occurrences_standardizedIdentification">
+              <bundle>ca_occurrences</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The standardized taxonomic identification of the observation from which the object was derived.</setting>
+                <setting name="description" locale="en_US">This is the taxon as registered in a central repository. If the identification is incorrect according to you, go to the observation record and log a new identification event.</setting>
+                <setting name="readonly">1</setting>
+                <setting name="dontShowDeleteButton">1</setting>
+                <setting name="restrict_to_types">observationAnimal,observationPlant</setting>
+                <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
+                <setting name="display_template">^ca_occurrences.standardizedIdentification</setting>
+			        </settings>
+            </placement>
+			      <placement code="ca_object_verbatimIdentification">
+              <bundle>ca_attributes_verbatimIdentification</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The verbatim taxonomic identification of the object</setting>
+                <setting name="description" locale="en_US">Usually this equals the verbatim identification of the observation the object was sampled from. For object types such as living animals, seedlots and living plants, it is possible that the taxonomic identification is different from the field observation they refer to (e.g. hybrids). This can be a species name, genus name, family name. This can be the vernacular name in English (e.g. human), Dutch (e.g. mens), ... or the binomial nomenclature (e.g. Homo sapiens).</setting>
+                <setting name="restrict_to_types">observationAnimal,observationPlant</setting>
+			        </settings>
+            </placement>
+			      <placement code="ca_object_standardizedIdentification">
+              <bundle>ca_attributes_standardizedIdentification</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The taxonomic identification of the object</setting>
+                <setting name="description" locale="en_US">Usually this equals the verbatim identification. For living collections such as living animals, seedlots and livingplants, it is possible that the taxonomic identification is different from the field observation they refer to. For example: hybrids.</setting>
+                <setting name="restrict_to_types">observationAnimal,observationPlant</setting>
+			        </settings>
+            </placement>
+			      <placement code="identifications">
+              <bundle>ca_occurrences</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The identification log of the observation and object.</setting>
+                <setting name="description" locale="en_US">The history of identifications for the observation and object. Ideally identifications are logged to the observation and all its derived objects.</setting>
+                <setting name="dontShowDeleteButton">1</setting>
+                <setting name="restrict_to_types">identificationAnimal,identificationPlant</setting>
+                <setting name="display_template"><unit relativeTo="ca_occurrences" restrictToTypes="identificationPlant,identificationAnimal">^ca_occurrences.verbatimIdentification; ^ca_occurrences.dateRange; ^ca_occurrences.idno</unit></setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -8809,7 +8909,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="weight" typeRestrictions="animalObject,plantObject,mineralSoilSample,peatSoilSample,organicSoilSample,dnaSample">
+            <placement code="weight" typeRestrictions="seedlot,mineralSoilSample,peatSoilSample,organicSoilSample,dnaSample">
               <bundle>ca_attribute_weightContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Weight measurement</setting>
@@ -8827,7 +8927,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="germination" typeRestrictions="seedLot">
+            <placement code="germination" typeRestrictions="seedlot">
               <bundle>ca_attribute_germinationContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Germination measurement</setting>
@@ -8836,7 +8936,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="purity" typeRestrictions="seedLot">
+            <placement code="purity" typeRestrictions="seedlot">
               <bundle>ca_attribute_purityContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Purity measurement</setting>
@@ -9567,7 +9667,7 @@
                 <setting name="label" locale="en_US">Objects resulting from observation</setting>
 				        <setting name="add_label" locale="en_US">Add object</setting>
                 <setting name="list_format">list</setting>
-                <setting name="restrict_to_relationship_types">represents</setting>
+                <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -11328,7 +11428,7 @@
               <typename_reverse>is a parent of</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>livingPlant,seedLot</subTypeLeft>
+          <subTypeLeft>livingPlant,seedlot</subTypeLeft>
           <subTypeRight>livingPlant</subTypeRight>
         </type>
         <type code="livingPlantSampled" default="0">
@@ -11338,7 +11438,7 @@
               <typename_reverse>is a sample of</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>seedLot,leafSample,stemDisc</subTypeLeft>
+          <subTypeLeft>seedlot,leafSample,stemDisc</subTypeLeft>
           <subTypeRight>livingPlant</subTypeRight>
         </type>
         <type code="livingAnimalSampled" default="0">
@@ -11493,15 +11593,99 @@
     </relationshipTable>
     <relationshipTable name="ca_objects_x_occurrences">
       <types>
-        <type code="represents" default="0">
+        <type code="entireCollection" default="0">
           <labels>
             <label locale="en_US">
-              <typename>represents</typename>
-              <typename_reverse>is represented by</typename_reverse>
+              <typename>is collected entirely</typename>
+              <typename_reverse>is brought into collection</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>animalBulk,animalEntireLiving,animalEntireCadaver,animalEntireSpecimen,livingPlant</subTypeLeft>
+          <subTypeRight>observation,observationPlant,observationAnimal,observationSoil,observationWater</subTypeRight>
+        </type>
+        <type code="sampleOf" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample/piece of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleAmphibianLarva,sampleAmphibianEmbryo,sampleAmphibianTailclip,sampleAmphibianFrogspawn,
+          sampleAmphibianSwabCloaca,sampleAmphibianSwabMouth,sampleAmphibianSwabEar,sampleAmphibianToeclip,
+          sampleFishFinclip,sampleFishMuscle,sampleInvertebrateLarva,
+          sampleInvertebrateLeg,sampleInvertebrateWingclip,
+          sampleReptileSkin,sampleReptileTailclip,
+          sampleMammalBaculum,sampleMammalBladder,sampleMammalBlood,sampleMammalBrain,sampleMammalConjuctivum,sampleMammalCyste,
+          sampleMammalEarpunch,sampleMammalEmbryo,sampleMammalFat,sampleMammalFeces,sampleMammalHead,sampleMammalHeart,sampleMammalHair,
+          sampleMammalIntestine,sampleMammalLiver,sampleMammalLowerJaw,sampleMammalLung,sampleMammalLymphNode,sampleMammalKidney,
+          sampleMammalMuscle,sampleMammalSkinPiece,sampleMammalSkinComplete,sampleMammalSkull,sampleMammalSpleen,sampleMammalStomach,
+          sampleMammalStomachContent,sampleMammalSwabBite,sampleMammalTongue,sampleMammalTooth,sampleMammalUterus,
+          leafSample,littertrapSample,stemDisc,
+          dnaSample,
+          eDnaWaterFilter,waterSample,
+          mineralSoilSample,peatSoilSample,organicSoilSample
+          </subTypeLeft>
+          <subTypeRight>observation,observationPlant,observationAnimal,observationSoil,observationWater</subTypeRight>
+        </type>
+        <type code="childOf" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>is a child/progeny of</typename>
+              <typename_reverse>is parent of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>livingPlant,seedlot,animalEntireLiving</subTypeLeft>
+          <subTypeRight>observation,observationPlant,observationAnimal</subTypeRight>
+        </type>
+        <type code="cloneOf" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>is a clone of</typename>
+              <typename_reverse>is cloned to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>livingPlant,seedlot</subTypeLeft>
+          <subTypeRight>observation,observationPlant,observationAnimal</subTypeRight>
+        </type>
+        <type code="childOfCloneOf" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>is a child of a clone of</typename>
+              <typename_reverse>is wild original from which the parent was cloned</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>livingPlant,seedlot</subTypeLeft>
+          <subTypeRight>observation,observationPlant,observationAnimal</subTypeRight>
+        </type>
+        <type code="grandchildOf" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>is a grandchild</typename>
+              <typename_reverse>is grandparent of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>livingPlant,seedlot,animalEntireLiving</subTypeLeft>
+          <subTypeRight>observation,observationPlant,observationAnimal</subTypeRight>
+        </type>
+        <type code="grandchildOfCloneOf" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>is a grandchild of a clone of</typename>
+              <typename_reverse>is wild original from which the grandparent was cloned</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>livingPlant,seedlot</subTypeLeft>
+          <subTypeRight>observation,observationPlant,observationAnimal</subTypeRight>
+        </type>
+        <type code="ObjectRelatedTo" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>is related to</typename>
+              <typename_reverse>is wild relative from</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
-          <subTypeRight>observation,observationPlant,observationAnimal,observationSoil,observationWater</subTypeRight>
+          <subTypeRight>observation,observationPlant,observationAnimal</subTypeRight>
         </type>
 		    <type code="resultingObjects" default="0">
           <labels>
@@ -12029,12 +12213,19 @@
     </group>
   </groups>
   <displays>
-    <display code="object_display" type="ca_objects" system="1">
+    <display code="environmental_object_display" type="ca_objects" system="1">
       <labels>
         <label locale="en_US">
           <name>Object Display</name>
         </label>
       </labels>
+      <typeRestrictions>
+        <restriction code="r_eDnaWaterFilter" type="eDnaWaterFilter"/>
+        <restriction code="r_waterSample" type="waterSample"/>
+        <restriction code="r_mineralSoilSample" type="mineralSoilSample"/>
+        <restriction code="r_peatSoilSample" type="peatSoilSample"/>
+        <restriction code="r_organicSoilSample" type="organicSoilSample"/>
+      </typeRestrictions>
       <bundlePlacements>
         <placement code="idno">
           <bundle>ca_objects.idno</bundle>
@@ -12054,55 +12245,185 @@
             <setting name="label" locale="en_US">prep_date</setting>
           </settings>
         </placement>
+        <placement code="ca_occurrence_observation_idno">
+          <bundle>ca_occurrences</bundle>
+			    <settings>
+            <setting name="label" locale="en_US">samplingPoint_idno</setting>
+            <setting name="restrict_to_types">observationPlant,observationAnimal,observationSoil,observationWater</setting>
+                <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
+          </settings>
+        </placement>
         <placement code="ca_occurrence_observation_name">
           <bundle>ca_occurrences</bundle>
 			    <settings>
             <setting name="label" locale="en_US">samplingPoint_idno</setting>
-            <setting name="restrict_to_types">observation</setting>
-            <setting name="restrict_to_relationship_types">represents</setting>
-            <setting name="display_template">^ca_occurrences.preferred_labels.name<br/>
-            (^ca_occurrences.idno</setting>
+            <setting name="restrict_to_types">observationAnimal,observationSoil,observationWater,observationPlant</setting>
+            <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
+            <setting name="display_template">^ca_occurrences.preferred_labels</setting>
           </settings>
         </placement>
         <placement code="ca_occurrence_observation_date">
           <bundle>ca_occurrences</bundle>
 			    <settings>
-            <setting name="label" locale="en_US">samplingPoint_date</setting>
-            <setting name="restrict_to_types">observation</setting>
-            <setting name="restrict_to_relationship_types">represents</setting>
+            <setting name="label" locale="en_US">samplingPoint_idno</setting>
+            <setting name="restrict_to_types">observationAnimal,observationSoil,observationWater,observationPlant</setting>
+            <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
             <setting name="display_template">^ca_occurrences.dateRange</setting>
           </settings>
         </placement>
         <placement code="ca_occurrence_observation_place">
           <bundle>ca_occurrences</bundle>
 			    <settings>
-            <setting name="label" locale="en_US">samplingPoint_place</setting>
-            <setting name="restrict_to_types">observation</setting>
-            <setting name="restrict_to_relationship_types">represents</setting>
-            <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater">^ca_places.preferred_labels.name</unit>]]></setting>
+            <setting name="label" locale="en_US">samplingPoint_idno</setting>
+            <setting name="restrict_to_types">observationAnimal,observationSoil,observationWater,observationPlant</setting>
+            <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
+            <setting name="display_template"><unit relativeTo="ca_occurrences">^ca_places.preferred_labels</unit></setting>
           </settings>
         </placement>
-        <placement code="ca_object_depth" typeRestrictions="eDnaWaterFilter,watersample,mineralSoilSample,peatSoilSample,organicSoilSample">
-          <bundle>ca_objects.verbatimDepth</bundle>
+        <placement code="ca_objects.verbatimSamplingDepth">
+          <bundle>ca_objects.verbatimSamplingDepth</bundle>
+        </placement>
+        <placement code="ca_objects.minimumSamplingHeightInMetres">
+          <bundle>ca_objects.minimumSamplingHeightInMetres</bundle>
+        </placement>
+        <placement code="ca_objects.maximumSamplingDepthInMetres">
+          <bundle>ca_objects.maximumSamplingDepthInMetres</bundle>
+        </placement>
+        <placement code="is_deaccessioned">
+          <bundle>ca_objects.is_deaccessioned</bundle>
+        </placement>
+      </bundlePlacements>
+    </display>
+    <display code="non_environmental_object_display" type="ca_objects" system="1">
+      <labels>
+        <label locale="en_US">
+          <name>Object Display</name>
+        </label>
+      </labels>
+          <typeRestrictions>
+                <restriction code="r_animalBulk" type="animalBulk"/>
+                <restriction code="r_animalEntireLiving" type="animalEntireLiving"/>
+                <restriction code="r_animalEntireCadaver" type="animalEntireCadaver"/>       
+                <restriction code="r_animalEntireSpecimen" type="animalEntireSpecimen"/>
+                <restriction code="r_sampleAmphibianLarva" type="sampleAmphibianLarva"/>
+                <restriction code="r_sampleAmphibianEmbryo" type="sampleAmphibianEmbryo"/>
+                <restriction code="r_sampleAmphibianTailclip" type="sampleAmphibianTailclip"/>
+                <restriction code="r_sampleAmphibianFrogspawn" type="sampleAmphibianFrogspawn"/>
+                <restriction code="r_sampleAmphibianSwabCloaca" type="sampleAmphibianSwabCloaca"/>
+                <restriction code="r_sampleAmphibianSwabMouth" type="sampleAmphibianSwabMouth"/>
+                <restriction code="r_sampleAmphibianSwabEar" type="sampleAmphibianSwabEar"/>
+                <restriction code="r_sampleAmphibianToeclip" type="sampleAmphibianToeclip"/>
+                <restriction code="r_sampleFishFinclip" type="sampleFishFinclip"/>
+                <restriction code="r_sampleFishMuscle" type="sampleFishMuscle"/>
+                <restriction code="r_sampleInvertebrateLarva" type="sampleInvertebrateLarva"/>
+                <restriction code="r_sampleInvertebrateLeg" type="sampleInvertebrateLeg"/>
+                <restriction code="r_sampleInvertebrateWingclip" type="sampleInvertebrateWingclip"/>
+                <restriction code="r_sampleReptileSkin" type="sampleReptileSkin"/>
+                <restriction code="r_sampleReptileTailclip" type="sampleReptileTailclip"/>
+                <restriction code="r_sampleMammalBaculum" type="sampleMammalBaculum"/>
+                <restriction code="r_sampleMammalBladder" type="sampleMammalBladder"/>
+                <restriction code="r_sampleMammalBlood" type="sampleMammalBlood"/>
+                <restriction code="r_sampleMammalBrain" type="sampleMammalBrain"/>
+                <restriction code="r_sampleMammalConjuctivum" type="sampleMammalConjuctivum"/>
+                <restriction code="r_sampleMammalCyste" type="sampleMammalCyste"/>
+                <restriction code="r_sampleMammalEarpunch" type="sampleMammalEarpunch"/>
+                <restriction code="r_sampleMammalEmbryo" type="sampleMammalEmbryo"/>
+                <restriction code="r_sampleMammalFeces" type="sampleMammalFeces"/>
+                <restriction code="r_sampleMammalHead" type="sampleMammalBaculum"/>
+                <restriction code="r_sampleMammalHeart" type="sampleMammalHeart"/>
+                <restriction code="r_sampleMammalHair" type="sampleMammalHair"/>
+                <restriction code="r_sampleMammalIntestine" type="sampleMammalIntestine"/>
+                <restriction code="r_sampleMammalLiver" type="sampleMammalLiver"/>
+                <restriction code="r_sampleMammalLung" type="sampleMammalLung"/>
+                <restriction code="r_sampleMammalLymphNode" type="sampleMammalLymphNode"/>
+                <restriction code="r_sampleMammalKidney" type="sampleMammalKidney"/>
+                <restriction code="r_sampleMammalMuscle" type="sampleMammalMuscle"/>
+                <restriction code="r_sampleMammalSkinPiece" type="sampleMammalSkinPiece"/>
+                <restriction code="r_sampleMammalSkinComplete" type="sampleMammalSkinComplete"/>
+                <restriction code="r_sampleMammalSkull" type="sampleMammalSkull"/>
+                <restriction code="r_sampleMammalSpleen" type="sampleMammalSpleen"/>
+                <restriction code="r_sampleMammalStomach" type="sampleMammalStomach"/>
+                <restriction code="r_sampleMammalSwabBite" type="sampleMammalSwabBite"/>
+                <restriction code="r_sampleMammalTongue" type="sampleMammalTongue"/>
+                <restriction code="r_sampleMammalTooth" type="sampleMammalSkull"/>
+                <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
+                <restriction code="r_leafSample" type="leafSample"/>
+                <restriction code="r_littertrapSample" type="littertrapSample"/>
+                <restriction code="r_herbariumSpecimen" type="herbariumSpecimen"/>
+                <restriction code="r_livingPlant" type="livingPlant"/>
+                <restriction code="r_seedlot" type="seedlot"/>
+                <restriction code="r_stemDisc" type="stemDisc"/>
+                <restriction code="r_dnaSample" type="dnaSample"/>
+          </typeRestrictions>
+      <bundlePlacements>
+        <placement code="idno">
+          <bundle>ca_objects.idno</bundle>
 			    <settings>
-            <setting name="label" locale="en_US">depth</setting>
+            <setting name="label" locale="en_US">CMS-ID</setting>
           </settings>
         </placement>
-        <placement code="ca_occurrence_observation_verbatimTaxon" typeRestrictions="dnaSample">
+        <placement code="preferred_labels">
+          <bundle>ca_objects.preferred_labels</bundle>
+			    <settings>
+            <setting name="label" locale="en_US">label</setting>
+          </settings>
+        </placement>
+        <placement code="preparationDate">
+          <bundle>ca_objects.preparationDate</bundle>
+			    <settings>
+            <setting name="label" locale="en_US">prep_date</setting>
+          </settings>
+        </placement>
+        <placement code="ca_occurrence_observation_idno">
           <bundle>ca_occurrences</bundle>
 			    <settings>
-            <setting name="label" locale="en_US">samplingPoint_verbatimTaxon</setting>
-            <setting name="restrict_to_types">observationPlant,observationAnimal</setting>
-            <setting name="restrict_to_relationship_types">represents</setting>
+            <setting name="label" locale="en_US">samplingPoint_idno</setting>
+            <setting name="restrict_to_types">observationPlant,observationAnimal,observationSoil,observationWater</setting>
+            <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
+          </settings>
+        </placement>
+        <placement code="ca_occurrence_observation_name">
+          <bundle>ca_occurrences</bundle>
+			    <settings>
+            <setting name="label" locale="en_US">samplingPoint_idno</setting>
+            <setting name="restrict_to_types">observationAnimal,observationSoil,observationWater,observationPlant</setting>
+            <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
+            <setting name="display_template">^ca_occurrences.preferred_labels</setting>
+          </settings>
+        </placement>
+        <placement code="ca_occurrence_observation_date">
+          <bundle>ca_occurrences</bundle>
+			    <settings>
+            <setting name="label" locale="en_US">samplingPoint_idno</setting>
+            <setting name="restrict_to_types">observationAnimal,observationSoil,observationWater,observationPlant</setting>
+            <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
+            <setting name="display_template">^ca_occurrences.dateRange</setting>
+          </settings>
+        </placement>
+        <placement code="ca_occurrence_observation_place">
+          <bundle>ca_occurrences</bundle>
+			    <settings>
+            <setting name="label" locale="en_US">samplingPoint_idno</setting>
+            <setting name="restrict_to_types">observationAnimal,observationSoil,observationWater,observationPlant</setting>
+            <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
+            <setting name="display_template"><unit relativeTo="ca_occurrences">^ca_places.preferred_labels</unit></setting>
+          </settings>
+        </placement>
+        <placement code="ca_occurrence_observation_verbatimIdentification">
+          <bundle>ca_occurrences</bundle>
+			    <settings>
+            <setting name="label" locale="en_US">samplingPoint_idno</setting>
+            <setting name="restrict_to_types">observationAnimal,observationSoil,observationWater,observationPlant</setting>
+            <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
             <setting name="display_template">^ca_occurrences.verbatimIdentification</setting>
           </settings>
         </placement>
-        <placement code="ca_occurrence_observation_standTaxon" typeRestrictions="dnaSample">
+        <placement code="ca_occurrence_observation_standardizedIdentification">
           <bundle>ca_occurrences</bundle>
 			    <settings>
-            <setting name="label" locale="en_US">samplingPoint_standTaxon</setting>
-            <setting name="restrict_to_types">observationPlant,observationAnimal</setting>
-            <setting name="restrict_to_relationship_types">represents</setting>
+            <setting name="label" locale="en_US">samplingPoint_idno</setting>
+            <setting name="restrict_to_types">observationAnimal,observationSoil,observationWater,observationPlant</setting>
+            <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
             <setting name="display_template">^ca_occurrences.standardizedIdentification</setting>
           </settings>
         </placement>
