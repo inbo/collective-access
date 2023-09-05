@@ -9328,7 +9328,7 @@
                 <setting name="restrict_to_types">administrative</setting>
               </settings>
 			      </placement>
-			      <placement code="ca_places_provenance" typeRestrictions="fieldwork,project">
+			      <placement code="ca_places_provenance" typeRestrictions="fieldwork,project"><!--to change back to object lots: provenance region + provenance = a place.-->
               <bundle>ca_places</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Provenance of focus</setting>
@@ -9339,7 +9339,7 @@
                 <setting name="list_format">list</setting>
               </settings>
             </placement>
-			      <placement code="ca_places_plotTransect" typeRestrictions="fieldwork,project">
+			      <placement code="ca_places_plotTransect" typeRestrictions="fieldwork,project"><!--To delete? Plot / Transect = a place; but for a project you'd like to appoint multiple unrelated places sometimes too.. to check.-->
               <bundle>ca_places</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">In-situ plot or transect of focus</setting>
@@ -9377,7 +9377,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="observationerbatimGeoreferenceProtocol" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater">
+			      <placement code="observationVerbatimGeoreferenceProtocol" typeRestrictions="observationPlant,observationAnimal,observationSoil,observationWater">
               <bundle>ca_attribute_verbatimGeoreferenceProtocol</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim georeference procedure</setting>
@@ -9404,18 +9404,18 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="observationMinimumElevationInMetres" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
-              <bundle>ca_attribute_minimumElevationInMetres</bundle>
+			      <placement code="observationMinimumElevationInMeters" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
+              <bundle>ca_attribute_minimumElevationInMeters</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The minimum elevation in metres.</setting>
+                <setting name="label" locale="en_US">The minimum elevation in meters</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="observationMaximumElevationInMetres" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
-              <bundle>ca_attribute_maximumElevationInMetres</bundle>
+			      <placement code="observationMaximumElevationInMeters" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
+              <bundle>ca_attribute_maximumElevationInMeters</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The maximum elevation in metres.</setting>
+                <setting name="label" locale="en_US">The maximum elevation in meters</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
@@ -9477,6 +9477,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Event hierarchy</setting>
                 <setting name="description" locale="en_US">The event (observation, project, fieldwork) can be put into the context.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
             <placement code="observationRelated" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
@@ -9486,6 +9487,7 @@
                 <setting name="description" locale="en_US">Where relevant, related observations can be logged (e.g. same individual).</setting>
                 <setting name="restrict_to_types">observation</setting>
                 <setting name="restrict_to_relationship_types" locale="en_US">observationRelatedTo,observationSameIndividual,observationSibling</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
 		        <placement code="descriptionContainer" typeRestrictions="project,fieldwork">
@@ -9493,6 +9495,7 @@
               <settings>
                 <setting name="label" locale="en_US">Description</setting>
                 <setting name="description" locale="en_US">Description of the project or fieldwork/expedition/survey event.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
 			      <placement code="observationPopulation" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
@@ -9500,14 +9503,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Related population</setting>
                 <setting name="restrict_to_types">population</setting>
-              </settings>
-            </placement>
-            <placement code="observationPlotTransect" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
-              <bundle>ca_places</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Related in-situ plot or transect</setting>
-                  <setting name="restrict_to_types">plotTransect</setting>
-                  <setting name="add_label" locale="en_US">Add in-situ plot or transect</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -9602,6 +9598,7 @@
                 <setting name="label" locale="en_US">Observation multimedia</setting>
                 <setting name="description" locale="en_US">Multimedia that can serve as evidence for the made observation, such as: photo, video. This can be of an organism or the habitat of the organism. In case there is no physical morphological voucher of the observation (plant, fungi, animal) this could count as a voucher.</setting>
 				        <setting name="add_label" locale="en_US">Add multimedia</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
             <placement code="file">
@@ -9610,6 +9607,7 @@
                 <setting name="label" locale="en_US">File(s) associated with the observation</setting>
                 <setting name="description" locale="en_US">Files related to the observation, such as: scan of observation field notes, scan of map, ...</setting>
 				        <setting name="add_label" locale="en_US">Add file</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
 			      <placement code="verbatimIdentification" typeRestrictions="observationPlant,observationAnimal">
@@ -9630,7 +9628,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
 			        </settings>
             </placement>
-            <placement code="ca_occurrence_identificationPlant" typeRestrictions="observationPlant">
+            <placement code="ca_occurrence_identificationPlant" typeRestrictions="observationPlant"><!--To check display template-->
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Log of identification events of this observation</setting>
@@ -9638,23 +9636,10 @@
                 <setting name="restrict_to_types">identificationBotanical</setting>
                 <setting name="list_format">list</setting>
                 <setting name="restrict_to_relationship_types">executedOnObservation</setting>
-                <setting name="display_template">
-                  <![CDATA[
-                    <unit>
-                      <l>ID:^ca_occurrences.idno</l>,
-                      Date: ^ca_occurrences.dateRange,
-                      Scientific name:
-                      <ifdef code="ca_occurrences.identificationQualifier">
-                        ^ca_occurrences.identificationQualifier 
-                      </ifdef>
-                      ^ca_occurrences.scientificName, 
-                      <unit relativeTo="ca_entities">IDed by: ^ca_entities.preferred_labels.displayname</unit>
-                    </unit>
-                  ]]>  
-                </setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
-            <placement code="ca_occurrence_identificationAnimal" typeRestrictions="observationAnimal">
+            <placement code="ca_occurrence_identificationAnimal" typeRestrictions="observationAnimal"><!--To check display template-->
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Log of identification events of this observation</setting>
@@ -9665,7 +9650,7 @@
                 <setting name="display_template">
                   <![CDATA[
                     <unit>
-                      <l>ID:^ca_occurrences.idno</l>,
+                      ID:^ca_occurrences.idno,
                       Date: ^ca_occurrences.dateRange,
                       Scientific name:
                       <ifdef code="ca_occurrences.identificationQualifier">
@@ -9682,30 +9667,35 @@
               <bundle>ca_attribute_sex</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Sex of organism</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
 			      <placement code="lifeStage" typeRestrictions="observationAnimal,observationPlant">
               <bundle>ca_attribute_lifeStage</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Lifestage of organism</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
 			      <placement code="age" typeRestrictions="observationAnimal,observationPlant">
               <bundle>ca_attribute_age</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Age of organism</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
 			      <placement code="reproductiveCondition" typeRestrictions="observationAnimal,observationPlant">
               <bundle>ca_attribute_reproductiveCondition</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Reproductive condition of organism</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
 			      <placement code="behavior" typeRestrictions="observationAnimal">
               <bundle>ca_attribute_behavior</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Behavior of animal</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
             <placement code="length_container" typeRestrictions="observationAnimal,observationPlant">
@@ -9715,6 +9705,7 @@
                 <setting name="description" locale="en_US">This can be any type of measurement, expressed in units of length. For example: dbh (diameter at breast height), circumference and height of a wild tree can all three be entered here.</setting>
 				        <setting name="add_label" locale="en_US">Add length measurement</setting>
                 <setting name="list_format">list</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
 			      <placement code="ca_object">
