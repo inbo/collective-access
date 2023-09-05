@@ -610,6 +610,24 @@
                 <name_plural>DNA samples</name_plural>
               </label>
             </labels>
+            <items>
+              <item idno="oDNA" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>oDNA (organism)</name_singular>
+                    <name_plural>oDNA (organism)</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="eDNA" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>eDNA (environment)</name_singular>
+                    <name_plural>eDNA (environment)</name_plural>
+                  </label>
+                </labels>
+              </item>
+            </items>
           </item>
           <item idno="waterObject" rank="5" enabled="0" default="0">
             <labels>
@@ -4580,6 +4598,7 @@
           <restriction code="r_dnaSample">
             <table>ca_objects</table>
             <type>dnaSample</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">20</setting>
@@ -4698,6 +4717,7 @@
           <restriction code="r_dnaSample">
             <table>ca_objects</table>
             <type>dnaSample</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">20</setting>
@@ -4834,6 +4854,7 @@
           <restriction code="r_dnaSample">
             <table>ca_objects</table>
             <type>dnaSample</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">20</setting>
@@ -4946,6 +4967,7 @@
           <restriction code="r_dnaSample">
             <table>ca_objects</table>
             <type>dnaSample</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">20</setting>
@@ -5091,6 +5113,7 @@
           <restriction code="r_dnaSample">
             <table>ca_objects</table>
             <type>dnaSample</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">50</setting>
@@ -6914,7 +6937,7 @@
           </restriction>
           <restriction code="r_verbatimIdentification_dnaSample">
             <table>ca_objects</table>
-		        <type>dnaSample</type>
+		        <type>oDNA</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -7144,7 +7167,7 @@
           </restriction>
           <restriction code="r_standardizedIdentification_dnaSample">
             <table>ca_objects</table>
-		        <type>dnaSample</type>
+		        <type>oDNA</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -7238,7 +7261,7 @@
           </restriction>
           <restriction code="r_matchContainer_dnaSample">
             <table>ca_objects</table>
-		        <type>dnaSample</type>
+		        <type>oDNA</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -8729,7 +8752,7 @@
             </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="object_taxonomy_nonenvironmental" default="0">
+		    <screen idno="object_taxonomy_organism" default="0">
           <labels>
             <label locale="en_US">
               <name>Taxonomy</name>
@@ -8788,7 +8811,7 @@
                 <restriction code="r_livingPlant" type="livingPlant"/>
                 <restriction code="r_seedlot" type="seedlot"/>
                 <restriction code="r_stemDisc" type="stemDisc"/>
-                <restriction code="r_dnaSample" type="dnaSample"/>
+                <restriction code="r_oDNA" type="oDNA"/>
           </typeRestrictions>
           <bundlePlacements>
 			      <placement code="ca_occurrences_verbatimIdentification">
@@ -8819,7 +8842,7 @@
               <bundle>ca_attributes_verbatimIdentification</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The verbatim taxonomic identification of the object</setting>
-                <setting name="description" locale="en_US">Usually this equals the verbatim identification of the observation the object was sampled from. For object types such as living animals, seedlots and living plants, it is possible that the taxonomic identification is different from the field observation they refer to (e.g. hybrids). This can be a species name, genus name, family name. This can be the vernacular name in English (e.g. human), Dutch (e.g. mens), ... or the binomial nomenclature (e.g. Homo sapiens).</setting>
+                <setting name="description" locale="en_US">Usually this equals the verbatim identification of the observation the object was sampled from. If present, this value will be automatically be set here. To be actively changed for object types such as living animals, seedlots and living plants, if the taxonomic identification is different from the field observation they refer to (e.g. in the case of hybrid offspring). A verbatim identification can be a species name, genus name, family name. This can be the vernacular name in English (e.g. human), Dutch (e.g. mens) ... or the the binomial nomenclature (e.g. Homo sapiens)..</setting>
                 <setting name="restrict_to_types">observationAnimal,observationPlant</setting>
 			        </settings>
             </placement>
@@ -8843,6 +8866,39 @@
             </placement>
           </bundlePlacements>
         </screen>
+		    <screen idno="object_taxonomy_environmental" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Taxonomy</name>
+            </label>
+          </labels>
+          <typeRestrictions>
+                <restriction code="r_waterSample" type="waterSample"/>
+                <restriction code="r_eDNA" type="eDNA"/>
+                <restriction code="r_mineralSoilSample" type="mineralSoilSample"/>
+                <restriction code="r_peatSoilSample" type="peatSoilSample"/>
+                <restriction code="r_organicSoilSample" type="organicSoilSample"/>
+          </typeRestrictions>
+          <bundlePlacements>
+			      <placement code="identifications">
+              <bundle>ca_occurrences</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The identification log of the sampling point and forthcoming object.</setting>
+                <setting name="description" locale="en_US">The identifications of the targeted barcoding or screening of the eDNA sample, relevant to be queryable. If many: best imported via a list (csv/Gsheet/Excel).</setting>
+                <setting name="display_template">^ca_occurrences.verbatimIdentification; ^ca_occurrences.dateRange; ^ca_occurrences.idno</unit></setting>
+			        </settings>
+            </placement>
+            <placement code="datasets">
+              <bundle>ca_attribute_dataset</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">(Meta)Barcoding result</setting>
+                <setting name="description" locale="en_US">The result of the targeted barcoding or screening of the eDNA sample, raw data file.</setting>
+                <setting name="add_label" locale="en_US">Add new dataset</setting>
+                <setting name="list_format">list</setting>
+              </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
 		    <screen idno="object_measurements" default="0">
           <labels>
             <label locale="en_US">
@@ -8850,7 +8906,7 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="dnaConc" typeRestrictions="dnaSample">
+            <placement code="dnaConc" typeRestrictions="oDNA,eDNA">
               <bundle>ca_attribute_dnaConcContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Concentration measurement on DNA</setting>
@@ -8860,7 +8916,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="dnaSpectro" typeRestrictions="dnaSample">
+            <placement code="dnaSpectro" typeRestrictions="oDNA,eDNA">
               <bundle>ca_attribute_dnaSpectroContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Spectophotometry measurement on DNA</setting>
@@ -8870,7 +8926,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="dnaGel" typeRestrictions="dnaSample">
+            <placement code="dnaGel" typeRestrictions="oDNA,eDNA">
               <bundle>ca_attribute_dnaGelContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">DNA gel measurement</setting>
@@ -8880,7 +8936,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="dnaVolume" typeRestrictions="dnaSample">
+            <placement code="dnaVolume" typeRestrictions="oDNA,eDNA">
               <bundle>ca_attribute_dnaVolumeContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">DNA sample volume measurement</setting>
@@ -8909,7 +8965,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="weight" typeRestrictions="seedlot,mineralSoilSample,peatSoilSample,organicSoilSample,dnaSample">
+            <placement code="weight" typeRestrictions="seedlot,mineralSoilSample,peatSoilSample,organicSoilSample,oDNA,eDNA">
               <bundle>ca_attribute_weightContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Weight measurement</setting>
@@ -11375,15 +11431,25 @@
   <relationshipTypes>
     <relationshipTable name="ca_objects_x_objects">
       <types>
-        <type code="dnaSubSample" default="0">
+        <type code="oDNASubSample" default="0">
           <labels>
             <label locale="en_US">
               <typename>is a subsample of</typename>
               <typename_reverse>is subsampled to</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>dnaSample</subTypeLeft>
-          <subTypeRight>dnaSample</subTypeRight>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>oDNA</subTypeRight>
+        </type>
+        <type code="eDNASubSample" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>is a subsample of</typename>
+              <typename_reverse>is subsampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>eDNA</subTypeLeft>
+          <subTypeRight>eDNA</subTypeRight>
         </type>
         <type code="dnaExtraction" default="0">
           <labels>
@@ -11392,7 +11458,7 @@
               <typename_reverse>is extracted to</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>dnaSample</subTypeLeft>
+          <subTypeLeft>dnaSample,oDNA,eDNA</subTypeLeft>
           <subTypeRight>
           animalBulk,animalEntireLiving,animalCadaver,animalSpecimen,
           sampleAmphibianLarva,sampleAmphibianEmbryo,sampleAmphibianTailclip,sampleAmphibianFrogspawn,
@@ -11420,6 +11486,16 @@
           </labels>
           <subTypeLeft>waterSample</subTypeLeft>
           <subTypeRight>eDnaWaterFilter</subTypeRight>
+        </type>
+        <type code="seedlotSubSample" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>is a subsample of</typename>
+              <typename_reverse>is subsampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>seedlot</subTypeLeft>
+          <subTypeRight>seedlot</subTypeRight>
         </type>
         <type code="plantChildOf" default="0">
           <labels>
@@ -11487,17 +11563,7 @@
           <subTypeLeft>soilSample</subTypeLeft>
           <subTypeRight>soilSample</subTypeRight>
         </type>
-        <type code="animalSeparatedFrom" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is separated from</typename>
-              <typename_reverse>used to include</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>animalEntire,animalBulk</subTypeLeft>
-          <subTypeRight>animalBulk</subTypeRight>
-        </type>
-        <type code="objectSameIndividal" default="0">
+        <type code="objectSameIndividual" default="0"><!--Sometimes multiple observations of the same individual happen and are sampled (e.g. eDNA of wolf bites / feces)-->
           <labels>
             <label locale="en_US">
               <typename>object of the same individual</typename>
@@ -11526,6 +11592,16 @@
           </labels>
           <subTypeLeft></subTypeLeft>
           <subTypeRight></subTypeRight>
+        </type>
+        <type code="parallelSample" default="0"><!--A parallel sample has the same location and taxonomy, but differs in time of sampling and can differ in individual/genetics. Samples can be linked by population or place/plot/provenance. This allows actively listing samples. Ideally this would occur automatically.-->
+          <labels>
+            <label locale="en_US">
+              <typename>is a parallel sample of</typename>
+              <typename_reverse>is a parallel sample of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>seedlot</subTypeLeft>
+          <subTypeRight>seedlot</subTypeRight>
         </type>
 	   </types>
     </relationshipTable>
@@ -11621,7 +11697,7 @@
           sampleMammalMuscle,sampleMammalSkinPiece,sampleMammalSkinComplete,sampleMammalSkull,sampleMammalSpleen,sampleMammalStomach,
           sampleMammalStomachContent,sampleMammalSwabBite,sampleMammalTongue,sampleMammalTooth,sampleMammalUterus,
           leafSample,littertrapSample,stemDisc,
-          dnaSample,
+          oDNA,eDNA,
           eDnaWaterFilter,waterSample,
           mineralSoilSample,peatSoilSample,organicSoilSample
           </subTypeLeft>
@@ -12353,7 +12429,7 @@
                 <restriction code="r_livingPlant" type="livingPlant"/>
                 <restriction code="r_seedlot" type="seedlot"/>
                 <restriction code="r_stemDisc" type="stemDisc"/>
-                <restriction code="r_dnaSample" type="dnaSample"/>
+                <restriction code="r_oDNA" type="oDNA"/>
           </typeRestrictions>
       <bundlePlacements>
         <placement code="idno">
