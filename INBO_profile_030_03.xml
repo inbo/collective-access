@@ -739,15 +739,7 @@
             <name>Place types</name>
           </label>
         </labels>
-		    <items>
-          <item idno="administrative" enabled="1" default="1">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>Administrative place</name_singular>
-                <name_plural>Administrative places</name_plural>
-              </label>
-            </labels>
-            <items>
+         <items>
               <item idno="continent" enabled="1" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
@@ -756,11 +748,11 @@
                   </label>
                 </labels>
               </item>
-              <item idno="waterBody" enabled="1" default="1">
+              <item idno="waterBody" enabled="1" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>Administrative place</name_singular>
-                    <name_plural>Administrative places</name_plural>
+                    <name_singular>Waterbody</name_singular>
+                    <name_plural>Waterbodies</name_plural>
                   </label>
                 </labels>
               </item>
@@ -812,75 +804,39 @@
                   </label>
                 </labels>
               </item>
-            </items>
-          </item>
-          <item idno="plotTransect" enabled="1" default="1">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>In-situ plot or transect</name_singular>
-                <name_plural>In-situ plots or transects</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="provenance" enabled="1" default="1">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>Provenance</name_singular>
-                <name_plural>Provenances</name_plural>
-              </label>
-            </labels>
-            <items>
-              <item idno="provenanceRegion" enabled="1" default="0">
+              <item idno="seedsource" enabled="1" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>Provenance region</name_singular>
-                    <name_plural>Provenance regions</name_plural>
+                    <name_singular>provenance: seedsource</name_singular>
+                    <name_plural>provenance: seedsources</name_plural>
                   </label>
                 </labels>
               </item>
-              <item idno="seedSource" enabled="1" default="0">
+              <item idno="seedstand" enabled="1" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>Seed source</name_singular>
-                    <name_plural>Seed sources</name_plural>
+                    <name_singular>(seed) stand</name_singular>
+                    <name_plural>(seed) stands</name_plural>
                   </label>
                 </labels>
               </item>
-              <item idno="seedStand" enabled="1" default="0">
+              <item idno="inSituPlot" enabled="1" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>(Seed) stand</name_singular>
-                    <name_plural>(Seed) stands</name_plural>
+                    <name_singular>In-situ plot</name_singular>
+                    <name_plural>In-situ plots</name_plural>
                   </label>
                 </labels>
               </item>
-              <item idno="seedOrchard" enabled="1" default="0">
+              <item idno="transect" enabled="1" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>Seed orchard</name_singular>
-                    <name_plural>Seed orchard</name_plural>
+                    <name_singular>Transect</name_singular>
+                    <name_plural>Transects</name_plural>
                   </label>
                 </labels>
               </item>
-              <item idno="clone" enabled="1" default="0">
-                <labels>
-                  <label locale="en_US" preferred="1">
-                    <name_singular>Clone</name_singular>
-                    <name_plural>Clones</name_plural>
-                  </label>
-                </labels>
-              </item>
-              <item idno="cloneBank" enabled="1" default="0">
-                <labels>
-                  <label locale="en_US" preferred="1">
-                    <name_singular>Clone bank</name_singular>
-                    <name_plural>Clone banks</name_plural>
-                  </label>
-                </labels>
-              </item>
-            </items>
-          </item>
-		    </items>
+		      </items>
       </list>
       <list code="collection_types" hierarchical="1" system="0" vocabulary="0">
         <labels>
@@ -8564,16 +8520,6 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="ca_places_plotTransectProvenance">
-              <bundle>ca_places</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The object is part of the in-situ plot, transect or provenance.</setting>
-				        <setting name="add_label" locale="en_US">Add place</setting>
-                <setting name="restrict_to_types">plotTransect,provenance</setting>
-                <setting name="useHierarchicalBrowser">0</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
 			      <placement code="seedlot_relation" typeRestrictions="seedlot">
               <bundle>ca_attribute_seedlotRelation</bundle>
 			        <settings>
@@ -9309,7 +9255,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="verbatimLocality" typeRestrictions="fieldwork,observation,observationPlant,observationAnimal,observationSoil,observationWaterproject">
+			      <placement code="verbatimLocality" typeRestrictions="fieldwork,observation,observationPlant,observationAnimal,observationSoil,observationWater,project">
               <bundle>ca_attribute_verbatimLocality</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim locality</setting>
@@ -9318,38 +9264,35 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-            <placement code="ca_places_admin" typeRestrictions="fieldwork,observation,observationPlant,observationAnimal,observationSoil,observationWaterproject">
+            <placement code="ca_places_fieldworkProject" typeRestrictions="fieldwork,project">
               <bundle>ca_places</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The administrative place of the event</setting>
-                <setting name="description" locale="en_US">The event can be linked to a place record in the CMS, with hiërarchial organization.</setting>
+                <setting name="label" locale="en_US">Fieldwork/project focal place(s)</setting>
+                <setting name="description" locale="en_US">The fieldwork or project took place at. This can also encompass provenance concepts, plots, transects, ...</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_types">administrative</setting>
+				        <setting name="maxRelationshipsPerRow">20</setting>
+				        <setting name="add_label" locale="en_US">Add place</setting>
               </settings>
 			      </placement>
-			      <placement code="ca_places_provenance" typeRestrictions="fieldwork,project"><!--to change back to object lots: provenance region + provenance = a place.-->
+            <placement code="ca_places_observation" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
               <bundle>ca_places</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Provenance of focus</setting>
-                <setting name="description" locale="en_US">A log of the provenances of focus.</setting>
-                <setting name="add_label" locale="en_US">Add provenance</setting>
-                <setting name="restrict_to_relationship_types">focus</setting>
-                <setting name="restrict_to_types">provenance</setting>
-                <setting name="list_format">list</setting>
+                <setting name="label" locale="en_US">The place</setting>
+                <setting name="description" locale="en_US">The observation occurred at this place. This can also encompass provenance concepts, plots, transects, ... if defined.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
-            </placement>
-			      <placement code="ca_places_plotTransect" typeRestrictions="fieldwork,project"><!--To delete? Plot / Transect = a place; but for a project you'd like to appoint multiple unrelated places sometimes too.. to check.-->
+			      </placement>
+            <placement code="provenance_region" typeRestrictions="observationPlant">
               <bundle>ca_places</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">In-situ plot or transect of focus</setting>
-                <setting name="description" locale="en_US">A log of the in-situ plots and transects of focus.</setting>
-                <setting name="add_label" locale="en_US">Add plot or transect</setting>
-                <setting name="restrict_to_relationship_types">focus</setting>
-                <setting name="restrict_to_types">plotTransect</setting>
-                <setting name="list_format">list</setting>
+                <setting name="label" locale="en_US">The provenance region</setting>
+                <setting name="description" locale="en_US">The plant observation has the provenance. As provenance concepts can change over time (depending on the definition/publication), multiple provenances can be linked to one plant.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">5</setting>
+				        <setting name="add_label" locale="en_US">Add provenance region</setting>
               </settings>
-            </placement>
+			      </placement>
             <placement code="observationVerbatimLongitudeX" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
               <bundle>ca_attribute_verbatimLongitudeX</bundle>
               <settings>
@@ -9488,6 +9431,7 @@
                 <setting name="restrict_to_types">observation</setting>
                 <setting name="restrict_to_relationship_types" locale="en_US">observationRelatedTo,observationSameIndividual,observationSibling</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+				        <setting name="add_label" locale="en_US">Add individual</setting>
               </settings>
 			      </placement>
 		        <placement code="descriptionContainer" typeRestrictions="project,fieldwork">
@@ -10138,7 +10082,6 @@
 			        <settings>
                 <setting name="label" locale="en_US">Place of address</setting>
                 <setting name="description" locale="en_US">Hiërarchial classification of organizations' address.</setting>
-                <setting name="restrict_to_types">administrative</setting>
               </settings>
             </placement>
             <placement code="telephone">
@@ -10232,7 +10175,7 @@
                 <setting name="autoshrink">1</setting>
               </settings>
             </placement>
-			      <placement code="gettyID" typeRestrictions="administrative">
+			      <placement code="gettyID">
               <bundle>ca_attribute_externalRecord</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">gettyID</setting>
@@ -10244,10 +10187,10 @@
 		        <placement code="descriptionContainer">
               <bundle>ca_attribute_descriptionContainer</bundle>
             </placement>
-			      <placement code="file" typeRestrictions="plotTransect">
+			      <placement code="file">
               <bundle>ca_attribute_file</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Files associated with the in-situ plot or transect (e.g. map, sketch, publication)</setting>
+                <setting name="label" locale="en_US">Files associated with the place. Most relevant for in-situ plot or transect (e.g. map, sketch, publication)</setting>
 				        <setting name="add_label" locale="en_US">Add file</setting>
 			        </settings>
             </placement>
@@ -10260,8 +10203,8 @@
             </label>
           </labels>
           <typeRestrictions>
-            <restriction code="plotTransect" type="plotTransect"/>
-            <restriction code="provenance" type="provenance"/>
+            <restriction code="r_inSituPlot" type="inSituPlot"/>
+            <restriction code="r_transect" type="transect"/>
           </typeRestrictions>
           <bundlePlacements>
             <placement code="ca_object">
@@ -10562,7 +10505,6 @@
                 <setting name="label" locale="en_US">Place of the site</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_types">administrative</setting>
               </settings>
             </placement>
 			      <placement code="plantedSiteMinimumElevationInMetres" typeRestrictions="observation">
@@ -10671,7 +10613,6 @@
                 <setting name="label" locale="en_US">The place of the group</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_types">administrative</setting>
               </settings>
 			      </placement>
 			      <placement code="groupDateRange">
@@ -11810,20 +11751,6 @@
         </type>
       </types>
     </relationshipTable>
-	  <relationshipTable name="ca_objects_x_places">
-      <types>
-        <type code="objectsPlace" default="1">
-          <labels>
-            <label locale="en_US">
-              <typename>was located in</typename>
-              <typename_reverse>was location of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>plotTransect</subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
 	  <relationshipTable name="ca_object_lots_x_occurrences">
       <types>
         <type code="observationsGrouping" default="1">
@@ -12083,12 +12010,12 @@
         <type code="locationOccurrence" default="1">
           <labels>
             <label locale="en_US">
-              <typename>was location of</typename>
+              <typename>was place of</typename>
               <typename_reverse>occurred at</typename_reverse>
             </label>
          </labels>
-          <subTypeLeft>administrative</subTypeLeft>
-          <subTypeRight>observation,fieldwork</subTypeRight>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>observation,fieldwork,plot,transect,provenance</subTypeRight>
         </type>
         <type code="focus" default="1">
           <labels>
@@ -12099,16 +12026,6 @@
          </labels>
           <subTypeLeft></subTypeLeft>
           <subTypeRight>project,fieldwork</subTypeRight>
-        </type>
-        <type code="objectsGrouping" default="1">
-          <labels>
-            <label locale="en_US">
-              <typename>is origin of</typename>
-              <typename_reverse>originates from</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>plotTransect,provenance</subTypeLeft>
-          <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
