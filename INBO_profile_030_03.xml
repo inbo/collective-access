@@ -706,6 +706,14 @@
               </label>
             </labels>
           </item>
+          <item idno="provenanceRegion" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>provenance region</name_singular>
+                <name_plural>provenance regions</name_plural>
+              </label>
+            </labels>
+          </item>
 		    </items>
       </list>
 	    <list code="entity_types" hierarchical="1" system="0" vocabulary="0">
@@ -807,8 +815,8 @@
               <item idno="seedsource" enabled="1" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>provenance: seedsource</name_singular>
-                    <name_plural>provenance: seedsources</name_plural>
+                    <name_singular>seedsource</name_singular>
+                    <name_plural>seedsources</name_plural>
                   </label>
                 </labels>
               </item>
@@ -833,6 +841,14 @@
                   <label locale="en_US" preferred="1">
                     <name_singular>Transect</name_singular>
                     <name_plural>Transects</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="place" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>place</name_singular>
+                    <name_plural>places</name_plural>
                   </label>
                 </labels>
               </item>
@@ -3653,55 +3669,6 @@
           </item>
         </items>
       </list>
-      <list code="provenance_category" hierarchical="0" system="0" vocabulary="1">
-        <labels>
-          <label locale="en_US">
-            <name>Provenance category</name>
-          </label>
-        </labels>
-        <items>
-          <item idno="seedSource" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>Seed source</name_singular>
-                <name_plural>Seed sources</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="seedStand" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>(Seed) Stand)</name_singular>
-                <name_plural>(Seed) Stands</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="seedOrchard" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>Seed orchard</name_singular>
-                <name_plural>Seed orchards</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="clone" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>Clone</name_singular>
-                <name_plural>Clones</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="cloneBank" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>Clone bank</name_singular>
-                <name_plural>Clones banks</name_plural>
-              </label>
-            </labels>
-          </item>
-        </items>
-      </list>
       <list code="loan_status" hierarchical="0" system="0" vocabulary="1">
         <labels>
           <label locale="en_US">
@@ -4419,31 +4386,6 @@
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">20</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-    <!--Places-->
-      <metadataElement code="provenanceCategory" datatype="List" list="provenance_category">
-        <labels>
-          <label locale="en_US">
-            <name>Provenance category</name>
-          </label>
-        </labels>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_provenance">
-            <table>ca_places</table>
-            <type>provenance</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -8536,6 +8478,17 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
+            <placement code="ca_objects_lots_provenanceRegion" typeRestrictions="seedlot,livingPlant">
+              <bundle>ca_places</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The provenance region</setting>
+                <setting name="description" locale="en_US">The seedlot or living plant is from the given provenance region. As provenance region concepts can change over time (depending on the definition/publication), multiple provenances can be linked to one plant (max. 5)</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">5</setting>
+                <setting name="restrict_to_types">provenanceRegion</setting>
+				        <setting name="add_label" locale="en_US">Add provenance region</setting>
+              </settings>
+			      </placement>
 			      <placement code="seedClass" typeRestrictions="seedlot">
               <bundle>ca_attribute_seedClass</bundle>
 			        <settings>
@@ -8653,14 +8606,6 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-            <placement code="ca_objects_parent">
-              <bundle>ca_objects.parent_id</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Parent object</setting>
-                <setting name="description" locale="en_US">If the current object was obtained from another object (e.g. subsample of, a bulk sample that is split into new bulks or separate samples, a DNA sample obtained from a tissue sample, ..) indicate from which sample this was obtained. If directly obtained from the field (e.g. environment, organism), leave blank.</setting>
-                <setting name="display_template">^ca_objects.parent_id.preferred_labels.name</setting>
-              </settings>
-            </placement>
 			      <placement code="samplingProtocolPublished">
               <bundle>ca_attribute_publication</bundle>
               <settings>
@@ -9268,7 +9213,7 @@
               <bundle>ca_places</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Fieldwork/project focal place(s)</setting>
-                <setting name="description" locale="en_US">The fieldwork or project took place at. This can also encompass provenance concepts, plots, transects, ...</setting>
+                <setting name="description" locale="en_US">The fieldwork or project took place at. This can also encompass provenance concepts, plots, transects, ... whatever place concept that is relevant to group objects or observations in.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">20</setting>
 				        <setting name="add_label" locale="en_US">Add place</setting>
@@ -9278,18 +9223,19 @@
               <bundle>ca_places</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The place</setting>
-                <setting name="description" locale="en_US">The observation occurred at this place. This can also encompass provenance concepts, plots, transects, ... if defined.</setting>
+                <setting name="description" locale="en_US">The observation occurred at this place. This can also encompass provenance concepts, plots, transects, ... whatever place concept that is relevant to group objects or observations in.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-            <placement code="provenance_region" typeRestrictions="observationPlant">
+            <placement code="ca_objects_lots_provenanceRegion" typeRestrictions="observationPlant">
               <bundle>ca_places</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The provenance region</setting>
-                <setting name="description" locale="en_US">The plant observation has the provenance. As provenance concepts can change over time (depending on the definition/publication), multiple provenances can be linked to one plant.</setting>
+                <setting name="description" locale="en_US">The plant observation has the provenance. As provenance concepts can change over time (depending on the definition/publication), multiple provenances can be linked to one plant (max. 5)</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">5</setting>
+                <setting name="restrict_to_types">provenanceRegion</setting>
 				        <setting name="add_label" locale="en_US">Add provenance region</setting>
               </settings>
 			      </placement>
@@ -10226,28 +10172,6 @@
             </placement>
           </bundlePlacements>
         </screen>
-        <screen idno="provenance_storage" default="0">
-		      <labels>
-            <label locale="en_US">
-              <name>Planted site with provenance</name>
-            </label>
-          </labels>
-          <typeRestrictions>
-            <restriction code="r_provenance" type="provenance"/>
-          </typeRestrictions>
-          <bundlePlacements>
-            <placement code="ca_storage_location" typeRestrictions="provenance">
-              <bundle>ca_storage_locations</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Plants with this provenance (region) are planted in the ex-situ plots</setting>
-				        <setting name="add_label" locale="en_US">Add ex-situ plot</setting>
-				        <setting name="restrict_to_types">plantedSite</setting>
-                <setting name="list_format">list</setting>
-                <setting name="restrict_to_relationship_types">inLivingCollectionAt</setting>
-			        </settings>
-            </placement>
-          </bundlePlacements>
-        </screen>
 		    <screen idno="place_administration" default="0">
           <labels>
             <label locale="en_US">
@@ -10620,7 +10544,7 @@
               <!--http://rs.tdwg.org/dwc/terms/dateIdentified-->
               <settings>
                 <setting name="label" locale="en_US">Date (range) of the group</setting>
-                <setting name="description" locale="en_US">Usually this consist of a start date. For example: the date when a population was discovered, the date where a provenance region concept was defined, the date were a certain provenance concept was instated for the first time,..</setting>
+                <setting name="description" locale="en_US">Usually this consist of a start date. For example: the date when a population was discovered, the date where a provenance region concept was defined, ..</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
