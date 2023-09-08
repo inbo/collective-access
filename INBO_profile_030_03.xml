@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.42.06</profileName>
+  <profileName>[INBO] INBO natural science collection v0.43.01</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <locales>
     <locale lang="en" country="US">English</locale>
@@ -152,7 +152,7 @@
                   </label>
                 </labels>
                 <items>
-                  <item idno="sampleAmphibianLarva" enabled="1" default="0">
+                  <item idno="sampleAmphibianLarva" enabled="1" default="0"><!--is this collected entirely? If so, move to animalEntire-->
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>Larva</name_singular>
@@ -160,7 +160,7 @@
                       </label>
                     </labels>
                   </item>
-                  <item idno="sampleAmphibianEmbryo" enabled="1" default="0">
+                  <item idno="sampleAmphibianEmbryo" enabled="1" default="0"><!--is this collected entirely? If so, move to animalEntire-->
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>Embryo</name_singular>
@@ -176,7 +176,7 @@
                       </label>
                     </labels>
                   </item>
-                  <item idno="sampleAmphibianFrogspawn" enabled="1" default="0">
+                  <item idno="sampleAmphibianFrogspawn" enabled="1" default="0"><!--is this collected entirely? If so, move to animalEntire-->
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>Frogspawn</name_singular>
@@ -252,7 +252,7 @@
                   </label>
                 </labels>
                 <items>
-                  <item idno="sampleInvertebrateLarva" enabled="1" default="0">
+                  <item idno="sampleInvertebrateLarva" enabled="1" default="0"><!--is this collected entirely? If so, move to animalEntire-->
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>Larva</name_singular>
@@ -2095,14 +2095,14 @@
           </item>
         </items>
       </list>
-      <list code="seedlot_relation" hierarchical="0" system="0" vocabulary="1">
+      <list code="seedlot_relation" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
         <labels>
           <label locale="en_US">
             <name>Types of relation that seeds in a seedlot can have.</name>
           </label>
         </labels>
         <items>
-          <item idno="halfsibs" enabled="1" default="0">
+          <item idno="halfsibs" rank="2" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>Halfsibs (from the same motherplant, uncontrolled pollination)</name_singular>
@@ -2110,7 +2110,7 @@
               </label>
             </labels>
           </item>		
-          <item idno="sibs" enabled="1" default="0">
+          <item idno="sibs" rank="1" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>Sibs (from the same mother- and fatherplant)</name_singular>
@@ -2118,15 +2118,23 @@
               </label>
             </labels>
           </item>
-          <item idno="multiple" enabled="1" default="0">
+          <item idno="multipleSamePlace" rank="3" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>Multiple mother- and fatherplants (often: from the same place)</name_singular>
-                <name_plural>Multiple mother- and fatherplants (often: from the same place)</name_plural>
+                <name_singular>Multiple mother- and fatherplants from the same locality/place</name_singular>
+                <name_plural>Multiple mother- and fatherplants from the same locality/place</name_plural>
               </label>
             </labels>
           </item>
-          <item idno="unknownSeedlotRelation" enabled="1" default="0">
+          <item idno="multipleDifferentPlace" rank="4" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Multiple mother- and fatherplants from the different localities/places (but same taxon)</name_singular>
+                <name_plural>Multiple mother- and fatherplants from the different localities/places (but same taxon)</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="unknownSeedlotRelation" rank="5" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>Unknown: unspecified or unclear</name_singular>
@@ -4216,8 +4224,8 @@
           </label>
         </labels>
         <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
+          <setting name="fieldWidth">100</setting>
+          <setting name="fieldHeight">15</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
         </settings>
@@ -8431,7 +8439,7 @@
             </labels>
             <settings/>
             <elements>
-              <metadataElement code="street" datatype="Text">
+              <metadataElement code="loan_street" datatype="Text">
                 <labels>
                   <label locale="en_US">
                     <name>Street name</name>
@@ -8444,7 +8452,7 @@
                   <setting name="maxChars">255</setting>
                 </settings>
               </metadataElement>
-              <metadataElement code="number" datatype="Text">
+              <metadataElement code="loan_number" datatype="Text">
                 <labels>
                   <label locale="en_US">
                     <name>Number</name>
@@ -8458,7 +8466,7 @@
                   <setting name="maxChars">255</setting>
                 </settings>
               </metadataElement>
-              <metadataElement code="box" datatype="Text">
+              <metadataElement code="loan_box" datatype="Text">
                 <labels>
                   <label locale="en_US">
                     <name>Number of mailbox</name>
@@ -8482,7 +8490,7 @@
             </labels>
             <settings/>
             <elements>
-              <metadataElement code="city" datatype="Text">
+              <metadataElement code="loan_city" datatype="Text">
                 <labels>
                   <label locale="en_US">
                     <name>City, town, municipality, village, ...</name>
@@ -8495,7 +8503,7 @@
                   <setting name="maxChars">255</setting>
                 </settings>
               </metadataElement>
-              <metadataElement code="state_or_province" datatype="Text">
+              <metadataElement code="loan_state_or_province" datatype="Text">
                 <labels>
                   <label locale="en_US">
                     <name>State/province</name>
@@ -8508,7 +8516,7 @@
                   <setting name="maxChars">255</setting>
                 </settings>
               </metadataElement>
-              <metadataElement code="postalcode" datatype="Text">
+              <metadataElement code="loan_postalcode" datatype="Text">
                 <labels>
                   <label locale="en_US">
                     <name>Postal/zip code</name>
@@ -8969,6 +8977,7 @@
                 <setting name="restrict_to_types">observation</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="dontShowDeleteButton">0</setting>
                 <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
                 <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater"> <ifdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.verbatimIdentification</ifdef> <ifnotdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.preferred_labels.name</ifnotdef>, ^ca_occurrences.dateRange,<ifdef code="ca_occurrences.verbatimLocality"> ^ca_occurrences.verbatimLocality</ifdef><ifdef code="ca_occurrences.observationVerbatimLongitudeX"> X:^ca_occurrences.verbatimLongitudeX</ifdef><ifdef code="ca_occurrences.verbatimLatitudeY"> Y:^ca_occurrences.verbatimLatitudeY</ifdef> (^ca_occurrences.idno)</unit>]]></setting>
               </settings>
@@ -9048,8 +9057,7 @@
 			      <placement code="ca_object_lot">
               <bundle>ca_object_lots</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The object belongs to the population</setting>
-                <setting name="restrict_to_types">population</setting>
+                <setting name="label" locale="en_US">The object belongs to the population or provenance</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -9167,7 +9175,7 @@
                 <setting name="restrict_to_relationship_types">preparedBy</setting>
               </settings>
             </placement>		 		 
-			      <placement code="verbatimSamplingDepth" typeRestrictions="eDnaWaterFilter,watersample,mineralSoilSample,peatSoilSample,organicSoilSample">
+			      <placement code="verbatimDepth" typeRestrictions="eDnaWaterFilter,watersample,mineralSoilSample,peatSoilSample,organicSoilSample">
               <bundle>ca_attribute_verbatimDepth</bundle>
               <settings>
                 <setting name="label" locale="en_US">The original description of the depth of sampling</setting>
@@ -9175,7 +9183,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="minimumSamplingDepthInMetres" typeRestrictions="eDnaWaterFilter,watersample,mineralSoilSample,peatSoilSample,organicSoilSample">
+			      <placement code="minimumDepthInMetres" typeRestrictions="eDnaWaterFilter,watersample,mineralSoilSample,peatSoilSample,organicSoilSample">
               <bundle>ca_attribute_minimumDepthInMetres</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The minimum sampling depth in metres</setting>
@@ -9183,7 +9191,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="maximumSamplingDepthInMetres" typeRestrictions="eDnaWaterFilter,watersample,mineralSoilSample,peatSoilSample,organicSoilSample">
+			      <placement code="maximumDepthInMetres" typeRestrictions="eDnaWaterFilter,watersample,mineralSoilSample,peatSoilSample,organicSoilSample">
               <bundle>ca_attribute_maximumDepthInMeters</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The maximum sampling depth in metres</setting>
@@ -9191,7 +9199,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="verbatimSamplingHeight" typeRestrictions="stemDisc">
+			      <placement code="verbatimHeight" typeRestrictions="stemDisc">
               <bundle>ca_attribute_verbatimHeight</bundle>
               <settings>
                 <setting name="label" locale="en_US">The original description of the height of sampling on the plant.</setting>
@@ -9199,7 +9207,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="minimumSamplingHeightInMetres" typeRestrictions="stemDisc">
+			      <placement code="minimumHeightInMetres" typeRestrictions="stemDisc">
               <bundle>ca_attribute_minimumHeightInMetres</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The minimum sampling height in metres</setting>
@@ -9207,7 +9215,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="maximumSamplingHeightInMetres" typeRestrictions="stemDisc">
+			      <placement code="maximumHeightInMetres" typeRestrictions="stemDisc">
               <bundle>ca_attribute_maximumHeightInMetres</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The maximum sampling height in metres.</setting>
@@ -9354,7 +9362,6 @@
 			        <settings>
                 <setting name="label" locale="en_US">The verbatim taxonomic identification of the object</setting>
                 <setting name="description" locale="en_US">Usually this equals the verbatim identification of the observation the object was sampled from. If present, this value will be automatically be set here. To be actively changed for object types such as living animals, seedlots and living plants, if the taxonomic identification is different from the field observation they refer to (e.g. in the case of hybrid offspring). A verbatim identification can be a species name, genus name, family name. This can be the vernacular name in English (e.g. human), Dutch (e.g. mens) ... or the the binomial nomenclature (e.g. Homo sapiens)..</setting>
-                <setting name="restrict_to_types">observationAnimal,observationPlant</setting>
 			        </settings>
             </placement>
 			      <placement code="ca_object_standardizedIdentification">
@@ -9362,7 +9369,6 @@
 			        <settings>
                 <setting name="label" locale="en_US">The taxonomic identification of the object</setting>
                 <setting name="description" locale="en_US">Usually this equals the verbatim identification. For living collections such as living animals, seedlots and livingplants, it is possible that the taxonomic identification is different from the field observation they refer to. For example: hybrids.</setting>
-                <setting name="restrict_to_types">observationAnimal,observationPlant</setting>
 			        </settings>
             </placement>
 			      <placement code="identifications">
@@ -9372,7 +9378,7 @@
                 <setting name="description" locale="en_US">The history of identifications for the observation and object. Ideally identifications are logged to the observation and all its derived objects.</setting>
                 <setting name="dontShowDeleteButton">1</setting>
                 <setting name="restrict_to_types">identificationAnimal,identificationPlant</setting>
-                <setting name="display_template"><unit relativeTo="ca_occurrences" restrictToTypes="identificationPlant,identificationAnimal">^ca_occurrences.verbatimIdentification; ^ca_occurrences.dateRange; ^ca_occurrences.idno</unit></setting>
+                <setting name="display_template">^ca_occurrences.verbatimIdentification; ^ca_occurrences.dateRange; ^ca_occurrences.idno</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -9396,7 +9402,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">The identification log of the sampling point and forthcoming object.</setting>
                 <setting name="description" locale="en_US">The identifications of the targeted barcoding or screening of the eDNA sample, relevant to be queryable. If many: best imported via a list (csv/Gsheet/Excel).</setting>
-                <setting name="display_template">^ca_occurrences.verbatimIdentification; ^ca_occurrences.dateRange; ^ca_occurrences.idno</unit></setting>
+                <setting name="display_template">^ca_occurrences.verbatimIdentification; ^ca_occurrences.dateRange; ^ca_occurrences.idno</setting>
 			        </settings>
             </placement>
             <placement code="datasets">
@@ -10920,17 +10926,6 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="ca_entities_currentCollectionOwner">
-              <bundle>ca_entities</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Current/last owner</setting>
-                <setting name="description" locale="en_US">This is always an organization. Personal collections are not inventoried, only when donated to an organization. This is either the current owner, or the last owner if disposed.</setting>
-				        <setting name="restrict_to_types">org</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_relationship_types">currentCollectionOwner</setting>
-              </settings>
-            </placement>
 			      <placement code="ca_places">
               <bundle>ca_places</bundle>
 			        <settings>
@@ -12012,7 +12007,7 @@
   <relationshipTypes>
     <relationshipTable name="ca_objects_x_objects">
       <types>
-        <type code="oDNASubSample" default="0">
+        <type code="oDNASubSample" default="0" rank="1">
           <labels>
             <label locale="en_US">
               <typename>is a subsample of</typename>
@@ -12022,7 +12017,7 @@
           <subTypeLeft>oDNA</subTypeLeft>
           <subTypeRight>oDNA</subTypeRight>
         </type>
-        <type code="eDNASubSample" default="0">
+        <type code="eDNASubSample" default="0" rank="1">
           <labels>
             <label locale="en_US">
               <typename>is a subsample of</typename>
@@ -12032,33 +12027,427 @@
           <subTypeLeft>eDNA</subTypeLeft>
           <subTypeRight>eDNA</subTypeRight>
         </type>
-        <type code="dnaExtraction" default="0">
+        <type code="dnaExtraction_sampleAmphibianLarva" default="0" rank="2">
           <labels>
             <label locale="en_US">
               <typename>is extracted from</typename>
               <typename_reverse>is extracted to</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>dnaSample,oDNA,eDNA</subTypeLeft>
-          <subTypeRight>
-          animalBulk,animalEntireLiving,animalCadaver,animalSpecimen,
-          sampleAmphibianLarva,sampleAmphibianEmbryo,sampleAmphibianTailclip,sampleAmphibianFrogspawn,
-          sampleAmphibianSwabCloaca,sampleAmphibianSwabMouth,sampleAmphibianSwabEar,sampleAmphibianToeclip,
-          sampleFishFinclip,sampleFishMuscle,
-          sampleInvertebrateLarva,SampleInvertebrateLeg,SampleInvertebrateWingclip,
-          sampleMammalBladder,sampleMammalBlood,sampleMammalBrain,sampleMammalConjuctivum,sampleMammalCyste,sampleMammalEarpunch,
-          sampleMammalEmbryo,sampleMammalFeces,sampleMammalHeart,sampleMammalHair,
-          sampleMammalIntestine,sampleMammalLiver,sampleMammalLung,sampleMammalLymphNode,sampleMammalKidney,
-          sampleMammalMuscle,sampleMammalSkinPiece,sampleMammalSkinComplete,sampleMammalSpleen,sampleMammalStomach,
-          sampleMammalTongue,sampleMammalUterus,
-          sampleReptileSkin, sampleReptileTailclip,
-          sampleUnknownSwab,sampleUnknownFeces,
-          leafSample,
-          eDnaWaterFilter,
-          soilSample
-          </subTypeRight>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleAmphibianLarva</subTypeRight>
         </type>
-        <type code="waterToFilter" default="0">
+        <type code="dnaExtraction_sampleAmphibianEmbryo" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleAmphibianEmbryo</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleAmphibianTailclip" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleAmphibianTailclip</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleAmphibianFrogspawn" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleAmphibianFrogspawn</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleAmphibianSwabCloaca" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleAmphibianSwabCloaca</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleAmphibianSwabMouth" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleAmphibianSwabMouth</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleAmphibianSwabEar" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleAmphibianSwabEar</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleAmphibianToeclip" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleAmphibianToeclip</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleFishFinclip" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleFishFinclip</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleFishMuscle" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleFishMuscle</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleInvertebrateLarva" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleInvertebrateLarva</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleInvertebrateLeg" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleInvertebrateLeg</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleInvertebrateWingclip" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleInvertebrateWingclip</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleMammalBladder" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleMammalBladder</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleMammalBlood" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleMammalBlood</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleMammalBrain" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleMammalBrain</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleMammalConjuctivum" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleMammalConjuctivum</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleMammalCyste" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleMammalCyste</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleMammalEarpunch" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleMammalEarpunch</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleMammalEmbryo" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleMammalEmbryo</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleMammalFeces" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleMammalFeces</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleMammalHeart" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleMammalHeart</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleMammalHair" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleMammalHair</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleMammalIntestine" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleMammalIntestine</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleMammalLiver" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleMammalLiver</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleMammalLung" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleMammalLung</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleMammalLymphNode" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleMammalLymphNode</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleMammalKidney" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleMammalKidney</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleMammalMuscle" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleMammalMuscle</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleMammalSkinPiece" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleMammalSkinPiece</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleMammalSkinComplete" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleMammalSkinComplete</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleMammalSpleen" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleMammalSpleen</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleMammalStomach" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleMammalStomach</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleMammalTongue" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleMammalTongue</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleMammalUterus" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleMammalUterus</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleReptileSkin" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleReptileSkin</subTypeRight>
+        </type>
+        <type code="dnaExtraction_sampleReptileTailclip" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>sampleReptileTailclip</subTypeRight>
+        </type>
+        <type code="dnaExtraction_leafSample" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>oDNA</subTypeLeft>
+          <subTypeRight>leafSample</subTypeRight>
+        </type>
+        <type code="dnaExtraction_eDnaWaterFilter" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>eDNA</subTypeLeft>
+          <subTypeRight>eDnaWaterFilter</subTypeRight>
+        </type>
+        <type code="dnaExtraction_mineralSoilSample" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>eDNA</subTypeLeft>
+          <subTypeRight>mineralSoilSample</subTypeRight>
+        </type>
+        <type code="dnaExtraction_peatSoilSample" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>eDNA</subTypeLeft>
+          <subTypeRight>peatSoilSample</subTypeRight>
+        </type>
+        <type code="dnaExtraction_organicSoilSample" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is extracted from</typename>
+              <typename_reverse>is extracted to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>eDNA</subTypeLeft>
+          <subTypeRight>organicSoilSample</subTypeRight>
+        </type>
+        <type code="waterToFilter" default="0" rank="3">
           <labels>
             <label locale="en_US">
               <typename>was filtered on</typename>
@@ -12068,7 +12457,7 @@
           <subTypeLeft>waterSample</subTypeLeft>
           <subTypeRight>eDnaWaterFilter</subTypeRight>
         </type>
-        <type code="seedlotSubSample" default="0">
+        <type code="seedlotSubSample" default="0" rank="1">
           <labels>
             <label locale="en_US">
               <typename>is a subsample of</typename>
@@ -12078,38 +12467,217 @@
           <subTypeLeft>seedlot</subTypeLeft>
           <subTypeRight>seedlot</subTypeRight>
         </type>
-        <type code="plantChildOf" default="0">
+        <type code="plantChildOf_livingPlant" default="0" rank="4">
           <labels>
             <label locale="en_US">
               <typename>is a child of</typename>
               <typename_reverse>is a parent of</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>livingPlant,seedlot</subTypeLeft>
+          <subTypeLeft>livingPlant</subTypeLeft>
           <subTypeRight>livingPlant</subTypeRight>
         </type>
-        <type code="livingPlantSampled" default="0">
+        <type code="plantChildOf_seedlot" default="0" rank="4">
           <labels>
             <label locale="en_US">
-              <typename>is a sampled from</typename>
-              <typename_reverse>is a sample of</typename_reverse>
+              <typename>is a child of</typename>
+              <typename_reverse>is a parent of</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>seedlot,leafSample,stemDisc</subTypeLeft>
+          <subTypeLeft>seedlot</subTypeLeft>
           <subTypeRight>livingPlant</subTypeRight>
         </type>
-        <type code="livingAnimalSampled" default="0">
+        <type code="livingPlantSampled_leafSample" default="0" rank="5">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample from</typename>
+              <typename_reverse>was sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>leafSample</subTypeLeft>
+          <subTypeRight>livingPlant</subTypeRight>
+        </type>
+        <type code="livingPlantSampled_stemDisc" default="0" rank="5">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample from</typename>
+              <typename_reverse>is sampled tp</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>stemDisc</subTypeLeft>
+          <subTypeRight>livingPlant</subTypeRight>
+        </type>
+        <type code="livingAnimalSampled_sampleAmphibianTailclip" default="0" rank="5">
           <labels>
             <label locale="en_US">
               <typename>is sampled from</typename>
-              <typename_reverse>is a sample of</typename_reverse>
+              <typename_reverse>was sampled to</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>sampleAmphibian,sampleFish,sampleInvertebrate,sampleMammalBlood,sampleMammalEarpunch,sampleMammalFeces,
-          sampleMammalHair</subTypeLeft>
+          <subTypeLeft>sampleAmphibianTailclip</subTypeLeft>
           <subTypeRight>animalEntireLiving</subTypeRight>
         </type>
-        <type code="livingAnimalDeceased" default="0">
+        <type code="livingAnimalSampled_sampleAmphibianSwabCloaca" default="0" rank="5">
+          <labels>
+            <label locale="en_US">
+              <typename>is sampled from</typename>
+              <typename_reverse>was sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleAmphibianSwabCloaca</subTypeLeft>
+          <subTypeRight>animalEntireLiving</subTypeRight>
+        </type>
+        <type code="livingAnimalSampled_sampleAmphibianSwabMouth" default="0" rank="5">
+          <labels>
+            <label locale="en_US">
+              <typename>is sampled from</typename>
+              <typename_reverse>was sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleAmphibianSwabMouth</subTypeLeft>
+          <subTypeRight>animalEntireLiving</subTypeRight>
+        </type>
+        <type code="livingAnimalSampled_sampleAmphibianSwabEar" default="0" rank="5">
+          <labels>
+            <label locale="en_US">
+              <typename>is sampled from</typename>
+              <typename_reverse>was sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleAmphibianSwabEar</subTypeLeft>
+          <subTypeRight>animalEntireLiving</subTypeRight>
+        </type>
+        <type code="livingAnimalSampled_sampleAmphibianToeclip" default="0" rank="5">
+          <labels>
+            <label locale="en_US">
+              <typename>is sampled from</typename>
+              <typename_reverse>was sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleAmphibianToeclip</subTypeLeft>
+          <subTypeRight>animalEntireLiving</subTypeRight>
+        </type>
+        <type code="livingAnimalSampled_sampleFishFinclip" default="0" rank="5">
+          <labels>
+            <label locale="en_US">
+              <typename>is sampled from</typename>
+              <typename_reverse>was sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleFishFinclip</subTypeLeft>
+          <subTypeRight>animalEntireLiving</subTypeRight>
+        </type>
+        <type code="livingAnimalSampled_sampleFishMuscle" default="0" rank="5">
+          <labels>
+            <label locale="en_US">
+              <typename>is sampled from</typename>
+              <typename_reverse>was sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleFishMuscle</subTypeLeft>
+          <subTypeRight>animalEntireLiving</subTypeRight>
+        </type>
+        <type code="livingAnimalSampled_sampleInvertebrateLeg" default="0" rank="5">
+          <labels>
+            <label locale="en_US">
+              <typename>is sampled from</typename>
+              <typename_reverse>was sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleInvertebrateLeg</subTypeLeft>
+          <subTypeRight>animalEntireLiving</subTypeRight>
+        </type>
+        <type code="livingAnimalSampled_sampleInvertebrateWingclip" default="0" rank="5">
+          <labels>
+            <label locale="en_US">
+              <typename>is sampled from</typename>
+              <typename_reverse>was sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleInvertebrateWingclip</subTypeLeft>
+          <subTypeRight>animalEntireLiving</subTypeRight>
+        </type>
+        <type code="livingAnimalSampled_sampleMammalBlood" default="0" rank="5">
+          <labels>
+            <label locale="en_US">
+              <typename>is sampled from</typename>
+              <typename_reverse>was sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalBlood</subTypeLeft>
+          <subTypeRight>animalEntireLiving</subTypeRight>
+        </type>
+        <type code="livingAnimalSampled_sampleMammalEarpunch" default="0" rank="5">
+          <labels>
+            <label locale="en_US">
+              <typename>is sampled from</typename>
+              <typename_reverse>was sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalEarpunch</subTypeLeft>
+          <subTypeRight>animalEntireLiving</subTypeRight>
+        </type>
+        <type code="livingAnimalSampled_sampleMammalFeces" default="0" rank="5">
+          <labels>
+            <label locale="en_US">
+              <typename>is sampled from</typename>
+              <typename_reverse>was sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalFeces</subTypeLeft>
+          <subTypeRight>animalEntireLiving</subTypeRight>
+        </type>
+        <type code="livingAnimalSampled_sampleMammalHair" default="0" rank="5">
+          <labels>
+            <label locale="en_US">
+              <typename>is sampled from</typename>
+              <typename_reverse>was sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalHair</subTypeLeft>
+          <subTypeRight>animalEntireLiving</subTypeRight>
+        </type>
+        <type code="livingAnimalSampled_sampleMammalSkinPiece" default="0" rank="5">
+          <labels>
+            <label locale="en_US">
+              <typename>is sampled from</typename>
+              <typename_reverse>was sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalSkinPiece</subTypeLeft>
+          <subTypeRight>animalEntireLiving</subTypeRight>
+        </type>
+        <type code="livingAnimalSampled_sampleReptileSkin" default="0" rank="5">
+          <labels>
+            <label locale="en_US">
+              <typename>is sampled from</typename>
+              <typename_reverse>was sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleReptileSkin</subTypeLeft>
+          <subTypeRight>animalEntireLiving</subTypeRight>
+        </type>
+        <type code="livingAnimalSampled_sampleReptileTailclip" default="0" rank="5">
+          <labels>
+            <label locale="en_US">
+              <typename>is sampled from</typename>
+              <typename_reverse>was sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleReptileTailclip</subTypeLeft>
+          <subTypeRight>animalEntireLiving</subTypeRight>
+        </type>
+        <type code="livingAnimalSampled_animalEntireSpecimen" default="0" rank="5"><!--for example parasites-->
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled from</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>animalEntireSpecimen</subTypeLeft>
+          <subTypeRight>animalEntireLiving</subTypeRight>
+        </type>
+        <type code="livingAnimalDeceased" default="0" rank="6">
           <labels>
             <label locale="en_US">
               <typename>deceased to</typename>
@@ -12119,32 +12687,327 @@
           <subTypeLeft>animalEntireLiving</subTypeLeft>
           <subTypeRight>animalEntireCadaver</subTypeRight>
         </type>
-        <type code="mammalAutopsySample" default="0">
+        <type code="mammalAutopsySample_sampleMammalBaculum" default="0" rank="7">
           <labels>
             <label locale="en_US">
               <typename>is a sample of</typename>
               <typename_reverse>is sampled to</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>sampleMammalBaculum,sampleMammalBladder,sampleMammalBlood,sampleMammalBrain,sampleMammalConjuctivum,
-          sampleMammalCyste,sampleMammalEmbryo,sampleMammalFat,sampleMammalHair,sampleMammalHead,sampleMammalHeart,
-          sampleMammalIntestine,sampleMammalKidney,sampleMammalLiver,sampleMammalLowerJaw,sampleMammalLung,sampleMammalLymphNode,
-          sampleMammalMuscle,sampleMammalParasite,sampleMammalSkinComplete,sampleMammalSkinPiece,sampleMammalSkull,
-          sampleMammalSpleen,sampleMammalStomach,sampleMammalStomachContent,sampleMammalTongue,sampleMammalTooth,
-          sampleMammalUterus</subTypeLeft>
+          <subTypeLeft>sampleMammalBaculum</subTypeLeft>
           <subTypeRight>animalEntireCadaver</subTypeRight>
         </type>
-        <type code="soilSubSample" default="0">
+        <type code="mammalAutopsySample_sampleMammalBladder" default="0" rank="7">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalBladder</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mammalAutopsySample_sampleMammalBlood" default="0" rank="7">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalBlood</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mammalAutopsySample_sampleMammalBrain" default="0" rank="7">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalBrain</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mammalAutopsySample_sampleMammalConjuctivum" default="0" rank="7">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalConjuctivum</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mammalAutopsySample_sampleMammalCyste" default="0" rank="7">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalCyste</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mammalAutopsySample_sampleMammalEmbryo" default="0" rank="7">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalEmbryo</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mammalAutopsySample_sampleMammalFat" default="0" rank="7">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalFat</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mammalAutopsySample_sampleMammalHair" default="0" rank="7">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalHair</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mammalAutopsySample_sampleMammalHead" default="0" rank="7">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalHead</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mammalAutopsySample_sampleMammalHeart" default="0" rank="7">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalHeart</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mammalAutopsySample_sampleMammalIntestine" default="0" rank="7">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalIntestine</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mammalAutopsySample_sampleMammalKidney" default="0" rank="7">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalKidney</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mammalAutopsySample_sampleMammalLiver" default="0" rank="7">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalLiver</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mammalAutopsySample_sampleMammalLowerJaw" default="0" rank="7">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalLowerJaw</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mammalAutopsySample_sampleMammalLung" default="0" rank="7">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalLung</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mammalAutopsySample_sampleMammalLymphNode" default="0" rank="7">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalLymphNode</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mammalAutopsySample_sampleMammalMuscle" default="0" rank="7">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalMuscle</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mammalAutopsySample_animalEntireSpecimen" default="0" rank="7"><!--for example parasites-->
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled from</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>animalEntireSpecimen</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mammalAutopsySample_animalBulk" default="0" rank="7"><!--for example parasites-->
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled from</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>animalBulk</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mammalAutopsySample_sampleMammalSkinComplete" default="0" rank="7">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalSkinComplete</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mammalAutopsySample_sampleMammalSkinPiece" default="0" rank="7">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalSkinPiece</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mammalAutopsySample_sampleMammalSkull" default="0" rank="7">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalSkull</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mammalAutopsySample_sampleMammalSpleen" default="0" rank="7">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalSpleen</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mammalAutopsySample_sampleMammalStomach" default="0" rank="7">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalStomach</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mammalAutopsySample_sampleMammalStomachContent" default="0" rank="7">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalStomachContent</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mammalAutopsySample_sampleMammalTongue" default="0" rank="7">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalTongue</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mammalAutopsySample_sampleMammalTooth" default="0" rank="7">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalTooth</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mammalAutopsySample_sampleMammalUterus" default="0" rank="7">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>sampleMammalUterus</subTypeLeft>
+          <subTypeRight>animalEntireCadaver</subTypeRight>
+        </type>
+        <type code="mineralSoilSubSample" default="0" rank="1">
           <labels>
             <label locale="en_US">
               <typename>is a subsample of</typename>
               <typename_reverse>is subsampled to</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>soilSample</subTypeLeft>
-          <subTypeRight>soilSample</subTypeRight>
+          <subTypeLeft>mineralSoilSample</subTypeLeft>
+          <subTypeRight>mineralSoilSample</subTypeRight>
         </type>
-        <type code="objectSameIndividual" default="0"><!--Sometimes multiple observations of the same individual happen and are sampled (e.g. eDNA of wolf bites / feces)-->
+        <type code="peatSoilSubSample" default="0" rank="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is a subsample of</typename>
+              <typename_reverse>is subsampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>peatSoilSample</subTypeLeft>
+          <subTypeRight>peatSoilSample</subTypeRight>
+        </type>
+        <type code="organicSoilSubSample" default="0" rank="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is a subsample of</typename>
+              <typename_reverse>is subsampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>organicSoilSample</subTypeLeft>
+          <subTypeRight>organicSoilSample</subTypeRight>
+        </type>
+        <type code="objectSameIndividual" default="0" rank="8"><!--Sometimes multiple observations of the same individual happen and are sampled (e.g. eDNA of wolf bites / feces)-->
           <labels>
             <label locale="en_US">
               <typename>object of the same individual</typename>
@@ -12154,7 +13017,7 @@
           <subTypeLeft></subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
-        <type code="objectSibling" default="0">
+        <type code="objectSibling" default="0" rank="8">
           <labels>
             <label locale="en_US">
               <typename>object of sibling</typename>
@@ -12164,7 +13027,7 @@
           <subTypeLeft></subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
-        <type code="objectRelatedTo" default="0">
+        <type code="objectRelatedTo" default="0" rank="8">
           <labels>
             <label locale="en_US">
               <typename>is related to</typename>
@@ -12174,7 +13037,7 @@
           <subTypeLeft></subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
-        <type code="parallelSample" default="0"><!--A parallel sample has the same location and taxonomy, but differs in time of sampling and can differ in individual/genetics. Samples can be linked by population or place/plot/provenance. This allows actively listing samples. Ideally this would occur automatically.-->
+        <type code="parallelSample_seedlot" default="0" rank="9"><!--A parallel sample has the same location and taxonomy, but differs in time of sampling and can differ in individual/genetics. Samples can be linked by population or place/plot/provenance. This allows actively listing samples. Ideally this would occur automatically.-->
           <labels>
             <label locale="en_US">
               <typename>is a parallel sample of</typename>
@@ -12260,91 +13123,197 @@
     </relationshipTable>
     <relationshipTable name="ca_objects_x_occurrences">
       <types>
-        <type code="entireCollection" default="0">
+        <type code="entireCollection_animalBulk" default="0" rank="2">
           <labels>
             <label locale="en_US">
-              <typename>is collected entirely</typename>
-              <typename_reverse>is brought into collection</typename_reverse>
+              <typename>is a bulk sample of</typename>
+              <typename_reverse>was bulk sampled</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>animalBulk,animalEntireLiving,animalEntireCadaver,animalEntireSpecimen,livingPlant</subTypeLeft>
-          <subTypeRight>observation,observationPlant,observationAnimal,observationSoil,observationWater</subTypeRight>
+          <subTypeLeft>animalBulk</subTypeLeft>
+          <subTypeRight>observationAnimal</subTypeRight>
         </type>
-        <type code="sampleOf" default="0">
+        <type code="entireCollection_animalEntireLiving" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is the captured animal</typename>
+              <typename_reverse>was captured</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>animalEntireLiving</subTypeLeft>
+          <subTypeRight>observationAnimal</subTypeRight>
+        </type>
+        <type code="entireCollection_animalEntireCadaver" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is the collected cadaver</typename>
+              <typename_reverse>was collected entirely</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>animalEntireCadaver</subTypeLeft>
+          <subTypeRight>observationAnimal</subTypeRight>
+        </type>
+        <type code="entireCollection_livingPlant" default="0" rank="2">
+          <labels>
+            <label locale="en_US">
+              <typename>is the living plant originally observed as</typename>
+              <typename_reverse>was collected entirely</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>livingPlant</subTypeLeft>
+          <subTypeRight>observationPlant</subTypeRight>
+        </type>
+        <type code="sampleOf_observationPlant" default="0" rank="1">
           <labels>
             <label locale="en_US">
               <typename>is a sample/piece of</typename>
               <typename_reverse>is sampled to</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>sampleAmphibianLarva,sampleAmphibianEmbryo,sampleAmphibianTailclip,sampleAmphibianFrogspawn,
-          sampleAmphibianSwabCloaca,sampleAmphibianSwabMouth,sampleAmphibianSwabEar,sampleAmphibianToeclip,
-          sampleFishFinclip,sampleFishMuscle,sampleInvertebrateLarva,
-          sampleInvertebrateLeg,sampleInvertebrateWingclip,
-          sampleReptileSkin,sampleReptileTailclip,
-          sampleMammalBaculum,sampleMammalBladder,sampleMammalBlood,sampleMammalBrain,sampleMammalConjuctivum,sampleMammalCyste,
-          sampleMammalEarpunch,sampleMammalEmbryo,sampleMammalFat,sampleMammalFeces,sampleMammalHead,sampleMammalHeart,sampleMammalHair,
-          sampleMammalIntestine,sampleMammalLiver,sampleMammalLowerJaw,sampleMammalLung,sampleMammalLymphNode,sampleMammalKidney,
-          sampleMammalMuscle,sampleMammalSkinPiece,sampleMammalSkinComplete,sampleMammalSkull,sampleMammalSpleen,sampleMammalStomach,
-          sampleMammalStomachContent,sampleMammalSwabBite,sampleMammalTongue,sampleMammalTooth,sampleMammalUterus,
-          leafSample,littertrapSample,stemDisc,
-          oDNA,eDNA,
-          eDnaWaterFilter,waterSample,
-          mineralSoilSample,peatSoilSample,organicSoilSample
-          </subTypeLeft>
-          <subTypeRight>observation,observationPlant,observationAnimal,observationSoil,observationWater</subTypeRight>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>observationPlant</subTypeRight>
         </type>
-        <type code="childOf" default="0">
+        <type code="sampleOf_observationAnimal" default="0" rank="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample/piece of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>observationAnimal</subTypeRight>
+        </type>
+        <type code="sampleOf_observationSoil" default="0" rank="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample/piece of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>observationSoil</subTypeRight>
+        </type>
+        <type code="sampleOf_observationWater" default="0" rank="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is a sample/piece of</typename>
+              <typename_reverse>is sampled to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>observationWater</subTypeRight>
+        </type>
+        <type code="childOf_livingPlant" default="0" rank="3">
           <labels>
             <label locale="en_US">
               <typename>is a child/progeny of</typename>
               <typename_reverse>is parent of</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>livingPlant,seedlot,animalEntireLiving</subTypeLeft>
-          <subTypeRight>observation,observationPlant,observationAnimal</subTypeRight>
+          <subTypeLeft>livingPlant</subTypeLeft>
+          <subTypeRight>observationPlant</subTypeRight>
         </type>
-        <type code="cloneOf" default="0">
+        <type code="childOf_seedlot" default="0" rank="3">
+          <labels>
+            <label locale="en_US">
+              <typename>is a child/progeny of</typename>
+              <typename_reverse>is parent of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>seedlot</subTypeLeft>
+          <subTypeRight>observationPlant</subTypeRight>
+        </type>
+        <type code="childOf_animalEntireLiving" default="0" rank="3">
+          <labels>
+            <label locale="en_US">
+              <typename>is a child/progeny of</typename>
+              <typename_reverse>is parent of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>animalEntireLiving</subTypeLeft>
+          <subTypeRight>observationAnimal</subTypeRight>
+        </type>
+        <type code="cloneOf_livingPlant" default="0" rank="4">
           <labels>
             <label locale="en_US">
               <typename>is a clone of</typename>
               <typename_reverse>is cloned to</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>livingPlant,seedlot</subTypeLeft>
-          <subTypeRight>observation,observationPlant,observationAnimal</subTypeRight>
+          <subTypeLeft>livingPlant</subTypeLeft>
+          <subTypeRight>observationPlant</subTypeRight>
         </type>
-        <type code="childOfCloneOf" default="0">
+        <type code="childOfCloneOf_livingPlant" default="0" rank="5">
           <labels>
             <label locale="en_US">
               <typename>is a child of a clone of</typename>
               <typename_reverse>is wild original from which the parent was cloned</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>livingPlant,seedlot</subTypeLeft>
-          <subTypeRight>observation,observationPlant,observationAnimal</subTypeRight>
+          <subTypeLeft>livingPlant</subTypeLeft>
+          <subTypeRight>observationPlant</subTypeRight>
         </type>
-        <type code="grandchildOf" default="0">
+        <type code="childOfCloneOf_seedlot" default="0" rank="5">
+          <labels>
+            <label locale="en_US">
+              <typename>is a child of a clone of</typename>
+              <typename_reverse>is wild original from which the parent was cloned</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>seedlot</subTypeLeft>
+          <subTypeRight>observationPlant</subTypeRight>
+        </type>
+        <type code="grandchildOf_livingPlant" default="0" rank="6">
           <labels>
             <label locale="en_US">
               <typename>is a grandchild</typename>
               <typename_reverse>is grandparent of</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>livingPlant,seedlot,animalEntireLiving</subTypeLeft>
-          <subTypeRight>observation,observationPlant,observationAnimal</subTypeRight>
+          <subTypeLeft>livingPlant</subTypeLeft>
+          <subTypeRight>observationPlant</subTypeRight>
         </type>
-        <type code="grandchildOfCloneOf" default="0">
+        <type code="grandchildOf_seedlot" default="0" rank="6">
+          <labels>
+            <label locale="en_US">
+              <typename>is a grandchild</typename>
+              <typename_reverse>is grandparent of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>seedlot</subTypeLeft>
+          <subTypeRight>observationPlant</subTypeRight>
+        </type>
+        <type code="grandchildOf_animalEntireLiving" default="0" rank="6">
+          <labels>
+            <label locale="en_US">
+              <typename>is a grandchild</typename>
+              <typename_reverse>is grandparent of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>animalEntireLiving</subTypeLeft>
+          <subTypeRight>observationAnimal</subTypeRight>
+        </type>
+        <type code="grandchildOfCloneOf_livingPlant" default="0" rank="7">
           <labels>
             <label locale="en_US">
               <typename>is a grandchild of a clone of</typename>
               <typename_reverse>is wild original from which the grandparent was cloned</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>livingPlant,seedlot</subTypeLeft>
-          <subTypeRight>observation,observationPlant,observationAnimal</subTypeRight>
+          <subTypeLeft>livingPlant</subTypeLeft>
+          <subTypeRight>observationPlant</subTypeRight>
         </type>
-        <type code="ObjectRelatedTo" default="0">
+        <type code="grandchildOfCloneOf_seedlot" default="0" rank="7">
+          <labels>
+            <label locale="en_US">
+              <typename>is a grandchild of a clone of</typename>
+              <typename_reverse>is wild original from which the grandparent was cloned</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>seedlot</subTypeLeft>
+          <subTypeRight>observationPlant</subTypeRight>
+        </type>
+        <type code="ObjectRelatedTo_observationPlant" default="0" rank="8">
           <labels>
             <label locale="en_US">
               <typename>is related to</typename>
@@ -12352,9 +13321,19 @@
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
-          <subTypeRight>observation,observationPlant,observationAnimal</subTypeRight>
+          <subTypeRight>observationPlant</subTypeRight>
         </type>
-		    <type code="resultingObjects" default="0">
+        <type code="ObjectRelatedTo_observationAnimal" default="0" rank="8">
+          <labels>
+            <label locale="en_US">
+              <typename>is related to</typename>
+              <typename_reverse>is wild relative from</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>observationAnimal</subTypeRight>
+        </type>
+		    <type code="resultingObjects_fieldwork" default="0" rank="9">
           <labels>
             <label locale="en_US">
               <typename>is result of</typename>
@@ -12362,9 +13341,19 @@
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
-          <subTypeRight>fieldwork,project</subTypeRight>
+          <subTypeRight>fieldwork</subTypeRight>
         </type>
-		    <type code="executedOnObject" default="0">
+		    <type code="resultingObjects_project" default="0" rank="9">
+          <labels>
+            <label locale="en_US">
+              <typename>is result of</typename>
+              <typename_reverse>resulted in</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>project</subTypeRight>
+        </type>
+		    <type code="executedOnObject_idBacteriological" default="0" rank="10">
           <labels>
             <label locale="en_US">
               <typename>is subjected to</typename>
@@ -12372,9 +13361,89 @@
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
-          <subTypeRight>identification,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial,valuation,curation,disposal,treatment,renewal,transfer</subTypeRight>
+          <subTypeRight>identificationBacteriological</subTypeRight>
         </type>
-		    <type code="INBOlabUse" default="0">
+		    <type code="executedOnObject_idBotanical" default="0" rank="10">
+          <labels>
+            <label locale="en_US">
+              <typename>is subjected to</typename>
+              <typename_reverse>is executed on</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>identificationBotanical</subTypeRight>
+        </type>
+		    <type code="executedOnObject_idViral" default="0" rank="10">
+          <labels>
+            <label locale="en_US">
+              <typename>is subjected to</typename>
+              <typename_reverse>is executed on</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>identificationViral</subTypeRight>
+        </type>
+		    <type code="executedOnObject_idZoologial" default="0" rank="10">
+          <labels>
+            <label locale="en_US">
+              <typename>is subjected to</typename>
+              <typename_reverse>is executed on</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>identificationZoologial</subTypeRight>
+        </type>
+		    <type code="executedOnObject_valuation" default="0" rank="10">
+          <labels>
+            <label locale="en_US">
+              <typename>is subjected to</typename>
+              <typename_reverse>is executed on</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>valuation</subTypeRight>
+        </type>
+		    <type code="executedOnObject_disposal" default="0" rank="10">
+          <labels>
+            <label locale="en_US">
+              <typename>is subjected to</typename>
+              <typename_reverse>is executed on</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>disposal</subTypeRight>
+        </type>
+		    <type code="executedOnObject_treatment" default="0" rank="10">
+          <labels>
+            <label locale="en_US">
+              <typename>is subjected to</typename>
+              <typename_reverse>is executed on</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>treatment</subTypeRight>
+        </type>
+		    <type code="executedOnObject_renewal" default="0" rank="10">
+          <labels>
+            <label locale="en_US">
+              <typename>is subjected to</typename>
+              <typename_reverse>is executed on</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>renewal</subTypeRight>
+        </type>
+		    <type code="executedOnObject_transfer" default="0" rank="10">
+          <labels>
+            <label locale="en_US">
+              <typename>is subjected to</typename>
+              <typename_reverse>is executed on</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>transfer</subTypeRight>
+        </type>
+		    <type code="INBOlabUse" default="0" rank="11">
           <labels>
             <label locale="en_US">
               <typename>is used in lab project</typename>
@@ -12384,7 +13453,7 @@
           <subTypeLeft></subTypeLeft>
           <subTypeRight>project</subTypeRight>
         </type>
-		    <type code="reuse" default="0">
+		    <type code="reuse" default="0" rank="12">
           <labels>
             <label locale="en_US">
               <typename>is (re)used in project</typename>
@@ -12929,7 +13998,7 @@
         <placement code="ca_occurrence_observation_name">
           <bundle>ca_occurrences</bundle>
 			    <settings>
-            <setting name="label" locale="en_US">samplingPoint_idno</setting>
+            <setting name="label" locale="en_US">samplingPoint_name</setting>
             <setting name="restrict_to_types">observationAnimal,observationSoil,observationWater,observationPlant</setting>
             <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
             <setting name="display_template">^ca_occurrences.preferred_labels</setting>
@@ -12938,7 +14007,7 @@
         <placement code="ca_occurrence_observation_date">
           <bundle>ca_occurrences</bundle>
 			    <settings>
-            <setting name="label" locale="en_US">samplingPoint_idno</setting>
+            <setting name="label" locale="en_US">samplingPoint_date</setting>
             <setting name="restrict_to_types">observationAnimal,observationSoil,observationWater,observationPlant</setting>
             <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
             <setting name="display_template">^ca_occurrences.dateRange</setting>
@@ -12947,20 +14016,20 @@
         <placement code="ca_occurrence_observation_place">
           <bundle>ca_occurrences</bundle>
 			    <settings>
-            <setting name="label" locale="en_US">samplingPoint_idno</setting>
+            <setting name="label" locale="en_US">samplingPoint_verbatimLocality</setting>
             <setting name="restrict_to_types">observationAnimal,observationSoil,observationWater,observationPlant</setting>
             <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
-            <setting name="display_template"><unit relativeTo="ca_occurrences">^ca_places.preferred_labels</unit></setting>
+            <setting name="display_template">^ca_occurrences.verbatimLocality</setting>
           </settings>
         </placement>
-        <placement code="ca_objects.verbatimSamplingDepth">
-          <bundle>ca_objects.verbatimSamplingDepth</bundle>
+        <placement code="ca_objects_verbatimSamplingDepth">
+          <bundle>ca_objects.verbatimDepth</bundle>
         </placement>
-        <placement code="ca_objects.minimumSamplingHeightInMetres">
-          <bundle>ca_objects.minimumSamplingHeightInMetres</bundle>
+        <placement code="ca_objects_minimumDepthInMetres">
+          <bundle>ca_objects.minimumDepthInMetres</bundle>
         </placement>
-        <placement code="ca_objects.maximumSamplingDepthInMetres">
-          <bundle>ca_objects.maximumSamplingDepthInMetres</bundle>
+        <placement code="ca_objects_maximumDepthInMetres">
+          <bundle>ca_objects.maximumDepthInMetres</bundle>
         </placement>
         <placement code="is_deaccessioned">
           <bundle>ca_objects.is_deaccessioned</bundle>
@@ -13058,7 +14127,7 @@
         <placement code="ca_occurrence_observation_name">
           <bundle>ca_occurrences</bundle>
 			    <settings>
-            <setting name="label" locale="en_US">samplingPoint_idno</setting>
+            <setting name="label" locale="en_US">samplingPoint_name</setting>
             <setting name="restrict_to_types">observationAnimal,observationSoil,observationWater,observationPlant</setting>
             <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
             <setting name="display_template">^ca_occurrences.preferred_labels</setting>
@@ -13067,25 +14136,25 @@
         <placement code="ca_occurrence_observation_date">
           <bundle>ca_occurrences</bundle>
 			    <settings>
-            <setting name="label" locale="en_US">samplingPoint_idno</setting>
+            <setting name="label" locale="en_US">samplingPoint_date</setting>
             <setting name="restrict_to_types">observationAnimal,observationSoil,observationWater,observationPlant</setting>
             <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
             <setting name="display_template">^ca_occurrences.dateRange</setting>
           </settings>
         </placement>
-        <placement code="ca_occurrence_observation_place">
+        <placement code="ca_occurrence_observation_verbatimLocality">
           <bundle>ca_occurrences</bundle>
 			    <settings>
-            <setting name="label" locale="en_US">samplingPoint_idno</setting>
+            <setting name="label" locale="en_US">samplingPoint_verbatimLocality</setting>
             <setting name="restrict_to_types">observationAnimal,observationSoil,observationWater,observationPlant</setting>
             <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
-            <setting name="display_template"><unit relativeTo="ca_occurrences">^ca_places.preferred_labels</unit></setting>
+            <setting name="display_template">^ca_occurrences.verbatimLocality</setting>
           </settings>
         </placement>
         <placement code="ca_occurrence_observation_verbatimIdentification">
           <bundle>ca_occurrences</bundle>
 			    <settings>
-            <setting name="label" locale="en_US">samplingPoint_idno</setting>
+            <setting name="label" locale="en_US">samplingPoint_verbatimIdentification</setting>
             <setting name="restrict_to_types">observationAnimal,observationSoil,observationWater,observationPlant</setting>
             <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
             <setting name="display_template">^ca_occurrences.verbatimIdentification</setting>
@@ -13094,7 +14163,7 @@
         <placement code="ca_occurrence_observation_standardizedIdentification">
           <bundle>ca_occurrences</bundle>
 			    <settings>
-            <setting name="label" locale="en_US">samplingPoint_idno</setting>
+            <setting name="label" locale="en_US">samplingPoint_standardizedIdentification</setting>
             <setting name="restrict_to_types">observationAnimal,observationSoil,observationWater,observationPlant</setting>
             <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
             <setting name="display_template">^ca_occurrences.standardizedIdentification</setting>
