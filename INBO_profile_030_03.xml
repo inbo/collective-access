@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.42</profileName>
+  <profileName>[INBO] INBO natural science collection v0.42.06</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <locales>
     <locale lang="en" country="US">English</locale>
     <locale lang="nl" country="BE">Nederlands</locale>
+    <locale lang="de" country="DE" dontUseForCataloguing="1">Deutsch (Deutschland)</locale>
+    <locale lang="fr" country="FR" dontUseForCataloguing="1">Français</locale>
+    <locale lang="it" country="IT" dontUseForCataloguing="1">Italiano</locale>
   </locales>
   <lists>
     <!--Management lists-->
@@ -580,8 +583,8 @@
               <item idno="livingPlant" enabled="1" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>Plant, living</name_singular>
-                    <name_plural>Plant, living</name_plural>
+                    <name_singular>Plant in living collection</name_singular>
+                    <name_plural>Plants in living collection</name_plural>
                   </label>
                 </labels>
               </item>
@@ -698,7 +701,7 @@
         </label>
         </labels>
 		    <items>
-          <item idno="population" enabled="1" default="0">
+          <item idno="population" enabled="1" default="0"><!--Although this can coincide with place concepts, it is taxon dependent-->
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>population</name_singular>
@@ -706,7 +709,7 @@
               </label>
             </labels>
           </item>
-          <item idno="provenanceRegion" enabled="1" default="0">
+          <item idno="provenanceRegion" enabled="1" default="0"><!--Although this can coincide with place concepts, it is taxon dependent-->
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>provenance region</name_singular>
@@ -804,11 +807,11 @@
                   </label>
                 </labels>
               </item>
-              <item idno="cityMunicipalityVillage" enabled="1" default="0">
+              <item idno="cityTownMunicipalityVillage" enabled="1" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>city, municipality, village, ...</name_singular>
-                    <name_plural>cities, municipalities, villages, ...</name_plural>
+                    <name_singular>city, town, municipality, village, ...</name_singular>
+                    <name_plural>cities, town, municipalities, villages, ...</name_plural>
                   </label>
                 </labels>
               </item>
@@ -869,7 +872,15 @@
               </label>
             </labels>
             <items>
-              <item idno="workingCollection" enabled="1" default="1">
+              <item idno="archiveCollection" enabled="1" default="1"><!--Purpose: validate executed research, re-use samples. To be inventoried at the object-level.-->
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>Archive collection</name_singular>
+                    <name_plural>Archive collections</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="workingCollection" enabled="1" default="1"><!--Purpose: to help identify in research. This collection is actively referenced to in the material and methods of published research. Best practice is that the objects are rich in metadata as possible, including date and place information per object.-->
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>Working/Reference collection</name_singular>
@@ -877,7 +888,7 @@
                   </label>
                 </labels>
               </item>
-              <item idno="archiveCollection" enabled="1" default="1">
+              <item idno="didacticCollection" enabled="1" default="1"><!--Purpose: to train staff in taxonomic identifications. To be inventoried at the collection-level.-->
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>Archive collection</name_singular>
@@ -1036,7 +1047,7 @@
                       </label>
                     </labels>
                   </item>
-                  <item idno="treatment" enabled="0" default="1">
+                  <item idno="treatment" enabled="1" default="1">
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>Treatment</name_singular>
@@ -1044,7 +1055,7 @@
                       </label>
                     </labels>
                   </item>
-                  <item idno="renewal" enabled="0" default="1">
+                  <item idno="renewal" enabled="1" default="1">
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>Renewal</name_singular>
@@ -1131,75 +1142,93 @@
           </label>
         </labels>
         <items>
-          <item idno="plantedSite" enabled="1" default="0">
+          <item idno="INBOStorage" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>planted site</name_singular>
-                <name_plural>planted sites</name_plural>
+                <name_singular>INBO storage</name_singular>
+                <name_plural>INBO storage</name_plural>
               </label>
             </labels>
+            <items>
+              <item idno="plantedSite" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>planted site</name_singular>
+                    <name_plural>planted sites</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="spotPlantedSite" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>spot within a planted site</name_singular>
+                    <name_plural>spots within a planted site</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="building" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>building</name_singular>
+                    <name_plural>buildings</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="floor" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>floor</name_singular>
+                    <name_plural>floors</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="room" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>room</name_singular>
+                    <name_plural>rooms</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="cabinetFridgeFreezer" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>cabinet, fridge or freezer</name_singular>
+                    <name_plural>cabinets, fridges and freezers</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="drawerShelf" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>drawer or shelf</name_singular>
+                    <name_plural>drawers and shelves</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="box" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>box</name_singular>
+                    <name_plural>boxes</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="spot" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>spot</name_singular>
+                    <name_plural>spots</name_plural>
+                  </label>
+                </labels>
+              </item>
+            </items>
           </item>
-          <item idno="spotPlantedSite" enabled="1" default="0">
+          <item idno="nonINBOStorage" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>spot within a planted site</name_singular>
-                <name_plural>spots within a planted site</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="building" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>building</name_singular>
-                <name_plural>buildings</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="floor" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>floor</name_singular>
-                <name_plural>floors</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="room" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>room</name_singular>
-                <name_plural>rooms</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="cabinetFridgeFreezer" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>cabinet, fridge or freezer</name_singular>
-                <name_plural>cabinets, fridges and freezers</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="drawerShelf" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>drawer or shelf</name_singular>
-                <name_plural>drawers and shelves</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="box" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>box</name_singular>
-                <name_plural>boxes</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="spot" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>spot</name_singular>
-                <name_plural>spots</name_plural>
+                <name_singular>non-INBO storage</name_singular>
+                <name_plural>non-INBO storage</name_plural>
               </label>
             </labels>
           </item>
@@ -1208,15 +1237,63 @@
       <list code="object_representation_types" hierarchical="1" system="0" vocabulary="0">
         <labels>
           <label locale="en_US">
-            <name>Object representation types</name>
+            <name>Multimedia types</name>
           </label>
         </labels>
         <items>
-          <item idno="multimedia" enabled="1" default="1">
+          <item idno="objectMultimedia" enabled="1" default="1"><!--For example: a photo of the object-->
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>multimedia</name_singular>
-                <name_plural>multimedia</name_plural>
+                <name_singular>object multimedia</name_singular>
+                <name_plural>object multimedia</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="observationMultimedia" enabled="1" default="1"><!--For example: a photo of the plant,animal-->
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>observation multimedia</name_singular>
+                <name_plural>observation multimedia</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="samplingMultimedia" enabled="1" default="1"><!--For example: a photo of the procedure/sampling-->
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>sampling multimedia</name_singular>
+                <name_plural>sampling multimedia</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="measurementMultimedia" enabled="1" default="1"><!--For example: a photo of the measurement-->
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>measurement multimedia</name_singular>
+                <name_plural>measurement multimedia</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="collectionMultimedia" enabled="1" default="1"><!--For example: a photo of the collection-->
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>collection multimedia</name_singular>
+                <name_plural>collection multimedia</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="curationMultimedia" enabled="1" default="1"><!--For example: a photo of the collection-->
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>curation multimedia</name_singular>
+                <name_plural>curation multimedia</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="loanMultimedia" enabled="1" default="1"><!--For example: a photo of the collection-->
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>curation multimedia</name_singular>
+                <name_plural>curation multimedia</name_plural>
               </label>
             </labels>
           </item>
@@ -3182,6 +3259,40 @@
             </item>
           </items>
       </list>
+      <list code="count_unit" hierarchical="0" system="0" vocabulary="1">
+          <labels>
+            <label locale="en_US">
+              <name>Unit used for germination measurement</name>
+            </label>
+          </labels>
+          <items>
+            <item idno="numberOf" enabled="1" default="0">
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>number of</name_singular>
+                  <name_plural>number of</name_plural>
+                </label>
+              </labels>
+            </item>
+          </items>
+      </list>
+      <list code="purity_unit" hierarchical="0" system="0" vocabulary="1">
+          <labels>
+            <label locale="en_US">
+              <name>Unit used for germination measurement</name>
+            </label>
+          </labels>
+          <items>
+            <item idno="percentage" enabled="1" default="0">
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>%</name_singular>
+                  <name_plural>%</name_plural>
+                </label>
+              </labels>
+            </item>
+          </items>
+      </list>
       <list code="habitat_types" hierarchical="0" system="0" vocabulary="1">
         <labels>
           <label locale="nl_BE">
@@ -5049,34 +5160,6 @@
               <setting name="canBeUsedInDisplay">1</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="weightPublishedProcedure" datatype="Url">
-            <labels>
-              <label locale="en_US">
-                <name>Published procedure</name>
-                <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
-              </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
-          <metadataElement code="weightProcedure" datatype="Text">
-            <labels>
-              <label locale="en_US">
-                <name>Procedure</name>
-                <description>Description of the measurement procedure.</description>
-              </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
           <metadataElement code="weightAppliesTo" datatype="Text">
             <labels>
               <label locale="en_US">
@@ -5132,6 +5215,34 @@
               </label>
             </labels>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementAccuracy</documentationUrl>
+          </metadataElement>
+          <metadataElement code="weightPublishedProcedure" datatype="Url">
+            <labels>
+              <label locale="en_US">
+                <name>Published procedure</name>
+                <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="weightProcedure" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Procedure</name>
+                <description>Description of the measurement procedure.</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
           </metadataElement>
           <metadataElement code="weightRemarks" datatype="Text">
             <labels>
@@ -5193,39 +5304,11 @@
               <setting name="canBeUsedInDisplay">1</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="lengthPublishedProcedure" datatype="Url">
-            <labels>
-              <label locale="en_US">
-                <name>Published procedure</name>
-                <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
-              </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
-          <metadataElement code="lengthProcedure" datatype="Text">
-            <labels>
-              <label locale="en_US">
-                <name>Procedure</name>
-                <description>Description of the measurement procedure.</description>
-              </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
           <metadataElement code="lengthAppliesTo" datatype="Text">
             <labels>
               <label locale="en_US">
                 <name>measurementAppliesTo</name>
-                <description>Further specification of what exactly was weighed. For example: length of the arm/leg/tail,...</description>
+                <description>Further specification of what exactly was measured. For example: length of the arm/leg/tail,..., diameter at breast height, height, ...</description>
               </label>
             </labels>
             <documentationUrl>http://rs.tdwg.org/abcd/terms/appliesTo</documentationUrl>
@@ -5277,6 +5360,34 @@
             </labels>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementAccuracy</documentationUrl>
           </metadataElement>
+          <metadataElement code="lengthPublishedProcedure" datatype="Url">
+            <labels>
+              <label locale="en_US">
+                <name>Published procedure</name>
+                <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="lengthProcedure" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Procedure</name>
+                <description>Description of the measurement procedure.</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
           <metadataElement code="lengthRemarks" datatype="Text">
             <labels>
             <label locale="en_US">
@@ -5290,6 +5401,7 @@
         <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">50</setting>
@@ -5337,33 +5449,14 @@
               <setting name="canBeUsedInDisplay">1</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="agePublishedProcedure" datatype="Url">
+          <metadataElement code="ageAccuracy" datatype="Text">
             <labels>
               <label locale="en_US">
-                <name>Published procedure</name>
-                <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
+                <name>Accuracy</name>
+                <description>The description of the potential error associated with the measurementValue.</description>
               </label>
             </labels>
-            <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
-          <metadataElement code="ageProcedure" datatype="Text">
-            <labels>
-              <label locale="en_US">
-                <name>Procedure</name>
-                <description>Description of the measurement procedure.</description>
-              </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementAccuracy</documentationUrl>
           </metadataElement>
           <metadataElement code="ageLowerValue" datatype="Text">
             <labels>
@@ -5403,14 +5496,33 @@
             </labels>
             <documentationUrl>	http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
           </metadataElement>
-          <metadataElement code="ageAccuracy" datatype="Text">
+          <metadataElement code="agePublishedProcedure" datatype="Url">
             <labels>
               <label locale="en_US">
-                <name>Accuracy</name>
-                <description>The description of the potential error associated with the measurementValue.</description>
+                <name>Published procedure</name>
+                <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
               </label>
             </labels>
-            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementAccuracy</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="ageProcedure" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Procedure</name>
+                <description>Description of the measurement procedure.</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
           </metadataElement>
           <metadataElement code="ageRemarks" datatype="Text">
             <labels>
@@ -5433,6 +5545,16 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </restriction>
+          <restriction code="r_livingPlant">
+            <table>ca_objects</table>
+            <type>livingPlant</type>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </restriction>
           <restriction code="r_observationAnimal">
             <table>ca_occurrences</table>
             <type>observationAnimal</type>
@@ -5440,6 +5562,151 @@
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">10</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_observationPlant">
+            <table>ca_occurrences</table>
+            <type>observationPlant</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">10</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="densityContainer" datatype="Container">
+        <labels>
+          <label locale="en_US">
+            <name>Density</name>
+          </label>
+        </labels>
+			  <settings>
+          <setting name="lineBreakAfterNumberOfElements">2</setting>
+        </settings>
+	      <elements>
+          <metadataElement code="densityDateRange" datatype="DateRange">
+            <labels>
+              <label locale="en_US">
+                <name>Date (range) and time (range) of the measurement</name>
+                <description>Represents an historic date range accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
+              </label>
+            </labels>
+            <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">40</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+              <setting name="useDatePicker">1</setting>
+              <setting name="canBeUsedInSort">1</setting>
+              <setting name="canBeUsedInSearchForm">1</setting>
+              <setting name="canBeUsedInDisplay">1</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="densityAppliesTo" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>measurementAppliesTo</name>
+                <description>Further specification of what exactly was measured.</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/abcd/terms/appliesTo</documentationUrl>
+          </metadataElement>
+          <metadataElement code="densityLowerValue" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Lower value</name>
+                <description>Lower or only value</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/abcd/terms/lowerValue</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="densityUpperValue" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Upper value</name>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/abcd/terms/upperValue</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="densityUnit" datatype="Text">
+            <labels>
+            <label locale="en_US">
+              <name>Unit</name>
+              <description>Unit used for the measurement.</description>
+            </label>
+            </labels>
+            <documentationUrl>	http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
+          </metadataElement>
+          <metadataElement code="densityPublishedProcedure" datatype="Url">
+            <labels>
+              <label locale="en_US">
+                <name>Published procedure</name>
+                <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="densityProcedure" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Procedure</name>
+                <description>Description of the measurement procedure.</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="densityAccuracy" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Accuracy</name>
+                <description>The description of the potential error associated with the measurementValue.</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementAccuracy</documentationUrl>
+          </metadataElement>
+          <metadataElement code="densityRemarks" datatype="Text">
+            <labels>
+            <label locale="en_US">
+              <name>Remarks</name>
+              <description>Any relevant remaining remarks on the measurement. This could be who did the measurement, if something unusual was observed during the measurement,... For age measurements this can be a text value expressing the age, e.g. "estimated to be younger than five", which could be complemented by the minimum value 0 and the maximum value 5.</description>
+            </label>
+            </labels>
+            <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/gelRemarks</documentationUrl>
+          </metadataElement>
+	      </elements>
+        <typeRestrictions>
+          <restriction code="r_livingPlant">
+            <table>ca_objects</table>
+            <type>livingPlant</type>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
             </settings>
           </restriction>
           <restriction code="r_observationPlant">
@@ -5482,33 +5749,14 @@
               <setting name="canBeUsedInDisplay">1</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="germinationPublishedProcedure" datatype="Url">
+          <metadataElement code="germinationAccuracy" datatype="Text">
             <labels>
               <label locale="en_US">
-                <name>Published procedure</name>
-                <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
+                <name>Accuracy</name>
+                <description>The description of the potential error associated with the measurementValue.</description>
               </label>
             </labels>
-            <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
-          <metadataElement code="germinationProcedure" datatype="Text">
-            <labels>
-              <label locale="en_US">
-                <name>Procedure</name>
-                <description>Description of the measurement procedure.</description>
-              </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementAccuracy</documentationUrl>
           </metadataElement>
           <metadataElement code="germinationLowerValue" datatype="Text">
             <labels>
@@ -5548,14 +5796,33 @@
             </labels>
             <documentationUrl>	http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
           </metadataElement>
-          <metadataElement code="germinationAccuracy" datatype="Text">
+          <metadataElement code="germinationPublishedProcedure" datatype="Url">
             <labels>
               <label locale="en_US">
-                <name>Accuracy</name>
-                <description>The description of the potential error associated with the measurementValue.</description>
+                <name>Published procedure</name>
+                <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
               </label>
             </labels>
-            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementAccuracy</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="germinationProcedure" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Procedure</name>
+                <description>Description of the measurement procedure.</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
           </metadataElement>
           <metadataElement code="germinationRemarks" datatype="Text">
             <labels>
@@ -5608,33 +5875,14 @@
               <setting name="canBeUsedInDisplay">1</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="purityPublishedProcedure" datatype="Url">
+          <metadataElement code="purityAccuracy" datatype="Text">
             <labels>
               <label locale="en_US">
-                <name>Published procedure</name>
-                <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
+                <name>Accuracy</name>
+                <description>The description of the potential error associated with the measurementValue.</description>
               </label>
             </labels>
-            <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
-          <metadataElement code="purityProcedure" datatype="Text">
-            <labels>
-              <label locale="en_US">
-                <name>Procedure</name>
-                <description>Description of the measurement procedure.</description>
-              </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementAccuracy</documentationUrl>
           </metadataElement>
           <metadataElement code="purityLowerValue" datatype="Text">
             <labels>
@@ -5665,7 +5913,7 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="purityUnit" datatype="List" list="germination_unit">
+          <metadataElement code="purityUnit" datatype="List" list="purity_unit">
             <labels>
             <label locale="en_US">
               <name>Unit</name>
@@ -5674,14 +5922,33 @@
             </labels>
             <documentationUrl>	http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
           </metadataElement>
-          <metadataElement code="purityAccuracy" datatype="Text">
+          <metadataElement code="purityPublishedProcedure" datatype="Url">
             <labels>
               <label locale="en_US">
-                <name>Accuracy</name>
-                <description>The description of the potential error associated with the measurementValue.</description>
+                <name>Published procedure</name>
+                <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
               </label>
             </labels>
-            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementAccuracy</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="purityProcedure" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Procedure</name>
+                <description>Description of the measurement procedure.</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
           </metadataElement>
           <metadataElement code="purityRemarks" datatype="Text">
             <labels>
@@ -5697,6 +5964,140 @@
           <restriction code="r_seedlot">
             <table>ca_objects</table>
             <type>seedlot</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">10</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="countContainer" datatype="Container">
+        <labels>
+          <label locale="en_US">
+            <name>Count</name>
+          </label>
+        </labels>
+			  <settings>
+          <setting name="lineBreakAfterNumberOfElements">2</setting>
+        </settings>
+	      <elements>
+          <metadataElement code="countDateRange" datatype="DateRange">
+            <labels>
+              <label locale="en_US">
+                <name>Date (range) and time (range)</name>
+                <description>Represents an historic date range accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
+              </label>
+            </labels>
+            <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">40</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+              <setting name="useDatePicker">1</setting>
+              <setting name="canBeUsedInSort">1</setting>
+              <setting name="canBeUsedInSearchForm">1</setting>
+              <setting name="canBeUsedInDisplay">1</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="countAccuracy" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Accuracy</name>
+                <description>The description of the potential error associated with the measurementValue. Can also include words such as: about, approximately, ..</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementAccuracy</documentationUrl>
+          </metadataElement>
+          <metadataElement code="countLowerValue" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Lower value</name>
+                <description>Lower or only value</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/abcd/terms/lowerValue</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="countUpperValue" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Upper value</name>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/abcd/terms/upperValue</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="countUnit" datatype="List" list="count_unit">
+            <labels>
+            <label locale="en_US">
+              <name>Unit</name>
+              <description>Unit used for the measurement.</description>
+            </label>
+            </labels>
+            <documentationUrl>	http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
+          </metadataElement>
+          <metadataElement code="countAppliesTo" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>measurementAppliesTo</name>
+                <description>Further specification of what exactly was counted. For example: seeds, hairs, nodes, parasites, ...</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/abcd/terms/appliesTo</documentationUrl>
+          </metadataElement>
+          <metadataElement code="countPublishedProcedure" datatype="Url">
+            <labels>
+              <label locale="en_US">
+                <name>Published procedure</name>
+                <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="countProcedure" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Procedure</name>
+                <description>Description of the measurement procedure.</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="countRemarks" datatype="Text">
+            <labels>
+            <label locale="en_US">
+              <name>Remarks</name>
+              <description>Any relevant remaining remarks on the measurement. This could be who did the measurement, if something unusual was observed during the measurement,... For age measurements this can be a text value expressing the age, e.g. "estimated to be younger than five", which could be complemented by the minimum value 0 and the maximum value 5.</description>
+            </label>
+            </labels>
+            <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/gelRemarks</documentationUrl>
+          </metadataElement>
+	      </elements>
+        <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">10</setting>
@@ -5769,6 +6170,14 @@
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_representations">
+            <table>ca_object_representations</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -7569,6 +7978,32 @@
           </restriction>
         </typeRestrictions>
 	    </metadataElement>
+    <!--Curation-->
+	    <metadataElement code="curationResult" datatype="Text">
+        <labels>
+        <label locale="en_US">
+          <name>Curation result</name>
+          <description>A further specification of the curation action. For example: type: renewal -> renewal of the container to aluminum pouch.</description>
+        </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_curation">
+            <table>ca_occurrences</table>
+            <type>curation</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+	    </metadataElement>
 	  <!--Administration-->
 	    <metadataElement code="adminObligation" datatype="Container">
         <labels>
@@ -7669,70 +8104,18 @@
         </typeRestrictions>
       </metadataElement>
 	  <!--Entity-->
-	    <metadataElement code="address" datatype="Container">
+	    <metadataElement code="addressOrganization" datatype="Container">
         <labels>
           <label locale="en_US">
-            <name>Address</name>
+            <name>Address of organization</name>
           </label>
         </labels>
         <settings/>
         <elements>
-          <metadataElement code="directedTo" datatype="Container">
+          <metadataElement code="addressOrganizationWithinCity" datatype="Container">
             <labels>
               <label locale="en_US">
-                <name>Address line 2</name>
-              </label>
-            </labels>
-            <settings/>
-            <elements>
-              <metadataElement code="addressee" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Addressee</name>
-                    <description>This can be name, "To whom it may concern", "To the members of organization X", ...</description>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">255</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="addresseeRole" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Role of the addressee within the organization</name>
-                    <description>This can be, "Professor of X", "Curator of Y". Can also be left blank</description>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">255</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="addresseeLocation" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Location of the addressee within the building</name>
-                    <description>Here the department, research group, lab, ... can be entered, so that from the reception, the written communication or package is directed to the correct subdivision of the organization.</description>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">255</setting>
-                </settings>
-              </metadataElement>
-            </elements>
-          </metadataElement>
-          <metadataElement code="addressWithinCity" datatype="Container">
-            <labels>
-              <label locale="en_US">
-                <name>Street</name>
+                <name>Address within the city, town, municipality, village, ...</name>
               </label>
             </labels>
             <settings/>
@@ -7780,10 +8163,10 @@
               </metadataElement>
             </elements>
           </metadataElement>
-          <metadataElement code="addressWithinWorld" datatype="Container">
+          <metadataElement code="addressOrganizationWithinWorld" datatype="Container">
             <labels>
               <label locale="en_US">
-                <name>City</name>
+                <name>Address within the World</name>
               </label>
             </labels>
             <settings/>
@@ -7791,7 +8174,7 @@
               <metadataElement code="city" datatype="Text">
                 <labels>
                   <label locale="en_US">
-                    <name>City or municipality</name>
+                    <name>City, town, municipality, village, ...</name>
                   </label>
                 </labels>
                 <settings>
@@ -7827,7 +8210,7 @@
                   <setting name="maxChars">255</setting>
                 </settings>
               </metadataElement>
-              <metadataElement code="entity_country" datatype="Text">
+              <metadataElement code="org_country" datatype="Text">
                 <labels>
                   <label locale="en_US">
                     <name>Country</name>
@@ -7846,14 +8229,6 @@
         <typeRestrictions>
           <restriction code="r_entity">
             <table>ca_entities</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_loan">
-            <table>ca_loans</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -7932,6 +8307,37 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
+      <metadataElement code="website" datatype="Url">
+        <labels>
+          <label locale="en_US">
+            <name>Website</name>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">90</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_entities">
+            <table>ca_entities</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_collections">
+            <table>ca_collections</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
 	  <!--Storage locations-->
 	    <metadataElement code="preservationTemperature" datatype="List" list="preservation_temperature">
         <labels>
@@ -7957,6 +8363,191 @@
         </typeRestrictions>
       </metadataElement>
 	  <!--Loans-->
+	    <metadataElement code="addressLoan" datatype="Container">
+        <labels>
+          <label locale="en_US">
+            <name>Address for loan package or written communication</name>
+          </label>
+        </labels>
+        <settings/>
+        <elements>
+          <metadataElement code="directedTo" datatype="Container">
+            <labels>
+              <label locale="en_US">
+                <name>Address line 2</name>
+              </label>
+            </labels>
+            <settings/>
+            <elements>
+              <metadataElement code="addressee" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>Addressee</name>
+                    <description>This can be name, "To whom it may concern", "To the members of organization X", ...</description>
+                  </label>
+                </labels>
+                <settings>
+                  <setting name="fieldWidth">70</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">255</setting>
+                </settings>
+              </metadataElement>
+              <metadataElement code="addresseeRole" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>Role of the addressee within the organization</name>
+                    <description>This can be, "Professor of X", "Curator of Y". Can also be left blank</description>
+                  </label>
+                </labels>
+                <settings>
+                  <setting name="fieldWidth">70</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">255</setting>
+                </settings>
+              </metadataElement>
+              <metadataElement code="addresseeLocation" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>Location of the addressee within the building</name>
+                    <description>Here the department, research group, lab, ... can be entered, so that from the reception, the written communication or package is directed to the correct subdivision of the organization.</description>
+                  </label>
+                </labels>
+                <settings>
+                  <setting name="fieldWidth">70</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">255</setting>
+                </settings>
+              </metadataElement>
+            </elements>
+          </metadataElement>
+          <metadataElement code="addressLoanWithinCity" datatype="Container">
+            <labels>
+              <label locale="en_US">
+                <name>Address within the city, town, municipality, village, ...</name>
+              </label>
+            </labels>
+            <settings/>
+            <elements>
+              <metadataElement code="street" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>Street name</name>
+                  </label>
+                </labels>
+                <settings>
+                  <setting name="fieldWidth">70</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">255</setting>
+                </settings>
+              </metadataElement>
+              <metadataElement code="number" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>Number</name>
+                    <description>Usually the number of the building within the street.</description>
+                  </label>
+                </labels>
+                <settings>
+                  <setting name="fieldWidth">70</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">255</setting>
+                </settings>
+              </metadataElement>
+              <metadataElement code="box" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>Number of mailbox</name>
+                    <description>Usually the number of the mailbox within the building. For example in appartement buildings, or shared buildings there can be separate mailboxes. This field can also be used for entering PO box numbers.</description>
+                  </label>
+                </labels>
+                <settings>
+                  <setting name="fieldWidth">70</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">255</setting>
+                </settings>
+              </metadataElement>
+            </elements>
+          </metadataElement>
+          <metadataElement code="addressLoanWithinWorld" datatype="Container">
+            <labels>
+              <label locale="en_US">
+                <name>Address within the world</name>
+              </label>
+            </labels>
+            <settings/>
+            <elements>
+              <metadataElement code="city" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>City, town, municipality, village, ...</name>
+                  </label>
+                </labels>
+                <settings>
+                  <setting name="fieldWidth">20</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">255</setting>
+                </settings>
+              </metadataElement>
+              <metadataElement code="state_or_province" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>State/province</name>
+                  </label>
+                </labels>
+                <settings>
+                  <setting name="fieldWidth">15</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">255</setting>
+                </settings>
+              </metadataElement>
+              <metadataElement code="postalcode" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>Postal/zip code</name>
+                  </label>
+                </labels>
+                <settings>
+                  <setting name="fieldWidth">10</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">255</setting>
+                </settings>
+              </metadataElement>
+              <metadataElement code="loan_country" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>Country</name>
+                  </label>
+                </labels>
+                <settings>
+                  <setting name="fieldWidth">15</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">255</setting>
+                </settings>
+              </metadataElement>
+            </elements>
+          </metadataElement>
+		    </elements>
+        <typeRestrictions>
+          <restriction code="r_loan">
+            <table>ca_loans</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
 	    <metadataElement code="loanStatus" datatype="List" list="loan_status">
         <labels>
           <label locale="en_US">
@@ -8529,10 +9120,18 @@
               <bundle>hierarchy_location</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object hierarchy: direct relationships</setting>
-                <setting name="description" locale="en_US">If the object resulted from any other object (not directly from the observation), the parent can be set here. Similarily, if the object has resulted in any other objects (e.g. subsamples, DNA extracts), these can be linked here.</setting>
+                <setting name="description" locale="en_US">If the object resulted from any other object (not directly from the observation), the parent can be set here. Similarily, if the object has resulted in any other objects (e.g. subsamples, DNA extracts), these are linked here.</setting>
               </settings>
             </placement>
-            <placement code="ca_objects_container">
+            <placement code="ca_objects_container_direct">
+              <bundle>ca_objects</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Direct relationships</setting>
+                <setting name="description" locale="en_US">Direct relationships between objects can be listed here. To allow specifying the type of relationship, if need be.</setting>
+                <setting name="restrict_to_relationship_types" locale="en_US">oDNASubSample,eDNASubSample,dnaExtraction,waterToFilter,plantChildOf,livingPlantSampled,livingAnimalSampled,livingAnimalDeceased,mammalAutopsySample,soilSubSample</setting>
+              </settings>
+            </placement>		 		 
+            <placement code="ca_objects_container_indirect">
               <bundle>ca_objects</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Indirect relationships</setting>
@@ -8557,7 +9156,17 @@
 				        <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
-            </placement>		 
+            </placement>
+            <placement code="preparedBy">
+              <bundle>ca_entities</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Prepared by</setting>
+                <setting name="description" locale="en_US">A person that collected, created, extracted, prepared, .. the object.</setting>
+				        <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">5</setting>
+                <setting name="restrict_to_relationship_types">preparedBy</setting>
+              </settings>
+            </placement>		 		 
 			      <placement code="verbatimSamplingDepth" typeRestrictions="eDnaWaterFilter,watersample,mineralSoilSample,peatSoilSample,organicSoilSample">
               <bundle>ca_attribute_verbatimDepth</bundle>
               <settings>
@@ -8624,6 +9233,16 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
+            <placement code="samplingMultimedia">
+              <bundle>ca_object_representations</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Multimedia of the sampling</setting>
+                <setting name="description" locale="en_US">Add a photo or video that visualises the sampling procedure, if relevant.</setting>
+				        <setting name="add_label" locale="en_US">Add sampling multimedia</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_types">samplingMultimedia</setting>
+			        </settings>
+            </placement>
           </bundlePlacements>
         </screen>
 		    <screen idno="object_multimedia" default="0">
@@ -8639,6 +9258,7 @@
                 <setting name="label" locale="en_US">Multimedia representation of the object</setting>
                 <setting name="description" locale="en_US">Multimedia representation of the object (not the organism/observation it represents!) can be photos, scans, videos, sounds,..</setting>
 				        <setting name="add_label" locale="en_US">Add multimedia</setting>
+                <setting name="restrict_to_types">objectMultimedia</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -8797,7 +9417,7 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="dnaConc" typeRestrictions="oDNA,eDNA">
+            <placement code="dna_conc" typeRestrictions="oDNA,eDNA">
               <bundle>ca_attribute_dnaConcContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Concentration measurement on DNA</setting>
@@ -8807,7 +9427,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="dnaSpectro" typeRestrictions="oDNA,eDNA">
+            <placement code="dna_spectro" typeRestrictions="oDNA,eDNA">
               <bundle>ca_attribute_dnaSpectroContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Spectophotometry measurement on DNA</setting>
@@ -8817,7 +9437,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="dnaGel" typeRestrictions="oDNA,eDNA">
+            <placement code="dna_gel" typeRestrictions="oDNA,eDNA">
               <bundle>ca_attribute_dnaGelContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">DNA gel measurement</setting>
@@ -8827,7 +9447,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="dnaVolume" typeRestrictions="oDNA,eDNA">
+            <placement code="dna_volume" typeRestrictions="oDNA,eDNA">
               <bundle>ca_attribute_dnaVolumeContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">DNA sample volume measurement</setting>
@@ -8837,7 +9457,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="volume" typeRestrictions="eDnaWaterFilter,waterSample">
+            <placement code="object_volume" typeRestrictions="eDnaWaterFilter,waterSample">
               <bundle>ca_attribute_volumeContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Volume measurement</setting>
@@ -8846,7 +9466,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="length" typeRestrictions="animalObject,plantObject">
+            <placement code="object_length" typeRestrictions="animalBulk,animalEntireLiving,animalCadaver,animalSpecimen,livingPlant">
               <bundle>ca_attribute_lengthContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Length measurement</setting>
@@ -8856,7 +9476,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="weight" typeRestrictions="seedlot,mineralSoilSample,peatSoilSample,organicSoilSample,oDNA,eDNA">
+            <placement code="object_weight" typeRestrictions="seedlot,mineralSoilSample,peatSoilSample,organicSoilSample,oDNA,eDNA,animalBulk,animalEntireLiving,animalCadaver">
               <bundle>ca_attribute_weightContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Weight measurement</setting>
@@ -8865,16 +9485,16 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="age" typeRestrictions="stemDisc">
+            <placement code="object_age" typeRestrictions="stemDisc,livingPlant">
               <bundle>ca_attribute_ageContainer</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Age</setting>
-				        <setting name="add_label" locale="en_US">Add age</setting>
+                <setting name="label" locale="en_US">Age measurement/statement</setting>
+				        <setting name="add_label" locale="en_US">Add age measurement/statement</setting>
                 <setting name="list_format">list</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="germination" typeRestrictions="seedlot">
+            <placement code="seedlot_germination" typeRestrictions="seedlot">
               <bundle>ca_attribute_germinationContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Germination measurement</setting>
@@ -8883,11 +9503,20 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="purity" typeRestrictions="seedlot">
+            <placement code="seedlot_purity" typeRestrictions="seedlot">
               <bundle>ca_attribute_purityContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Purity measurement</setting>
 				        <setting name="add_label" locale="en_US">Add purity measurement</setting>
+                <setting name="list_format">list</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="object_count" typeRestrictions="seedlot">
+              <bundle>ca_attribute_countContainer</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Count</setting>
+				        <setting name="add_label" locale="en_US">Add count</setting>
                 <setting name="list_format">list</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
@@ -8899,6 +9528,7 @@
                 <setting name="description" locale="en_US">Add a photo, scan or video of the measurement if relevant. For example: a !well-annotated! DNA sample gel image.</setting>
 				        <setting name="add_label" locale="en_US">Add visual representation</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_types">measurementMultimedia</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -9438,6 +10068,7 @@
 				        <!--http://rs.tdwg.org/dwc/terms/identificationReferences-->
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
 			      <placement code="eventProcedure" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater,fieldwork,identification,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial,valuation,curation,disposal,treatment,renewal,transfer">
@@ -9447,6 +10078,7 @@
                 <setting name="description" locale="en_US">Text field to (concisely) describe the procedure (if relevant). Can be if: no doi-reference for procedure description or to add notes/addenda on the given published procedure.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
             <placement code="ca_object_representations" typeRestrictions="curation,disposal,treatment,renewal,transfer">
@@ -9455,6 +10087,8 @@
                 <setting name="label" locale="en_US">Photo or video of the used procedure</setting>
                 <setting name="description" locale="en_US">Photos or video that shows the handling, the executed steps.</setting>
 				        <setting name="add_label" locale="en_US">Add media</setting>
+                <setting name="restrict_to_types">curationMultimedia</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
 			      <placement code="samplingEffort" typeRestrictions="fieldwork">
@@ -9464,6 +10098,7 @@
                 <setting name="description" locale="en_US">For example: if the fieldwork is focussed on populations: "sampled until 30 samples of population/locality was reached".</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
           </bundlePlacements>
@@ -9489,6 +10124,7 @@
                 <setting name="description" locale="en_US">Multimedia that can serve as evidence for the made observation, such as: photo, video. This can be of an organism or the habitat of the organism. In case there is no physical morphological voucher of the observation (plant, fungi, animal) this could count as a voucher.</setting>
 				        <setting name="add_label" locale="en_US">Add multimedia</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_types">observationMultimedia</setting>
 			        </settings>
             </placement>
             <placement code="file">
@@ -9567,12 +10203,14 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
-			      <placement code="age" typeRestrictions="observationAnimal,observationPlant">
-              <bundle>ca_attribute_age</bundle>
+            <placement code="observation_age" typeRestrictions="observationAnimal,observationPlant">
+              <bundle>ca_attribute_ageContainer</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Age of organism</setting>
+                <setting name="label" locale="en_US">Age measurement/statement</setting>
+				        <setting name="add_label" locale="en_US">Add age measurement/statement</setting>
+                <setting name="list_format">list</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-			        </settings>
+              </settings>
             </placement>
 			      <placement code="reproductiveCondition" typeRestrictions="observationAnimal,observationPlant">
               <bundle>ca_attribute_reproductiveCondition</bundle>
@@ -9588,12 +10226,48 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
-            <placement code="length_container" typeRestrictions="observationAnimal,observationPlant">
+            <placement code="observation_circumference" typeRestrictions="observationAnimal,observationPlant">
+              <bundle>ca_attribute_circumferenceContainer</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Circumference measurement</setting>
+				        <setting name="add_label" locale="en_US">Add circumference measurement</setting>
+                <setting name="list_format">list</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="observation_dbh" typeRestrictions="observationPlant">
+              <bundle>ca_attribute_dbhContainer</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Dbh measurement (diameter at breast height)</setting>
+				        <setting name="add_label" locale="en_US">Add Dbh measurement</setting>
+                <setting name="list_format">list</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="observation_height" typeRestrictions="observationAnimal,observationPlant">
+              <bundle>ca_attribute_heightContainer</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Height measurement/statement</setting>
+				        <setting name="add_label" locale="en_US">Add height measurement/statement</setting>
+                <setting name="list_format">list</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="observation_length" typeRestrictions="observationAnimal,observationPlant">
               <bundle>ca_attribute_lengthContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Length measurement</setting>
                 <setting name="description" locale="en_US">This can be any type of measurement, expressed in units of length. For example: dbh (diameter at breast height), circumference and height of a wild tree can all three be entered here.</setting>
 				        <setting name="add_label" locale="en_US">Add length measurement</setting>
+                <setting name="list_format">list</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="observation_density" typeRestrictions="observationPlant">
+              <bundle>ca_attribute_densityContainer</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Density measurement</setting>
+				        <setting name="add_label" locale="en_US">Add density measurement</setting>
                 <setting name="list_format">list</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
@@ -9881,7 +10555,7 @@
               <bundle>ca_attribute_curationResult</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Result of curation event</setting>
-                <setting name="description" locale="en_US">Here you can specify further. For example: disposal because of depletion of DNA/soil, disease (plant), rot (seedlot), ...; treatment: cold treatment -80°C for parasites; renewal: of containers, of labels, of buffer + in the file you can specify the manufacturers information on the new mateiral.; reason why this particular group of samples was transferred.</setting>
+                <setting name="description" locale="en_US">Here you can specify further on the curation action. For example: disposal because of depletion of DNA/soil, disease (plant), rot (seedlot), ...; treatment: cold treatment -80°C for parasites; renewal: of containers, of labels, of buffer + in the file you can specify the manufacturers information on the new mateiral.; reason why this particular group of samples was transferred.</setting>
 			        </settings>
             </placement>
             <placement code="file" typeRestrictions="disposal,treatment,renewal,transfer">
@@ -9889,14 +10563,6 @@
 			        <settings>
                 <setting name="label" locale="en_US">Relevant curation notes, documents, ...</setting>
 				        <setting name="add_label" locale="en_US">Add file</setting>
-			        </settings>
-            </placement>
-            <placement code="ca_object_representations" typeRestrictions="disposal,treatment,renewal,transfer">
-              <bundle>ca_object_representations</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Photo or video of curation result</setting>
-                <setting name="description" locale="en_US">Before and after photos, new material can be photographed (like buffers, containers).</setting>
-				        <setting name="add_label" locale="en_US">Add multimedia</setting>
 			        </settings>
             </placement>
             <placement code="ca_entities" typeRestrictions="transfer">
@@ -9978,6 +10644,7 @@
               <settings>
                 <setting name="label" locale="en_US">Entity name (other names, nonpreferred)</setting>
 				        <setting name="add_label" locale="en_US">Add other non-preferred identifier</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
 			      <placement code="ROR" typeRestrictions="org">
@@ -9987,6 +10654,7 @@
                 <setting name="description" locale="en_US">Research Organization Registry (ROR) - see: https://ror.org/.</setting>
 				        <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
 			      <placement code="WikidataID">
@@ -9996,6 +10664,7 @@
                 <setting name="description" locale="en_US">See: https://wikidata.org/.</setting>
 				        <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
 			      <placement code="ORCID" typeRestrictions="ind">
@@ -10005,6 +10674,17 @@
                 <setting name="description" locale="en_US">ORCID stands for Open Researcher and Contributor ID. See: https://orcid.org/.</setting>
 				        <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+			      <placement code="website">
+              <bundle>ca_attribute_website</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Website</setting>
+                <setting name="description" locale="en_US">A website that is self-maintained. Can be of an individual or organization.</setting>
+				        <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -10016,10 +10696,9 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="address" typeRestrictions="org">
-              <bundle>ca_attribute_address</bundle>
+            <placement code="addressOrganization" typeRestrictions="org">
+              <bundle>ca_attribute_addressOrganization</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Address</setting>
                 <setting name="description" locale="en_US">Physical address of the organization.</setting>
               </settings>
             </placement>
@@ -10238,30 +10917,59 @@
               <settings>
                 <setting name="label" locale="en_US">Alternate names</setting>
                 <setting name="add_label" locale="en_US">Add name</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="ca_entities_currentCollectionOwner">
+              <bundle>ca_entities</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Current/last owner</setting>
+                <setting name="description" locale="en_US">This is always an organization. Personal collections are not inventoried, only when donated to an organization. This is either the current owner, or the last owner if disposed.</setting>
+				        <setting name="restrict_to_types">org</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="restrict_to_relationship_types">currentCollectionOwner</setting>
+              </settings>
+            </placement>
+			      <placement code="ca_places">
+              <bundle>ca_places</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Place</setting>
+                <setting name="description" locale="en_US">The place (country, city, ..) where the current collection is hold. This can be relevant to track for outdoor living collections mostly (e.g. living plants).</setting>
+				        <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
             <placement code="GRSciColl">
               <bundle>ca_attribute_externalRecord</bundle>
               <settings>
                 <setting name="label" locale="en_US">GRSCiColl record</setting>
-                <setting name="description" locale="en_US">Global Registry of Scientific Collections. See: https://www.gbif.org/grscicoll. </setting>
+                <setting name="description" locale="en_US">Global Registry of Scientific Collections. See: https://www.gbif.org/grscicoll.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+				        <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="hierarchy_navigation">
-              <bundle>hierarchy_navigation</bundle>
+			      <placement code="website">
+              <bundle>ca_attribute_website</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Website</setting>
+                <setting name="description" locale="en_US">A website that is self-maintained that gives a description or catalogue of the collection.</setting>
+				        <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
             </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="collection_context" default="0">
+		    <screen idno="collection_management" default="0">
           <labels>
             <label locale="en_US">
-              <name>Context</name>
+              <name>Storage</name>
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="ca_attribute_descriptionContainer">
-              <bundle>ca_attribute_descriptionContainer</bundle>
-            </placement>
             <placement code="ca_entities_CurrentCurator">
               <bundle>ca_entities_ind</bundle>
 			        <settings>
@@ -10279,18 +10987,10 @@
                 <setting name="add_label" locale="en_US">Add new assistant-curator</setting>
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="restrict_to_relationship_types">assistantCurator</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-          </bundlePlacements>
-        </screen>
-		    <screen idno="collection_storage" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>Storage</name>
-            </label>
-          </labels>
-          <bundlePlacements>
-            <placement code="ca_storage_locations">
+            <placement code="ca_storage_locations" typeRestrictions="internalCollection">
               <bundle>ca_storage_locations</bundle>
               <settings>
                 <setting name="restrict_to_type">box,drawerShelf,cabinetFridgeFreezer,room,floor,building,plantedSite</setting>
@@ -10301,21 +11001,57 @@
                 <setting name="restrict_to_relationship_types">storedCollection</setting>
               </settings>
             </placement>
+            <placement code="ca_entities_currentCollectionOwner">
+              <bundle>ca_entities</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Current/last owner</setting>
+                <setting name="description" locale="en_US">This is always an organization. Personal collections are not inventoried, only when donated to an organization. This is either the current owner, or the last owner if disposed.</setting>
+				        <setting name="restrict_to_types">org</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="restrict_to_relationship_types">currentCollectionOwner</setting>
+              </settings>
+            </placement>
+			      <placement code="ca_entities_previousCollectionOwner">
+              <bundle>ca_entities</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Previous owner</setting>
+                <setting name="description" locale="en_US">This can be both an individual (i.e. personal collection that was donated) or organization.</setting>
+				        <setting name="add_label" locale="en_US">Add previous owner</setting>
+                <setting name="restrict_to_relationship_types">previousCollectionOwner</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="collection_media" default="0">
+		    <screen idno="collection_moreInformation" default="0">
           <labels>
             <label locale="en_US">
-              <name>Media</name>
+              <name>More Information</name>
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="ca_object_representations">
+            <placement code="ca_attribute_descriptionContainer">
+              <bundle>ca_attribute_descriptionContainer</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+			      <placement code="hierarchy_navigation">
+              <bundle>hierarchy_navigation</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Collection hierarchy</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="ca_object_representations" typeRestrictions="internalCollection">
               <bundle>ca_object_representations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Collection representations</setting>
                 <setting name="description" locale="en_US">Photos or videos of the collection (NOT separate objects that make up the collection). To illustrate the collection as a whole, in its totality.</setting>
                 <setting name="add_label" locale="en_US">Add photo or video</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_types">collectionMultimedia</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -10431,23 +11167,31 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="plantedSiteMinimumElevationInMetres" typeRestrictions="observation">
-              <bundle>ca_attribute_minimumElevationInMetres</bundle>
+			      <placement code="plantedSiteVerbatimElevation" typeRestrictions="plantedSite">
+              <bundle>ca_attribute_minimumElevationInMeters</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The minimum elevation of the plantedSite in metres.</setting>
+                <setting name="label" locale="en_US">The minimum elevation of the plantedSite in meters.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="plantedSiteMaximumElevationInMetres" typeRestrictions="observation">
-              <bundle>ca_attribute_maximumElevationInMetres</bundle>
+			      <placement code="plantedSiteMinimumElevationInMeters" typeRestrictions="plantedSite">
+              <bundle>ca_attribute_minimumElevationInMeters</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The maximum elevation of the plantedSite in metres.</setting>
+                <setting name="label" locale="en_US">The minimum elevation of the plantedSite in meters.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-            <placement code="plantedSiteverbatimLatitudeY" typeRestrictions="spotPlantedSite">
+			      <placement code="plantedSiteMaximumElevationInMeters" typeRestrictions="plantedSite">
+              <bundle>ca_attribute_maximumElevationInMeters</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The maximum elevation of the plantedSite in meters.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+            <placement code="plantedSiteverbatimLatitudeY" typeRestrictions="spotPlantedSite,plantedSite">
               <bundle>ca_attribute_verbatimLatitudeY</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim latitude (Y)</setting>
@@ -10456,7 +11200,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-            <placement code="plantedSiteverbatimLongitudeX" typeRestrictions="spotPlantedSite">
+            <placement code="plantedSiteverbatimLongitudeX" typeRestrictions="spotPlantedSite,plantedSite">
               <bundle>ca_attribute_verbatimLongitudeX</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim longitude (X)</setting>
@@ -10465,7 +11209,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="plantedSiteStandardizedGeoreferenceWGS84" typeRestrictions="spotPlantedSite">
+			      <placement code="plantedSiteStandardizedGeoreferenceWGS84" typeRestrictions="spotPlantedSite,plantedSite">
               <bundle>ca_attribute_georeference</bundle>
               <settings>
                 <setting name="label" locale="en_US">Standardized georeference data</setting>
@@ -10548,29 +11292,6 @@
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
-            </placement>
-          </bundlePlacements>
-        </screen>
-		    <screen idno="objectLot_media" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>Media</name>
-            </label>
-          </labels>
-          <bundlePlacements>
-			      <placement code="file">
-              <bundle>ca_attribute_file</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Files associated with the group (e.g. map, sketch, publication)</setting>
-				        <setting name="add_label" locale="en_US">Add file</setting>
-			        </settings>
-            </placement>
-            <placement code="ca_object_representations">
-              <bundle>ca_object_representations</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Visual representation of the object lot (i.e. photos, videos, sounds)</setting>
-				        <setting name="add_label" locale="en_US">Add media</setting>
-			        </settings>
             </placement>
           </bundlePlacements>
         </screen>
@@ -10690,9 +11411,8 @@
               </settings>
             </placement>
             <placement code="loan_address" typeRestrictions="external_out">
-              <bundle>ca_attribute_address</bundle>
+              <bundle>ca_attribute_addressLoan</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Address</setting>
                 <setting name="description" locale="en_US">The full address to which the loan will be, or was, send. This should also include the internal structure of the organization at hand (e.g. research group, department, team, ..) as specified in the request.</setting>
 				        <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
@@ -10753,6 +11473,7 @@
                 <setting name="label" locale="en_US">Visual representation of the loan</setting>
                 <setting name="description" locale="en_US">This can be photos or videos, to document condition, volume, ...; either before sending out the loan, or when receiving the loan.</setting>
 				        <setting name="add_label" locale="en_US">Add media</setting>
+                <setting name="restrict_to_types">loanMultimedia</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -10799,6 +11520,9 @@
             <placement code="access">
               <bundle>access</bundle>
             </placement>
+            <placement code="status">
+              <bundle>status</bundle>
+            </placement>
             <placement code="ca_attribute_descriptionContainer">
               <bundle>ca_attribute_descriptionContainer</bundle>
             </placement>
@@ -10811,11 +11535,12 @@
                 <setting name="label" locale="en_US">Date and time of media</setting>
               </settings>
             </placement>
-            <placement code="ca_entities_photographer">
+            <placement code="ca_entities_creator">
               <bundle>ca_entity</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Photographer</setting>
+                <setting name="label" locale="en_US">Creator of media</setting>
                 <setting name="restrict_to_types">ind</setting>
+                <setting name="restrict_to_relationship_types">creator</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -11477,6 +12202,16 @@
     </relationshipTable>
     <relationshipTable name="ca_objects_x_entities">
       <types>
+        <type code="preparedBy" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>was prepared by</typename>
+              <typename_reverse>prepared</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>ind</subTypeRight>
+        </type>
         <type code="currentOwner" default="0">
           <labels>
             <label locale="en_US">
@@ -11787,6 +12522,26 @@
           <subTypeLeft>ind</subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
+        <type code="currentCollectionOwner" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>owns</typename>
+              <typename_reverse>is owned by</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>org</subTypeLeft>
+          <subTypeRight></subTypeRight>
+        </type>
+        <type code="previousCollectionOwner" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>owned</typename>
+              <typename_reverse>was owned by</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight></subTypeRight>
+        </type>
       </types>
     </relationshipTable>
     <relationshipTable name="ca_entities_x_occurrences">
@@ -11829,10 +12584,6 @@
           <subTypeLeft></subTypeLeft>
           <subTypeRight>plantedSite</subTypeRight>
         </type>
-      </types>
-    </relationshipTable>
-	  <relationshipTable name="ca_entities_x_storage_locations">
-      <types>
         <type code="maintainsStorageLocation" default="1">
           <labels>
             <label locale="en_US">
@@ -11842,6 +12593,20 @@
           </labels>
           <subTypeLeft></subTypeLeft>
           <subTypeRight>cabinetFridgeFreezer,room,building,plantedSite</subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>
+	  <relationshipTable name="ca_entities_x_object_representations">
+      <types>
+        <type code="creator" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>created media</typename>
+              <typename_reverse>was created by</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>creator</subTypeLeft>
+          <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
@@ -11972,11 +12737,11 @@
         <type code="inLivingCollectionAt" default="1">
           <labels>
             <label locale="en_US">
-              <typename>is stored in</typename>
-              <typename_reverse>contains</typename_reverse>
+              <typename>is place of</typename>
+              <typename_reverse>is located at</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>provenance</subTypeLeft>
+          <subTypeLeft></subTypeLeft>
           <subTypeRight>plantedSite</subTypeRight>
         </type>
       </types>
