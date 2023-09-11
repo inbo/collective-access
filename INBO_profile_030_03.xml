@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.43.01</profileName>
+  <profileName>[INBO] INBO natural science collection v0.43.02</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <locales>
     <locale lang="en" country="US">English</locale>
@@ -129,54 +129,44 @@
                   <item idno="animalEntireCadaver" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Cadaver</name_singular>
-                        <name_plural>Cadaver</name_plural>
+                        <name_singular>Cadaver (no ethanol)</name_singular>
+                        <name_plural>Cadavers (no ethanol)</name_plural>
                       </label>
                     </labels>
                   </item>
-                  <item idno="animalEntireSpecimen" enabled="1" default="0">
+                  <item idno="animalEntireEthanol" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Animal specimen</name_singular>
-                        <name_plural>Animals specimens</name_plural>
+                        <name_singular>Entire animal on ethanol</name_singular>
+                        <name_plural>Entire animals on ethanol</name_plural>
                       </label>
                     </labels>
                   </item>
-                </items>
-              </item>
-              <item idno="sampleAmphibian" enabled="0" default="0">
-                <labels>
-                  <label locale="en_US" preferred="1">
-                    <name_singular>Amphibian sample</name_singular>
-                    <name_plural>Amphibian samples</name_plural>
-                  </label>
-                </labels>
-                <items>
-                  <item idno="sampleAmphibianLarva" enabled="1" default="0"><!--is this collected entirely? If so, move to animalEntire-->
+                  <item idno="sampleAmphibianLarva" enabled="1" default="0"><!--is this collected on ethanol?-->
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Larva</name_singular>
-                        <name_plural>Larvae</name_plural>
+                        <name_singular>Amphibian larva</name_singular>
+                        <name_plural>Amphibian larvae</name_plural>
                       </label>
                     </labels>
                   </item>
-                  <item idno="sampleAmphibianEmbryo" enabled="1" default="0"><!--is this collected entirely? If so, move to animalEntire-->
+                  <item idno="sampleInvertebrateLarva" enabled="1" default="0"><!--is this collected on ethanol?-->
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Embryo</name_singular>
-                        <name_plural>Embryos</name_plural>
+                        <name_singular>Invertebrate larva</name_singular>
+                        <name_plural>Invertebrate larvae</name_plural>
                       </label>
                     </labels>
                   </item>
-                  <item idno="sampleAmphibianTailclip" enabled="1" default="0">
+                  <item idno="sampleAmphibianEmbryo" enabled="1" default="0"><!--is this collected on ethanol?-->
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Tailclip</name_singular>
-                        <name_plural>Tailclips</name_plural>
+                        <name_singular>Amphibian embryo</name_singular>
+                        <name_plural>Amphibian embryos</name_plural>
                       </label>
                     </labels>
                   </item>
-                  <item idno="sampleAmphibianFrogspawn" enabled="1" default="0"><!--is this collected entirely? If so, move to animalEntire-->
+                  <item idno="sampleAmphibianFrogspawn" enabled="1" default="0"><!--is this collected on ethanol?-->
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>Frogspawn</name_singular>
@@ -184,373 +174,393 @@
                       </label>
                     </labels>
                   </item>
-                  <item idno="sampleAmphibianSwabCloaca" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Swab cloaca</name_singular>
-                        <name_plural>Swabs cloaca</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleAmphibianSwabMouth" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Swab mouth</name_singular>
-                        <name_plural>Swabs mouth</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleAmphibianSwabEar" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Swab ear</name_singular>
-                        <name_plural>Swabs ear</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleAmphibianToeclip" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Toeclip</name_singular>
-                        <name_plural>Toeclips</name_plural>
-                      </label>
-                    </labels>
-                  </item>
                 </items>
               </item>
-              <item idno="sampleFish" enabled="0" default="0">
+              <item idno="animalSample" enabled="0" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>Fish sample</name_singular>
-                    <name_plural>Fish samples</name_plural>
+                    <name_singular>Animal sample</name_singular>
+                    <name_plural>Animal sample</name_plural>
                   </label>
                 </labels>
                 <items>
-                  <item idno="sampleFishFinclip" enabled="1" default="0">
+                  <item idno="sampleAmphibian" enabled="0" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Finclip</name_singular>
-                        <name_plural>Finclips</name_plural>
+                        <name_singular>Amphibian sample</name_singular>
+                        <name_plural>Amphibian samples</name_plural>
                       </label>
                     </labels>
+                    <items>
+                      <item idno="sampleAmphibianTailclip" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Tailclip</name_singular>
+                            <name_plural>Tailclips</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleAmphibianSwabCloaca" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Swab cloaca</name_singular>
+                            <name_plural>Swabs cloaca</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleAmphibianSwabMouth" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Swab mouth</name_singular>
+                            <name_plural>Swabs mouth</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleAmphibianSwabEar" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Swab ear</name_singular>
+                            <name_plural>Swabs ear</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleAmphibianToeclip" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Toeclip</name_singular>
+                            <name_plural>Toeclips</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                    </items>
                   </item>
-                  <item idno="sampleFishMuscle" enabled="1" default="0">
+                  <item idno="sampleFish" enabled="0" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Muscle sample</name_singular>
-                        <name_plural>Muscle samples</name_plural>
+                        <name_singular>Fish sample</name_singular>
+                        <name_plural>Fish samples</name_plural>
                       </label>
                     </labels>
+                    <items>
+                      <item idno="sampleFishFinclip" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Finclip</name_singular>
+                            <name_plural>Finclips</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleFishMuscle" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Muscle sample</name_singular>
+                            <name_plural>Muscle samples</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                    </items>
                   </item>
-                </items>
-              </item>
-              <item idno="sampleInvertebrate" enabled="0" default="0">
-                <labels>
-                  <label locale="en_US" preferred="1">
-                    <name_singular>Invertebrate sample</name_singular>
-                    <name_plural>Invertebrate samples</name_plural>
-                  </label>
-                </labels>
-                <items>
-                  <item idno="sampleInvertebrateLarva" enabled="1" default="0"><!--is this collected entirely? If so, move to animalEntire-->
+                  <item idno="sampleInvertebrate" enabled="0" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Larva</name_singular>
-                        <name_plural>Larva</name_plural>
+                        <name_singular>Invertebrate sample</name_singular>
+                        <name_plural>Invertebrate samples</name_plural>
                       </label>
                     </labels>
+                    <items>
+                      <item idno="sampleInvertebrateLeg" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Leg</name_singular>
+                            <name_plural>Legs</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleInvertebrateWingclip" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Wingclip</name_singular>
+                            <name_plural>Wingclips</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                    </items>
                   </item>
-                  <item idno="sampleInvertebrateLeg" enabled="1" default="0">
+                  <item idno="sampleMammal" enabled="0" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Leg</name_singular>
-                        <name_plural>Legs</name_plural>
+                        <name_singular>Mammal sample</name_singular>
+                        <name_plural>Mammal samples</name_plural>
                       </label>
                     </labels>
+                    <items>
+                      <item idno="sampleMammalBaculum" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Baculum</name_singular>
+                            <name_plural>Bacula</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleMammalBladder" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Bladder (sample)</name_singular>
+                            <name_plural>Bladders (bladder samples)</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleMammalBlood" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Blood sample</name_singular>
+                            <name_plural>Blood samples</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleMammalBrain" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Brain sample</name_singular>
+                            <name_plural>Brain samples</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleMammalConjuctivum" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Conjuctivum sample</name_singular>
+                            <name_plural>Conjuctiva (conjuctivum samples)</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleMammalCyste" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Cyste (sample)</name_singular>
+                            <name_plural>Cystes (cyste samples)</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleMammalEarpunch" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Earpunch</name_singular>
+                            <name_plural>Earpunches</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleMammalEmbryo" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Embryo (sample)</name_singular>
+                            <name_plural>Embryos (embryo samples)</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleMammalFat" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Fat (sample)</name_singular>
+                            <name_plural>Fat (samples)</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleMammalFeces" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Feces (sample)</name_singular>
+                            <name_plural>Feces (samples)</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleMammalHead" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Head</name_singular>
+                            <name_plural>Heads</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleMammalHeart" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Heart (sample)</name_singular>
+                            <name_plural>Hearts (heart samples)</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleMammalHair" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Hair sample</name_singular>
+                            <name_plural>Hair samples</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleMammalIntestine" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Intestine (sample)</name_singular>
+                            <name_plural>Intestines (intestine samples)</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleMammalLiver" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Liver (sample)</name_singular>
+                            <name_plural>Livers (liver samples)</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleMammalLowerJaw" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Lower jaw</name_singular>
+                            <name_plural>Lower jaws</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleMammalLung" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Lung (sample)</name_singular>
+                            <name_plural>Lungs (lung samples)</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleMammalLymphNode" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Lymph node (sample)</name_singular>
+                            <name_plural>Lymph nodes (lymph node samples)</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleMammalKidney" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Kidney (sample)</name_singular>
+                            <name_plural>Kidneys (kidney samples)</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleMammalMuscle" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Muscle sample</name_singular>
+                            <name_plural>Muscle samples</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleMammalSkinComplete" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Skin</name_singular>
+                            <name_plural>Skins</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleMammalSkinPiece" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Skin sample</name_singular>
+                            <name_plural>Skin samples</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleMammalSkull" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Skull</name_singular>
+                            <name_plural>Skulls</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleMammalSpleen" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Spleen (sample)</name_singular>
+                            <name_plural>Spleens (spleen samples)</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleMammalStomach" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Stomach sample</name_singular>
+                            <name_plural>Stomach samples</name_plural>
+                          </label>
+                        </labels>
+                      </item>                  
+                      <item idno="sampleMammalStomachContent" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Stomach content</name_singular>
+                            <name_plural>Stomach contents</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleMammalSwabBite" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Swab of a bite wound</name_singular>
+                            <name_plural>Swabs of bite wounds</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleMammalTongue" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Tongue (sample)</name_singular>
+                            <name_plural>Tongues (tongue samples)</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleMammalTooth" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Tooth</name_singular>
+                            <name_plural>Teeth</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleMammalUterus" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Uterus (sample)</name_singular>
+                            <name_plural>Uteri (uterus samples)</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                    </items>
                   </item>
-                  <item idno="sampleInvertebrateWingclip" enabled="1" default="0">
+                  <item idno="sampleReptile" enabled="0" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Wingclip</name_singular>
-                        <name_plural>Wingclips</name_plural>
+                        <name_singular>Reptile sample</name_singular>
+                        <name_plural>Reptile samples</name_plural>
                       </label>
                     </labels>
-                  </item>
-                </items>
-              </item>
-              <item idno="sampleMammal" enabled="0" default="0">
-                <labels>
-                  <label locale="en_US" preferred="1">
-                    <name_singular>Mammal sample</name_singular>
-                    <name_plural>Mammal samples</name_plural>
-                  </label>
-                </labels>
-                <items>
-                  <item idno="sampleMammalBaculum" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Baculum</name_singular>
-                        <name_plural>Bacula</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleMammalBladder" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Bladder (sample)</name_singular>
-                        <name_plural>Bladders (bladder samples)</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleMammalBlood" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Blood sample</name_singular>
-                        <name_plural>Blood samples</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleMammalBrain" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Brain sample</name_singular>
-                        <name_plural>Brain samples</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleMammalConjuctivum" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Conjuctivum sample</name_singular>
-                        <name_plural>Conjuctiva (conjuctivum samples)</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleMammalCyste" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Cyste (sample)</name_singular>
-                        <name_plural>Cystes (cyste samples)</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleMammalEarpunch" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Earpunch</name_singular>
-                        <name_plural>Earpunches</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleMammalEmbryo" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Embryo (sample)</name_singular>
-                        <name_plural>Embryos (embryo samples)</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleMammalFat" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Fat (sample)</name_singular>
-                        <name_plural>Fat (samples)</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleMammalFeces" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Feces (sample)</name_singular>
-                        <name_plural>Feces (samples)</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleMammalHead" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Head</name_singular>
-                        <name_plural>Heads</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleMammalHeart" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Heart (sample)</name_singular>
-                        <name_plural>Hearts (heart samples)</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleMammalHair" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Hair sample</name_singular>
-                        <name_plural>Hair samples</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleMammalIntestine" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Intestine (sample)</name_singular>
-                        <name_plural>Intestines (intestine samples)</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleMammalLiver" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Liver (sample)</name_singular>
-                        <name_plural>Livers (liver samples)</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleMammalLowerJaw" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Lower jaw</name_singular>
-                        <name_plural>Lower jaws</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleMammalLung" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Lung (sample)</name_singular>
-                        <name_plural>Lungs (lung samples)</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleMammalLymphNode" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Lymph node (sample)</name_singular>
-                        <name_plural>Lymph nodes (lymph node samples)</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleMammalKidney" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Kidney (sample)</name_singular>
-                        <name_plural>Kidneys (kidney samples)</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleMammalMuscle" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Muscle sample</name_singular>
-                        <name_plural>Muscle samples</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleMammalSkinComplete" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Skin</name_singular>
-                        <name_plural>Skins</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleMammalSkinPiece" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Skin sample</name_singular>
-                        <name_plural>Skin samples</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleMammalSkull" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Skull</name_singular>
-                        <name_plural>Skulls</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleMammalSpleen" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Spleen (sample)</name_singular>
-                        <name_plural>Spleens (spleen samples)</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleMammalStomach" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Stomach sample</name_singular>
-                        <name_plural>Stomach samples</name_plural>
-                      </label>
-                    </labels>
-                  </item>                  
-                  <item idno="sampleMammalStomachContent" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Stomach content</name_singular>
-                        <name_plural>Stomach contents</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleMammalSwabBite" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Swab of a bite wound</name_singular>
-                        <name_plural>Swabs of bite wounds</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleMammalTongue" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Tongue (sample)</name_singular>
-                        <name_plural>Tongues (tongue samples)</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleMammalTooth" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Tooth</name_singular>
-                        <name_plural>Teeth</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleMammalUterus" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Uterus (sample)</name_singular>
-                        <name_plural>Uteri (uterus samples)</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                </items>
-              </item>
-              <item idno="sampleReptile" enabled="0" default="0">
-                <labels>
-                  <label locale="en_US" preferred="1">
-                    <name_singular>Reptile sample</name_singular>
-                    <name_plural>Reptile samples</name_plural>
-                  </label>
-                </labels>
-                <items>	
-                  <item idno="sampleReptileSkin" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Skin sample</name_singular>
-                        <name_plural>Skin samples</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="sampleReptileTailclip" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Tailclip</name_singular>
-                        <name_plural>Tailclips</name_plural>
-                      </label>
-                    </labels>
+                    <items>	
+                      <item idno="sampleReptileSkin" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Skin sample</name_singular>
+                            <name_plural>Skin samples</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="sampleReptileTailclip" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Tailclip</name_singular>
+                            <name_plural>Tailclips</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                    </items>
                   </item>
                 </items>
               </item>
@@ -694,7 +704,7 @@
           </item>
         </items>
       </list>
-      <list code="object_lot_types" hierarchical="1" system="0" vocabulary="0">
+      <list code="object_lot_types" hierarchical="1" system="0" vocabulary="0"><!--These are species dependent groupings, often in place/time-->
         <labels>
          <label locale="en_US">
           <name>Objects higher hiërarchy: relevant groupings of NS objects</name>
@@ -716,6 +726,40 @@
                 <name_plural>provenance regions</name_plural>
               </label>
             </labels>
+          </item>
+          <item idno="provenance" enabled="1" default="0"><!--Although this can coincide with place concepts, it is taxon dependent-->
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>provenance</name_singular>
+                <name_plural>provenances</name_plural>
+              </label>
+            </labels>
+            <items>
+                  <item idno="seedStand" enabled="1" default="0">
+                    <labels>
+                      <label locale="en_US" preferred="1">
+                        <name_singular>(seed) stand</name_singular>
+                        <name_plural>(seed) stands</name_plural>
+                      </label>
+                    </labels>
+                    <settings>
+                      <setting name="render_in_new_menu">1</setting>
+                      <setting name="render_in_find_menu">1</setting>
+                    </settings>
+                  </item>
+                  <item idno="seedSource" enabled="1" default="0">
+                    <labels>
+                      <label locale="en_US" preferred="1">
+                        <name_singular>seed source</name_singular>
+                        <name_plural>seed sources</name_plural>
+                      </label>
+                    </labels>
+                    <settings>
+                      <setting name="render_in_new_menu">1</setting>
+                      <setting name="render_in_find_menu">1</setting>
+                    </settings>
+                  </item>
+            </items>
           </item>
 		    </items>
       </list>
@@ -815,22 +859,6 @@
                   </label>
                 </labels>
               </item>
-              <item idno="seedsource" enabled="1" default="0">
-                <labels>
-                  <label locale="en_US" preferred="1">
-                    <name_singular>seedsource</name_singular>
-                    <name_plural>seedsources</name_plural>
-                  </label>
-                </labels>
-              </item>
-              <item idno="seedstand" enabled="1" default="0">
-                <labels>
-                  <label locale="en_US" preferred="1">
-                    <name_singular>(seed) stand</name_singular>
-                    <name_plural>(seed) stands</name_plural>
-                  </label>
-                </labels>
-              </item>
               <item idno="inSituPlot" enabled="1" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
@@ -880,7 +908,7 @@
                   </label>
                 </labels>
               </item>
-              <item idno="workingCollection" enabled="1" default="1"><!--Purpose: to help identify in research. This collection is actively referenced to in the material and methods of published research. Best practice is that the objects are rich in metadata as possible, including date and place information per object.-->
+              <item idno="referenceCollection" enabled="1" default="1"><!--Purpose: to help identify in research. This collection is actively referenced to in the material and methods of published research. Best practice is that the objects are rich in metadata as possible, including date and place information per object.-->
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>Working/Reference collection</name_singular>
@@ -1232,6 +1260,17 @@
               </label>
             </labels>
           </item>
+          <items>
+            <item>
+              <item idno="externalPlantedSite" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>External planted site</name_singular>
+                    <name_plural>External planted sites</name_plural>
+                  </label>
+                </labels>
+              </item>
+            </items>
          </items>
 	    </list>
       <list code="object_representation_types" hierarchical="1" system="0" vocabulary="0">
@@ -3020,6 +3059,63 @@
           </item>
         </items>
       </list>
+	    <list code="lm_type" hierarchical="0" system="0" vocabulary="1">
+        <labels>
+          <label locale="en_US">
+            <name>Type of length measurement</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="lm_circumference" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>circumference</name_singular>
+                <name_plural>circumference</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="lm_diameter" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>diameter</name_singular>
+                <name_plural>diameter</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="lm_length" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>length</name_singular>
+                <name_plural>length</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="lm_width" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>width</name_singular>
+                <name_plural>width</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="lm_depth" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>depth</name_singular>
+                <name_plural>depth</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="lm_other" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>other</name_singular>
+                <name_plural>other</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
 	    <list code="concentration_unit" hierarchical="0" system="0" vocabulary="1">
         <labels>
           <label locale="en_US">
@@ -3216,26 +3312,26 @@
             </label>
           </labels>
           <items>
-            <item idno="year" enabled="1" default="0">
+            <item idno="years" enabled="1" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>year</name_singular>
+                  <name_singular>years</name_singular>
                   <name_plural>years</name_plural>
                 </label>
               </labels>
             </item>
-            <item idno="month" enabled="1" default="0">
+            <item idno="months" enabled="1" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>month</name_singular>
+                  <name_singular>months</name_singular>
                   <name_plural>months</name_plural>
                 </label>
               </labels>
             </item>
-            <item idno="day" enabled="1" default="0">
+            <item idno="days" enabled="1" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>day</name_singular>
+                  <name_singular>days</name_singular>
                   <name_plural>days</name_plural>
                 </label>
               </labels>
@@ -4366,7 +4462,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-      <metadataElement code="seedlotRelation" datatype="List" list="seedlot_relation">
+      <metadataElement code="seedlotRelationContainer" datatype="Container">
         <labels>
           <label locale="en_US">
             <name>Seedlot relation</name>
@@ -4379,31 +4475,36 @@
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
         </settings>
-        <typeRestrictions>
-          <restriction code="r_seedlot">
-            <table>ca_objects</table>
-            <type>seedlot</type>
+        <elements>
+          <metadataElement code="seedlotRelation" datatype="List" list="seedlot_relation">
+            <labels>
+              <label locale="en_US">
+                <name>Seedlot relation</name>
+                <description>The relation between the individual seeds of the seedlot</description>
+              </label>
+            </labels>
             <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
             </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-      <metadataElement code="relationSpecification" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>Relation specification</name>
-		        <description>Specification on the type of relation.</description>
-          </label>
-        </labels>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
+          </metadataElement>
+          <metadataElement code="relationSpecification" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Relation specification</name>
+                <description>Specification on the type of relation.</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+		    </elements>
         <typeRestrictions>
           <restriction code="r_seedlot">
             <table>ca_objects</table>
@@ -5186,7 +5287,7 @@
             </labels>
             <documentationUrl>http://rs.tdwg.org/abcd/terms/lowerValue</documentationUrl>
             <settings>
-              <setting name="fieldWidth">70</setting>
+              <setting name="fieldWidth">35</setting>
               <setting name="fieldHeight">1</setting>
               <setting name="minChars">0</setting>
               <setting name="maxChars">65535</setting>
@@ -5200,7 +5301,7 @@
             </labels>
             <documentationUrl>http://rs.tdwg.org/abcd/terms/upperValue</documentationUrl>
             <settings>
-              <setting name="fieldWidth">70</setting>
+              <setting name="fieldWidth">35</setting>
               <setting name="fieldHeight">1</setting>
               <setting name="minChars">0</setting>
               <setting name="maxChars">65535</setting>
@@ -5232,8 +5333,8 @@
               </label>
             </labels>
             <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
+              <setting name="fieldWidth">20</setting>
+              <setting name="fieldHeight">2</setting>
               <setting name="minChars">0</setting>
               <setting name="maxChars">65535</setting>
             </settings>
@@ -5246,8 +5347,8 @@
               </label>
             </labels>
             <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
+              <setting name="fieldWidth">50</setting>
+              <setting name="fieldHeight">2</setting>
               <setting name="minChars">0</setting>
               <setting name="maxChars">65535</setting>
             </settings>
@@ -5312,14 +5413,35 @@
               <setting name="canBeUsedInDisplay">1</setting>
             </settings>
           </metadataElement>
+          <metadataElement code="lmType" datatype="List" list="lm_type">
+            <labels>
+              <label locale="en_US">
+                <name>Type of length measurement</name>
+              </label>
+            </labels>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </metadataElement>
           <metadataElement code="lengthAppliesTo" datatype="Text">
             <labels>
               <label locale="en_US">
                 <name>measurementAppliesTo</name>
-                <description>Further specification of what exactly was measured. For example: length of the arm/leg/tail,..., diameter at breast height, height, ...</description>
+                <description>Further specification of what exactly was measured. For example: length/width: "of the arm/leg/tail". For example: diameter: "of the main trunk".</description>
               </label>
             </labels>
             <documentationUrl>http://rs.tdwg.org/abcd/terms/appliesTo</documentationUrl>
+          </metadataElement>
+          <metadataElement code="lengthUnit" datatype="List" list="length_unit">
+            <labels>
+            <label locale="en_US">
+              <name>Unit</name>
+              <description>Unit used for the measurement.</description>
+            </label>
+            </labels>
+            <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/volumeUnit</documentationUrl>
           </metadataElement>
           <metadataElement code="lengthLowerValue" datatype="Text">
             <labels>
@@ -5330,7 +5452,7 @@
             </labels>
             <documentationUrl>http://rs.tdwg.org/abcd/terms/lowerValue</documentationUrl>
             <settings>
-              <setting name="fieldWidth">70</setting>
+              <setting name="fieldWidth">35</setting>
               <setting name="fieldHeight">1</setting>
               <setting name="minChars">0</setting>
               <setting name="maxChars">65535</setting>
@@ -5344,20 +5466,11 @@
             </labels>
             <documentationUrl>http://rs.tdwg.org/abcd/terms/upperValue</documentationUrl>
             <settings>
-              <setting name="fieldWidth">70</setting>
+              <setting name="fieldWidth">35</setting>
               <setting name="fieldHeight">1</setting>
               <setting name="minChars">0</setting>
               <setting name="maxChars">65535</setting>
             </settings>
-          </metadataElement>
-          <metadataElement code="lengthUnit" datatype="List" list="length_unit">
-            <labels>
-            <label locale="en_US">
-              <name>Unit</name>
-              <description>Unit used for the measurement.</description>
-            </label>
-            </labels>
-            <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/volumeUnit</documentationUrl>
           </metadataElement>
           <metadataElement code="lengthAccuracy" datatype="Text">
             <labels>
@@ -5376,7 +5489,7 @@
               </label>
             </labels>
             <settings>
-              <setting name="fieldWidth">70</setting>
+              <setting name="fieldWidth">20</setting>
               <setting name="fieldHeight">1</setting>
               <setting name="minChars">0</setting>
               <setting name="maxChars">65535</setting>
@@ -5390,8 +5503,8 @@
               </label>
             </labels>
             <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
+              <setting name="fieldWidth">50</setting>
+              <setting name="fieldHeight">2</setting>
               <setting name="minChars">0</setting>
               <setting name="maxChars">65535</setting>
             </settings>
@@ -7817,6 +7930,37 @@
             </settings>
           </restriction>
         </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="dataset_id" datatype="File">
+        <labels>
+          <label locale="en_US">
+            <name>Dataset of identifications in an object</name>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">5</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_occurrences">
+            <table>ca_occurrences</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
       </metadataElement>																																																																
 	  <!--Procedure-->
       <metadataElement code="eventProcedure" datatype="Text">
@@ -8004,6 +8148,7 @@
           <restriction code="r_curation">
             <table>ca_occurrences</table>
             <type>curation</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -8853,7 +8998,24 @@
         <labels>
           <label locale="en_US">
             <name>Relationship explanation</name>
-            <description/>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">3</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="ca_objects_x_objects">
+            <table>ca_objects_x_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
           </label>
         </labels>
         <settings/>
@@ -8978,7 +9140,13 @@
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="dontShowDeleteButton">0</setting>
-                <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
+                <setting name="restrict_to_relationship_types">
+                entireCollection_animalBulk,entireCollection_animalEntireLiving,entireCollection_animalEntireCadaver,
+                entireCollection_livingPlant,sampleOf_observationPlant,sampleOf_observationAnimal,sampleOf_observationSoil,
+                sampleOf_observationWater,childOf_livingPlant,childOf_seedlot,childOf_animalEntireLiving,cloneOf_livingPlant,
+                childOfCloneOf_livingPlant,childOfCloneOf_seedlot,grandchildOf_livingPlant,grandchildOf_seedlot,
+                grandchildOf_animalEntireLiving,grandchildOfCloneOf_livingPlant,grandchildOfCloneOf_seedlot
+                </setting>
                 <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater"> <ifdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.verbatimIdentification</ifdef> <ifnotdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.preferred_labels.name</ifnotdef>, ^ca_occurrences.dateRange,<ifdef code="ca_occurrences.verbatimLocality"> ^ca_occurrences.verbatimLocality</ifdef><ifdef code="ca_occurrences.observationVerbatimLongitudeX"> X:^ca_occurrences.verbatimLongitudeX</ifdef><ifdef code="ca_occurrences.verbatimLatitudeY"> Y:^ca_occurrences.verbatimLatitudeY</ifdef> (^ca_occurrences.idno)</unit>]]></setting>
               </settings>
             </placement>
@@ -8999,16 +9167,20 @@
                 <setting name="hideIfSelected_1">object_ui/object_management/is_deaccessioned</setting>
               </settings>
             </placement>
-            <placement code="ca_entities_currentOwner">
-              <bundle>ca_entities</bundle>
+            <placement code="ca_collection">
+              <bundle>ca_collections</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Current/last owner</setting>
-                <setting name="description" locale="en_US">This is always an organization. Personal collections are not inventoried, only when donated to an organization. This is either the current owner, or the last owner if disposed.</setting>
-				        <setting name="restrict_to_types">org</setting>
+                <setting name="label" locale="en_US">Object belongs to collection</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_relationship_types">currentOwner</setting>
               </settings>
+            </placement>
+			      <placement code="ca_object_verbatimIdentification" typeRestrictions="animalBulk,animalEntireLiving,animalEntireCadaver,animalEntireSpecimen,sampleAmphibianLarva,sampleAmphibianEmbryo,sampleAmphibianTailclip,sampleAmphibianFrogspawn,sampleAmphibianSwabCloaca,sampleAmphibianSwabMouth,sampleAmphibianSwabEar,sampleAmphibianToeclip,sampleFishFinclip,sampleFishMuscle,sampleInvertebrateLarva,sampleInvertebrateLeg,sampleInvertebrateWingclip,sampleMammalBaculum,sampleMammalBladder,sampleMammalBlood,sampleMammalBrain,sampleMammalConjuctivum,sampleMammalCyste,sampleMammalEarpunch,sampleMammalEmbryo,sampleMammalFat,sampleMammalFeces,sampleMammalHead,sampleMammalHeart,sampleMammalHair,sampleMammalIntestine,sampleMammalLiver,sampleMammalLowerJaw,sampleMammalLung,sampleMammalLymphNode,sampleMammalKidney,sampleMammalMuscle,sampleMammalSkinComplete,sampleMammalSkinPiece,sampleMammalSkull,sampleMammalSpleen,sampleMammalStomach,sampleMammalStomachContent,sampleMammalSwabBite,sampleMammalTongue,sampleMammalTooth,sampleMammalUterus,sampleReptileSkin,sampleReptileTailclip,leafSample,littertrapSample,livingPlant,seedlot,stemDisc">
+              <bundle>ca_attributes_verbatimIdentification</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The verbatim taxonomic identification of the object</setting>
+                <setting name="description" locale="en_US">Usually this equals the verbatim identification of the observation the object was sampled from. If present, this value will be automatically be set here. To be actively changed for object types such as living animals, seedlots and living plants, if the taxonomic identification is different from the field observation they refer to (e.g. in the case of hybrid offspring). A verbatim identification can be a species name, genus name, family name. This can be the vernacular name in English (e.g. human), Dutch (e.g. mens) ... or the the binomial nomenclature (e.g. Homo sapiens)..</setting>
+			        </settings>
             </placement>
           </bundlePlacements>
         </screen>
@@ -9026,8 +9198,9 @@
 				        <setting name="restrict_to_types">project</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">3</setting>
-                <setting name="restrict_to_relationship_types">resultingObjects</setting>
+                <setting name="restrict_to_relationship_types">resultingObjects_project</setting>
                 <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
             <placement code="ca_occurrence_fieldwork">
@@ -9038,7 +9211,7 @@
 				        <setting name="restrict_to_types">fieldwork</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_relationship_types">resultingObjects</setting>
+                <setting name="restrict_to_relationship_types">resultingObjects_fieldwork</setting>
                 <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
@@ -9050,44 +9223,49 @@
                 <setting name="restrict_to_types">observation</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
+                <setting name="restrict_to_relationship_types">
+                entireCollection_animalBulk,entireCollection_animalEntireLiving,entireCollection_animalEntireCadaver,
+                entireCollection_livingPlant,sampleOf_observationPlant,sampleOf_observationAnimal,sampleOf_observationSoil,
+                sampleOf_observationWater,childOf_livingPlant,childOf_seedlot,childOf_animalEntireLiving,cloneOf_livingPlant,
+                childOfCloneOf_livingPlant,childOfCloneOf_seedlot,grandchildOf_livingPlant,grandchildOf_seedlot,
+                grandchildOf_animalEntireLiving,grandchildOfCloneOf_livingPlant,grandchildOfCloneOf_seedlot
+                </setting>
                 <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater"> <ifdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.verbatimIdentification</ifdef> <ifnotdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.preferred_labels.name</ifnotdef> observed on: ^ca_occurrences.dateRange<ifdef code="ca_occurrences.verbatimLocality">, observed at: ^ca_occurrences.verbatimLocality (^ca_occurrences.idno)</ifdef></unit>]]></setting>
               </settings>
             </placement>
-			      <placement code="ca_object_lot">
+			      <placement code="ca_object_lot" typeRestrictions="animalBulk,animalEntireLiving,animalEntireCadaver,animalEntireSpecimen,sampleAmphibianLarva,sampleAmphibianEmbryo,sampleAmphibianTailclip,sampleAmphibianFrogspawn,sampleAmphibianSwabCloaca,sampleAmphibianSwabMouth,sampleAmphibianSwabEar,sampleAmphibianToeclip,sampleFishFinclip,sampleFishMuscle,sampleInvertebrateLarva,sampleInvertebrateLeg,sampleInvertebrateWingclip,sampleMammalBaculum,sampleMammalBladder,sampleMammalBlood,sampleMammalBrain,sampleMammalConjuctivum,sampleMammalCyste,sampleMammalEarpunch,sampleMammalEmbryo,sampleMammalFat,sampleMammalFeces,sampleMammalHead,sampleMammalHeart,sampleMammalHair,sampleMammalIntestine,sampleMammalLiver,sampleMammalLowerJaw,sampleMammalLung,sampleMammalLymphNode,sampleMammalKidney,sampleMammalMuscle,sampleMammalSkinComplete,sampleMammalSkinPiece,sampleMammalSkull,sampleMammalSpleen,sampleMammalStomach,sampleMammalStomachContent,sampleMammalSwabBite,sampleMammalTongue,sampleMammalTooth,sampleMammalUterus,sampleReptileSkin,sampleReptileTailclip,mineralSoilSample,peatSoilSample,organicSoilSample">
               <bundle>ca_object_lots</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The object belongs to the population or provenance</setting>
+                <setting name="label" locale="en_US">The object belongs to the population</setting>
+                <setting name="description" locale="en_US">A population in this case is any grouping of individuals in space and time that is defined.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+				        <setting name="restrict_to_types">population</setting>
+              </settings>
+            </placement>
+			      <placement code="ca_object_lot" typeRestrictions="leafSample,littertrapSample,livingPlant,seedlot,stemDisc,">
+              <bundle>ca_object_lots</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The plant object belongs to the population, wild (in-situ) provenance or provenance region</setting>
+                <setting name="description" locale="en_US">A population in this case is any grouping of individuals in space and time that is defined. Provenance or provenance region is terminology for grouping plants in space and time, connected to plant breeding, where plant material is obtained from registred origins only. Wild (in-situ) provenance can be seed sources or (seed) stands.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="seedlot_relation" typeRestrictions="seedlot">
-              <bundle>ca_attribute_seedlotRelation</bundle>
+			      <placement code="ca_collection" typeRestrictions="leafSample,littertrapSample,livingPlant,seedlot,stemDisc,">
+              <bundle>ca_object_lots</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The plant object belongs to the collection (ex-situ) provenance</setting>
+                <setting name="description" locale="en_US">Provenance or provenance region is terminology for grouping plants in space and time, connected to plant breeding, where plant material is obtained from registred origins only. Collection (ex-situ) provenances are seed-orchards and clone banks.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+			      <placement code="seedlot_relationContainer" typeRestrictions="seedlot">
+              <bundle>ca_attribute_seedlotRelationContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Relation of the seeds in the seedlot</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="seedlot_relationSpecification" typeRestrictions="seedlot">
-              <bundle>ca_attribute_relationSpecification</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Specification of the relationtype of the seeds in the seedlot</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
-            <placement code="ca_objects_lots_provenanceRegion" typeRestrictions="seedlot,livingPlant">
-              <bundle>ca_places</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The provenance region</setting>
-                <setting name="description" locale="en_US">The seedlot or living plant is from the given provenance region. As provenance region concepts can change over time (depending on the definition/publication), multiple provenances can be linked to one plant (max. 5)</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">5</setting>
-                <setting name="restrict_to_types">provenanceRegion</setting>
-				        <setting name="add_label" locale="en_US">Add provenance region</setting>
-              </settings>
-			      </placement>
 			      <placement code="seedClass" typeRestrictions="seedlot">
               <bundle>ca_attribute_seedClass</bundle>
 			        <settings>
@@ -9127,8 +9305,8 @@
             <placement code="hierarchy_location">
               <bundle>hierarchy_location</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Object hierarchy: direct relationships</setting>
-                <setting name="description" locale="en_US">If the object resulted from any other object (not directly from the observation), the parent can be set here. Similarily, if the object has resulted in any other objects (e.g. subsamples, DNA extracts), these are linked here.</setting>
+                <setting name="label" locale="en_US">Object relationships</setting>
+                <setting name="description" locale="en_US">All related objects, either direct or indirect are shown here.</setting>
               </settings>
             </placement>
             <placement code="ca_objects_container_direct">
@@ -9136,7 +9314,40 @@
 			        <settings>
                 <setting name="label" locale="en_US">Direct relationships</setting>
                 <setting name="description" locale="en_US">Direct relationships between objects can be listed here. To allow specifying the type of relationship, if need be.</setting>
-                <setting name="restrict_to_relationship_types" locale="en_US">oDNASubSample,eDNASubSample,dnaExtraction,waterToFilter,plantChildOf,livingPlantSampled,livingAnimalSampled,livingAnimalDeceased,mammalAutopsySample,soilSubSample</setting>
+                <setting name="restrict_to_relationship_types" locale="en_US">
+                oDNASubSample,eDNASubSample,dnaExtraction_sampleAmphibianLarva,dnaExtraction_sampleAmphibianEmbryo,
+                dnaExtraction_sampleAmphibianTailclip,dnaExtraction_sampleAmphibianFrogspawn,dnaExtraction_sampleAmphibianSwabCloaca,
+                dnaExtraction_sampleAmphibianSwabMouth,dnaExtraction_sampleAmphibianSwabEar,dnaExtraction_sampleAmphibianToeclip,
+                dnaExtraction_sampleFishFinclip,dnaExtraction_sampleFishMuscle,dnaExtraction_sampleInvertebrateLarva,
+                dnaExtraction_sampleInvertebrateLeg,dnaExtraction_sampleInvertebrateWingclip,dnaExtraction_sampleMammalBladder,
+                dnaExtraction_sampleMammalBlood,dnaExtraction_sampleMammalBrain,dnaExtraction_sampleMammalConjuctivum,
+                dnaExtraction_sampleMammalCyste,dnaExtraction_sampleMammalEarpunch,dnaExtraction_sampleMammalEmbryo,
+                dnaExtraction_sampleMammalFeces,dnaExtraction_sampleMammalHeart,dnaExtraction_sampleMammalHair,
+                dnaExtraction_sampleMammalIntestine,dnaExtraction_sampleMammalLiver,dnaExtraction_sampleMammalLung,
+                dnaExtraction_sampleMammalLymphNode,dnaExtraction_sampleMammalKidney,dnaExtraction_sampleMammalMuscle,
+                dnaExtraction_sampleMammalSkinPiece,dnaExtraction_sampleMammalSkinComplete,dnaExtraction_sampleMammalSpleen,
+                dnaExtraction_sampleMammalStomach,dnaExtraction_sampleMammalTongue,dnaExtraction_sampleMammalUterus,
+                dnaExtraction_sampleReptileSkin,dnaExtraction_sampleReptileTailclip,dnaExtraction_leafSample,dnaExtraction_eDnaWaterFilter,
+                dnaExtraction_mineralSoilSample,dnaExtraction_peatSoilSample,dnaExtraction_organicSoilSample,waterToFilter,
+                seedlotSubSample,plantChildOf_livingPlant,plantChildOf_seedlot,livingPlantSampled_leafSample,livingPlantSampled_stemDisc,
+                livingAnimalSampled_sampleAmphibianTailclip,livingAnimalSampled_sampleAmphibianSwabCloaca,
+                livingAnimalSampled_sampleAmphibianSwabMouth,livingAnimalSampled_sampleAmphibianSwabEar,
+                livingAnimalSampled_sampleAmphibianToeclip,livingAnimalSampled_sampleFishFinclip,livingAnimalSampled_sampleFishMuscle,
+                livingAnimalSampled_sampleInvertebrateLeg,livingAnimalSampled_sampleInvertebrateWingclip,livingAnimalSampled_sampleMammalBlood,
+                livingAnimalSampled_sampleMammalEarpunch,livingAnimalSampled_sampleMammalFeces,livingAnimalSampled_sampleMammalHair,
+                livingAnimalSampled_sampleMammalSkinPiece,livingAnimalSampled_sampleReptileSkin,livingAnimalSampled_sampleReptileTailclip,
+                livingAnimalSampled_animalEntireSpecimen,livingAnimalDeceased,mammalAutopsySample_sampleMammalBaculum,
+                mammalAutopsySample_sampleMammalBladder,mammalAutopsySample_sampleMammalBlood,mammalAutopsySample_sampleMammalBrain,
+                mammalAutopsySample_sampleMammalConjuctivum,mammalAutopsySample_sampleMammalCyste,mammalAutopsySample_sampleMammalEmbryo,
+                mammalAutopsySample_sampleMammalFat,mammalAutopsySample_sampleMammalHair,mammalAutopsySample_sampleMammalHead,
+                mammalAutopsySample_sampleMammalHeart,mammalAutopsySample_sampleMammalIntestine,mammalAutopsySample_sampleMammalKidney,
+                mammalAutopsySample_sampleMammalLiver,mammalAutopsySample_sampleMammalLowerJaw,mammalAutopsySample_sampleMammalLung,
+                mammalAutopsySample_sampleMammalLymphNode,mammalAutopsySample_sampleMammalMuscle,mammalAutopsySample_animalEntireSpecimen,
+                mammalAutopsySample_animalBulk,mammalAutopsySample_sampleMammalSkinComplete,mammalAutopsySample_sampleMammalSkinPiece,
+                mammalAutopsySample_sampleMammalSkull,mammalAutopsySample_sampleMammalSpleen,mammalAutopsySample_sampleMammalStomach,
+                mammalAutopsySample_sampleMammalStomachContent,mammalAutopsySample_sampleMammalTongue,mammalAutopsySample_sampleMammalTooth,
+                mammalAutopsySample_sampleMammalUterus,mineralSoilSubSample,peatSoilSubSample,organicSoilSubSample
+                </setting>
               </settings>
             </placement>		 		 
             <placement code="ca_objects_container_indirect">
@@ -9144,7 +9355,9 @@
 			        <settings>
                 <setting name="label" locale="en_US">Indirect relationships</setting>
                 <setting name="description" locale="en_US">Indirect relationships between objects can be listed here. For example: if samples are from two different observations, which are (likely) from the same animal/plant: choose the type sameIndividual. The observations and subsequent samples can differ in time, place (if animal) and method, ... but are related as they are from the same individual. Other associated observations (and their subsequent samples) can also be linked, for example: an animal collected on a plant where both are sampled to study their interaction. For such cases, choose: relatedTo and explain the relationship in more detail in the interstitial data. More types can be added. Ask the administrator.</setting>
-                <setting name="restrict_to_relationship_types" locale="en_US">objectRelatedTo,objectSameIndividual,objectSibling</setting>
+                <setting name="restrict_to_relationship_types" locale="en_US">
+                objectSameIndividual,objectSibling,objectRelatedTo,parallelSample_seedlot
+                </setting>
               </settings>
             </placement>		 		 
           </bundlePlacements>
@@ -9341,8 +9554,7 @@
                 <setting name="readonly">1</setting>
                 <setting name="dontShowDeleteButton">1</setting>
                 <setting name="restrict_to_types">observationAnimal,observationPlant</setting>
-                <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
-                <setting name="display_template">^ca_occurrences.verbatimIdentification</setting>
+                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal">^ca_occurrences.verbatimIdentification<unit>]]></setting>
 			        </settings>
             </placement>
 			      <placement code="ca_occurrences_standardizedIdentification">
@@ -9353,8 +9565,7 @@
                 <setting name="readonly">1</setting>
                 <setting name="dontShowDeleteButton">1</setting>
                 <setting name="restrict_to_types">observationAnimal,observationPlant</setting>
-                <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
-                <setting name="display_template">^ca_occurrences.standardizedIdentification</setting>
+                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal">^ca_occurrences.standardizedIdentification<unit>]]></setting>
 			        </settings>
             </placement>
 			      <placement code="ca_object_verbatimIdentification">
@@ -9377,8 +9588,8 @@
                 <setting name="label" locale="en_US">The identification log of the observation and object.</setting>
                 <setting name="description" locale="en_US">The history of identifications for the observation and object. Ideally identifications are logged to the observation and all its derived objects.</setting>
                 <setting name="dontShowDeleteButton">1</setting>
-                <setting name="restrict_to_types">identificationAnimal,identificationPlant</setting>
-                <setting name="display_template">^ca_occurrences.verbatimIdentification; ^ca_occurrences.dateRange; ^ca_occurrences.idno</setting>
+                <setting name="restrict_to_types">identificationZoological,identificationPlant,identificationViral,identificationBacteriological</setting>
+                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="identificationZoological,identificationPlant,identificationViral,identificationBacteriological"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -9400,12 +9611,12 @@
 			      <placement code="identifications">
               <bundle>ca_occurrences</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The identification log of the sampling point and forthcoming object.</setting>
+                <setting name="label" locale="en_US">The identification log of the sampling point and forthcoming object(s).</setting>
                 <setting name="description" locale="en_US">The identifications of the targeted barcoding or screening of the eDNA sample, relevant to be queryable. If many: best imported via a list (csv/Gsheet/Excel).</setting>
-                <setting name="display_template">^ca_occurrences.verbatimIdentification; ^ca_occurrences.dateRange; ^ca_occurrences.idno</setting>
+                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
 			        </settings>
             </placement>
-            <placement code="datasets">
+            <placement code="dataset_id">
               <bundle>ca_attribute_dataset</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">(Meta)Barcoding result</setting>
@@ -9606,19 +9817,8 @@
               <bundle>ca_collections</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object belongs to collection</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
-            <placement code="ca_entities_currentOwner">
-              <bundle>ca_entities</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Current/last owner</setting>
-                <setting name="description" locale="en_US">This is always an organization. Personal collections are not inventoried, only when donated to an organization. This is either the current owner, or the last owner if disposed.</setting>
-				        <setting name="restrict_to_types">org</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_relationship_types">currentOwner</setting>
               </settings>
             </placement>
 			      <placement code="ca_entities_previousOwner">
@@ -9849,7 +10049,7 @@
               <bundle>ca_places</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Fieldwork/project focal place(s)</setting>
-                <setting name="description" locale="en_US">The fieldwork or project took place at. This can also encompass provenance concepts, plots, transects, ... whatever place concept that is relevant to group objects or observations in.</setting>
+                <setting name="description" locale="en_US">The fieldwork or project took place at. This can compass administrational places but also plots or transects.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">20</setting>
 				        <setting name="add_label" locale="en_US">Add place</setting>
@@ -9859,7 +10059,7 @@
               <bundle>ca_places</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The place</setting>
-                <setting name="description" locale="en_US">The observation occurred at this place. This can also encompass provenance concepts, plots, transects, ... whatever place concept that is relevant to group objects or observations in.</setting>
+                <setting name="description" locale="en_US">The fieldwork or project took place at. This can compass administrational places but also plots or transects.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
@@ -9867,12 +10067,11 @@
             <placement code="ca_objects_lots_provenanceRegion" typeRestrictions="observationPlant">
               <bundle>ca_places</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The provenance region</setting>
-                <setting name="description" locale="en_US">The plant observation has the provenance. As provenance concepts can change over time (depending on the definition/publication), multiple provenances can be linked to one plant (max. 5)</setting>
+                <setting name="label" locale="en_US">The provenance (region)</setting>
+                <setting name="description" locale="en_US">The plant observation has the provenance. As provenance concepts are dependent on the taxon, these are logged separately.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">5</setting>
-                <setting name="restrict_to_types">provenanceRegion</setting>
-				        <setting name="add_label" locale="en_US">Add provenance region</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="restrict_to_types">provenanceRegion,provenance</setting>
               </settings>
 			      </placement>
             <placement code="observationVerbatimLongitudeX" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
@@ -10024,14 +10223,6 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-			      <placement code="observationPopulation" typeRestrictions="observation,observationPlant,observationAnimal,observationSoil,observationWater">
-              <bundle>ca_object_lots</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Related population</setting>
-                <setting name="restrict_to_types">population</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
           </bundlePlacements>
         </screen>
         <screen idno="event_execution" default="0">
@@ -10054,7 +10245,11 @@
 			        <settings>
                 <setting name="label" locale="en_US">Object(s) subjected to event</setting>
                 <setting name="description" locale="en_US">Object that was subjected to the event (identification, valuation or curation)</setting>
-                <setting name="restrict_to_relationship_types">executedOnObject</setting>
+                <setting name="restrict_to_relationship_types">
+                executedOnObject_idBacteriological,executedOnObject_idBotanical,executedOnObject_idViral,executedOnObject_idZoologial,
+                executedOnObject_valuation,executedOnObject_disposal,executedOnObject_treatment,executedOnObject_renewal,
+                executedOnObject_transfer
+                </setting>
               </settings>
             </placement>
             <placement code="ca_occurrence_observation_identification" typeRestrictions="identification,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial">
@@ -10130,6 +10325,7 @@
                 <setting name="description" locale="en_US">Multimedia that can serve as evidence for the made observation, such as: photo, video. This can be of an organism or the habitat of the organism. In case there is no physical morphological voucher of the observation (plant, fungi, animal) this could count as a voucher.</setting>
 				        <setting name="add_label" locale="en_US">Add multimedia</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
                 <setting name="restrict_to_types">observationMultimedia</setting>
 			        </settings>
             </placement>
@@ -10140,6 +10336,7 @@
                 <setting name="description" locale="en_US">Files related to the observation, such as: scan of observation field notes, scan of map, ...</setting>
 				        <setting name="add_label" locale="en_US">Add file</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
 			        </settings>
             </placement>
 			      <placement code="verbatimIdentification" typeRestrictions="observationPlant,observationAnimal">
@@ -10169,6 +10366,7 @@
                 <setting name="list_format">list</setting>
                 <setting name="restrict_to_relationship_types">executedOnObservation</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
 			        </settings>
             </placement>
             <placement code="ca_occurrence_identificationAnimal" typeRestrictions="observationAnimal"><!--To check display template-->
@@ -10179,6 +10377,7 @@
                 <setting name="restrict_to_types">identificationZoological</setting>
                 <setting name="list_format">list</setting>
                 <setting name="restrict_to_relationship_types">executedOnObservation</setting>
+                <setting name="expand_collapse_value">collapse</setting>
                 <setting name="display_template">
                   <![CDATA[
                     <unit>
@@ -10200,6 +10399,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Sex of organism</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
 			        </settings>
             </placement>
 			      <placement code="lifeStage" typeRestrictions="observationAnimal,observationPlant">
@@ -10207,6 +10407,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Lifestage of organism</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
 			        </settings>
             </placement>
             <placement code="observation_age" typeRestrictions="observationAnimal,observationPlant">
@@ -10214,8 +10415,8 @@
 			        <settings>
                 <setting name="label" locale="en_US">Age measurement/statement</setting>
 				        <setting name="add_label" locale="en_US">Add age measurement/statement</setting>
-                <setting name="list_format">list</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
               </settings>
             </placement>
 			      <placement code="reproductiveCondition" typeRestrictions="observationAnimal,observationPlant">
@@ -10223,6 +10424,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Reproductive condition of organism</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
 			        </settings>
             </placement>
 			      <placement code="behavior" typeRestrictions="observationAnimal">
@@ -10230,34 +10432,8 @@
 			        <settings>
                 <setting name="label" locale="en_US">Behavior of animal</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
 			        </settings>
-            </placement>
-            <placement code="observation_circumference" typeRestrictions="observationAnimal,observationPlant">
-              <bundle>ca_attribute_circumferenceContainer</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Circumference measurement</setting>
-				        <setting name="add_label" locale="en_US">Add circumference measurement</setting>
-                <setting name="list_format">list</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-            <placement code="observation_dbh" typeRestrictions="observationPlant">
-              <bundle>ca_attribute_dbhContainer</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Dbh measurement (diameter at breast height)</setting>
-				        <setting name="add_label" locale="en_US">Add Dbh measurement</setting>
-                <setting name="list_format">list</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-            <placement code="observation_height" typeRestrictions="observationAnimal,observationPlant">
-              <bundle>ca_attribute_heightContainer</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Height measurement/statement</setting>
-				        <setting name="add_label" locale="en_US">Add height measurement/statement</setting>
-                <setting name="list_format">list</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
             </placement>
             <placement code="observation_length" typeRestrictions="observationAnimal,observationPlant">
               <bundle>ca_attribute_lengthContainer</bundle>
@@ -10267,6 +10443,7 @@
 				        <setting name="add_label" locale="en_US">Add length measurement</setting>
                 <setting name="list_format">list</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
               </settings>
             </placement>
             <placement code="observation_density" typeRestrictions="observationPlant">
@@ -10276,6 +10453,7 @@
 				        <setting name="add_label" locale="en_US">Add density measurement</setting>
                 <setting name="list_format">list</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
               </settings>
             </placement>
 			      <placement code="ca_object">
@@ -10284,7 +10462,13 @@
                 <setting name="label" locale="en_US">Objects resulting from observation</setting>
 				        <setting name="add_label" locale="en_US">Add object</setting>
                 <setting name="list_format">list</setting>
-                <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
+                <setting name="restrict_to_relationship_types">
+                entireCollection_animalBulk,entireCollection_animalEntireLiving,entireCollection_animalEntireCadaver,
+                entireCollection_livingPlant,sampleOf_observationPlant,sampleOf_observationAnimal,sampleOf_observationSoil,
+                sampleOf_observationWater,childOf_livingPlant,childOf_seedlot,childOf_animalEntireLiving,cloneOf_livingPlant,
+                childOfCloneOf_livingPlant,childOfCloneOf_seedlot,grandchildOf_livingPlant,grandchildOf_seedlot,
+                grandchildOf_animalEntireLiving,grandchildOfCloneOf_livingPlant,grandchildOfCloneOf_seedlot
+                </setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -10317,7 +10501,7 @@
                 <setting name="description" locale="en_US">Fieldwork that is classified under this project. This can be day trips, expeditions, survey events, ...</setting>
 				        <setting name="add_label" locale="en_US">Add fieldwork</setting>
 				        <setting name="restrict_to_types">fieldwork</setting>
-                <setting name="restrict_to_relationship_types">resultingFieldwork</setting>
+                <setting name="restrict_to_relationship_types">resultingFieldwork_project</setting>
                 <setting name="list_format">list</setting>
 			        </settings>
             </placement>
@@ -10328,7 +10512,7 @@
 				        <setting name="add_label" locale="en_US">Add observation</setting>
 				        <setting name="restrict_to_types">observation</setting>
                 <setting name="list_format">list</setting>
-                <setting name="restrict_to_relationship_types">resultingObservation</setting>
+                <setting name="restrict_to_relationship_types">resultingObservation_project</setting>
 			        </settings>
             </placement>
 			      <placement code="ca_object_lot_population">
@@ -10348,7 +10532,7 @@
                 <setting name="label" locale="en_US">Resulting objects</setting>
 				        <setting name="add_label" locale="en_US">Add object</setting>
                 <setting name="list_format">list</setting>
-                <setting name="restrict_to_relationship_types">resultingObjects</setting>
+                <setting name="restrict_to_relationship_types">resultingObjects_project</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -10371,7 +10555,7 @@
 				        <setting name="add_label" locale="en_US">Add fieldwork</setting>
 				        <setting name="restrict_to_types">fieldwork</setting>
                 <setting name="list_format">list</setting>
-                <setting name="restrict_to_relationship_types">resultingFieldwork</setting>
+                <setting name="restrict_to_relationship_types">resultingFieldwork_fieldwork</setting>
 			        </settings>
             </placement>
             <placement code="ca_occurrences_observation">
@@ -10381,7 +10565,7 @@
 				        <setting name="add_label" locale="en_US">Add observation</setting>
 				        <setting name="restrict_to_types">observation</setting>
                 <setting name="list_format">list</setting>
-                <setting name="restrict_to_relationship_types">resultingObservation</setting>
+                <setting name="restrict_to_relationship_types">resultingObservation_fieldwork</setting>
 			        </settings>
             </placement>
 			      <placement code="ca_object_lot">
@@ -10401,7 +10585,7 @@
                 <setting name="label" locale="en_US">Resulting objects</setting>
 				        <setting name="add_label" locale="en_US">Add object</setting>
                 <setting name="list_format">list</setting>
-                <setting name="restrict_to_relationship_types">resultingObjects</setting>
+                <setting name="restrict_to_relationship_types">resultingObjects_fieldwork</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -10993,15 +11177,14 @@
                 <setting name="label" locale="en_US">Storage location of collection</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_relationship_types">storedCollection</setting>
+                <setting name="restrict_to_types">plantedSite,building,floor,room,cabinetFridgeFreezer,drawerShelf,box</setting>
               </settings>
             </placement>
             <placement code="ca_entities_currentCollectionOwner">
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Current/last owner</setting>
-                <setting name="description" locale="en_US">This is always an organization. Personal collections are not inventoried, only when donated to an organization. This is either the current owner, or the last owner if disposed.</setting>
-				        <setting name="restrict_to_types">org</setting>
+                <setting name="description" locale="en_US">This is preferrably an organization. Best practice is that if personal collections are used for research purposes, a duplicate of the object or the collection (object) as a whole is donated. This is either the current owner, or the last owner if disposed.</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="restrict_to_relationship_types">currentCollectionOwner</setting>
@@ -11145,7 +11328,7 @@
 				        <setting name="add_label" locale="en_US">Add file</setting>
 			        </settings>
             </placement>
-			      <placement code="plantedSiteverbatimLocality" typeRestrictions="plantedSite">
+			      <placement code="plantedSiteverbatimLocality" typeRestrictions="plantedSite,externalPlantedSite">
               <bundle>ca_attribute_verbatimLocality</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim locality</setting>
@@ -11154,7 +11337,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-            <placement code="plantedSitePlace" typeRestrictions="plantedSite">
+            <placement code="plantedSitePlace" typeRestrictions="plantedSite,externalPlantedSite">
               <bundle>ca_places</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Place of the site</setting>
@@ -11162,7 +11345,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="plantedSiteVerbatimElevation" typeRestrictions="plantedSite">
+			      <placement code="plantedSiteVerbatimElevation" typeRestrictions="plantedSite,externalPlantedSite">
               <bundle>ca_attribute_minimumElevationInMeters</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The minimum elevation of the plantedSite in meters.</setting>
@@ -11170,7 +11353,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="plantedSiteMinimumElevationInMeters" typeRestrictions="plantedSite">
+			      <placement code="plantedSiteMinimumElevationInMeters" typeRestrictions="plantedSite,externalPlantedSite">
               <bundle>ca_attribute_minimumElevationInMeters</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The minimum elevation of the plantedSite in meters.</setting>
@@ -11178,7 +11361,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="plantedSiteMaximumElevationInMeters" typeRestrictions="plantedSite">
+			      <placement code="plantedSiteMaximumElevationInMeters" typeRestrictions="plantedSite,externalPlantedSite">
               <bundle>ca_attribute_maximumElevationInMeters</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The maximum elevation of the plantedSite in meters.</setting>
@@ -11186,7 +11369,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-            <placement code="plantedSiteverbatimLatitudeY" typeRestrictions="spotPlantedSite,plantedSite">
+            <placement code="plantedSiteverbatimLatitudeY" typeRestrictions="spotPlantedSite,plantedSite,externalPlantedSite">
               <bundle>ca_attribute_verbatimLatitudeY</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim latitude (Y)</setting>
@@ -11195,7 +11378,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-            <placement code="plantedSiteverbatimLongitudeX" typeRestrictions="spotPlantedSite,plantedSite">
+            <placement code="plantedSiteverbatimLongitudeX" typeRestrictions="spotPlantedSite,plantedSite,externalPlantedSite">
               <bundle>ca_attribute_verbatimLongitudeX</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim longitude (X)</setting>
@@ -11204,7 +11387,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="plantedSiteStandardizedGeoreferenceWGS84" typeRestrictions="spotPlantedSite,plantedSite">
+			      <placement code="plantedSiteStandardizedGeoreferenceWGS84" typeRestrictions="spotPlantedSite,plantedSite,externalPlantedSite">
               <bundle>ca_attribute_georeference</bundle>
               <settings>
                 <setting name="label" locale="en_US">Standardized georeference data</setting>
@@ -11247,6 +11430,7 @@
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Group preferred name</setting>
+                <setting name="description" locale="en_US">Each group concept (i.e. population, provenance, provenance Region) is a concept of taxon, place and time that is named. If no official name exists, it is recommended to mention the taxon and place concepts in this label.</setting>
               </settings>
             </placement>
 			      <placement code="nonpreferred_labels">
@@ -11254,19 +11438,24 @@
 			        <settings>
                 <setting name="label" locale="en_US">Group non-preferred name</setting>
 				        <setting name="add_label" locale="en_US">Add other non-preferred name</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
-            </placement>
-            <placement code="ca_attribute_descriptionContainer">
-              <bundle>ca_attribute_descriptionContainer</bundle>
             </placement>
             <placement code="verbatimIdentification">
               <bundle>ca_attribute_verbatimIdentification</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The verbatim identification</setting>
+                <setting name="description" locale="en_US">Each group concept (i.e. population, provenance, provenance Region) is linked to one specific taxon.</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
             </placement>
 			      <placement code="groupverbatimLocality">
               <bundle>ca_attribute_verbatimLocality</bundle>
               <settings>
                 <setting name="label" locale="en_US">The original description of the locality, a place, the geographic coverage, ...</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="description" locale="en_US">Each group concept (i.e. population, provenance, provenance Region) is linked to one specific locality concept.</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
@@ -11274,10 +11463,28 @@
               <bundle>ca_places</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The place of the group</setting>
+                <setting name="description" locale="en_US">The locality concept can be standardized here using the places backbone. This will make it easier to query.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
+            <placement code="groupDescription">
+              <bundle>ca_attribute_descriptionContainer</bundle>
+              <settings>
+                <setting name="description" locale="en_US">A description of the population, provenance or provenance region. As the concepts of population and provenance region can change over time, this is the place to refer to earlier definitions/concepts.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="groupConceptPublication">
+              <bundle>ca_attribute_publication</bundle>
+              <settings>
+              <setting name="description" locale="en_US">Publication that establishes the population, provenance region or provenance concept.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">10</setting>
+				        <setting name="add_label" locale="en_US">Add other publication</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
 			      <placement code="groupDateRange">
               <bundle>ca_attribute_dateRange</bundle>
               <!--http://rs.tdwg.org/dwc/terms/dateIdentified-->
@@ -13010,8 +13217,8 @@
         <type code="objectSameIndividual" default="0" rank="8"><!--Sometimes multiple observations of the same individual happen and are sampled (e.g. eDNA of wolf bites / feces)-->
           <labels>
             <label locale="en_US">
-              <typename>object of the same individual</typename>
-              <typename_reverse>object of the same individual</typename_reverse>
+              <typename>object of the same individual or sampling point</typename>
+              <typename_reverse>object of the same individual or sampling point</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
@@ -13170,7 +13377,7 @@
               <typename_reverse>is sampled to</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft></subTypeLeft>
+          <subTypeLeft>plantObject</subTypeLeft>
           <subTypeRight>observationPlant</subTypeRight>
         </type>
         <type code="sampleOf_observationAnimal" default="0" rank="1">
@@ -13180,7 +13387,7 @@
               <typename_reverse>is sampled to</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft></subTypeLeft>
+          <subTypeLeft>animalObject</subTypeLeft>
           <subTypeRight>observationAnimal</subTypeRight>
         </type>
         <type code="sampleOf_observationSoil" default="0" rank="1">
@@ -13190,7 +13397,7 @@
               <typename_reverse>is sampled to</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft></subTypeLeft>
+          <subTypeLeft>soilObject</subTypeLeft>
           <subTypeRight>observationSoil</subTypeRight>
         </type>
         <type code="sampleOf_observationWater" default="0" rank="1">
@@ -13200,7 +13407,7 @@
               <typename_reverse>is sampled to</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft></subTypeLeft>
+          <subTypeLeft>waterObject</subTypeLeft>
           <subTypeRight>observationWater</subTypeRight>
         </type>
         <type code="childOf_livingPlant" default="0" rank="3">
@@ -13236,8 +13443,8 @@
         <type code="cloneOf_livingPlant" default="0" rank="4">
           <labels>
             <label locale="en_US">
-              <typename>is a clone of</typename>
-              <typename_reverse>is cloned to</typename_reverse>
+              <typename>is cloned to</typename>
+              <typename_reverse>is a clone of</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>livingPlant</subTypeLeft>
@@ -13246,8 +13453,8 @@
         <type code="childOfCloneOf_livingPlant" default="0" rank="5">
           <labels>
             <label locale="en_US">
-              <typename>is a child of a clone of</typename>
-              <typename_reverse>is wild original from which the parent was cloned</typename_reverse>
+              <typename>is wild original from which the parent was cloned</typename>
+              <typename_reverse>is a child of a clone of</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>livingPlant</subTypeLeft>
@@ -13489,7 +13696,7 @@
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
-          <subTypeRight>observation,observationPlant,observationAnimal,observationSoil,observationWater</subTypeRight>
+          <subTypeRight>observation</subTypeRight>
         </type>
 		    <type code="fieldworkFocus" default="0">
           <labels>
@@ -13522,8 +13729,8 @@
               <typename_reverse>location of</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>org</subTypeLeft>
-          <subTypeRight/>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
@@ -13551,7 +13758,7 @@
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
-          <subTypeRight>plantedSite,building,floor,room,cabinetFridgeFreezer,drawerShelf,box</subTypeRight>
+          <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
@@ -13661,7 +13868,7 @@
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
-          <subTypeRight>cabinetFridgeFreezer,room,building,plantedSite</subTypeRight>
+          <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
@@ -13681,25 +13888,35 @@
     </relationshipTable>
     <relationshipTable name="ca_occurrences_x_occurrences">
       <types>
-		    <type code="resultingObservation" default="0">
+		    <type code="resultingObservation_fieldwork" default="0">
           <labels>
             <label locale="en_US">
               <typename>was result of</typename>
               <typename_reverse>resulted in</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>observation,observationPlant,observationAnimal,observationSoil,observationWater</subTypeLeft>
-          <subTypeRight>fieldwork,project</subTypeRight>
+          <subTypeLeft>observation</subTypeLeft>
+          <subTypeRight>fieldwork</subTypeRight>
         </type>
-		    <type code="executedOnObservation" default="0">
+		    <type code="resultingObservation_project" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>was result of</typename>
+              <typename_reverse>resulted in</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>observation</subTypeLeft>
+          <subTypeRight>project</subTypeRight>
+        </type>
+		    <type code="executedOnObservation_identification" default="0">
           <labels>
             <label locale="en_US">
               <typename>was subjected to</typename>
               <typename_reverse>was executed on</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>observation,observationPlant,observationAnimal,observationSoil,observationWater</subTypeLeft>
-          <subTypeRight>identification,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial</subTypeRight>
+          <subTypeLeft>observation</subTypeLeft>
+          <subTypeRight>identification</subTypeRight>
         </type>
         <type code="observationSameIndividual" default="0">
           <labels>
@@ -13708,8 +13925,8 @@
               <typename_reverse>same individual</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>observation,observationPlant,observationAnimal,observationSoil,observationWater</subTypeLeft>
-          <subTypeRight>observation,observationPlant,observationAnimal,observationSoil,observationWater</subTypeRight>
+          <subTypeLeft>observation</subTypeLeft>
+          <subTypeRight>observation</subTypeRight>
         </type>
         <type code="observationSibling" default="0">
           <labels>
@@ -13718,8 +13935,8 @@
               <typename_reverse>sibling</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>observation,observationPlant,observationAnimal,observationSoil,observationWater</subTypeLeft>
-          <subTypeRight>observation,observationPlant,observationAnimal,observationSoil,observationWater</subTypeRight>
+          <subTypeLeft>observation</subTypeLeft>
+          <subTypeRight>observation</subTypeRight>
         </type>
         <type code="observationRelatedTo" default="0">
           <labels>
@@ -13728,8 +13945,8 @@
               <typename_reverse>is related to</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>observation,observationPlant,observationAnimal,observationSoil,observationWater</subTypeLeft>
-          <subTypeRight>observation,observationPlant,observationAnimal,observationSoil,observationWater</subTypeRight>
+          <subTypeLeft>observation</subTypeLeft>
+          <subTypeRight>observation</subTypeRight>
         </type>
 		    <type code="subproject" default="0">
           <labels>
@@ -13741,7 +13958,7 @@
           <subTypeLeft>project</subTypeLeft>
           <subTypeRight>project</subTypeRight>
         </type>
-		    <type code="resultingFieldwork" default="0">
+		    <type code="resultingFieldwork_fieldwork" default="0">
           <labels>
             <label locale="en_US">
               <typename>was result of</typename>
@@ -13749,7 +13966,17 @@
             </label>
           </labels>
           <subTypeLeft>fieldwork</subTypeLeft>
-          <subTypeRight>fieldwork,project</subTypeRight>
+          <subTypeRight>fieldwork</subTypeRight>
+        </type>
+		    <type code="resultingFieldwork_project" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>was result of</typename>
+              <typename_reverse>resulted in</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>fieldwork</subTypeLeft>
+          <subTypeRight>project</subTypeRight>
         </type>
 		    <type code="subfieldwork" default="0">
           <labels>
@@ -13773,9 +14000,9 @@
             </label>
          </labels>
           <subTypeLeft></subTypeLeft>
-          <subTypeRight>observation,fieldwork,plot,transect,provenance</subTypeRight>
+          <subTypeRight></subTypeRight>
         </type>
-        <type code="focus" default="1">
+        <type code="focusProject" default="1">
           <labels>
             <label locale="en_US">
               <typename>was focal location of</typename>
@@ -13783,7 +14010,17 @@
             </label>
          </labels>
           <subTypeLeft></subTypeLeft>
-          <subTypeRight>project,fieldwork</subTypeRight>
+          <subTypeRight>project</subTypeRight>
+        </type>
+        <type code="focusFieldwork" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>was focal location of</typename>
+              <typename_reverse>focused on location</typename_reverse>
+            </label>
+         </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>fieldwork</subTypeRight>
         </type>
       </types>
     </relationshipTable>
@@ -13991,8 +14228,9 @@
           <bundle>ca_occurrences</bundle>
 			    <settings>
             <setting name="label" locale="en_US">samplingPoint_idno</setting>
-            <setting name="restrict_to_types">observationPlant,observationAnimal,observationSoil,observationWater</setting>
-                <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
+            <setting name="restrict_to_types">observationSoil,observationWater</setting>
+            <setting name="restrict_to_relationship_types">sampleOf_observationSoil,sampleOf_observationWater</setting>
+            <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationSoil,observationWater">^ca_occurrences.idno<unit>]]></setting>
           </settings>
         </placement>
         <placement code="ca_occurrence_observation_name">
@@ -14000,8 +14238,8 @@
 			    <settings>
             <setting name="label" locale="en_US">samplingPoint_name</setting>
             <setting name="restrict_to_types">observationAnimal,observationSoil,observationWater,observationPlant</setting>
-            <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
-            <setting name="display_template">^ca_occurrences.preferred_labels</setting>
+            <setting name="restrict_to_relationship_types">sampleOf_observationSoil,sampleOf_observationWater</setting>
+            <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater">^ca_occurrences.preferred_labels<unit>]]></setting>
           </settings>
         </placement>
         <placement code="ca_occurrence_observation_date">
@@ -14009,8 +14247,8 @@
 			    <settings>
             <setting name="label" locale="en_US">samplingPoint_date</setting>
             <setting name="restrict_to_types">observationAnimal,observationSoil,observationWater,observationPlant</setting>
-            <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
-            <setting name="display_template">^ca_occurrences.dateRange</setting>
+            <setting name="restrict_to_relationship_types">sampleOf_observationSoil,sampleOf_observationWater</setting>
+            <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater">^ca_occurrences.dateRange<unit>]]></setting>
           </settings>
         </placement>
         <placement code="ca_occurrence_observation_place">
@@ -14018,8 +14256,8 @@
 			    <settings>
             <setting name="label" locale="en_US">samplingPoint_verbatimLocality</setting>
             <setting name="restrict_to_types">observationAnimal,observationSoil,observationWater,observationPlant</setting>
-            <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
-            <setting name="display_template">^ca_occurrences.verbatimLocality</setting>
+            <setting name="restrict_to_relationship_types">sampleOf_observationSoil,sampleOf_observationWater</setting>
+            <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater"><unit relativeTo="ca_places">^ca_places.preferred_labels<unit><unit>]]></setting>
           </settings>
         </placement>
         <placement code="ca_objects_verbatimSamplingDepth">
@@ -14121,7 +14359,13 @@
 			    <settings>
             <setting name="label" locale="en_US">samplingPoint_idno</setting>
             <setting name="restrict_to_types">observationPlant,observationAnimal,observationSoil,observationWater</setting>
-            <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
+            <setting name="restrict_to_relationship_types">
+            entireCollection_animalBulk, entireCollection_animalEntireLiving,entireCollection_animalEntireCadaver,entireCollection_livingPlant,
+            sampleOf_observationPlant,sampleOf_observationAnimal,childOf_livingPlant,childOf_seedlot,childOf_animalEntireLiving,
+            cloneOf_livingPlant,childOfCloneOf_livingPlant,childOfCloneOf_seedlot,grandchildOf_livingPlant,grandchildOf_seedlot,
+            grandchildOf_animalEntireLiving,grandchildOfCloneOf_livingPlant,grandchildOfCloneOf_seedlot
+            </setting>
+            <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal">^ca_occurrences.idno<unit>]]></setting>
           </settings>
         </placement>
         <placement code="ca_occurrence_observation_name">
@@ -14129,8 +14373,13 @@
 			    <settings>
             <setting name="label" locale="en_US">samplingPoint_name</setting>
             <setting name="restrict_to_types">observationAnimal,observationSoil,observationWater,observationPlant</setting>
-            <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
-            <setting name="display_template">^ca_occurrences.preferred_labels</setting>
+            <setting name="restrict_to_relationship_types">
+            entireCollection_animalBulk, entireCollection_animalEntireLiving,entireCollection_animalEntireCadaver,entireCollection_livingPlant,
+            sampleOf_observationPlant,sampleOf_observationAnimal,childOf_livingPlant,childOf_seedlot,childOf_animalEntireLiving,
+            cloneOf_livingPlant,childOfCloneOf_livingPlant,childOfCloneOf_seedlot,grandchildOf_livingPlant,grandchildOf_seedlot,
+            grandchildOf_animalEntireLiving,grandchildOfCloneOf_livingPlant,grandchildOfCloneOf_seedlot
+            </setting>
+            <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal">^ca_occurrences.preferred_labels<unit>]]></setting>
           </settings>
         </placement>
         <placement code="ca_occurrence_observation_date">
@@ -14138,17 +14387,27 @@
 			    <settings>
             <setting name="label" locale="en_US">samplingPoint_date</setting>
             <setting name="restrict_to_types">observationAnimal,observationSoil,observationWater,observationPlant</setting>
-            <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
-            <setting name="display_template">^ca_occurrences.dateRange</setting>
+            <setting name="restrict_to_relationship_types">
+            entireCollection_animalBulk, entireCollection_animalEntireLiving,entireCollection_animalEntireCadaver,entireCollection_livingPlant,
+            sampleOf_observationPlant,sampleOf_observationAnimal,childOf_livingPlant,childOf_seedlot,childOf_animalEntireLiving,
+            cloneOf_livingPlant,childOfCloneOf_livingPlant,childOfCloneOf_seedlot,grandchildOf_livingPlant,grandchildOf_seedlot,
+            grandchildOf_animalEntireLiving,grandchildOfCloneOf_livingPlant,grandchildOfCloneOf_seedlot
+            </setting>
+            <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal">^ca_occurrences.dateRange<unit>]]></setting>
           </settings>
         </placement>
-        <placement code="ca_occurrence_observation_verbatimLocality">
+        <placement code="ca_occurrence_observation_place">
           <bundle>ca_occurrences</bundle>
 			    <settings>
             <setting name="label" locale="en_US">samplingPoint_verbatimLocality</setting>
             <setting name="restrict_to_types">observationAnimal,observationSoil,observationWater,observationPlant</setting>
-            <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
-            <setting name="display_template">^ca_occurrences.verbatimLocality</setting>
+            <setting name="restrict_to_relationship_types">
+            entireCollection_animalBulk, entireCollection_animalEntireLiving,entireCollection_animalEntireCadaver,entireCollection_livingPlant,
+            sampleOf_observationPlant,sampleOf_observationAnimal,childOf_livingPlant,childOf_seedlot,childOf_animalEntireLiving,
+            cloneOf_livingPlant,childOfCloneOf_livingPlant,childOfCloneOf_seedlot,grandchildOf_livingPlant,grandchildOf_seedlot,
+            grandchildOf_animalEntireLiving,grandchildOfCloneOf_livingPlant,grandchildOfCloneOf_seedlot
+            </setting>
+            <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal"><unit relativeTo="ca_places">^ca_places.preferred_labels<unit><unit>]]></setting>
           </settings>
         </placement>
         <placement code="ca_occurrence_observation_verbatimIdentification">
@@ -14156,8 +14415,13 @@
 			    <settings>
             <setting name="label" locale="en_US">samplingPoint_verbatimIdentification</setting>
             <setting name="restrict_to_types">observationAnimal,observationSoil,observationWater,observationPlant</setting>
-            <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
-            <setting name="display_template">^ca_occurrences.verbatimIdentification</setting>
+            <setting name="restrict_to_relationship_types">
+            entireCollection_animalBulk, entireCollection_animalEntireLiving,entireCollection_animalEntireCadaver,entireCollection_livingPlant,
+            sampleOf_observationPlant,sampleOf_observationAnimal,childOf_livingPlant,childOf_seedlot,childOf_animalEntireLiving,
+            cloneOf_livingPlant,childOfCloneOf_livingPlant,childOfCloneOf_seedlot,grandchildOf_livingPlant,grandchildOf_seedlot,
+            grandchildOf_animalEntireLiving,grandchildOfCloneOf_livingPlant,grandchildOfCloneOf_seedlot
+            </setting>
+            <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal">^ca_occurrences.verbatimIdentification<unit>]]></setting>
           </settings>
         </placement>
         <placement code="ca_occurrence_observation_standardizedIdentification">
@@ -14165,8 +14429,13 @@
 			    <settings>
             <setting name="label" locale="en_US">samplingPoint_standardizedIdentification</setting>
             <setting name="restrict_to_types">observationAnimal,observationSoil,observationWater,observationPlant</setting>
-            <setting name="restrict_to_relationship_types">entireCollection,sampleOf,childOf,cloneOf,childOfCloneOf,grandchildOf,gandchildOfCloneOf,ObjectRelatedTo</setting>
-            <setting name="display_template">^ca_occurrences.standardizedIdentification</setting>
+            <setting name="restrict_to_relationship_types">
+            entireCollection_animalBulk, entireCollection_animalEntireLiving,entireCollection_animalEntireCadaver,entireCollection_livingPlant,
+            sampleOf_observationPlant,sampleOf_observationAnimal,childOf_livingPlant,childOf_seedlot,childOf_animalEntireLiving,
+            cloneOf_livingPlant,childOfCloneOf_livingPlant,childOfCloneOf_seedlot,grandchildOf_livingPlant,grandchildOf_seedlot,
+            grandchildOf_animalEntireLiving,grandchildOfCloneOf_livingPlant,grandchildOfCloneOf_seedlot
+            </setting>
+            <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal">^ca_occurrences.standardizedIdentification<unit>]]></setting>
           </settings>
         </placement>
         <placement code="is_deaccessioned">
