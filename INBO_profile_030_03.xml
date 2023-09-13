@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.43.03</profileName>
+  <profileName>[INBO] INBO natural science collection v0.44.02</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <locales>
     <locale lang="en" country="US">English</locale>
@@ -919,8 +919,8 @@
               <item idno="didacticCollection" enabled="1" default="1"><!--Purpose: to train staff in taxonomic identifications. To be inventoried at the collection-level.-->
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>Archive collection</name_singular>
-                    <name_plural>Archive collections</name_plural>
+                    <name_singular>Didactic collection</name_singular>
+                    <name_plural>Didactic collections</name_plural>
                   </label>
                 </labels>
               </item>
@@ -1130,32 +1130,32 @@
                   <item idno="identificationBotanical" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Botanical</name_singular>
-                        <name_plural>Botanical</name_plural>
+                        <name_singular>Botanical identification</name_singular>
+                        <name_plural>Botanical identifications</name_plural>
                       </label>
                     </labels>
                   </item>
                   <item idno="identificationZoological" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Zoological</name_singular>
-                        <name_plural>Zoological</name_plural>
+                        <name_singular>Zoological identification</name_singular>
+                        <name_plural>Zoological identifications</name_plural>
                       </label>
                     </labels>
                   </item>
                   <item idno="identificationBacteriological" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Bacteriological</name_singular>
-                        <name_plural>Bacteriological</name_plural>
+                        <name_singular>Bacteriological identification</name_singular>
+                        <name_plural>Bacteriological identifications</name_plural>
                       </label>
                     </labels>
                   </item>
                   <item idno="identificationViral" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Viral</name_singular>
-                        <name_plural>Viral</name_plural>
+                        <name_singular>Viral identification</name_singular>
+                        <name_plural>Viral identifications</name_plural>
                       </label>
                     </labels>
                   </item>
@@ -1263,8 +1263,8 @@
               <item idno="externalPlantedSite" enabled="1" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>External planted site</name_singular>
-                    <name_plural>External planted sites</name_plural>
+                    <name_singular>external planted site</name_singular>
+                    <name_plural>external planted sites</name_plural>
                   </label>
                 </labels>
               </item>
@@ -3058,14 +3058,14 @@
           </item>
         </items>
       </list>
-	    <list code="lm_type" hierarchical="0" system="0" vocabulary="1">
+	    <list code="lm_type" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
         <labels>
           <label locale="en_US">
             <name>Type of length measurement</name>
           </label>
         </labels>
         <items>
-          <item idno="lm_circumference" enabled="1" default="0">
+          <item idno="lm_circumference" rank="1" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>circumference</name_singular>
@@ -3073,7 +3073,7 @@
               </label>
             </labels>
           </item>
-          <item idno="lm_diameter" enabled="1" default="0">
+          <item idno="lm_diameter" rank="2" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>diameter</name_singular>
@@ -3081,7 +3081,7 @@
               </label>
             </labels>
           </item>
-          <item idno="lm_length" enabled="1" default="0">
+          <item idno="lm_length" rank="3" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>length</name_singular>
@@ -3089,7 +3089,7 @@
               </label>
             </labels>
           </item>
-          <item idno="lm_width" enabled="1" default="0">
+          <item idno="lm_width" rank="4" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>width</name_singular>
@@ -3097,7 +3097,7 @@
               </label>
             </labels>
           </item>
-          <item idno="lm_depth" enabled="1" default="0">
+          <item idno="lm_depth" rank="5" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>depth</name_singular>
@@ -3105,7 +3105,7 @@
               </label>
             </labels>
           </item>
-          <item idno="lm_other" enabled="1" default="0">
+          <item idno="lm_other" rank="6" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>other</name_singular>
@@ -4319,8 +4319,8 @@
           </label>
         </labels>
         <settings>
-          <setting name="fieldWidth">100</setting>
-          <setting name="fieldHeight">15</setting>
+          <setting name="fieldWidth">115</setting>
+          <setting name="fieldHeight">8</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
         </settings>
@@ -4468,12 +4468,6 @@
 		        <description>The relation between the individual seeds of the seedlot</description>
           </label>
         </labels>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
         <elements>
           <metadataElement code="seedlotRelation" datatype="List" list="seedlot_relation">
             <labels>
@@ -4483,7 +4477,7 @@
               </label>
             </labels>
             <settings>
-              <setting name="fieldWidth">70</setting>
+              <setting name="fieldWidth">55</setting>
               <setting name="fieldHeight">1</setting>
               <setting name="minChars">0</setting>
               <setting name="maxChars">65535</setting>
@@ -4497,7 +4491,7 @@
               </label>
             </labels>
             <settings>
-              <setting name="fieldWidth">70</setting>
+              <setting name="fieldWidth">55</setting>
               <setting name="fieldHeight">1</setting>
               <setting name="minChars">0</setting>
               <setting name="maxChars">65535</setting>
@@ -7327,7 +7321,7 @@
 			  </typeRestrictions>
 	    </metadataElement>
     <!--Identification-->
-	    <metadataElement code="verbatimIdentification" datatype="Text">
+	    <metadataElement code="objVerbatimIdentification" datatype="Text">
         <labels>
           <label locale="en_US">
             <name>verbatimIdentification</name>
@@ -7371,6 +7365,48 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="objlotVerbatimIdentification" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>verbatimIdentification</name>
+            <description>A string representing the taxonomic identification as it appeared in the original record. This can be scientific names at any level (species, genus, family, ..), vernacular names, expressions with taxon qualifiers (aff., cf.) or other expressions of doubt.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimIdentification</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_verbatimIdentification_objectLots">
+            <table>ca_object_lots</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="obsVerbatimIdentification" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>verbatimIdentification</name>
+            <description>A string representing the taxonomic identification as it appeared in the original record. This can be scientific names at any level (species, genus, family, ..), vernacular names, expressions with taxon qualifiers (aff., cf.) or other expressions of doubt.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimIdentification</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
           <restriction code="r_verbatimIdentification_observationAnimal">
             <table>ca_occurrences</table>
 		        <type>observationAnimal</type>
@@ -7389,8 +7425,27 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_verbatimIdentification_objectLots">
-            <table>ca_object_lots</table>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="IDverbatimIdentification" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>verbatimIdentification</name>
+            <description>A string representing the taxonomic identification as it appeared in the original record. This can be scientific names at any level (species, genus, family, ..), vernacular names, expressions with taxon qualifiers (aff., cf.) or other expressions of doubt.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimIdentification</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_verbatimIdentification_identification">
+            <table>ca_occurrences</table>
+		        <type>identification</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -9131,18 +9186,22 @@
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The object represents the observation</setting>
+                <setting name="description" locale="en_US">This should minimally be 1 related observation; and in most cases 1 maximally as well. If you want to alter the related observation in the application, first add the new related observation; then delete the wrong/old one.</setting>
+                <setting name="restrict_to_types">observation</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="restrict_to_relationship_types">entire_animalBulk,entire_animalLiving,entire_cadaver,entire_livingPlant,sampleOf_observationPlant,sampleOf_observationAnimal,sampleOf_observationSoil,sampleOf_observationWater,childOf_livingPlant,childOf_seedlot,childOf_animalEntireLiving,cloneOf_livingPlant,childOfCloneOf_livingPlant,childOfCloneOf_seedlot,grandchildOf_livingPlant,grandchildOf_seedlot,grandchildOf_animalLiving,grandchildOfCloneOf_plant,grandchildOfCloneOf_seed</setting>
+                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater"> <ifdef code="ca_occurrences.obsVerbatimIdentification">^ca_occurrences.obsVerbatimIdentification</ifdef> <ifnotdef code="ca_occurrences.obsVerbatimIdentification">^ca_occurrences.preferred_labels.name</ifnotdef>, ^ca_occurrences.dateRange,<ifdef code="ca_occurrences.verbatimLocality"> ^ca_occurrences.verbatimLocality</ifdef><ifdef code="ca_occurrences.observationVerbatimLongitudeX"> X:^ca_occurrences.verbatimLongitudeX</ifdef><ifdef code="ca_occurrences.verbatimLatitudeY"> Y:^ca_occurrences.verbatimLatitudeY</ifdef> (^ca_occurrences.idno)</unit>]]></setting>
+              </settings>
+            </placement>
+            <placement code="ca_occurrence_observation">
+              <bundle>ca_occurrences_related_list</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The object represents the observation (related list)</setting>
                 <setting name="restrict_to_types">observation</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="dontShowDeleteButton">0</setting>
-                <setting name="restrict_to_relationship_types">
-                entire_animalBulk,entire_animalLiving,entire_cadaver,
-                entire_livingPlant,sampleOf_observationPlant,sampleOf_observationAnimal,sampleOf_observationSoil,
-                sampleOf_observationWater,childOf_livingPlant,childOf_seedlot,childOf_animalEntireLiving,cloneOf_livingPlant,
-                childOfCloneOf_livingPlant,childOfCloneOf_seedlot,grandchildOf_livingPlant,grandchildOf_seedlot,
-                grandchildOf_animalLiving,grandchildOfCloneOf_plant,grandchildOfCloneOf_seed
-                </setting>
-                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater"> <ifdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.verbatimIdentification</ifdef> <ifnotdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.preferred_labels.name</ifnotdef>, ^ca_occurrences.dateRange,<ifdef code="ca_occurrences.verbatimLocality"> ^ca_occurrences.verbatimLocality</ifdef><ifdef code="ca_occurrences.observationVerbatimLongitudeX"> X:^ca_occurrences.verbatimLongitudeX</ifdef><ifdef code="ca_occurrences.verbatimLatitudeY"> Y:^ca_occurrences.verbatimLatitudeY</ifdef> (^ca_occurrences.idno)</unit>]]></setting>
+                <setting name="restrict_to_relationship_types">entire_animalBulk,entire_animalLiving,entire_cadaver,entire_livingPlant,sampleOf_observationPlant,sampleOf_observationAnimal,sampleOf_observationSoil,sampleOf_observationWater,childOf_livingPlant,childOf_seedlot,childOf_animalEntireLiving,cloneOf_livingPlant,childOfCloneOf_livingPlant,childOfCloneOf_seedlot,grandchildOf_livingPlant,grandchildOf_seedlot,grandchildOf_animalLiving,grandchildOfCloneOf_plant,grandchildOfCloneOf_seed</setting>
+                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater"> <ifdef code="ca_occurrences.obsVerbatimIdentification">^ca_occurrences.obsVerbatimIdentification</ifdef> <ifnotdef code="ca_occurrences.obsVerbatimIdentification">^ca_occurrences.preferred_labels.name</ifnotdef>, ^ca_occurrences.dateRange,<ifdef code="ca_occurrences.verbatimLocality"> ^ca_occurrences.verbatimLocality</ifdef><ifdef code="ca_occurrences.observationVerbatimLongitudeX"> X:^ca_occurrences.verbatimLongitudeX</ifdef><ifdef code="ca_occurrences.verbatimLatitudeY"> Y:^ca_occurrences.verbatimLatitudeY</ifdef> (^ca_occurrences.idno)</unit>]]></setting>
               </settings>
             </placement>
 			      <placement code="status">
@@ -9168,10 +9227,11 @@
                 <setting name="label" locale="en_US">Object belongs to collection</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="restrict_to_relationship_types">partOf</setting>
               </settings>
             </placement>
-			      <placement code="ca_object_verbatimIdentification" typeRestrictions="animalBulk,animalEntireLiving,animalEntireCadaver,animalEntireEthanol,sampleAmphibianLarva,sampleAmphibianEmbryo,sampleAmphibianTailclip,sampleAmphibianFrogspawn,sampleAmphibianSwabCloaca,sampleAmphibianSwabMouth,sampleAmphibianSwabEar,sampleAmphibianToeclip,sampleFishFinclip,sampleFishMuscle,sampleInvertebrateLarva,sampleInvertebrateLeg,sampleInvertebrateWingclip,sampleMammalBaculum,sampleMammalBladder,sampleMammalBlood,sampleMammalBrain,sampleMammalConjuctivum,sampleMammalCyste,sampleMammalEarpunch,sampleMammalEmbryo,sampleMammalFat,sampleMammalFeces,sampleMammalHead,sampleMammalHeart,sampleMammalHair,sampleMammalIntestine,sampleMammalLiver,sampleMammalLowerJaw,sampleMammalLung,sampleMammalLymphNode,sampleMammalKidney,sampleMammalMuscle,sampleMammalSkinComplete,sampleMammalSkinPiece,sampleMammalSkull,sampleMammalSpleen,sampleMammalStomach,sampleMammalStomachContent,sampleMammalSwabBite,sampleMammalTongue,sampleMammalTooth,sampleMammalUterus,sampleReptileSkin,sampleReptileTailclip,leafSample,littertrapSample,livingPlant,seedlot,stemDisc">
-              <bundle>ca_attributes_verbatimIdentification</bundle>
+			      <placement code="ca_object_objVerbatimIdentification" typeRestrictions="animalBulk,animalEntireLiving,animalEntireCadaver,animalEntireEthanol,sampleAmphibianLarva,sampleAmphibianEmbryo,sampleAmphibianTailclip,sampleAmphibianFrogspawn,sampleAmphibianSwabCloaca,sampleAmphibianSwabMouth,sampleAmphibianSwabEar,sampleAmphibianToeclip,sampleFishFinclip,sampleFishMuscle,sampleInvertebrateLarva,sampleInvertebrateLeg,sampleInvertebrateWingclip,sampleMammalBaculum,sampleMammalBladder,sampleMammalBlood,sampleMammalBrain,sampleMammalConjuctivum,sampleMammalCyste,sampleMammalEarpunch,sampleMammalEmbryo,sampleMammalFat,sampleMammalFeces,sampleMammalHead,sampleMammalHeart,sampleMammalHair,sampleMammalIntestine,sampleMammalLiver,sampleMammalLowerJaw,sampleMammalLung,sampleMammalLymphNode,sampleMammalKidney,sampleMammalMuscle,sampleMammalSkinComplete,sampleMammalSkinPiece,sampleMammalSkull,sampleMammalSpleen,sampleMammalStomach,sampleMammalStomachContent,sampleMammalSwabBite,sampleMammalTongue,sampleMammalTooth,sampleMammalUterus,sampleReptileSkin,sampleReptileTailclip,leafSample,littertrapSample,livingPlant,seedlot,stemDisc">
+              <bundle>ca_attribute_objVerbatimIdentification</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The verbatim taxonomic identification of the object</setting>
                 <setting name="description" locale="en_US">Usually this equals the verbatim identification of the observation the object was sampled from. If present, this value will be automatically be set here. To be actively changed for object types such as living animals, seedlots and living plants, if the taxonomic identification is different from the field observation they refer to (e.g. in the case of hybrid offspring). A verbatim identification can be a species name, genus name, family name. This can be the vernacular name in English (e.g. human), Dutch (e.g. mens) ... or the the binomial nomenclature (e.g. Homo sapiens)..</setting>
@@ -9218,14 +9278,8 @@
                 <setting name="restrict_to_types">observation</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_relationship_types">
-                entire_animalBulk,entire_animalLiving,entire_cadaver,
-                entire_livingPlant,sampleOf_observationPlant,sampleOf_observationAnimal,sampleOf_observationSoil,
-                sampleOf_observationWater,childOf_livingPlant,childOf_seedlot,childOf_animalEntireLiving,cloneOf_livingPlant,
-                childOfCloneOf_livingPlant,childOfCloneOf_seedlot,grandchildOf_livingPlant,grandchildOf_seedlot,
-                grandchildOf_animalLiving,grandchildOfCloneOf_plant,grandchildOfCloneOf_seed
-                </setting>
-                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater"> <ifdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.verbatimIdentification</ifdef> <ifnotdef code="ca_occurrences.verbatimIdentification">^ca_occurrences.preferred_labels.name</ifnotdef> observed on: ^ca_occurrences.dateRange<ifdef code="ca_occurrences.verbatimLocality">, observed at: ^ca_occurrences.verbatimLocality (^ca_occurrences.idno)</ifdef></unit>]]></setting>
+                <setting name="restrict_to_relationship_types">entire_animalBulk,entire_animalLiving,entire_cadaver,entire_livingPlant,sampleOf_observationPlant,sampleOf_observationAnimal,sampleOf_observationSoil,sampleOf_observationWater,childOf_livingPlant,childOf_seedlot,childOf_animalEntireLiving,cloneOf_livingPlant,childOfCloneOf_livingPlant,childOfCloneOf_seedlot,grandchildOf_livingPlant,grandchildOf_seedlot,grandchildOf_animalLiving,grandchildOfCloneOf_plant,grandchildOfCloneOf_seed</setting>
+                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal,observationSoil,observationWater"> <ifdef code="ca_occurrences.obsVerbatimIdentification">^ca_occurrences.obsVerbatimIdentification</ifdef> <ifnotdef code="ca_occurrences.obsVerbatimIdentification">^ca_occurrences.preferred_labels.name</ifnotdef> observed on: ^ca_occurrences.dateRange<ifdef code="ca_occurrences.verbatimLocality">, observed at: ^ca_occurrences.verbatimLocality (^ca_occurrences.idno)</ifdef></unit>]]></setting>
               </settings>
             </placement>
 			      <placement code="population" typeRestrictions="animalBulk,animalEntireLiving,animalEntireCadaver,animalEntireEthanol,sampleAmphibianLarva,sampleAmphibianEmbryo,sampleAmphibianTailclip,sampleAmphibianFrogspawn,sampleAmphibianSwabCloaca,sampleAmphibianSwabMouth,sampleAmphibianSwabEar,sampleAmphibianToeclip,sampleFishFinclip,sampleFishMuscle,sampleInvertebrateLarva,sampleInvertebrateLeg,sampleInvertebrateWingclip,sampleMammalBaculum,sampleMammalBladder,sampleMammalBlood,sampleMammalBrain,sampleMammalConjuctivum,sampleMammalCyste,sampleMammalEarpunch,sampleMammalEmbryo,sampleMammalFat,sampleMammalFeces,sampleMammalHead,sampleMammalHeart,sampleMammalHair,sampleMammalIntestine,sampleMammalLiver,sampleMammalLowerJaw,sampleMammalLung,sampleMammalLymphNode,sampleMammalKidney,sampleMammalMuscle,sampleMammalSkinComplete,sampleMammalSkinPiece,sampleMammalSkull,sampleMammalSpleen,sampleMammalStomach,sampleMammalStomachContent,sampleMammalSwabBite,sampleMammalTongue,sampleMammalTooth,sampleMammalUterus,sampleReptileSkin,sampleReptileTailclip,mineralSoilSample,peatSoilSample,organicSoilSample">
@@ -9242,14 +9296,6 @@
 			        <settings>
                 <setting name="label" locale="en_US">The plant object belongs to the population, wild (in-situ) provenance or provenance region</setting>
                 <setting name="description" locale="en_US">A population in this case is any grouping of individuals in space and time that is defined. Provenance or provenance region is terminology for grouping plants in space and time, connected to plant breeding, where plant material is obtained from registred origins only. Wild (in-situ) provenance can be seed sources or (seed) stands.</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-			      <placement code="ca_collection" typeRestrictions="leafSample,littertrapSample,livingPlant,seedlot,stemDisc,">
-              <bundle>ca_collections</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The plant object belongs to the collection (ex-situ) provenance</setting>
-                <setting name="description" locale="en_US">Provenance or provenance region is terminology for grouping plants in space and time, connected to plant breeding, where plant material is obtained from registred origins only. Collection (ex-situ) provenances are seed-orchards and clone banks.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -9297,11 +9343,54 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="hierarchy_location">
-              <bundle>hierarchy_location</bundle>
+            <placement code="ca_objects_parent1">
+              <bundle>parent</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Object relationships</setting>
-                <setting name="description" locale="en_US">All related objects, either direct or indirect are shown here.</setting>
+                <setting name="label" locale="en_US">Parent trial 1</setting>
+                <setting name="description" locale="en_US">Here you can set the direct object the current object was obtained from.</setting>
+				        <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+				        <setting name="add_label" locale="en_US">Add parent-object</setting>
+                <setting name="display_template">^ca_objects.parent.preferred_labels.name (^ca_objects.parent.idno)</setting>
+              </settings>
+            </placement>
+            <placement code="ca_objects_parent2">
+              <bundle>parent_id</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Parent trial 2</setting>
+                <setting name="description" locale="en_US">Here you can set the direct object the current object was obtained from.</setting>
+				        <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+				        <setting name="add_label" locale="en_US">Add parent-object</setting>
+                <setting name="display_template">^ca_objects.parent.preferred_labels.name (^ca_objects.parent.idno)</setting>
+              </settings>
+            </placement>
+            <placement code="ca_objects_child">
+              <bundle>child</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Child trial 1</setting>
+                <setting name="description" locale="en_US">Here you can set the objects that were made, starting from the current object.</setting>
+				        <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">100</setting>
+				        <setting name="add_label" locale="en_US">Add child-object</setting>
+                <setting name="display_template">^ca_objects.child.preferred_labels.name (^ca_objects.parent.idno)</setting>
+              </settings>
+            </placement>
+            <placement code="ca_objects_children">
+              <bundle>children</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Children trial 1</setting>
+                <setting name="description" locale="en_US">Here you can set the objects that were made, starting from the current object.</setting>
+				        <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">100</setting>
+				        <setting name="add_label" locale="en_US">Add child-object</setting>
+                <setting name="display_template">^ca_objects.children.preferred_labels.name (^ca_objects.parent.idno)</setting>
+              </settings>
+            </placement>
+            <placement code="ca_objects_related_list">
+              <bundle>ca_objects_related_list</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Related objects</setting>
               </settings>
             </placement>
             <placement code="ca_objects_container_direct">
@@ -9309,40 +9398,9 @@
 			        <settings>
                 <setting name="label" locale="en_US">Direct relationships</setting>
                 <setting name="description" locale="en_US">Direct relationships between objects can be listed here. To allow specifying the type of relationship, if need be.</setting>
-                <setting name="restrict_to_relationship_types" locale="en_US">
-                oDNASubSample,eDNASubSample,dnaExtr_amphLarva,dnaExtr_amphEmbryo,
-                dnaExtr_amphTailclip,dnaExtr_frogspawn,dnaExtr_amphSwabCloaca,
-                dnaExtr_amphSwabMouth,dnaExtr_amphSwabEar,dnaExtr_amphToeclip,
-                dnaExtr_fishFinclip,dnaExtr_fishMuscle,dnaExtr_invertLarva,
-                dnaExtr_invertLeg,dnaExtr_invertWingclip,dnaExtr_mammalBladder,
-                dnaExtr_mammalBlood,dnaExtr_mammalBrain,dnaExtr_mammalConj,
-                dnaExtr_mammalCyste,dnaExtr_mammalEarpunch,dnaExtr_mammalEmbryo,
-                dnaExtr_mammalFeces,dnaExtr_mammalHeart,dnaExtr_mammalHair,
-                dnaExtr_mammalIntestine,dnaExtr_mammalLiver,dnaExtr_mammalLung,
-                dnaExtr_mammalLymphNode,dnaExtr_mammalKidney,dnaExtr_mammalMuscle,
-                dnaExtr_mammalSkinPiece,dnaExtr_mammalSkinCompl,dnaExtr_mammalSpleen,
-                dnaExtr_mammalStomach,dnaExtr_mammalTongue,dnaExtr_mammalUterus,
-                dnaExtr_reptileSkin,dnaExtr_reptileTailclip,dnaExtr_leafSample,dnaExtr_eDnaWaterFilter,
-                dnaExtr_mineralSoilSample,dnaExtr_peatSoilSample,dnaExtr_organicSoilSample,waterToFilter,
-                seedlotSubSample,plantChildOf_livingPlant,plantChildOf_seedlot,livingPlant_leafSample,livingPlant_stemDisc,
-                livingAnimal_amphTailclip,livingAnimal_amphSwabCloaca,
-                livingAnimal_amphSwabMouth,livingAnimal_amphSwabEar,
-                livingAnimal_amphToeclip,livingAnimal_fishFinclip,livingAnimal_fishMuscle,
-                livingAnimal_invertLeg,livingAnimal_invertWingclip,livingAnimal_mammalBlood,
-                livingAnimal_mammalEarpunch,livingAnimal_mammalFeces,livingAnimal_mammalHair,
-                livingAnimal_mammalSkinPiece,livingAnimal_reptileSkin,livingAnimal_reptileTailclip,
-                livingAnimal_entireEthanol,livingAnimalDeceased,mammalAutopsy_baculum,
-                mammalAutopsy_bladder,mammalAutopsy_blood,mammalAutopsy_brain,
-                mammalAutopsy_conj,mammalAutopsy_cyste,mammalAutopsy_embryo,
-                mammalAutopsy_fat,mammalAutopsy_hair,mammalAutopsy_head,
-                mammalAutopsy_heart,mammalAutopsy_intestine,mammalAutopsy_kidney,
-                mammalAutopsy_liver,mammalAutopsy_lowerJaw,mammalAutopsy_lung,
-                mammalAutopsy_lymphnode,mammalAutopsy_muscle,mammalAutopsy_entireEthanol,
-                mammalAutopsy_animalBulk,mammalAutopsy_skinCompl,mammalAutopsy_skinPiece,
-                mammalAutopsy_skull,mammalAutopsy_spleen,mammalAutopsy_stomach,
-                mammalAutopsy_stomachContent,mammalAutopsy_tongue,mammalAutopsy_tooth,
-                mammalAutopsy_uterus,mineralSoilSubSample,peatSoilSubSample,organicSoilSubSample
-                </setting>
+                <setting name="restrict_to_relationship_types" locale="en_US">oDNASubSample,eDNASubSample,dnaExtr_amphLarva,dnaExtr_amphEmbryo,dnaExtr_amphTailclip,dnaExtr_frogspawn,dnaExtr_amphSwabCloaca,dnaExtr_amphSwabMouth,dnaExtr_amphSwabEar,dnaExtr_amphToeclip,dnaExtr_fishFinclip,dnaExtr_fishMuscle,dnaExtr_invertLarva,dnaExtr_invertLeg,dnaExtr_invertWingclip,dnaExtr_mammalBladder,dnaExtr_mammalBlood,dnaExtr_mammalBrain,dnaExtr_mammalConj,dnaExtr_mammalCyste,dnaExtr_mammalEarpunch,dnaExtr_mammalEmbryo,dnaExtr_mammalFeces,dnaExtr_mammalHeart,dnaExtr_mammalHair,dnaExtr_mammalIntestine,dnaExtr_mammalLiver,dnaExtr_mammalLung,dnaExtr_mammalLymphNode,dnaExtr_mammalKidney,dnaExtr_mammalMuscle,dnaExtr_mammalSkinPiece,dnaExtr_mammalSkinCompl,dnaExtr_mammalSpleen,dnaExtr_mammalStomach,dnaExtr_mammalTongue,dnaExtr_mammalUterus,dnaExtr_reptileSkin,dnaExtr_reptileTailclip,dnaExtr_leafSample,dnaExtr_eDnaWaterFilter,dnaExtr_mineralSoilSample,dnaExtr_peatSoilSample,dnaExtr_organicSoilSample,waterToFilter,seedlotSubSample,plantChildOf_livingPlant,plantChildOf_seedlot,livingPlant_leafSample,livingPlant_stemDisc,livingAnimal_amphTailclip,livingAnimal_amphSwabCloaca,livingAnimal_amphSwabMouth,livingAnimal_amphSwabEar,livingAnimal_amphToeclip,livingAnimal_fishFinclip,livingAnimal_fishMuscle,livingAnimal_invertLeg,livingAnimal_invertWingclip,livingAnimal_mammalBlood,livingAnimal_mammalEarpunch,livingAnimal_mammalFeces,livingAnimal_mammalHair,livingAnimal_mammalSkinPiece,livingAnimal_reptileSkin,livingAnimal_reptileTailclip,livingAnimal_entireEthanol,livingAnimalDeceased,mammalAutopsy_baculum,mammalAutopsy_bladder,mammalAutopsy_blood,mammalAutopsy_brain,mammalAutopsy_conj,mammalAutopsy_cyste,mammalAutopsy_embryo,mammalAutopsy_fat,mammalAutopsy_hair,mammalAutopsy_head,mammalAutopsy_heart,mammalAutopsy_intestine,mammalAutopsy_kidney,mammalAutopsy_liver,mammalAutopsy_lowerJaw,mammalAutopsy_lung,mammalAutopsy_lymphnode,mammalAutopsy_muscle,mammalAutopsy_entireEthanol,mammalAutopsy_animalBulk,mammalAutopsy_skinCompl,mammalAutopsy_skinPiece,mammalAutopsy_skull,mammalAutopsy_spleen,mammalAutopsy_stomach,mammalAutopsy_stomachContent,mammalAutopsy_tongue,mammalAutopsy_tooth,mammalAutopsy_uterus,mineralSoilSubSample,peatSoilSubSample,organicSoilSubSample</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
               </settings>
             </placement>		 		 
             <placement code="ca_objects_container_indirect">
@@ -9350,9 +9408,18 @@
 			        <settings>
                 <setting name="label" locale="en_US">Indirect relationships</setting>
                 <setting name="description" locale="en_US">Indirect relationships between objects can be listed here. For example: if samples are from two different observations, which are (likely) from the same animal/plant: choose the type sameIndividual. The observations and subsequent samples can differ in time, place (if animal) and method, ... but are related as they are from the same individual. Other associated observations (and their subsequent samples) can also be linked, for example: an animal collected on a plant where both are sampled to study their interaction. For such cases, choose: relatedTo and explain the relationship in more detail in the interstitial data. More types can be added. Ask the administrator.</setting>
-                <setting name="restrict_to_relationship_types" locale="en_US">
-                objectSameIndividual,objectSibling,objectRelatedTo,parallelSample_seedlot
-                </setting>
+                <setting name="restrict_to_relationship_types" locale="en_US">objectSameIndividual,objectSibling,objectRelatedTo,parallelSample_seedlot</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="hierarchy_location">
+              <bundle>hierarchy_location</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Object relationships hierarchy browser</setting>
+                <setting name="description" locale="en_US">All related objects, either direct or indirect are shown here.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
               </settings>
             </placement>		 		 
           </bundlePlacements>
@@ -9549,7 +9616,7 @@
                 <setting name="readonly">1</setting>
                 <setting name="dontShowDeleteButton">1</setting>
                 <setting name="restrict_to_types">observationAnimal,observationPlant</setting>
-                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal">^ca_occurrences.verbatimIdentification<unit>]]></setting>
+                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal">^ca_occurrences.obsVerbatimIdentification<unit>]]></setting>
 			        </settings>
             </placement>
 			      <placement code="ca_occurrences_standardizedIdentification">
@@ -9563,15 +9630,15 @@
                 <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal">^ca_occurrences.standardizedIdentification<unit>]]></setting>
 			        </settings>
             </placement>
-			      <placement code="ca_object_verbatimIdentification">
-              <bundle>ca_attributes_verbatimIdentification</bundle>
+			      <placement code="ca_object_objVerbatimIdentification">
+              <bundle>ca_attribute_objVerbatimIdentification</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The verbatim taxonomic identification of the object</setting>
                 <setting name="description" locale="en_US">Usually this equals the verbatim identification of the observation the object was sampled from. If present, this value will be automatically be set here. To be actively changed for object types such as living animals, seedlots and living plants, if the taxonomic identification is different from the field observation they refer to (e.g. in the case of hybrid offspring). A verbatim identification can be a species name, genus name, family name. This can be the vernacular name in English (e.g. human), Dutch (e.g. mens) ... or the the binomial nomenclature (e.g. Homo sapiens)..</setting>
 			        </settings>
             </placement>
 			      <placement code="ca_object_standardizedIdentification">
-              <bundle>ca_attributes_standardizedIdentification</bundle>
+              <bundle>ca_attribute_standardizedIdentification</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The taxonomic identification of the object</setting>
                 <setting name="description" locale="en_US">Usually this equals the verbatim identification. For living collections such as living animals, seedlots and livingplants, it is possible that the taxonomic identification is different from the field observation they refer to. For example: hybrids.</setting>
@@ -9583,7 +9650,7 @@
                 <setting name="label" locale="en_US">The identification log of the observation and object.</setting>
                 <setting name="description" locale="en_US">The history of identifications for the observation and object. Ideally identifications are logged to the observation and all its derived objects.</setting>
                 <setting name="dontShowDeleteButton">1</setting>
-                <setting name="restrict_to_types">identificationZoological,identificationPlant,identificationViral,identificationBacteriological</setting>
+                <setting name="restrict_to_types">identification</setting>
                 <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="identificationZoological,identificationPlant,identificationViral,identificationBacteriological"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
 			        </settings>
             </placement>
@@ -9987,8 +10054,8 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="verbatimIdentification" typeRestrictions="observationPlant,observationAnimal">
-              <bundle>ca_attribute_verbatimIdentification</bundle>
+			      <placement code="obsVerbatimIdentification" typeRestrictions="observationPlant,observationAnimal">
+              <bundle>ca_attribute_obsVerbatimIdentification</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim taxonomic identification</setting>
                 <setting name="description" locale="en_US">The taxonomic identification of the observed organism, as specific as known at the time of observation. This can be a species name, genus name, family name. This can be the vernacular name in English (e.g. human), Dutch (e.g. mens), ... or the binomial nomenclature (e.g. Homo sapiens).</setting>
@@ -10240,10 +10307,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Object(s) subjected to event</setting>
                 <setting name="description" locale="en_US">Object that was subjected to the event (identification, valuation or curation)</setting>
-                <setting name="restrict_to_relationship_types">
-                execObj_idBacteriological,execObj_idBotanicall,execObj_idViral,execObj_idZoologial,
-                execObj_valuation,execObj_disposal,execObj_treatment,execObj_renewal,execObj_transfer
-                </setting>
+                <setting name="restrict_to_relationship_types">execObj_idBacteriological,execObj_idBotanicall,execObj_idViral,execObj_idZoologial,execObj_valuation,execObj_disposal,execObj_treatment,execObj_renewal,execObj_transfer</setting>
               </settings>
             </placement>
             <placement code="ca_occurrence_observation_identification" typeRestrictions="identification,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial">
@@ -10287,7 +10351,7 @@
 			        </settings>
             </placement>
 			      <placement code="samplingEffort" typeRestrictions="fieldwork">
-              <bundle>ca_attributes_samplingEffort</bundle>
+              <bundle>ca_attribute_samplingEffort</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Sampling effort</setting>
                 <setting name="description" locale="en_US">For example: if the fieldwork is focussed on populations: "sampled until 30 samples of population/locality was reached".</setting>
@@ -10333,8 +10397,8 @@
                 <setting name="expand_collapse_value">collapse</setting>
 			        </settings>
             </placement>
-			      <placement code="verbatimIdentification" typeRestrictions="observationPlant,observationAnimal">
-              <bundle>ca_attribute_verbatimIdentification</bundle>
+			      <placement code="obsVerbatimIdentification" typeRestrictions="observationPlant,observationAnimal">
+              <bundle>ca_attribute_obsVerbatimIdentification</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim taxonomic identification</setting>
                 <setting name="description" locale="en_US">The taxonomic identification of the observed organism, as specific as known at the time of observation. This can be a species name, genus name, family name. This can be the vernacular name in English (e.g. human), Dutch (e.g. mens), ... or the binomial nomenclature (e.g. Homo sapiens).</setting>
@@ -10342,7 +10406,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="standardizedIdentification" typeRestrictions="observationPlant,observationAnimal">
+			      <placement code="obsStandardizedIdentification" typeRestrictions="observationPlant,observationAnimal">
               <bundle>ca_attribute_standardizedIdentification</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The standardized taxonomic identification</setting>
@@ -10456,13 +10520,7 @@
                 <setting name="label" locale="en_US">Objects resulting from observation</setting>
 				        <setting name="add_label" locale="en_US">Add object</setting>
                 <setting name="list_format">list</setting>
-                <setting name="restrict_to_relationship_types">
-                entire_animalBulk,entire_animalLiving,entire_cadaver,
-                entire_livingPlant,sampleOf_observationPlant,sampleOf_observationAnimal,sampleOf_observationSoil,
-                sampleOf_observationWater,childOf_livingPlant,childOf_seedlot,childOf_animalEntireLiving,cloneOf_livingPlant,
-                childOfCloneOf_livingPlant,childOfCloneOf_seedlot,grandchildOf_livingPlant,grandchildOf_seedlot,
-                grandchildOf_animalLiving,grandchildOfCloneOf_plant,grandchildOfCloneOf_seed
-                </setting>
+                <setting name="restrict_to_relationship_types">entire_animalBulk,entire_animalLiving,entire_cadaver,entire_livingPlant,sampleOf_observationPlant,sampleOf_observationAnimal,sampleOf_observationSoil,sampleOf_observationWater,childOf_livingPlant,childOf_seedlot,childOf_animalEntireLiving,cloneOf_livingPlant,childOfCloneOf_livingPlant,childOfCloneOf_seedlot,grandchildOf_livingPlant,grandchildOf_seedlot,grandchildOf_animalLiving,grandchildOfCloneOf_plant,grandchildOfCloneOf_seed</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -10598,8 +10656,8 @@
             <restriction code="r_identificationBacteriological" type="identificationBacteriological"/>				
           </typeRestrictions>
           <bundlePlacements>
-			      <placement code="verbatimIdentification">
-              <bundle>ca_attribute_verbatimIdentification</bundle>
+			      <placement code="IDverbatimIdentification">
+              <bundle>ca_attribute_IDverbatimIdentification</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim taxonomic identification</setting>
                 <setting name="description" locale="en_US">The taxonomic identification of the observed organism, as specific as known at the time of observation. This can be a species name, genus name, family name. This can be the vernacular name in English (e.g. human), Dutch (e.g. mens), ... or the binomial nomenclature (e.g. Homo sapiens).</setting>
@@ -10607,7 +10665,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-            <placement code="identificationQualifier">
+            <placement code="IDidentificationQualifier">
               <bundle>ca_attribute_identificationQualifier</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Identification Qualifier</setting>
@@ -11435,8 +11493,8 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="verbatimIdentification">
-              <bundle>ca_attribute_verbatimIdentification</bundle>
+            <placement code="objlotVerbatimIdentification">
+              <bundle>ca_attribute_objlotVerbatimIdentification</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The verbatim identification</setting>
                 <setting name="description" locale="en_US">Each group concept (i.e. population, provenance, provenance Region) is linked to one specific taxon.</setting>
@@ -11489,6 +11547,17 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
+          </bundlePlacements>
+        </screen>
+        <screen idno="objectLot_hierarchy" default="0">
+		      <labels>
+            <label locale="en_US">
+              <name>Hierarchy of groups</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="lot_hierarchy_location">
+              <bundle>hierarchy_location</bundle>
           </bundlePlacements>
         </screen>
         <screen idno="objectLot_derivates" default="0">
@@ -13327,8 +13396,8 @@
         <type code="entire_animalBulk" default="0" rank="2">
           <labels>
             <label locale="en_US">
-              <typename>is a bulk sample of</typename>
-              <typename_reverse>was bulk sampled</typename_reverse>
+              <typename>is bulk-sampled/collected</typename>
+              <typename_reverse>is a sample/collection</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>animalBulk</subTypeLeft>
@@ -13337,8 +13406,8 @@
         <type code="entire_animalLiving" default="0" rank="2">
           <labels>
             <label locale="en_US">
-              <typename>is the captured animal</typename>
-              <typename_reverse>was captured</typename_reverse>
+              <typename>was brought into captivity</typename>
+              <typename_reverse>is the captured animal</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>animalEntireLiving</subTypeLeft>
@@ -13347,8 +13416,8 @@
         <type code="entire_cadaver" default="0" rank="2">
           <labels>
             <label locale="en_US">
-              <typename>is the collected cadaver</typename>
-              <typename_reverse>was collected entirely</typename_reverse>
+              <typename>was collected entirely</typename>
+              <typename_reverse>is the collected cadaver</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>animalEntireCadaver</subTypeLeft>
@@ -13357,8 +13426,8 @@
         <type code="entire_livingPlant" default="0" rank="2">
           <labels>
             <label locale="en_US">
-              <typename>is the living plant originally observed as</typename>
-              <typename_reverse>was collected entirely</typename_reverse>
+              <typename>was brought into the living plant collection</typename>
+              <typename_reverse>is the collected living plant</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>livingPlant</subTypeLeft>
@@ -13367,48 +13436,52 @@
         <type code="sampleOf_observationPlant" default="0" rank="1">
           <labels>
             <label locale="en_US">
-              <typename>is a sample/piece of</typename>
-              <typename_reverse>is sampled to</typename_reverse>
+              <typename>was sampled</typename>
+              <typename_reverse>is a sample</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>plantObject</subTypeLeft>
+          <include_subtypes_left>1</include_subtypes_left)
           <subTypeRight>observationPlant</subTypeRight>
         </type>
         <type code="sampleOf_observationAnimal" default="0" rank="1">
           <labels>
             <label locale="en_US">
-              <typename>is a sample/piece of</typename>
-              <typename_reverse>is sampled to</typename_reverse>
+              <typename>was sampled</typename>
+              <typename_reverse>is a sample</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>animalObject</subTypeLeft>
+          <include_subtypes_left>1</include_subtypes_left)
           <subTypeRight>observationAnimal</subTypeRight>
         </type>
         <type code="sampleOf_observationSoil" default="0" rank="1">
           <labels>
             <label locale="en_US">
-              <typename>is a sample/piece of</typename>
-              <typename_reverse>is sampled to</typename_reverse>
+              <typename>was sampled</typename>
+              <typename_reverse>is a sample</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>soilObject</subTypeLeft>
+          <include_subtypes_left>1</include_subtypes_left)
           <subTypeRight>observationSoil</subTypeRight>
         </type>
         <type code="sampleOf_observationWater" default="0" rank="1">
           <labels>
             <label locale="en_US">
-              <typename>is a sample/piece of</typename>
-              <typename_reverse>is sampled to</typename_reverse>
+              <typename>was sampled</typename>
+              <typename_reverse>is a sample</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>waterObject</subTypeLeft>
+          <include_subtypes_left>1</include_subtypes_left)
           <subTypeRight>observationWater</subTypeRight>
         </type>
         <type code="childOf_livingPlant" default="0" rank="3">
           <labels>
             <label locale="en_US">
-              <typename>is a child/progeny of</typename>
-              <typename_reverse>is parent of</typename_reverse>
+              <typename>the parent (remained in situ)</typename>
+              <typename_reverse>the child/progeny (in collection)</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>livingPlant</subTypeLeft>
@@ -13417,8 +13490,8 @@
         <type code="childOf_seedlot" default="0" rank="3">
           <labels>
             <label locale="en_US">
-              <typename>is a child/progeny of</typename>
-              <typename_reverse>is parent of</typename_reverse>
+              <typename>the parent (remained in situ)</typename>
+              <typename_reverse>the child/progeny (in collection)</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>seedlot</subTypeLeft>
@@ -13427,8 +13500,8 @@
         <type code="childOf_animalEntireLiving" default="0" rank="3">
           <labels>
             <label locale="en_US">
-              <typename>is a child/progeny of</typename>
-              <typename_reverse>is parent of</typename_reverse>
+              <typename>the parent (remained in situ)</typename>
+              <typename_reverse>the child/progeny (in collection)</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>animalEntireLiving</subTypeLeft>
@@ -13437,8 +13510,8 @@
         <type code="cloneOf_livingPlant" default="0" rank="4">
           <labels>
             <label locale="en_US">
-              <typename>is cloned to</typename>
-              <typename_reverse>is a clone of</typename_reverse>
+              <typename>a clone of the in-situ observation</typename>
+              <typename_reverse>cloned to</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>livingPlant</subTypeLeft>
@@ -13447,8 +13520,8 @@
         <type code="childOfCloneOf_livingPlant" default="0" rank="5">
           <labels>
             <label locale="en_US">
-              <typename>is wild original from which the parent was cloned</typename>
-              <typename_reverse>is a child of a clone of</typename_reverse>
+              <typename>a child/progeny of the in-situ observation, via clone</typename>
+              <typename_reverse>parent of, via clone</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>livingPlant</subTypeLeft>
@@ -13457,8 +13530,8 @@
         <type code="childOfCloneOf_seedlot" default="0" rank="5">
           <labels>
             <label locale="en_US">
-              <typename>is a child of a clone of</typename>
-              <typename_reverse>is wild original from which the parent was cloned</typename_reverse>
+              <typename>a child/progeny of the in-situ observation, via clone</typename>
+              <typename_reverse>parent of, via clone</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>seedlot</subTypeLeft>
@@ -13467,8 +13540,8 @@
         <type code="grandchildOf_livingPlant" default="0" rank="6">
           <labels>
             <label locale="en_US">
-              <typename>is a grandchild</typename>
-              <typename_reverse>is grandparent of</typename_reverse>
+              <typename>grandparent</typename>
+              <typename_reverse>grandchild</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>livingPlant</subTypeLeft>
@@ -13477,8 +13550,8 @@
         <type code="grandchildOf_seedlot" default="0" rank="6">
           <labels>
             <label locale="en_US">
-              <typename>is a grandchild</typename>
-              <typename_reverse>is grandparent of</typename_reverse>
+              <typename>grandparent</typename>
+              <typename_reverse>grandchild</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>seedlot</subTypeLeft>
@@ -13487,8 +13560,8 @@
         <type code="grandchildOf_animalLiving" default="0" rank="6">
           <labels>
             <label locale="en_US">
-              <typename>is a grandchild</typename>
-              <typename_reverse>is grandparent of</typename_reverse>
+              <typename>grandparent</typename>
+              <typename_reverse>grandchild</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>animalEntireLiving</subTypeLeft>
@@ -13497,8 +13570,8 @@
         <type code="grandchildOfCloneOf_plant" default="0" rank="7">
           <labels>
             <label locale="en_US">
-              <typename>is a grandchild of a clone of</typename>
-              <typename_reverse>is wild original from which the grandparent was cloned</typename_reverse>
+              <typename>grandparent, via clone</typename>
+              <typename_reverse>grandchild, via clone</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>livingPlant</subTypeLeft>
@@ -13507,38 +13580,18 @@
         <type code="grandchildOfCloneOf_seed" default="0" rank="7">
           <labels>
             <label locale="en_US">
-              <typename>is a grandchild of a clone of</typename>
-              <typename_reverse>is wild original from which the grandparent was cloned</typename_reverse>
+              <typename>grandparent, via clone</typename>
+              <typename_reverse>grandchild, via clone</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>seedlot</subTypeLeft>
           <subTypeRight>observationPlant</subTypeRight>
         </type>
-        <type code="ObjRelatedTo_obsPlant" default="0" rank="8">
-          <labels>
-            <label locale="en_US">
-              <typename>is related to</typename>
-              <typename_reverse>is wild relative from</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>observationPlant</subTypeRight>
-        </type>
-        <type code="ObjRelatedTo_obsAnimal" default="0" rank="8">
-          <labels>
-            <label locale="en_US">
-              <typename>is related to</typename>
-              <typename_reverse>is wild relative from</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>observationAnimal</subTypeRight>
-        </type>
 		    <type code="resultingObjects_fieldwork" default="0" rank="9">
           <labels>
             <label locale="en_US">
-              <typename>is result of</typename>
-              <typename_reverse>resulted in</typename_reverse>
+              <typename>resulted in</typename>
+              <typename_reverse>result of</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
@@ -13547,8 +13600,8 @@
 		    <type code="resultingObjects_project" default="0" rank="9">
           <labels>
             <label locale="en_US">
-              <typename>is result of</typename>
-              <typename_reverse>resulted in</typename_reverse>
+              <typename>resulted in</typename>
+              <typename_reverse>result of</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
@@ -13557,18 +13610,19 @@
 		    <type code="execObj_idBacteriological" default="0" rank="10">
           <labels>
             <label locale="en_US">
-              <typename>is subjected to</typename>
-              <typename_reverse>is executed on</typename_reverse>
+              <typename>executed on</typename>
+              <typename_reverse>subject of</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
-          <subTypeRight>identificationBacteriological</subTypeRight>
+          <subTypeRight>identification</subTypeRight>
+          <include_subtypes_right>1</include_subtypes_right>
         </type>
 		    <type code="execObj_idBotanical" default="0" rank="10">
           <labels>
             <label locale="en_US">
-              <typename>is subjected to</typename>
-              <typename_reverse>is executed on</typename_reverse>
+              <typename>executed on</typename>
+              <typename_reverse>subject of</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
@@ -13577,8 +13631,8 @@
 		    <type code="execObj_idViral" default="0" rank="10">
           <labels>
             <label locale="en_US">
-              <typename>is subjected to</typename>
-              <typename_reverse>is executed on</typename_reverse>
+              <typename>executed on</typename>
+              <typename_reverse>subject of</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
@@ -13587,8 +13641,8 @@
 		    <type code="execObj_idZoologial" default="0" rank="10">
           <labels>
             <label locale="en_US">
-              <typename>is subjected to</typename>
-              <typename_reverse>is executed on</typename_reverse>
+              <typename>executed on</typename>
+              <typename_reverse>subject of</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
@@ -13597,58 +13651,29 @@
 		    <type code="execObj_valuation" default="0" rank="10">
           <labels>
             <label locale="en_US">
-              <typename>is subjected to</typename>
-              <typename_reverse>is executed on</typename_reverse>
+              <typename>executed on</typename>
+              <typename_reverse>subject of</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
           <subTypeRight>valuation</subTypeRight>
         </type>
-		    <type code="execObj_disposal" default="0" rank="10">
+		    <type code="subjected_curation" default="0" rank="10">
           <labels>
             <label locale="en_US">
-              <typename>is subjected to</typename>
-              <typename_reverse>is executed on</typename_reverse>
+              <typename>executed on</typename>
+              <typename_reverse>subject of</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
-          <subTypeRight>disposal</subTypeRight>
-        </type>
-		    <type code="execObj_treatment" default="0" rank="10">
-          <labels>
-            <label locale="en_US">
-              <typename>is subjected to</typename>
-              <typename_reverse>is executed on</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>treatment</subTypeRight>
-        </type>
-		    <type code="execObj_renewal" default="0" rank="10">
-          <labels>
-            <label locale="en_US">
-              <typename>is subjected to</typename>
-              <typename_reverse>is executed on</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>renewal</subTypeRight>
-        </type>
-		    <type code="execObj_transfer" default="0" rank="10">
-          <labels>
-            <label locale="en_US">
-              <typename>is subjected to</typename>
-              <typename_reverse>is executed on</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>transfer</subTypeRight>
+          <subTypeRight>curation</subTypeRight>
+          <include_subtypes_right>1</include_subtypes_right>
         </type>
 		    <type code="INBOlabUse" default="0" rank="11">
           <labels>
             <label locale="en_US">
-              <typename>is used in lab project</typename>
-              <typename_reverse>lab project used</typename_reverse>
+              <typename>(re)used in lab project</typename>
+              <typename_reverse>subject of</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
@@ -13657,8 +13682,8 @@
 		    <type code="reuse" default="0" rank="12">
           <labels>
             <label locale="en_US">
-              <typename>is (re)used in project</typename>
-              <typename_reverse>project (re)used</typename_reverse>
+              <typename>(re)used in project</typename>
+              <typename_reverse>subject of</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
@@ -13691,6 +13716,7 @@
           </labels>
           <subTypeLeft></subTypeLeft>
           <subTypeRight>observation</subTypeRight>
+          <include_subtypes_right>1</include_subtypes_right>
         </type>
 		    <type code="fieldworkFocus" default="0">
           <labels>
@@ -13890,6 +13916,7 @@
             </label>
           </labels>
           <subTypeLeft>observation</subTypeLeft>
+          <include_subtypes_left>1</include_subtypes_left>
           <subTypeRight>fieldwork</subTypeRight>
         </type>
 		    <type code="resultingObservation_project" default="0">
@@ -13900,6 +13927,7 @@
             </label>
           </labels>
           <subTypeLeft>observation</subTypeLeft>
+          <include_subtypes_left>1</include_subtypes_left>
           <subTypeRight>project</subTypeRight>
         </type>
 		    <type code="execObs_identification" default="0">
@@ -13910,7 +13938,9 @@
             </label>
           </labels>
           <subTypeLeft>observation</subTypeLeft>
+          <include_subtypes_left>1</include_subtypes_left>
           <subTypeRight>identification</subTypeRight>
+          <include_subtypes_right>1</include_subtypes_right>
         </type>
         <type code="observationSameIndividual" default="0">
           <labels>
@@ -13920,7 +13950,9 @@
             </label>
           </labels>
           <subTypeLeft>observation</subTypeLeft>
+          <include_subtypes_left1</include_subtypes_left>
           <subTypeRight>observation</subTypeRight>
+          <include_subtypes_right>1</include_subtypes_right>
         </type>
         <type code="observationSibling" default="0">
           <labels>
@@ -13930,7 +13962,9 @@
             </label>
           </labels>
           <subTypeLeft>observation</subTypeLeft>
+          <include_subtypes_left>1</include_subtypes_left>
           <subTypeRight>observation</subTypeRight>
+          <include_subtypes_right>1</include_subtypes_right>
         </type>
         <type code="observationRelatedTo" default="0">
           <labels>
@@ -13940,7 +13974,9 @@
             </label>
           </labels>
           <subTypeLeft>observation</subTypeLeft>
+          <include_subtypes_left>1</include_subtypes_left>
           <subTypeRight>observation</subTypeRight>
+          <include_subtypes_right>1</include_subtypes_right>
         </type>
 		    <type code="subproject" default="0">
           <labels>
@@ -13951,16 +13987,6 @@
           </labels>
           <subTypeLeft>project</subTypeLeft>
           <subTypeRight>project</subTypeRight>
-        </type>
-		    <type code="resultingFieldwork_fieldwork" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>was result of</typename>
-              <typename_reverse>resulted in</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>fieldwork</subTypeLeft>
-          <subTypeRight>fieldwork</subTypeRight>
         </type>
 		    <type code="resultingFieldwork_project" default="0">
           <labels>
@@ -14353,12 +14379,7 @@
 			    <settings>
             <setting name="label" locale="en_US">samplingPoint_idno</setting>
             <setting name="restrict_to_types">observationPlant,observationAnimal,observationSoil,observationWater</setting>
-            <setting name="restrict_to_relationship_types">
-            entire_animalBulk,entire_animalLiving,entire_cadaver,entire_livingPlant,
-            sampleOf_observationPlant,sampleOf_observationAnimal,childOf_livingPlant,childOf_seedlot,childOf_animalEntireLiving,
-            cloneOf_livingPlant,childOfCloneOf_livingPlant,childOfCloneOf_seedlot,grandchildOf_livingPlant,grandchildOf_seedlot,
-            grandchildOf_animalLiving,grandchildOfCloneOf_plant,grandchildOfCloneOf_seed
-            </setting>
+            <setting name="restrict_to_relationship_types">entire_animalBulk,entire_animalLiving,entire_cadaver,entire_livingPlant,sampleOf_observationPlant,sampleOf_observationAnimal,childOf_livingPlant,childOf_seedlot,childOf_animalEntireLiving,cloneOf_livingPlant,childOfCloneOf_livingPlant,childOfCloneOf_seedlot,grandchildOf_livingPlant,grandchildOf_seedlot,grandchildOf_animalLiving,grandchildOfCloneOf_plant,grandchildOfCloneOf_seed</setting>
             <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal">^ca_occurrences.idno<unit>]]></setting>
           </settings>
         </placement>
@@ -14367,12 +14388,7 @@
 			    <settings>
             <setting name="label" locale="en_US">samplingPoint_name</setting>
             <setting name="restrict_to_types">observationAnimal,observationSoil,observationWater,observationPlant</setting>
-            <setting name="restrict_to_relationship_types">
-            entire_animalBulk, entire_animalLiving,entire_cadaver,entire_livingPlant,
-            sampleOf_observationPlant,sampleOf_observationAnimal,childOf_livingPlant,childOf_seedlot,childOf_animalEntireLiving,
-            cloneOf_livingPlant,childOfCloneOf_livingPlant,childOfCloneOf_seedlot,grandchildOf_livingPlant,grandchildOf_seedlot,
-            grandchildOf_animalLiving,grandchildOfCloneOf_plant,grandchildOfCloneOf_seed
-            </setting>
+            <setting name="restrict_to_relationship_types">entire_animalBulk, entire_animalLiving,entire_cadaver,entire_livingPlant,sampleOf_observationPlant,sampleOf_observationAnimal,childOf_livingPlant,childOf_seedlot,childOf_animalEntireLiving,cloneOf_livingPlant,childOfCloneOf_livingPlant,childOfCloneOf_seedlot,grandchildOf_livingPlant,grandchildOf_seedlot,grandchildOf_animalLiving,grandchildOfCloneOf_plant,grandchildOfCloneOf_seed</setting>
             <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal">^ca_occurrences.preferred_labels<unit>]]></setting>
           </settings>
         </placement>
@@ -14381,12 +14397,7 @@
 			    <settings>
             <setting name="label" locale="en_US">samplingPoint_date</setting>
             <setting name="restrict_to_types">observationAnimal,observationSoil,observationWater,observationPlant</setting>
-            <setting name="restrict_to_relationship_types">
-            entire_animalBulk, entire_animalLiving,entire_cadaver,entire_livingPlant,
-            sampleOf_observationPlant,sampleOf_observationAnimal,childOf_livingPlant,childOf_seedlot,childOf_animalEntireLiving,
-            cloneOf_livingPlant,childOfCloneOf_livingPlant,childOfCloneOf_seedlot,grandchildOf_livingPlant,grandchildOf_seedlot,
-            grandchildOf_animalLiving,grandchildOfCloneOf_plant,grandchildOfCloneOf_seed
-            </setting>
+            <setting name="restrict_to_relationship_types">entire_animalBulk, entire_animalLiving,entire_cadaver,entire_livingPlant,sampleOf_observationPlant,sampleOf_observationAnimal,childOf_livingPlant,childOf_seedlot,childOf_animalEntireLiving,cloneOf_livingPlant,childOfCloneOf_livingPlant,childOfCloneOf_seedlot,grandchildOf_livingPlant,grandchildOf_seedlot,grandchildOf_animalLiving,grandchildOfCloneOf_plant,grandchildOfCloneOf_seed</setting>
             <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal">^ca_occurrences.dateRange<unit>]]></setting>
           </settings>
         </placement>
@@ -14404,18 +14415,13 @@
             <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal"><unit relativeTo="ca_places">^ca_places.preferred_labels<unit><unit>]]></setting>
           </settings>
         </placement>
-        <placement code="ca_occurrence_observation_verbatimIdentification">
+        <placement code="ca_occurrence_obsVerbatimIdentification">
           <bundle>ca_occurrences</bundle>
 			    <settings>
             <setting name="label" locale="en_US">samplingPoint_verbatimIdentification</setting>
             <setting name="restrict_to_types">observationAnimal,observationSoil,observationWater,observationPlant</setting>
-            <setting name="restrict_to_relationship_types">
-            entire_animalBulk, entire_animalLiving,entire_cadaver,entire_livingPlant,
-            sampleOf_observationPlant,sampleOf_observationAnimal,childOf_livingPlant,childOf_seedlot,childOf_animalEntireLiving,
-            cloneOf_livingPlant,childOfCloneOf_livingPlant,childOfCloneOf_seedlot,grandchildOf_livingPlant,grandchildOf_seedlot,
-            grandchildOf_animalLiving,grandchildOfCloneOf_plant,grandchildOfCloneOf_seed
-            </setting>
-            <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal">^ca_occurrences.verbatimIdentification<unit>]]></setting>
+            <setting name="restrict_to_relationship_types">entire_animalBulk, entire_animalLiving,entire_cadaver,entire_livingPlant,sampleOf_observationPlant,sampleOf_observationAnimal,childOf_livingPlant,childOf_seedlot,childOf_animalEntireLiving,cloneOf_livingPlant,childOfCloneOf_livingPlant,childOfCloneOf_seedlot,grandchildOf_livingPlant,grandchildOf_seedlot,grandchildOf_animalLiving,grandchildOfCloneOf_plant,grandchildOfCloneOf_seed</setting>
+            <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal">^ca_occurrences.obsVerbatimIdentification<unit>]]></setting>
           </settings>
         </placement>
         <placement code="ca_occurrence_observation_standardizedIdentification">
@@ -14423,12 +14429,7 @@
 			    <settings>
             <setting name="label" locale="en_US">samplingPoint_standardizedIdentification</setting>
             <setting name="restrict_to_types">observationAnimal,observationSoil,observationWater,observationPlant</setting>
-            <setting name="restrict_to_relationship_types">
-            entire_animalBulk, entire_animalLiving,entire_cadaver,entire_livingPlant,
-            sampleOf_observationPlant,sampleOf_observationAnimal,childOf_livingPlant,childOf_seedlot,childOf_animalEntireLiving,
-            cloneOf_livingPlant,childOfCloneOf_livingPlant,childOfCloneOf_seedlot,grandchildOf_livingPlant,grandchildOf_seedlot,
-            grandchildOf_animalLiving,grandchildOfCloneOf_plant,grandchildOfCloneOf_seed
-            </setting>
+            <setting name="restrict_to_relationship_types">entire_animalBulk, entire_animalLiving,entire_cadaver,entire_livingPlant,sampleOf_observationPlant,sampleOf_observationAnimal,childOf_livingPlant,childOf_seedlot,childOf_animalEntireLiving,cloneOf_livingPlant,childOfCloneOf_livingPlant,childOfCloneOf_seedlot,grandchildOf_livingPlant,grandchildOf_seedlot,grandchildOf_animalLiving,grandchildOfCloneOf_plant,grandchildOfCloneOf_seed</setting>
             <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="observationPlant,observationAnimal">^ca_occurrences.standardizedIdentification<unit>]]></setting>
           </settings>
         </placement>
