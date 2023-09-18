@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.46.02</profileName>
+  <profileName>[INBO] INBO natural science collection v0.46.04</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <locales>
     <locale lang="en" country="US">English</locale>
@@ -6848,564 +6848,31 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	  <!--ObservationContainers-->
-	    <metadataElement code="observationPlantCont1" datatype="Container">
-        <labels>
-          <label locale="en_US">
-            <name>Field metadata of the plant</name>
-          </label>
-        </labels>
-	      <elements>
-          <metadataElement code="dateRange1" datatype="DateRange">
-            <labels>
-              <label locale="en_US">
-                <name>Date (range) and time (range)</name>
-                <description>Represents an historic date range accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
-              </label>
-            </labels>
-            <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
-            <settings>
-              <setting name="fieldWidth">40</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-              <setting name="canBeUsedInSort">1</setting>
-              <setting name="canBeUsedInSearchForm">1</setting>
-              <setting name="canBeUsedInDisplay">1</setting>
-            </settings>
-          </metadataElement>	    
-          <metadataElement code="localityContainer1" datatype="Container">
-            <labels>
-              <label locale="en_US">
-                <name>Locality information</name>
-              </label>
-            </labels>
-            <elements>
-              <metadataElement code="verbatimLocality1" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>verbatimLocality</name>
-                    <description>The original textual description of the place.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimLocality</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="verbatimLongitudeX1" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Verbatim Longitude (X)</name>
-                    <description>A free text format for the longitude component of the coordinates that are not expressed in a pure decimal format.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/abcd/terms/longitudeText</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="verbatimLatitudeY1" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Verbatim Latitude (Y)</name>
-                    <description>A free text format for the latitude component of the coordinates that are not expressed in a pure decimal format.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/abcd/terms/latitudeText</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="verbatimSRS1" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>verbatimSRS</name>
-                    <description>The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which coordinates given in verbatimLatitude and verbatimLongitude, or verbatimCoordinates are based.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimSRS</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="verbatimGeoreferenceProtocol1" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>(Verbatim) Georeference Protocol</name>
-                    <description>A description or reference to the methods used to determine the spatial footprint, coordinates, and uncertainties.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/georeferenceProtocol</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="verbatimElevation1" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>verbatimElevation</name>
-                    <description>The original description of the elevation (altitude, usually above sea level) of the Location.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimElevation</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="minimumElevationInMeters1" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>minimumElevationInMeters</name>
-                    <description>The lower limit of the range of elevation (altitude, usually above sea level), in meters.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/minimumElevationInMeters</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="maximumElevationInMeters1" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>maximumElevationInMeters</name>
-                    <description>The upper limit of the range of elevation (altitude, usually above sea level), in meters.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/maximumElevationInMeters</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="verticalDatum1" datatype="List" list="vertical_datum">
-                <labels>
-                  <label locale="en_US">
-                    <name>verticalDatum</name>
-                    <description>The vertical datum used as the reference upon which the values in the elevation terms are based.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/verticalDatum</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="waterbodyType1" datatype="List" list="waterbody_type">
-                <labels>
-                  <label locale="en_US">
-                    <name>waterbodyType</name>
-                    <description>A category of the waterbody in which the Event occurred.</description>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="habitat1" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>habitat</name>
-                    <description>A category or description of the habitat in which the Event occurred.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/habitat</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-            </elements>
-          </metadataElement>
-          <metadataElement code="plantMetadata1" datatype="Container">
-            <labels>
-              <label locale="en_US">
-                <name>Locality information</name>
-              </label>
-            </labels>
-            <elements>
-              <metadataElement code="sex1" datatype="List" list="sex">
-                <labels>
-                  <label locale="en_US">
-                    <name>sex</name>
-                    <description>The sex of the biological individual(s) represented in the Occurrence.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/sex</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">40</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="lifeStage1" datatype="List" list="life_stage">
-                <labels>
-                  <label locale="en_US">
-                    <name>lifeStage</name>
-                    <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="reproductiveCondition1" datatype="List" list="reproductive_condition">
-                <labels>
-                  <label locale="en_US">
-                    <name>reproductiveCondition</name>
-                    <description>The reproductive condition of the biological individual(s) represented in the Occurrence. Recommended best practice is to use a controlled vocabulary.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/reproductiveCondition</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="age1" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Age statement</name>
-                    <description>A statement on the age of the plant, if known. For (planted in-situ) sites this is sometimes known/recorded.</description>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="verbatimNotes1" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Verbatim Notes</name>
-                    <description>Any unstructured information (e.g. notes, comments) literally transcribed from the original source.</description>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">115</setting>
-                  <setting name="fieldHeight">8</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-            </elements>
-          </metadataElement>
-          <metadataElement code="plantMeasurements1" datatype="Container">
-            <labels>
-              <label locale="en_US">
-                <name>Locality information</name>
-              </label>
-            </labels>
-            <elements>
-              <metadataElement code="lengthContainer1" datatype="Container">
-                <labels>
-                  <label locale="en_US">
-                    <name>Length</name>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="lineBreakAfterNumberOfElements">2</setting>
-                </settings>
-                <elements>
-                  <metadataElement code="lmType1" datatype="List" list="lm_type">
-                    <labels>
-                      <label locale="en_US">
-                        <name>Type of length measurement</name>
-                      </label>
-                    </labels>
-                    <settings>
-                      <setting name="minAttributesPerRow">0</setting>
-                      <setting name="maxAttributesPerRow">1</setting>
-                      <setting name="minimumAttributeBundlesToDisplay">1</setting>
-                    </settings>
-                  </metadataElement>
-                  <metadataElement code="lengthAppliesTo1" datatype="Text">
-                    <labels>
-                      <label locale="en_US">
-                        <name>measurementAppliesTo</name>
-                        <description>Further specification of what exactly was measured. For example: length/width: "of the arm/leg/tail". For example: diameter: "of the main trunk".</description>
-                      </label>
-                    </labels>
-                    <documentationUrl>http://rs.tdwg.org/abcd/terms/appliesTo</documentationUrl>
-                  </metadataElement>
-                  <metadataElement code="lengthLowerValue1" datatype="Text">
-                    <labels>
-                      <label locale="en_US">
-                        <name>Lower value</name>
-                        <description>Lower or only value</description>
-                      </label>
-                    </labels>
-                    <documentationUrl>http://rs.tdwg.org/abcd/terms/lowerValue</documentationUrl>
-                    <settings>
-                      <setting name="fieldWidth">35</setting>
-                      <setting name="fieldHeight">1</setting>
-                      <setting name="minChars">0</setting>
-                      <setting name="maxChars">65535</setting>
-                    </settings>
-                  </metadataElement>
-                  <metadataElement code="lengthUpperValue1" datatype="Text">
-                    <labels>
-                      <label locale="en_US">
-                        <name>Upper value</name>
-                      </label>
-                    </labels>
-                    <documentationUrl>http://rs.tdwg.org/abcd/terms/upperValue</documentationUrl>
-                    <settings>
-                      <setting name="fieldWidth">35</setting>
-                      <setting name="fieldHeight">1</setting>
-                      <setting name="minChars">0</setting>
-                      <setting name="maxChars">65535</setting>
-                    </settings>
-                  </metadataElement>
-                  <metadataElement code="lengthUnit1" datatype="List" list="length_unit">
-                    <labels>
-                    <label locale="en_US">
-                      <name>Unit</name>
-                      <description>Unit used for the measurement.</description>
-                    </label>
-                    </labels>
-                    <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/volumeUnit</documentationUrl>
-                  </metadataElement>
-                  <metadataElement code="lengthAccuracy1" datatype="Text">
-                    <labels>
-                      <label locale="en_US">
-                        <name>Accuracy</name>
-                        <description>The description of the potential error associated with the measurementValue.</description>
-                      </label>
-                    </labels>
-                    <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementAccuracy</documentationUrl>
-                  </metadataElement>
-                  <metadataElement code="lengthPublishedProcedure1" datatype="Url">
-                    <labels>
-                      <label locale="en_US">
-                        <name>Published procedure</name>
-                        <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
-                      </label>
-                    </labels>
-                    <settings>
-                      <setting name="fieldWidth">20</setting>
-                      <setting name="fieldHeight">1</setting>
-                      <setting name="minChars">0</setting>
-                      <setting name="maxChars">65535</setting>
-                    </settings>
-                  </metadataElement>
-                  <metadataElement code="lengthProcedure1" datatype="Text">
-                    <labels>
-                      <label locale="en_US">
-                        <name>Procedure</name>
-                        <description>Description of the measurement procedure.</description>
-                      </label>
-                    </labels>
-                    <settings>
-                      <setting name="fieldWidth">50</setting>
-                      <setting name="fieldHeight">2</setting>
-                      <setting name="minChars">0</setting>
-                      <setting name="maxChars">65535</setting>
-                    </settings>
-                  </metadataElement>
-                  <metadataElement code="lengthRemarks1" datatype="Text">
-                    <labels>
-                    <label locale="en_US">
-                      <name>Remarks</name>
-                      <description>Any relevant remaining remarks on the measurement. This could be who did the measurement, if something unusual was observed during the measurement,...</description>
-                    </label>
-                    </labels>
-                    <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/gelRemarks</documentationUrl>
-                  </metadataElement>
-                </elements>
-              </metadataElement>
-              <metadataElement code="countContainer1" datatype="Container">
-                <labels>
-                  <label locale="en_US">
-                    <name>Count</name>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="lineBreakAfterNumberOfElements">2</setting>
-                </settings>
-                <elements>
-                  <metadataElement code="countLowerValue1" datatype="Text">
-                    <labels>
-                      <label locale="en_US">
-                        <name>Lower value</name>
-                        <description>Lower or only value</description>
-                      </label>
-                    </labels>
-                    <documentationUrl>http://rs.tdwg.org/abcd/terms/lowerValue</documentationUrl>
-                    <settings>
-                      <setting name="fieldWidth">70</setting>
-                      <setting name="fieldHeight">1</setting>
-                      <setting name="minChars">0</setting>
-                      <setting name="maxChars">65535</setting>
-                    </settings>
-                  </metadataElement>
-                  <metadataElement code="countUpperValue1" datatype="Text">
-                    <labels>
-                      <label locale="en_US">
-                        <name>Upper value</name>
-                      </label>
-                    </labels>
-                    <documentationUrl>http://rs.tdwg.org/abcd/terms/upperValue</documentationUrl>
-                    <settings>
-                      <setting name="fieldWidth">70</setting>
-                      <setting name="fieldHeight">1</setting>
-                      <setting name="minChars">0</setting>
-                      <setting name="maxChars">65535</setting>
-                    </settings>
-                  </metadataElement>
-                  <metadataElement code="countUnit1" datatype="List" list="count_unit">
-                    <labels>
-                    <label locale="en_US">
-                      <name>Unit</name>
-                      <description>Unit used for the measurement.</description>
-                    </label>
-                    </labels>
-                    <documentationUrl>	http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
-                  </metadataElement>
-                  <metadataElement code="countAppliesTo1" datatype="Text">
-                    <labels>
-                      <label locale="en_US">
-                        <name>measurementAppliesTo</name>
-                        <description>Further specification of what exactly was counted. For example: seeds, hairs, nodes, parasites, ...</description>
-                      </label>
-                    </labels>
-                    <documentationUrl>http://rs.tdwg.org/abcd/terms/appliesTo</documentationUrl>
-                  </metadataElement>
-                  <metadataElement code="countAccuracy1" datatype="Text">
-                    <labels>
-                      <label locale="en_US">
-                        <name>Accuracy</name>
-                        <description>The description of the potential error associated with the measurementValue. Can also include words such as: about, approximately, ..</description>
-                      </label>
-                    </labels>
-                    <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementAccuracy</documentationUrl>
-                  </metadataElement>
-                  <metadataElement code="countPublishedProcedure1" datatype="Url">
-                    <labels>
-                      <label locale="en_US">
-                        <name>Published procedure</name>
-                        <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
-                      </label>
-                    </labels>
-                    <settings>
-                      <setting name="fieldWidth">70</setting>
-                      <setting name="fieldHeight">1</setting>
-                      <setting name="minChars">0</setting>
-                      <setting name="maxChars">65535</setting>
-                    </settings>
-                  </metadataElement>
-                  <metadataElement code="countProcedure1" datatype="Text">
-                    <labels>
-                      <label locale="en_US">
-                        <name>Procedure</name>
-                        <description>Description of the measurement procedure.</description>
-                      </label>
-                    </labels>
-                    <settings>
-                      <setting name="fieldWidth">70</setting>
-                      <setting name="fieldHeight">1</setting>
-                      <setting name="minChars">0</setting>
-                      <setting name="maxChars">65535</setting>
-                    </settings>
-                  </metadataElement>
-                  <metadataElement code="countRemarks1" datatype="Text">
-                    <labels>
-                    <label locale="en_US">
-                      <name>Remarks</name>
-                      <description>Any relevant remaining remarks on the measurement. This could be who did the measurement, if something unusual was observed during the measurement,... For age measurements this can be a text value expressing the age, e.g. "estimated to be younger than five", which could be complemented by the minimum value 0 and the maximum value 5.</description>
-                    </label>
-                    </labels>
-                    <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/gelRemarks</documentationUrl>
-                  </metadataElement>
-                </elements>
-              </metadataElement>
-            </elements>
-          </metadataElement>
-	      </elements>
-        <typeRestrictions>
-          <restriction code="observationPlant">
-            <table>ca_objects</table>
-            <type>observationAnimal</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-	    <metadataElement code="observationAnimalCont2" datatype="Container">
+	    <metadataElement code="localityTimestamped" datatype="Container">
         <labels>
           <label locale="en_US">
             <name>Field metadata of the animal</name>
           </label>
         </labels>
 	      <elements>
-          <metadataElement code="dateRange2" datatype="DateRange">
-            <labels>
-              <label locale="en_US">
-                <name>Date (range) and time (range)</name>
-                <description>Represents an historic date range accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
-              </label>
-            </labels>
-            <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
-            <settings>
-              <setting name="fieldWidth">40</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-              <setting name="canBeUsedInSort">1</setting>
-              <setting name="canBeUsedInSearchForm">1</setting>
-              <setting name="canBeUsedInDisplay">1</setting>
-            </settings>
-          </metadataElement>	    
-          <metadataElement code="localityContainer2" datatype="Container">
-            <labels>
-              <label locale="en_US">
-                <name>Locality information</name>
-              </label>
-            </labels>
-            <elements>
+              <metadataElement code="dateRange2" datatype="DateRange">
+                <labels>
+                  <label locale="en_US">
+                    <name>Date (range) and time (range)</name>
+                    <description>Represents an historic date range accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
+                  </label>
+                </labels>
+                <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
+                <settings>
+                  <setting name="fieldWidth">40</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">65535</setting>
+                  <setting name="canBeUsedInSort">1</setting>
+                  <setting name="canBeUsedInSearchForm">1</setting>
+                  <setting name="canBeUsedInDisplay">1</setting>
+                </settings>
+              </metadataElement>	    
               <metadataElement code="verbatimLocality2" datatype="Text">
                 <labels>
                   <label locale="en_US">
@@ -7570,30 +7037,159 @@
                   <setting name="maxChars">65535</setting>
                 </settings>
               </metadataElement>
-            </elements>
-          </metadataElement>
-          <metadataElement code="animalMetadata2" datatype="Container">
-            <labels>
-              <label locale="en_US">
-                <name>Locality information</name>
-              </label>
-            </labels>
-            <elements>
-              <metadataElement code="sex2" datatype="List" list="sex">
+        </elements>
+        <typeRestrictions>
+          <restriction code="observationAnimal">
+            <table>ca_objects</table>
+            <type>observationAnimal</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	  <!--ObservationContainers-->
+	    <metadataElement code="observationPlantCont1" datatype="Container">
+        <labels>
+          <label locale="en_US">
+            <name>Field metadata of the plant</name>
+          </label>
+        </labels>
+	      <elements>
+              <metadataElement code="dateRange1" datatype="DateRange">
                 <labels>
                   <label locale="en_US">
-                    <name>sex</name>
-                    <description>The sex of the biological individual(s) represented in the Occurrence.</description>
+                    <name>Date (range) and time (range)</name>
+                    <description>Represents an historic date range accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
                   </label>
                 </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/sex</documentationUrl>
+                <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
                 <settings>
                   <setting name="fieldWidth">40</setting>
                   <setting name="fieldHeight">1</setting>
                   <setting name="minChars">0</setting>
                   <setting name="maxChars">65535</setting>
+                  <setting name="canBeUsedInSort">1</setting>
+                  <setting name="canBeUsedInSearchForm">1</setting>
+                  <setting name="canBeUsedInDisplay">1</setting>
+                </settings>
+              </metadataElement>	    
+              <metadataElement code="lifeStage1" datatype="List" list="life_stage">
+                <labels>
+                  <label locale="en_US">
+                    <name>lifeStage</name>
+                    <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
+                  </label>
+                </labels>
+                <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
+                <settings>
+                  <setting name="fieldWidth">70</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">65535</setting>
                 </settings>
               </metadataElement>
+              <metadataElement code="reproductiveCondition1" datatype="List" list="reproductive_condition">
+                <labels>
+                  <label locale="en_US">
+                    <name>reproductiveCondition</name>
+                    <description>The reproductive condition of the biological individual(s) represented in the Occurrence. Recommended best practice is to use a controlled vocabulary.</description>
+                  </label>
+                </labels>
+                <documentationUrl>http://rs.tdwg.org/dwc/terms/reproductiveCondition</documentationUrl>
+                <settings>
+                  <setting name="fieldWidth">70</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">65535</setting>
+                </settings>
+              </metadataElement>
+              <metadataElement code="age1" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>Age statement</name>
+                    <description>A statement on the age of the plant, if known. For (planted in-situ) sites this is sometimes known/recorded.</description>
+                  </label>
+                </labels>
+                <settings>
+                  <setting name="fieldWidth">70</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">65535</setting>
+                </settings>
+              </metadataElement>
+              <metadataElement code="habitat1" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>habitat</name>
+                    <description>A category or description of the habitat in which the Event occurred.</description>
+                  </label>
+                </labels>
+                <documentationUrl>http://rs.tdwg.org/dwc/terms/habitat</documentationUrl>
+                <settings>
+                  <setting name="fieldWidth">70</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">65535</setting>
+                </settings>
+              </metadataElement>
+              <metadataElement code="verbatimNotes1" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>Verbatim Notes</name>
+                    <description>Any unstructured information (e.g. notes, comments) literally transcribed from the original source.</description>
+                  </label>
+                </labels>
+                <settings>
+                  <setting name="fieldWidth">115</setting>
+                  <setting name="fieldHeight">8</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">65535</setting>
+                </settings>
+              </metadataElement>
+        </elements>
+        </metadataElement>
+        <typeRestrictions>
+          <restriction code="observationPlant">
+            <table>ca_objects</table>
+            <type>observationAnimal</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="observationAnimalCont2" datatype="Container">
+        <labels>
+          <label locale="en_US">
+            <name>Field metadata of the animal</name>
+          </label>
+        </labels>
+	      <elements>
+              <metadataElement code="dateRange2" datatype="DateRange">
+                <labels>
+                  <label locale="en_US">
+                    <name>Date (range) and time (range)</name>
+                    <description>Represents an historic date range accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
+                  </label>
+                </labels>
+                <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
+                <settings>
+                  <setting name="fieldWidth">40</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">65535</setting>
+                  <setting name="canBeUsedInSort">1</setting>
+                  <setting name="canBeUsedInSearchForm">1</setting>
+                  <setting name="canBeUsedInDisplay">1</setting>
+                </settings>
+              </metadataElement>	    
               <metadataElement code="lifeStage2" datatype="List" list="life_stage">
                 <labels>
                   <label locale="en_US">
@@ -7667,344 +7263,6 @@
                   <setting name="maxChars">65535</setting>
                 </settings>
               </metadataElement>
-            </elements>
-          </metadataElement>
-          <metadataElement code="animalMeasurements2" datatype="Container">
-            <labels>
-              <label locale="en_US">
-                <name>Locality information</name>
-              </label>
-            </labels>
-            <elements>
-              <metadataElement code="lengthContainer2" datatype="Container">
-                <labels>
-                  <label locale="en_US">
-                    <name>Length</name>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="lineBreakAfterNumberOfElements">2</setting>
-                </settings>
-                <elements>
-                  <metadataElement code="lmType2" datatype="List" list="lm_type">
-                    <labels>
-                      <label locale="en_US">
-                        <name>Type of length measurement</name>
-                      </label>
-                    </labels>
-                    <settings>
-                      <setting name="minAttributesPerRow">0</setting>
-                      <setting name="maxAttributesPerRow">1</setting>
-                      <setting name="minimumAttributeBundlesToDisplay">1</setting>
-                    </settings>
-                  </metadataElement>
-                  <metadataElement code="lengthAppliesTo2" datatype="Text">
-                    <labels>
-                      <label locale="en_US">
-                        <name>measurementAppliesTo</name>
-                        <description>Further specification of what exactly was measured. For example: length/width: "of the arm/leg/tail". For example: diameter: "of the main trunk".</description>
-                      </label>
-                    </labels>
-                    <documentationUrl>http://rs.tdwg.org/abcd/terms/appliesTo</documentationUrl>
-                  </metadataElement>
-                  <metadataElement code="lengthLowerValue2" datatype="Text">
-                    <labels>
-                      <label locale="en_US">
-                        <name>Lower value</name>
-                        <description>Lower or only value</description>
-                      </label>
-                    </labels>
-                    <documentationUrl>http://rs.tdwg.org/abcd/terms/lowerValue</documentationUrl>
-                    <settings>
-                      <setting name="fieldWidth">35</setting>
-                      <setting name="fieldHeight">1</setting>
-                      <setting name="minChars">0</setting>
-                      <setting name="maxChars">65535</setting>
-                    </settings>
-                  </metadataElement>
-                  <metadataElement code="lengthUpperValue2" datatype="Text">
-                    <labels>
-                      <label locale="en_US">
-                        <name>Upper value</name>
-                      </label>
-                    </labels>
-                    <documentationUrl>http://rs.tdwg.org/abcd/terms/upperValue</documentationUrl>
-                    <settings>
-                      <setting name="fieldWidth">35</setting>
-                      <setting name="fieldHeight">1</setting>
-                      <setting name="minChars">0</setting>
-                      <setting name="maxChars">65535</setting>
-                    </settings>
-                  </metadataElement>
-                  <metadataElement code="lengthUnit2" datatype="List" list="length_unit">
-                    <labels>
-                    <label locale="en_US">
-                      <name>Unit</name>
-                      <description>Unit used for the measurement.</description>
-                    </label>
-                    </labels>
-                    <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/volumeUnit</documentationUrl>
-                  </metadataElement>
-                  <metadataElement code="lengthAccuracy2" datatype="Text">
-                    <labels>
-                      <label locale="en_US">
-                        <name>Accuracy</name>
-                        <description>The description of the potential error associated with the measurementValue.</description>
-                      </label>
-                    </labels>
-                    <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementAccuracy</documentationUrl>
-                  </metadataElement>
-                  <metadataElement code="lengthPublishedProcedure2" datatype="Url">
-                    <labels>
-                      <label locale="en_US">
-                        <name>Published procedure</name>
-                        <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
-                      </label>
-                    </labels>
-                    <settings>
-                      <setting name="fieldWidth">20</setting>
-                      <setting name="fieldHeight">1</setting>
-                      <setting name="minChars">0</setting>
-                      <setting name="maxChars">65535</setting>
-                    </settings>
-                  </metadataElement>
-                  <metadataElement code="lengthProcedure2" datatype="Text">
-                    <labels>
-                      <label locale="en_US">
-                        <name>Procedure</name>
-                        <description>Description of the measurement procedure.</description>
-                      </label>
-                    </labels>
-                    <settings>
-                      <setting name="fieldWidth">50</setting>
-                      <setting name="fieldHeight">2</setting>
-                      <setting name="minChars">0</setting>
-                      <setting name="maxChars">65535</setting>
-                    </settings>
-                  </metadataElement>
-                  <metadataElement code="lengthRemarks2" datatype="Text">
-                    <labels>
-                    <label locale="en_US">
-                      <name>Remarks</name>
-                      <description>Any relevant remaining remarks on the measurement. This could be who did the measurement, if something unusual was observed during the measurement,...</description>
-                    </label>
-                    </labels>
-                    <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/gelRemarks</documentationUrl>
-                  </metadataElement>
-                </elements>
-              </metadataElement>
-              <metadataElement code="weightContainer2" datatype="Container">
-                <labels>
-                  <label locale="en_US">
-                    <name>Weight</name>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="lineBreakAfterNumberOfElements">2</setting>
-                </settings>
-                <elements>
-                  <metadataElement code="weightAppliesTo2" datatype="Text">
-                    <labels>
-                      <label locale="en_US">
-                        <name>measurementAppliesTo</name>
-                        <description>Further specification of what exactly was measured. For example: bruto or netto weight.</description>
-                      </label>
-                    </labels>
-                    <documentationUrl>http://rs.tdwg.org/abcd/terms/appliesTo</documentationUrl>
-                  </metadataElement>
-                  <metadataElement code="weightUnit2" datatype="List" list="weight_unit">
-                    <labels>
-                    <label locale="en_US">
-                      <name>Unit</name>
-                      <description>Unit used for the weight measurement.</description>
-                    </label>
-                    </labels>
-                    <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/volumeUnit</documentationUrl>
-                  </metadataElement>
-                  <metadataElement code="weightLowerValue2" datatype="Text">
-                    <labels>
-                      <label locale="en_US">
-                        <name>Lower value</name>
-                        <description>Lower or only value</description>
-                      </label>
-                    </labels>
-                    <documentationUrl>http://rs.tdwg.org/abcd/terms/lowerValue</documentationUrl>
-                    <settings>
-                      <setting name="fieldWidth">35</setting>
-                      <setting name="fieldHeight">1</setting>
-                      <setting name="minChars">0</setting>
-                      <setting name="maxChars">65535</setting>
-                    </settings>
-                  </metadataElement>
-                  <metadataElement code="weightUpperValue2" datatype="Text">
-                    <labels>
-                      <label locale="en_US">
-                        <name>Upper value</name>
-                      </label>
-                    </labels>
-                    <documentationUrl>http://rs.tdwg.org/abcd/terms/upperValue</documentationUrl>
-                    <settings>
-                      <setting name="fieldWidth">35</setting>
-                      <setting name="fieldHeight">1</setting>
-                      <setting name="minChars">0</setting>
-                      <setting name="maxChars">65535</setting>
-                    </settings>
-                  </metadataElement>
-                  <metadataElement code="weightAccuracy2" datatype="Text">
-                    <labels>
-                      <label locale="en_US">
-                        <name>Accuracy</name>
-                        <description>The description of the potential error associated with the measurementValue.</description>
-                      </label>
-                    </labels>
-                    <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementAccuracy</documentationUrl>
-                  </metadataElement>
-                  <metadataElement code="weightPublishedProcedure2" datatype="Url">
-                    <labels>
-                      <label locale="en_US">
-                        <name>Published procedure</name>
-                        <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
-                      </label>
-                    </labels>
-                    <settings>
-                      <setting name="fieldWidth">20</setting>
-                      <setting name="fieldHeight">2</setting>
-                      <setting name="minChars">0</setting>
-                      <setting name="maxChars">65535</setting>
-                    </settings>
-                  </metadataElement>
-                  <metadataElement code="weightProcedure2" datatype="Text">
-                    <labels>
-                      <label locale="en_US">
-                        <name>Procedure</name>
-                        <description>Description of the measurement procedure.</description>
-                      </label>
-                    </labels>
-                    <settings>
-                      <setting name="fieldWidth">50</setting>
-                      <setting name="fieldHeight">2</setting>
-                      <setting name="minChars">0</setting>
-                      <setting name="maxChars">65535</setting>
-                    </settings>
-                  </metadataElement>
-                  <metadataElement code="weightRemarks2" datatype="Text">
-                    <labels>
-                    <label locale="en_US">
-                      <name>Remarks</name>
-                      <description>Any relevant remaining remarks on the measurement. This could be who did the measurement, if something unusual was observed during the measurement,... For weight measurements this can be a text value expressing the weight, if no actual numeric value is present, e.g. "too low to measure".</description>
-                    </label>
-                    </labels>
-                    <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/gelRemarks</documentationUrl>
-                  </metadataElement>
-                </elements>
-              </metadataElement>
-              <metadataElement code="countContainer2" datatype="Container">
-                <labels>
-                  <label locale="en_US">
-                    <name>Count</name>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="lineBreakAfterNumberOfElements">2</setting>
-                </settings>
-                <elements>
-                  <metadataElement code="countLowerValue2" datatype="Text">
-                    <labels>
-                      <label locale="en_US">
-                        <name>Lower value</name>
-                        <description>Lower or only value</description>
-                      </label>
-                    </labels>
-                    <documentationUrl>http://rs.tdwg.org/abcd/terms/lowerValue</documentationUrl>
-                    <settings>
-                      <setting name="fieldWidth">70</setting>
-                      <setting name="fieldHeight">1</setting>
-                      <setting name="minChars">0</setting>
-                      <setting name="maxChars">65535</setting>
-                    </settings>
-                  </metadataElement>
-                  <metadataElement code="countUpperValue2" datatype="Text">
-                    <labels>
-                      <label locale="en_US">
-                        <name>Upper value</name>
-                      </label>
-                    </labels>
-                    <documentationUrl>http://rs.tdwg.org/abcd/terms/upperValue</documentationUrl>
-                    <settings>
-                      <setting name="fieldWidth">70</setting>
-                      <setting name="fieldHeight">1</setting>
-                      <setting name="minChars">0</setting>
-                      <setting name="maxChars">65535</setting>
-                    </settings>
-                  </metadataElement>
-                  <metadataElement code="countUnit2" datatype="List" list="count_unit">
-                    <labels>
-                    <label locale="en_US">
-                      <name>Unit</name>
-                      <description>Unit used for the measurement.</description>
-                    </label>
-                    </labels>
-                    <documentationUrl>	http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
-                  </metadataElement>
-                  <metadataElement code="countAppliesTo2" datatype="Text">
-                    <labels>
-                      <label locale="en_US">
-                        <name>measurementAppliesTo</name>
-                        <description>Further specification of what exactly was counted. For example: seeds, hairs, nodes, parasites, ...</description>
-                      </label>
-                    </labels>
-                    <documentationUrl>http://rs.tdwg.org/abcd/terms/appliesTo</documentationUrl>
-                  </metadataElement>
-                  <metadataElement code="countAccuracy2" datatype="Text">
-                    <labels>
-                      <label locale="en_US">
-                        <name>Accuracy</name>
-                        <description>The description of the potential error associated with the measurementValue. Can also include words such as: about, approximately, ..</description>
-                      </label>
-                    </labels>
-                    <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementAccuracy</documentationUrl>
-                  </metadataElement>
-                  <metadataElement code="countPublishedProcedure2" datatype="Url">
-                    <labels>
-                      <label locale="en_US">
-                        <name>Published procedure</name>
-                        <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
-                      </label>
-                    </labels>
-                    <settings>
-                      <setting name="fieldWidth">70</setting>
-                      <setting name="fieldHeight">1</setting>
-                      <setting name="minChars">0</setting>
-                      <setting name="maxChars">65535</setting>
-                    </settings>
-                  </metadataElement>
-                  <metadataElement code="countProcedure2" datatype="Text">
-                    <labels>
-                      <label locale="en_US">
-                        <name>Procedure</name>
-                        <description>Description of the measurement procedure.</description>
-                      </label>
-                    </labels>
-                    <settings>
-                      <setting name="fieldWidth">70</setting>
-                      <setting name="fieldHeight">1</setting>
-                      <setting name="minChars">0</setting>
-                      <setting name="maxChars">65535</setting>
-                    </settings>
-                  </metadataElement>
-                  <metadataElement code="countRemarks2" datatype="Text">
-                    <labels>
-                    <label locale="en_US">
-                      <name>Remarks</name>
-                      <description>Any relevant remaining remarks on the measurement. This could be who did the measurement, if something unusual was observed during the measurement,... For age measurements this can be a text value expressing the age, e.g. "estimated to be younger than five", which could be complemented by the minimum value 0 and the maximum value 5.</description>
-                    </label>
-                    </labels>
-                    <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/gelRemarks</documentationUrl>
-                  </metadataElement>
-                </elements>
-              </metadataElement>
-            </elements>
-          </metadataElement>
 	      </elements>
         <typeRestrictions>
           <restriction code="observationAnimal">
@@ -8019,211 +7277,31 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="observationSoilCont3" datatype="Container"><--!Relevant measurements in the field that could be queried for finding samples?-->
+	    <metadataElement code="observationSoilCont3" datatype="Container">
         <labels>
           <label locale="en_US">
             <name>Field metadata of the soil sampling point</name>
           </label>
         </labels>
 	      <elements>
-          <metadataElement code="dateRange3" datatype="DateRange">
-            <labels>
-              <label locale="en_US">
-                <name>Date (range) and time (range)</name>
-                <description>Represents an historic date range accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
-              </label>
-            </labels>
-            <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
-            <settings>
-              <setting name="fieldWidth">40</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-              <setting name="canBeUsedInSort">1</setting>
-              <setting name="canBeUsedInSearchForm">1</setting>
-              <setting name="canBeUsedInDisplay">1</setting>
-            </settings>
-          </metadataElement>	    
-          <metadataElement code="localityContainer3" datatype="Container">
-            <labels>
-              <label locale="en_US">
-                <name>Locality information</name>
-              </label>
-            </labels>
-            <elements>
-              <metadataElement code="verbatimLocality3" datatype="Text">
+              <metadataElement code="dateRange3" datatype="DateRange">
                 <labels>
                   <label locale="en_US">
-                    <name>verbatimLocality</name>
-                    <description>The original textual description of the place.</description>
+                    <name>Date (range) and time (range)</name>
+                    <description>Represents an historic date range accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
                   </label>
                 </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimLocality</documentationUrl>
+                <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
                 <settings>
-                  <setting name="fieldWidth">70</setting>
+                  <setting name="fieldWidth">40</setting>
                   <setting name="fieldHeight">1</setting>
                   <setting name="minChars">0</setting>
                   <setting name="maxChars">65535</setting>
+                  <setting name="canBeUsedInSort">1</setting>
+                  <setting name="canBeUsedInSearchForm">1</setting>
+                  <setting name="canBeUsedInDisplay">1</setting>
                 </settings>
-              </metadataElement>
-              <metadataElement code="verbatimLongitudeX3" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Verbatim Longitude (X)</name>
-                    <description>A free text format for the longitude component of the coordinates that are not expressed in a pure decimal format.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/abcd/terms/longitudeText</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="verbatimLatitudeY3" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Verbatim Latitude (Y)</name>
-                    <description>A free text format for the latitude component of the coordinates that are not expressed in a pure decimal format.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/abcd/terms/latitudeText</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="verbatimSRS3" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>verbatimSRS</name>
-                    <description>The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which coordinates given in verbatimLatitude and verbatimLongitude, or verbatimCoordinates are based.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimSRS</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="verbatimGeoreferenceProtocol3" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>(Verbatim) Georeference Protocol</name>
-                    <description>A description or reference to the methods used to determine the spatial footprint, coordinates, and uncertainties.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/georeferenceProtocol</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="verbatimElevation3" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>verbatimElevation</name>
-                    <description>The original description of the elevation (altitude, usually above sea level) of the Location.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimElevation</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="minimumElevationInMeters3" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>minimumElevationInMeters</name>
-                    <description>The lower limit of the range of elevation (altitude, usually above sea level), in meters.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/minimumElevationInMeters</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="maximumElevationInMeters3" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>maximumElevationInMeters</name>
-                    <description>The upper limit of the range of elevation (altitude, usually above sea level), in meters.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/maximumElevationInMeters</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="verticalDatum3" datatype="List" list="vertical_datum">
-                <labels>
-                  <label locale="en_US">
-                    <name>verticalDatum</name>
-                    <description>The vertical datum used as the reference upon which the values in the elevation terms are based.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/verticalDatum</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="waterbodyType3" datatype="List" list="waterbody_type">
-                <labels>
-                  <label locale="en_US">
-                    <name>waterbodyType</name>
-                    <description>A category of the waterbody in which the Event occurred.</description>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="habitat3" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>habitat</name>
-                    <description>A category or description of the habitat in which the Event occurred.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/habitat</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-            </elements>
-          </metadataElement>
-          <metadataElement code="soilMetadata3" datatype="Container">
-            <labels>
-              <label locale="en_US">
-                <name>Locality information</name>
-              </label>
-            </labels>
-            <elements>
+              </metadataElement>	    
               <metadataElement code="landUseType3" datatype="List" list="land_use_type">
                 <labels>
                   <label locale="en_US">
@@ -8277,8 +7355,6 @@
                   <setting name="maxChars">65535</setting>
                 </settings>
               </metadataElement>
-            </elements>
-          </metadataElement>
 	      </elements>
         <typeRestrictions>
           <restriction code="observationSoil">
@@ -8293,211 +7369,31 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="observationWaterCont4" datatype="Container"><--!Relevant measurements in the field that could be queried for finding samples?-->
+	    <metadataElement code="observationWaterCont4" datatype="Container">
         <labels>
           <label locale="en_US">
             <name>Field metadata of the water sampling point</name>
           </label>
         </labels>
 	      <elements>
-          <metadataElement code="dateRange4" datatype="DateRange">
-            <labels>
-              <label locale="en_US">
-                <name>Date (range) and time (range)</name>
-                <description>Represents an historic date range accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
-              </label>
-            </labels>
-            <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
-            <settings>
-              <setting name="fieldWidth">40</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-              <setting name="canBeUsedInSort">1</setting>
-              <setting name="canBeUsedInSearchForm">1</setting>
-              <setting name="canBeUsedInDisplay">1</setting>
-            </settings>
-          </metadataElement>	    
-          <metadataElement code="localityContainer4" datatype="Container">
-            <labels>
-              <label locale="en_US">
-                <name>Locality information</name>
-              </label>
-            </labels>
-            <elements>
-              <metadataElement code="verbatimLocality4" datatype="Text">
+              <metadataElement code="dateRange4" datatype="DateRange">
                 <labels>
                   <label locale="en_US">
-                    <name>verbatimLocality</name>
-                    <description>The original textual description of the place.</description>
+                    <name>Date (range) and time (range)</name>
+                    <description>Represents an historic date range accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
                   </label>
                 </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimLocality</documentationUrl>
+                <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
                 <settings>
-                  <setting name="fieldWidth">70</setting>
+                  <setting name="fieldWidth">40</setting>
                   <setting name="fieldHeight">1</setting>
                   <setting name="minChars">0</setting>
                   <setting name="maxChars">65535</setting>
+                  <setting name="canBeUsedInSort">1</setting>
+                  <setting name="canBeUsedInSearchForm">1</setting>
+                  <setting name="canBeUsedInDisplay">1</setting>
                 </settings>
-              </metadataElement>
-              <metadataElement code="verbatimLongitudeX4" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Verbatim Longitude (X)</name>
-                    <description>A free text format for the longitude component of the coordinates that are not expressed in a pure decimal format.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/abcd/terms/longitudeText</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="verbatimLatitudeY4" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Verbatim Latitude (Y)</name>
-                    <description>A free text format for the latitude component of the coordinates that are not expressed in a pure decimal format.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/abcd/terms/latitudeText</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="verbatimSRS4" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>verbatimSRS</name>
-                    <description>The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which coordinates given in verbatimLatitude and verbatimLongitude, or verbatimCoordinates are based.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimSRS</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="verbatimGeoreferenceProtocol4" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>(Verbatim) Georeference Protocol</name>
-                    <description>A description or reference to the methods used to determine the spatial footprint, coordinates, and uncertainties.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/georeferenceProtocol</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="verbatimElevation4" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>verbatimElevation</name>
-                    <description>The original description of the elevation (altitude, usually above sea level) of the Location.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimElevation</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="minimumElevationInMeters4" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>minimumElevationInMeters</name>
-                    <description>The lower limit of the range of elevation (altitude, usually above sea level), in meters.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/minimumElevationInMeters</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="maximumElevationInMeters4" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>maximumElevationInMeters</name>
-                    <description>The upper limit of the range of elevation (altitude, usually above sea level), in meters.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/maximumElevationInMeters</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="verticalDatum4" datatype="List" list="vertical_datum">
-                <labels>
-                  <label locale="en_US">
-                    <name>verticalDatum</name>
-                    <description>The vertical datum used as the reference upon which the values in the elevation terms are based.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/verticalDatum</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="waterbodyType4" datatype="List" list="waterbody_type">
-                <labels>
-                  <label locale="en_US">
-                    <name>waterbodyType</name>
-                    <description>A category of the waterbody in which the Event occurred.</description>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="habitat4" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>habitat</name>
-                    <description>A category or description of the habitat in which the Event occurred.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/habitat</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-            </elements>
-          </metadataElement>
-          <metadataElement code="waterMetadata4" datatype="Container">
-            <labels>
-              <label locale="en_US">
-                <name>Locality information</name>
-              </label>
-            </labels>
-            <elements>
+              </metadataElement>	    
               <metadataElement code="verbatimNotes4" datatype="Text">
                 <labels>
                   <label locale="en_US">
@@ -8512,8 +7408,6 @@
                   <setting name="maxChars">65535</setting>
                 </settings>
               </metadataElement>
-            </elements>
-          </metadataElement>
 	      </elements>
         <typeRestrictions>
           <restriction code="observationWater">
@@ -10470,7 +9364,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="dateRange" typeRestrictions="object" includeSubtypes="1">
+            <placement code="preparationDate" typeRestrictions="object" includeSubtypes="1">
               <bundle>ca_attribute_dateRange</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Date (and time)</setting>
@@ -10570,10 +9464,144 @@
             </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="taxonomy_organism_objects" default="0">
+        <screen idno="locality" default="0">
           <labels>
             <label locale="en_US">
-              <name>Taxonomy</name>
+              <name>Locality</name>
+            </label>
+          </labels>
+          <typeRestrictions>
+            <restriction code="r_observation" type="observation"/>
+            <restriction code="r_observationWater" type="observationWater"/>
+            <restriction code="r_observationSoil" type="observationSoil"/>
+            <restriction code="r_observationPlant" type="observationPlant"/>
+            <restriction code="r_observationAnimal" type="observationAnimal"/>
+          </typeRestrictions>
+          <bundlePlacements>
+            <placement code="ca_places">
+              <bundle>ca_places</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The place</setting>
+                <setting name="description" locale="en_US">The place where the observation(s) occurred.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+			      <placement code="localityTimestamped" typeRestrictions="observationAnimal">
+              <bundle>ca_attribute_localityTimeContainer2</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Localities + time of observation</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">20</setting>
+              </settings>
+			      </placement>
+			      <placement code="verbatimLocality" typeRestrictions="observationSoil,observationPlant,observationWater">
+              <bundle>ca_attribute_verbatimLocality</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Verbatim locality</setting>
+                <setting name="description" locale="en_US">The original description of a locality, a place, the geographic coverage, ...</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+            <placement code="verbatimLongitudeX" typeRestrictions="observationSoil,observationPlant,observationWater">
+              <bundle>ca_attribute_verbatimLongitudeX</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Verbatim longitude (X)</setting>
+                <setting name="description" locale="en_US">The original description of the longitude (X).</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+            <placement code="verbatimLatitudeY" typeRestrictions="observationSoil,observationPlant,observationWater">
+              <bundle>ca_attribute_verbatimLatitudeY</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Verbatim latitude (Y)</setting>
+                <setting name="description" locale="en_US">The original description of the latitude (Y).</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+			      <placement code="verbatimSRS" typeRestrictions="observationSoil,observationPlant,observationWater">
+              <bundle>ca_attribute_verbatimSRS</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Verbatim SRS</setting>
+                <setting name="description" locale="en_US">The spatial reference system (SRS) of the original coordinates.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+			      <placement code="observationVerbatimGeoreferenceProtocol" typeRestrictions="observationSoil,observationPlant,observationWater">
+              <bundle>ca_attribute_verbatimGeoreferenceProtocol</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Verbatim georeference procedure</setting>
+                <setting name="description" locale="en_US">A short description of the procedure that resulting in collecting the verbatim georeference information.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+			      <placement code="observationStandardizedGeoreferenceWGS84" typeRestrictions="observationSoil,observationPlant,observationWater">
+              <bundle>ca_attribute_georeference</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Standardized georeference data</setting>
+                <setting name="description" locale="en_US">The georeferenced location of the observation, standardized using the CMS.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+			      <placement code="verbatimElevation" typeRestrictions="observationSoil,observationPlant,observationWater">
+              <bundle>ca_attribute_verbatimElevation</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Verbatim elevation</setting>
+                <setting name="description" locale="en_US">The original description of the elevation. From the notes, Excel/Gsheet, dataset, ...</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+			      <placement code="observationMinimumElevationInMeters" typeRestrictions="observationSoil,observationPlant,observationWater">
+              <bundle>ca_attribute_minimumElevationInMeters</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The minimum elevation in meters</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+			      <placement code="observationMaximumElevationInMeters" typeRestrictions="observationSoil,observationPlant,observationWater">
+              <bundle>ca_attribute_maximumElevationInMeters</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The maximum elevation in meters</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+			      <placement code="verticalDatum" typeRestrictions="observationSoil,observationPlant,observationWater">
+              <bundle>ca_attribute_verticalDatum</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Vertical datum</setting>
+                <setting name="description" locale="en_US">The vertical datum used as the reference upon which the values in the elevation terms are based.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+			      <placement code="waterbodyType" typeRestrictions="observationSoil,observationPlant,observationWater">
+              <bundle>ca_attribute_waterbodyType</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Waterbody type</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+			      <placement code="observationSoilCont3">
+              <bundle>ca_attribute_observationSoilCont3</bundle>
+			      </placement>
+			      <placement code="observationWaterCont4">
+              <bundle>ca_attribute_observationWaterCont4</bundle>
+			      </placement>
+		    </screen>
+		    <screen idno="organism" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Organism metadata</name>
             </label>
           </labels>
           <typeRestrictions>
@@ -10630,6 +9658,8 @@
                 <restriction code="r_seedlot" type="seedlot"/>
                 <restriction code="r_stemDisc" type="stemDisc"/>
                 <restriction code="r_oDNA" type="oDNA"/>
+                <restriction code="r_observationPlant" type="observationPlant"/>
+                <restriction code="r_observationAnimal" type="observationAnimal"/>
           </typeRestrictions>
           <bundlePlacements>
 			      <placement code="ca_object_verbatimIdentification"><!--This should prepopulate with the parent value, if empty-->
@@ -10656,40 +9686,8 @@
                 <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="identificationZoological,identificationPlant,identificationViral,identificationBacteriological"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
 			        </settings>
             </placement>
-          </bundlePlacements>
-        </screen>
-        <screen idno="samplingpoint_observation" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>Sampling point</name>
-            </label>
-          </labels>
-          <typeRestrictions>
-            <restriction code="r_observation" type="observation"/>
-            <restriction code="r_observationWater" type="observationWater"/>
-            <restriction code="r_observationSoil" type="observationSoil"/>
-            <restriction code="r_observationPlant" type="observationPlant"/>
-            <restriction code="r_observationAnimal" type="observationAnimal"/>
-          </typeRestrictions>
-          <bundlePlacements>
-            <placement code="ca_places">
-              <bundle>ca_places</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The place</setting>
-                <setting name="description" locale="en_US">The place where the observation(s) occurred.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-			      </placement>
-            <placement code="ca_objects_lots_provenanceRegion" typeRestrictions="observationPlant">
-              <bundle>ca_places</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The provenance (region)</setting>
-                <setting name="description" locale="en_US">The plant observation has the provenance. As provenance concepts are dependent on the taxon, these are logged separately.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_types">provenanceRegion,provenance</setting>
-              </settings>
+			      <placement code="sex"><!--ideally these are linked to the parent, and automatically inhert to the children-->
+              <bundle>ca_attribute_sex</bundle>
 			      </placement>
 			      <placement code="population" typeRestrictions="observationAnimal,observationPlant">
               <bundle>ca_object_lots</bundle>
@@ -10700,40 +9698,24 @@
 				        <setting name="restrict_to_types">population</setting>
               </settings>
             </placement>
-			      <placement code="observationPlantContainer1" typeRestrictions="observationPlant">
-              <bundle>ca_attribute_localityTimeContainer2</bundle>
+            <placement code="ca_objects_lots_provenanceRegion" typeRestrictions="observationPlant">
+              <bundle>ca_places</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Localities + time of observation</setting>
+                <setting name="label" locale="en_US">The provenance (region)</setting>
+                <setting name="description" locale="en_US">The plant observation has the provenance. As provenance concepts are dependent on the taxon, these are logged separately.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">20</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="restrict_to_types">provenanceRegion,provenance</setting>
               </settings>
 			      </placement>
-			      <placement code="observationAnimalContainer2" typeRestrictions="observationAnimal">
-              <bundle>ca_attribute_localityTimeContainer2</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Localities + time of observation</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">20</setting>
-              </settings>
+			      <placement code="observationPlantCont1">
+              <bundle>ca_attribute_observationPlantCont1</bundle>
 			      </placement>
-			      <placement code="observationSoilContainer3" typeRestrictions="observationSoil">
-              <bundle>ca_attribute_localityTimeContainer2</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Localities + time of observation</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">20</setting>
-              </settings>
+			      <placement code="observationAnimalCont2">
+              <bundle>ca_attribute_observationAnimalCont2</bundle>
 			      </placement>
-			      <placement code="observationWaterContainer4" typeRestrictions="observationWater">
-              <bundle>ca_attribute_localityTimeContainer2</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Localities + time of observation</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">20</setting>
-              </settings>
-			      </placement>
-		      </bundlePlacements>
-		    </screen>
+          </bundlePlacements>
+        </screen>
 		    <screen idno="obj_obs_multimedia" default="0">
           <labels>
             <label locale="en_US">
@@ -11052,15 +10034,6 @@
                 <setting name="hideIfSelected_notRecorded">standard_object_ui/obj_metadata/ca_attribute_lifeStage</setting>
 			        </settings>
             </placement>
-			      <placement code="population" typeRestrictions="animalObject,plantObject" includeSubtypes="1">
-              <bundle>ca_object_lots</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Belongs to the population</setting>
-                <setting name="description" locale="en_US">A population in this case is any grouping of individuals in space and time that is defined.</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-				        <setting name="restrict_to_types">population</setting>
-              </settings>
-            </placement>
 			      <placement code="verbatimNotes">
               <bundle>ca_attribute_verbatimNotes</bundle>
 			        <settings>
@@ -11148,6 +10121,10 @@
                 <restriction code="r_mineralSoilSample" type="mineralSoilSample"/>
                 <restriction code="r_peatSoilSample" type="peatSoilSample"/>
                 <restriction code="r_organicSoilSample" type="organicSoilSample"/>
+                <restriction code="r_observationWater" type="observationWater"/>
+                <restriction code="r_observationSoil" type="observationSoil"/>
+                <restriction code="r_observationPlant" type="observationPlant"/>
+                <restriction code="r_observationAnimal" type="observationAnimal"/>
           </typeRestrictions>
           <bundlePlacements>
             <placement code="dna_conc" typeRestrictions="oDNA,eDNA">
@@ -11199,7 +10176,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="object_length" typeRestrictions="animalBulk,animalEntireLiving,animalCadaver,animalSpecimen,livingPlant">
+            <placement code="object_length" typeRestrictions="animalBulk,animalEntireLiving,animalCadaver,animalSpecimen,livingPlant,observationPlant,observationAnimal">
               <bundle>ca_attribute_lengthContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Length measurement</setting>
@@ -11245,7 +10222,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="object_count" typeRestrictions="seedlot,animalBulk">
+            <placement code="object_count" typeRestrictions="seedlot,animalBulk,observationPlant">
               <bundle>ca_attribute_countContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Count</setting>
