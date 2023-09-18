@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.46.05</profileName>
+  <profileName>[INBO] INBO natural science collection v0.46.06</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <locales>
     <locale lang="en" country="US">English</locale>
@@ -8543,14 +8543,14 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="localityTimestamped" datatype="Container">
+	    <metadataElement code="localityTimestamped5" datatype="Container">
         <labels>
           <label locale="en_US">
             <name>Field metadata of the animal</name>
           </label>
         </labels>
 	      <elements>
-              <metadataElement code="dateRange2" datatype="DateRange">
+              <metadataElement code="dateRange5" datatype="DateRange">
                 <labels>
                   <label locale="en_US">
                     <name>Date (range) and time (range)</name>
@@ -8568,7 +8568,7 @@
                   <setting name="canBeUsedInDisplay">1</setting>
                 </settings>
               </metadataElement>	    
-              <metadataElement code="verbatimLocality2" datatype="Text">
+              <metadataElement code="verbatimLocality5" datatype="Text">
                 <labels>
                   <label locale="en_US">
                     <name>verbatimLocality</name>
@@ -8583,7 +8583,7 @@
                   <setting name="maxChars">65535</setting>
                 </settings>
               </metadataElement>
-              <metadataElement code="verbatimLongitudeX2" datatype="Text">
+              <metadataElement code="verbatimLongitudeX5" datatype="Text">
                 <labels>
                   <label locale="en_US">
                     <name>Verbatim Longitude (X)</name>
@@ -8598,7 +8598,7 @@
                   <setting name="maxChars">65535</setting>
                 </settings>
               </metadataElement>
-              <metadataElement code="verbatimLatitudeY2" datatype="Text">
+              <metadataElement code="verbatimLatitudeY5" datatype="Text">
                 <labels>
                   <label locale="en_US">
                     <name>Verbatim Latitude (Y)</name>
@@ -8613,7 +8613,7 @@
                   <setting name="maxChars">65535</setting>
                 </settings>
               </metadataElement>
-              <metadataElement code="verbatimSRS2" datatype="Text">
+              <metadataElement code="verbatimSRS5" datatype="Text">
                 <labels>
                   <label locale="en_US">
                     <name>verbatimSRS</name>
@@ -8628,7 +8628,7 @@
                   <setting name="maxChars">65535</setting>
                 </settings>
               </metadataElement>
-              <metadataElement code="verbatimGeoreferenceProtocol2" datatype="Text">
+              <metadataElement code="verbatimGeoreferenceProtocol5" datatype="Text">
                 <labels>
                   <label locale="en_US">
                     <name>(Verbatim) Georeference Protocol</name>
@@ -8643,7 +8643,7 @@
                   <setting name="maxChars">65535</setting>
                 </settings>
               </metadataElement>
-              <metadataElement code="verbatimElevation2" datatype="Text">
+              <metadataElement code="verbatimElevation5" datatype="Text">
                 <labels>
                   <label locale="en_US">
                     <name>verbatimElevation</name>
@@ -8658,7 +8658,7 @@
                   <setting name="maxChars">65535</setting>
                 </settings>
               </metadataElement>
-              <metadataElement code="minimumElevationInMeters2" datatype="Text">
+              <metadataElement code="minimumElevationInMeters5" datatype="Text">
                 <labels>
                   <label locale="en_US">
                     <name>minimumElevationInMeters</name>
@@ -8673,7 +8673,7 @@
                   <setting name="maxChars">65535</setting>
                 </settings>
               </metadataElement>
-              <metadataElement code="maximumElevationInMeters2" datatype="Text">
+              <metadataElement code="maximumElevationInMeters5" datatype="Text">
                 <labels>
                   <label locale="en_US">
                     <name>maximumElevationInMeters</name>
@@ -8688,7 +8688,7 @@
                   <setting name="maxChars">65535</setting>
                 </settings>
               </metadataElement>
-              <metadataElement code="verticalDatum2" datatype="List" list="vertical_datum">
+              <metadataElement code="verticalDatum5" datatype="List" list="vertical_datum">
                 <labels>
                   <label locale="en_US">
                     <name>verticalDatum</name>
@@ -8703,7 +8703,7 @@
                   <setting name="maxChars">65535</setting>
                 </settings>
               </metadataElement>
-              <metadataElement code="waterbodyType2" datatype="List" list="waterbody_type">
+              <metadataElement code="waterbodyType5" datatype="List" list="waterbody_type">
                 <labels>
                   <label locale="en_US">
                     <name>waterbodyType</name>
@@ -8717,7 +8717,7 @@
                   <setting name="maxChars">65535</setting>
                 </settings>
               </metadataElement>
-              <metadataElement code="habitat2" datatype="Text">
+              <metadataElement code="habitat5" datatype="Text">
                 <labels>
                   <label locale="en_US">
                     <name>habitat</name>
@@ -9212,6 +9212,16 @@
                   <setting name="minChars">0</setting>
                   <setting name="maxChars">65535</setting>
                 </settings>
+                <typeRestrictions>
+                  <restriction code="r_objects">
+                    <table>ca_objects</table>
+                    <settings>
+                      <setting name="minAttributesPerRow">0</setting>
+                      <setting name="maxAttributesPerRow">1</setting>
+                      <setting name="minimumAttributeBundlesToDisplay">1</setting>
+                    </settings>
+                  </restriction>
+                </typeRestrictions>
       </metadataElement>
       <metadataElement code="Tier1SoilTypeFAO1974" datatype="List" list="soil_type_FAO1974">
                 <labels>
@@ -9225,6 +9235,16 @@
                   <setting name="minChars">0</setting>
                   <setting name="maxChars">65535</setting>
                 </settings>
+                <typeRestrictions>
+                  <restriction code="r_objects">
+                    <table>ca_objects</table>
+                    <settings>
+                      <setting name="minAttributesPerRow">0</setting>
+                      <setting name="maxAttributesPerRow">1</setting>
+                      <setting name="minimumAttributeBundlesToDisplay">1</setting>
+                    </settings>
+                  </restriction>
+                </typeRestrictions>
       </metadataElement>
       <metadataElement code="Tier1SoilTypeFAO1988" datatype="List" list="soil_type_FAO1988">
                 <labels>
@@ -9238,6 +9258,16 @@
                   <setting name="minChars">0</setting>
                   <setting name="maxChars">65535</setting>
                 </settings>
+                <typeRestrictions>
+                  <restriction code="r_objects">
+                    <table>ca_objects</table>
+                    <settings>
+                      <setting name="minAttributesPerRow">0</setting>
+                      <setting name="maxAttributesPerRow">1</setting>
+                      <setting name="minimumAttributeBundlesToDisplay">1</setting>
+                    </settings>
+                  </restriction>
+                </typeRestrictions>
       </metadataElement>
       <metadataElement code="Tier1SoilTypeWRB1998" datatype="List" list="soil_type_WRB1998">
                 <labels>
@@ -9251,6 +9281,16 @@
                   <setting name="minChars">0</setting>
                   <setting name="maxChars">65535</setting>
                 </settings>
+                <typeRestrictions>
+                  <restriction code="r_objects">
+                    <table>ca_objects</table>
+                    <settings>
+                      <setting name="minAttributesPerRow">0</setting>
+                      <setting name="maxAttributesPerRow">1</setting>
+                      <setting name="minimumAttributeBundlesToDisplay">1</setting>
+                    </settings>
+                  </restriction>
+                </typeRestrictions>
       </metadataElement>
       <metadataElement code="Tier1SoilTypeWRB2006" datatype="List" list="soil_type_WRB2006">
                 <labels>
@@ -9264,6 +9304,16 @@
                   <setting name="minChars">0</setting>
                   <setting name="maxChars">65535</setting>
                 </settings>
+                <typeRestrictions>
+                  <restriction code="r_objects">
+                    <table>ca_objects</table>
+                    <settings>
+                      <setting name="minAttributesPerRow">0</setting>
+                      <setting name="maxAttributesPerRow">1</setting>
+                      <setting name="minimumAttributeBundlesToDisplay">1</setting>
+                    </settings>
+                  </restriction>
+                </typeRestrictions>
       </metadataElement>
       <metadataElement code="Tier1SoilTypeWRB2007" datatype="List" list="soil_type_WRB2007">
                 <labels>
@@ -9277,6 +9327,16 @@
                   <setting name="minChars">0</setting>
                   <setting name="maxChars">65535</setting>
                 </settings>
+                <typeRestrictions>
+                  <restriction code="r_objects">
+                    <table>ca_objects</table>
+                    <settings>
+                      <setting name="minAttributesPerRow">0</setting>
+                      <setting name="maxAttributesPerRow">1</setting>
+                      <setting name="minimumAttributeBundlesToDisplay">1</setting>
+                    </settings>
+                  </restriction>
+                </typeRestrictions>
       </metadataElement>
       <metadataElement code="Tier1SoilTypeWRB2014" datatype="List" list="soil_type_WRB2014">
                 <labels>
@@ -9290,6 +9350,16 @@
                   <setting name="minChars">0</setting>
                   <setting name="maxChars">65535</setting>
                 </settings>
+                <typeRestrictions>
+                  <restriction code="r_objects">
+                    <table>ca_objects</table>
+                    <settings>
+                      <setting name="minAttributesPerRow">0</setting>
+                      <setting name="maxAttributesPerRow">1</setting>
+                      <setting name="minimumAttributeBundlesToDisplay">1</setting>
+                    </settings>
+                  </restriction>
+                </typeRestrictions>
       </metadataElement>
       <metadataElement code="Tier1SoilTypeWRB2015" datatype="List" list="soil_type_WRB2015">
                 <labels>
@@ -9303,6 +9373,16 @@
                   <setting name="minChars">0</setting>
                   <setting name="maxChars">65535</setting>
                 </settings>
+                <typeRestrictions>
+                  <restriction code="r_objects">
+                    <table>ca_objects</table>
+                    <settings>
+                      <setting name="minAttributesPerRow">0</setting>
+                      <setting name="maxAttributesPerRow">1</setting>
+                      <setting name="minimumAttributeBundlesToDisplay">1</setting>
+                    </settings>
+                  </restriction>
+                </typeRestrictions>
       </metadataElement>
       <metadataElement code="Tier1SoilTypeST" datatype="List" list="soil_type_ST">
                 <labels>
@@ -9316,6 +9396,16 @@
                   <setting name="minChars">0</setting>
                   <setting name="maxChars">65535</setting>
                 </settings>
+                <typeRestrictions>
+                  <restriction code="r_objects">
+                    <table>ca_objects</table>
+                    <settings>
+                      <setting name="minAttributesPerRow">0</setting>
+                      <setting name="maxAttributesPerRow">1</setting>
+                      <setting name="minimumAttributeBundlesToDisplay">1</setting>
+                    </settings>
+                  </restriction>
+                </typeRestrictions>
       </metadataElement>
 	    <metadataElement code="Tier1SoilType" datatype="Text">
 			  <labels>
@@ -11365,28 +11455,68 @@
                 <restriction code="r_observationAnimal" type="observationAnimal"/>
           </typeRestrictions>
           <bundlePlacements>
-			      <placement code="ca_object_verbatimIdentification" typeRestrictions="animalObject, observationAnimal, plantObject, observationPlant, oDNA" includeSubtypes="1"><!--This should prepopulate with the parent value, if empty-->
+			      <placement code="ca_object_verbatimIdentification" typeRestrictions="animalObject,observationAnimal,plantObject,observationPlant,oDNA" includeSubtypes="1"><!--This should prepopulate with the parent value, if empty-->
               <bundle>ca_attribute_objVerbatimIdentification</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The verbatim taxonomic identification of the object</setting>
                 <setting name="description" locale="en_US">Usually this equals the verbatim identification of the observation the object was sampled from. If present, this value will be automatically be set here. To be actively changed for object types such as living animals, seedlots and living plants, if the taxonomic identification is different from the field observation they refer to (e.g. in the case of hybrid offspring). A verbatim identification can be a species name, genus name, family name. This can be the vernacular name in English (e.g. human), Dutch (e.g. mens) ... or the the binomial nomenclature (e.g. Homo sapiens)..</setting>
 			        </settings>
             </placement>
-			      <placement code="ca_object_standardizedIdentification" typeRestrictions="animalObject, observationAnimal, plantObject, observationPlant, oDNA" includeSubtypes="1"><!--This should prepopulate with the parent value, if empty-->
+			      <placement code="ca_object_standardizedIdentification" typeRestrictions="animalObject,observationAnimal,plantObject,observationPlant,oDNA" includeSubtypes="1"><!--This should prepopulate with the parent value, if empty-->
               <bundle>ca_attribute_standardizedIdentification</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The taxonomic identification of the object</setting>
                 <setting name="description" locale="en_US">Usually this equals the verbatim identification. For living collections such as living animals, seedlots and livingplants, it is possible that the taxonomic identification is different from the field observation they refer to. For example: hybrids.</setting>
 			        </settings>
             </placement>
-			      <placement code="identifications" typeRestrictions="animalObject, observationAnimal, plantObject, observationPlant, oDNA" includeSubtypes="1"><!--ideally these are linked to the parent, and automatically inhert to the children-->
+			      <placement code="identifications_animalObject" typeRestrictions="animalObject" includeSubtypes="1"><!--ideally these are linked to the parent, and automatically inhert to the children-->
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The identification log of the observation and object.</setting>
                 <setting name="description" locale="en_US">The history of identifications for the observation and object. Ideally identifications are logged to the observation and all its derived objects.</setting>
                 <setting name="dontShowDeleteButton">1</setting>
-                <setting name="restrict_to_types">identification</setting>
-                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="identificationZoological,identificationPlant,identificationViral,identificationBacteriological"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
+                <setting name="restrict_to_types">identificationZoological</setting>
+                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="identificationZoological"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
+			        </settings>
+            </placement>
+			      <placement code="identifications_observationAnimal"><!--ideally these are linked to the parent, and automatically inhert to the children-->
+              <bundle>ca_occurrences</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The identification log of the observation and object.</setting>
+                <setting name="description" locale="en_US">The history of identifications for the observation and object. Ideally identifications are logged to the observation and all its derived objects.</setting>
+                <setting name="dontShowDeleteButton">1</setting>
+                <setting name="restrict_to_types">identificationZoological</setting>
+                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="identificationZoological"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
+			        </settings>
+            </placement>
+			      <placement code="identifications_plantObject" typeRestrictions="plantObject" includeSubtypes="1"><!--ideally these are linked to the parent, and automatically inhert to the children-->
+              <bundle>ca_occurrences</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The identification log of the observation and object.</setting>
+                <setting name="description" locale="en_US">The history of identifications for the observation and object. Ideally identifications are logged to the observation and all its derived objects.</setting>
+                <setting name="dontShowDeleteButton">1</setting>
+                <setting name="restrict_to_types">identificationBotanical</setting>
+                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="identificationBotanical"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
+			        </settings>
+            </placement>
+			      <placement code="identifications_observationPlant" typeRestrictions="observationPlant"><!--ideally these are linked to the parent, and automatically inhert to the children-->
+              <bundle>ca_occurrences</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The identification log of the observation and object.</setting>
+                <setting name="description" locale="en_US">The history of identifications for the observation and object. Ideally identifications are logged to the observation and all its derived objects.</setting>
+                <setting name="dontShowDeleteButton">1</setting>
+                <setting name="restrict_to_types">identificationBotanical</setting>
+                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="identificationBotanical"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
+			        </settings>
+            </placement>
+			      <placement code="identifications_oDNA" typeRestrictions="oDNA"><!--ideally these are linked to the parent, and automatically inhert to the children-->
+              <bundle>ca_occurrences</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The identification log of the observation and object.</setting>
+                <setting name="description" locale="en_US">The history of identifications for the observation and object. Ideally identifications are logged to the observation and all its derived objects.</setting>
+                <setting name="dontShowDeleteButton">1</setting>
+                <setting name="restrict_to_types">identificationBotanical,identificationZoological</setting>
+                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="identificationBotanical,identificationZoological"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
 			        </settings>
             </placement>
 			      <placement code="sex" typeRestrictions="observationAnimal,observationPlant">
