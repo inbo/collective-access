@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.46.06</profileName>
+  <profileName>[INBO] INBO natural science collection v0.46.07</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <locales>
     <locale lang="en" country="US">English</locale>
@@ -12162,7 +12162,23 @@
                 <setting name="list_format">list</setting>
               </settings>
             </placement>
-			      <placement code="identifications" typeRestrictions="observationSoil,observationWater,soilObject,waterObject,eDNA" includeSybtypes="1"><!--To log at the highest level and be inherited by the children-->
+			      <placement code="identifications_environment" typeRestrictions="observationSoil,observationWater,eDNA">
+              <bundle>ca_occurrences</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The identification log of the environmental sampling point, in this case always as a result of its forthcoming object(s). Only log relevant (to query) ids here - one identification event per taxon. Under "datasets" taxonomic lists can be entered as well.</setting>
+                <setting name="description" locale="en_US">The identifications of the targeted barcoding or screening of the eDNA sample, relevant to be queryable. If many: best imported via a list (csv/Gsheet/Excel).</setting>
+                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
+			        </settings>
+            </placement>
+			      <placement code="identifications_soilObject" typeRestrictions="soilObject" includeSubtypes="1">
+              <bundle>ca_occurrences</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The identification log of the environmental sampling point, in this case always as a result of its forthcoming object(s). Only log relevant (to query) ids here - one identification event per taxon. Under "datasets" taxonomic lists can be entered as well.</setting>
+                <setting name="description" locale="en_US">The identifications of the targeted barcoding or screening of the eDNA sample, relevant to be queryable. If many: best imported via a list (csv/Gsheet/Excel).</setting>
+                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
+			        </settings>
+            </placement>
+			      <placement code="identifications_waterObject" typeRestrictions="waterObject" includeSubtypes="1">
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The identification log of the environmental sampling point, in this case always as a result of its forthcoming object(s). Only log relevant (to query) ids here - one identification event per taxon. Under "datasets" taxonomic lists can be entered as well.</setting>
