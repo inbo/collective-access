@@ -168,14 +168,6 @@
              <setting name="render_in_find_menu">1</setting>
             </settings>
             <items>
-              <item idno="inboObject" rank="1" enabled="1" default="0">
-                <labels>
-                  <label locale="en_US" preferred="1">
-                    <name_singular>Object @INBO</name_singular>
-                    <name_plural>Objects @INBO</name_plural>
-                  </label>
-                </labels>
-                <items>
                   <item idno="animalObject" rank="1" enabled="0" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
@@ -760,16 +752,14 @@
                       </item>
                     </items>
                   </item>
-                </items>
-              </item>
-              <item idno="nonInboObject" rank="2" enabled="1" default="0">
-                <labels>
-                  <label locale="en_US" preferred="1">
-                    <name_singular>Object NOT @INBO</name_singular>
-                    <name_plural>Objects NOT @INBO</name_plural>
-                  </label>
-                </labels>
-              </item>
+                  <item idno="nonInboObject" rank="2" enabled="1" default="0">
+                    <labels>
+                      <label locale="en_US" preferred="1">
+                        <name_singular>Non-INBO object</name_singular>
+                        <name_plural>Non-INBO objects</name_plural>
+                      </label>
+                    </labels>
+                  </item>
             </items>
           </item>
         </items>
@@ -10489,7 +10479,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-            <placement code="ca_storage_location" typeRestrictions="inboObject" includeSubtypes="1">
+            <placement code="ca_storage_location" typeRestrictions="animalObject,soilObject,waterObject,dnaSample,plantObject" includeSubtypes="1">
               <bundle>ca_storage_locations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at</setting>
@@ -12483,6 +12473,7 @@
               <settings>
                 <setting name="label" locale="en_US">Alternate names (non-preferrd)</setting>
                 <setting name="add_label" locale="en_US">Add name</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
 			      <placement code="hierarchy_navigation">
@@ -12493,11 +12484,14 @@
 			        <settings>
                 <setting name="label" locale="en_US">Objects stored</setting>
                 <setting name="list_format">list</setting>
-                <setting name="restrict_to_types">inboObject</setting>
+                <setting name="restrict_to_types">animalObject,soilObject,waterObject,dnaSample,plantObject</setting>
               </settings>
             </placement>
             <placement code="ca_attribute_descriptionContainer">
               <bundle>ca_attribute_descriptionContainer</bundle>
+              <settings>
+              <setting name="expand_collapse_no_value">collapse</setting>
+              </settigns>
             </placement>
             <placement code="preservationTemperature" typeRestrictions="cabinetFridgeFreezer">
               <bundle>ca_attribute_preservationTemperature</bundle>
@@ -12514,6 +12508,7 @@
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">2</setting>
                 <setting name="restrict_to_relationship_types">maintainsStorageLocation</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
             <placement code="plantedSiteOwner" typeRestrictions="plantedSite">
@@ -12532,6 +12527,7 @@
                 <setting name="label" locale="en_US">File associated with storage location</setting>
                 <setting name="description" locale="en_US">This could be a map that visualises the storage location.</setting>
 				        <setting name="add_label" locale="en_US">Add file</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
 			      <placement code="localityContainer" typeRestrictions="plantedSite,externalPlantedSite">
