@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.46.07</profileName>
+  <profileName>[INBO] INBO natural science collection v0.47</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <locales>
     <locale lang="en" country="US">English</locale>
@@ -97,8 +97,8 @@
           <item idno="observation" rank="2" enabled="0" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>Sampling point / Organism</name_singular>
-                <name_plural>Sampling points / Organisms</name_plural>
+                <name_singular>Sampling point</name_singular>
+                <name_plural>Sampling points</name_plural>
               </label>
             </labels>
             <settings>
@@ -133,8 +133,8 @@
                   <item idno="observationSoil" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Soil sampling point</name_singular>
-                        <name_plural>Soil sampling points</name_plural>
+                        <name_singular>Soil</name_singular>
+                        <name_plural>Soil</name_plural>
                       </label>
                     </labels>
                     <settings>
@@ -145,8 +145,8 @@
                   <item idno="observationWater" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Water sampling point</name_singular>
-                        <name_plural>Water sampling points</name_plural>
+                        <name_singular>Water</name_singular>
+                        <name_plural>Water</name_plural>
                       </label>
                     </labels>
                     <settings>
@@ -745,14 +745,14 @@
                       <item idno="organicSoilSample" enabled="1" default="0">
                         <labels>
                           <label locale="en_US" preferred="1">
-                            <name_singular>Organic top layer soil sample</name_singular>
-                            <name_plural>Organic top layer soil samples</name_plural>
+                            <name_singular>Organic layer sample</name_singular>
+                            <name_plural>Organic layer samples</name_plural>
                           </label>
                         </labels>
                       </item>
                     </items>
                   </item>
-                  <item idno="nonInboObject" rank="2" enabled="1" default="0">
+                  <item idno="nonInboObject" rank="5" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>Non-INBO object</name_singular>
@@ -774,32 +774,32 @@
           <item idno="population" enabled="1" default="0"><!--Although this can coincide with place concepts, it is taxon dependent-->
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>population</name_singular>
-                <name_plural>populations</name_plural>
+                <name_singular>Population</name_singular>
+                <name_plural>Populations</name_plural>
               </label>
             </labels>
           </item>
           <item idno="provenanceRegion" enabled="1" default="0"><!--Although this can coincide with place concepts, it is taxon dependent-->
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>provenance region</name_singular>
-                <name_plural>provenance regions</name_plural>
+                <name_singular>Provenance region</name_singular>
+                <name_plural>Provenance regions</name_plural>
               </label>
             </labels>
           </item>
-          <item idno="provenance" enabled="1" default="0"><!--Although this can coincide with place concepts, it is taxon dependent-->
+          <item idno="provenance" enabled="1" default="0"><!--Although this can coincide with place concepts, it is taxon dependent. These are registred places of origin for plant material.-->
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>provenance</name_singular>
-                <name_plural>provenances</name_plural>
+                <name_singular>Provenance</name_singular>
+                <name_plural>Provenances</name_plural>
               </label>
             </labels>
             <items>
                   <item idno="seedStand" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>(seed) stand</name_singular>
-                        <name_plural>(seed) stands</name_plural>
+                        <name_singular>Seed stand</name_singular>
+                        <name_plural>Seed stands</name_plural>
                       </label>
                     </labels>
                     <settings>
@@ -810,8 +810,8 @@
                   <item idno="seedSource" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>seed source</name_singular>
-                        <name_plural>seed sources</name_plural>
+                        <name_singular>Seed source</name_singular>
+                        <name_plural>Seed sources</name_plural>
                       </label>
                     </labels>
                     <settings>
@@ -6064,7 +6064,7 @@
         </labels>
         <settings>
           <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">5</setting>
+          <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
         </settings>
@@ -6183,7 +6183,7 @@
         </labels>
         <settings>
           <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">5</setting>
+          <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
         </settings>
@@ -6292,6 +6292,117 @@
           <restriction code="r_identification">
             <table>ca_objects</table>
             <type>identification</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="dateRange" datatype="DateRange">
+        <labels>
+          <label locale="en_US">
+            <name>Date (range) and time (range)</name>
+            <description>Represents an historic date range accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
+          </label>
+        </labels>
+	      <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">40</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+          <setting name="canBeUsedInSort">1</setting>
+          <setting name="canBeUsedInSearchForm">1</setting>
+          <setting name="canBeUsedInDisplay">1</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_occurrences">
+            <table>ca_occurrences</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_places">
+            <table>ca_places</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_loans">
+            <table>ca_loans</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_entities">
+            <table>ca_entities</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_representations">
+            <table>ca_object_representations</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>	    
+      <metadataElement code="verbatimDate" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>verbatimDate</name>
+            <description>The verbatim original representation of the date and time information for an Event.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimDate</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_occurrences">
+            <table>ca_occurrences</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -8101,35 +8212,35 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-    <!--DateTimePlace-->
-	    <metadataElement code="dateRange" datatype="DateRange">
+    <!--Locality-->
+	    <metadataElement code="verbatimLocality" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>Date (range) and time (range)</name>
-            <description>Represents an historic date range accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
+            <name>verbatimLocality</name>
+            <description>The original textual description of the place.</description>
           </label>
         </labels>
-	      <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
+        <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimLocality</documentationUrl>
         <settings>
-          <setting name="fieldWidth">40</setting>
+          <setting name="fieldWidth">70</setting>
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
-          <setting name="canBeUsedInSort">1</setting>
-          <setting name="canBeUsedInSearchForm">1</setting>
-          <setting name="canBeUsedInDisplay">1</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_occurrences">
-            <table>ca_occurrences</table>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>observation</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_objects">
-            <table>ca_objects</table>
+          <restriction code="r_occurrences">
+            <table>ca_occurrences</table>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -8144,32 +8255,19 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_places">
-            <table>ca_places</table>
+          <restriction code="r_plantedSite">
+            <table>ca_storage_locations</table>
+            <type>plantedSite</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_loans">
-            <table>ca_loans</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">20</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_entities">
-            <table>ca_entities</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">20</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_object_representations">
-            <table>ca_object_representations</table>
+          <restriction code="r_building">
+            <table>ca_storage_locations</table>
+            <type>building</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -8177,22 +8275,32 @@
             </settings>
           </restriction>
         </typeRestrictions>
-      </metadataElement>	    
-      <metadataElement code="verbatimDate" datatype="Text">
+      </metadataElement>
+	    <metadataElement code="verbatimLatitudeY" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>verbatimDate</name>
-            <description>The verbatim original representation of the date and time information for an Event.</description>
+            <name>Verbatim Latitude (Y)</name>
+            <description>A free text format for the latitude component of the coordinates that are not expressed in a pure decimal format.</description>
           </label>
         </labels>
-        <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimDate</documentationUrl>
+        <documentationUrl>http://rs.tdwg.org/abcd/terms/latitudeText</documentationUrl>
         <settings>
           <setting name="fieldWidth">70</setting>
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
         </settings>
-        <typeRestrictions>
+	      <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>observation</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
           <restriction code="r_occurrences">
             <table>ca_occurrences</table>
             <includeSubtypes>1</includeSubtypes>
@@ -8202,9 +8310,475 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_plantedSite">
+            <table>ca_storage_locations</table>
+            <type>plantedSite</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_building">
+            <table>ca_storage_locations</table>
+            <type>building</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="verbatimLongitudeX" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Verbatim Longitude (X)</name>
+            <description>A free text format for the longitude component of the coordinates that are not expressed in a pure decimal format.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/abcd/terms/longitudeText</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+	      <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
+            <type>observation</type>
             <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_occurrences">
+            <table>ca_occurrences</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_plantedSite">
+            <table>ca_storage_locations</table>
+            <type>plantedSite</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_building">
+            <table>ca_storage_locations</table>
+            <type>building</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="verbatimSRS" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>verbatimSRS</name>
+            <description>The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which coordinates given in verbatimLatitude and verbatimLongitude, or verbatimCoordinates are based.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimSRS</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>observation</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_occurrences">
+            <table>ca_occurrences</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_plantedSite">
+            <table>ca_storage_locations</table>
+            <type>plantedSite</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_building">
+            <table>ca_storage_locations</table>
+            <type>building</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="verbatimGeoreferenceProtocol" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>(Verbatim) Georeference Protocol</name>
+            <description>A description or reference to the methods used to determine the spatial footprint, coordinates, and uncertainties.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/dwc/terms/georeferenceProtocol</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>observation</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_occurrences">
+            <table>ca_occurrences</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_plantedSite">
+            <table>ca_storage_locations</table>
+            <type>plantedSite</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_building">
+            <table>ca_storage_locations</table>
+            <type>building</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="verbatimElevation" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>verbatimElevation</name>
+            <description>The original description of the elevation (altitude, usually above sea level) of the Location.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimElevation</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>observation</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_occurrences">
+            <table>ca_occurrences</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_plantedSite">
+            <table>ca_storage_locations</table>
+            <type>plantedSite</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_building">
+            <table>ca_storage_locations</table>
+            <type>building</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="minimumElevationInMeters" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>minimumElevationInMeters</name>
+            <description>The lower limit of the range of elevation (altitude, usually above sea level), in meters.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/dwc/terms/minimumElevationInMeters</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>observation</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_occurrences">
+            <table>ca_occurrences</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_plantedSite">
+            <table>ca_storage_locations</table>
+            <type>plantedSite</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_building">
+            <table>ca_storage_locations</table>
+            <type>building</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="maximumElevationInMeters" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>maximumElevationInMeters</name>
+            <description>The upper limit of the range of elevation (altitude, usually above sea level), in meters.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/dwc/terms/maximumElevationInMeters</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>observation</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_occurrences">
+            <table>ca_occurrences</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_plantedSite">
+            <table>ca_storage_locations</table>
+            <type>plantedSite</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_building">
+            <table>ca_storage_locations</table>
+            <type>building</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="verticalDatum" datatype="List" list="vertical_datum">
+        <labels>
+          <label locale="en_US">
+            <name>verticalDatum</name>
+            <description>The vertical datum used as the reference upon which the values in the elevation terms are based.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/dwc/terms/verticalDatum</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>observation</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_occurrences">
+            <table>ca_occurrences</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_plantedSite">
+            <table>ca_storage_locations</table>
+            <type>plantedSite</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_building">
+            <table>ca_storage_locations</table>
+            <type>building</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -9673,7 +10247,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="standardizedIdentification" datatype="InformationService">
+	    <metadataElement code="standardizedIdentification" datatype="Text"><!--Should be InformationService: GBIF API-->
         <labels>
           <label locale="en_US">
             <name>The (closest) taxonomic identification, from a central repository. Lookup from GBIF/Catalogue of life.</name>
@@ -11130,6 +11704,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">CMS-ID</setting>
                 <setting name="description" locale="en_US">This is a unique identifier for the record, automatically assigned by the system.</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
               </settings>
             </placement>
             <placement code="preferred_labels">
@@ -11137,6 +11712,7 @@
               <settings>
                 <setting name="label" locale="en_US">Preferred ID</setting>
                 <setting name="description" locale="en_US">This is the preferred identifier. For collected objects this identifier has to be physically present on/with the object, on the label or written on the object. For DNA-samples this is the LIMS-code e.g. 19-009625. For soil samples, this is the SID = sample ID. For sampling points, this is the field code you gave the data point, if need be, by adding prefixes or suffixes to make it unique in the full database.</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
               </settings>
             </placement>
 			      <placement code="nonpreferred_labels">
@@ -11207,7 +11783,7 @@
         <screen idno="relations" default="0">
           <labels>
             <label locale="en_US">
-              <name>Related objects</name>
+              <name>Hierarchy</name>
             </label>
           </labels>
           <bundlePlacements>
@@ -11456,17 +12032,17 @@
           </typeRestrictions>
           <bundlePlacements>
 			      <placement code="ca_object_verbatimIdentification" typeRestrictions="animalObject,observationAnimal,plantObject,observationPlant,oDNA" includeSubtypes="1"><!--This should prepopulate with the parent value, if empty-->
-              <bundle>ca_attribute_objVerbatimIdentification</bundle>
+              <bundle>ca_attribute_verbatimIdentification</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The verbatim taxonomic identification of the object</setting>
-                <setting name="description" locale="en_US">Usually this equals the verbatim identification of the observation the object was sampled from. If present, this value will be automatically be set here. To be actively changed for object types such as living animals, seedlots and living plants, if the taxonomic identification is different from the field observation they refer to (e.g. in the case of hybrid offspring). A verbatim identification can be a species name, genus name, family name. This can be the vernacular name in English (e.g. human), Dutch (e.g. mens) ... or the the binomial nomenclature (e.g. Homo sapiens)..</setting>
+                <setting name="label" locale="en_US">The verbatim taxonomic identification</setting>
+                <setting name="description" locale="en_US">Usually this equals the verbatim identification of the sampling point (=organism) the object was sampled from. If present, this value will be automatically be set here. To be actively changed for object types such as living animals, seedlots and living plants, if the taxonomic identification is different from the field observation they refer to (e.g. in the case of hybrid offspring). A verbatim identification can be a species name, genus name, family name. This can be the vernacular name in English (e.g. human), Dutch (e.g. mens) ... or the the binomial nomenclature (e.g. Homo sapiens)..</setting>
 			        </settings>
             </placement>
 			      <placement code="ca_object_standardizedIdentification" typeRestrictions="animalObject,observationAnimal,plantObject,observationPlant,oDNA" includeSubtypes="1"><!--This should prepopulate with the parent value, if empty-->
               <bundle>ca_attribute_standardizedIdentification</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The taxonomic identification of the object</setting>
-                <setting name="description" locale="en_US">Usually this equals the verbatim identification. For living collections such as living animals, seedlots and livingplants, it is possible that the taxonomic identification is different from the field observation they refer to. For example: hybrids.</setting>
+                <setting name="label" locale="en_US">The standardize taxonomic identification</setting>
+                <setting name="description" locale="en_US">Usually this equals the verbatim identification; except if the central repository is not up to date. In that case; choose the best fit possible (e.g. genus level instead of species level).</setting>
 			        </settings>
             </placement>
 			      <placement code="identifications_animalObject" typeRestrictions="animalObject" includeSubtypes="1"><!--ideally these are linked to the parent, and automatically inhert to the children-->
@@ -11479,7 +12055,7 @@
                 <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="identificationZoological"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
 			        </settings>
             </placement>
-			      <placement code="identifications_observationAnimal"><!--ideally these are linked to the parent, and automatically inhert to the children-->
+			      <placement code="identifications_observationAnimal" typeRestrictions="observationAnimal"><!--ideally these are linked to the parent, and automatically inhert to the children-->
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The identification log of the observation and object.</setting>
@@ -11539,6 +12115,7 @@
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="restrict_to_types">provenanceRegion,provenance</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
 			      <placement code="observationPlantCont1" typeRestrictions="observationPlant">
