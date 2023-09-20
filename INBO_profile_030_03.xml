@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.47</profileName>
+  <profileName>[INBO] INBO natural science collection v0.47.02</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <locales>
     <locale lang="en" country="US">English</locale>
@@ -94,7 +94,7 @@
           </label>
         </labels>
         <items>
-          <item idno="observation" rank="2" enabled="0" default="0">
+          <item idno="observation" rank="1" enabled="0" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>Sampling point</name_singular>
@@ -109,8 +109,8 @@
                   <item idno="observationAnimal" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Animal</name_singular>
-                        <name_plural>Animal</name_plural>
+                        <name_singular>Animal sampling point</name_singular>
+                        <name_plural>Animal sampling points</name_plural>
                       </label>
                     </labels>
                     <settings>
@@ -121,8 +121,8 @@
                   <item idno="observationPlant" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Plant</name_singular>
-                        <name_plural>Plant</name_plural>
+                        <name_singular>Plant sampling point</name_singular>
+                        <name_plural>Plant sampling points</name_plural>
                       </label>
                     </labels>
                     <settings>
@@ -133,8 +133,8 @@
                   <item idno="observationSoil" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Soil</name_singular>
-                        <name_plural>Soil</name_plural>
+                        <name_singular>Soil sampling point</name_singular>
+                        <name_plural>Soil sampling points</name_plural>
                       </label>
                     </labels>
                     <settings>
@@ -145,8 +145,8 @@
                   <item idno="observationWater" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Water</name_singular>
-                        <name_plural>Water</name_plural>
+                        <name_singular>Water sampling point</name_singular>
+                        <name_plural>Water sampling points</name_plural>
                       </label>
                     </labels>
                     <settings>
@@ -156,7 +156,7 @@
                   </item>
             </items>
           </item>
-			    <item idno="object" rank="1" enabled="0" default="0">
+			    <item idno="object" rank="2" enabled="0" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>Object</name_singular>
@@ -11746,6 +11746,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="useHierarchicalBrowser">0</setting>
               </settings>
             </placement>
             <placement code="verbatimLocality" typeRestrictions="observation" includeSubtypes="1">
@@ -11853,6 +11854,7 @@
                 <setting name="description" locale="en_US">The place where the observation(s) occurred.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="useHierarchicalBrowser">0</setting>
               </settings>
 			      </placement>
 			      <placement code="localityTimestamped" typeRestrictions="observationAnimal">
