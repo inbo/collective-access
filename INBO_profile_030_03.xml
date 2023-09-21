@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.47.02</profileName>
+  <profileName>[INBO] INBO natural science collection v0.48</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <locales>
     <locale lang="en" country="US">English</locale>
@@ -94,7 +94,7 @@
           </label>
         </labels>
         <items>
-          <item idno="observation" rank="1" enabled="0" default="0">
+          <item idno="observation" rank="1" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>Sampling point</name_singular>
@@ -156,7 +156,7 @@
                   </item>
             </items>
           </item>
-			    <item idno="object" rank="2" enabled="0" default="0">
+			    <item idno="object" rank="2" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>Object</name_singular>
@@ -168,7 +168,7 @@
              <setting name="render_in_find_menu">1</setting>
             </settings>
             <items>
-                  <item idno="animalObject" rank="1" enabled="0" default="0">
+                  <item idno="animalObject" rank="1" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>Animal</name_singular>
@@ -176,11 +176,11 @@
                       </label>
                     </labels>
                     <items>
-                      <item idno="animalBulk" enabled="1" default="0">
+                      <item idno="animalBulk" enabled="1" default="0"><!--For example: bulk sample of insects e.g. in a pan trap-->
                         <labels>
                           <label locale="en_US" preferred="1">
-                            <name_singular>Bulk sample of animals</name_singular>
-                            <name_plural>Bulk samples of animals</name_plural>
+                            <name_singular>Animal bulk sample</name_singular>
+                            <name_plural>Animal bulk samples</name_plural>
                           </label>
                         </labels>
                       </item>
@@ -195,32 +195,32 @@
                           <item idno="animalEntireLiving" enabled="1" default="0">
                             <labels>
                               <label locale="en_US" preferred="1">
-                                <name_singular>Animal, living</name_singular>
-                                <name_plural>Animals, living</name_plural>
+                                <name_singular>Living animal</name_singular>
+                                <name_plural>Living animals</name_plural>
                               </label>
                             </labels>
                           </item>
-                          <item idno="animalEntireCadaver" enabled="1" default="0">
+                          <item idno="animalEntireCadaver" enabled="1" default="0"><!--unprocessed, frozen-->
                             <labels>
                               <label locale="en_US" preferred="1">
-                                <name_singular>Cadaver (no ethanol)</name_singular>
-                                <name_plural>Cadavers (no ethanol)</name_plural>
+                                <name_singular>Cadaver</name_singular>
+                                <name_plural>Cadavers</name_plural>
                               </label>
                             </labels>
                           </item>
                           <item idno="animalEntireEthanol" enabled="1" default="0">
                             <labels>
                               <label locale="en_US" preferred="1">
-                                <name_singular>Entire animal on ethanol</name_singular>
-                                <name_plural>Entire animals on ethanol</name_plural>
+                                <name_singular>Animal on ethanol</name_singular>
+                                <name_plural>Animals on ethanol</name_plural>
                               </label>
                             </labels>
                           </item>
-                          <item idno="animalEntireDry" enabled="1" default="0">
+                          <item idno="animalEntireDry" enabled="1" default="0"><!--often processed, room temperature-->
                             <labels>
                               <label locale="en_US" preferred="1">
-                                <name_singular>Entire animal dry specimen</name_singular>
-                                <name_plural>Entire animals dry specimen</name_plural>
+                                <name_singular>Dry animal specimen</name_singular>
+                                <name_plural>Dry animal specimens</name_plural>
                               </label>
                             </labels>
                           </item>
@@ -245,40 +245,40 @@
                               <item idno="sampleAmphibianTailclip" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
-                                    <name_singular>Tailclip</name_singular>
-                                    <name_plural>Tailclips</name_plural>
+                                    <name_singular>Amphibian tailclip</name_singular>
+                                    <name_plural>Amphibian tailclips</name_plural>
                                   </label>
                                 </labels>
                               </item>
                               <item idno="sampleAmphibianSwabCloaca" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
-                                    <name_singular>Swab cloaca</name_singular>
-                                    <name_plural>Swabs cloaca</name_plural>
+                                    <name_singular>Amphibian swab cloaca</name_singular>
+                                    <name_plural>Amphibian swabs cloaca</name_plural>
                                   </label>
                                 </labels>
                               </item>
                               <item idno="sampleAmphibianSwabMouth" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
-                                    <name_singular>Swab mouth</name_singular>
-                                    <name_plural>Swabs mouth</name_plural>
+                                    <name_singular>Amphibian swab mouth</name_singular>
+                                    <name_plural>Amphibian swabs mouth</name_plural>
                                   </label>
                                 </labels>
                               </item>
                               <item idno="sampleAmphibianSwabEar" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
-                                    <name_singular>Swab ear</name_singular>
-                                    <name_plural>Swabs ear</name_plural>
+                                    <name_singular>Amphibian swab ear</name_singular>
+                                    <name_plural>Amphibian swabs ear</name_plural>
                                   </label>
                                 </labels>
                               </item>
                               <item idno="sampleAmphibianToeclip" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
-                                    <name_singular>Toeclip</name_singular>
-                                    <name_plural>Toeclips</name_plural>
+                                    <name_singular>Amphibian toeclip</name_singular>
+                                    <name_plural>Amphibian toeclips</name_plural>
                                   </label>
                                 </labels>
                               </item>
@@ -295,16 +295,16 @@
                               <item idno="sampleFishFinclip" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
-                                    <name_singular>Finclip</name_singular>
-                                    <name_plural>Finclips</name_plural>
+                                    <name_singular>Fish finclip</name_singular>
+                                    <name_plural>Fish finclips</name_plural>
                                   </label>
                                 </labels>
                               </item>
                               <item idno="sampleFishMuscle" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
-                                    <name_singular>Muscle sample</name_singular>
-                                    <name_plural>Muscle samples</name_plural>
+                                    <name_singular>Fish muscle sample</name_singular>
+                                    <name_plural>Fish muscle samples</name_plural>
                                   </label>
                                 </labels>
                               </item>
@@ -321,16 +321,16 @@
                               <item idno="sampleInvertebrateLeg" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
-                                    <name_singular>Leg</name_singular>
-                                    <name_plural>Legs</name_plural>
+                                    <name_singular>Invertebrate leg</name_singular>
+                                    <name_plural>Invertebrate legs</name_plural>
                                   </label>
                                 </labels>
                               </item>
                               <item idno="sampleInvertebrateWingclip" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
-                                    <name_singular>Wingclip</name_singular>
-                                    <name_plural>Wingclips</name_plural>
+                                    <name_singular>Invertebrate wingclip</name_singular>
+                                    <name_plural>Invertebrate wingclips</name_plural>
                                   </label>
                                 </labels>
                               </item>
@@ -355,8 +355,8 @@
                               <item idno="sampleMammalBladder" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
-                                    <name_singular>Bladder (sample)</name_singular>
-                                    <name_plural>Bladders (bladder samples)</name_plural>
+                                    <name_singular>Bladder sample</name_singular>
+                                    <name_plural>Bladder samples</name_plural>
                                   </label>
                                 </labels>
                               </item>
@@ -380,15 +380,15 @@
                                 <labels>
                                   <label locale="en_US" preferred="1">
                                     <name_singular>Conjuctivum sample</name_singular>
-                                    <name_plural>Conjuctiva (conjuctivum samples)</name_plural>
+                                    <name_plural>Conjuctivum samples</name_plural>
                                   </label>
                                 </labels>
                               </item>
                               <item idno="sampleMammalCyste" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
-                                    <name_singular>Cyste (sample)</name_singular>
-                                    <name_plural>Cystes (cyste samples)</name_plural>
+                                    <name_singular>Cyste sample</name_singular>
+                                    <name_plural>Cyste samples</name_plural>
                                   </label>
                                 </labels>
                               </item>
@@ -403,24 +403,24 @@
                               <item idno="sampleMammalEmbryo" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
-                                    <name_singular>Embryo (sample)</name_singular>
-                                    <name_plural>Embryos (embryo samples)</name_plural>
+                                    <name_singular>Embryo sample</name_singular>
+                                    <name_plural>Embryo samples</name_plural>
                                   </label>
                                 </labels>
                               </item>
                               <item idno="sampleMammalFat" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
-                                    <name_singular>Fat (sample)</name_singular>
-                                    <name_plural>Fat (samples)</name_plural>
+                                    <name_singular>Fat sample</name_singular>
+                                    <name_plural>Fat samples</name_plural>
                                   </label>
                                 </labels>
                               </item>
                               <item idno="sampleMammalFeces" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
-                                    <name_singular>Feces (sample)</name_singular>
-                                    <name_plural>Feces (samples)</name_plural>
+                                    <name_singular>Feces sample</name_singular>
+                                    <name_plural>Feces samples</name_plural>
                                   </label>
                                 </labels>
                               </item>
@@ -435,8 +435,8 @@
                               <item idno="sampleMammalHeart" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
-                                    <name_singular>Heart (sample)</name_singular>
-                                    <name_plural>Hearts (heart samples)</name_plural>
+                                    <name_singular>Heart sample</name_singular>
+                                    <name_plural>Heart samples</name_plural>
                                   </label>
                                 </labels>
                               </item>
@@ -451,16 +451,16 @@
                               <item idno="sampleMammalIntestine" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
-                                    <name_singular>Intestine (sample)</name_singular>
-                                    <name_plural>Intestines (intestine samples)</name_plural>
+                                    <name_singular>Intestine sample</name_singular>
+                                    <name_plural>Intestine samples</name_plural>
                                   </label>
                                 </labels>
                               </item>
                               <item idno="sampleMammalLiver" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
-                                    <name_singular>Liver (sample)</name_singular>
-                                    <name_plural>Livers (liver samples)</name_plural>
+                                    <name_singular>Liver sample</name_singular>
+                                    <name_plural>Liver samples</name_plural>
                                   </label>
                                 </labels>
                               </item>
@@ -475,32 +475,32 @@
                               <item idno="sampleMammalLung" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
-                                    <name_singular>Lung (sample)</name_singular>
-                                    <name_plural>Lungs (lung samples)</name_plural>
+                                    <name_singular>Lung sample</name_singular>
+                                    <name_plural>Lung samples</name_plural>
                                   </label>
                                 </labels>
                               </item>
                               <item idno="sampleMammalLymphNode" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
-                                    <name_singular>Lymph node (sample)</name_singular>
-                                    <name_plural>Lymph nodes (lymph node samples)</name_plural>
+                                    <name_singular>Lymph node sample</name_singular>
+                                    <name_plural>Lymph node samples</name_plural>
                                   </label>
                                 </labels>
                               </item>
                               <item idno="sampleMammalKidney" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
-                                    <name_singular>Kidney (sample)</name_singular>
-                                    <name_plural>Kidneys (kidney samples)</name_plural>
+                                    <name_singular>Kidney sample</name_singular>
+                                    <name_plural>Kidney samples</name_plural>
                                   </label>
                                 </labels>
                               </item>
                               <item idno="sampleMammalMuscle" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
-                                    <name_singular>Muscle sample</name_singular>
-                                    <name_plural>Muscle samples</name_plural>
+                                    <name_singular>Mammal muscle sample</name_singular>
+                                    <name_plural>Mammal muscle samples</name_plural>
                                   </label>
                                 </labels>
                               </item>
@@ -531,8 +531,8 @@
                               <item idno="sampleMammalSpleen" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
-                                    <name_singular>Spleen (sample)</name_singular>
-                                    <name_plural>Spleens (spleen samples)</name_plural>
+                                    <name_singular>Spleen sample</name_singular>
+                                    <name_plural>Spleen samples</name_plural>
                                   </label>
                                 </labels>
                               </item>
@@ -555,16 +555,16 @@
                               <item idno="sampleMammalSwabBite" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
-                                    <name_singular>Swab of a bite wound</name_singular>
-                                    <name_plural>Swabs of bite wounds</name_plural>
+                                    <name_singular>Swab bite wound</name_singular>
+                                    <name_plural>Swabs bite wounds</name_plural>
                                   </label>
                                 </labels>
                               </item>
                               <item idno="sampleMammalTongue" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
-                                    <name_singular>Tongue (sample)</name_singular>
-                                    <name_plural>Tongues (tongue samples)</name_plural>
+                                    <name_singular>Tongue sample</name_singular>
+                                    <name_plural>Tongue samples</name_plural>
                                   </label>
                                 </labels>
                               </item>
@@ -579,8 +579,8 @@
                               <item idno="sampleMammalUterus" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
-                                    <name_singular>Uterus (sample)</name_singular>
-                                    <name_plural>Uteri (uterus samples)</name_plural>
+                                    <name_singular>Uterus sample</name_singular>
+                                    <name_plural>Uterus samples</name_plural>
                                   </label>
                                 </labels>
                               </item>
@@ -597,16 +597,16 @@
                               <item idno="sampleReptileSkin" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
-                                    <name_singular>Skin sample</name_singular>
-                                    <name_plural>Skin samples</name_plural>
+                                    <name_singular>Reptile skin sample</name_singular>
+                                    <name_plural>Reptile skin samples</name_plural>
                                   </label>
                                 </labels>
                               </item>
                               <item idno="sampleReptileTailclip" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
-                                    <name_singular>Tailclip</name_singular>
-                                    <name_plural>Tailclips</name_plural>
+                                    <name_singular>Reptile tailclip</name_singular>
+                                    <name_plural>Reptile tailclips</name_plural>
                                   </label>
                                 </labels>
                               </item>
@@ -616,11 +616,11 @@
                       </item>
                     </items>
                   </item>
-                  <item idno="plantObject" rank="2" enabled="0" default="0">
+                  <item idno="plantObject" rank="2" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Plant</name_singular>
-                        <name_plural>Plants</name_plural>
+                        <name_singular>Plant object</name_singular>
+                        <name_plural>Plant objects</name_plural>
                       </label>
                     </labels>
                     <items>
@@ -677,22 +677,22 @@
                       <item idno="oDNA" enabled="1" default="0">
                         <labels>
                           <label locale="en_US" preferred="1">
-                            <name_singular>oDNA (organism)</name_singular>
-                            <name_plural>oDNA (organism)</name_plural>
+                            <name_singular>oDNA</name_singular>
+                            <name_plural>oDNA</name_plural>
                           </label>
                         </labels>
                       </item>
                       <item idno="eDNA" enabled="1" default="0">
                         <labels>
                           <label locale="en_US" preferred="1">
-                            <name_singular>eDNA (environment)</name_singular>
-                            <name_plural>eDNA (environment)</name_plural>
+                            <name_singular>eDNA</name_singular>
+                            <name_plural>eDNA</name_plural>
                           </label>
                         </labels>
                       </item>
                     </items>
                   </item>
-                  <item idno="waterObject" rank="5" enabled="0" default="0">
+                  <item idno="waterObject" rank="5" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>Water object</name_singular>
@@ -703,8 +703,8 @@
                       <item idno="eDnaWaterFilter" enabled="1" default="0">
                         <labels>
                           <label locale="en_US" preferred="1">
-                            <name_singular>eDNA Water filter</name_singular>
-                            <name_plural>eDNA Water filters</name_plural>
+                            <name_singular>Waterfilter</name_singular>
+                            <name_plural>Waterfilters</name_plural>
                           </label>
                         </labels>
                       </item>
@@ -718,7 +718,7 @@
                       </item>
                     </items>
                   </item>
-                  <item idno="soilObject" rank="4" enabled="0" default="0">
+                  <item idno="soilObject" rank="4" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>Soil sample</name_singular>
@@ -752,7 +752,7 @@
                       </item>
                     </items>
                   </item>
-                  <item idno="nonInboObject" rank="5" enabled="1" default="0">
+                  <item idno="nonInboObject" rank="6" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>Non-INBO object</name_singular>
@@ -1003,23 +1003,11 @@
           </label>
         </labels>
         <items>
-          <item idno="contextEvents" rank="2" enabled="1" default="1">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>Context event</name_singular>
-                <name_plural>Context events</name_plural>
-              </label>
-            </labels>
-            <settings>
-             <setting name="render_in_new_menu">1</setting>
-             <setting name="render_in_find_menu">1</setting>
-            </settings>
-            <items>
               <item idno="fieldwork" rank="2" enabled="1" default="1">
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>Fieldwork / Expedition</name_singular>
-                    <name_plural>Fieldwork / Expeditions</name_plural>
+                    <name_singular>Field campaign</name_singular>
+                    <name_plural>Field campaigns</name_plural>
                   </label>
                 </labels>
                 <settings>
@@ -1039,20 +1027,6 @@
                 <setting name="render_in_find_menu">1</setting>
                 </settings>
               </item>
-            </items>
-          </item>
-          <item idno="objectEvents" rank="3" enabled="1" default="1">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>Object event</name_singular>
-                <name_plural>Object events</name_plural>
-              </label>
-            </labels>
-            <settings>
-             <setting name="render_in_new_menu">1</setting>
-             <setting name="render_in_find_menu">1</setting>
-            </settings>
-            <items>
               <item idno="curation" rank="4" enabled="1" default="1">
                 <labels>
                   <label locale="en_US" preferred="1">
@@ -1111,53 +1085,51 @@
                   <setting name="render_in_find_menu">1</setting>
                 </settings>
               </item>
-            </items>
-          </item>
-          <item idno="identification" rank="4" enabled="1" default="1">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>Identification</name_singular>
-                <name_plural>Identifications</name_plural>
-              </label>
-            </labels>
-            <settings>
-              <setting name="render_in_new_menu">0</setting>
-              <setting name="render_in_find_menu">0</setting>
-            </settings>
-                <items>
-                  <item idno="identificationBotanical" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Botanical identification</name_singular>
-                        <name_plural>Botanical identifications</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="identificationZoological" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Zoological identification</name_singular>
-                        <name_plural>Zoological identifications</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="identificationBacteriological" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Bacteriological identification</name_singular>
-                        <name_plural>Bacteriological identifications</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                  <item idno="identificationViral" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Viral identification</name_singular>
-                        <name_plural>Viral identifications</name_plural>
-                      </label>
-                    </labels>
-                  </item>
-                </items>
+              <item idno="identification" rank="4" enabled="1" default="1">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>Identification</name_singular>
+                    <name_plural>Identifications</name_plural>
+                  </label>
+                </labels>
+                <settings>
+                  <setting name="render_in_new_menu">0</setting>
+                  <setting name="render_in_find_menu">0</setting>
+                </settings>
+                    <items>
+                      <item idno="identificationBotanical" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Botanical identification</name_singular>
+                            <name_plural>Botanical identifications</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="identificationZoological" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Zoological identification</name_singular>
+                            <name_plural>Zoological identifications</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="identificationBacteriological" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Bacteriological identification</name_singular>
+                            <name_plural>Bacteriological identifications</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="identificationViral" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Viral identification</name_singular>
+                            <name_plural>Viral identifications</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                    </items>
               </item>
         </items>
       </list>
@@ -9017,6 +8989,7 @@
         <labels>
           <label locale="en_US">
             <name>landUseType</name>
+            <description>Code that refers to the landuse on the locality and time of the sampling. The code equals the second hiërarchial level of the EUNIS classification.</description>
          </label>
         </labels>
         <settings>
@@ -9668,7 +9641,7 @@
 	    <metadataElement code="sex" datatype="List" list="sex">
 			  <labels>
           <label locale="en_US">
-            <name>sex</name>
+            <name>sex (dwc:sex)</name>
             <description>The sex of the biological individual(s) represented in the Occurrence.</description>
           </label>
 			  </labels>
@@ -11735,7 +11708,7 @@
             <placement code="preparationDate" typeRestrictions="object" includeSubtypes="1">
               <bundle>ca_attribute_dateRange</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Date (and time)</setting>
+                <setting name="label" locale="en_US">Preparation date (ggbn:preparationDate)</setting>
                 <setting name="description" locale="en_US">This is the date/time that becomes fixed due to sampling in the object and all its derivatives. This will depend on the origin type.The original date/The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
 				        <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
@@ -11752,7 +11725,7 @@
             <placement code="verbatimLocality" typeRestrictions="observation" includeSubtypes="1">
               <bundle>ca_attribute_verbatimLocality</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Observation/sampling point is located at</setting>
+                <setting name="label" locale="en_US">Sampling point is located at (dwc:verbatimLocality)</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
@@ -11767,7 +11740,7 @@
 			      <placement code="verbatimIdentification" typeRestrictions="observationAnimal,observationPlant,animalObject,plantObject,dnaSample" includeSubtypes="1">
               <bundle>ca_attribute_verbatimIdentification</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The verbatim taxonomic identification</setting>
+                <setting name="label" locale="en_US">The verbatim taxonomic identification (dwc:verbatimIdentification)</setting>
                 <setting name="description" locale="en_US">For objects usually this equals the verbatim identification of the observation the object was sampled from. If present, this value will be automatically be set here. To be actively changed for object types such as living animals, seedlots and living plants, if the taxonomic identification is different from the field observation they refer to (e.g. in the case of hybrid offspring). A verbatim identification can be a species name, genus name, family name. This can be the vernacular name in English (e.g. human), Dutch (e.g. mens) ... or the the binomial nomenclature (e.g. Homo sapiens)..</setting>
 			        </settings>
             </placement>
@@ -11821,8 +11794,8 @@
             <placement code="ca_occurrence_fieldwork">
               <bundle>ca_occurrences</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Fieldwork of which the record is a result</setting>
-                <setting name="description" locale="en_US">Fieldwork can also be an expedition or a survey event. If the fieldwork is nested in other fieldwork (and relevant to document), e.g. during an expedition you visited different localities with different crew; link the object to the smallest unit of time.</setting>
+                <setting name="label" locale="en_US">Field campaign of which the record is a result</setting>
+                <setting name="description" locale="en_US">Field campaign can be an expedition, a survey event, one day in the field, one hour in the field... The field campaign can be nested (and relevant to document), e.g. during an expedition you visited different localities with different crew; link the object to the smallest unit of time.</setting>
 				        <setting name="restrict_to_types">fieldwork</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
@@ -11868,7 +11841,7 @@
 			      <placement code="verbatimLocality" typeRestrictions="observationSoil,observationPlant,observationWater">
               <bundle>ca_attribute_verbatimLocality</bundle>
               <settings>
-                <setting name="label" locale="en_US">Verbatim locality</setting>
+                <setting name="label" locale="en_US">Verbatim locality (dwc:verbatimLocality)</setting>
                 <setting name="description" locale="en_US">The original description of a locality, a place, the geographic coverage, ...</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
@@ -11877,7 +11850,7 @@
             <placement code="verbatimLongitudeX" typeRestrictions="observationSoil,observationPlant,observationWater">
               <bundle>ca_attribute_verbatimLongitudeX</bundle>
               <settings>
-                <setting name="label" locale="en_US">Verbatim longitude (X)</setting>
+                <setting name="label" locale="en_US">Verbatim longitude (X) (dwc:verbatimLongitude)</setting>
                 <setting name="description" locale="en_US">The original description of the longitude (X).</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
@@ -11886,7 +11859,7 @@
             <placement code="verbatimLatitudeY" typeRestrictions="observationSoil,observationPlant,observationWater">
               <bundle>ca_attribute_verbatimLatitudeY</bundle>
               <settings>
-                <setting name="label" locale="en_US">Verbatim latitude (Y)</setting>
+                <setting name="label" locale="en_US">Verbatim latitude (Y) (dwc:verbatimLatitude)</setting>
                 <setting name="description" locale="en_US">The original description of the latitude (Y).</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
@@ -11895,22 +11868,22 @@
 			      <placement code="verbatimSRS" typeRestrictions="observationSoil,observationPlant,observationWater">
               <bundle>ca_attribute_verbatimSRS</bundle>
               <settings>
-                <setting name="label" locale="en_US">Verbatim SRS</setting>
+                <setting name="label" locale="en_US">Verbatim SRS (dwc:verbatimSRS)</setting>
                 <setting name="description" locale="en_US">The spatial reference system (SRS) of the original coordinates.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="observationVerbatimGeoreferenceProtocol" typeRestrictions="observationSoil,observationPlant,observationWater">
+			      <placement code="verbatimGeoreferenceProtocol" typeRestrictions="observationSoil,observationPlant,observationWater">
               <bundle>ca_attribute_verbatimGeoreferenceProtocol</bundle>
               <settings>
-                <setting name="label" locale="en_US">Verbatim georeference procedure</setting>
+                <setting name="label" locale="en_US">Georeference procedure (dwc:georeferenceProtocol)</setting>
                 <setting name="description" locale="en_US">A short description of the procedure that resulting in collecting the verbatim georeference information.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="observationStandardizedGeoreferenceWGS84" typeRestrictions="observationSoil,observationPlant,observationWater">
+			      <placement code="standardizedGeoreferenceWGS84" typeRestrictions="observationSoil,observationPlant,observationWater">
               <bundle>ca_attribute_georeference</bundle>
               <settings>
                 <setting name="label" locale="en_US">Standardized georeference data</setting>
@@ -11922,24 +11895,24 @@
 			      <placement code="verbatimElevation" typeRestrictions="observationSoil,observationPlant,observationWater">
               <bundle>ca_attribute_verbatimElevation</bundle>
               <settings>
-                <setting name="label" locale="en_US">Verbatim elevation</setting>
+                <setting name="label" locale="en_US">Verbatim elevation (dwc:verbatimElevation)</setting>
                 <setting name="description" locale="en_US">The original description of the elevation. From the notes, Excel/Gsheet, dataset, ...</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="observationMinimumElevationInMeters" typeRestrictions="observationSoil,observationPlant,observationWater">
+			      <placement code="minimumElevationInMeters" typeRestrictions="observationSoil,observationPlant,observationWater">
               <bundle>ca_attribute_minimumElevationInMeters</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The minimum elevation in meters</setting>
+                <setting name="label" locale="en_US">The minimum elevation in meters (dwc:minimumElevationInMeters)</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="observationMaximumElevationInMeters" typeRestrictions="observationSoil,observationPlant,observationWater">
+			      <placement code="maximumElevationInMeters" typeRestrictions="observationSoil,observationPlant,observationWater">
               <bundle>ca_attribute_maximumElevationInMeters</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The maximum elevation in meters</setting>
+                <setting name="label" locale="en_US">The maximum elevation in meters (dwc:maximumElevationInMeters)</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
@@ -11947,7 +11920,7 @@
 			      <placement code="verticalDatum" typeRestrictions="observationSoil,observationPlant,observationWater">
               <bundle>ca_attribute_verticalDatum</bundle>
               <settings>
-                <setting name="label" locale="en_US">Vertical datum</setting>
+                <setting name="label" locale="en_US">Vertical datum (dwc:verticalDatum)</setting>
                 <setting name="description" locale="en_US">The vertical datum used as the reference upon which the values in the elevation terms are based.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
@@ -11961,10 +11934,10 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="observationSoilCont3">
+			      <placement code="observationSoilCont3" typeRestrictions="observationSoil">
               <bundle>ca_attribute_observationSoilCont3</bundle>
 			      </placement>
-			      <placement code="observationWaterCont4">
+			      <placement code="observationWaterCont4" typeRestrictions="observationWater">
               <bundle>ca_attribute_observationWaterCont4</bundle>
 			      </placement>
           </bundlePlacements>
@@ -12031,12 +12004,14 @@
                 <restriction code="r_oDNA" type="oDNA"/>
                 <restriction code="r_observationPlant" type="observationPlant"/>
                 <restriction code="r_observationAnimal" type="observationAnimal"/>
+                <restriction code="r_observationSoil" type="observationSoil"/>
+                <restriction code="r_observationWater" type="observationWater"/>
           </typeRestrictions>
           <bundlePlacements>
 			      <placement code="ca_object_verbatimIdentification" typeRestrictions="animalObject,observationAnimal,plantObject,observationPlant,oDNA" includeSubtypes="1"><!--This should prepopulate with the parent value, if empty-->
               <bundle>ca_attribute_verbatimIdentification</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The verbatim taxonomic identification</setting>
+                <setting name="label" locale="en_US">The verbatim taxonomic identification (dwc:verbatimIdentification)</setting>
                 <setting name="description" locale="en_US">Usually this equals the verbatim identification of the sampling point (=organism) the object was sampled from. If present, this value will be automatically be set here. To be actively changed for object types such as living animals, seedlots and living plants, if the taxonomic identification is different from the field observation they refer to (e.g. in the case of hybrid offspring). A verbatim identification can be a species name, genus name, family name. This can be the vernacular name in English (e.g. human), Dutch (e.g. mens) ... or the the binomial nomenclature (e.g. Homo sapiens)..</setting>
 			        </settings>
             </placement>
@@ -12129,7 +12104,7 @@
             <placement code="preparationDate" typeRestrictions="animalEntireCadaver,animalEntireEthanol,animalEntireDry">
               <bundle>ca_attribute_preparationDate</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Preparation time</setting>
+                <setting name="label" locale="en_US">Preparation date (ggbn:preparationDate)</setting>
                 <setting name="description" locale="en_US">This is the date that the object was created or prepared. For the first object in a hierarchy, this will be the same as the dateRange. The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
@@ -12137,7 +12112,8 @@
 			      <placement code="lifeStage_fixed" typeRestrictions="animalEntireCadaver,animalEntireEthanol,animalEntireDry">
               <bundle>ca_attribute_lifeStage</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Life stage of the organism at time object(s) were collected</setting>
+                <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
+                <setting name="description" locale="en_US">Life stage of the organism at time object(s) were collected</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
@@ -12145,7 +12121,8 @@
 			      <placement code="reproductiveCondition_fixed" typeRestrictions="animalEntireCadaver,animalEntireEthanol,animalEntireDry">
               <bundle>ca_attribute_reproductiveCondition</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Reproductive condition at time object(s) were collected</setting>
+                <setting name="label" locale="en_US">Reproductive condition (dwc:reproductiveCondition)</setting>
+                <setting name="description" locale="en_US">Reproductive condition of the organism at time object(s) were collected</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="expand_collapse_value">collapse</setting>
                 <setting name="hideIfSelected_juvenile">standard_object_ui/obj_metadata/ca_attribute_lifeStage</setting>
@@ -12744,8 +12721,8 @@
 			      <placement code="identifications_environment" typeRestrictions="observationSoil,observationWater,eDNA">
               <bundle>ca_occurrences</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The identification log of the environmental sampling point, in this case always as a result of its forthcoming object(s). Only log relevant (to query) ids here - one identification event per taxon. Under "datasets" taxonomic lists can be entered as well.</setting>
-                <setting name="description" locale="en_US">The identifications of the targeted barcoding or screening of the eDNA sample, relevant to be queryable. If many: best imported via a list (csv/Gsheet/Excel).</setting>
+                <setting name="label" locale="en_US">Resulting taxonomic identifications log</setting>
+                <setting name="description" locale="en_US">Only log relevant (to query) taxonomic units here. Under "datasets" taxonomic lists can be entered as well.</setting>
                 <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
 			        </settings>
             </placement>
@@ -13020,16 +12997,6 @@
                 <setting name="list_format">list</setting>
               </settings>
             </placement>
-            <placement code="reuse">
-              <bundle>ca_occurrences</bundle>
-              <settings>
-                <setting name="label" locale="en_US">The object or a subsample of the object was used in INBO lab-projects</setting>
-                <setting name="add_label" locale="en_US">Add new project</setting>
-				        <setting name="restrict_to_types">project</setting>
-                <setting name="restrict_to_relationship_types">reuse</setting>
-                <setting name="list_format">list</setting>
-              </settings>
-            </placement>
           </bundlePlacements>
         </screen>
 	    </screens>
@@ -13054,17 +13021,45 @@
                 <setting name="label" locale="en_US">CMS-ID</setting>
               </settings>
             </placement>
-			      <placement code="preferred_labels" typeRestrictions="fieldwork,project,valuation,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial,disposal,treatment,renewal,transfer">
+			      <placement code="preferred_labels" typeRestrictions="fieldwork">
               <bundle>preferred_labels</bundle>
               <settings>
-                <setting name="label" locale="en_US">Event identifier (preferred)</setting>
-                <setting name="description" locale="en_US">The identifier for the event used in notes, datasets, publication, ... if there are multiple identifiers for the event, this is the preferred identifier. You can add context information to make the record more unique and findable in the database e.g. if your sample is numbered 52.04, you can name it 52.04 (EV Magnolia ). This aligns with the concept of the record Number in DwC: http://rs.tdwg.org/dwc/terms/recordNumber</setting>
+                <setting name="label" locale="en_US">Field campaign identifier (preferred)</setting>
+                <setting name="description" locale="en_US">The field campaign identifier for the event used in notes, datasets, publication, ... if there are multiple identifiers for the event, this is the preferred identifier. You can add context information to make the record more unique and findable in the database e.g. if your sample is numbered 52.04, you can name it 52.04 (EV Magnolia ). This aligns with the concept of the record Number in DwC: http://rs.tdwg.org/dwc/terms/recordNumber</setting>
+              </settings>
+            </placement>
+			      <placement code="preferred_labels" typeRestrictions="project">
+              <bundle>preferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Project identifier (preferred)</setting>
+                <setting name="description" locale="en_US">The project identifier for the event used in notes, datasets, publication, ... if there are multiple identifiers for the event, this is the preferred identifier. You can add context information to make the record more unique and findable in the database e.g. if your sample is numbered 52.04, you can name it 52.04 (EV Magnolia ). This aligns with the concept of the record Number in DwC: http://rs.tdwg.org/dwc/terms/recordNumber</setting>
+              </settings>
+            </placement>
+			      <placement code="preferred_labels" typeRestrictions="valuation">
+              <bundle>preferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Valuation event identifier (preferred)</setting>
+                <setting name="description" locale="en_US">The valuation identifier</setting>
+              </settings>
+            </placement>
+			      <placement code="preferred_labels" typeRestrictions="identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial">
+              <bundle>preferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Identification event identifier (preferred)</setting>
+                <setting name="description" locale="en_US">The identification identifier. This can be a descriptive title; e.g. Valuation of DNA samples 2018 by person X.</setting>
+              </settings>
+            </placement>
+			      <placement code="preferred_labels" typeRestrictions="disposal,treatment,renewal,transfer">
+              <bundle>preferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Curation event identifier (preferred)</setting>
+                <setting name="description" locale="en_US">The identifier for the curation event used in notes. This can be a descriptive title: for example: Renewal of seedlot bags 2023.</setting>
               </settings>
             </placement>
             <placement code="nonpreferred_labels" typeRestrictions="fieldwork,project,valuation,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial,disposal,treatment,renewal,transfer">
               <bundle>nonpreferred_labels</bundle>
               <settings>
-                <setting name="label" locale="en_US">Other event identifier (nonpreferred)</setting>
+                <setting name="label" locale="en_US">Other identifier (nonpreferred)</setting>
 				        <setting name="add_label" locale="en_US">Add other non-preferred identifier</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
@@ -13081,7 +13076,7 @@
               <bundle>ca_attribute_dateRange</bundle>
               <!--http://rs.tdwg.org/dwc/terms/dateIdentified-->
               <settings>
-                <setting name="label" locale="en_US">Date (range) and time (range) of event, standardised.</setting>
+                <setting name="label" locale="en_US">Date (range) and time (range), standardised.</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
@@ -13098,8 +13093,8 @@
             <placement code="ca_places_fieldworkProject" typeRestrictions="fieldwork,project">
               <bundle>ca_places</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Fieldwork/project focal place(s)</setting>
-                <setting name="description" locale="en_US">The fieldwork or project took place at. This can compass administrational places but also plots or transects.</setting>
+                <setting name="label" locale="en_US">Field campaign/project focal place(s)</setting>
+                <setting name="description" locale="en_US">The field campaign or project took place at. This can compass administrational places but also plots or transects.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">20</setting>
 				        <setting name="add_label" locale="en_US">Add place</setting>
@@ -13129,8 +13124,8 @@
             <placement code="hierarchy_location">
               <bundle>hierarchy_location</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Event hierarchy</setting>
-                <setting name="description" locale="en_US">The event (observation, project, fieldwork) can be put into the context.</setting>
+                <setting name="label" locale="en_US">Hierarchy</setting>
+                <setting name="description" locale="en_US">The project or field campaign can be put into the context.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
@@ -13138,7 +13133,7 @@
               <bundle>ca_attribute_descriptionContainer</bundle>
               <settings>
                 <setting name="label" locale="en_US">Description</setting>
-                <setting name="description" locale="en_US">Description of the project or fieldwork/expedition/survey event.</setting>
+                <setting name="description" locale="en_US">Description of the project or field campaign.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
@@ -13154,6 +13149,7 @@
             <placement code="ca_entities_executor">
               <bundle>ca_entities</bundle>
               <settings>
+                <setting name="label" locale="en_US">Executor</setting>
                 <setting name="restrict_to_type">ind</setting>
                 <setting name="label" locale="en_US">Executed by</setting>
 				        <setting name="add_label" locale="en_US">Add individual</setting>
@@ -13202,7 +13198,7 @@
               <bundle>ca_attribute_samplingEffort</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Sampling effort</setting>
-                <setting name="description" locale="en_US">For example: if the fieldwork is focussed on populations: "sampled until 30 samples of population/locality was reached".</setting>
+                <setting name="description" locale="en_US">For example: if the field campaign is focussed on populations: "sampled until 30 samples of population/locality was reached".</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -13441,7 +13437,7 @@
               <bundle>ca_attribute_file</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">File</setting>
-                <setting name="description" locale="en_US">File associated with fieldwork or project that specifies conditions for usage of objects or associated data. For example: a scan of a permit.</setting>				       
+                <setting name="description" locale="en_US">File associated with field campaign or project that specifies conditions for usage of objects or associated data. For example: a scan of a permit.</setting>				       
                 <setting name="add_label" locale="en_US">Add file</setting>
 			        </settings>
             </placement>
@@ -13934,8 +13930,8 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="hierarchy_navigation">
-              <bundle>hierarchy_navigation</bundle>
+			      <placement code="storage_location_hierarchy_location">
+              <bundle>hierarchy_location</bundle>
             </placement>
 			      <placement code="ca_objects">
               <bundle>hca_objects</bundle>
