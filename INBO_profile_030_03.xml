@@ -5781,19 +5781,27 @@
           </label>
         </labels>
         <items>
+          <item idno="inPreparation" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Loan in preparation</name_singular>
+                <name_plural>Loan in preparation</name_plural>
+              </label>
+            </labels>
+          </item>
           <item idno="outstanding" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>Seed source</name_singular>
-                <name_plural>Seed sources</name_plural>
+                <name_singular>Oustanding loan</name_singular>
+                <name_plural>Oustanding loans</name_plural>
               </label>
             </labels>
           </item>
           <item idno="concluded" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>(Seed) Stand)</name_singular>
-                <name_plural>(Seed) Stands</name_plural>
+                <name_singular>Concluded loan</name_singular>
+                <name_plural>Concluded loans</name_plural>
               </label>
             </labels>
           </item>
@@ -5891,6 +5899,38 @@
           </restriction>
           <restriction code="r_entities">
             <table>ca_entities</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_loans">
+            <table>ca_loans</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="description" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Description</name>
+          </label>
+        </labels>
+        <documentationUrl>http://dublincore.org/documents/dcmi-terms/#terms-description</documentationUrl>
+        <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+         </settings>
+         <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -11177,7 +11217,9 @@
                 <name>Address line 2</name>
               </label>
             </labels>
-            <settings/>
+            <settings>
+              <setting name="lineBreakAfterNumberOfElements">2</setting>
+            </settings>
             <elements>
               <metadataElement code="addressee" datatype="Text">
                 <labels>
@@ -11187,7 +11229,7 @@
                   </label>
                 </labels>
                 <settings>
-                  <setting name="fieldWidth">70</setting>
+                  <setting name="fieldWidth">50</setting>
                   <setting name="fieldHeight">1</setting>
                   <setting name="minChars">0</setting>
                   <setting name="maxChars">255</setting>
@@ -11201,7 +11243,7 @@
                   </label>
                 </labels>
                 <settings>
-                  <setting name="fieldWidth">70</setting>
+                  <setting name="fieldWidth">50</setting>
                   <setting name="fieldHeight">1</setting>
                   <setting name="minChars">0</setting>
                   <setting name="maxChars">255</setting>
@@ -11215,7 +11257,7 @@
                   </label>
                 </labels>
                 <settings>
-                  <setting name="fieldWidth">70</setting>
+                  <setting name="fieldWidth">100</setting>
                   <setting name="fieldHeight">1</setting>
                   <setting name="minChars">0</setting>
                   <setting name="maxChars">255</setting>
@@ -11252,7 +11294,7 @@
                   </label>
                 </labels>
                 <settings>
-                  <setting name="fieldWidth">70</setting>
+                  <setting name="fieldWidth">10</setting>
                   <setting name="fieldHeight">1</setting>
                   <setting name="minChars">0</setting>
                   <setting name="maxChars">255</setting>
@@ -11266,7 +11308,7 @@
                   </label>
                 </labels>
                 <settings>
-                  <setting name="fieldWidth">70</setting>
+                  <setting name="fieldWidth">10</setting>
                   <setting name="fieldHeight">1</setting>
                   <setting name="minChars">0</setting>
                   <setting name="maxChars">255</setting>
@@ -11289,7 +11331,7 @@
                   </label>
                 </labels>
                 <settings>
-                  <setting name="fieldWidth">20</setting>
+                  <setting name="fieldWidth">30</setting>
                   <setting name="fieldHeight">1</setting>
                   <setting name="minChars">0</setting>
                   <setting name="maxChars">255</setting>
@@ -11302,7 +11344,7 @@
                   </label>
                 </labels>
                 <settings>
-                  <setting name="fieldWidth">15</setting>
+                  <setting name="fieldWidth">30</setting>
                   <setting name="fieldHeight">1</setting>
                   <setting name="minChars">0</setting>
                   <setting name="maxChars">255</setting>
@@ -11328,7 +11370,7 @@
                   </label>
                 </labels>
                 <settings>
-                  <setting name="fieldWidth">15</setting>
+                  <setting name="fieldWidth">20</setting>
                   <setting name="fieldHeight">1</setting>
                   <setting name="minChars">0</setting>
                   <setting name="maxChars">255</setting>
@@ -11661,7 +11703,7 @@
     <userInterface code="object_ui" type="ca_objects">
       <labels>
         <label locale="en_US">
-          <name>Standard object editor</name>
+          <name>Object editor</name>
         </label>
       </labels>
       <screens>
@@ -11677,6 +11719,22 @@
 			        <settings>
                 <setting name="label" locale="en_US">CMS-ID</setting>
                 <setting name="description" locale="en_US">This is a unique identifier for the record, automatically assigned by the system.</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
+              </settings>
+            </placement>
+            <placement code="object_type_description" typeRestrictions="object">
+              <bundle>ca_attribute_description</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Object (type) description</setting>
+                <setting name="description" locale="en_US">As you have chosen no specific object type registred in the system, please describe the object. If this was chosen by mistake, restart the proces of making a new record and select the correct type. The type of record determines which data fields are shown or hidden.</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
+              </settings>
+            </placement>
+            <placement code="observation_type_description" typeRestrictions="observation">
+              <bundle>ca_attribute_description</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Sampling point (type) description</setting>
+                <setting name="description" locale="en_US">As you have chosen no specific sampling point type registred in the system, please describe the sampling point type. If this was chosen by mistake, restart the proces of making a new record and select the correct type. The type of record determines which data fields are shown or hidden.</setting>
                 <setting name="expand_collapse_no_value">expand</setting>
               </settings>
             </placement>
@@ -11786,7 +11844,7 @@
 				        <setting name="restrict_to_types">project</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">3</setting>
-                <setting name="restrict_to_relationship_types">resultingObjects_project</setting>
+                <setting name="restrict_to_relationship_types">resultingObjectsProject</setting>
                 <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
@@ -11799,7 +11857,7 @@
 				        <setting name="restrict_to_types">fieldwork</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_relationship_types">resultingObjects_fieldwork</setting>
+                <setting name="restrict_to_relationship_types">resultingObjectsFieldwork</setting>
                 <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
@@ -11942,10 +12000,10 @@
 			      </placement>
           </bundlePlacements>
 		    </screen>
-		    <screen idno="metadata" default="0">
+		    <screen idno="taxonomy" default="0">
           <labels>
             <label locale="en_US">
-              <name>Metadata</name>
+              <name>Taxonomy</name>
             </label>
           </labels>
           <typeRestrictions>
@@ -12004,8 +12062,6 @@
                 <restriction code="r_oDNA" type="oDNA"/>
                 <restriction code="r_observationPlant" type="observationPlant"/>
                 <restriction code="r_observationAnimal" type="observationAnimal"/>
-                <restriction code="r_observationSoil" type="observationSoil"/>
-                <restriction code="r_observationWater" type="observationWater"/>
           </typeRestrictions>
           <bundlePlacements>
 			      <placement code="ca_object_verbatimIdentification" typeRestrictions="animalObject,observationAnimal,plantObject,observationPlant,oDNA" includeSubtypes="1"><!--This should prepopulate with the parent value, if empty-->
@@ -12072,6 +12128,74 @@
                 <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="identificationBotanical,identificationZoological"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
 			        </settings>
             </placement>
+          </bundlePlacements>
+        </screen>
+		    <screen idno="metadata" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Metadata</name>
+            </label>
+          </labels>
+          <typeRestrictions>
+                <restriction code="r_animalBulk" type="animalBulk"/>
+                <restriction code="r_animalEntireLiving" type="animalEntireLiving"/>
+                <restriction code="r_animalEntireCadaver" type="animalEntireCadaver"/>       
+                <restriction code="r_animalEntireEthanol" type="animalEntireEthanol"/>
+                <restriction code="r_sampleAmphibianLarva" type="sampleAmphibianLarva"/>
+                <restriction code="r_sampleAmphibianEmbryo" type="sampleAmphibianEmbryo"/>
+                <restriction code="r_sampleAmphibianTailclip" type="sampleAmphibianTailclip"/>
+                <restriction code="r_sampleAmphibianFrogspawn" type="sampleAmphibianFrogspawn"/>
+                <restriction code="r_sampleAmphibianSwabCloaca" type="sampleAmphibianSwabCloaca"/>
+                <restriction code="r_sampleAmphibianSwabMouth" type="sampleAmphibianSwabMouth"/>
+                <restriction code="r_sampleAmphibianSwabEar" type="sampleAmphibianSwabEar"/>
+                <restriction code="r_sampleAmphibianToeclip" type="sampleAmphibianToeclip"/>
+                <restriction code="r_sampleFishFinclip" type="sampleFishFinclip"/>
+                <restriction code="r_sampleFishMuscle" type="sampleFishMuscle"/>
+                <restriction code="r_sampleInvertebrateLarva" type="sampleInvertebrateLarva"/>
+                <restriction code="r_sampleInvertebrateLeg" type="sampleInvertebrateLeg"/>
+                <restriction code="r_sampleInvertebrateWingclip" type="sampleInvertebrateWingclip"/>
+                <restriction code="r_sampleReptileSkin" type="sampleReptileSkin"/>
+                <restriction code="r_sampleReptileTailclip" type="sampleReptileTailclip"/>
+                <restriction code="r_sampleMammalBaculum" type="sampleMammalBaculum"/>
+                <restriction code="r_sampleMammalBladder" type="sampleMammalBladder"/>
+                <restriction code="r_sampleMammalBlood" type="sampleMammalBlood"/>
+                <restriction code="r_sampleMammalBrain" type="sampleMammalBrain"/>
+                <restriction code="r_sampleMammalConjuctivum" type="sampleMammalConjuctivum"/>
+                <restriction code="r_sampleMammalCyste" type="sampleMammalCyste"/>
+                <restriction code="r_sampleMammalEarpunch" type="sampleMammalEarpunch"/>
+                <restriction code="r_sampleMammalEmbryo" type="sampleMammalEmbryo"/>
+                <restriction code="r_sampleMammalFeces" type="sampleMammalFeces"/>
+                <restriction code="r_sampleMammalHead" type="sampleMammalBaculum"/>
+                <restriction code="r_sampleMammalHeart" type="sampleMammalHeart"/>
+                <restriction code="r_sampleMammalHair" type="sampleMammalHair"/>
+                <restriction code="r_sampleMammalIntestine" type="sampleMammalIntestine"/>
+                <restriction code="r_sampleMammalLiver" type="sampleMammalLiver"/>
+                <restriction code="r_sampleMammalLung" type="sampleMammalLung"/>
+                <restriction code="r_sampleMammalLymphNode" type="sampleMammalLymphNode"/>
+                <restriction code="r_sampleMammalKidney" type="sampleMammalKidney"/>
+                <restriction code="r_sampleMammalMuscle" type="sampleMammalMuscle"/>
+                <restriction code="r_sampleMammalSkinPiece" type="sampleMammalSkinPiece"/>
+                <restriction code="r_sampleMammalSkinComplete" type="sampleMammalSkinComplete"/>
+                <restriction code="r_sampleMammalSkull" type="sampleMammalSkull"/>
+                <restriction code="r_sampleMammalSpleen" type="sampleMammalSpleen"/>
+                <restriction code="r_sampleMammalStomach" type="sampleMammalStomach"/>
+                <restriction code="r_sampleMammalSwabBite" type="sampleMammalSwabBite"/>
+                <restriction code="r_sampleMammalTongue" type="sampleMammalTongue"/>
+                <restriction code="r_sampleMammalTooth" type="sampleMammalSkull"/>
+                <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
+                <restriction code="r_leafSample" type="leafSample"/>
+                <restriction code="r_littertrapSample" type="littertrapSample"/>
+                <restriction code="r_herbariumSpecimen" type="herbariumSpecimen"/>
+                <restriction code="r_livingPlant" type="livingPlant"/>
+                <restriction code="r_seedlot" type="seedlot"/>
+                <restriction code="r_stemDisc" type="stemDisc"/>
+                <restriction code="r_oDNA" type="oDNA"/>
+                <restriction code="r_observationPlant" type="observationPlant"/>
+                <restriction code="r_observationAnimal" type="observationAnimal"/>
+                <restriction code="r_observationSoil" type="observationSoil"/>
+                <restriction code="r_observationWater" type="observationWater"/>
+          </typeRestrictions>
+          <bundlePlacements>
 			      <placement code="sex" typeRestrictions="observationAnimal,observationPlant">
               <bundle>ca_attribute_sex</bundle>
 			      </placement>
@@ -12125,13 +12249,13 @@
                 <setting name="description" locale="en_US">Reproductive condition of the organism at time object(s) were collected</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="expand_collapse_value">collapse</setting>
-                <setting name="hideIfSelected_juvenile">standard_object_ui/obj_metadata/ca_attribute_lifeStage</setting>
-                <setting name="hideIfSelected_seedling">standard_object_ui/obj_metadata/ca_attribute_lifeStage</setting>
-                <setting name="hideIfSelected_egg">standard_object_ui/obj_metadata/ca_attribute_lifeStage</setting>
-                <setting name="hideIfSelected_larva">standard_object_ui/obj_metadata/ca_attribute_lifeStage</setting>
-                <setting name="hideIfSelected_pupa">standard_object_ui/obj_metadata/ca_attribute_lifeStage</setting>
-                <setting name="hideIfSelected_nymph">standard_object_ui/obj_metadata/ca_attribute_lifeStage</setting>
-                <setting name="hideIfSelected_notRecorded">standard_object_ui/obj_metadata/ca_attribute_lifeStage</setting>
+                <setting name="hideIfSelected_juvenile">object_ui/obj_metadata/ca_attribute_lifeStage</setting>
+                <setting name="hideIfSelected_seedling">object_ui/obj_metadata/ca_attribute_lifeStage</setting>
+                <setting name="hideIfSelected_egg">object_ui/obj_metadata/ca_attribute_lifeStage</setting>
+                <setting name="hideIfSelected_larva">object_ui/obj_metadata/ca_attribute_lifeStage</setting>
+                <setting name="hideIfSelected_pupa">object_ui/obj_metadata/ca_attribute_lifeStage</setting>
+                <setting name="hideIfSelected_nymph">object_ui/obj_metadata/ca_attribute_lifeStage</setting>
+                <setting name="hideIfSelected_notRecorded">object_ui/obj_metadata/ca_attribute_lifeStage</setting>
 			        </settings>
             </placement>
 			      <placement code="decompositionCategory" typeRestrictions="animalEntireCadaver,animalEntireEthanol,animalEntireDry">
@@ -12149,126 +12273,126 @@
 			      <placement code="tier1SoilTypeFAO1974" typeRestrictions="observationSoil">
               <bundle>ca_attribute_Tier1SoilTypeFAO1974</bundle>
 			        <settings>
-                <setting name="hideIfSelected_FAO1988">standard_object_ui/metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB1998">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2006">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2007">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2014">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2015">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_ST">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_MO">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_GE">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_FAO1988">object_ui/metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB1998">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2006">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2007">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2014">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2015">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_ST">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_MO">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_GE">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
 			        </settings>
 			      </placement>
 			      <placement code="tier1SoilTypeFAO1988" typeRestrictions="observationSoil">
               <bundle>ca_attribute_Tier1SoilTypeFAO1988</bundle>
 			        <settings>
-                <setting name="hideIfSelected_FAO1974">standard_object_ui/metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB1998">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2006">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2007">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2014">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2015">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_ST">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_MO">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_GE">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_FAO1974">object_ui/metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB1998">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2006">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2007">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2014">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2015">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_ST">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_MO">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_GE">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
 			        </settings>
 			      </placement>
 			      <placement code="tier1SoilTypeWRB1998" typeRestrictions="observationSoil">
               <bundle>ca_attribute_Tier1SoilTypeFAO1988</bundle>
 			        <settings>
-                <setting name="hideIfSelected_FAO1974">standard_object_ui/metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_FAO1988">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2006">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2007">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2014">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2015">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_ST">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_MO">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_GE">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_FAO1974">object_ui/metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_FAO1988">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2006">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2007">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2014">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2015">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_ST">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_MO">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_GE">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
 			        </settings>
 			      </placement>
 			      <placement code="tier1SoilTypeWRB2006" typeRestrictions="observationSoil">
               <bundle>ca_attribute_Tier1SoilTypeFAO1988</bundle>
 			        <settings>
-                <setting name="hideIfSelected_FAO1974">standard_object_ui/metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_FAO1988">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB1998">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2007">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2014">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2015">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_ST">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_MO">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_GE">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_FAO1974">object_ui/metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_FAO1988">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB1998">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2007">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2014">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2015">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_ST">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_MO">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_GE">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
 			        </settings>
 			      </placement>
 			      <placement code="tier1SoilTypeWRB2007" typeRestrictions="observationSoil">
               <bundle>ca_attribute_Tier1SoilTypeFAO1988</bundle>
 			        <settings>
-                <setting name="hideIfSelected_FAO1974">standard_object_ui/metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_FAO1988">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB1998">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2006">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2014">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2015">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_ST">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_MO">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_GE">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_FAO1974">object_ui/metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_FAO1988">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB1998">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2006">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2014">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2015">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_ST">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_MO">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_GE">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
 			        </settings>
 			      </placement>
 			      <placement code="tier1SoilTypeWRB2014" typeRestrictions="observationSoil">
               <bundle>ca_attribute_Tier1SoilTypeFAO1988</bundle>
 			        <settings>
-                <setting name="hideIfSelected_FAO1974">standard_object_ui/metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_FAO1988">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB1998">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2006">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2007">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2015">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_ST">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_MO">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_GE">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_FAO1974">object_ui/metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_FAO1988">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB1998">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2006">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2007">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2015">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_ST">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_MO">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_GE">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
 			        </settings>
 			      </placement>
 			      <placement code="tier1SoilTypeWRB2015" typeRestrictions="observationSoil">
               <bundle>ca_attribute_Tier1SoilTypeFAO1988</bundle>
 			        <settings>
-                <setting name="hideIfSelected_FAO1974">standard_object_ui/metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_FAO1988">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB1998">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2006">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2007">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2014">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_ST">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_MO">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_GE">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_FAO1974">object_ui/metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_FAO1988">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB1998">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2006">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2007">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2014">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_ST">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_MO">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_GE">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
 			        </settings>
 			      </placement>
 			      <placement code="tier1SoilTypeST" typeRestrictions="observationSoil">
               <bundle>ca_attribute_Tier1SoilTypeFAO1988</bundle>
 			        <settings>
-                <setting name="hideIfSelected_FAO1974">standard_object_ui/metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_FAO1988">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB1998">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2006">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2007">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2014">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2015">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_MO">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_GE">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_FAO1974">object_ui/metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_FAO1988">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB1998">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2006">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2007">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2014">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2015">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_MO">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_GE">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
 			        </settings>
 			      </placement>
 			      <placement code="tier1SoilType" typeRestrictions="observationSoil">
               <bundle>ca_attribute_Tier1SoilTypeFAO1988</bundle>
 			        <settings>
-                <setting name="hideIfSelected_FAO1974">standard_object_ui/metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_FAO1988">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB1998">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2006">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2007">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2014">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_WRB2015">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
-                <setting name="hideIfSelected_ST">standard_object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_FAO1974">object_ui/metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_FAO1988">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB1998">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2006">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2007">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2014">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_WRB2015">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
+                <setting name="hideIfSelected_ST">object_ui/obj_metadata/ca_attribute_ClassSystem</setting>
 			        </settings>
 			      </placement>
 			      <placement code="seedlot_relationContainer" typeRestrictions="seedlot">
@@ -12695,10 +12819,68 @@
             </placement>
           </bundlePlacements>
         </screen>
-        <screen idno="products" default="0">
+		    <screen idno="biodiversity" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Biodiversity</name>
+            </label>
+          </labels>
+          <typeRestrictions>
+                <restriction code="r_eDNA" type="eDNA"/>
+                <restriction code="r_eDnaWaterFilter" type="eDnaWaterFilter"/>
+                <restriction code="r_waterSample" type="waterSample"/>
+                <restriction code="r_mineralSoilSample" type="mineralSoilSample"/>
+                <restriction code="r_peatSoilSample" type="peatSoilSample"/>
+                <restriction code="r_organicSoilSample" type="organicSoilSample"/>
+                <restriction code="r_observationSoil" type="observationSoil"/>
+                <restriction code="r_observationWater" type="observationWater"/>
+          </typeRestrictions>
+          <bundlePlacements>
+			      <placement code="biodiversity_environment" typeRestrictions="observationSoil,observationWater">
+              <bundle>ca_occurrences</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Biodiversity at the environmental sampling point</setting>
+                <setting name="description" locale="en_US">Only log relevant (to query) taxonomic units here. Under "file" taxonomic lists or BLAST results can be entered as well.</setting>
+                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
+			        </settings>
+            </placement>
+			      <placement code="identifications_soilObject" typeRestrictions="soilObject" includeSubtypes="1">
+              <bundle>ca_occurrences</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Biodiversity found in the soil object</setting>
+                <setting name="description" locale="en_US">Only log relevant (to query) taxonomic units here. Under "file" taxonomic lists or BLAST results can be entered as well.</setting>
+                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
+			        </settings>
+            </placement>
+			      <placement code="identifications_waterObject" typeRestrictions="waterObject" includeSubtypes="1">
+              <bundle>ca_occurrences</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Biodiversity found in the water object</setting>
+                <setting name="description" locale="en_US">Only log relevant (to query) taxonomic units here. Under "file" taxonomic lists or BLAST results can be entered as well.</setting>
+                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
+			        </settings>
+            </placement>
+			      <placement code="biodiversity_environment" typeRestrictions="eDNA">
+              <bundle>ca_occurrences</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Biodiversity found in the eDNA sample</setting>
+                <setting name="description" locale="en_US">Only log relevant (to query) taxonomic units here. Under "file" taxonomic lists or BLAST results can be entered as well.</setting>
+                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
+			        </settings>
+            </placement>
+            <placement code="file">
+              <bundle>ca_attribute_file</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">A file including the derived identifications in the sampling point or object.</setting>
+                <setting name="add_label" locale="en_US">Add new file</setting>
+              </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
+        <screen idno="publications" default="0">
 		      <labels>
             <label locale="en_US">
-              <name>Products</name>
+              <name>Publications</name>
             </label>
           </labels>
           <bundlePlacements>
@@ -12710,37 +12892,13 @@
                 <setting name="list_format">list</setting>
               </settings>
             </placement>
-            <placement code="publications">
+            <placement code="publication">
               <bundle>ca_attribute_publication</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">From the object, a publication is derived</setting>
+                <setting name="label" locale="en_US">Publication that refers/uses the object</setting>
                 <setting name="add_label" locale="en_US">Add new publication</setting>
                 <setting name="list_format">list</setting>
               </settings>
-            </placement>
-			      <placement code="identifications_environment" typeRestrictions="observationSoil,observationWater,eDNA">
-              <bundle>ca_occurrences</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Resulting taxonomic identifications log</setting>
-                <setting name="description" locale="en_US">Only log relevant (to query) taxonomic units here. Under "datasets" taxonomic lists can be entered as well.</setting>
-                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
-			        </settings>
-            </placement>
-			      <placement code="identifications_soilObject" typeRestrictions="soilObject" includeSubtypes="1">
-              <bundle>ca_occurrences</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The identification log of the environmental sampling point, in this case always as a result of its forthcoming object(s). Only log relevant (to query) ids here - one identification event per taxon. Under "datasets" taxonomic lists can be entered as well.</setting>
-                <setting name="description" locale="en_US">The identifications of the targeted barcoding or screening of the eDNA sample, relevant to be queryable. If many: best imported via a list (csv/Gsheet/Excel).</setting>
-                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
-			        </settings>
-            </placement>
-			      <placement code="identifications_waterObject" typeRestrictions="waterObject" includeSubtypes="1">
-              <bundle>ca_occurrences</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The identification log of the environmental sampling point, in this case always as a result of its forthcoming object(s). Only log relevant (to query) ids here - one identification event per taxon. Under "datasets" taxonomic lists can be entered as well.</setting>
-                <setting name="description" locale="en_US">The identifications of the targeted barcoding or screening of the eDNA sample, relevant to be queryable. If many: best imported via a list (csv/Gsheet/Excel).</setting>
-                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
-			        </settings>
             </placement>
           </bundlePlacements>
         </screen>
@@ -13160,7 +13318,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Object(s) subjected to event</setting>
                 <setting name="description" locale="en_US">Object that was subjected to the event (identification, valuation or curation)</setting>
-                <setting name="restrict_to_relationship_types">execObj_identification,execObj_valuation,execObj_curation</setting>
+                <setting name="restrict_to_relationship_types">execObjIdentification,execObjValuation,execObjCuration</setting>
               </settings>
             </placement>
 			      <placement code="eventPublishedProcedure" typeRestrictions="fieldwork,identification,identificationBacteriological,identificationBotanical,identificationViral,identificationZoologial,valuation,curation,disposal,treatment,renewal,transfer">
@@ -14186,7 +14344,7 @@
               <bundle>ca_attribute_loanStatus</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Loan status</setting>
-				        <setting name="minRelationshipsPerRow">1</setting>
+				        <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
@@ -14200,22 +14358,22 @@
           </labels>
           <bundlePlacements>
             <placement code="ca_entities_requester">
-              <bundle>ca_entity</bundle>
+              <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Requester</setting>
                 <setting name="restrict_to_types">ind</setting>
 				        <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">2</setting>
               </settings>
             </placement>
             <placement code="ca_entities_requesterBackup">
-              <bundle>ca_entity</bundle>
+              <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Requester back-up</setting>
                 <setting name="description" locale="en_US">Every loan needs a secondary individual that is registered as a back-up contact. All communication occurs with the requestor and the back-up in cc. This is implemented in case the first individual cannot be reached or becomes disassociated with the organization at the time of loan. This second individual is co-responsible for follow up of the loan agreement and also signs the agreement.</setting>
                 <setting name="restrict_to_types">ind</setting>
 				        <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">5</setting>
               </settings>
             </placement>
             <placement code="ca_entities_requestingInstitute">
@@ -14225,40 +14383,66 @@
                 <setting name="description" locale="en_US">Every loan needs to be linked to an organization. If the requestor of the loan changes its affiliation, the material stays in the organization that is on the loan agreement. No loans to unaffiliated individuals.</setting>
                 <setting name="restrict_to_types">org</setting>
 				        <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">2</setting>
               </settings>
             </placement>
             <placement code="loan_address" typeRestrictions="external_out">
               <bundle>ca_attribute_addressLoan</bundle>
 			        <settings>
                 <setting name="description" locale="en_US">The full address to which the loan will be, or was, send. This should also include the internal structure of the organization at hand (e.g. research group, department, team, ..) as specified in the request.</setting>
-				        <setting name="minRelationshipsPerRow">1</setting>
+				        <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
             <placement code="ca_attribute_loan_authorization_date">
               <bundle>ca_attribute_loan_authorization_date</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
             </placement>
             <placement code="ca_attribute_loan_in_date">
               <bundle>ca_attribute_loan_in_date</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
             </placement>
             <placement code="ca_attribute_loan_out_date">
               <bundle>ca_attribute_loan_out_date</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
             </placement>
             <placement code="ca_attribute_loan_return_date">
               <bundle>ca_attribute_loan_return_date</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
             </placement>
             <placement code="ca_attribute_loan_renewal_date">
               <bundle>ca_attribute_loan_renewal_date</bundle>
+			        <settings>
+				        <setting name="add_label" locale="en_US">Add other non-preferred identifier</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
             </placement>
             <placement code="ca_attribute_loan_conditions">
               <bundle>ca_attribute_loan_conditions</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
             </placement>
             <placement code="ca_attribute_loan_note">
               <bundle>ca_attribute_loan_note</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
             </placement>
             <placement code="ca_attribute_loan_purpose">
               <bundle>ca_attribute_loan_purpose</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
             </placement>
 			      <placement code="loan_file">
               <bundle>ca_attribute_file</bundle>
@@ -14283,6 +14467,7 @@
                 <setting name="label" locale="en_US">Objects of loan</setting>
                 <setting name="description" locale="en_US">Either the full object, or in case of destructive sampling, a part of the listed object (e.g. DNA samples, soil samples, living plants, tissues).</setting>
 				        <setting name="add_label" locale="en_US">Add object</setting>
+                <setting name="list_format">list</setting>
                 <setting name="restrict_to_types">object</setting>
 			        </settings>
             </placement>
@@ -14872,8 +15057,8 @@
         <type code="preparedBy" default="0">
           <labels>
             <label locale="en_US">
-              <typename>was prepared by</typename>
-              <typename_reverse>prepared</typename_reverse>
+              <typename>prepared the object</typename>
+              <typename_reverse>was prepared by</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
@@ -14882,8 +15067,8 @@
         <type code="currentOwner" default="0">
           <labels>
             <label locale="en_US">
-              <typename>is owned by</typename>
-              <typename_reverse>owns</typename_reverse>
+              <typename>is the current owner</typename>
+              <typename_reverse>is currently owned by</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
@@ -14892,8 +15077,8 @@
         <type code="previousOwner" default="0">
           <labels>
             <label locale="en_US">
-              <typename>was owned by</typename>
-              <typename_reverse>owned</typename_reverse>
+              <typename>is the previous owner</typename>
+              <typename_reverse>was owned by</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
@@ -14903,7 +15088,7 @@
           <labels>
             <label locale="en_US">
               <typename>is contactperson for</typename>
-              <typename_reverse>is contactperson for</typename_reverse>
+              <typename_reverse>is known best by</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
@@ -14927,7 +15112,7 @@
     </relationshipTable>
     <relationshipTable name="ca_objects_x_occurrences">
       <types>
-		    <type code="resultingObjects_fieldwork" default="0" rank="9">
+		    <type code="resultingObjectsFieldwork" default="0">
           <labels>
             <label locale="en_US">
               <typename>resulted in</typename>
@@ -14937,7 +15122,7 @@
           <subTypeLeft></subTypeLeft>
           <subTypeRight>fieldwork</subTypeRight>
         </type>
-		    <type code="resultingObjects_project" default="0" rank="9">
+		    <type code="resultingObjectsProject" default="0">
           <labels>
             <label locale="en_US">
               <typename>resulted in</typename>
@@ -14947,18 +15132,17 @@
           <subTypeLeft></subTypeLeft>
           <subTypeRight>project</subTypeRight>
         </type>
-		    <type code="execObj_identification" default="0" rank="10">
+		    <type code="execObjIdentification" default="0">
           <labels>
             <label locale="en_US">
-              <typename>executed on</typename>
-              <typename_reverse>subject of</typename_reverse>
+              <typename>executed on test 1</typename>
+              <typename_reverse>subject of test 1</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
           <subTypeRight>identification</subTypeRight>
-          <includeSubtypesRight>1</includeSubtypesRight>
         </type>
-		    <type code="execObj_valuation" default="0" rank="10">
+		    <type code="execObjValuation" default="0">
           <labels>
             <label locale="en_US">
               <typename>executed on</typename>
@@ -14968,7 +15152,7 @@
           <subTypeLeft></subTypeLeft>
           <subTypeRight>valuation</subTypeRight>
         </type>
-		    <type code="subjected_curation" default="0" rank="10">
+		    <type code="subjectedDisposal" default="0">
           <labels>
             <label locale="en_US">
               <typename>executed on</typename>
@@ -14976,10 +15160,39 @@
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
-          <subTypeRight>curation</subTypeRight>
-          <includeSubtypesRight>1</includeSubtypesRight>
+          <subTypeRight>disposal</subTypeRight>
         </type>
-		    <type code="INBOlabUse" default="0" rank="11">
+		    <type code="subjectedRenewal" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>executed on</typename>
+              <typename_reverse>subject of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>renewal</subTypeRight>
+        </type>
+		    <type code="subjectedTransfer" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>executed on</typename>
+              <typename_reverse>subject of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>transfer</subTypeRight>
+        </type>
+		    <type code="subjectedTreatment" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>executed on</typename>
+              <typename_reverse>subject of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>treatment</subTypeRight>
+        </type>
+		    <type code="INBOlabUse" default="0">
           <labels>
             <label locale="en_US">
               <typename>(re)used in lab project</typename>
@@ -14989,7 +15202,7 @@
           <subTypeLeft></subTypeLeft>
           <subTypeRight>project</subTypeRight>
         </type>
-		    <type code="reuse" default="0" rank="12">
+		    <type code="reuse" default="0">
           <labels>
             <label locale="en_US">
               <typename>(re)used in project</typename>
@@ -15008,6 +15221,20 @@
             <label locale="en_US">
               <typename>is stored at</typename>
               <typename_reverse>stores</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight></subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>
+	  <relationshipTable name="ca_objects_x_loans">
+      <types>
+        <type code="loans" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>contains</typename>
+              <typename_reverse>is in loan</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
@@ -15207,7 +15434,7 @@
     </relationshipTable>
     <relationshipTable name="ca_occurrences_x_occurrences">
       <types>
-		    <type code="resultingObservation_fieldwork" default="0">
+		    <type code="resultingObservationFieldwork" default="0">
           <labels>
             <label locale="en_US">
               <typename>was result of</typename>
@@ -15218,7 +15445,7 @@
           <subTypeRight>fieldwork</subTypeRight>
           <includeSubtypesLeft>1</includeSubtypesLeft>
         </type>
-		    <type code="resultingObservation_project" default="0">
+		    <type code="resultingObservationProject" default="0">
           <labels>
             <label locale="en_US">
               <typename>was result of</typename>
@@ -15239,7 +15466,7 @@
           <subTypeLeft>project</subTypeLeft>
           <subTypeRight>project</subTypeRight>
         </type>
-		    <type code="resultingFieldwork_project" default="0">
+		    <type code="resultingFieldworkProject" default="0">
           <labels>
             <label locale="en_US">
               <typename>was result of</typename>
@@ -15320,6 +15547,40 @@
           </labels>
           <subTypeLeft></subTypeLeft>
           <subTypeRight>plantedSite</subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>
+	  <relationshipTable name="ca_loans_x_entities">
+      <types>
+        <type code="requester" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>requested by</typename>
+              <typename_reverse>requester of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>ind</subTypeLeft>
+          <subTypeRight></subTypeRight>
+        </type>
+        <type code="backupRequester" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>co-requested by</typename>
+              <typename_reverse>back-up of requester of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>ind</subTypeLeft>
+          <subTypeRight></subTypeRight>
+        </type>
+        <type code="requestingInstitute" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>requested by</typename>
+              <typename_reverse>requester of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>org</subTypeLeft>
+          <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
