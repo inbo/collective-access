@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.51</profileName>
+  <profileName>[INBO] INBO natural science collection v0.52</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <locales>
     <locale lang="en" country="US">English</locale>
@@ -2838,7 +2838,7 @@
           </item>
         </items>
       </list>
-      <list code="sex" hierarchical="0" system="0" vocabulary="1">
+      <list code="sex" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
         <labels>
           <label locale="en_US">
             <name>Sex</name>
@@ -2887,7 +2887,7 @@
           </item>
         </items>
       </list>
-      <list code="life_stage" hierarchical="0" system="0" vocabulary="1">
+      <list code="life_stage" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
         <labels>
           <label locale="en_US">
             <name>Life stage</name>
@@ -3057,7 +3057,7 @@
           </item>
         </items>
       </list>
-	    <list code="soil_class" hierarchical="0" system="0" vocabulary="1">
+	    <list code="soil_class" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
         <labels>
           <label locale="en_US">
             <name>Soil class</name>
@@ -4973,6 +4973,40 @@
               <label locale="en_US" preferred="1">
                 <name_singular>ert (Vertisol)</name_singular>
                 <name_plural>ert (Vertisol)</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
+	    <list code="soil_type_MO" hierarchical="0" system="0" vocabulary="1"><!--missing?-->
+        <labels>
+          <label locale="en_US">
+            <name>Soil types defined in ST</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="MO_" enabled="1" default="0">
+		        <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>MO no types specified in inbodem</name_singular>
+                <name_plural>MO no types specified in inbodem</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
+	    <list code="soil_type_GE" hierarchical="0" system="0" vocabulary="1"><!--missing?-->
+        <labels>
+          <label locale="en_US">
+            <name>Soil types defined in ST</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="GE_" enabled="1" default="0">
+		        <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>GE no types specified in inbodem</name_singular>
+                <name_plural>GE no types specified in inbodem</name_plural>
               </label>
             </labels>
           </item>
@@ -9935,16 +9969,16 @@
                   <setting name="minChars">0</setting>
                   <setting name="maxChars">65535</setting>
                   <setting name="render">select</setting>
-                  <setting name="hideIfSelected___null__">object_ui/metadata/Tier1SoilTypeFAO1974</setting>
-                  <setting name="hideIfSelected___null__">object_ui/metadata/Tier1SoilTypeFAO1988</setting>
-                  <setting name="hideIfSelected___null__">object_ui/metadata/Tier1SoilTypeWRB1998</setting>
-                  <setting name="hideIfSelected___null__">object_ui/metadata/Tier1SoilTypeWRB2006</setting>
-                  <setting name="hideIfSelected___null__">object_ui/metadata/Tier1SoilTypeWRB2007</setting>
-                  <setting name="hideIfSelected___null__">object_ui/metadata/Tier1SoilTypeWRB2014</setting>
-                  <setting name="hideIfSelected___null__">object_ui/metadata/Tier1SoilTypeWRB2015</setting>
-                  <setting name="hideIfSelected___null__">object_ui/metadata/Tier1SoilTypeST</setting>
-                  <setting name="hideIfSelected___null__">object_ui/metadata/Tier1SoilTypeMO</setting>
-                  <setting name="hideIfSelected___null__">object_ui/metadata/Tier1SoilTypeGE</setting>
+                  <setting name="hideIfSelected___null__">object_ui/metadata/tier1SoilTypeFAO1974</setting>
+                  <setting name="hideIfSelected___null__">object_ui/metadata/tier1SoilTypeFAO1988</setting>
+                  <setting name="hideIfSelected___null__">object_ui/metadata/tier1SoilTypeWRB1998</setting>
+                  <setting name="hideIfSelected___null__">object_ui/metadata/tier1SoilTypeWRB2006</setting>
+                  <setting name="hideIfSelected___null__">object_ui/metadata/tier1SoilTypeWRB2007</setting>
+                  <setting name="hideIfSelected___null__">object_ui/metadata/tier1SoilTypeWRB2014</setting>
+                  <setting name="hideIfSelected___null__">object_ui/metadata/tier1SoilTypeWRB2015</setting>
+                  <setting name="hideIfSelected___null__">object_ui/metadata/tier1SoilTypeST</setting>
+                  <setting name="hideIfSelected___null__">object_ui/metadata/tier1SoilTypeMO</setting>
+                  <setting name="hideIfSelected___null__">object_ui/metadata/tier1SoilTypeGE</setting>
                   <setting name="hideIfSelected_FAO1974">object_ui/metadata/Tier1SoilTypeFAO1988</setting>
                   <setting name="hideIfSelected_FAO1974">object_ui/metadata/Tier1SoilTypeWRB1998</setting>
                   <setting name="hideIfSelected_FAO1974">object_ui/metadata/Tier1SoilTypeWRB2006</setting>
@@ -10050,7 +10084,7 @@
       <metadataElement code="Tier1SoilTypeFAO1974" datatype="List" list="soil_type_FAO1974">
                 <labels>
                   <label locale="en_US">
-                    <name>Soil type</name>
+                    <name>Tier1SoilTypeFAO1974</name>
                   </label>
                 </labels>
                 <settings>
@@ -10073,7 +10107,7 @@
       <metadataElement code="Tier1SoilTypeFAO1988" datatype="List" list="soil_type_FAO1988">
                 <labels>
                   <label locale="en_US">
-                    <name>Soil type</name>
+                    <name>Tier1SoilTypeFAO1988</name>
                   </label>
                 </labels>
                 <settings>
@@ -10096,7 +10130,7 @@
       <metadataElement code="Tier1SoilTypeWRB1998" datatype="List" list="soil_type_WRB1998">
                 <labels>
                   <label locale="en_US">
-                    <name>Soil type</name>
+                    <name>Tier1SoilTypeWRB1998</name>
                   </label>
                 </labels>
                 <settings>
@@ -10119,7 +10153,7 @@
       <metadataElement code="Tier1SoilTypeWRB2006" datatype="List" list="soil_type_WRB2006">
                 <labels>
                   <label locale="en_US">
-                    <name>Soil type</name>
+                    <name>Tier1SoilTypeWRB2006</name>
                   </label>
                 </labels>
                 <settings>
@@ -10142,7 +10176,7 @@
       <metadataElement code="Tier1SoilTypeWRB2007" datatype="List" list="soil_type_WRB2007">
                 <labels>
                   <label locale="en_US">
-                    <name>Soil type</name>
+                    <name>Tier1SoilTypeWRB2007</name>
                   </label>
                 </labels>
                 <settings>
@@ -10165,7 +10199,7 @@
       <metadataElement code="Tier1SoilTypeWRB2014" datatype="List" list="soil_type_WRB2014">
                 <labels>
                   <label locale="en_US">
-                    <name>Soil type</name>
+                    <name>Tier1SoilTypeWRB2014</name>
                   </label>
                 </labels>
                 <settings>
@@ -10188,7 +10222,7 @@
       <metadataElement code="Tier1SoilTypeWRB2015" datatype="List" list="soil_type_WRB2015">
                 <labels>
                   <label locale="en_US">
-                    <name>Soil type</name>
+                    <name>Tier1SoilTypeWRB2015</name>
                   </label>
                 </labels>
                 <settings>
@@ -10211,7 +10245,7 @@
       <metadataElement code="Tier1SoilTypeST" datatype="List" list="soil_type_ST">
                 <labels>
                   <label locale="en_US">
-                    <name>Soil type</name>
+                    <name>Tier1SoilTypeST</name>
                   </label>
                 </labels>
                 <settings>
@@ -10231,10 +10265,33 @@
                   </restriction>
                 </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="Tier1SoilType" datatype="Text">
+	    <metadataElement code="Tier1SoilTypeMO" datatype="List" list="soil_type_MO">
 			  <labels>
           <label locale="en_US">
-            <name>Soil type</name>
+            <name>Tier1SoilTypeMO</name>
+          </label>
+			  </labels>
+			  <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+			  </settings>
+			  <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+			  </typeRestrictions>
+	    </metadataElement>
+	    <metadataElement code="Tier1SoilTypeGE" datatype="List" list="soil_type_GE">
+			  <labels>
+          <label locale="en_US">
+            <name>Tier1SoilTypeMO</name>
           </label>
 			  </labels>
 			  <settings>
@@ -13021,7 +13078,7 @@
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Biodiversity at the environmental sampling point</setting>
-				        <setting name="restrict_to_types">identification,identificationBacteriological,identificationBotanical,identificationZoological,identificationViral</setting>
+				        <setting name="restrict_to_types">identification</setting>
                 <setting name="restrict_to_relationship_types">execObjIdentification</setting>
                 <setting name="description" locale="en_US">Only log relevant (to query) taxonomic units here. Under "file" taxonomic lists or BLAST results can be entered as well.</setting>
                 <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
@@ -13031,7 +13088,7 @@
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Biodiversity found in the soil object</setting>
-				        <setting name="restrict_to_types">identification,identificationBacteriological,identificationBotanical,identificationZoological,identificationViral</setting>
+				        <setting name="restrict_to_types">identification</setting>
                 <setting name="restrict_to_relationship_types">execObjIdentification</setting>                
                 <setting name="description" locale="en_US">Only log relevant (to query) taxonomic units here. Under "file" taxonomic lists or BLAST results can be entered as well.</setting>
                 <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
@@ -13041,7 +13098,7 @@
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Biodiversity found in the water object</setting>
-				        <setting name="restrict_to_types">identification,identificationBacteriological,identificationBotanical,identificationZoological,identificationViral</setting>
+				        <setting name="restrict_to_types">identification</setting>
                 <setting name="restrict_to_relationship_types">execObjIdentification</setting>
                 <setting name="description" locale="en_US">Only log relevant (to query) taxonomic units here. Under "file" taxonomic lists or BLAST results can be entered as well.</setting>
                 <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
@@ -13051,7 +13108,7 @@
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Biodiversity found in the eDNA sample</setting>
-				        <setting name="restrict_to_types">identification,identificationBacteriological,identificationBotanical,identificationZoological,identificationViral</setting>
+				        <setting name="restrict_to_types">identification</setting>
                 <setting name="restrict_to_relationship_types">execObjIdentification</setting>
                 <setting name="description" locale="en_US">Only log relevant (to query) taxonomic units here. Under "file" taxonomic lists or BLAST results can be entered as well.</setting>
                 <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
@@ -15327,7 +15384,7 @@
           <subTypeLeft></subTypeLeft>
           <subTypeRight>project</subTypeRight>
         </type>
-		    <type code="execObjIdentification" default="0">
+		    <type code="execObjIdentificationZoological" default="0">
           <labels>
             <label locale="en_US">
               <typename>executed on test 1</typename>
@@ -15335,7 +15392,37 @@
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
-          <subTypeRight>identification</subTypeRight>
+          <subTypeRight>identificationZoological</subTypeRight>
+        </type>
+		    <type code="execObjIdentificationBotanical" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>executed on test 1</typename>
+              <typename_reverse>subject of test 1</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>identificationBotanical</subTypeRight>
+        </type>
+		    <type code="execObjIdentificationViral" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>executed on test 1</typename>
+              <typename_reverse>subject of test 1</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>identificationViral</subTypeRight>
+        </type>
+		    <type code="execObjIdentificationBacteriological" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>executed on test 1</typename>
+              <typename_reverse>subject of test 1</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>identificationBacteriological</subTypeRight>
         </type>
 		    <type code="execObjValuation" default="0">
           <labels>
@@ -15970,10 +16057,26 @@
             <setting name="label" locale="en_US">georeference</setting>
           </settings>
         </placement>
-        <placement code="ca_objects_children">
+        <placement code="ca_objects_children_test1">
           <bundle>ca_objects</bundle>
  			    <settings>
-            <setting name="label" locale="en_US">Objects</setting>
+            <setting name="label" locale="en_US">Objects test1</setting>
+            <setting name="delimiter"><![CDATA[<br/><br/>]]></setting>
+            <setting name="display_template" locale="en_US"><![CDATA[<unit><unit relativeTo="ca_objects.children"><l>^ca_objects.preferred_label</l> (^ca_objects.verbatimDepth, ^ca_objects.preparationDate)</unit></unit>]]></setting>
+          </settings>         
+        </placement>
+        <placement code="ca_objects_children_test2">
+          <bundle>ca_objects.children</bundle>
+ 			    <settings>
+            <setting name="label" locale="en_US">Objects test2</setting>
+            <setting name="delimiter"><![CDATA[<br/><br/>]]></setting>
+            <setting name="display_template" locale="en_US"><![CDATA[<unit><unit relativeTo="ca_objects.children"><l>^ca_objects.preferred_label</l> (^ca_objects.verbatimDepth, ^ca_objects.preparationDate)</unit></unit>]]></setting>
+          </settings>         
+        </placement>
+        <placement code="ca_objects_children_test3">
+          <bundle>ca_objects.preferred_labels</bundle>
+ 			    <settings>
+            <setting name="label" locale="en_US">Objects test3</setting>
             <setting name="delimiter"><![CDATA[<br/><br/>]]></setting>
             <setting name="display_template" locale="en_US"><![CDATA[<unit><unit relativeTo="ca_objects.children"><l>^ca_objects.preferred_label</l> (^ca_objects.verbatimDepth, ^ca_objects.preparationDate)</unit></unit>]]></setting>
           </settings>         
