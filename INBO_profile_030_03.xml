@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.53</profileName>
+  <profileName>[INBO] INBO natural science collection v0.54</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
+  <!--Changes compared to the previous version-->
+  <!--Implementation of the Latimer Core-->
+  <!--Addition of geonames-->
   <locales>
     <locale lang="en" country="US">English</locale>
     <locale lang="nl" country="BE">Nederlands</locale>
@@ -11,7 +14,7 @@
   </locales>
   <lists>
     <!--Management lists-->
-      <list code="workflow_statuses" hierarchical="0" system="0" vocabulary="0" defaultSort="1">
+      <list code="workflow_statuses" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
         <labels>
           <label locale="en_US">
             <name>CMS workflow statuses</name>
@@ -36,7 +39,7 @@
           </item>
         </items>
       </list>
-      <list code="object_deaccession_types" hierarchical="0" system="0" vocabulary="0" defaultSort="1">
+      <list code="object_deaccession_types" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
         <labels>
           <label locale="en_US">
             <name>CMS workflow statuses</name>
@@ -69,7 +72,7 @@
           </item>
         </items>
       </list>
-      <list code="place_hierarchies" hierarchical="1" system="0" vocabulary="0">
+      <list code="place_hierarchies" hierarchical="1" system="0" vocabulary="1">
         <labels>
           <label locale="en_US">
             <name>Place hierarchies</name>
@@ -81,6 +84,39 @@
               <label locale="en_US" preferred="1">
                 <name_singular>Planet Earth</name_singular>
                 <name_plural>Planet Earth</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
+      <list code="true_false" hierarchical="0" system="0" vocabulary="1">
+        <labels>
+          <label locale="en_US">
+            <name>True or false</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="true" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>true</name_singular>
+                <name_plural>true</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="false" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>false</name_singular>
+                <name_plural>false</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="unknown" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>unknown</name_singular>
+                <name_plural>unknown</name_plural>
               </label>
             </labels>
           </item>
@@ -5977,6 +6013,622 @@
           </item>
         </items>
       </list>
+      <list code="basis_of_scheme" hierarchical="0" system="0" vocabulary="1">
+        <labels>
+          <label locale="en_US">
+            <name>Basis of collection description scheme</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="institution" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>institutional collection unit</name_singular>
+                <name_plural>institutional collection units</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="assessment" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>collection unit for assessment</name_singular>
+                <name_plural>collection units for assessment</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
+      <list code="base_type_of_collection" hierarchical="0" system="0" vocabulary="1">
+        <labels>
+          <label locale="en_US">
+            <name>Base Type Of Collection</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="MaterialSample" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>MaterialSample</name_singular>
+                <name_plural>MaterialSample</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="InformationArtefact" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>InformationArtefact</name_singular>
+                <name_plural>InformationArtefact</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
+      <list code="collection_categories" hierarchical="0" system="0" vocabulary="1">
+        <labels>
+          <label locale="en_US">
+            <name>Base Type Of Collection</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="PreservedSpecimens" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>PreservedSpecimens</name_singular>
+                <name_plural>PreservedSpecimens</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="MaterialSamples" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>MaterialSamples</name_singular>
+                <name_plural>MaterialSamples</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="LivingSpecimens" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>LivingSpecimens</name_singular>
+                <name_plural>LivingSpecimens</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
+      <list code="cms" hierarchical="0" system="0" vocabulary="1">
+        <labels>
+          <label locale="en_US">
+            <name>Collection Management System</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="collectiveAccess" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Collective Access</name_singular>
+                <name_plural>Collective Access</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="excel" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Excel</name_singular>
+                <name_plural>Excel</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
+      <list code="discipline" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
+        <labels>
+          <label locale="en_US">
+            <name>Discipline</name>
+            <description>Selection made from: https://confluence.egi.eu/display/EGIG/Scientific+Disciplines</description>
+          </label>
+        </labels>
+        <items>
+          <item idno="EarthSciences" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Earth Sciences</name_singular>
+                <name_plural>Earth Sciences</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="BiologyScience" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Biology Science</name_singular>
+                <name_plural>Biology Science</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="AtmosphericScience" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Atmospheric science</name_singular>
+                <name_plural>Atmospheric science</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="ClimateResearch" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Climate research</name_singular>
+                <name_plural>Climate research</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="Geochemistry" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Geochemistry</name_singular>
+                <name_plural>Geochemistry</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="Geology" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Geology</name_singular>
+                <name_plural>Geology</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="Geophysics" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Geophysics</name_singular>
+                <name_plural>Geophysics</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="Hydrology" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Hydrology</name_singular>
+                <name_plural>Hydrology</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="Mineralogy" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Mineralogy</name_singular>
+                <name_plural>Mineralogy</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="Oceanography" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Oceanography</name_singular>
+                <name_plural>Oceanography</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="Palaeontology" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Palaeontology</name_singular>
+                <name_plural>Palaeontology</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="Pedology" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Pedology</name_singular>
+                <name_plural>Pedology</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="PhysicalGeography" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Physical geography</name_singular>
+                <name_plural>Physical geography</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="Seismology" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Seismology</name_singular>
+                <name_plural>Seismology</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="Volcanology" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Volcanology</name_singular>
+                <name_plural>Volcanology</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="Aerobiology" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Aerobiology</name_singular>
+                <name_plural>Aerobiology</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="Bacteriology" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Bacteriology</name_singular>
+                <name_plural>Bacteriology</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="BehaviouralBiology" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Behavioural biology</name_singular>
+                <name_plural>Behavioural biology</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="BioMolBiology" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Biochemistry and molecular biology</name_singular>
+                <name_plural>Biochemistry and molecular biology</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="BiodiversityConservation" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Biodiversity conservation</name_singular>
+                <name_plural>Biodiversity conservation</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="Biophysics" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Biophysics</name_singular>
+                <name_plural>Biophysics</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="Botany" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Botany</name_singular>
+                <name_plural>Botany</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="CellBiology" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Cell biology</name_singular>
+                <name_plural>Cell biology</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="DevelopmentalBiology" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Developmental biology</name_singular>
+                <name_plural>Developmental biology</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="Ecology" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Ecology</name_singular>
+                <name_plural>Ecology</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="EvolutionaryBiology" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Evolutionary biology</name_singular>
+                <name_plural>Evolutionary biology</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="GeneticsHeredity" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Genetics and heredity</name_singular>
+                <name_plural>Genetics and heredity</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="MarineFreshwaterBio" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Marine and Freshwater biology</name_singular>
+                <name_plural>Marine and Freshwater biology</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="Microbiology" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Microbiology</name_singular>
+                <name_plural>Microbiology</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="Mycology" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Mycology</name_singular>
+                <name_plural>Mycology</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="ReproductiveBiology" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Reproductive biology</name_singular>
+                <name_plural>Reproductive biology</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="StructuralBiology" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Structural biology</name_singular>
+                <name_plural>Structural biology</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="Taxonomy" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Taxonomy</name_singular>
+                <name_plural>Taxonomy</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="Virology" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Virology</name_singular>
+                <name_plural>Virology</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="Zoology" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Zoology</name_singular>
+                <name_plural>Zoology</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="disciplineOther" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Other</name_singular>
+                <name_plural>Other</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
+      <list code="degree_of_establishment" hierarchical="0" system="0" vocabulary="1">
+        <labels>
+          <label locale="en_US">
+            <name>Degree of establishment</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="native" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>native</name_singular>
+                <name_plural>natives</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="captive" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>captive</name_singular>
+                <name_plural>captives</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="cultivated" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>cultivated</name_singular>
+                <name_plural>cultivated</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="released" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>released</name_singular>
+                <name_plural>released</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="failing" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>failing</name_singular>
+                <name_plural>failing</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="casual" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>casual</name_singular>
+                <name_plural>casual</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="reproducing" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>reproducing</name_singular>
+                <name_plural>reproducing</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="established" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>established</name_singular>
+                <name_plural>established</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="colonising" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>colonising</name_singular>
+                <name_plural>colonising</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="invasive" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>invasive</name_singular>
+                <name_plural>invasive</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="widespreadInvasive" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>widespreadInvasive</name_singular>
+                <name_plural>widespreadInvasive</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
+      <list code="preservation_method" hierarchical="0" system="0" vocabulary="1">
+        <labels>
+          <label locale="en_US">
+            <name>Degree of establishment</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="fluid_preserved" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>fluid_preserved</name_singular>
+                <name_plural>fluid_preserved</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="alcohol" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>alcohol</name_singular>
+                <name_plural>alcohol</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="formaldehyde" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>formaldehyde</name_singular>
+                <name_plural>formaldehyde</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="dried" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>dried</name_singular>
+                <name_plural>dried</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="dried_pinned" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>dried_pinned</name_singular>
+                <name_plural>dried_pinned</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="dried_pressed" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>dried_pressed</name_singular>
+                <name_plural>dried_pressed</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="mounted" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>mounted</name_singular>
+                <name_plural>mounted</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="microscope_slide" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>microscope_slide</name_singular>
+                <name_plural>microscope_slide</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="papered_packaged" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>papered/packaged</name_singular>
+                <name_plural>papered/packaged</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="frozen" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>frozen</name_singular>
+                <name_plural>frozen</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="refrigerated" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>refrigerated</name_singular>
+                <name_plural>refrigerated</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="no_treatment" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>no_treatment</name_singular>
+                <name_plural>no_treatment</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="unknown" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>unknown</name_singular>
+                <name_plural>unknown</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
   </lists>
   <elementSets>
     <!--General-->
@@ -5991,7 +6643,7 @@
 		      <metadataElement code="description_container" datatype="Text">
             <labels>
             <label locale="en_US">
-              <name>description</name>
+              <name>dc:description</name>
               <description>Description</description>
             </label>
             </labels>
@@ -8395,6 +9047,76 @@
         </typeRestrictions>
       </metadataElement>
     <!--Locality-->
+	    <metadataElement code="geonamesAPI" datatype="geonames">
+        <labels>
+          <label locale="en_US">
+            <name>Geonames</name>
+          </label>
+        </labels>
+        <documentationUrl>https://manual.collectiveaccess.org/providence/user/configuration/mainConfiguration/app.html?highlight=geonames#geonames-web-services</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>observation</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_occurrences">
+            <table>ca_occurrences</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_plantedSite">
+            <table>ca_storage_locations</table>
+            <type>plantedSite</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_building">
+            <table>ca_storage_locations</table>
+            <type>building</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_collections">
+            <table>ca_collections</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
 	    <metadataElement code="verbatimLocality" datatype="Text">
         <labels>
           <label locale="en_US">
@@ -9187,6 +9909,14 @@
           <restriction code="r_fieldwork">
             <table>ca_occurrences</table>
             <type>fieldwork</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_collection">
+            <table>ca_collections</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -11992,6 +12722,336 @@
           <typeRestrictions>
           </typeRestrictions>
       </metadataElement>
+    <!--Collection-->
+	    <metadataElement code="basisOfScheme" datatype="List" list="basis_of_scheme">
+        <labels>
+          <label locale="en_US">
+            <name>ltc:basisOfScheme</name>
+            <description>A summary of the basis or purpose for the CollectionDescriptionScheme. A CollectionDescriptionScheme is a grouping of multiple ObjectGroups for a particular use case, purpose or implementation.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/ltc/terms/basisOfScheme</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+            <restriction code="r_collection">
+              <table>ca_collections</table>
+              <settings>
+                <setting name="minAttributesPerRow">0</setting>
+                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              </settings>
+            </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="schemeName" datatype="List" list="basis_of_scheme">
+        <labels>
+          <label locale="en_US">
+            <name>ltc:schemeName</name>
+            <description>A short descriptive name given to the CollectionDescriptionScheme.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/ltc/terms/schemeName</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+            <restriction code="r_collection">
+              <table>ca_collections</table>
+              <settings>
+                <setting name="minAttributesPerRow">0</setting>
+                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              </settings>
+            </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="distinctObjects" datatype="List" list="true_false">
+        <labels>
+          <label locale="en_US">
+            <name>ltc:distinctObjects</name>
+            <description>A flag to designate whether a physical object may be described by more than one ObjectGroup within the CollectionDescriptionScheme.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/ltc/terms/distinctObjects</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+            <restriction code="r_collection">
+              <table>ca_collections</table>
+              <settings>
+                <setting name="minAttributesPerRow">0</setting>
+                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              </settings>
+            </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="baseTypeOfCollection" datatype="List" list="base_type_of_collection">
+        <labels>
+          <label locale="en_US">
+            <name>ltc:baseTypeOfCollection</name>
+            <description>High-level term describing the fundamental nature of objects in the ObjectGroup.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/ltc/terms/baseTypeOfCollection</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+            <restriction code="r_collection">
+              <table>ca_collections</table>
+              <settings>
+                <setting name="minAttributesPerRow">0</setting>
+                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              </settings>
+            </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="collectionManagementSystem" datatype="List" list="cms">
+        <labels>
+          <label locale="en_US">
+            <name>ltc:collectionManagementSystem</name>
+            <description>The collection management system which is used to hold and manage the primary data for the objects contained within the ObjectGroup.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/ltc/terms/collectionManagementSystem</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+            <restriction code="r_collection">
+              <table>ca_collections</table>
+              <settings>
+                <setting name="minAttributesPerRow">0</setting>
+                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              </settings>
+            </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="conditionsOfAccess" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>ltc:conditionsOfAccess</name>
+            <description>Information about who can access the collection being described or an indication of its security status. If available, this should be a URL to a stable policy page.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/ltc/terms/conditionsOfAccess</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+            <restriction code="r_collection">
+              <table>ca_collections</table>
+              <settings>
+                <setting name="minAttributesPerRow">0</setting>
+                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              </settings>
+            </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="currentCollection" datatype="List" list="true_false">
+        <labels>
+          <label locale="en_US">
+            <name>ltc:currentCollection</name>
+            <description>A flag to indicate whether the collection still exists as a single entity.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/ltc/terms/currentCollection</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+            <restriction code="r_collection">
+              <table>ca_collections</table>
+              <settings>
+                <setting name="minAttributesPerRow">0</setting>
+                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              </settings>
+            </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="knownToContainTypes" datatype="List" list="true_false">
+        <labels>
+          <label locale="en_US">
+            <name>ltc:knownToContainTypes</name>
+            <description>Flag property to indicate that the collection is known to include type specimens.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/ltc/terms/knownToContainTypes</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+            <restriction code="r_collection">
+              <table>ca_collections</table>
+              <settings>
+                <setting name="minAttributesPerRow">0</setting>
+                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              </settings>
+            </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="discipline" datatype="List" list="discipline">
+        <labels>
+          <label locale="en_US">
+            <name>ltc:discipline</name>
+            <description>A high level classification of the scientific discipline to which the objects within the collection belong or are related.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/ltc/terms/discipline</documentationUrl>
+        <settings>
+          <setting name="render">checklist</setting>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+            <restriction code="r_collection">
+              <table>ca_collections</table>
+              <settings>
+                <setting name="minAttributesPerRow">0</setting>
+                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              </settings>
+            </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="typeOfCollection" datatype="List" list="collection_categories">
+        <labels>
+          <label locale="en_US">
+            <name>ltc:typeOfCollection</name>
+            <description>Additional information that exists that describes the object(s) in the collection.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/ltc/terms/typeOfCollection</documentationUrl>
+        <settings>
+          <setting name="render">checklist</setting>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+            <restriction code="r_collection">
+              <table>ca_collections</table>
+              <settings>
+                <setting name="minAttributesPerRow">0</setting>
+                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              </settings>
+            </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="objectType" datatype="List" list="object_types">
+        <labels>
+          <label locale="en_US">
+            <name>ltc:objectType</name>
+            <description>High-level terms for the classification of curated objects.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/ltc/terms/objectType</documentationUrl>
+        <settings>
+          <setting name="render">checklist</setting>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+            <restriction code="r_collection">
+              <table>ca_collections</table>
+              <settings>
+                <setting name="minAttributesPerRow">0</setting>
+                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              </settings>
+            </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="preservationMethod" datatype="List" list="preservation_method">
+        <labels>
+          <label locale="en_US">
+            <name>ltc:preservationMethod</name>
+            <description>A term used to classify or describe an object that indicates the primary or most recent action, measure or process that has been used in order to preserve the objects in the collection for long-term storage.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/ltc/terms/preservationMethod</documentationUrl>
+        <settings>
+          <setting name="render">checklist</setting>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+            <restriction code="r_collection">
+              <table>ca_collections</table>
+              <settings>
+                <setting name="minAttributesPerRow">0</setting>
+                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              </settings>
+            </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="degreeOfEstablishment" datatype="List" list="degree_of_establishment">
+        <labels>
+          <label locale="en_US">
+            <name>dwc:degreeOfEstablishment</name>
+            <description>The degree to which an Organism survives, reproduces, and expands its range at the given place and time.</description>
+          </label>
+        </labels>
+        <documentationUrl>	http://rs.tdwg.org/dwc/terms/degreeOfEstablishment</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+            <restriction code="r_collection">
+              <table>ca_collections</table>
+              <settings>
+                <setting name="minAttributesPerRow">0</setting>
+                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              </settings>
+            </restriction>
+        </typeRestrictions>
+      </metadataElement>
   </elementSets>
   <userInterfaces>
     <userInterface code="object_ui" type="ca_objects">
@@ -12660,8 +13720,8 @@
             <placement code="file">
               <bundle>ca_attribute_file</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">File(s) associated with the observation</setting>
-                <setting name="description" locale="en_US">Files related to the observation, such as: scan of observation field notes, scan of map, ...</setting>
+                <setting name="label" locale="en_US">File(s) associated with the sampling point</setting>
+                <setting name="description" locale="en_US">Files related to the sampling point, such as: scan of observation field notes, scan of map, ...</setting>
 				        <setting name="add_label" locale="en_US">Add file</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="expand_collapse_value">collapse</setting>
@@ -14142,6 +15202,7 @@
               <bundle>idno</bundle>
 			          <settings>
                 <setting name="label" locale="en_US">CMS ID</setting>
+                <setting name="description" locale="en_US">cd:identifier</setting>
               </settings>
             </placement>
 			      <placement code="status">
@@ -14152,10 +15213,14 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
+			      <placement code="currentCollection">
+              <bundle>ca_attribute_currentCollection</bundle>
+            </placement>
 			      <placement code="preferred_labels">
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Official collection name</setting>
+                <setting name="description" locale="en_US">ltc:collectionName: A short title that summarises the collection objects contained within the ObjectGroup.</setting>
               </settings>
             </placement>
 			      <placement code="nonpreferred_labels">
@@ -14163,6 +15228,12 @@
               <settings>
                 <setting name="label" locale="en_US">Alternate names</setting>
                 <setting name="add_label" locale="en_US">Add name</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="descriptionContainer">
+              <bundle>ca_attribute_descriptionContainer</bundle>
+			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -14198,6 +15269,160 @@
             </placement>
           </bundlePlacements>
         </screen>
+		    <screen idno="collection_scheme" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Description scheme</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+			      <placement code="basisOfScheme">
+              <bundle>ca_attribute_basisOfScheme</bundle>
+            </placement>
+			      <placement code="schemeName">
+              <bundle>ca_attribute_schemeName</bundle>
+            </placement>
+			      <placement code="distinctObjects">
+              <bundle>ca_attribute_distinctObjects</bundle>
+            </placement>
+          </bundlePlacements>
+        </screen>
+		    <screen idno="collection_hierarchy" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Hierarchy</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+			      <placement code="hierarchy_navigation">
+              <bundle>hierarchy_navigation</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Collection hierarchy</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
+		    <screen idno="collection_techfeat" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Technical features</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+			      <placement code="baseTypeOfCollection">
+              <bundle>ca_attribute_baseTypeOfCollection</bundle>
+            </placement>
+            <placement code="typeOfCollection">
+              <bundle>ca_attribute_typeOfCollection</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="objectType">
+              <bundle>ca_attribute_objectType</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+			      <placement code="preservationMethod">
+              <bundle>ca_attribute_preservationMethod</bundle>
+            </placement>
+            <placement code="discipline">
+              <bundle>ca_attribute_discipline</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="knownToContainTypes">
+              <bundle>ca_attribute_knownToContainTypes</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
+		    <screen idno="collection_char" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Characteristics</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+			      <placement code="degreeOfEstablishment">
+              <bundle>ca_attribute_degreeOfEstablishment</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Degree of establishment as characteristic of the collection</setting>
+                <setting name="description" locale="en_US">Some preserved collections are specifically created from cultivated or captive organisms, or perhaps from rare vagrants.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+			      <placement code="habitat">
+              <bundle>ca_attribute_habitat</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Habitat as characteristic of the collection</setting>
+                <setting name="description" locale="en_US">The overall habitat represented by the collection.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+			      <placement code="samplingProtocol">
+              <bundle>ca_attribute_samplingProtocol</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Sampling protocol as distinguising characteristic of the collection</setting>
+                <setting name="description" locale="en_US">The name of, reference to, or description of the method or protocol used to gather objects in the collection.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="ca_occurrence_fieldwork">
+              <bundle>ca_occurrences</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Collection linked to a specific field campaign</setting>
+                <setting name="description" locale="en_US">If the defined collection is specifically linked to a defined field campaign, enter here.</setting>
+				        <setting name="restrict_to_types">fieldwork</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="restrict_to_relationship_types">collectionFieldwork</setting>
+                <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+			      <placement code="geonamesAPI">
+              <bundle>geonames</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Geographic concept as characteristic of the collection</setting>
+                <setting name="description" locale="en_US">The geographic scope of the collection.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+			      <placement code="CoLAPI">
+              <bundle>Catalogue of Life</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Taxonomy concept as characteristic of the collection</setting>
+                <setting name="description" locale="en_US">The taxonomic scope of the collection.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
+		    <screen idno="collection_media" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Characteristic</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="ca_object_representations" typeRestrictions="internalCollection">
+              <bundle>ca_object_representations</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Collection representations</setting>
+                <setting name="description" locale="en_US">Photos or videos of the collection (NOT separate objects that make up the collection). To illustrate the collection as a whole, in its totality.</setting>
+                <setting name="add_label" locale="en_US">Add photo or video</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_types">collectionMultimedia</setting>
+              </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
 		    <screen idno="collection_management" default="0">
           <labels>
             <label locale="en_US">
@@ -14205,6 +15430,9 @@
             </label>
           </labels>
           <bundlePlacements>
+			      <placement code="collectionManagementSystem">
+              <bundle>collectionManagementSystem</bundle>
+            </placement>
             <placement code="ca_entities_CurrentCurator">
               <bundle>ca_entities_ind</bundle>
 			        <settings>
@@ -14258,35 +15486,15 @@
             </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="collection_moreInformation" default="0">
+		    <screen idno="collection_use" default="0">
           <labels>
             <label locale="en_US">
-              <name>More Information</name>
+              <name>Use</name>
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="ca_attribute_descriptionContainer">
-              <bundle>ca_attribute_descriptionContainer</bundle>
-			        <settings>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-			      <placement code="hierarchy_navigation">
-              <bundle>hierarchy_navigation</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Collection hierarchy</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-            <placement code="ca_object_representations" typeRestrictions="internalCollection">
-              <bundle>ca_object_representations</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Collection representations</setting>
-                <setting name="description" locale="en_US">Photos or videos of the collection (NOT separate objects that make up the collection). To illustrate the collection as a whole, in its totality.</setting>
-                <setting name="add_label" locale="en_US">Add photo or video</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="restrict_to_types">collectionMultimedia</setting>
-              </settings>
+			      <placement code="conditionsOfAccess">
+              <bundle>ca_attribute_conditionsOfAccess</bundle>
             </placement>
           </bundlePlacements>
         </screen>
@@ -15601,6 +16809,20 @@
           </labels>
           <subTypeLeft></subTypeLeft>
           <subTypeRight></subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>
+	  <relationshipTable name="ca_collections_x_occurrences">
+      <types>
+        <type code="collectionFieldwork" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is collected during</typename>
+              <typename_reverse>resulted in</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>fieldwork</subTypeRight>
         </type>
       </types>
     </relationshipTable>
