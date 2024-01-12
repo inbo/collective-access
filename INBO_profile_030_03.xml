@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.54.03</profileName>
+  <profileName>[INBO] INBO natural science collection v0.54.04</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
-  <!--Change compared to the previous version: Implementation of the Latimer Core v1 is finalized-->
+  <!--Change compared to the previous version: xml syntax checked & validated against profile.xsd-->
   <locales>
     <locale lang="en" country="US">English</locale>
     <locale lang="nl" country="BE">Nederlands</locale>
@@ -5804,7 +5804,7 @@
               </label>
             </labels>
           </item>
-          <item idno="discipline" enabled="1" default="0">
+          <item idno="fastDiscipline" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>fast evolving discipline</name_singular>
@@ -6073,7 +6073,6 @@
         <labels>
           <label locale="en_US">
             <name>Discipline</name>
-            <description>Selection made from: https://confluence.egi.eu/display/EGIG/Scientific+Disciplines</description>
           </label>
         </labels>
         <items>
@@ -9281,76 +9280,6 @@
         </typeRestrictions>
       </metadataElement>
     <!--Locality-->
-	    <metadataElement code="geonamesAPI" datatype="geonames">
-        <labels>
-          <label locale="en_US">
-            <name>Geonames</name>
-          </label>
-        </labels>
-        <documentationUrl>https://manual.collectiveaccess.org/providence/user/configuration/mainConfiguration/app.html?highlight=geonames#geonames-web-services</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_objects">
-            <table>ca_objects</table>
-            <type>observation</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_occurrences">
-            <table>ca_occurrences</table>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_object_lots">
-            <table>ca_object_lots</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_plantedSite">
-            <table>ca_storage_locations</table>
-            <type>plantedSite</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_building">
-            <table>ca_storage_locations</table>
-            <type>building</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_collections">
-            <table>ca_collections</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
 	    <metadataElement code="verbatimLocality" datatype="Text">
         <labels>
           <label locale="en_US">
@@ -11380,43 +11309,12 @@
           </restriction>
         </typeRestrictions>
 	    </metadataElement>
-	    <metadataElement code="scientificNameContainer" datatype="Container">
+	    <metadataElement code="scientificName" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>Scientific Name + Rank</name>
+            <name>Scientific Name</name>
           </label>
         </labels>
-	      <elements>
-          <metadataElement code="scientificName" datatype="Text">
-            <labels>
-              <label locale="en_US">
-                <name>scientificName</name>
-                <description>The full scientific name, with authorship and date information if known. When forming part of an Identification, this should be the name in lowest level taxonomic rank that can be determined. This term should not contain identification qualifications, which should instead be supplied in the IdentificationQualifier term.</description>
-              </label>
-            </labels>
-            <documentationUrl>http://rs.tdwg.org/dwc/terms/scientificName</documentationUrl>
-            <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">1</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
-          <metadataElement code="scientificNameRank" datatype="List" list="scientific_name_rank">
-            <labels>
-              <label locale="en_US">
-                <name>scientificNameRank</name>
-                <description>The taxonomic rank of the most specific name in the scientificName.</description>
-              </label>
-            </labels>
-            <documentationUrl>http://rs.tdwg.org/dwc/terms/scientificNameRank</documentationUrl>
-                <settings>
-                  <setting name="minAttributesPerRow">0</setting>
-                  <setting name="maxAttributesPerRow">1</setting>
-                  <setting name="minimumAttributeBundlesToDisplay">1</setting>
-                </settings>
-          </metadataElement>
-	      </elements>
         <typeRestrictions>
           <restriction code="r_identificationBotanical">
             <table>ca_occurrences</table>
@@ -11455,19 +11353,18 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="scientificName" datatype="Text">
+	    <metadataElement code="scientificNameRank" datatype="List" list="scientific_name_rank">
         <labels>
           <label locale="en_US">
-            <name>scientificName</name>
-            <description>The full scientific name, with authorship and date information if known. When forming part of an Identification, this should be the name in lowest level taxonomic rank that can be determined. This term should not contain identification qualifications, which should instead be supplied in the IdentificationQualifier term.</description>
+            <name>ScientificName rank</name>
+            <description>The taxonomic rank of the most specific name in the scientific name.</description>
           </label>
         </labels>
-        <documentationUrl>http://rs.tdwg.org/dwc/terms/scientificName</documentationUrl>
+        <documentationUrl>http://rs.tdwg.org/dwc/terms/scientificNameRank</documentationUrl>
         <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">1</setting>
-          <setting name="maxChars">65535</setting>
+          <setting name="minAttributesPerRow">0</setting>
+          <setting name="maxAttributesPerRow">1</setting>
+          <setting name="minimumAttributeBundlesToDisplay">1</setting>
         </settings>
         <typeRestrictions>
           <restriction code="r_identificationBotanical">
@@ -11488,46 +11385,11 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_identificationBacteriological">
-            <table>ca_occurrences</table>
-            <type>identificationBacteriological</type>
+          <restriction code="r_collection">
+            <table>ca_collection</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-	    <metadataElement code="scientificNameRank" datatype="List" list="scientific_name_rank">
-        <labels>
-          <label locale="en_US">
-            <name>scientificNameRank</name>
-            <description>The taxonomic rank of the most specific name in the scientificName.</description>
-          </label>
-        </labels>
-        <documentationUrl>http://rs.tdwg.org/dwc/terms/scientificNameRank</documentationUrl>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-        <typeRestrictions>
-          <restriction code="r_identificationBotanical">
-            <table>ca_occurrences</table>
-            <type>identificationBotanical</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_identificationZoological">
-            <table>ca_occurrences</table>
-            <type>identificationZoological</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">100</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -12365,20 +12227,20 @@
             <documentationUrl>http://rs.tdwg.org/ltc/terms/role</documentationUrl>
             <settings/>
           </metadataElement>
-          <metadataElement code="startedAtTime" datatype="DateRange">
+          <metadataElement code="roleStartedAtTime" datatype="DateRange">
             <labels>
               <label locale="en_US">
-                <name>Started At Time</name>
+                <name>Role Started At Time</name>
                 <description>The date or time when a Person started fulfilling the role specified in the role property.</description>
               </label>
             </labels>
             <documentationUrl>http://rs.tdwg.org/ltc/terms/startedAtTime</documentationUrl>
             <settings/>
           </metadataElement>
-          <metadataElement code="endedAtTime" datatype="DateRange">
+          <metadataElement code="roleEndedAtTime" datatype="DateRange">
             <labels>
               <label locale="en_US">
-                <name>Ended At Time</name>
+                <name>Role ended At Time</name>
                 <description>The date or time when a Person stopped fulfilling the role specified in the role property.</description>
               </label>
             </labels>
@@ -13039,7 +12901,7 @@
             <documentationUrl>http://rs.tdwg.org/ltc/terms/temporalCoverageStartDate</documentationUrl>
             <settings/>
           </metadataElement>
-          <metadataElement code="endedAtTime" datatype="DateRange">
+          <metadataElement code="temporalCoverageEndDate" datatype="DateRange">
             <labels>
               <label locale="en_US">
                 <name>Temporal Coverage End Date</name>
@@ -15234,7 +15096,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="ca_places">
+			      <placement code="collection_place">
               <bundle>ca_places</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Place</setting>
@@ -15366,19 +15228,20 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="geonamesAPI">
-              <bundle>geonames</bundle>
+			      <placement code="geographicCoverage">
+              <bundle>ca_places</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Geographic concept as characteristic of the collection</setting>
-                <setting name="description" locale="en_US">The geographic scope of the collection. Use the common denomiator of the object group.</setting>
+                <setting name="label" locale="en_US">Geographic scope</setting>
+                <setting name="description" locale="en_US">The collection geographic scope.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="add_label" locale="en_US">Add places</setting>
               </settings>
             </placement>
-			      <placement code="scientificNameContainer">
-              <bundle>ca_attribute_scientificNameContainer</bundle>
+			      <placement code="scientificName">
+              <bundle>ca_attribute_scientificName</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Taxonomic concept as characteristic of the collection</setting>
-                <setting name="description" locale="en_US">The taxonomic scope of the collection. Use the common denominator of the object group, or add relevant 'tags'.</setting>
+                <setting name="description" locale="en_US">The taxonomic scope of the collection. Use the common denominator of the object group, or add multiple relevant 'tags'.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="add_label" locale="en_US">Add taxon</setting>
               </settings>
