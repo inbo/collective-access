@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.54</profileName>
+  <profileName>[INBO] INBO natural science collection v0.54.03</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
-  <!--Changes compared to the previous version-->
-  <!--Implementation of the Latimer Core-->
-  <!--Addition of geonames-->
+  <!--Change compared to the previous version: Implementation of the Latimer Core v1 is finalized-->
   <locales>
     <locale lang="en" country="US">English</locale>
     <locale lang="nl" country="BE">Nederlands</locale>
@@ -6038,31 +6036,6 @@
           </item>
         </items>
       </list>
-      <list code="base_type_of_collection" hierarchical="0" system="0" vocabulary="1">
-        <labels>
-          <label locale="en_US">
-            <name>Base Type Of Collection</name>
-          </label>
-        </labels>
-        <items>
-          <item idno="MaterialSample" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>MaterialSample</name_singular>
-                <name_plural>MaterialSample</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="InformationArtefact" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>InformationArtefact</name_singular>
-                <name_plural>InformationArtefact</name_plural>
-              </label>
-            </labels>
-          </item>
-        </items>
-      </list>
       <list code="collection_categories" hierarchical="0" system="0" vocabulary="1">
         <labels>
           <label locale="en_US">
@@ -6091,31 +6064,6 @@
               <label locale="en_US" preferred="1">
                 <name_singular>LivingSpecimens</name_singular>
                 <name_plural>LivingSpecimens</name_plural>
-              </label>
-            </labels>
-          </item>
-        </items>
-      </list>
-      <list code="cms" hierarchical="0" system="0" vocabulary="1">
-        <labels>
-          <label locale="en_US">
-            <name>Collection Management System</name>
-          </label>
-        </labels>
-        <items>
-          <item idno="collectiveAccess" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>Collective Access</name_singular>
-                <name_plural>Collective Access</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="excel" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>Excel</name_singular>
-                <name_plural>Excel</name_plural>
               </label>
             </labels>
           </item>
@@ -6629,6 +6577,136 @@
           </item>
         </items>
       </list>
+      <list code="temporal_coverage_type" hierarchical="0" system="0" vocabulary="1">
+        <labels>
+          <label locale="en_US">
+            <name>Temporal Coverage Type</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="collectingTime" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Collecting time range</name_singular>
+                <name_plural>Collecting time range</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="establishmentTime" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Establishment time range</name_singular>
+                <name_plural>Establishment time range</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
+      <list code="reference_type" hierarchical="0" system="0" vocabulary="1">
+        <labels>
+          <label locale="en_US">
+            <name>Reference type</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="advice" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>advice</name_singular>
+                <name_plural>advices</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="articlePeerRev" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>article peer reviewed</name_singular>
+                <name_plural>articles peer reviewed</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="articleNoPeerRev" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>article not peer reviewed</name_singular>
+                <name_plural>articles not peer reviewed</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="book" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>book</name_singular>
+                <name_plural>books</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="conferenceContribution" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>conference contribution</name_singular>
+                <name_plural>conference contributions</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="courseMaterial" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>course material</name_singular>
+                <name_plural>course materials</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="dataset" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>dataset</name_singular>
+                <name_plural>datasets</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="newsletter" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>newsletter</name_singular>
+                <name_plural>newsletters</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="newspaperArticle" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>newspaper article</name_singular>
+                <name_plural>newspaper articles</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="policy" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>policy</name_singular>
+                <name_plural>policies</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="report" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>report</name_singular>
+                <name_plural>reports</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="thesis" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>thesis</name_singular>
+                <name_plural>theses</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
   </lists>
   <elementSets>
     <!--General-->
@@ -6643,8 +6721,8 @@
 		      <metadataElement code="description_container" datatype="Text">
             <labels>
             <label locale="en_US">
-              <name>dc:description</name>
-              <description>Description</description>
+              <name>Description</name>
+              <description>dc:description</description>
             </label>
             </labels>
             <documentationUrl>http://dublincore.org/documents/dcmi-terms/#terms-description</documentationUrl>
@@ -6889,19 +6967,55 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-      <metadataElement code="publication" datatype="Url">
+      <metadataElement code="publication" datatype="Container">
         <labels>
           <label locale="en_US">
             <name>Publication</name>
-            <description>A publication (e.g. an article, a SOP, a thesis)</description>
           </label>
         </labels>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
+	      <elements>
+		      <metadataElement code="referenceType" datatype="List" list="reference_type">
+            <labels>
+              <label locale="en_US">
+                <name>Reference Type</name>
+                <description>The type of resource being referenced.</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/ltc/terms/referenceType</documentationUrl>
+            <settings>
+            </settings>
+          </metadataElement>
+		      <metadataElement code="resourceURI" datatype="Url">
+            <labels>
+              <label locale="en_US">
+                <name>resourceURI</name>
+                <description>A preferably resolvable URI to uniquely identify a concept. For example a DOI-url.</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/abcd/terms/resourceURI</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+		      <metadataElement code="referenceDetails" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Reference Details</name>
+                <description>Relevant information about the publication being referenced - why is it listed? - what does it say about the collection?</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/abcd/terms/referenceDetails</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+		      </metadataElement>
+	      </elements>
         <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
@@ -6949,6 +7063,7 @@
         <labels>
           <label locale="en_US">
             <name>External record</name>
+            <description>An URL that can be used to uniquely identify the record, published on an external repository or website.</description>
           </label>
         </labels>
         <settings>
@@ -7237,6 +7352,125 @@
           <restriction code="r_objects">
             <table>ca_objects</table>
             <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="address" datatype="Container">
+        <labels>
+          <label locale="en_US">
+            <name>Address</name>
+            <description>A physical postal address for an organisational unit or person.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/ltc/terms/Address</documentationUrl>
+        <elements>
+              <metadataElement code="streetAddress" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>Street name</name>
+                    <description>The street address. For example, 1600 Amphitheatre Pkwy.</description>
+                  </label>
+                </labels>
+                <documentationUrl>https://schema.org/streetAddress</documentationUrl>
+                <settings>
+                  <setting name="fieldWidth">70</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">255</setting>
+                </settings>
+              </metadataElement>
+              <metadataElement code="postOfficeBoxNumber" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>Post Office Box Number</name>
+                    <description>The post office box number for PO box addresses.</description>
+                  </label>
+                </labels>
+                <documentationUrl>https://schema.org/postOfficeBoxNumber</documentationUrl>
+                <settings>
+                  <setting name="fieldWidth">70</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">255</setting>
+                </settings>
+              </metadataElement>
+              <metadataElement code="addressLocality" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>Address locality</name>
+                    <description>The name of the city, town, municipality, village, ... The locality in which the street address is, and which is in the region. For example which city, Mountain View.</description>
+                  </label>
+                </labels>
+                <documentationUrl>https://schema.org/addressLocality</documentationUrl>
+                <settings>
+                  <setting name="fieldWidth">20</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">255</setting>
+                </settings>
+              </metadataElement>
+              <metadataElement code="addressRegion" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>Address Region</name>
+                    <description>State, province, .. The region in which the locality is, and which is in the country. For example, California or another appropriate first-level Administrative division.</description>
+                  </label>
+                </labels>
+                <documentationUrl>https://schema.org/addressRegion</documentationUrl>
+                <settings>
+                  <setting name="fieldWidth">15</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">255</setting>
+                </settings>
+              </metadataElement>
+              <metadataElement code="postalCode" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>Postal/zip code</name>
+                    <description>The postal code. For example, 94043.</description>
+                  </label>
+                </labels>
+                <documentationUrl>https://schema.org/postalCode</documentationUrl>
+                <settings>
+                  <setting name="fieldWidth">10</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">255</setting>
+                </settings>
+              </metadataElement>
+              <metadataElement code="addressCountry" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>Country</name>
+                    <description>The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.</description>
+                  </label>
+                </labels>
+                <documentationUrl>https://schema.org/addressCountry</documentationUrl>
+                <settings>
+                  <setting name="fieldWidth">15</setting>
+                  <setting name="fieldHeight">1</setting>
+                  <setting name="minChars">0</setting>
+                  <setting name="maxChars">255</setting>
+                </settings>
+              </metadataElement>
+        </elements>
+        <typeRestrictions>
+          <restriction code="r_entity">
+            <table>ca_entities</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_loans">
+            <table>ca_loans</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -11146,6 +11380,81 @@
           </restriction>
         </typeRestrictions>
 	    </metadataElement>
+	    <metadataElement code="scientificNameContainer" datatype="Container">
+        <labels>
+          <label locale="en_US">
+            <name>Scientific Name + Rank</name>
+          </label>
+        </labels>
+	      <elements>
+          <metadataElement code="scientificName" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>scientificName</name>
+                <description>The full scientific name, with authorship and date information if known. When forming part of an Identification, this should be the name in lowest level taxonomic rank that can be determined. This term should not contain identification qualifications, which should instead be supplied in the IdentificationQualifier term.</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/scientificName</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">1</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="scientificNameRank" datatype="List" list="scientific_name_rank">
+            <labels>
+              <label locale="en_US">
+                <name>scientificNameRank</name>
+                <description>The taxonomic rank of the most specific name in the scientificName.</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/scientificNameRank</documentationUrl>
+                <settings>
+                  <setting name="minAttributesPerRow">0</setting>
+                  <setting name="maxAttributesPerRow">1</setting>
+                  <setting name="minimumAttributeBundlesToDisplay">1</setting>
+                </settings>
+          </metadataElement>
+	      </elements>
+        <typeRestrictions>
+          <restriction code="r_identificationBotanical">
+            <table>ca_occurrences</table>
+            <type>identificationBotanical</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_identificationZoological">
+            <table>ca_occurrences</table>
+            <type>identificationZoological</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_identificationBacteriological">
+            <table>ca_occurrences</table>
+            <type>identificationBacteriological</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_collection">
+            <table>ca_collection</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
 	    <metadataElement code="scientificName" datatype="Text">
         <labels>
           <label locale="en_US">
@@ -11968,139 +12277,6 @@
         </typeRestrictions>
       </metadataElement>
 	  <!--Entity-->
-	    <metadataElement code="addressOrganization" datatype="Container">
-        <labels>
-          <label locale="en_US">
-            <name>Address of organization</name>
-          </label>
-        </labels>
-        <settings/>
-        <elements>
-          <metadataElement code="addressOrganizationWithinCity" datatype="Container">
-            <labels>
-              <label locale="en_US">
-                <name>Address within the city, town, municipality, village, ...</name>
-              </label>
-            </labels>
-            <settings/>
-            <elements>
-              <metadataElement code="street" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Street name</name>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">255</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="number" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Number</name>
-                    <description>Usually the number of the building within the street.</description>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">255</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="box" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Number of mailbox</name>
-                    <description>Usually the number of the mailbox within the building. For example in appartement buildings, or shared buildings there can be separate mailboxes. This field can also be used for entering PO box numbers.</description>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">255</setting>
-                </settings>
-              </metadataElement>
-            </elements>
-          </metadataElement>
-          <metadataElement code="addressOrganizationWithinWorld" datatype="Container">
-            <labels>
-              <label locale="en_US">
-                <name>Address within the World</name>
-              </label>
-            </labels>
-            <settings/>
-            <elements>
-              <metadataElement code="city" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>City, town, municipality, village, ...</name>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">20</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">255</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="state_or_province" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>State/province</name>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">15</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">255</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="postalcode" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Postal/zip code</name>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">10</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">255</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="org_country" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Country</name>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">15</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">255</setting>
-                </settings>
-              </metadataElement>
-            </elements>
-          </metadataElement>
-		    </elements>
-        <typeRestrictions>
-          <restriction code="r_entity">
-            <table>ca_entities</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
 	    <metadataElement code="telephone" datatype="Text">
         <labels>
           <label locale="en_US">
@@ -12171,29 +12347,75 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-      <metadataElement code="website" datatype="Url">
+      <metadataElement code="roleContainer" datatype="Container">
         <labels>
           <label locale="en_US">
-            <name>Website</name>
+            <name>Person Role</name>
           </label>
         </labels>
-        <settings>
-          <setting name="fieldWidth">90</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
+        <settings/>
+        <elements>
+          <metadataElement code="role" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Role</name>
+                <description>A role played by a Person in the context of an entity such as an ObjectGroup, OrganisationalUnit or RecordLevel.</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/ltc/terms/role</documentationUrl>
+            <settings/>
+          </metadataElement>
+          <metadataElement code="startedAtTime" datatype="DateRange">
+            <labels>
+              <label locale="en_US">
+                <name>Started At Time</name>
+                <description>The date or time when a Person started fulfilling the role specified in the role property.</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/ltc/terms/startedAtTime</documentationUrl>
+            <settings/>
+          </metadataElement>
+          <metadataElement code="endedAtTime" datatype="DateRange">
+            <labels>
+              <label locale="en_US">
+                <name>Ended At Time</name>
+                <description>The date or time when a Person stopped fulfilling the role specified in the role property.</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/ltc/terms/endedAtTime</documentationUrl>
+            <settings/>
+          </metadataElement>
+		    </elements>
         <typeRestrictions>
           <restriction code="r_entities">
             <table>ca_entities</table>
+            <type>ind</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">20</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_collections">
-            <table>ca_collections</table>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="organisationalUnitName" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Organisational Unit Name</name>
+            <description>An official name of the organisational unit in the local language.</description>
+          </label>
+        </labels>
+			  <documentationUrl>http://rs.tdwg.org/ltc/terms/organisationalUnitName</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_ca_entities_ind">
+            <table>ca_entities</table>
+            <type>ind</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -12227,193 +12449,6 @@
         </typeRestrictions>
       </metadataElement>
 	  <!--Loans-->
-	    <metadataElement code="addressLoan" datatype="Container">
-        <labels>
-          <label locale="en_US">
-            <name>Address for loan package or written communication</name>
-          </label>
-        </labels>
-        <settings/>
-        <elements>
-          <metadataElement code="directedTo" datatype="Container">
-            <labels>
-              <label locale="en_US">
-                <name>Address line 2</name>
-              </label>
-            </labels>
-            <settings>
-              <setting name="lineBreakAfterNumberOfElements">2</setting>
-            </settings>
-            <elements>
-              <metadataElement code="addressee" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Addressee</name>
-                    <description>This can be name, "To whom it may concern", "To the members of organization X", ...</description>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">50</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">255</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="addresseeRole" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Role of the addressee within the organization</name>
-                    <description>This can be, "Professor of X", "Curator of Y". Can also be left blank</description>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">50</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">255</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="addresseeLocation" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Location of the addressee within the building</name>
-                    <description>Here the department, research group, lab, ... can be entered, so that from the reception, the written communication or package is directed to the correct subdivision of the organization.</description>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">100</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">255</setting>
-                </settings>
-              </metadataElement>
-            </elements>
-          </metadataElement>
-          <metadataElement code="addressLoanWithinCity" datatype="Container">
-            <labels>
-              <label locale="en_US">
-                <name>Address within the city, town, municipality, village, ...</name>
-              </label>
-            </labels>
-            <settings/>
-            <elements>
-              <metadataElement code="loan_street" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Street name</name>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">255</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="loan_number" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Number</name>
-                    <description>Usually the number of the building within the street.</description>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">10</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">255</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="loan_box" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Number of mailbox</name>
-                    <description>Usually the number of the mailbox within the building. For example in appartement buildings, or shared buildings there can be separate mailboxes. This field can also be used for entering PO box numbers.</description>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">10</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">255</setting>
-                </settings>
-              </metadataElement>
-            </elements>
-          </metadataElement>
-          <metadataElement code="addressLoanWithinWorld" datatype="Container">
-            <labels>
-              <label locale="en_US">
-                <name>Address within the world</name>
-              </label>
-            </labels>
-            <settings/>
-            <elements>
-              <metadataElement code="loan_city" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>City, town, municipality, village, ...</name>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">30</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">255</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="loan_state_or_province" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>State/province</name>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">30</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">255</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="loan_postalcode" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Postal/zip code</name>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">10</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">255</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="loan_country" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Country</name>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">20</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">255</setting>
-                </settings>
-              </metadataElement>
-            </elements>
-          </metadataElement>
-		    </elements>
-        <typeRestrictions>
-          <restriction code="r_loan">
-            <table>ca_loans</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
 	    <metadataElement code="loanStatus" datatype="List" list="loan_status">
         <labels>
           <label locale="en_US">
@@ -12798,56 +12833,6 @@
             </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="baseTypeOfCollection" datatype="List" list="base_type_of_collection">
-        <labels>
-          <label locale="en_US">
-            <name>ltc:baseTypeOfCollection</name>
-            <description>High-level term describing the fundamental nature of objects in the ObjectGroup.</description>
-          </label>
-        </labels>
-        <documentationUrl>http://rs.tdwg.org/ltc/terms/baseTypeOfCollection</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-            <restriction code="r_collection">
-              <table>ca_collections</table>
-              <settings>
-                <setting name="minAttributesPerRow">0</setting>
-                <setting name="maxAttributesPerRow">1</setting>
-                <setting name="minimumAttributeBundlesToDisplay">1</setting>
-              </settings>
-            </restriction>
-        </typeRestrictions>
-      </metadataElement>
-	    <metadataElement code="collectionManagementSystem" datatype="List" list="cms">
-        <labels>
-          <label locale="en_US">
-            <name>ltc:collectionManagementSystem</name>
-            <description>The collection management system which is used to hold and manage the primary data for the objects contained within the ObjectGroup.</description>
-          </label>
-        </labels>
-        <documentationUrl>http://rs.tdwg.org/ltc/terms/collectionManagementSystem</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-            <restriction code="r_collection">
-              <table>ca_collections</table>
-              <settings>
-                <setting name="minAttributesPerRow">0</setting>
-                <setting name="maxAttributesPerRow">1</setting>
-                <setting name="minimumAttributeBundlesToDisplay">1</setting>
-              </settings>
-            </restriction>
-        </typeRestrictions>
-      </metadataElement>
 	    <metadataElement code="conditionsOfAccess" datatype="Text">
         <labels>
           <label locale="en_US">
@@ -12949,32 +12934,6 @@
             </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="typeOfCollection" datatype="List" list="collection_categories">
-        <labels>
-          <label locale="en_US">
-            <name>ltc:typeOfCollection</name>
-            <description>Additional information that exists that describes the object(s) in the collection.</description>
-          </label>
-        </labels>
-        <documentationUrl>http://rs.tdwg.org/ltc/terms/typeOfCollection</documentationUrl>
-        <settings>
-          <setting name="render">checklist</setting>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-            <restriction code="r_collection">
-              <table>ca_collections</table>
-              <settings>
-                <setting name="minAttributesPerRow">0</setting>
-                <setting name="maxAttributesPerRow">1</setting>
-                <setting name="minimumAttributeBundlesToDisplay">1</setting>
-              </settings>
-            </restriction>
-        </typeRestrictions>
-      </metadataElement>
 	    <metadataElement code="objectType" datatype="List" list="object_types">
         <labels>
           <label locale="en_US">
@@ -13052,6 +13011,56 @@
             </restriction>
         </typeRestrictions>
       </metadataElement>
+	    <metadataElement code="temporalCoverageContainer" datatype="Container">
+        <labels>
+          <label locale="en_US">
+            <name>Temporal coverage</name>
+          </label>
+        </labels>
+        <settings/>
+        <elements>
+          <metadataElement code="temporalCoverageType" datatype="List" list="temporal_coverage_type">
+            <labels>
+              <label locale="en_US">
+                <name>Temporal Coverage Type</name>
+                <description>The type or context of the time range associated with the collection's establishment. Separate from the living or geologic periods represented by the objects in the collection.</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/ltc/terms/temporalCoverageType</documentationUrl>
+            <settings/>
+          </metadataElement>
+          <metadataElement code="temporalCoverageStartDate" datatype="DateRange">
+            <labels>
+              <label locale="en_US">
+                <name>Temporal Coverage Start Date</name>
+                <description>Start date of the time range of the collection.</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/ltc/terms/temporalCoverageStartDate</documentationUrl>
+            <settings/>
+          </metadataElement>
+          <metadataElement code="endedAtTime" datatype="DateRange">
+            <labels>
+              <label locale="en_US">
+                <name>Temporal Coverage End Date</name>
+                <description>End date of the time range of the collection.</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/ltc/terms/temporalCoverageEndDate</documentationUrl>
+            <settings/>
+          </metadataElement>
+		    </elements>
+        <typeRestrictions>
+            <restriction code="r_collection">
+              <table>ca_collections</table>
+              <settings>
+                <setting name="minAttributesPerRow">0</setting>
+                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              </settings>
+            </restriction>
+        </typeRestrictions>
+      </metadataElement>
   </elementSets>
   <userInterfaces>
     <userInterface code="object_ui" type="ca_objects">
@@ -13112,8 +13121,8 @@
               <bundle>ca_attribute_externalRecord</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">External record (URL)</setting>
-                <setting name="description" locale="en_US">The object published on DiSSCo, occurrence data of the sampling point published on GBIF.</setting>
-				        <setting name="add_label" locale="en_US">Add another URL</setting>
+                <setting name="description" locale="en_US">The object published on DiSSCo, occurrence data of the sampling point published on GBIF, ..</setting>
+				        <setting name="add_label" locale="en_US">Add URL</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -13911,10 +13920,10 @@
             </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="measurements" default="0">
+		    <screen idno="obj_measurements" default="0">
           <labels>
             <label locale="en_US">
-              <name>Measurements</name>
+              <name>Measurements </name>
             </label>
           </labels>
           <typeRestrictions>
@@ -14535,6 +14544,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">External database containing project</setting>
                 <setting name="description" locale="en_US">For example: the project-URL in PURE</setting>
+				        <setting name="add_label" locale="en_US">Add URL</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -14962,43 +14972,12 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="ROR" typeRestrictions="org">
+			      <placement code="externalRecord">
               <bundle>ca_attribute_externalRecord</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">ROR</setting>
-                <setting name="description" locale="en_US">Research Organization Registry (ROR) - see: https://ror.org/.</setting>
-				        <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-			      <placement code="WikidataID">
-              <bundle>ca_attribute_externalRecord</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Wikidata-ID</setting>
-                <setting name="description" locale="en_US">See: https://wikidata.org/.</setting>
-				        <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-			      <placement code="ORCID" typeRestrictions="ind">
-              <bundle>ca_attribute_externalRecord</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">ORCID</setting>
-                <setting name="description" locale="en_US">ORCID stands for Open Researcher and Contributor ID. See: https://orcid.org/.</setting>
-				        <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-			      <placement code="website">
-              <bundle>ca_attribute_website</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Website</setting>
-                <setting name="description" locale="en_US">A website that is self-maintained. Can be of an individual or organization.</setting>
-				        <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="label" locale="en_US">External record</setting>
+                <setting name="description" locale="en_US">For individuals: ORCID. For organizations: ROR. For both: WikiData.</setting>
+				        <setting name="add_label" locale="en_US">Add URL</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -15011,10 +14990,10 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="addressOrganization" typeRestrictions="org">
-              <bundle>ca_attribute_addressOrganization</bundle>
+            <placement code="address" typeRestrictions="org">
+              <bundle>ca_attribute_address</bundle>
 			        <settings>
-                <setting name="description" locale="en_US">Physical address of the organization.</setting>
+                <setting name="description" locale="en_US">Physical (current) address of the organization.</setting>
               </settings>
             </placement>
 			      <placement code="ca_places" typeRestrictions="org">
@@ -15032,12 +15011,15 @@
             </placement>
           </bundlePlacements>
         </screen>
-        <screen idno="entity_relationships" default="0">
+        <screen idno="entity_affRole" default="0">
           <labels>
             <label locale="en_US">
-              <name>Relationships</name>
+              <name>Affiliation and roles</name>
             </label>
           </labels>
+          <typeRestrictions>
+                <restriction code="r_ind" type="ind"/>
+          </typeRestrictions>
           <bundlePlacements>
             <placement code="ca_entities_affiliation" typeRestrictions="ind">
               <bundle>ca_entities</bundle>
@@ -15055,6 +15037,22 @@
                 <setting name="description" locale="en_US">This can be substructure of the organization the individual belongs to (e.g. Department, Research group, Team, ...)</setting>
               </settings>
             </placement>
+            <placement code="roleContainer" typeRestrictions="ind">
+              <bundle>ca_attribute_roleContainer</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Role(s) of person</setting>
+				        <setting name="add_label" locale="en_US">Add role</setting>
+			        </settings>
+            </placement>
+          </bundlePlacements>
+		    </screen>
+        <screen idno="entity_loans" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Loans</name>
+            </label>
+          </labels>
+          <bundlePlacements>
             <placement code="ca_loans">
               <bundle>ca_loans</bundle>
               <settings>
@@ -15115,13 +15113,12 @@
                 <setting name="autoshrink">1</setting>
               </settings>
             </placement>
-			      <placement code="gettyID">
+			      <placement code="externalRecord">
               <bundle>ca_attribute_externalRecord</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">gettyID</setting>
-                <setting name="description" locale="en_US">Getty Thesaurus of Geographic Names - see: https://www.getty.edu/research/tools/vocabularies/tgn/.</setting>
-				        <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="label" locale="en_US">External Record</setting>
+                <setting name="description" locale="en_US">For example: Getty Thesaurus of Geographic Names - see: https://www.getty.edu/research/tools/vocabularies/tgn/.</setting>
+                <setting name="add_label" locale="en_US">Add URL</setting>
               </settings>
             </placement>
 		        <placement code="descriptionContainer">
@@ -15191,7 +15188,7 @@
         </label>
       </labels>
       <screens>
-        <screen idno="collection_record" default="1">
+        <screen idno="coll_record" default="1">
           <labels>
             <label locale="en_US">
               <name>Collection record</name>
@@ -15247,29 +15244,18 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="GRSciColl">
+            <placement code="externalRecord">
               <bundle>ca_attribute_externalRecord</bundle>
               <settings>
-                <setting name="label" locale="en_US">GRSCiColl record</setting>
-                <setting name="description" locale="en_US">Global Registry of Scientific Collections. See: https://www.gbif.org/grscicoll.</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-				        <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
-			      <placement code="website">
-              <bundle>ca_attribute_website</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Website</setting>
-                <setting name="description" locale="en_US">A website that is self-maintained that gives a description or catalogue of the collection.</setting>
-				        <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="label" locale="en_US">External record</setting>
+                <setting name="add_label" locale="en_US">Add URL</setting>
+                <setting name="description" locale="en_US">For example, the collection on the Global Registry of Scientific Collections. See: https://www.gbif.org/grscicoll.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="collection_scheme" default="0">
+		    <screen idno="coll_scheme" default="0">
           <labels>
             <label locale="en_US">
               <name>Description scheme</name>
@@ -15287,7 +15273,7 @@
             </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="collection_hierarchy" default="0">
+		    <screen idno="coll_hierarchy" default="0">
           <labels>
             <label locale="en_US">
               <name>Hierarchy</name>
@@ -15303,18 +15289,15 @@
             </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="collection_techfeat" default="0">
+		    <screen idno="coll_scope" default="0">
           <labels>
             <label locale="en_US">
-              <name>Technical features</name>
+              <name>Scope</name>
             </label>
           </labels>
           <bundlePlacements>
-			      <placement code="baseTypeOfCollection">
-              <bundle>ca_attribute_baseTypeOfCollection</bundle>
-            </placement>
-            <placement code="typeOfCollection">
-              <bundle>ca_attribute_typeOfCollection</bundle>
+            <placement code="descriptionContainer">
+              <bundle>ca_attribute_descriptionContainer</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
@@ -15323,15 +15306,21 @@
               <bundle>ca_attribute_objectType</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="add_label" locale="en_US">Add discipline</setting>
               </settings>
             </placement>
 			      <placement code="preservationMethod">
               <bundle>ca_attribute_preservationMethod</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="add_label" locale="en_US">Add discipline</setting>
+              </settings>
             </placement>
             <placement code="discipline">
               <bundle>ca_attribute_discipline</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="add_label" locale="en_US">Add discipline</setting>
               </settings>
             </placement>
             <placement code="knownToContainTypes">
@@ -15340,15 +15329,6 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-          </bundlePlacements>
-        </screen>
-		    <screen idno="collection_char" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>Characteristics</name>
-            </label>
-          </labels>
-          <bundlePlacements>
 			      <placement code="degreeOfEstablishment">
               <bundle>ca_attribute_degreeOfEstablishment</bundle>
 			        <settings>
@@ -15390,21 +15370,30 @@
               <bundle>geonames</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Geographic concept as characteristic of the collection</setting>
-                <setting name="description" locale="en_US">The geographic scope of the collection.</setting>
+                <setting name="description" locale="en_US">The geographic scope of the collection. Use the common denomiator of the object group.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="CoLAPI">
-              <bundle>Catalogue of Life</bundle>
+			      <placement code="scientificNameContainer">
+              <bundle>ca_attribute_scientificNameContainer</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Taxonomy concept as characteristic of the collection</setting>
-                <setting name="description" locale="en_US">The taxonomic scope of the collection.</setting>
+                <setting name="label" locale="en_US">Taxonomic concept as characteristic of the collection</setting>
+                <setting name="description" locale="en_US">The taxonomic scope of the collection. Use the common denominator of the object group, or add relevant 'tags'.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="add_label" locale="en_US">Add taxon</setting>
+              </settings>
+            </placement>
+			      <placement code="temporalCoverageContainer">
+              <bundle>ca_attribute_temporalCoverageContainer</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Temporal concept as characteristic of the collection</setting>
+                <setting name="description" locale="en_US">The temporal scope of the collection.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="collection_media" default="0">
+		    <screen idno="coll_media" default="0">
           <labels>
             <label locale="en_US">
               <name>Characteristic</name>
@@ -15423,16 +15412,13 @@
             </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="collection_management" default="0">
+		    <screen idno="coll_curation" default="0">
           <labels>
             <label locale="en_US">
-              <name>Storage</name>
+              <name>Curation</name>
             </label>
           </labels>
           <bundlePlacements>
-			      <placement code="collectionManagementSystem">
-              <bundle>collectionManagementSystem</bundle>
-            </placement>
             <placement code="ca_entities_CurrentCurator">
               <bundle>ca_entities_ind</bundle>
 			        <settings>
@@ -15484,17 +15470,26 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
+			      <placement code="conditionsOfAccess">
+              <bundle>ca_attribute_conditionsOfAccess</bundle>
+            </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="collection_use" default="0">
+		    <screen idno="coll_publ" default="0">
           <labels>
             <label locale="en_US">
-              <name>Use</name>
+              <name>Publications</name>
             </label>
           </labels>
           <bundlePlacements>
-			      <placement code="conditionsOfAccess">
-              <bundle>ca_attribute_conditionsOfAccess</bundle>
+            <placement code="publication">
+              <bundle>ca_attributes_publication</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Publications</setting>
+                <setting name="description" locale="en_US">Publications that refer to the collection as a whole (NOT separate specimens/objects that make up the collection).</setting>
+                <setting name="add_label" locale="en_US">Add publication</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
             </placement>
           </bundlePlacements>
         </screen>
@@ -15846,28 +15841,36 @@
                 <setting name="maxRelationshipsPerRow">2</setting>
               </settings>
             </placement>
-            <placement code="loan_address" typeRestrictions="external_out">
-              <bundle>ca_attribute_addressLoan</bundle>
+            <placement code="organisationalUnitName">
+              <bundle>ca_attributes_organisationalUnitName</bundle>
 			        <settings>
-                <setting name="description" locale="en_US">The full address to which the loan will be, or was, send. This should also include the internal structure of the organization at hand (e.g. research group, department, team, ..) as specified in the request.</setting>
+                <setting name="description" locale="en_US">For the loan at hand, any extra information to be added on the package label, next to the requester and address; can be specified here; e.g. department, team or research group (at the time of loan).</setting>
+				        <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+            <placement code="address" typeRestrictions="external_out">
+              <bundle>ca_attribute_address</bundle>
+			        <settings>
+                <setting name="description" locale="en_US">The full address to which the loan will be, or was, send.</setting>
 				        <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="ca_attribute_loan_authorization_date">
+            <placement code="loanAuthorizationDate">
               <bundle>ca_attribute_loan_authorization_date</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="ca_attribute_loan_in_date">
+            <placement code="loanInDate">
               <bundle>ca_attribute_loan_in_date</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="ca_attribute_loan_out_date">
+            <placement code="loanOutDate">
               <bundle>ca_attribute_loan_out_date</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
