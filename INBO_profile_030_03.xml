@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.55.01</profileName>
+  <profileName>[INBO] INBO natural science collection v0.55.02</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
-  <!--Changes compared to the previous version 0.54: issue fixes-->
-  <!--https://github.com/inbo/collective-access/issues/100-->
+  <!--Changes compared to the previous version 0.54: feedback of BDC incorporated-->
+  <!--https://docs.google.com/document/d/1UYjKTdDYeza1uX9V4oNgIaIyRac0Dj4heGcnc7_f14o/edit?usp=sharing-->
   <locales>
     <locale lang="en" country="US">English</locale>
     <locale lang="nl" country="BE">Nederlands</locale>
@@ -925,40 +925,6 @@
                 <name_plural>Provenance regions</name_plural>
               </label>
             </labels>
-          </item>
-          <item idno="provenance" enabled="1" default="0"><!--Although this can coincide with place concepts, it is taxon dependent. These are registred places of origin for plant material.-->
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>Provenance</name_singular>
-                <name_plural>Provenances</name_plural>
-              </label>
-            </labels>
-            <items>
-                  <item idno="seedStand" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Seed stand</name_singular>
-                        <name_plural>Seed stands</name_plural>
-                      </label>
-                    </labels>
-                    <settings>
-                      <setting name="render_in_new_menu">1</setting>
-                      <setting name="render_in_find_menu">1</setting>
-                    </settings>
-                  </item>
-                  <item idno="seedSource" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Seed source</name_singular>
-                        <name_plural>Seed sources</name_plural>
-                      </label>
-                    </labels>
-                    <settings>
-                      <setting name="render_in_new_menu">1</setting>
-                      <setting name="render_in_find_menu">1</setting>
-                    </settings>
-                  </item>
-            </items>
           </item>
 		    </items>
       </list>
@@ -2873,10 +2839,10 @@
           </item>
         </items>
       </list>
-      <list code="sex" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
+      <list code="sex_animal" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
         <labels>
           <label locale="en_US">
-            <name>Sex</name>
+            <name>Sex categories for animals</name>
           </label>
         </labels>
         <items>
@@ -2920,9 +2886,171 @@
                 </label>
             </labels>
           </item>
+          <item idno="other" enabled="1" default="0">
+            <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>other</name_singular>
+                  <name_plural>other</name_plural>
+                </label>
+            </labels>
+          </item>
         </items>
       </list>
-      <list code="life_stage" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
+      <list code="sex_plant" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
+        <labels>
+          <label locale="en_US">
+            <name>Sex categories for plants</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="dioeciousFemale" enabled="1" default="0">
+            <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>dioecious: female</name_singular>
+                  <name_plural>dioecious: female</name_plural>
+                </label>
+            </labels>
+          </item>
+          <item idno="dioeciousMale" enabled="1" default="0">
+            <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>dioecious: male</name_singular>
+                  <name_plural>dioecious: male</name_plural>
+                </label>
+            </labels>
+          </item>
+          <item idno="monoeciousHermaphrodite" enabled="1" default="0">
+            <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>monoecious: hermaphrodite</name_singular>
+                  <name_plural>monoecious: hermaphrodite</name_plural>
+                </label>
+            </labels>
+          </item>
+          <item idno="monoeciousFemale" enabled="1" default="0">
+            <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>monoecious: female</name_singular>
+                  <name_plural>monoecious: female</name_plural>
+                </label>
+            </labels>
+          </item>
+          <item idno="monoeciousMale" enabled="1" default="0">
+            <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>monoecious: male</name_singular>
+                  <name_plural>monoecious: male</name_plural>
+                </label>
+            </labels>
+          </item>
+          <item idno="notRecorded" enabled="1" default="0">
+            <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>not recorded</name_singular>
+                  <name_plural>not recorded</name_plural>
+                </label>
+            </labels>
+          </item>
+          <item idno="notApplicable" enabled="1" default="0">
+            <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>not applicable</name_singular>
+                  <name_plural>not applicable</name_plural>
+                </label>
+            </labels>
+          </item>
+          <item idno="other" enabled="1" default="0">
+            <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>other</name_singular>
+                  <name_plural>other</name_plural>
+                </label>
+            </labels>
+          </item>
+        </items>
+      </list>
+      <list code="life_stage_animal" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
+        <labels>
+          <label locale="en_US">
+            <name>Life stage</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="juvenile" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>juvenile</name_singular>
+                <name_plural>juveniles</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="adult" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>adult</name_singular>
+                <name_plural>adults</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="egg" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>egg</name_singular>
+                <name_plural>eggs</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="larva" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>larva</name_singular>
+                <name_plural>larvae</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="subadult" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>subadult</name_singular>
+                <name_plural>subadults</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="pupa" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>pupa</name_singular>
+                <name_plural>pupa</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="nymph" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>nymph</name_singular>
+                <name_plural>nymphs</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="notRecorded" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>not recorded</name_singular>
+                <name_plural>not recorded</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="other" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>other</name_singular>
+                <name_plural>other</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
+      <list code="life_stage_plant" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
         <labels>
           <label locale="en_US">
             <name>Life stage</name>
@@ -2966,46 +3094,6 @@
               <label locale="en_US" preferred="1">
                 <name_singular>sporophyte</name_singular>
                 <name_plural>sporophytes</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="egg" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>egg</name_singular>
-                <name_plural>eggs</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="larva" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>larva</name_singular>
-                <name_plural>larvae</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="subadult" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>subadult</name_singular>
-                <name_plural>subadults</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="pupa" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>pupa</name_singular>
-                <name_plural>pupa</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="nymph" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>nymph</name_singular>
-                <name_plural>nymphs</name_plural>
               </label>
             </labels>
           </item>
@@ -6847,12 +6935,43 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="file" datatype="File">
+	    <metadataElement code="multimediaURL" datatype="Container">
         <labels>
           <label locale="en_US">
-            <name>File</name>
+            <name>Multimedia URL</name>
+            <description>An URL that leads to a photo, video, sound, ... file that is online. This could be on the INBO google folders, the INBO tandemVault or any other stable published open web URL.</description>
           </label>
         </labels>
+	      <elements>
+		      <metadataElement code="multimediaURL_URL" datatype="Url">
+            <labels>
+            <label locale="en_US">
+              <name>Multimedia URL</name>
+              <description>Relevant multimedia linked to the sampling point or specimen. This could be relevant field photo's (identification), relevant measurement photo's, ...</description>
+            </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+		      <metadataElement code="multimediaURL_descr" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Multimedia description</name>
+                <description>Short escription of the file and its relevance</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+		      </metadataElement>
+	      </elements>
         <settings>
           <setting name="fieldWidth">70</setting>
           <setting name="fieldHeight">1</setting>
@@ -6967,10 +7086,11 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-      <metadataElement code="publication" datatype="Container">
+      <metadataElement code="reference" datatype="Container">
         <labels>
           <label locale="en_US">
-            <name>Publication</name>
+            <name>Reference</name>
+            <description>A relevant URL that refers to the sampling point or specimen. This can be an internal INBO document on the Google drive, a published or unpublished dataset, ..</description>
           </label>
         </labels>
 	      <elements>
@@ -7684,8 +7804,126 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-    <!--Measurement-->
-	    <metadataElement code="dnaConcContainer" datatype="Container">
+    <!--Measurement and Facts-->
+	    <metadataElement code="sexAnimal" datatype="List" list="sex_animal">
+			  <labels>
+          <label locale="en_US">
+            <name>sex (dwc:sex)</name>
+            <description>The sex of the biological individual(s) represented in the Occurrence.</description>
+          </label>
+			  </labels>
+			  <documentationUrl>http://rs.tdwg.org/dwc/terms/sex</documentationUrl>
+			  <settings>
+          <setting name="fieldWidth">40</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+			  </settings>
+			  <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_observationAnimal">
+            <table>ca_objects</table>
+            <type>observationAnimal</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+			  </typeRestrictions>
+	    </metadataElement>
+	    <metadataElement code="sexPlant" datatype="List" list="sex_plant">
+			  <labels>
+          <label locale="en_US">
+            <name>sex (dwc:sex)</name>
+            <description>The sex of the biological individual(s) represented in the Occurrence.</description>
+          </label>
+			  </labels>
+			  <documentationUrl>http://rs.tdwg.org/dwc/terms/sex</documentationUrl>
+			  <settings>
+          <setting name="fieldWidth">40</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+			  </settings>
+			  <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_observationAnimal">
+            <table>ca_objects</table>
+            <type>observationAnimal</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+			  </typeRestrictions>
+	    </metadataElement>
+	    <metadataElement code="lifeStageAnimal" datatype="List" list="life_stage_animal">
+			  <labels>
+          <label locale="en_US">
+            <name>lifeStage animal</name>
+            <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
+          </label>
+			  </labels>
+			  <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
+			  <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+			  </settings>
+			  <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+			  </typeRestrictions>
+	    </metadataElement>
+	    <metadataElement code="lifeStagePlant" datatype="List" list="life_stage_plant">
+			  <labels>
+          <label locale="en_US">
+            <name>lifeStage plant</name>
+            <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
+          </label>
+			  </labels>
+			  <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
+			  <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+			  </settings>
+			  <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+			  </typeRestrictions>
+	    </metadataElement>	    	    	    	    
+      <metadataElement code="dnaConcContainer" datatype="Container">
         <labels>
           <label locale="en_US">
             <name>DNA concentration measurement</name>
@@ -8749,151 +8987,6 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="densityContainer" datatype="Container">
-        <labels>
-          <label locale="en_US">
-            <name>Density</name>
-          </label>
-        </labels>
-			  <settings>
-          <setting name="lineBreakAfterNumberOfElements">2</setting>
-        </settings>
-	      <elements>
-          <metadataElement code="densityDateRange" datatype="DateRange">
-            <labels>
-              <label locale="en_US">
-                <name>Date (range) and time (range) of the measurement</name>
-                <description>Represents an historic date range accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
-              </label>
-            </labels>
-            <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
-            <settings>
-              <setting name="fieldWidth">40</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-              <setting name="useDatePicker">1</setting>
-              <setting name="canBeUsedInSort">1</setting>
-              <setting name="canBeUsedInSearchForm">1</setting>
-              <setting name="canBeUsedInDisplay">1</setting>
-            </settings>
-          </metadataElement>
-          <metadataElement code="densityAppliesTo" datatype="Text">
-            <labels>
-              <label locale="en_US">
-                <name>measurementAppliesTo</name>
-                <description>Further specification of what exactly was measured.</description>
-              </label>
-            </labels>
-            <documentationUrl>http://rs.tdwg.org/abcd/terms/appliesTo</documentationUrl>
-          </metadataElement>
-          <metadataElement code="densityLowerValue" datatype="Text">
-            <labels>
-              <label locale="en_US">
-                <name>Lower value</name>
-                <description>Lower or only value</description>
-              </label>
-            </labels>
-            <documentationUrl>http://rs.tdwg.org/abcd/terms/lowerValue</documentationUrl>
-            <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
-          <metadataElement code="densityUpperValue" datatype="Text">
-            <labels>
-              <label locale="en_US">
-                <name>Upper value</name>
-              </label>
-            </labels>
-            <documentationUrl>http://rs.tdwg.org/abcd/terms/upperValue</documentationUrl>
-            <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
-          <metadataElement code="densityUnit" datatype="Text">
-            <labels>
-            <label locale="en_US">
-              <name>Unit</name>
-              <description>Unit used for the measurement.</description>
-            </label>
-            </labels>
-            <documentationUrl>	http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
-          </metadataElement>
-          <metadataElement code="densityPublishedProcedure" datatype="Url">
-            <labels>
-              <label locale="en_US">
-                <name>Published procedure</name>
-                <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
-              </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
-          <metadataElement code="densityProcedure" datatype="Text">
-            <labels>
-              <label locale="en_US">
-                <name>Procedure</name>
-                <description>Description of the measurement procedure.</description>
-              </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
-          <metadataElement code="densityAccuracy" datatype="Text">
-            <labels>
-              <label locale="en_US">
-                <name>Accuracy</name>
-                <description>The description of the potential error associated with the measurementValue.</description>
-              </label>
-            </labels>
-            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementAccuracy</documentationUrl>
-          </metadataElement>
-          <metadataElement code="densityRemarks" datatype="Text">
-            <labels>
-            <label locale="en_US">
-              <name>Remarks</name>
-              <description>Any relevant remaining remarks on the measurement. This could be who did the measurement, if something unusual was observed during the measurement,... For age measurements this can be a text value expressing the age, e.g. "estimated to be younger than five", which could be complemented by the minimum value 0 and the maximum value 5.</description>
-            </label>
-            </labels>
-            <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/gelRemarks</documentationUrl>
-          </metadataElement>
-	      </elements>
-        <typeRestrictions>
-          <restriction code="r_livingPlant">
-            <table>ca_objects</table>
-            <type>livingPlant</type>
-            <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_observationPlant">
-            <table>ca_objects</table>
-            <type>observationPlant</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">10</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
 	    <metadataElement code="germinationContainer" datatype="Container">
         <labels>
           <label locale="en_US">
@@ -9336,6 +9429,31 @@
           <restriction code="r_building">
             <table>ca_storage_locations</table>
             <type>building</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="provenance" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>provenance</name>
+            <description>Refers to the source of the plant material that was collected for propagation. This does not equal the sampling locality if this is material that been propagated ex situ.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>observationPlant</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -10397,410 +10515,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	  <!--ObservationContainers-->
-	    <metadataElement code="observationPlantCont1" datatype="Container">
-        <labels>
-          <label locale="en_US">
-            <name>Field metadata of the plant</name>
-          </label>
-        </labels>
-	      <elements>
-              <metadataElement code="dateRange1" datatype="DateRange">
-                <labels>
-                  <label locale="en_US">
-                    <name>Date (range) and time (range)</name>
-                    <description>Represents an historic date range accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
-                  </label>
-                </labels>
-                <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">40</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                  <setting name="canBeUsedInSort">1</setting>
-                  <setting name="canBeUsedInSearchForm">1</setting>
-                  <setting name="canBeUsedInDisplay">1</setting>
-                </settings>
-              </metadataElement>	    
-              <metadataElement code="lifeStage1" datatype="List" list="life_stage">
-                <labels>
-                  <label locale="en_US">
-                    <name>lifeStage</name>
-                    <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="reproductiveCondition1" datatype="List" list="reproductive_condition">
-                <labels>
-                  <label locale="en_US">
-                    <name>reproductiveCondition</name>
-                    <description>The reproductive condition of the biological individual(s) represented in the Occurrence. Recommended best practice is to use a controlled vocabulary.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/reproductiveCondition</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="age1" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Age statement</name>
-                    <description>A statement on the age of the plant, if known. For (planted in-situ) sites this is sometimes known/recorded.</description>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="habitat1" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>habitat</name>
-                    <description>A category or description of the habitat in which the Event occurred.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/habitat</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="verbatimNotes1" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Verbatim Notes</name>
-                    <description>Any unstructured information (e.g. notes, comments) literally transcribed from the original source.</description>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">115</setting>
-                  <setting name="fieldHeight">8</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-        </elements>
-        <typeRestrictions>
-          <restriction code="observationPlant">
-            <table>ca_objects</table>
-            <type>observationAnimal</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-	    <metadataElement code="observationAnimalCont2" datatype="Container">
-        <labels>
-          <label locale="en_US">
-            <name>Field metadata of the animal</name>
-          </label>
-        </labels>
-	      <elements>
-              <metadataElement code="dateRange2" datatype="DateRange">
-                <labels>
-                  <label locale="en_US">
-                    <name>Date (range) and time (range)</name>
-                    <description>Represents an historic date range accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
-                  </label>
-                </labels>
-                <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">40</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                  <setting name="canBeUsedInSort">1</setting>
-                  <setting name="canBeUsedInSearchForm">1</setting>
-                  <setting name="canBeUsedInDisplay">1</setting>
-                </settings>
-              </metadataElement>	    
-              <metadataElement code="lifeStage2" datatype="List" list="life_stage">
-                <labels>
-                  <label locale="en_US">
-                    <name>lifeStage</name>
-                    <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="reproductiveCondition2" datatype="List" list="reproductive_condition">
-                <labels>
-                  <label locale="en_US">
-                    <name>reproductiveCondition</name>
-                    <description>The reproductive condition of the biological individual(s) represented in the Occurrence. Recommended best practice is to use a controlled vocabulary.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/reproductiveCondition</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="age2" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Age statement</name>
-                    <description>A statement on the age of the animal, if known.</description>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="behavior2" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>behavior</name>
-                    <description>A description of the behavior shown by the subject at the time the Occurrence was recorded. Recommended best practice is to use a controlled vocabulary.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/behavior</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="verbatimNotes2" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Verbatim Notes</name>
-                    <description>Any unstructured information (e.g. notes, comments) literally transcribed from the original source.</description>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">115</setting>
-                  <setting name="fieldHeight">8</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-	      </elements>
-        <typeRestrictions>
-          <restriction code="observationAnimal">
-            <table>ca_objects</table>
-            <type>observationAnimal</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-	    <metadataElement code="observationSoilCont3" datatype="Container">
-        <labels>
-          <label locale="en_US">
-            <name>Field metadata of the soil sampling point</name>
-          </label>
-        </labels>
-	      <elements>
-              <metadataElement code="dateRange3" datatype="DateRange">
-                <labels>
-                  <label locale="en_US">
-                    <name>Date (range) and time (range)</name>
-                    <description>Represents an historic date range accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
-                  </label>
-                </labels>
-                <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">40</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                  <setting name="canBeUsedInSort">1</setting>
-                  <setting name="canBeUsedInSearchForm">1</setting>
-                  <setting name="canBeUsedInDisplay">1</setting>
-                </settings>
-              </metadataElement>	    
-              <metadataElement code="landUseType3" datatype="List" list="land_use_type">
-                <labels>
-                  <label locale="en_US">
-                    <name>landUseType</name>
-                </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="verbatimNotes3" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Verbatim Notes</name>
-                    <description>Any unstructured information (e.g. notes, comments) literally transcribed from the original source.</description>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">115</setting>
-                  <setting name="fieldHeight">8</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-	      </elements>
-        <typeRestrictions>
-          <restriction code="observationSoil">
-            <table>ca_objects</table>
-            <type>observationAnimal</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-	    <metadataElement code="observationWaterCont4" datatype="Container">
-        <labels>
-          <label locale="en_US">
-            <name>Field metadata of the water sampling point</name>
-          </label>
-        </labels>
-	      <elements>
-              <metadataElement code="dateRange4" datatype="DateRange">
-                <labels>
-                  <label locale="en_US">
-                    <name>Date (range) and time (range)</name>
-                    <description>Represents an historic date range accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
-                  </label>
-                </labels>
-                <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">40</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                  <setting name="canBeUsedInSort">1</setting>
-                  <setting name="canBeUsedInSearchForm">1</setting>
-                  <setting name="canBeUsedInDisplay">1</setting>
-                </settings>
-              </metadataElement>	    
-              <metadataElement code="verbatimNotes4" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Verbatim Notes</name>
-                    <description>Any unstructured information (e.g. notes, comments) literally transcribed from the original source.</description>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">115</setting>
-                  <setting name="fieldHeight">8</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-	      </elements>
-        <typeRestrictions>
-          <restriction code="observationWater">
-            <table>ca_objects</table>
-            <type>observationAnimal</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
 	  <!--Fieldmetadata-->
-	    <metadataElement code="sex" datatype="List" list="sex">
-			  <labels>
-          <label locale="en_US">
-            <name>sex (dwc:sex)</name>
-            <description>The sex of the biological individual(s) represented in the Occurrence.</description>
-          </label>
-			  </labels>
-			  <documentationUrl>http://rs.tdwg.org/dwc/terms/sex</documentationUrl>
-			  <settings>
-          <setting name="fieldWidth">40</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-			  </settings>
-			  <typeRestrictions>
-          <restriction code="r_objects">
-            <table>ca_objects</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_observationAnimal">
-            <table>ca_objects</table>
-            <type>observationAnimal</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-			  </typeRestrictions>
-	    </metadataElement>
-	    <metadataElement code="lifeStage" datatype="List" list="life_stage">
-			  <labels>
-          <label locale="en_US">
-            <name>lifeStage</name>
-            <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
-          </label>
-			  </labels>
-			  <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
-			  <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-			  </settings>
-			  <typeRestrictions>
-          <restriction code="r_objects">
-            <table>ca_objects</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-			  </typeRestrictions>
-	    </metadataElement>
 	    <metadataElement code="reproductiveCondition" datatype="List" list="reproductive_condition">
 			  <labels>
           <label locale="en_US">
@@ -12984,16 +12699,25 @@
               <bundle>ca_attribute_externalRecord</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">External record (URL)</setting>
-                <setting name="description" locale="en_US">The object published on DiSSCo, occurrence data of the sampling point published on GBIF, ..</setting>
-				        <setting name="add_label" locale="en_US">Add URL</setting>
+                <setting name="description" locale="en_US">The object published on DiSSCo, occurrence data of the sampling point published on GBIF, .. This is a sister-record of the current digital record of the specimen or sampling point.</setting>
+				        <setting name="add_label" locale="en_US">Add external record</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="preparationDate" typeRestrictions="object" includeSubtypes="1">
+            <placement code="samplingDate" typeRestrictions="object" includeSubtypes="1">
               <bundle>ca_attribute_dateRange</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Preparation date (ggbn:preparationDate)</setting>
-                <setting name="description" locale="en_US">This is the date/time that becomes fixed due to sampling in the object and all its derivatives. This will depend on the origin type.The original date/The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
+                <setting name="label" locale="en_US">Sampling date</setting>
+                <setting name="description" locale="en_US">This is the date/time that becomes fixed due to sampling the sampling point to its first object. The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
+				        <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+            <placement code="preparationDate" typeRestrictions="object" includeSubtypes="1">
+              <bundle>ca_attribute_preparationDate</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Specimen creation date</setting>
+                <setting name="description" locale="en_US">This is the date/time that the specimen/object was created. When this is the first object in the hierarchy, this date equals the sampling date. When this a second or third object in the sequence (e.g. a DNA sample is created on a later date than the sampling of the tissue sample). The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
 				        <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
@@ -13038,20 +12762,129 @@
             </placement>
           </bundlePlacements>
         </screen>
+        <screen idno="obj_storage" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Storage location</name>
+            </label>
+          </labels>
+          <typeRestrictions>
+                <restriction code="r_animalBulk" type="animalBulk"/>
+                <restriction code="r_animalEntireLiving" type="animalEntireLiving"/>
+                <restriction code="r_animalEntireCadaver" type="animalEntireCadaver"/>       
+                <restriction code="r_animalEntireEthanol" type="animalEntireEthanol"/>
+                <restriction code="r_sampleAmphibianLarva" type="sampleAmphibianLarva"/>
+                <restriction code="r_sampleAmphibianEmbryo" type="sampleAmphibianEmbryo"/>
+                <restriction code="r_sampleAmphibianTailclip" type="sampleAmphibianTailclip"/>
+                <restriction code="r_sampleAmphibianFrogspawn" type="sampleAmphibianFrogspawn"/>
+                <restriction code="r_sampleAmphibianSwabCloaca" type="sampleAmphibianSwabCloaca"/>
+                <restriction code="r_sampleAmphibianSwabMouth" type="sampleAmphibianSwabMouth"/>
+                <restriction code="r_sampleAmphibianSwabEar" type="sampleAmphibianSwabEar"/>
+                <restriction code="r_sampleAmphibianToeclip" type="sampleAmphibianToeclip"/>
+                <restriction code="r_sampleFishFinclip" type="sampleFishFinclip"/>
+                <restriction code="r_sampleFishMuscle" type="sampleFishMuscle"/>
+                <restriction code="r_sampleInvertebrateLarva" type="sampleInvertebrateLarva"/>
+                <restriction code="r_sampleInvertebrateLeg" type="sampleInvertebrateLeg"/>
+                <restriction code="r_sampleInvertebrateWingclip" type="sampleInvertebrateWingclip"/>
+                <restriction code="r_sampleReptileSkin" type="sampleReptileSkin"/>
+                <restriction code="r_sampleReptileTailclip" type="sampleReptileTailclip"/>
+                <restriction code="r_sampleMammalBaculum" type="sampleMammalBaculum"/>
+                <restriction code="r_sampleMammalBladder" type="sampleMammalBladder"/>
+                <restriction code="r_sampleMammalBlood" type="sampleMammalBlood"/>
+                <restriction code="r_sampleMammalBrain" type="sampleMammalBrain"/>
+                <restriction code="r_sampleMammalConjuctivum" type="sampleMammalConjuctivum"/>
+                <restriction code="r_sampleMammalCyste" type="sampleMammalCyste"/>
+                <restriction code="r_sampleMammalEarpunch" type="sampleMammalEarpunch"/>
+                <restriction code="r_sampleMammalEmbryo" type="sampleMammalEmbryo"/>
+                <restriction code="r_sampleMammalFeces" type="sampleMammalFeces"/>
+                <restriction code="r_sampleMammalHead" type="sampleMammalBaculum"/>
+                <restriction code="r_sampleMammalHeart" type="sampleMammalHeart"/>
+                <restriction code="r_sampleMammalHair" type="sampleMammalHair"/>
+                <restriction code="r_sampleMammalIntestine" type="sampleMammalIntestine"/>
+                <restriction code="r_sampleMammalLiver" type="sampleMammalLiver"/>
+                <restriction code="r_sampleMammalLung" type="sampleMammalLung"/>
+                <restriction code="r_sampleMammalLymphNode" type="sampleMammalLymphNode"/>
+                <restriction code="r_sampleMammalKidney" type="sampleMammalKidney"/>
+                <restriction code="r_sampleMammalMuscle" type="sampleMammalMuscle"/>
+                <restriction code="r_sampleMammalSkinPiece" type="sampleMammalSkinPiece"/>
+                <restriction code="r_sampleMammalSkinComplete" type="sampleMammalSkinComplete"/>
+                <restriction code="r_sampleMammalSkull" type="sampleMammalSkull"/>
+                <restriction code="r_sampleMammalSpleen" type="sampleMammalSpleen"/>
+                <restriction code="r_sampleMammalStomach" type="sampleMammalStomach"/>
+                <restriction code="r_sampleMammalSwabBite" type="sampleMammalSwabBite"/>
+                <restriction code="r_sampleMammalTongue" type="sampleMammalTongue"/>
+                <restriction code="r_sampleMammalTooth" type="sampleMammalSkull"/>
+                <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
+                <restriction code="r_leafSample" type="leafSample"/>
+                <restriction code="r_littertrapSample" type="littertrapSample"/>
+                <restriction code="r_herbariumSpecimen" type="herbariumSpecimen"/>
+                <restriction code="r_livingPlant" type="livingPlant"/>
+                <restriction code="r_seedlot" type="seedlot"/>
+                <restriction code="r_stemDisc" type="stemDisc"/>
+                <restriction code="r_oDNA" type="oDNA"/>
+                <restriction code="r_waterSample" type="waterSample"/>
+                <restriction code="r_eDNA" type="eDNA"/>
+                <restriction code="r_mineralSoilSample" type="mineralSoilSample"/>
+                <restriction code="r_peatSoilSample" type="peatSoilSample"/>
+                <restriction code="r_organicSoilSample" type="organicSoilSample"/>
+          </typeRestrictions>
+          <bundlePlacements>
+            <placement code="is_deaccessioned">
+              <bundle>is_deaccessioned</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">A flag indicating whether the object is deaccessioned</setting>
+                <setting name="description" locale="en_US">Will be 1 when deaccessioned or 0 (the default) when not deaccessioned. This should be visible in the object curation log. Types of deaccesioning are: disposal or transfer.</setting>
+              </settings>
+            </placement>
+            <placement code="ca_storage_location">
+              <bundle>ca_storage_locations</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Object is stored at</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+            <placement code="ca_collection">
+              <bundle>ca_collections</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Object belongs to collection</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
         <screen idno="relations" default="0">
           <labels>
             <label locale="en_US">
-              <name>Hierarchy</name>
+              <name>Relations</name>
             </label>
           </labels>
           <bundlePlacements>
             <placement code="hierarchy_location">
               <bundle>hierarchy_location</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Object direct relationships hierarchy browser</setting>
-                <setting name="description" locale="en_US">All directly related objects (subsamples, DNA-extractions, parasites from cadaver, ...)</setting>
+                <setting name="label" locale="en_US">Relationships hierarchy browser</setting>
+                <setting name="description" locale="en_US">The relationship between sampling point and all the directly related objects (subsamples, DNA-extractions, parasites from cadaver, ...)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="expand_collapse_value">collapse</setting>
+              </settings>
+            </placement>
+			      <placement code="seedlot_relationContainer" typeRestrictions="seedlot">
+              <bundle>ca_attribute_seedlotRelationContainer</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Relation of the seeds in the seedlot</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+			      <placement code="population" typeRestrictions="observationAnimal">
+              <bundle>ca_object_lots</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Belongs to the population</setting>
+                <setting name="description" locale="en_US">A population in this case is any grouping of individuals in space and time that is defined.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+				        <setting name="restrict_to_types">population</setting>
               </settings>
             </placement>		 		 
           </bundlePlacements>
@@ -13059,7 +12892,7 @@
         <screen idno="context" default="0">
           <labels>
             <label locale="en_US">
-              <name>Context</name>
+              <name>Admin context</name>
             </label>
           </labels>
           <bundlePlacements>
@@ -13067,12 +12900,14 @@
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Project that generated the record</setting>
+                <setting name="description" locale="en_US">This can be a project as defined in JIRA, a project as defined in LIMS, ..</setting>
 				        <setting name="restrict_to_types">project</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">3</setting>
+                <setting name="maxRelationshipsPerRow">5</setting>
                 <setting name="restrict_to_relationship_types">resultingObjectsProject</setting>
                 <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+				        <setting name="add_label" locale="en_US">Add project</setting>
               </settings>
 			      </placement>
             <placement code="ca_occurrence_fieldwork">
@@ -13131,6 +12966,38 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
+            <placement code="ca_entities">
+              <bundle>ca_entities</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Owner of the locality</setting>
+                <setting name="description" locale="en_US">If the locality is on private property, it might be necessary to log who owns the property. The owner can be a private person (individual) or an organization.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="useHierarchicalBrowser">0</setting>
+                <setting name="restrict_to_relationship_types">localityOwner</setting>
+              </settings>
+			      </placement>
+            <placement code="provenance" typeRestrictions="observationPlant">
+              <bundle>ca_attribute_provenance</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The provenance</setting>
+                <setting name="description" locale="en_US">The plant sampling point has the provenance. As provenance concepts are dependent on the taxon, these are logged separately.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+            <placement code="ca_object_lot_provenanceRegion" typeRestrictions="observationPlant">
+              <bundle>ca_object_lots</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The provenance region</setting>
+                <setting name="description" locale="en_US">The plant observation has the provenance region. As provenance concepts are dependent on the taxon, these are logged separately.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="restrict_to_types">provenanceRegion</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
             <placement code="verbatimLongitudeX" typeRestrictions="observationSoil,observationPlant,observationWater">
               <bundle>ca_attribute_verbatimLongitudeX</bundle>
               <settings>
@@ -13356,273 +13223,10 @@
             </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="metadata" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>Metadata</name>
-            </label>
-          </labels>
-          <typeRestrictions>
-                <restriction code="r_animalBulk" type="animalBulk"/>
-                <restriction code="r_animalEntireLiving" type="animalEntireLiving"/>
-                <restriction code="r_animalEntireCadaver" type="animalEntireCadaver"/>       
-                <restriction code="r_animalEntireEthanol" type="animalEntireEthanol"/>
-                <restriction code="r_sampleAmphibianLarva" type="sampleAmphibianLarva"/>
-                <restriction code="r_sampleAmphibianEmbryo" type="sampleAmphibianEmbryo"/>
-                <restriction code="r_sampleAmphibianTailclip" type="sampleAmphibianTailclip"/>
-                <restriction code="r_sampleAmphibianFrogspawn" type="sampleAmphibianFrogspawn"/>
-                <restriction code="r_sampleAmphibianSwabCloaca" type="sampleAmphibianSwabCloaca"/>
-                <restriction code="r_sampleAmphibianSwabMouth" type="sampleAmphibianSwabMouth"/>
-                <restriction code="r_sampleAmphibianSwabEar" type="sampleAmphibianSwabEar"/>
-                <restriction code="r_sampleAmphibianToeclip" type="sampleAmphibianToeclip"/>
-                <restriction code="r_sampleFishFinclip" type="sampleFishFinclip"/>
-                <restriction code="r_sampleFishMuscle" type="sampleFishMuscle"/>
-                <restriction code="r_sampleInvertebrateLarva" type="sampleInvertebrateLarva"/>
-                <restriction code="r_sampleInvertebrateLeg" type="sampleInvertebrateLeg"/>
-                <restriction code="r_sampleInvertebrateWingclip" type="sampleInvertebrateWingclip"/>
-                <restriction code="r_sampleReptileSkin" type="sampleReptileSkin"/>
-                <restriction code="r_sampleReptileTailclip" type="sampleReptileTailclip"/>
-                <restriction code="r_sampleMammalBaculum" type="sampleMammalBaculum"/>
-                <restriction code="r_sampleMammalBladder" type="sampleMammalBladder"/>
-                <restriction code="r_sampleMammalBlood" type="sampleMammalBlood"/>
-                <restriction code="r_sampleMammalBrain" type="sampleMammalBrain"/>
-                <restriction code="r_sampleMammalConjuctivum" type="sampleMammalConjuctivum"/>
-                <restriction code="r_sampleMammalCyste" type="sampleMammalCyste"/>
-                <restriction code="r_sampleMammalEarpunch" type="sampleMammalEarpunch"/>
-                <restriction code="r_sampleMammalEmbryo" type="sampleMammalEmbryo"/>
-                <restriction code="r_sampleMammalFeces" type="sampleMammalFeces"/>
-                <restriction code="r_sampleMammalHead" type="sampleMammalBaculum"/>
-                <restriction code="r_sampleMammalHeart" type="sampleMammalHeart"/>
-                <restriction code="r_sampleMammalHair" type="sampleMammalHair"/>
-                <restriction code="r_sampleMammalIntestine" type="sampleMammalIntestine"/>
-                <restriction code="r_sampleMammalLiver" type="sampleMammalLiver"/>
-                <restriction code="r_sampleMammalLung" type="sampleMammalLung"/>
-                <restriction code="r_sampleMammalLymphNode" type="sampleMammalLymphNode"/>
-                <restriction code="r_sampleMammalKidney" type="sampleMammalKidney"/>
-                <restriction code="r_sampleMammalMuscle" type="sampleMammalMuscle"/>
-                <restriction code="r_sampleMammalSkinPiece" type="sampleMammalSkinPiece"/>
-                <restriction code="r_sampleMammalSkinComplete" type="sampleMammalSkinComplete"/>
-                <restriction code="r_sampleMammalSkull" type="sampleMammalSkull"/>
-                <restriction code="r_sampleMammalSpleen" type="sampleMammalSpleen"/>
-                <restriction code="r_sampleMammalStomach" type="sampleMammalStomach"/>
-                <restriction code="r_sampleMammalSwabBite" type="sampleMammalSwabBite"/>
-                <restriction code="r_sampleMammalTongue" type="sampleMammalTongue"/>
-                <restriction code="r_sampleMammalTooth" type="sampleMammalSkull"/>
-                <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
-                <restriction code="r_leafSample" type="leafSample"/>
-                <restriction code="r_littertrapSample" type="littertrapSample"/>
-                <restriction code="r_herbariumSpecimen" type="herbariumSpecimen"/>
-                <restriction code="r_livingPlant" type="livingPlant"/>
-                <restriction code="r_seedlot" type="seedlot"/>
-                <restriction code="r_stemDisc" type="stemDisc"/>
-                <restriction code="r_oDNA" type="oDNA"/>
-                <restriction code="r_observationPlant" type="observationPlant"/>
-                <restriction code="r_observationAnimal" type="observationAnimal"/>
-                <restriction code="r_observationSoil" type="observationSoil"/>
-                <restriction code="r_observationWater" type="observationWater"/>
-          </typeRestrictions>
-          <bundlePlacements>
-			      <placement code="sex" typeRestrictions="observationAnimal,observationPlant">
-              <bundle>ca_attribute_sex</bundle>
-			      </placement>
-			      <placement code="population" typeRestrictions="observationAnimal,observationPlant">
-              <bundle>ca_object_lots</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Belongs to the population</setting>
-                <setting name="description" locale="en_US">A population in this case is any grouping of individuals in space and time that is defined.</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-				        <setting name="restrict_to_types">population</setting>
-              </settings>
-            </placement>
-            <placement code="ca_objects_lots_provenanceRegion" typeRestrictions="observationPlant">
-              <bundle>ca_places</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The provenance (region)</setting>
-                <setting name="description" locale="en_US">The plant observation has the provenance. As provenance concepts are dependent on the taxon, these are logged separately.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_types">provenanceRegion,provenance</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-			      </placement>
-			      <placement code="observationPlantCont1" typeRestrictions="observationPlant">
-              <bundle>ca_attribute_observationPlantCont1</bundle>
-			      </placement>
-			      <placement code="observationAnimalCont2" typeRestrictions="observationAnimal">
-              <bundle>ca_attribute_observationAnimalCont2</bundle>
-			      </placement>
-            <placement code="preparationDate" typeRestrictions="animalEntireCadaver,animalEntireEthanol,animalEntireDry">
-              <bundle>ca_attribute_preparationDate</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Preparation date (ggbn:preparationDate)</setting>
-                <setting name="description" locale="en_US">This is the date that the object was created or prepared. For the first object in a hierarchy, this will be the same as the dateRange. The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
-			      <placement code="lifeStage_fixed" typeRestrictions="animalEntireCadaver,animalEntireEthanol,animalEntireDry">
-              <bundle>ca_attribute_lifeStage</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
-                <setting name="description" locale="en_US">Life stage of the organism at time object(s) were collected</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
-			      <placement code="reproductiveCondition_fixed" typeRestrictions="animalEntireCadaver,animalEntireEthanol,animalEntireDry">
-              <bundle>ca_attribute_reproductiveCondition</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Reproductive condition (dwc:reproductiveCondition)</setting>
-                <setting name="description" locale="en_US">Reproductive condition of the organism at time object(s) were collected</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="expand_collapse_value">collapse</setting>
-                <setting name="hideIfSelected_juvenile">object_ui/obj_metadata/ca_attribute_lifeStage</setting>
-                <setting name="hideIfSelected_seedling">object_ui/obj_metadata/ca_attribute_lifeStage</setting>
-                <setting name="hideIfSelected_egg">object_ui/obj_metadata/ca_attribute_lifeStage</setting>
-                <setting name="hideIfSelected_larva">object_ui/obj_metadata/ca_attribute_lifeStage</setting>
-                <setting name="hideIfSelected_pupa">object_ui/obj_metadata/ca_attribute_lifeStage</setting>
-                <setting name="hideIfSelected_nymph">object_ui/obj_metadata/ca_attribute_lifeStage</setting>
-                <setting name="hideIfSelected_notRecorded">object_ui/obj_metadata/ca_attribute_lifeStage</setting>
-			        </settings>
-            </placement>
-			      <placement code="decompositionCategory" typeRestrictions="animalEntireCadaver,animalEntireEthanol,animalEntireDry">
-              <bundle>ca_attribute_decompositionCategory</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Decomposition category of the animal(s) at the time of collection</setting>
-		            <setting name="description" locale="en_US">DCC1: extremely fresh (e.g. animal was still alive at collection, or the animal was euthanized and collection occurred immediately after). DCC2: fresh (i.e. animal that has only recently died, no signs of decomposition). DCC3: moderate decomposition (for example: mammal its belly is swollen, hair detaches, fly eggs, ..). DCC4: advanced decomposition (for example: mammal its belly is swollen, hair detaches, maggots, ...). DCC5: mummified (animal is (partly) decomposed).</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
-			      <placement code="classSystem" typeRestrictions="observationSoil">
-              <bundle>ca_attribute_ClassSystem</bundle>
-			      </placement>
-			      <placement code="tier1SoilTypeFAO1974" typeRestrictions="observationSoil">
-              <bundle>ca_attribute_Tier1SoilTypeFAO1974</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Soil type FAO 1974</setting>
-			        </settings>
-			      </placement>
-			      <placement code="tier1SoilTypeFAO1988" typeRestrictions="observationSoil">
-              <bundle>ca_attribute_Tier1SoilTypeFAO1988</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Soil type FAO 1988</setting>
-			        </settings>
-			      </placement>
-			      <placement code="tier1SoilTypeWRB1998" typeRestrictions="observationSoil">
-              <bundle>ca_attribute_Tier1SoilTypeWRB1998</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Soil type WRB 1998</setting>
-			        </settings>
-			      </placement>
-			      <placement code="tier1SoilTypeWRB2006" typeRestrictions="observationSoil">
-              <bundle>ca_attribute_Tier1SoilTypeWRB2006</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Soil type WRB 2006</setting>
-			        </settings>
-			      </placement>
-			      <placement code="tier1SoilTypeWRB2007" typeRestrictions="observationSoil">
-              <bundle>ca_attribute_Tier1SoilTypeWRB2007</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Soil type WRB 2007</setting>
-			        </settings>
-			      </placement>
-			      <placement code="tier1SoilTypeWRB2014" typeRestrictions="observationSoil">
-              <bundle>ca_attribute_Tier1SoilTypeWRB2014</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Soil type WRB 2014</setting>
-			        </settings>
-			      </placement>
-			      <placement code="tier1SoilTypeWRB2015" typeRestrictions="observationSoil">
-              <bundle>ca_attribute_Tier1SoilTypeWRB2015</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Soil type WRB 2015</setting>
-			        </settings>
-			      </placement>
-			      <placement code="tier1SoilTypeST" typeRestrictions="observationSoil">
-              <bundle>ca_attribute_Tier1SoilTypeST</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Soil type ST</setting>
-			        </settings>
-			      </placement>
-			      <placement code="tier1SoilTypeMO" typeRestrictions="observationSoil">
-              <bundle>ca_attribute_Tier1SoilTypeMO</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Soil type MO</setting>
-			        </settings>
-			      </placement>
-			      <placement code="tier1SoilTypeGE" typeRestrictions="observationSoil">
-              <bundle>ca_attribute_Tier1SoilTypeMO</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Soil type GE</setting>
-			        </settings>
-			      </placement>
-			      <placement code="seedlot_relationContainer" typeRestrictions="seedlot">
-              <bundle>ca_attribute_seedlotRelationContainer</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Relation of the seeds in the seedlot</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
-			      <placement code="seedClass" typeRestrictions="seedlot">
-              <bundle>ca_attribute_seedClass</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Seedclass of the seedlot</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
-			      <placement code="lifeStage_timestamped" typeRestrictions="livingPlant,animalEntireLiving">
-              <bundle>ca_attribute_lifeStage</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Life stage of the organism</setting>
-                <setting name="description" locale="en_US">For living animals and plants in captivity, lifeStage can be tracked in the CMS, if relevant.</setting>
-              </settings>
-            </placement>
-			      <placement code="verbatimNotes">
-              <bundle>ca_attribute_verbatimNotes</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Verbatim notes</setting>
-                <setting name="description" locale="en_US">Any relevant unstructured information on the object (e.g. notes, comments) literally transcribed from the original source (e.g. paper inventory, field notes).</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-            <placement code="file">
-              <bundle>ca_attribute_file</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">File(s) associated with the sampling point</setting>
-                <setting name="description" locale="en_US">Files related to the sampling point, such as: scan of observation field notes, scan of map, ...</setting>
-				        <setting name="add_label" locale="en_US">Add file</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="expand_collapse_value">collapse</setting>
-			        </settings>
-            </placement>
-          </bundlePlacements>
-        </screen>
-		    <screen idno="multimedia" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>Multimedia</name>
-            </label>
-          </labels>
-          <bundlePlacements>
-            <placement code="ca_object_representations">
-              <bundle>ca_object_representations</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Multimedia representation</setting>
-                <setting name="description" locale="en_US">Multimedia representation of the object, organism, sampling point. This can be photos, scans, videos, sounds,..</setting>
-				        <setting name="add_label" locale="en_US">Add multimedia</setting>
-                <setting name="restrict_to_types">objectMultimedia</setting>
-			        </settings>
-            </placement>
-          </bundlePlacements>
-        </screen>
 		    <screen idno="obj_preparation" default="0">
           <labels>
             <label locale="en_US">
-              <name>Preparation</name>
+              <name>(sub)Sampling event</name>
             </label>
           </labels>
           <typeRestrictions>
@@ -13686,11 +13290,20 @@
                 <restriction code="r_organicSoilSample" type="organicSoilSample"/>
           </typeRestrictions>
           <bundlePlacements>
-            <placement code="preparationDate">
+            <placement code="samplingDate" typeRestrictions="object" includeSubtypes="1">
+              <bundle>ca_attribute_dateRange</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Sampling date</setting>
+                <setting name="description" locale="en_US">This is the date/time that becomes fixed due to sampling the sampling point to its first object. The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
+				        <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+            <placement code="preparationDate" typeRestrictions="object" includeSubtypes="1">
               <bundle>ca_attribute_preparationDate</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Date (and time)</setting>
-                <setting name="description" locale="en_US">This is the date that the object was created or prepared. For the first object in a hierarchy, this will be the same as the dateRange. The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
+                <setting name="label" locale="en_US">Specimen creation date</setting>
+                <setting name="description" locale="en_US">This is the date/time that the specimen/object was created. When this is the first object in the hierarchy, this date equals the sampling date. When this a second or third object in the sequence (e.g. a DNA sample is created on a later date than the sampling of the tissue sample). The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
 				        <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
@@ -13699,12 +13312,56 @@
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Prepared by</setting>
-                <setting name="description" locale="en_US">A person that collected, created, extracted, prepared, .. the object.</setting>
+                <setting name="description" locale="en_US">A person that collected, created, extracted, prepared, .. the object/specimen.</setting>
 				        <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">5</setting>
                 <setting name="restrict_to_relationship_types">preparedBy</setting>
               </settings>
-            </placement>		 		 
+            </placement>
+			      <placement code="verbatimNotes">
+              <bundle>ca_attribute_verbatimNotes</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Verbatim notes</setting>
+                <setting name="description" locale="en_US">Any relevant unstructured information on the object (e.g. notes, comments) literally transcribed from the original source (e.g. paper inventory, field notes). Tip: under the screen "Multimedia and files" you can link any relevant field files, photos, ...</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+			      <placement code="lifeStage_animal" typeRestrictions="animalObject">
+              <bundle>ca_attribute_lifeStageAnimal</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
+                <setting name="description" locale="en_US">Due to sampling, the life stage of the animal at time object(s) were collected becomes a fixed value.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+			      <placement code="lifeStage_plant" typeRestrictions="plantObject">
+              <bundle>ca_attribute_lifeStagePlant</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
+                <setting name="description" locale="en_US">Due to sampling, the life stage of the plant at time object(s) were collected becomes a fixed value.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+			      <placement code="reproductiveCondition" typeRestrictions="animalEntireCadaver,animalEntireEthanol,animalEntireDry">
+              <bundle>ca_attribute_reproductiveCondition</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Reproductive condition (dwc:reproductiveCondition)</setting>
+                <setting name="description" locale="en_US">Reproductive condition of the organism at time object(s) were collected</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
+                <setting name="hideIfSelected_juvenile">object_ui/obj_metadata/ca_attribute_lifeStage</setting>
+                <setting name="hideIfSelected_seedling">object_ui/obj_metadata/ca_attribute_lifeStage</setting>
+                <setting name="hideIfSelected_egg">object_ui/obj_metadata/ca_attribute_lifeStage</setting>
+                <setting name="hideIfSelected_larva">object_ui/obj_metadata/ca_attribute_lifeStage</setting>
+                <setting name="hideIfSelected_pupa">object_ui/obj_metadata/ca_attribute_lifeStage</setting>
+                <setting name="hideIfSelected_nymph">object_ui/obj_metadata/ca_attribute_lifeStage</setting>
+                <setting name="hideIfSelected_notRecorded">object_ui/obj_metadata/ca_attribute_lifeStage</setting>
+			        </settings>
+            </placement>		 		 		 		 
 			      <placement code="verbatimDepth" typeRestrictions="eDnaWaterFilter,watersample,mineralSoilSample,peatSoilSample,organicSoilSample">
               <bundle>ca_attribute_verbatimDepth</bundle>
               <settings>
@@ -13786,7 +13443,7 @@
 		    <screen idno="obj_measurements" default="0">
           <labels>
             <label locale="en_US">
-              <name>Measurements </name>
+              <name>Measurements and facts</name>
             </label>
           </labels>
           <typeRestrictions>
@@ -13854,6 +13511,33 @@
                 <restriction code="r_observationAnimal" type="observationAnimal"/>
           </typeRestrictions>
           <bundlePlacements>
+			      <placement code="sexPlant" typeRestrictions="observationPlant">
+              <bundle>ca_attribute_sexPlant</bundle>
+			        <settings>
+                <setting name="description" locale="en_US">If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+				        <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+			      <placement code="sexAnimal" typeRestrictions="observationAnimal">
+              <bundle>ca_attribute_sexPlant</bundle>
+			        <settings>
+                <setting name="description" locale="en_US">If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+				        <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+			      <placement code="decompositionCategory" typeRestrictions="animalEntireCadaver,animalEntireEthanol,animalEntireDry">
+              <bundle>ca_attribute_decompositionCategory</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Decomposition category of the animal(s) at the time of collection</setting>
+		            <setting name="description" locale="en_US">DCC1: extremely fresh (e.g. animal was still alive at collection, or the animal was euthanized and collection occurred immediately after). DCC2: fresh (i.e. animal that has only recently died, no signs of decomposition). DCC3: moderate decomposition (for example: mammal its belly is swollen, hair detaches, fly eggs, ..). DCC4: advanced decomposition (for example: mammal its belly is swollen, hair detaches, maggots, ...). DCC5: mummified (animal is (partly) decomposed).</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
             <placement code="dna_conc" typeRestrictions="oDNA,eDNA">
               <bundle>ca_attribute_dnaConcContainer</bundle>
 			        <settings>
@@ -13949,7 +13633,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="object_count" typeRestrictions="seedlot,animalBulk,observationPlant">
+            <placement code="object_count" typeRestrictions="seedlot,animalBulk">
               <bundle>ca_attribute_countContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Count</setting>
@@ -13958,35 +13642,69 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="observation_density" typeRestrictions="observationPlant">
-              <bundle>ca_attribute_densityContainer</bundle>
+			      <placement code="classSystem" typeRestrictions="observationSoil">
+              <bundle>ca_attribute_ClassSystem</bundle>
+			      </placement>
+			      <placement code="tier1SoilTypeFAO1974" typeRestrictions="observationSoil">
+              <bundle>ca_attribute_Tier1SoilTypeFAO1974</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Density measurement</setting>
-				        <setting name="add_label" locale="en_US">Add density measurement</setting>
-                <setting name="list_format">list</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="expand_collapse_value">collapse</setting>
-              </settings>
-            </placement>
-            <placement code="ca_object_representations">
-              <bundle>ca_object_representations</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Multimedia of the measurement</setting>
-                <setting name="description" locale="en_US">Add a photo, scan or video of the measurement if relevant. For example: a !well-annotated! DNA sample gel image.</setting>
-				        <setting name="add_label" locale="en_US">Add visual representation</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="restrict_to_types">measurementMultimedia</setting>
+                <setting name="label" locale="en_US">Soil type FAO 1974</setting>
 			        </settings>
-            </placement>
-            <placement code="file">
-              <bundle>ca_attribute_file</bundle>
+			      </placement>
+			      <placement code="tier1SoilTypeFAO1988" typeRestrictions="observationSoil">
+              <bundle>ca_attribute_Tier1SoilTypeFAO1988</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Measurement file</setting>
-                <setting name="description" locale="en_US">A file incuding raw data or output relevant in logging the measurement(s).</setting>
-                <setting name="add_label" locale="en_US">Add new file</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
+                <setting name="label" locale="en_US">Soil type FAO 1988</setting>
+			        </settings>
+			      </placement>
+			      <placement code="tier1SoilTypeWRB1998" typeRestrictions="observationSoil">
+              <bundle>ca_attribute_Tier1SoilTypeWRB1998</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Soil type WRB 1998</setting>
+			        </settings>
+			      </placement>
+			      <placement code="tier1SoilTypeWRB2006" typeRestrictions="observationSoil">
+              <bundle>ca_attribute_Tier1SoilTypeWRB2006</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Soil type WRB 2006</setting>
+			        </settings>
+			      </placement>
+			      <placement code="tier1SoilTypeWRB2007" typeRestrictions="observationSoil">
+              <bundle>ca_attribute_Tier1SoilTypeWRB2007</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Soil type WRB 2007</setting>
+			        </settings>
+			      </placement>
+			      <placement code="tier1SoilTypeWRB2014" typeRestrictions="observationSoil">
+              <bundle>ca_attribute_Tier1SoilTypeWRB2014</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Soil type WRB 2014</setting>
+			        </settings>
+			      </placement>
+			      <placement code="tier1SoilTypeWRB2015" typeRestrictions="observationSoil">
+              <bundle>ca_attribute_Tier1SoilTypeWRB2015</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Soil type WRB 2015</setting>
+			        </settings>
+			      </placement>
+			      <placement code="tier1SoilTypeST" typeRestrictions="observationSoil">
+              <bundle>ca_attribute_Tier1SoilTypeST</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Soil type ST</setting>
+			        </settings>
+			      </placement>
+			      <placement code="tier1SoilTypeMO" typeRestrictions="observationSoil">
+              <bundle>ca_attribute_Tier1SoilTypeMO</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Soil type MO</setting>
+			        </settings>
+			      </placement>
+			      <placement code="tier1SoilTypeGE" typeRestrictions="observationSoil">
+              <bundle>ca_attribute_Tier1SoilTypeMO</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Soil type GE</setting>
+			        </settings>
+			      </placement>
           </bundlePlacements>
         </screen>
 		    <screen idno="biodiversity" default="0">
@@ -14057,35 +13775,31 @@
             </placement>
           </bundlePlacements>
         </screen>
-        <screen idno="publications" default="0">
-		      <labels>
+		    <screen idno="multimedia" default="0">
+          <labels>
             <label locale="en_US">
-              <name>Publications</name>
+              <name>Linked multimedia and files</name>
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="datasets">
-              <bundle>ca_attribute_dataset</bundle>
+            <placement code="multimediaURL">
+              <bundle>ca_attribute_multimediaURL</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">From the object, a dataset is derived</setting>
-                <setting name="add_label" locale="en_US">Add new dataset</setting>
-                <setting name="list_format">list</setting>
-              </settings>
+				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
+			        </settings>
             </placement>
-            <placement code="publication">
-              <bundle>ca_attribute_publication</bundle>
+            <placement code="reference">
+              <bundle>ca_attribute_filesURL</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Publication that refers/uses the object</setting>
-                <setting name="add_label" locale="en_US">Add new publication</setting>
-                <setting name="list_format">list</setting>
-              </settings>
+				        <setting name="add_label" locale="en_US">Add reference URL</setting>
+			        </settings>
             </placement>
           </bundlePlacements>
         </screen>
         <screen idno="obj_management" default="0">
           <labels>
             <label locale="en_US">
-              <name>Management</name>
+              <name>Curation/Management</name>
             </label>
           </labels>
           <typeRestrictions>
@@ -14170,14 +13884,6 @@
 			        <settings>
                 <setting name="label" locale="en_US">A flag indicating whether the object is deaccessioned</setting>
                 <setting name="description" locale="en_US">Will be 1 when deaccessioned or 0 (the default) when not deaccessioned. This should be visible in the object curation log. Types of deaccesioning are: disposal or transfer.</setting>
-              </settings>
-            </placement>
-            <placement code="ca_storage_location">
-              <bundle>ca_storage_locations</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Object is stored at</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
             <placement code="ca_collection">
@@ -15257,22 +14963,24 @@
             </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="coll_media" default="0">
+		    <screen idno="coll_multimedia" default="0">
           <labels>
             <label locale="en_US">
-              <name>Characteristic</name>
+              <name>Linked multimedia and files</name>
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="ca_object_representations" typeRestrictions="internalCollection">
-              <bundle>ca_object_representations</bundle>
+            <placement code="multimediaURL">
+              <bundle>ca_attribute_multimediaURL</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Collection representations</setting>
-                <setting name="description" locale="en_US">Photos or videos of the collection (NOT separate objects that make up the collection). To illustrate the collection as a whole, in its totality.</setting>
-                <setting name="add_label" locale="en_US">Add photo or video</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="restrict_to_types">collectionMultimedia</setting>
-              </settings>
+				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
+			        </settings>
+            </placement>
+            <placement code="reference">
+              <bundle>ca_attribute_filesURL</bundle>
+			        <settings>
+				        <setting name="add_label" locale="en_US">Add reference URL</setting>
+			        </settings>
             </placement>
           </bundlePlacements>
         </screen>
@@ -15336,24 +15044,6 @@
             </placement>
 			      <placement code="conditionsOfAccess">
               <bundle>ca_attribute_conditionsOfAccess</bundle>
-            </placement>
-          </bundlePlacements>
-        </screen>
-		    <screen idno="coll_publ" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>Publications</name>
-            </label>
-          </labels>
-          <bundlePlacements>
-            <placement code="publication">
-              <bundle>ca_attribute_publication</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Publications</setting>
-                <setting name="description" locale="en_US">Publications that refer to the collection as a whole (NOT separate specimens/objects that make up the collection).</setting>
-                <setting name="add_label" locale="en_US">Add publication</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
             </placement>
           </bundlePlacements>
         </screen>
@@ -15449,13 +15139,16 @@
                 <setting name="restrict_to_relationship_types">ownerPlantedSite</setting>
               </settings>
             </placement>
-            <placement code="file" typeRestrictions="box,drawerShelf,cabinetFridgeFreezer,room,floor,building,plantedSite">
-              <bundle>ca_attribute_file</bundle>
+            <placement code="multimediaURL" typeRestrictions="box,drawerShelf,cabinetFridgeFreezer,room,floor,building,plantedSite">
+              <bundle>ca_attribute_multimediaURL</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">File associated with storage location</setting>
-                <setting name="description" locale="en_US">This could be a map that visualises the storage location.</setting>
-				        <setting name="add_label" locale="en_US">Add file</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
+				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
+			        </settings>
+            </placement>
+            <placement code="reference" typeRestrictions="box,drawerShelf,cabinetFridgeFreezer,room,floor,building,plantedSite">
+              <bundle>ca_attribute_filesURL</bundle>
+			        <settings>
+				        <setting name="add_label" locale="en_US">Add reference URL</setting>
 			        </settings>
             </placement>
 			      <placement code="localityContainer" typeRestrictions="plantedSite,externalPlantedSite">
@@ -15771,11 +15464,11 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="loan_file">
-              <bundle>ca_attribute_file</bundle>
+            <placement code="reference">
+              <bundle>ca_attribute_filesURL</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">File associated with loan</setting>
-                <setting name="description" locale="en_US">For example: loan agreement, material transfer agreement, prints of mail communication, evidence of mailing the material, ...</setting>
+                <setting name="description" locale="en_US">For example: loan agreement, material transfer agreement, prints of mail communication, evidence of mailing the material, ... Note: results (publications, datasets) can be linked here, but should also be linked to the separate specimens that were used in that publication.</setting>
 				        <setting name="add_label" locale="en_US">Add file</setting>
 			        </settings>
             </placement>
@@ -15798,13 +15491,13 @@
                 <setting name="restrict_to_types">object</setting>
 			        </settings>
             </placement>
-            <placement code="ca_object_representations">
-              <bundle>ca_object_representations</bundle>
+            <placement code="multimediaURL">
+              <bundle>ca_attribute_multimediaURL</bundle>
+			        <settings>
 			        <settings>
                 <setting name="label" locale="en_US">Visual representation of the loan</setting>
                 <setting name="description" locale="en_US">This can be photos or videos, to document condition, volume, ...; either before sending out the loan, or when receiving the loan.</setting>
-				        <setting name="add_label" locale="en_US">Add media</setting>
-                <setting name="restrict_to_types">loanMultimedia</setting>
+				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -16420,6 +16113,16 @@
           </labels>
           <subTypeLeft></subTypeLeft>
           <subTypeRight>ind</subTypeRight>
+        </type>
+        <type code="localityOwner" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>owns the locality</typename>
+              <typename_reverse>its locality is property of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>observation</subTypeLeft>
+          <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
