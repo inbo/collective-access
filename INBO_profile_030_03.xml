@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.57.02</profileName>
+  <profileName>[INBO] INBO natural science collection v0.57.03</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Changes compared to the previous version 0.56: issue 109, 110, 111, 113, 114-->
   <!--https://github.com/inbo/collective-access/issues/109-->
@@ -10827,12 +10827,6 @@
             </settings>
 		      </metadataElement>
 	      </elements>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
         <typeRestrictions>
 	        <restriction code="r_object">
             <table>ca_objects</table>
@@ -12897,28 +12891,28 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="multimediaURL" typeRestrictions="object">
+            <placement code="multimediaURL_obj" typeRestrictions="object">
               <bundle>ca_attribute_multimediaURL</bundle>
 			        <settings>
 				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
                 <setting name="description" locale="en_US">Relevant multimedia linked to the object/specimen. This could be relevant field photo's (identification), relevant measurement photo's, ...</setting>
 			        </settings>
             </placement>
-            <placement code="multimediaURL" typeRestrictions="observation">
+            <placement code="multimediaURL_obs" typeRestrictions="observation">
               <bundle>ca_attribute_multimediaURL</bundle>
 			        <settings>
 				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
                 <setting name="description" locale="en_US">Relevant multimedia linked to the sampling point. This could be relevant field photo's (identification), relevant measurement photo's, ...</setting>
 			        </settings>
             </placement>
-            <placement code="reference" typeRestrictions="object">
+            <placement code="reference_obj" typeRestrictions="object">
               <bundle>ca_attribute_reference</bundle>
 			        <settings>
 				        <setting name="add_label" locale="en_US">Add reference URL</setting>
                 <setting name="description" locale="en_US">A relevant URL that refers to the object/specimen. This can be an internal INBO document on the Google drive, a published or unpublished dataset, a link to an INBO database (use the INBO datacatalogue),..</setting>
 			        </settings>
             </placement>
-            <placement code="reference" typeRestrictions="observation">
+            <placement code="reference_obs" typeRestrictions="observation">
               <bundle>ca_attribute_reference</bundle>
 			        <settings>
 				        <setting name="add_label" locale="en_US">Add reference URL</setting>
