@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.56.02</profileName>
+  <profileName>[INBO] INBO natural science collection v0.56.03</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
-  <!--Changes compared to the previous version 0.55.03: issue 104, feedback KC & AVB-->
+  <!--Changes compared to the previous version 0.56.02: validated-->
   <!--https://github.com/inbo/collective-access/issues/104-->
   <!--https://docs.google.com/document/d/1oicC9WpyRVr-COBNW9Gt2Dm4kkI6ZK0dT8X1ip7IhPo/edit-->
   <!--https://github.com/inbo/collective-access/issues/107-->
@@ -1129,32 +1129,6 @@
                     <name_plural>Projects</name_plural>
                   </label>
                 </labels>
-                <items>
-                  <item idno="originProject" enabled="1" default="0">
-                        <labels>
-                          <label locale="en_US" preferred="1">
-                            <name_singular>Origin project</name_singular>
-                            <name_plural>Origin projects</name_plural>
-                          </label>
-                        </labels>
-                        <settings>
-                          <setting name="render_in_new_menu">1</setting>
-                          <setting name="render_in_find_menu">0</setting>
-                        </settings>
-                  </item>
-                  <item idno="reuseProject" enabled="1" default="0">
-                      <labels>
-                          <label locale="en_US" preferred="1">
-                            <name_singular>Reuse project</name_singular>
-                            <name_plural>Reuse projects</name_plural>
-                          </label>
-                      </labels>
-                      <settings>
-                          <setting name="render_in_new_menu">1</setting>
-                          <setting name="render_in_find_menu">0</setting>
-                      </settings>
-                    </item>
-                </items>
                 <settings>
                 <setting name="render_in_new_menu">1</setting>
                 <setting name="render_in_find_menu">1</setting>
@@ -10870,6 +10844,7 @@
               <setting name="maxChars">65535</setting>
             </settings>
 		      </metadataElement>
+        </elements>
         <typeRestrictions>
           <restriction code="r_ID_objects">
             <table>ca_objects</table>
@@ -12219,7 +12194,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Original project that generated the record</setting>
                 <setting name="description" locale="en_US">This can be a project as defined in JIRA, a project as defined in LIMS, ..</setting>
-				        <setting name="restrict_to_types">project</setting>
+				        <setting name="restrict_to_types">Project</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">5</setting>
                 <setting name="restrict_to_relationship_types">resultingObjectsProject</setting>
@@ -13225,9 +13200,9 @@
               <bundle>ca_occurrences</bundle>
               <settings>
                 <setting name="label" locale="en_US">Projects</setting>
-                <setting name="description" locale="en_US">The object or a subsample of the object was (re-)used in the projects. This allows you to enter JIRA or LIMS-project codes.</setting>
+                <setting name="description" locale="en_US">The object was (partly) (re-)used in the projects.</setting>
                 <setting name="add_label" locale="en_US">Add new project</setting>
-				        <setting name="restrict_to_types">reuseProject</setting>
+                <setting name="restrict_to_relationship_types">reuseObjectsProject</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -15290,21 +15265,11 @@
           <subTypeLeft></subTypeLeft>
           <subTypeRight>treatment</subTypeRight>
         </type>
-		    <type code="INBOlabUse" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>(re)used in lab project</typename>
-              <typename_reverse>subject of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>project</subTypeRight>
-        </type>
-		    <type code="reuse" default="0">
+		    <type code="reuseObjectsProject" default="0">
           <labels>
             <label locale="en_US">
               <typename>(re)used in project</typename>
-              <typename_reverse>subject of</typename_reverse>
+              <typename_reverse>has reused</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
@@ -15560,28 +15525,6 @@
     </relationshipTable>
     <relationshipTable name="ca_occurrences_x_occurrences">
       <types>
-		    <type code="resultingObservationFieldwork" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>was result of</typename>
-              <typename_reverse>resulted in</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>observation</subTypeLeft>
-          <subTypeRight>fieldwork</subTypeRight>
-          <includeSubtypesLeft>1</includeSubtypesLeft>
-        </type>
-		    <type code="resultingObservationProject" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>was result of</typename>
-              <typename_reverse>resulted in</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>observation</subTypeLeft>
-          <subTypeRight>project</subTypeRight>
-          <includeSubtypesLeft>1</includeSubtypesLeft>
-        </type>
 		    <type code="subproject" default="0">
           <labels>
             <label locale="en_US">
