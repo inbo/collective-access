@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.55.03</profileName>
+  <profileName>[INBO] INBO natural science collection v0.56.02</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
-  <!--Changes compared to the previous version 0.55.02: xml validation-->
+  <!--Changes compared to the previous version 0.55.03: issue 104, feedback KC & AVB-->
+  <!--https://github.com/inbo/collective-access/issues/104-->
+  <!--https://docs.google.com/document/d/1oicC9WpyRVr-COBNW9Gt2Dm4kkI6ZK0dT8X1ip7IhPo/edit-->
+  <!--https://github.com/inbo/collective-access/issues/107-->
   <locales>
     <locale lang="en" country="US">English</locale>
     <locale lang="nl" country="BE">Nederlands</locale>
@@ -1126,6 +1129,32 @@
                     <name_plural>Projects</name_plural>
                   </label>
                 </labels>
+                <items>
+                  <item idno="originProject" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Origin project</name_singular>
+                            <name_plural>Origin projects</name_plural>
+                          </label>
+                        </labels>
+                        <settings>
+                          <setting name="render_in_new_menu">1</setting>
+                          <setting name="render_in_find_menu">0</setting>
+                        </settings>
+                  </item>
+                  <item idno="reuseProject" enabled="1" default="0">
+                      <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Reuse project</name_singular>
+                            <name_plural>Reuse projects</name_plural>
+                          </label>
+                      </labels>
+                      <settings>
+                          <setting name="render_in_new_menu">1</setting>
+                          <setting name="render_in_find_menu">0</setting>
+                      </settings>
+                    </item>
+                </items>
                 <settings>
                 <setting name="render_in_new_menu">1</setting>
                 <setting name="render_in_find_menu">1</setting>
@@ -1204,68 +1233,6 @@
                   <setting name="render_in_new_menu">1</setting>
                   <setting name="render_in_find_menu">1</setting>
                 </settings>
-              </item>
-              <item idno="identification" rank="4" enabled="1" default="1">
-                <labels>
-                  <label locale="en_US" preferred="1">
-                    <name_singular>Identification</name_singular>
-                    <name_plural>Identifications</name_plural>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="render_in_new_menu">0</setting>
-                  <setting name="render_in_find_menu">0</setting>
-                </settings>
-                    <items>
-                      <item idno="identificationBotanical" enabled="1" default="0">
-                        <labels>
-                          <label locale="en_US" preferred="1">
-                            <name_singular>Botanical identification</name_singular>
-                            <name_plural>Botanical identifications</name_plural>
-                          </label>
-                        </labels>
-                        <settings>
-                          <setting name="render_in_new_menu">1</setting>
-                          <setting name="render_in_find_menu">0</setting>
-                        </settings>
-                      </item>
-                      <item idno="identificationZoological" enabled="1" default="0">
-                        <labels>
-                          <label locale="en_US" preferred="1">
-                            <name_singular>Zoological identification</name_singular>
-                            <name_plural>Zoological identifications</name_plural>
-                          </label>
-                        </labels>
-                        <settings>
-                          <setting name="render_in_new_menu">1</setting>
-                          <setting name="render_in_find_menu">0</setting>
-                        </settings>
-                      </item>
-                      <item idno="identificationBacteriological" enabled="1" default="0">
-                        <labels>
-                          <label locale="en_US" preferred="1">
-                            <name_singular>Bacteriological identification</name_singular>
-                            <name_plural>Bacteriological identifications</name_plural>
-                          </label>
-                        </labels>
-                        <settings>
-                          <setting name="render_in_new_menu">1</setting>
-                          <setting name="render_in_find_menu">0</setting>
-                        </settings>
-                      </item>
-                      <item idno="identificationViral" enabled="1" default="0">
-                        <labels>
-                          <label locale="en_US" preferred="1">
-                            <name_singular>Viral identification</name_singular>
-                            <name_plural>Viral identifications</name_plural>
-                          </label>
-                        </labels>
-                        <settings>
-                          <setting name="render_in_new_menu">1</setting>
-                          <setting name="render_in_find_menu">0</setting>
-                        </settings>
-                      </item>
-                    </items>
               </item>
         </items>
       </list>
@@ -3114,7 +3081,7 @@
           </item>
         </items>
       </list>
-	    <list code="reproductive_condition" hierarchical="0" system="0" vocabulary="1">
+	    <list code="repr_cond_plant" hierarchical="0" system="0" vocabulary="1">
         <labels>
           <label locale="en_US">
             <name>Reproductive condition</name>
@@ -3150,6 +3117,39 @@
               <label locale="en_US" preferred="1">
                 <name_singular>fruiting</name_singular>
                 <name_plural>fruiting</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="notRecorded" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>not recorded</name_singular>
+                <name_plural>not recorded</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
+	    <list code="repr_cond_animal" hierarchical="0" system="0" vocabulary="1">
+        <labels>
+          <label locale="en_US">
+            <name>Reproductive condition</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="notApplicable" enabled="1" default="0">
+		        <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>not applicable (e.g. juvenile)</name_singular>
+                <name_plural>not applicable (e.g. juvenile)</name_plural>
+              </label>
+            </labels>
+          </item>
+		      <item idno="nonReproductive" enabled="1" default="0">
+		        <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>no indication of being currently reproductive</name_singular>
+                <name_plural>no indication of being currently reproductive</name_plural>
               </label>
             </labels>
           </item>
@@ -6689,111 +6689,6 @@
           </item>
         </items>
       </list>
-      <list code="reference_type" hierarchical="0" system="0" vocabulary="1">
-        <labels>
-          <label locale="en_US">
-            <name>Reference type</name>
-          </label>
-        </labels>
-        <items>
-          <item idno="advice" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>advice</name_singular>
-                <name_plural>advices</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="articlePeerRev" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>article peer reviewed</name_singular>
-                <name_plural>articles peer reviewed</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="articleNoPeerRev" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>article not peer reviewed</name_singular>
-                <name_plural>articles not peer reviewed</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="book" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>book</name_singular>
-                <name_plural>books</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="conferenceContribution" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>conference contribution</name_singular>
-                <name_plural>conference contributions</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="courseMaterial" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>course material</name_singular>
-                <name_plural>course materials</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="dataset" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>dataset</name_singular>
-                <name_plural>datasets</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="newsletter" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>newsletter</name_singular>
-                <name_plural>newsletters</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="newspaperArticle" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>newspaper article</name_singular>
-                <name_plural>newspaper articles</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="policy" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>policy</name_singular>
-                <name_plural>policies</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="report" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>report</name_singular>
-                <name_plural>reports</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="thesis" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>thesis</name_singular>
-                <name_plural>theses</name_plural>
-              </label>
-            </labels>
-          </item>
-        </items>
-      </list>
   </lists>
   <elementSets>
     <!--General-->
@@ -7083,21 +6978,10 @@
         <labels>
           <label locale="en_US">
             <name>Reference</name>
-            <description>A relevant URL that refers to the sampling point or specimen. This can be an internal INBO document on the Google drive, a published or unpublished dataset, ..</description>
+            <description>A relevant URL that refers to the sampling point, specimen or collection. This can be an internal INBO document on the Google drive, a published or unpublished dataset, a link to an INBO database (use the INBO datacatalogue),..</description>
           </label>
         </labels>
 	      <elements>
-		      <metadataElement code="referenceType" datatype="List" list="reference_type">
-            <labels>
-              <label locale="en_US">
-                <name>Reference Type</name>
-                <description>The type of resource being referenced.</description>
-              </label>
-            </labels>
-            <documentationUrl>http://rs.tdwg.org/ltc/terms/referenceType</documentationUrl>
-            <settings>
-            </settings>
-          </metadataElement>
 		      <metadataElement code="resourceURI" datatype="Url">
             <labels>
               <label locale="en_US">
@@ -7117,7 +7001,7 @@
             <labels>
               <label locale="en_US">
                 <name>Reference Details</name>
-                <description>Relevant information about the publication being referenced - why is it listed? - what does it say about the collection?</description>
+                <description>Relevant information about the reference - why is it listed? - what does it say about the specimen/collection?</description>
               </label>
             </labels>
             <documentationUrl>http://rs.tdwg.org/abcd/terms/referenceDetails</documentationUrl>
@@ -7345,15 +7229,6 @@
           <restriction code="r_valuation">
             <table>ca_objects</table>
             <type>valuation</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_identification">
-            <table>ca_objects</table>
-            <type>identification</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -7668,7 +7543,7 @@
               </label>
             </labels>
             <settings>
-              <setting name="fieldWidth">55</setting>
+              <setting name="fieldWidth">35</setting>
               <setting name="fieldHeight">1</setting>
               <setting name="minChars">0</setting>
               <setting name="maxChars">65535</setting>
@@ -7682,37 +7557,13 @@
               </label>
             </labels>
             <settings>
-              <setting name="fieldWidth">55</setting>
+              <setting name="fieldWidth">35</setting>
               <setting name="fieldHeight">1</setting>
               <setting name="minChars">0</setting>
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
 		    </elements>
-        <typeRestrictions>
-          <restriction code="r_seedlot">
-            <table>ca_objects</table>
-            <type>seedlot</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-      <metadataElement code="seedClass" datatype="List" list="seed_class">
-        <labels>
-          <label locale="en_US">
-            <name>Seed class</name>
-          </label>
-        </labels>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
         <typeRestrictions>
           <restriction code="r_seedlot">
             <table>ca_objects</table>
@@ -7815,6 +7666,8 @@
 			  <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
+            <type>animalObject</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -7849,15 +7702,17 @@
 			  <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
+            <type>plantObject</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_observationAnimal">
+          <restriction code="r_observationPlant">
             <table>ca_objects</table>
-            <type>observationAnimal</type>
+            <type>observationPlant</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -7883,6 +7738,8 @@
 			  <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
+            <type>animalObject</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -7908,6 +7765,62 @@
 			  <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
+            <type>plantObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+			  </typeRestrictions>
+	    </metadataElement>
+	    <metadataElement code="reprCond_plant" datatype="List" list="repr_cond_plant">
+			  <labels>
+          <label locale="en_US">
+            <name>reproductiveCondition</name>
+            <description>The reproductive condition of the biological individual(s) represented in the Occurrence. Recommended best practice is to use a controlled vocabulary.</description>
+          </label>
+			  </labels>
+			  <documentationUrl>http://rs.tdwg.org/dwc/terms/reproductiveCondition</documentationUrl>
+			  <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+			  </settings>
+			  <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>plantObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+			  </typeRestrictions>
+	    </metadataElement>
+	    <metadataElement code="reprCond_animal" datatype="List" list="repr_cond_animal">
+			  <labels>
+          <label locale="en_US">
+            <name>reproductiveCondition</name>
+            <description>The reproductive condition of the biological individual(s) represented in the Occurrence. Recommended best practice is to use a controlled vocabulary.</description>
+          </label>
+			  </labels>
+			  <documentationUrl>http://rs.tdwg.org/dwc/terms/reproductiveCondition</documentationUrl>
+			  <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+			  </settings>
+			  <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>plantObject</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -10509,31 +10422,6 @@
         </typeRestrictions>
       </metadataElement>
 	  <!--Fieldmetadata-->
-	    <metadataElement code="reproductiveCondition" datatype="List" list="reproductive_condition">
-			  <labels>
-          <label locale="en_US">
-            <name>reproductiveCondition</name>
-            <description>The reproductive condition of the biological individual(s) represented in the Occurrence. Recommended best practice is to use a controlled vocabulary.</description>
-          </label>
-			  </labels>
-			  <documentationUrl>http://rs.tdwg.org/dwc/terms/reproductiveCondition</documentationUrl>
-			  <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-			  </settings>
-			  <typeRestrictions>
-          <restriction code="r_objects">
-            <table>ca_objects</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-			  </typeRestrictions>
-	    </metadataElement>
 	    <metadataElement code="behavior" datatype="Text">
 			  <labels>
           <label locale="en_US">
@@ -10913,407 +10801,85 @@
           </restriction>
 			  </typeRestrictions>
 	    </metadataElement>
-    <!--Identification-->
-	    <metadataElement code="verbatimIdentification" datatype="Text">
+    <!--Taxonomy-->
+	    <metadataElement code="IDContainer" datatype="Container">
         <labels>
           <label locale="en_US">
-            <name>verbatimIdentification</name>
-            <description>A string representing the taxonomic identification as it appeared in the original record. This can be scientific names at any level (species, genus, family, ..), vernacular names, expressions with taxon qualifiers (aff., cf.) or other expressions of doubt.</description>
+            <name>ID container</name>
+            <description>Identification container</description>
           </label>
         </labels>
-        <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimIdentification</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
+			  <settings>
+          <setting name="lineBreakAfterNumberOfElements">2</setting>
         </settings>
-        <typeRestrictions>
-          <restriction code="r_objects">
-            <table>ca_objects</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-	    <metadataElement code="objlotVerbatimIdentification" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>verbatimIdentification</name>
-            <description>A string representing the taxonomic identification as it appeared in the original record. This can be scientific names at any level (species, genus, family, ..), vernacular names, expressions with taxon qualifiers (aff., cf.) or other expressions of doubt.</description>
-          </label>
-        </labels>
-        <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimIdentification</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_verbatimIdentification_objectLots">
-            <table>ca_object_lots</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-	    <metadataElement code="IDverbatimIdentification" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>verbatimIdentification</name>
-            <description>A string representing the taxonomic identification as it appeared in the original record. This can be scientific names at any level (species, genus, family, ..), vernacular names, expressions with taxon qualifiers (aff., cf.) or other expressions of doubt.</description>
-          </label>
-        </labels>
-        <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimIdentification</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_verbatimIdentification_identification">
-            <table>ca_occurrences</table>
-		        <type>identification</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-      <metadataElement code="identificationQualifier" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>identificationQualifier</name>
-            <description>A brief phrase or a standard term (cf., aff.) to express the determiner's doubts about the Identification.</description>
-          </label>
-        </labels>
-        <documentationUrl>http://rs.tdwg.org/dwc/terms/identificationQualifier</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-		    <typeRestrictions>
-          <restriction code="r_identification">
-            <table>ca_occurrences</table>
-            <type>identification</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-	    </metadataElement>
-	    <metadataElement code="scientificName" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>Scientific Name</name>
-          </label>
-        </labels>
-        <typeRestrictions>
-          <restriction code="r_identificationBotanical">
-            <table>ca_occurrences</table>
-            <type>identificationBotanical</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_identificationZoological">
-            <table>ca_occurrences</table>
-            <type>identificationZoological</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_identificationBacteriological">
-            <table>ca_occurrences</table>
-            <type>identificationBacteriological</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_collection">
-            <table>ca_collections</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">100</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-	    <metadataElement code="scientificNameRank" datatype="List" list="scientific_name_rank">
-        <labels>
-          <label locale="en_US">
-            <name>ScientificName rank</name>
-            <description>The taxonomic rank of the most specific name in the scientific name.</description>
-          </label>
-        </labels>
-        <documentationUrl>http://rs.tdwg.org/dwc/terms/scientificNameRank</documentationUrl>
-        <settings>
-          <setting name="minAttributesPerRow">0</setting>
-          <setting name="maxAttributesPerRow">1</setting>
-          <setting name="minimumAttributeBundlesToDisplay">1</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_identificationBotanical">
-            <table>ca_occurrences</table>
-            <type>identificationBotanical</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_identificationZoological">
-            <table>ca_occurrences</table>
-            <type>identificationZoological</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_collection">
-            <table>ca_collections</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">100</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-      <metadataElement code="vernacularName" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>vernacularName</name>
-            <description>A common or vernacular name.</description>
-          </label>
-        </labels>
-        <documentationUrl>http://rs.tdwg.org/dwc/terms/vernacularName</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_identificationBotanical">
-            <table>ca_occurrences</table>
-            <type>identificationBotanical</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">20</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_identificationZoological">
-            <table>ca_occurrences</table>
-            <type>identificationZoological</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">20</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>		
-	    <metadataElement code="confidenceLevel" datatype="List" list="confidence_level">
-        <labels>
-          <label locale="en_US">
-            <name>confidenceLevel</name>
-            <description>Confidence level of the executor in the result</description>
-          </label>
-        </labels>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-        <typeRestrictions>
-          <restriction code="r_identification">
-            <table>ca_occurrences</table>
-            <type>identification</type>
-            <includeSubtypes> 1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-	    <metadataElement code="standardizedIdentification" datatype="Text"><!--Should be InformationService: GBIF API-->
-        <labels>
-          <label locale="en_US">
-            <name>The (closest) taxonomic identification, from a central repository. Lookup from GBIF/Catalogue of life.</name>
-          </label>
-        </labels>
-        <settings/>
-        <typeRestrictions>
-          <restriction code="r_standardizedIdentification_animalObject">
-            <table>ca_objects</table>
-		        <type>animalObject</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_standardizedIdentification_plantObject">
-            <table>ca_objects</table>
-		        <type>plantObject</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_standardizedIdentification_dnaSample">
-            <table>ca_objects</table>
-		        <type>oDNA</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_standardizedIdentification_observationAnimal">
-            <table>ca_occurrences</table>
-		        <type>observationAnimal</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_standardizedIdentification_observationPlant">
-            <table>ca_occurrences</table>
-		        <type>observationAnimal</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_standardizedIdentification_object_lots">
-            <table>ca_object_lots</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement> 	     	    
-	    <metadataElement code="matchContainer" datatype="Container">
-        <labels>
-          <label locale="en_US">
-            <name>catalogueOfLifeContainer</name>
-            <description>Optional fields to specify the match or mismatch with Catalogue of Life.</description>
-          </label>
-        </labels>
 	      <elements>
-		      <metadataElement code="match" datatype="List" list="match">
-            <labels>
-              <label locale="en_US">
-                <name>match</name>
-                <description>Match type of the CoL name with the identification result </description>
-              </label>
-            </labels>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-		      </metadataElement>
-		      <metadataElement code="matchSpecification" datatype="Text">
+		      <metadataElement code="verbatim_ID" datatype="Text">
             <labels>
             <label locale="en_US">
-              <name>matchSpecification</name>
-              <description>Specification on (mis)match</description>
+              <name>verbatimIdentification</name>
+              <description>Identification of the specimen, to the lowest level possible. This can be species name in any language, genus, family, ...</description>
             </label>
             </labels>
             <settings>
-              <setting name="fieldWidth">70</setting>
+              <setting name="fieldWidth">35</setting>
               <setting name="fieldHeight">1</setting>
               <setting name="minChars">0</setting>
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
-	      </elements>
+		      <metadataElement code="stand_ID" datatype="Url">
+            <labels>
+            <label locale="en_US">
+              <name>Standardized identification</name>
+              <description>Link to an URL of the (closest match) taxon in a central repository such as Catalogue of Life.</description>
+            </label>
+            </labels>
+            <documentationUrl>https://www.catalogueoflife.org/</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+		      <metadataElement code="ID_date" datatype="DateRange">
+            <labels>
+              <label locale="en_US">
+                <name>Date of identification</name>
+                <description>It is generally assumed that the most recent identification, is the correct identification.</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+		      </metadataElement>
+		      <metadataElement code="ID_note" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Notes on the ID</name>
+                <description>Any notes such as expressions of uncertainty (or certainty), methods (did you use an ID key), mismatch or match with Catalogue of life, ..</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+		      </metadataElement>
         <typeRestrictions>
-          <restriction code="r_matchContainer_animalObject">
+          <restriction code="r_ID_objects">
             <table>ca_objects</table>
-		        <type>animalObject</type>
-            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_matchContainer_plantObject">
-            <table>ca_objects</table>
-		        <type>plantObject</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_matchContainer_dnaSample">
-            <table>ca_objects</table>
-		        <type>oDNA</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_matchContainer_observationAnimal">
-            <table>ca_occurrences</table>
-		        <type>observationAnimal</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_matchContainer_observationPlant">
-            <table>ca_occurrences</table>
-		        <type>observationAnimal</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_matchContainer_object_lots">
+          <restriction code="r_ID_objectLots">
             <table>ca_object_lots</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -11323,236 +10889,6 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="scientificNameOtherDbUrl" datatype="Url">
-        <labels>
-          <label locale="en_US">
-            <name>scientificNameOtherDbUrl</name>
-            <description>Other relevant URLs that clearify the identification result, complementary to the CoL</description>
-          </label>
-        </labels>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">1</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_identification">
-            <table>ca_occurrences</table>
-            <type>identification</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">20</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-      <metadataElement code="hybrid" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>hybrid</name>
-            <description>Hybrid ("x") or a graft chimaera ("+").</description>
-          </label>
-        </labels>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_identificationBotanical">
-            <table>ca_occurrences</table>
-            <type>identificationBotanical</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-      <metadataElement code="cultivarGroupName" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>cultivarGroupName</name>
-            <description>The cultivar group name.</description>
-          </label>
-        </labels>
-        <documentationUrl>http://rs.tdwg.org/abcd/terms/cultivarGroupName</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_identificationBotanical">
-            <table>ca_occurrences</table>
-            <type>identificationBotanical</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-      <metadataElement code="cultivarName" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>cultivarGroupName</name>
-            <description>The cultivar name, as specified by the ICNCP.</description>
-          </label>
-        </labels>
-        <documentationUrl>http://rs.tdwg.org/abcd/terms/cultivarName</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_identificationBotanical">
-            <table>ca_occurrences</table>
-            <type>identificationBotanical</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-      <metadataElement code="breed" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>breed</name>
-            <description>Name of the breed of an animal.</description>
-          </label>
-        </labels>
-        <documentationUrl>http://rs.tdwg.org/abcd/terms/cultivarName</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_identificationZoological">
-            <table>ca_occurrences</table>
-            <type>identificationZoological</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-      <metadataElement code="viralSpeciesDesignation" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>viralSpeciesDesignation</name>
-            <description>The formal name of a viral species. Examples: vaccinia virus; human herpes virus 2 (herpes simplex virus 2); poliovirus 1; Saccharomyces cerevisiae virus L-A; enterobacteria phage PRD1 [Source: ICTV].</description>
-          </label>
-        </labels>
-        <documentationUrl>http://rs.tdwg.org/abcd/terms/viralSpeciesDesignation</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_identificationViral">
-            <table>ca_occurrences</table>
-            <type>identificationViral</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-      <metadataElement code="acronym" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>acronym</name>
-            <description>The accepted acronym for the Virus, e.g. PCV for Peanut Clump Virus.</description>
-          </label>
-        </labels>
-        <documentationUrl>http://rs.tdwg.org/abcd/terms/acronym</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_identificationViral">
-            <table>ca_occurrences</table>
-            <type>identificationViral</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-      <metadataElement code="nameApprobation" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>nameApprobation</name>
-            <description>Approbation of the name identified for the unit according to an approved list, validation list,or validly published, paper in IJSB after 1980.</description>
-          </label>
-        </labels>
-        <documentationUrl>http://rs.tdwg.org/abcd/terms/nameApprobation</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_identificationBacteriological">
-            <table>ca_occurrences</table>
-            <type>identificationBacteriological</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-      <metadataElement code="dataset_id" datatype="File">
-        <labels>
-          <label locale="en_US">
-            <name>Dataset of identifications in an object</name>
-          </label>
-        </labels>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">5</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_objects">
-            <table>ca_objects</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">100</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>																																																																
 	  <!--Procedure-->
       <metadataElement code="eventProcedure" datatype="Text">
         <labels>
@@ -11581,16 +10917,6 @@
 	        <restriction code="r_fieldwork">
             <table>ca_occurrences</table>
 		        <type>fieldwork</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-	        <restriction code="r_identification">
-            <table>ca_occurrences</table>
-		        <type>identification</type>
-            <includeSubtypes> 1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -12738,11 +12064,10 @@
                 <setting name="restrict_to_relationship_types">partOf</setting>
               </settings>
             </placement>
-			      <placement code="verbatimIdentification" typeRestrictions="observationAnimal,observationPlant,animalObject,plantObject,dnaSample" includeSubtypes="1">
-              <bundle>ca_attribute_verbatimIdentification</bundle>
+			      <placement code="IDContainer" typeRestrictions="observationAnimal,observationPlant,animalObject,plantObject,dnaSample" includeSubtypes="1">
+              <bundle>ca_attribute_IDContainer</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The verbatim taxonomic identification (dwc:verbatimIdentification)</setting>
-                <setting name="description" locale="en_US">For objects usually this equals the verbatim identification of the observation the object was sampled from. If present, this value will be automatically be set here. To be actively changed for object types such as living animals, seedlots and living plants, if the taxonomic identification is different from the field observation they refer to (e.g. in the case of hybrid offspring). A verbatim identification can be a species name, genus name, family name. This can be the vernacular name in English (e.g. human), Dutch (e.g. mens) ... or the the binomial nomenclature (e.g. Homo sapiens)..</setting>
+                <setting name="label" locale="en_US">The taxonomic identification</setting>
 			        </settings>
             </placement>
 			      <placement code="status">
@@ -12892,7 +12217,7 @@
 			      <placement code="ca_occurrence_project">
               <bundle>ca_occurrences</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Project that generated the record</setting>
+                <setting name="label" locale="en_US">Original project that generated the record</setting>
                 <setting name="description" locale="en_US">This can be a project as defined in JIRA, a project as defined in LIMS, ..</setting>
 				        <setting name="restrict_to_types">project</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
@@ -13086,10 +12411,10 @@
 			      </placement>
           </bundlePlacements>
 		    </screen>
-		    <screen idno="taxonomy" default="0">
+		    <screen idno="classification" default="0">
           <labels>
             <label locale="en_US">
-              <name>Taxonomy</name>
+              <name>Classification</name>
             </label>
           </labels>
           <typeRestrictions>
@@ -13148,72 +12473,97 @@
                 <restriction code="r_oDNA" type="oDNA"/>
                 <restriction code="r_observationPlant" type="observationPlant"/>
                 <restriction code="r_observationAnimal" type="observationAnimal"/>
+                <restriction code="r_observationSoil" type="observationSoil"/>
           </typeRestrictions>
           <bundlePlacements>
-			      <placement code="ca_object_verbatimIdentification" typeRestrictions="animalObject,observationAnimal,plantObject,observationPlant,oDNA" includeSubtypes="1"><!--This should prepopulate with the parent value, if empty-->
-              <bundle>ca_attribute_verbatimIdentification</bundle>
+			      <placement code="IDContainer" typeRestrictions="animalObject,observationAnimal,plantObject,observationPlant,oDNA" includeSubtypes="1"><!--This should prepopulate with the parent value, if empty-->
+              <bundle>ca_attribute_IDContainer</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The verbatim taxonomic identification (dwc:verbatimIdentification)</setting>
-                <setting name="description" locale="en_US">Usually this equals the verbatim identification of the sampling point (=organism) the object was sampled from. If present, this value will be automatically be set here. To be actively changed for object types such as living animals, seedlots and living plants, if the taxonomic identification is different from the field observation they refer to (e.g. in the case of hybrid offspring). A verbatim identification can be a species name, genus name, family name. This can be the vernacular name in English (e.g. human), Dutch (e.g. mens) ... or the the binomial nomenclature (e.g. Homo sapiens)..</setting>
+                <setting name="label" locale="en_US">The verbatim taxonomic identification</setting>
+				        <setting name="add_label" locale="en_US">Add a new identification</setting>
 			        </settings>
             </placement>
-			      <placement code="ca_object_standardizedIdentification" typeRestrictions="animalObject,observationAnimal,plantObject,observationPlant,oDNA" includeSubtypes="1"><!--This should prepopulate with the parent value, if empty-->
-              <bundle>ca_attribute_standardizedIdentification</bundle>
+			      <placement code="sexPlant" typeRestrictions="observationPlant">
+              <bundle>ca_attribute_sexPlant</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The standardize taxonomic identification</setting>
-                <setting name="description" locale="en_US">Usually this equals the verbatim identification; except if the central repository is not up to date. In that case; choose the best fit possible (e.g. genus level instead of species level).</setting>
-			        </settings>
-            </placement>
-			      <placement code="identifications_animalObject" typeRestrictions="animalObject" includeSubtypes="1"><!--ideally these are linked to the parent, and automatically inhert to the children-->
-              <bundle>ca_occurrences</bundle>
+                <setting name="description" locale="en_US">If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+				        <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+			      <placement code="sexAnimal" typeRestrictions="observationAnimal">
+              <bundle>ca_attribute_sexPlant</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The identification log of the observation and object.</setting>
-                <setting name="description" locale="en_US">The history of identifications for the observation and object. Ideally identifications are logged to the observation and all its derived objects.</setting>
-                <setting name="dontShowDeleteButton">1</setting>
-                <setting name="restrict_to_types">identificationZoological</setting>
-                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="identificationZoological"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
-			        </settings>
-            </placement>
-			      <placement code="identifications_observationAnimal" typeRestrictions="observationAnimal"><!--ideally these are linked to the parent, and automatically inhert to the children-->
-              <bundle>ca_occurrences</bundle>
+                <setting name="description" locale="en_US">If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+				        <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+			      <placement code="classSystem" typeRestrictions="observationSoil">
+              <bundle>ca_attribute_ClassSystem</bundle>
+			      </placement>
+			      <placement code="tier1SoilTypeFAO1974" typeRestrictions="observationSoil">
+              <bundle>ca_attribute_Tier1SoilTypeFAO1974</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The identification log of the observation and object.</setting>
-                <setting name="description" locale="en_US">The history of identifications for the observation and object. Ideally identifications are logged to the observation and all its derived objects.</setting>
-                <setting name="dontShowDeleteButton">1</setting>
-                <setting name="restrict_to_types">identificationZoological</setting>
-                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="identificationZoological"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
+                <setting name="label" locale="en_US">Soil type FAO 1974</setting>
 			        </settings>
-            </placement>
-			      <placement code="identifications_plantObject" typeRestrictions="plantObject" includeSubtypes="1"><!--ideally these are linked to the parent, and automatically inhert to the children-->
-              <bundle>ca_occurrences</bundle>
+			      </placement>
+			      <placement code="tier1SoilTypeFAO1988" typeRestrictions="observationSoil">
+              <bundle>ca_attribute_Tier1SoilTypeFAO1988</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The identification log of the observation and object.</setting>
-                <setting name="description" locale="en_US">The history of identifications for the observation and object. Ideally identifications are logged to the observation and all its derived objects.</setting>
-                <setting name="dontShowDeleteButton">1</setting>
-                <setting name="restrict_to_types">identificationBotanical</setting>
-                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="identificationBotanical"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
+                <setting name="label" locale="en_US">Soil type FAO 1988</setting>
 			        </settings>
-            </placement>
-			      <placement code="identifications_observationPlant" typeRestrictions="observationPlant"><!--ideally these are linked to the parent, and automatically inhert to the children-->
-              <bundle>ca_occurrences</bundle>
+			      </placement>
+			      <placement code="tier1SoilTypeWRB1998" typeRestrictions="observationSoil">
+              <bundle>ca_attribute_Tier1SoilTypeWRB1998</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The identification log of the observation and object.</setting>
-                <setting name="description" locale="en_US">The history of identifications for the observation and object. Ideally identifications are logged to the observation and all its derived objects.</setting>
-                <setting name="dontShowDeleteButton">1</setting>
-                <setting name="restrict_to_types">identificationBotanical</setting>
-                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="identificationBotanical"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
+                <setting name="label" locale="en_US">Soil type WRB 1998</setting>
 			        </settings>
-            </placement>
-			      <placement code="identifications_oDNA" typeRestrictions="oDNA"><!--ideally these are linked to the parent, and automatically inhert to the children-->
-              <bundle>ca_occurrences</bundle>
+			      </placement>
+			      <placement code="tier1SoilTypeWRB2006" typeRestrictions="observationSoil">
+              <bundle>ca_attribute_Tier1SoilTypeWRB2006</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The identification log of the observation and object.</setting>
-                <setting name="description" locale="en_US">The history of identifications for the observation and object. Ideally identifications are logged to the observation and all its derived objects.</setting>
-                <setting name="dontShowDeleteButton">1</setting>
-                <setting name="restrict_to_types">identificationBotanical,identificationZoological</setting>
-                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences" restrictToTypes="identificationBotanical,identificationZoological"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
+                <setting name="label" locale="en_US">Soil type WRB 2006</setting>
 			        </settings>
-            </placement>
+			      </placement>
+			      <placement code="tier1SoilTypeWRB2007" typeRestrictions="observationSoil">
+              <bundle>ca_attribute_Tier1SoilTypeWRB2007</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Soil type WRB 2007</setting>
+			        </settings>
+			      </placement>
+			      <placement code="tier1SoilTypeWRB2014" typeRestrictions="observationSoil">
+              <bundle>ca_attribute_Tier1SoilTypeWRB2014</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Soil type WRB 2014</setting>
+			        </settings>
+			      </placement>
+			      <placement code="tier1SoilTypeWRB2015" typeRestrictions="observationSoil">
+              <bundle>ca_attribute_Tier1SoilTypeWRB2015</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Soil type WRB 2015</setting>
+			        </settings>
+			      </placement>
+			      <placement code="tier1SoilTypeST" typeRestrictions="observationSoil">
+              <bundle>ca_attribute_Tier1SoilTypeST</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Soil type ST</setting>
+			        </settings>
+			      </placement>
+			      <placement code="tier1SoilTypeMO" typeRestrictions="observationSoil">
+              <bundle>ca_attribute_Tier1SoilTypeMO</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Soil type MO</setting>
+			        </settings>
+			      </placement>
+			      <placement code="tier1SoilTypeGE" typeRestrictions="observationSoil">
+              <bundle>ca_attribute_Tier1SoilTypeMO</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Soil type GE</setting>
+			        </settings>
+			      </placement>
           </bundlePlacements>
         </screen>
 		    <screen idno="obj_preparation" default="0">
@@ -13296,7 +12646,7 @@
               <bundle>ca_attribute_preparationDate</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Specimen creation date</setting>
-                <setting name="description" locale="en_US">This is the date/time that the specimen/object was created. When this is the first object in the hierarchy, this date equals the sampling date. When this a second or third object in the sequence (e.g. a DNA sample is created on a later date than the sampling of the tissue sample). The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
+                <setting name="description" locale="en_US">This is the date/time that the specimen/object was created. When this is the first object in the hierarchy, this date equals the sampling date. When this a second or third object in the sequence (e.g. a DNA sample is created on a later date than the sampling of the tissue sample), this date will differ from the sampling date. The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
 				        <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
@@ -13321,40 +12671,6 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="lifeStage_animal" typeRestrictions="animalObject">
-              <bundle>ca_attribute_lifeStageAnimal</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
-                <setting name="description" locale="en_US">Due to sampling, the life stage of the animal at time object(s) were collected becomes a fixed value.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
-			      <placement code="lifeStage_plant" typeRestrictions="plantObject">
-              <bundle>ca_attribute_lifeStagePlant</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
-                <setting name="description" locale="en_US">Due to sampling, the life stage of the plant at time object(s) were collected becomes a fixed value.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
-			      <placement code="reproductiveCondition" typeRestrictions="animalEntireCadaver,animalEntireEthanol,animalEntireDry">
-              <bundle>ca_attribute_reproductiveCondition</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Reproductive condition (dwc:reproductiveCondition)</setting>
-                <setting name="description" locale="en_US">Reproductive condition of the organism at time object(s) were collected</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="expand_collapse_value">collapse</setting>
-                <setting name="hideIfSelected_juvenile">object_ui/obj_metadata/ca_attribute_lifeStage</setting>
-                <setting name="hideIfSelected_seedling">object_ui/obj_metadata/ca_attribute_lifeStage</setting>
-                <setting name="hideIfSelected_egg">object_ui/obj_metadata/ca_attribute_lifeStage</setting>
-                <setting name="hideIfSelected_larva">object_ui/obj_metadata/ca_attribute_lifeStage</setting>
-                <setting name="hideIfSelected_pupa">object_ui/obj_metadata/ca_attribute_lifeStage</setting>
-                <setting name="hideIfSelected_nymph">object_ui/obj_metadata/ca_attribute_lifeStage</setting>
-                <setting name="hideIfSelected_notRecorded">object_ui/obj_metadata/ca_attribute_lifeStage</setting>
-			        </settings>
-            </placement>		 		 		 		 
 			      <placement code="verbatimDepth" typeRestrictions="eDnaWaterFilter,watersample,mineralSoilSample,peatSoilSample,organicSoilSample">
               <bundle>ca_attribute_verbatimDepth</bundle>
               <settings>
@@ -13407,7 +12723,7 @@
               <bundle>ca_attribute_publication</bundle>
               <settings>
                 <setting name="label" locale="en_US">Sampling procedure doi</setting>
-                <setting name="description" locale="en_US">Procedure doi if published, such as in an article, a standardized opering procedure (SOP), an identification key</setting>
+                <setting name="description" locale="en_US">Procedure doi if published, such as in an article, a standardized opering procedure (SOP), ...</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
@@ -13421,22 +12737,57 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-            <placement code="samplingMultimedia">
-              <bundle>ca_object_representations</bundle>
+			      <placement code="decompositionCategory" typeRestrictions="animalObject" includeSubtypes="1">
+              <bundle>ca_attribute_decompositionCategory</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Multimedia of the sampling</setting>
-                <setting name="description" locale="en_US">Add a photo or video that visualises the sampling procedure, if relevant.</setting>
-				        <setting name="add_label" locale="en_US">Add sampling multimedia</setting>
+                <setting name="label" locale="en_US">Decomposition category of the animal(s) at the time of sampling</setting>
+		            <setting name="description" locale="en_US">DCC1: extremely fresh (e.g. animal was still alive at collection, or the animal was euthanized and collection occurred immediately after). DCC2: fresh (i.e. animal that has only recently died, no signs of decomposition). DCC3: moderate decomposition (for example: mammal its belly is swollen, hair detaches, fly eggs, ..). DCC4: advanced decomposition (for example: mammal its belly is swollen, hair detaches, maggots, ...). DCC5: mummified (animal is (partly) decomposed).</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+			      <placement code="lifeStage_animal" typeRestrictions="animalObject" includeSubtypes="1">
+              <bundle>ca_attribute_lifeStageAnimal</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
+                <setting name="description" locale="en_US">Due to sampling, the life stage of the animal at time object(s) were collected becomes a fixed value.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+			      <placement code="lifeStage_plant" typeRestrictions="plantObject" includeSubtypes="1">
+              <bundle>ca_attribute_lifeStagePlant</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
+                <setting name="description" locale="en_US">Due to sampling, the life stage of the plant at time object(s) were collected becomes a fixed value.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+			      <placement code="reprCond_animal" typeRestrictions="animalObject" includeSubtypes="1">
+              <bundle>ca_attribute_reprCondAnimal</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Reproductive condition (dwc:reproductiveCondition)</setting>
+                <setting name="description" locale="en_US">Reproductive condition of the organism at time object(s) were collected</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="restrict_to_types">samplingMultimedia</setting>
+                <setting name="expand_collapse_value">collapse</setting>
 			        </settings>
             </placement>
+			      <placement code="reprCond_plant" typeRestrictions="plantObject" includeSubtypes="1">
+              <bundle>ca_attribute_reprCondPlant</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Reproductive condition (dwc:reproductiveCondition)</setting>
+                <setting name="description" locale="en_US">Reproductive condition of the organism at time object(s) were collected</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
+			        </settings>
+            </placement>		 		 		 		 		 		 		 		 
           </bundlePlacements>
         </screen>
 		    <screen idno="obj_measurements" default="0">
           <labels>
             <label locale="en_US">
-              <name>Measurements and facts</name>
+              <name>Measurements/Facts</name>
             </label>
           </labels>
           <typeRestrictions>
@@ -13498,39 +12849,8 @@
                 <restriction code="r_mineralSoilSample" type="mineralSoilSample"/>
                 <restriction code="r_peatSoilSample" type="peatSoilSample"/>
                 <restriction code="r_organicSoilSample" type="organicSoilSample"/>
-                <restriction code="r_observationWater" type="observationWater"/>
-                <restriction code="r_observationSoil" type="observationSoil"/>
-                <restriction code="r_observationPlant" type="observationPlant"/>
-                <restriction code="r_observationAnimal" type="observationAnimal"/>
           </typeRestrictions>
           <bundlePlacements>
-			      <placement code="sexPlant" typeRestrictions="observationPlant">
-              <bundle>ca_attribute_sexPlant</bundle>
-			        <settings>
-                <setting name="description" locale="en_US">If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-				        <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-			      </placement>
-			      <placement code="sexAnimal" typeRestrictions="observationAnimal">
-              <bundle>ca_attribute_sexPlant</bundle>
-			        <settings>
-                <setting name="description" locale="en_US">If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-				        <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-			      </placement>
-			      <placement code="decompositionCategory" typeRestrictions="animalEntireCadaver,animalEntireEthanol,animalEntireDry">
-              <bundle>ca_attribute_decompositionCategory</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Decomposition category of the animal(s) at the time of collection</setting>
-		            <setting name="description" locale="en_US">DCC1: extremely fresh (e.g. animal was still alive at collection, or the animal was euthanized and collection occurred immediately after). DCC2: fresh (i.e. animal that has only recently died, no signs of decomposition). DCC3: moderate decomposition (for example: mammal its belly is swollen, hair detaches, fly eggs, ..). DCC4: advanced decomposition (for example: mammal its belly is swollen, hair detaches, maggots, ...). DCC5: mummified (animal is (partly) decomposed).</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
             <placement code="dna_conc" typeRestrictions="oDNA,eDNA">
               <bundle>ca_attribute_dnaConcContainer</bundle>
 			        <settings>
@@ -13580,30 +12900,11 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="object_length" typeRestrictions="animalBulk,animalEntireLiving,animalCadaver,animalSpecimen,livingPlant,observationPlant,observationAnimal">
-              <bundle>ca_attribute_lengthContainer</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Length measurement</setting>
-                <setting name="description" locale="en_US">This can be any type of measurement, expressed in length. For example: both the length of an animal bone and the width of an animal bone can be entered via this data element as two separate measurements with a length unit. Dbh (diameter at breast height), circumference and height of a tree in collection can all three be entered here.</setting>
-				        <setting name="add_label" locale="en_US">Add length measurement</setting>
-                <setting name="list_format">list</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-            <placement code="object_weight" typeRestrictions="seedlot,mineralSoilSample,peatSoilSample,organicSoilSample,oDNA,eDNA,animalBulk,animalEntireLiving,animalCadaver">
+            <placement code="object_weight" typeRestrictions="seedlot,mineralSoilSample,peatSoilSample,organicSoilSample,oDNA,eDNA">
               <bundle>ca_attribute_weightContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Weight measurement</setting>
 				        <setting name="add_label" locale="en_US">Add weight measurement</setting>
-                <setting name="list_format">list</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-            <placement code="object_age" typeRestrictions="stemDisc">
-              <bundle>ca_attribute_ageContainer</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Age measurement/statement</setting>
-				        <setting name="add_label" locale="en_US">Add age measurement/statement</setting>
                 <setting name="list_format">list</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
@@ -13635,69 +12936,6 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="classSystem" typeRestrictions="observationSoil">
-              <bundle>ca_attribute_ClassSystem</bundle>
-			      </placement>
-			      <placement code="tier1SoilTypeFAO1974" typeRestrictions="observationSoil">
-              <bundle>ca_attribute_Tier1SoilTypeFAO1974</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Soil type FAO 1974</setting>
-			        </settings>
-			      </placement>
-			      <placement code="tier1SoilTypeFAO1988" typeRestrictions="observationSoil">
-              <bundle>ca_attribute_Tier1SoilTypeFAO1988</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Soil type FAO 1988</setting>
-			        </settings>
-			      </placement>
-			      <placement code="tier1SoilTypeWRB1998" typeRestrictions="observationSoil">
-              <bundle>ca_attribute_Tier1SoilTypeWRB1998</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Soil type WRB 1998</setting>
-			        </settings>
-			      </placement>
-			      <placement code="tier1SoilTypeWRB2006" typeRestrictions="observationSoil">
-              <bundle>ca_attribute_Tier1SoilTypeWRB2006</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Soil type WRB 2006</setting>
-			        </settings>
-			      </placement>
-			      <placement code="tier1SoilTypeWRB2007" typeRestrictions="observationSoil">
-              <bundle>ca_attribute_Tier1SoilTypeWRB2007</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Soil type WRB 2007</setting>
-			        </settings>
-			      </placement>
-			      <placement code="tier1SoilTypeWRB2014" typeRestrictions="observationSoil">
-              <bundle>ca_attribute_Tier1SoilTypeWRB2014</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Soil type WRB 2014</setting>
-			        </settings>
-			      </placement>
-			      <placement code="tier1SoilTypeWRB2015" typeRestrictions="observationSoil">
-              <bundle>ca_attribute_Tier1SoilTypeWRB2015</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Soil type WRB 2015</setting>
-			        </settings>
-			      </placement>
-			      <placement code="tier1SoilTypeST" typeRestrictions="observationSoil">
-              <bundle>ca_attribute_Tier1SoilTypeST</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Soil type ST</setting>
-			        </settings>
-			      </placement>
-			      <placement code="tier1SoilTypeMO" typeRestrictions="observationSoil">
-              <bundle>ca_attribute_Tier1SoilTypeMO</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Soil type MO</setting>
-			        </settings>
-			      </placement>
-			      <placement code="tier1SoilTypeGE" typeRestrictions="observationSoil">
-              <bundle>ca_attribute_Tier1SoilTypeMO</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Soil type GE</setting>
-			        </settings>
-			      </placement>
           </bundlePlacements>
         </screen>
 		    <screen idno="biodiversity" default="0">
@@ -13717,61 +12955,20 @@
                 <restriction code="r_observationWater" type="observationWater"/>
           </typeRestrictions>
           <bundlePlacements>
-			      <placement code="biodiversity_environment" typeRestrictions="observationSoil,observationWater">
-              <bundle>ca_occurrences</bundle>
+			      <placement code="IDContainer_env" typeRestrictions="observationSoil,observationWater,soilObject,waterObject,eDNA" includeSubtypes="1">
+              <bundle>ca_attribute_IDContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Biodiversity at the environmental sampling point</setting>
-				        <setting name="restrict_to_types">identification</setting>
-                <setting name="restrict_to_relationship_types">execObjIdentification</setting>
-                <setting name="description" locale="en_US">Only log relevant (to query) taxonomic units here. Under "file" taxonomic lists or BLAST results can be entered as well.</setting>
-                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
+                <setting name="description" locale="en_US">Only log relevant (to query) taxonomic units here. Under the tab "references" taxonomic lists or BLAST results can be entered as well.</setting>
+				        <setting name="add_label" locale="en_US">Add taxon</setting>
 			        </settings>
-            </placement>
-			      <placement code="identifications_soilObject" typeRestrictions="soilObject" includeSubtypes="1">
-              <bundle>ca_occurrences</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Biodiversity found in the soil object</setting>
-				        <setting name="restrict_to_types">identification</setting>
-                <setting name="restrict_to_relationship_types">execObjIdentification</setting>                
-                <setting name="description" locale="en_US">Only log relevant (to query) taxonomic units here. Under "file" taxonomic lists or BLAST results can be entered as well.</setting>
-                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
-			        </settings>
-            </placement>
-			      <placement code="identifications_waterObject" typeRestrictions="waterObject" includeSubtypes="1">
-              <bundle>ca_occurrences</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Biodiversity found in the water object</setting>
-				        <setting name="restrict_to_types">identification</setting>
-                <setting name="restrict_to_relationship_types">execObjIdentification</setting>
-                <setting name="description" locale="en_US">Only log relevant (to query) taxonomic units here. Under "file" taxonomic lists or BLAST results can be entered as well.</setting>
-                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
-			        </settings>
-            </placement>
-			      <placement code="biodiversity_eDNA" typeRestrictions="eDNA">
-              <bundle>ca_occurrences</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Biodiversity found in the eDNA sample</setting>
-				        <setting name="restrict_to_types">identification</setting>
-                <setting name="restrict_to_relationship_types">execObjIdentification</setting>
-                <setting name="description" locale="en_US">Only log relevant (to query) taxonomic units here. Under "file" taxonomic lists or BLAST results can be entered as well.</setting>
-                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences"><ifdef code="ca_occurrences.identificationQualifier">^ca_occurrences.identificationQualifier</ifdef>^ca_occurrences.scientificName (^ca_occurrences.dateRange; ^ca_occurrences.idno)</unit>]]></setting>
-			        </settings>
-            </placement>
-            <placement code="file">
-              <bundle>ca_attribute_file</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">File listing present biodiversity</setting>
-                <setting name="description" locale="en_US">A file including the derived identifications in the sampling point or object.</setting>
-                <setting name="add_label" locale="en_US">Add new file</setting>
-                <setting name="expand_collapse_no_value">expand</setting>
-              </settings>
             </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="multimedia" default="0">
+		    <screen idno="reference" default="0">
           <labels>
             <label locale="en_US">
-              <name>Linked multimedia and files</name>
+              <name>Files/Refs/Photos</name>
             </label>
           </labels>
           <bundlePlacements>
@@ -13782,9 +12979,10 @@
 			        </settings>
             </placement>
             <placement code="reference">
-              <bundle>ca_attribute_filesURL</bundle>
+              <bundle>ca_attribute_reference</bundle>
 			        <settings>
 				        <setting name="add_label" locale="en_US">Add reference URL</setting>
+                <setting name="description" locale="en_US">Here </setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -13935,7 +13133,7 @@
         <screen idno="obj_use" default="0">
           <labels>
             <label locale="en_US">
-              <name>Use</name>
+              <name>(Re)use</name>
             </label>
           </labels>
           <typeRestrictions>
@@ -14023,15 +13221,13 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="labUse">
+            <placement code="project_reuse">
               <bundle>ca_occurrences</bundle>
               <settings>
-                <setting name="label" locale="en_US">Lab-projects</setting>
-                <setting name="description" locale="en_US">The object or a subsample of the object was (re-)used in INBO lab-projects. This allows you to enter LIMS-project codes or other lab-project codes.</setting>
+                <setting name="label" locale="en_US">Projects</setting>
+                <setting name="description" locale="en_US">The object or a subsample of the object was (re-)used in the projects. This allows you to enter JIRA or LIMS-project codes.</setting>
                 <setting name="add_label" locale="en_US">Add new project</setting>
-				        <setting name="restrict_to_types">project</setting>
-                <setting name="restrict_to_relationship_types">INBOlabUse</setting>
-                <setting name="list_format">list</setting>
+				        <setting name="restrict_to_types">reuseProject</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -14052,7 +13248,7 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="idno" typeRestrictions="fieldwork,project,valuation,identificationBacteriological,identificationBotanical,identificationViral,identificationZoological,disposal,treatment,renewal,transfer">
+            <placement code="idno" typeRestrictions="fieldwork,project,valuation,disposal,treatment,renewal,transfer">
               <bundle>idno</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">CMS-ID</setting>
@@ -14079,13 +13275,6 @@
                 <setting name="description" locale="en_US">The valuation identifier</setting>
               </settings>
             </placement>
-			      <placement code="preferred_labels_id" typeRestrictions="identificationBacteriological,identificationBotanical,identificationViral,identificationZoological">
-              <bundle>preferred_labels</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Identification event identifier (preferred)</setting>
-                <setting name="description" locale="en_US">The identification identifier. This can be a descriptive title; e.g. Valuation of DNA samples 2018 by person X.</setting>
-              </settings>
-            </placement>
 			      <placement code="preferred_labels_curation" typeRestrictions="disposal,treatment,renewal,transfer">
               <bundle>preferred_labels</bundle>
               <settings>
@@ -14093,7 +13282,7 @@
                 <setting name="description" locale="en_US">The identifier for the curation event used in notes. This can be a descriptive title: for example: Renewal of seedlot bags 2023.</setting>
               </settings>
             </placement>
-            <placement code="nonpreferred_labels" typeRestrictions="fieldwork,project,valuation,identificationBacteriological,identificationBotanical,identificationViral,identificationZoological,disposal,treatment,renewal,transfer">
+            <placement code="nonpreferred_labels" typeRestrictions="fieldwork,project,valuation,disposal,treatment,renewal,transfer">
               <bundle>nonpreferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Other identifier (nonpreferred)</setting>
@@ -14105,12 +13294,12 @@
               <bundle>ca_attribute_externalRecord</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">External database containing project</setting>
-                <setting name="description" locale="en_US">For example: the project-URL in PURE</setting>
+                <setting name="description" locale="en_US">For example: the project-URL in JIRA</setting>
 				        <setting name="add_label" locale="en_US">Add URL</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="dateRange" typeRestrictions="fieldwork,project,valuation,identificationBacteriological,identificationBotanical,identificationViral,identificationZoological,disposal,treatment,renewal,transfer">
+			      <placement code="dateRange" typeRestrictions="fieldwork,project,valuation,disposal,treatment,renewal,transfer">
               <bundle>ca_attribute_dateRange</bundle>
               <!--http://rs.tdwg.org/dwc/terms/dateIdentified-->
               <settings>
@@ -14138,13 +13327,28 @@
 				        <setting name="add_label" locale="en_US">Add place</setting>
               </settings>
 			      </placement>
-			      <placement code="status" typeRestrictions="fieldwork,project,valuation,identificationBacteriological,identificationBotanical,identificationViral,identificationZoological,disposal,treatment,renewal,transfer">
+			      <placement code="status" typeRestrictions="fieldwork,project,valuation,disposal,treatment,renewal,transfer">
               <bundle>status</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Cataloguing status</setting>
 				        <setting name="minRelationshipsPerRow">1</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
+            </placement>
+            <placement code="valuationArgument" typeRestrictions="valuation">
+              <bundle>ca_attribute_valuationArgument</bundle>
+			        <settings>
+			        </settings>
+            </placement>
+            <placement code="valuationSpecification" typeRestrictions="valuation">
+              <bundle>ca_attribute_valuationSpecification</bundle>
+            </placement>
+            <placement code="curationResult" typeRestrictions="disposal,treatment,renewal,transfer">
+              <bundle>ca_attribute_curationResult</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Result of curation event</setting>
+                <setting name="description" locale="en_US">Here you can specify further on the curation action. For example: disposal because of depletion of DNA/soil, disease (plant), rot (seedlot), ...; treatment: cold treatment -80°C for parasites; renewal: of containers, of labels, of buffer + in the file you can specify the manufacturers information on the new mateiral.; reason why this particular group of samples was transferred.</setting>
+			        </settings>
             </placement>
           </bundlePlacements>
         </screen>
@@ -14193,7 +13397,7 @@
 				        <setting name="add_label" locale="en_US">Add individual</setting>
               </settings>
             </placement>
-            <placement code="ca_object" typeRestrictions="identification,identificationBacteriological,identificationBotanical,identificationViral,identificationZoological,valuation,disposal,treatment,renewal,transfer">
+            <placement code="ca_object" typeRestrictions="valuation,disposal,treatment,renewal,transfer">
               <bundle>ca_objects</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object(s) subjected to event</setting>
@@ -14202,18 +13406,18 @@
                 <setting name="list_format" locale="en_US">list</setting>
               </settings>
             </placement>
-			      <placement code="eventPublishedProcedure" typeRestrictions="fieldwork,identification,identificationBacteriological,identificationBotanical,identificationViral,identificationZoological,valuation,curation,disposal,treatment,renewal,transfer">
+			      <placement code="eventPublishedProcedure" typeRestrictions="fieldwork,valuation,curation,disposal,treatment,renewal,transfer">
               <bundle>ca_attribute_publication</bundle>
               <settings>
                 <setting name="label" locale="en_US">Procedure doi</setting>
-                <setting name="description" locale="en_US">Procedure doi if published, such as in an article, a standardized opering procedure (SOP), an identification key</setting>
+                <setting name="description" locale="en_US">Procedure doi if published, such as in an article, a standardized opering procedure (SOP), ...</setting>
 				        <!--http://rs.tdwg.org/dwc/terms/identificationReferences-->
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="eventProcedure" typeRestrictions="fieldwork,identification,identificationBacteriological,identificationBotanical,identificationViral,identificationZoological,valuation,curation,disposal,treatment,renewal,transfer">
+			      <placement code="eventProcedure" typeRestrictions="fieldwork,valuation,curation,disposal,treatment,renewal,transfer">
               <bundle>ca_attribute_eventProcedure</bundle>
               <settings>
                 <setting name="label" locale="en_US">Description of event procedure</setting>
@@ -14287,123 +13491,6 @@
             </placement>
           </bundlePlacements>
         </screen>
-        <screen idno="identificationEvent_result" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>Result(s)</name>
-            </label>
-          </labels>
-          <typeRestrictions>
-            <restriction code="r_identification" type="identification"/>
-            <restriction code="r_identificationZoological" type="identificationZoological"/>	
-            <restriction code="r_identificationBotanical" type="identificationBotanical"/>			
-            <restriction code="r_identificationViral" type="identificationViral"/>		
-            <restriction code="r_identificationBacteriological" type="identificationBacteriological"/>				
-          </typeRestrictions>
-          <bundlePlacements>
-			      <placement code="IDverbatimIdentification">
-              <bundle>ca_attribute_IDverbatimIdentification</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Verbatim taxonomic identification</setting>
-                <setting name="description" locale="en_US">The taxonomic identification of the observed organism, as specific as known at the time of observation. This can be a species name, genus name, family name. This can be the vernacular name in English (e.g. human), Dutch (e.g. mens), ... or the binomial nomenclature (e.g. Homo sapiens).</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
-            <placement code="IDidentificationQualifier">
-              <bundle>ca_attribute_identificationQualifier</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Identification Qualifier</setting>
-			        </settings>
-            </placement>
-            <placement code="scientificName">
-              <bundle>ca_attribute_scientificName</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Scientific name</setting>
-			        </settings>
-            </placement>
-            <placement code="scientificNameRank" typeRestrictions="identificationBotanical,identificationZoological">
-              <bundle>ca_attribute_scientificNameRank</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Scientific name rank</setting>
-			        </settings>
-            </placement>
-            <placement code="vernacularName" typeRestrictions="identificationBotanical,identificationZoological">
-              <bundle>ca_attribute_vernacularName</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Vernacular name</setting>
-				        <setting name="add_label" locale="en_US">Add vernacular name</setting>
-			        </settings>
-            </placement>            
-            <placement code="hybrid" typeRestrictions="identificationBotanical">
-              <bundle>ca_attribute_hybrid</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Hybrid</setting>
-			        </settings>
-            </placement>
-            <placement code="cultivarGroupName" typeRestrictions="identificationBotanical">
-              <bundle>ca_attribute_cultivarGroupName</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Cultivar group name</setting>
-			        </settings>
-            </placement>
-            <placement code="cultivarName" typeRestrictions="identificationBotanical">
-              <bundle>ca_attribute_cultivarName</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Cultivar name</setting>
-			        </settings>
-            </placement>
-            <placement code="breed" typeRestrictions="identificationZoological">
-              <bundle>ca_attribute_breed</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Breed</setting>
-			        </settings>
-            </placement>
-            <placement code="viralSpeciesDesignation" typeRestrictions="identificationViral">
-              <bundle>ca_attribute_viralSpeciesDesignation</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Viral species designation</setting>
-			        </settings>
-            </placement>
-            <placement code="acronym" typeRestrictions="identificationViral">
-              <bundle>ca_attribute_acronym</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Acronym</setting>
-			        </settings>
-            </placement>
-            <placement code="NameApprobation" typeRestrictions="identificationBacteriological">
-              <bundle>ca_attribute_NameApprobation</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Name approbation</setting>
-			        </settings>
-            </placement>            
-            <placement code="confidenceLevel">
-              <bundle>ca_attribute_confidenceLevel</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Confidence level</setting>
-			        </settings>
-            </placement>
-            <placement code="standardizedIdentification">
-              <bundle>ca_attribute_standardizedIdentification</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Standardized identification</setting>
-			        </settings>
-            </placement>
-            <placement code="nameMatch">
-              <bundle>ca_attribute_matchContainer</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Name match</setting>
-			        </settings>
-            </placement>
-            <placement code="scientificNameOtherDbUrl">
-              <bundle>ca_attribute_scientificNameOtherDbUrl</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Supplementary standardized taxonomic reference (URL)</setting>
-				        <setting name="add_label" locale="en_US">Add another standardized taxon reference URL</setting>
-			        </settings>
-            </placement>
-          </bundlePlacements>
-        </screen>
         <screen idno="valuationEvent_result" default="0">
           <labels>
             <label locale="en_US">
@@ -14445,8 +13532,8 @@
                 <setting name="description" locale="en_US">Here you can specify further on the curation action. For example: disposal because of depletion of DNA/soil, disease (plant), rot (seedlot), ...; treatment: cold treatment -80°C for parasites; renewal: of containers, of labels, of buffer + in the file you can specify the manufacturers information on the new mateiral.; reason why this particular group of samples was transferred.</setting>
 			        </settings>
             </placement>
-            <placement code="file" typeRestrictions="disposal,treatment,renewal,transfer">
-              <bundle>ca_attribute_file</bundle>
+            <placement code="reference" typeRestrictions="disposal,treatment,renewal,transfer">
+              <bundle>ca_attribute_reference</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Relevant curation notes, documents, ...</setting>
 				        <setting name="add_label" locale="en_US">Add file</setting>
@@ -15205,13 +14292,12 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="objlotVerbatimIdentification">
-              <bundle>ca_attribute_objlotVerbatimIdentification</bundle>
+            <placement code="IDContainer">
+              <bundle>ca_attribute_IDContainer</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The verbatim identification</setting>
-                <setting name="description" locale="en_US">Each group concept (i.e. population, provenance, provenance Region) is linked to one specific taxon.</setting>
+                <setting name="label" locale="en_US">Taxonomic identification</setting>
+                <setting name="description" locale="en_US">Each group concept (i.e. population, provenance, provenance Region) is linked to one specific taxon. The last defined Taxonomic identification can be assumed to be the correct one. Previous taxonomic identifications are not deleted.</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
 			      <placement code="groupverbatimLocality">
@@ -15392,7 +14478,7 @@
               </settings>
             </placement>
             <placement code="organisationalUnitName">
-              <bundle>ca_attributes_organisationalUnitName</bundle>
+              <bundle>ca_attribute_organisationalUnitName</bundle>
 			        <settings>
                 <setting name="description" locale="en_US">For the loan at hand, any extra information to be added on the package label, next to the requester and address; can be specified here; e.g. department, team or research group (at the time of loan).</setting>
 				        <setting name="minRelationshipsPerRow">0</setting>
@@ -16153,46 +15239,6 @@
           </labels>
           <subTypeLeft></subTypeLeft>
           <subTypeRight>project</subTypeRight>
-        </type>
-		    <type code="execObjIdZoological" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>executed on</typename>
-              <typename_reverse>subject of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>identificationZoological</subTypeRight>
-        </type>
-		    <type code="execObjIdBotanical" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>executed on</typename>
-              <typename_reverse>subject of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>identificationBotanical</subTypeRight>
-        </type>
-		    <type code="execObjIdViral" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>executed on</typename>
-              <typename_reverse>subject of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>identificationViral</subTypeRight>
-        </type>
-		    <type code="execObjIdBacteriological" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>executed on</typename>
-              <typename_reverse>subject of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>identificationBacteriological</subTypeRight>
         </type>
 		    <type code="execObjValuation" default="0">
           <labels>
