@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.57.01</profileName>
+  <profileName>[INBO] INBO natural science collection v0.57.02</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
-  <!--Changes compared to the previous version 0.56.03: issue 109, 110, 111, 113-->
+  <!--Changes compared to the previous version 0.56: issue 109, 110, 111, 113, 114-->
   <!--https://github.com/inbo/collective-access/issues/109-->
   <!--https://github.com/inbo/collective-access/issues/110-->
   <!--https://github.com/inbo/collective-access/issues/111-->
   <!--https://github.com/inbo/collective-access/issues/113-->
+  <!--https://github.com/inbo/collective-access/issues/114-->
   <locales>
     <locale lang="en" country="US">English</locale>
     <locale lang="nl" country="BE">Nederlands</locale>
@@ -10786,7 +10787,7 @@
           </restriction>
 	      </typeRestrictions>
       </metadataElement>
-      <metadataElement code="samplingProtocol" datatype="Text">
+      <metadataElement code="samplingProtocol" datatype="Container">
         <labels>
           <label locale="en_US">
             <name>samplingProtocol</name>
@@ -10794,6 +10795,38 @@
           </label>
         </labels>
         <documentationUrl>https://dwc.tdwg.org/list/#dwciri_samplingProtocol</documentationUrl>
+	      <elements>
+		      <metadataElement code="protocolURI" datatype="Url">
+            <labels>
+              <label locale="en_US">
+                <name>Sampling protocol DOI</name>
+                <description>A preferably resolvable URI to uniquely identify the sampling procedure. For example a DOI-url.</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/abcd/terms/resourceURI</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+		      <metadataElement code="protocolDetails" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Sampling protocol details</name>
+                <description>If no DOI in "Sampling protocol DOI": a short description or code that allows validation of the used procedure. If DOI in "sampling DOI" this field can be used to log relevant extra information e.g. deviation of the standard procedure.</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/abcd/terms/referenceDetails</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+		      </metadataElement>
+	      </elements>
         <settings>
           <setting name="fieldWidth">70</setting>
           <setting name="fieldHeight">1</setting>
@@ -12670,20 +12703,11 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="samplingProtocolPublished">
-              <bundle>ca_attribute_publication</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Sampling procedure doi</setting>
-                <setting name="description" locale="en_US">Procedure doi if published, such as in an article, a standardized opering procedure (SOP), ...</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
 			      <placement code="samplingProtocol">
               <bundle>ca_attribute_samplingProtocol</bundle>
               <settings>
                 <setting name="label" locale="en_US">Sampling procedure</setting>
-                <setting name="description" locale="en_US">Text field to (concisely) describe the procedure (if relevant). Can be if: no doi-reference for procedure description or to add notes/addenda on the given published procedure.</setting>
+                <setting name="description" locale="en_US">Text field to (concisely) describe the procedure (if relevant).</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
@@ -12877,28 +12901,28 @@
               <bundle>ca_attribute_multimediaURL</bundle>
 			        <settings>
 				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
-                <description>Relevant multimedia linked to the object/specimen. This could be relevant field photo's (identification), relevant measurement photo's, ...</description>
+                <setting name="description" locale="en_US">Relevant multimedia linked to the object/specimen. This could be relevant field photo's (identification), relevant measurement photo's, ...</setting>
 			        </settings>
             </placement>
             <placement code="multimediaURL" typeRestrictions="observation">
               <bundle>ca_attribute_multimediaURL</bundle>
 			        <settings>
 				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
-                <description>Relevant multimedia linked to the sampling point. This could be relevant field photo's (identification), relevant measurement photo's, ...</description>
+                <setting name="description" locale="en_US">Relevant multimedia linked to the sampling point. This could be relevant field photo's (identification), relevant measurement photo's, ...</setting>
 			        </settings>
             </placement>
             <placement code="reference" typeRestrictions="object">
               <bundle>ca_attribute_reference</bundle>
 			        <settings>
 				        <setting name="add_label" locale="en_US">Add reference URL</setting>
-                <description>A relevant URL that refers to the object/specimen. This can be an internal INBO document on the Google drive, a published or unpublished dataset, a link to an INBO database (use the INBO datacatalogue),..</description>
+                <setting name="description" locale="en_US">A relevant URL that refers to the object/specimen. This can be an internal INBO document on the Google drive, a published or unpublished dataset, a link to an INBO database (use the INBO datacatalogue),..</setting>
 			        </settings>
             </placement>
             <placement code="reference" typeRestrictions="observation">
               <bundle>ca_attribute_reference</bundle>
 			        <settings>
 				        <setting name="add_label" locale="en_US">Add reference URL</setting>
-                <description>A relevant URL that refers to the sampling point. This can be an internal INBO document on the Google drive, a published or unpublished dataset, a link to an INBO database (use the INBO datacatalogue),..</description>
+                <setting name="description" locale="en_US">A relevant URL that refers to the sampling point. This can be an internal INBO document on the Google drive, a published or unpublished dataset, a link to an INBO database (use the INBO datacatalogue),..</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
