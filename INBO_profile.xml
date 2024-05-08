@@ -24,15 +24,15 @@
           </label>
         </labels>
         <items>
-          <item idno="incomplete" rank="1" enabled="1" default="1" value="0">
+          <item idno="incomplete" rank="1" enabled="1" default="1" value="0"><!--A record in the CMS is considered incomplete if the person that enters the data did not go over all the provided fields and entered information at the best of his/her capacity.  Records are by definition incomplete when it entered via quick add screen.-->
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>Incomplete (e.g. entered via quick add, only skeleton record)</name_singular>
-                <name_plural>Incompletes (e.g. entered via quick add, only skeleton record)</name_plural>
+                <name_singular>Incomplete</name_singular>
+                <name_plural>Incompletes</name_plural>
               </label>
             </labels>
           </item>
-          <item idno="complete" rank="2" enabled="1" default="0" value="2">
+          <item idno="complete" rank="2" enabled="1" default="0" value="2"><!--A record in the CMS is considered complete if the person that enters the data goes over all the provided fields and enters information where information can be provided. This can be completed via provided import sheets that match the database structure for that type of specimen, or by working in the application directly (manually).-->
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>Complete - all information is added</name_singular>
@@ -907,7 +907,7 @@
           </item>
         </items>
       </list>
-      <list code="object_lot_types" hierarchical="1" system="0" vocabulary="0"><!--These are species dependent groupings, often in place/time-->
+      <list code="object_lot_types" hierarchical="1" system="0" vocabulary="0">
         <labels>
          <label locale="en_US">
           <name>Objects higher hiërarchy: relevant groupings of NS objects</name>
@@ -948,7 +948,7 @@
           </label>
         </labels>
          <items>
-              <item idno="continent" enabled="1" default="0">
+              <item idno="continent" enabled="1" default="0"><!--http://rs.tdwg.org/dwc/terms/continent-->
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>continent</name_singular>
@@ -956,7 +956,7 @@
                   </label>
                 </labels>
               </item>
-              <item idno="waterBody" enabled="1" default="0">
+              <item idno="waterBody" enabled="1" default="0"><!--http://rs.tdwg.org/dwc/terms/waterBody-->
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>Waterbody</name_singular>
@@ -964,7 +964,7 @@
                   </label>
                 </labels>
               </item>
-              <item idno="islandGroup" enabled="1" default="0">
+              <item idno="islandGroup" enabled="1" default="0"><!--http://rs.tdwg.org/dwc/terms/islandGroup-->
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>island group</name_singular>
@@ -972,7 +972,7 @@
                   </label>
                 </labels>
               </item>
-              <item idno="island" enabled="1" default="0">
+              <item idno="island" enabled="1" default="0"><!--http://rs.tdwg.org/dwc/terms/island-->
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>island</name_singular>
@@ -980,7 +980,7 @@
                   </label>
                 </labels>
               </item>
-              <item idno="country" enabled="1" default="1">
+              <item idno="country" enabled="1" default="1"><!--http://rs.tdwg.org/dwc/terms/country-->
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>country</name_singular>
@@ -988,7 +988,7 @@
                   </label>
                 </labels>
               </item>
-              <item idno="stateProvince" enabled="1" default="0">
+              <item idno="stateProvince" enabled="1" default="0"><!--http://rs.tdwg.org/dwc/terms/stateProvince-->
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>state/province</name_singular>
@@ -996,7 +996,7 @@
                   </label>
                 </labels>
               </item>
-              <item idno="countyShireDepartment" enabled="1" default="0">
+              <item idno="countyShireDepartment" enabled="1" default="0"><!--http://rs.tdwg.org/dwc/terms/county-->
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>county, shire, department, ...</name_singular>
@@ -1004,7 +1004,7 @@
                   </label>
                 </labels>
               </item>
-              <item idno="cityTownMunicipalityVillage" enabled="1" default="0">
+              <item idno="cityTownMunicipalityVillage" enabled="1" default="0"><!--http://rs.tdwg.org/dwc/terms/municipality-->
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>city, town, municipality, village, ...</name_singular>
@@ -1012,7 +1012,7 @@
                   </label>
                 </labels>
               </item>
-              <item idno="inSituPlot" enabled="1" default="0">
+              <item idno="inSituPlot" enabled="1" default="0"><!--This allows linking of multiple sampling points and specimens to defined plots, if relevant. For example uitgangsmateriaal defined in a GIS layer (https://www.vlaanderen.be/inbo/genenbronnen-bosbouw/kaart/) or a long-term-monitoring plot.-->
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>In-situ plot</name_singular>
@@ -1020,7 +1020,7 @@
                   </label>
                 </labels>
               </item>
-              <item idno="transect" enabled="1" default="0">
+              <item idno="transect" enabled="1" default="0"><!--This allows linking of multiple sampling points and specimens to a defined transect, if relevant.-->
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>Transect</name_singular>
@@ -1028,7 +1028,7 @@
                   </label>
                 </labels>
               </item>
-              <item idno="place" enabled="1" default="0">
+              <item idno="place" enabled="1" default="0"><!--This allows linking of multiple sampling points and specimens to a defined place concept, below the level of a city or town; where relevant. For example a name of a Forest Reserve.-->
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>place</name_singular>
@@ -1036,7 +1036,7 @@
                   </label>
                 </labels>
               </item>
-              <item idno="provenanceRegion" enabled="1" default="0"><!--it is taxon dependent-->
+              <item idno="provenanceRegion" enabled="1" default="0"><!--This allows linking of multiple sampling points and specimens to a defined provenance. Be aware that provenance is country and species specific. The Provenance region should hence be defined under a country and the taxonomic scope should be added to the name e.g. Germany -> Alnus_glutinosa_80204.-->
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>Provenance region</name_singular>
@@ -1428,15 +1428,7 @@
           </label>
         </labels>
         <items>
-            <item idno="descriptive" enabled="1" default="1">
-              <labels>
-                <label locale="en_US" preferred="1">
-                  <name_singular>descriptive label</name_singular>
-                  <name_plural>descriptive labels</name_plural>
-                </label>
-              </labels>
-            </item>
-            <item idno="preparationID" enabled="1" default="0"><!--given at the time the object was generated, usually unique in the research/project context-->
+            <item idno="preparationID" enabled="1" default="0"><!--Given at the time the object was generated, usually unique in the research/project context.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>preparation ID</name_singular>
@@ -1444,7 +1436,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="subCollectionID" enabled="1" default="0"><!--given at the time it was added to subcollection, so its unique in the subcollection context-->
+            <item idno="INBOsubCollectionID" enabled="1" default="0"><!--Given at the time it was added to subcollection, so its unique in the subcollection context.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>subcollection ID</name_singular>
@@ -1452,7 +1444,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="INBOCollectionID" enabled="1" default="0"><!--given at the time it was added to CMS, so its unique in the complete INBO collection)-->
+            <item idno="INBOCollectionID" enabled="1" default="0"><!--Given at the time it was defined in the collection, so its unique in the complete INBO collection.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>INBO collection ID</name_singular>
@@ -1460,7 +1452,15 @@
                 </label>
               </labels>
             </item>
-            <item idno="LabwareLIMSID" enabled="1" default="0"><!--unique numbering system of INBO-LIMS-->
+            <item idno="INBOlabID" enabled="1" default="0"><!--Unique numbering system of the labs prior the INBO-LIMS.-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>Lab ID</name_singular>
+                  <name_plural>Lab IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="LabwareLIMSID" enabled="1" default="0"><!--Unique numbering system of INBO-Labware-LIMS.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Labware-LIMS-generated ID</name_singular>
@@ -1468,7 +1468,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="unknownTypeID" enabled="1" default="0"><!--A numbering system associated with the object but it is not known to which system it refers-->
+            <item idno="unknownTypeID" enabled="1" default="0"><!--A numbering system is applied but it is not known to which system it refers at the time of logging the ID.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Unknown type of ID</name_singular>
@@ -1485,27 +1485,35 @@
           </label>
         </labels>
         <items>
-            <item idno="descriptive" enabled="1" default="1">
+            <item idno="preparationID" enabled="1" default="0"><!--Given at the time the object lot was generated, usually unique in the research/project context.-->
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>descriptive label</name_singular>
-                  <name_plural>descriptive labels</name_plural>
+                  <name_singular>preparation ID</name_singular>
+                  <name_plural>preparation ID</name_plural>
                 </label>
               </labels>
             </item>
-            <item idno="recordID" enabled="1" default="0">
+            <item idno="INBOsubCollectionID" enabled="1" default="0"><!--Given at the time it was defined in the subcollection, so its unique in the subcollection context.-->
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>record ID (given at the time the group concept was first noted, usually unique in the research/project context)</name_singular>
-                  <name_plural>record IDs</name_plural>
+                  <name_singular>subcollection ID</name_singular>
+                  <name_plural>subcollection IDs</name_plural>
                 </label>
               </labels>
             </item>
-            <item idno="INBOCollectionID" enabled="1" default="0">
+            <item idno="INBOCollectionID" enabled="1" default="0"><!--Given at the time it was defined in the collection, so its unique in the complete INBO collection.-->
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>INBO collection ID (given at the time it was added to CMS, so its unique in the complete INBO collection)</name_singular>
+                  <name_singular>INBO collection ID</name_singular>
                   <name_plural>INBO collection IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="unknownTypeID" enabled="1" default="0"><!--A numbering system is applied but it is not known to which system it refers at the time of logging the ID.-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>Unknown type of ID</name_singular>
+                  <name_plural>Unknown type of IDs</name_plural>
                 </label>
               </labels>
             </item>
@@ -1518,14 +1526,14 @@
           </label>
         </labels>
         <items>
-          <item idno="uf" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>use for</name_singular>
-                <name_plural>use for</name_plural>
-              </label>
-            </labels>
-          </item>
+            <item idno="INBOCollectionID" enabled="1" default="0"><!--Given at the time it was defined in the collection, so its unique in the complete INBO collection.-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>INBO collection ID</name_singular>
+                  <name_plural>INBO collection IDs</name_plural>
+                </label>
+              </labels>
+            </item>
         </items>
       </list>
       <list code="place_label_types" hierarchical="0" system="0" vocabulary="0">
@@ -1535,14 +1543,14 @@
           </label>
         </labels>
         <items>
-          <item idno="uf" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>use for</name_singular>
-                <name_plural>use for</name_plural>
-              </label>
-            </labels>
-          </item>
+            <item idno="INBOCollectionID" enabled="1" default="0"><!--Given at the time it was defined in the collection, so its unique in the complete INBO collection.-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>INBO collection ID</name_singular>
+                  <name_plural>INBO collection IDs</name_plural>
+                </label>
+              </labels>
+            </item>
         </items>
       </list>
       <list code="occurrence_label_types" hierarchical="0" system="0" vocabulary="0">
@@ -1552,43 +1560,51 @@
           </label>
         </labels>
         <items>
-            <item idno="descriptive" enabled="1" default="1">
+            <item idno="INBOsubCollectionID" enabled="1" default="0"><!--Given at the time it was defined in the subcollection, so its unique in the subcollection context.-->
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>descriptive label</name_singular>
-                  <name_plural>descriptive labels</name_plural>
+                  <name_singular>subcollection ID</name_singular>
+                  <name_plural>subcollection IDs</name_plural>
                 </label>
               </labels>
             </item>
-            <item idno="recordID" enabled="1" default="0">
+            <item idno="INBOCollectionID" enabled="1" default="0"><!--Given at the time it was defined in the collection, so its unique in the complete INBO collection.-->
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>record ID (given at the time the event was recorded, usually unique in the research/project context)</name_singular>
-                  <name_plural>record ID</name_plural>
-                </label>
-              </labels>
-            </item>
-            <item idno="INBOCollectionID" enabled="1" default="0">
-              <labels>
-                <label locale="en_US" preferred="1">
-                  <name_singular>INBO collection ID (given at the time the event was added to CMS, so its unique in the complete INBO collection)</name_singular>
+                  <name_singular>INBO collection ID</name_singular>
                   <name_plural>INBO collection IDs</name_plural>
                 </label>
               </labels>
             </item>
-            <item idno="LabwareLIMSID" enabled="1" default="0">
+            <item idno="INBOlabID" enabled="1" default="0"><!--Unique numbering system of the labs prior the INBO-LIMS.-->
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>Labware-LIMS-generated ID (unique numbering system of INBO-LIMS)</name_singular>
+                  <name_singular>Lab ID</name_singular>
+                  <name_plural>Lab IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="LabwareLIMSID" enabled="1" default="0"><!--Unique numbering system of INBO-Labware-LIMS.-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>Labware-LIMS-generated ID</name_singular>
                   <name_plural>Labware-LIMS-generated ID</name_plural>
                 </label>
               </labels>
             </item>
-            <item idno="JIRAID" enabled="1" default="0">
+            <item idno="JIRAID" enabled="1" default="0"><!--The ID for a project as defined in JIRA.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>JIRA ID (unique numbering system of INBO-JIRA)</name_singular>
                   <name_plural>JIRA IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="unknownTypeID" enabled="1" default="0"><!--A numbering system is applied but it is not known to which system it refers at the time of logging the ID.-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>Unknown type of ID</name_singular>
+                  <name_plural>Unknown type of IDs</name_plural>
                 </label>
               </labels>
             </item>
@@ -1601,14 +1617,22 @@
           </label>
         </labels>
         <items>
-          <item idno="uf" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>use for</name_singular>
-                <name_plural>use for</name_plural>
-              </label>
-            </labels>
-          </item>
+            <item idno="INBOsubCollectionID" enabled="1" default="0"><!--Given at the time it was defined in the subcollection, so its unique in the subcollection context.-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>subcollection ID</name_singular>
+                  <name_plural>subcollection IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="INBOCollectionID" enabled="1" default="0"><!--Given at the time it was defined in the collection, so its unique in the complete INBO collection.-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>INBO collection ID</name_singular>
+                  <name_plural>INBO collection IDs</name_plural>
+                </label>
+              </labels>
+            </item>
         </items>
       </list>
       <list code="storage_location_label_types" hierarchical="0" system="0" vocabulary="0">
