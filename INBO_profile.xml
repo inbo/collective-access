@@ -914,22 +914,6 @@
         </label>
         </labels>
 		    <items>
-          <item idno="population" enabled="1" default="0"><!--Although this can coincide with place concepts, it is taxon dependent-->
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>Population</name_singular>
-                <name_plural>Populations</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="provenanceRegion" enabled="1" default="0"><!--Although this can coincide with place concepts, it is taxon dependent-->
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>Provenance region</name_singular>
-                <name_plural>Provenance regions</name_plural>
-              </label>
-            </labels>
-          </item>
 		    </items>
       </list>
 	    <list code="entity_types" hierarchical="1" system="0" vocabulary="0">
@@ -1049,6 +1033,14 @@
                   <label locale="en_US" preferred="1">
                     <name_singular>place</name_singular>
                     <name_plural>places</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="provenanceRegion" enabled="1" default="0"><!--it is taxon dependent-->
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>Provenance region</name_singular>
+                    <name_plural>Provenance regions</name_plural>
                   </label>
                 </labels>
               </item>
@@ -12174,15 +12166,6 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="population" typeRestrictions="observationAnimal">
-              <bundle>ca_object_lots</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Belongs to the population</setting>
-                <setting name="description" locale="en_US">A population in this case is any grouping of individuals in space and time that is defined.</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-				        <setting name="restrict_to_types">population</setting>
-              </settings>
-            </placement>		 		 
           </bundlePlacements>
         </screen>
         <screen idno="context" default="0">
@@ -12280,17 +12263,6 @@
                 <setting name="description" locale="en_US">The plant sampling point has the provenance. As provenance concepts are dependent on the taxon, these are logged separately.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-			      </placement>
-            <placement code="ca_object_lot_provenanceRegion" typeRestrictions="observationPlant">
-              <bundle>ca_object_lots</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The provenance region</setting>
-                <setting name="description" locale="en_US">The plant observation has the provenance region. As provenance concepts are dependent on the taxon, these are logged separately.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_types">provenanceRegion</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
@@ -13394,17 +13366,6 @@
             <restriction code="r_fieldwork" type="fieldwork"/>		
           </typeRestrictions>
           <bundlePlacements>
-			      <placement code="ca_object_lot_population">
-              <bundle>ca_object_lots</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Population of focus</setting>
-                <setting name="description" locale="en_US">A log of the populations of focus of this project.</setting>
-                <setting name="add_label" locale="en_US">Add population</setting>
-                <setting name="restrict_to_relationship_types">projectFocus</setting>
-                <setting name="restrict_to_types">population</setting>
-                <setting name="list_format">list</setting>
-              </settings>
-            </placement>
             <placement code="resultingobjects">
               <bundle>ca_objects</bundle>
 			        <settings>
@@ -14214,82 +14175,39 @@
 			      <placement code="preferred_labels">
               <bundle>preferred_labels</bundle>
               <settings>
-                <setting name="label" locale="en_US">Group preferred name</setting>
-                <setting name="description" locale="en_US">Each group concept (i.e. population, provenance, provenance Region) is a concept of taxon, place and time that is named. If no official name exists, it is recommended to mention the taxon and place concepts in this label.</setting>
+                <setting name="label" locale="en_US">Object lot preferred name</setting>
               </settings>
             </placement>
 			      <placement code="nonpreferred_labels">
               <bundle>nonpreferred_labels</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Group non-preferred name</setting>
+                <setting name="label" locale="en_US">Object lot non-preferred name</setting>
 				        <setting name="add_label" locale="en_US">Add other non-preferred name</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="IDContainer">
-              <bundle>ca_attribute_IDContainer</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Taxonomic identification</setting>
-                <setting name="description" locale="en_US">Each group concept (i.e. population, provenance, provenance Region) is linked to one specific taxon. The last defined Taxonomic identification can be assumed to be the correct one. Previous taxonomic identifications are not deleted.</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
-			      <placement code="groupverbatimLocality">
-              <bundle>ca_attribute_verbatimLocality</bundle>
-              <settings>
-                <setting name="label" locale="en_US">The original description of the locality, a place, the geographic coverage, ...</setting>
-                <setting name="description" locale="en_US">Each group concept (i.e. population, provenance, provenance Region) is linked to one specific locality concept.</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
-            <placement code="groupPlace">
-              <bundle>ca_places</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The place of the group</setting>
-                <setting name="description" locale="en_US">The locality concept can be standardized here using the places backbone. This will make it easier to query.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-			      </placement>
-            <placement code="groupDescription">
+            <placement code="object_lot_description">
               <bundle>ca_attribute_descriptionContainer</bundle>
               <settings>
-                <setting name="description" locale="en_US">A description of the population, provenance or provenance region. As the concepts of population and provenance region can change over time, this is the place to refer to earlier definitions/concepts.</setting>
+                <setting name="description" locale="en_US">A description of the object lot.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="groupConceptPublication">
-              <bundle>ca_attribute_publication</bundle>
-              <settings>
-              <setting name="description" locale="en_US">Publication that establishes the population, provenance region or provenance concept.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">10</setting>
-				        <setting name="add_label" locale="en_US">Add other publication</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-			      <placement code="groupDateRange">
+			      <placement code="object_lot_dateRange">
               <bundle>ca_attribute_dateRange</bundle>
-              <!--http://rs.tdwg.org/dwc/terms/dateIdentified-->
               <settings>
-                <setting name="label" locale="en_US">Date (range) of the group</setting>
-                <setting name="description" locale="en_US">Usually this consist of a start date. For example: the date when a population was discovered, the date where a provenance region concept was defined, ..</setting>
+                <setting name="label" locale="en_US">Date (range) of the object lot</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-          </bundlePlacements>
-        </screen>
-        <screen idno="objectLot_hierarchy" default="0">
-		      <labels>
-            <label locale="en_US">
-              <name>Hierarchy of groups</name>
-            </label>
-          </labels>
-          <bundlePlacements>
-            <placement code="lot_hierarchy_location">
-              <bundle>hierarchy_location</bundle>
+			      <placement code="object_lot_admin">
+              <bundle>ca_attribute_externalRecord</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Link to documents (e.g., contracts, mails) linked to the object lot</setting>
+				        <setting name="add_label" locale="en_US">Add other url</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
+              </settings>
             </placement>
           </bundlePlacements>
         </screen>
@@ -14303,21 +14221,11 @@
             <placement code="derivedObjects">
               <bundle>ca_objects</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Object that belongs to the group</setting>
+                <setting name="label" locale="en_US">Object that belongs to the object lot</setting>
                 <setting name="add_label" locale="en_US">Add new object</setting>
                 <setting name="list_format">list</setting>
                 <setting name="restrict_to_types">object</setting>
               </settings>
-            </placement>
-            <placement code="derivedObservations">
-              <bundle>ca_occurrences</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Observation that belongs to the group</setting>
-				        <setting name="add_label" locale="en_US">Add observation</setting>
-				        <setting name="restrict_to_types">observationPlant,observationAnimal</setting>
-                <setting name="list_format">list</setting>
-                <setting name="restrict_to_types">observation</setting>
-			        </settings>
             </placement>
           </bundlePlacements>
         </screen>
