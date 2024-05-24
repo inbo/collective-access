@@ -8871,13 +8871,31 @@
                 <setting name="restrict_to_relationship_types">partOf</setting>
               </settings>
             </placement>
-			      <placement code="IDContainer" typeRestrictions="observationAnimal,observationPlant,animalObject,plantObject,dnaSample" includeSubtypes="1">
+			      <placement code="IDContainer" typeRestrictions="animalObject,observationAnimal,plantObject,observationPlant,oDNA" includeSubtypes="1"><!--This should prepopulate with the parent value, if empty-->
               <bundle>ca_attribute_IDContainer</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The taxonomic identification</setting>
-				        <setting name="add_label" locale="en_US">Add new taxon</setting>
+                <setting name="label" locale="en_US">The verbatim taxonomic identification</setting>
+				        <setting name="add_label" locale="en_US">Add a new taxon</setting>
 			        </settings>
             </placement>
+			      <placement code="sexPlant" typeRestrictions="observationPlant">
+              <bundle>ca_attribute_sexPlant</bundle>
+			        <settings>
+                <setting name="description" locale="en_US">If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+				        <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+			      <placement code="sexAnimal" typeRestrictions="observationAnimal">
+              <bundle>ca_attribute_sexAnimal</bundle>
+			        <settings>
+                <setting name="description" locale="en_US">If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+				        <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
 			      <placement code="status">
               <bundle>status</bundle>
 			        <settings>
@@ -9199,98 +9217,6 @@
 			      </placement>
           </bundlePlacements>
 		    </screen>
-		    <screen idno="classification" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>Classification</name>
-            </label>
-          </labels>
-          <typeRestrictions>
-                <restriction code="r_animalBulk" type="animalBulk"/>
-                <restriction code="r_animalEntireLiving" type="animalEntireLiving"/>
-                <restriction code="r_animalEntireCadaver" type="animalEntireCadaver"/>       
-                <restriction code="r_animalEntireEthanol" type="animalEntireEthanol"/>
-                <restriction code="r_sampleAmphibianLarva" type="sampleAmphibianLarva"/>
-                <restriction code="r_sampleAmphibianEmbryo" type="sampleAmphibianEmbryo"/>
-                <restriction code="r_sampleAmphibianTailclip" type="sampleAmphibianTailclip"/>
-                <restriction code="r_sampleAmphibianFrogspawn" type="sampleAmphibianFrogspawn"/>
-                <restriction code="r_sampleAmphibianSwabCloaca" type="sampleAmphibianSwabCloaca"/>
-                <restriction code="r_sampleAmphibianSwabMouth" type="sampleAmphibianSwabMouth"/>
-                <restriction code="r_sampleAmphibianSwabEar" type="sampleAmphibianSwabEar"/>
-                <restriction code="r_sampleAmphibianToeclip" type="sampleAmphibianToeclip"/>
-                <restriction code="r_sampleFishFinclip" type="sampleFishFinclip"/>
-                <restriction code="r_sampleFishMuscle" type="sampleFishMuscle"/>
-                <restriction code="r_sampleInvertebrateLarva" type="sampleInvertebrateLarva"/>
-                <restriction code="r_sampleInvertebrateLeg" type="sampleInvertebrateLeg"/>
-                <restriction code="r_sampleInvertebrateWingclip" type="sampleInvertebrateWingclip"/>
-                <restriction code="r_sampleReptileSkin" type="sampleReptileSkin"/>
-                <restriction code="r_sampleReptileTailclip" type="sampleReptileTailclip"/>
-                <restriction code="r_sampleMammalBaculum" type="sampleMammalBaculum"/>
-                <restriction code="r_sampleMammalBladder" type="sampleMammalBladder"/>
-                <restriction code="r_sampleMammalBlood" type="sampleMammalBlood"/>
-                <restriction code="r_sampleMammalBrain" type="sampleMammalBrain"/>
-                <restriction code="r_sampleMammalConjuctivum" type="sampleMammalConjuctivum"/>
-                <restriction code="r_sampleMammalCyste" type="sampleMammalCyste"/>
-                <restriction code="r_sampleMammalEarpunch" type="sampleMammalEarpunch"/>
-                <restriction code="r_sampleMammalEmbryo" type="sampleMammalEmbryo"/>
-                <restriction code="r_sampleMammalFeces" type="sampleMammalFeces"/>
-                <restriction code="r_sampleMammalHead" type="sampleMammalBaculum"/>
-                <restriction code="r_sampleMammalHeart" type="sampleMammalHeart"/>
-                <restriction code="r_sampleMammalHair" type="sampleMammalHair"/>
-                <restriction code="r_sampleMammalIntestine" type="sampleMammalIntestine"/>
-                <restriction code="r_sampleMammalLiver" type="sampleMammalLiver"/>
-                <restriction code="r_sampleMammalLung" type="sampleMammalLung"/>
-                <restriction code="r_sampleMammalLymphNode" type="sampleMammalLymphNode"/>
-                <restriction code="r_sampleMammalKidney" type="sampleMammalKidney"/>
-                <restriction code="r_sampleMammalMuscle" type="sampleMammalMuscle"/>
-                <restriction code="r_sampleMammalSkinPiece" type="sampleMammalSkinPiece"/>
-                <restriction code="r_sampleMammalSkinComplete" type="sampleMammalSkinComplete"/>
-                <restriction code="r_sampleMammalSkull" type="sampleMammalSkull"/>
-                <restriction code="r_sampleMammalSpleen" type="sampleMammalSpleen"/>
-                <restriction code="r_sampleMammalStomach" type="sampleMammalStomach"/>
-                <restriction code="r_sampleMammalSwabBite" type="sampleMammalSwabBite"/>
-                <restriction code="r_sampleMammalTongue" type="sampleMammalTongue"/>
-                <restriction code="r_sampleMammalTooth" type="sampleMammalSkull"/>
-                <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
-                <restriction code="r_leafSample" type="leafSample"/>
-                <restriction code="r_littertrapSample" type="littertrapSample"/>
-                <restriction code="r_herbariumSpecimen" type="herbariumSpecimen"/>
-                <restriction code="r_livingPlant" type="livingPlant"/>
-                <restriction code="r_seedlot" type="seedlot"/>
-                <restriction code="r_stemDisc" type="stemDisc"/>
-                <restriction code="r_oDNA" type="oDNA"/>
-                <restriction code="r_observationPlant" type="observationPlant"/>
-                <restriction code="r_observationAnimal" type="observationAnimal"/>
-                <restriction code="r_observationSoil" type="observationSoil"/>
-          </typeRestrictions>
-          <bundlePlacements>
-			      <placement code="IDContainer" typeRestrictions="animalObject,observationAnimal,plantObject,observationPlant,oDNA" includeSubtypes="1"><!--This should prepopulate with the parent value, if empty-->
-              <bundle>ca_attribute_IDContainer</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The verbatim taxonomic identification</setting>
-				        <setting name="add_label" locale="en_US">Add a new taxon</setting>
-			        </settings>
-            </placement>
-			      <placement code="sexPlant" typeRestrictions="observationPlant">
-              <bundle>ca_attribute_sexPlant</bundle>
-			        <settings>
-                <setting name="description" locale="en_US">If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-				        <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-			      </placement>
-			      <placement code="sexAnimal" typeRestrictions="observationAnimal">
-              <bundle>ca_attribute_sexAnimal</bundle>
-			        <settings>
-                <setting name="description" locale="en_US">If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-				        <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-			      </placement>
-          </bundlePlacements>
-        </screen>
 		    <screen idno="obj_preparation" default="0">
           <labels>
             <label locale="en_US">
@@ -11199,39 +11125,6 @@
         </screen>
       </screens>
     </userInterface>
-    <userInterface code="representation_annotation_ui" type="ca_representation_annotations">
-      <labels>
-        <label locale="en_US">
-          <name>Representation annotation editor</name>
-        </label>
-      </labels>
-      <screens>
-        <screen idno="representation_annotation_record" default="1">
-          <labels>
-            <label locale="en_US">
-              <name>Annotation record</name>
-            </label>
-          </labels>
-          <bundlePlacements>
-            <placement code="preferred_labels">
-              <bundle>preferred_labels</bundle>
-            </placement>
-            <placement code="ca_representation_annotation_properties">
-              <bundle>ca_representation_annotation_properties</bundle>
-            </placement>
-            <placement code="access">
-              <bundle>access</bundle>
-            </placement>
-            <placement code="status">
-              <bundle>status</bundle>
-            </placement>
-            <placement code="ca_attribute_descriptionContainer">
-              <bundle>ca_attribute_descriptionContainer</bundle>
-            </placement>           
-          </bundlePlacements>
-        </screen>
-      </screens>
-    </userInterface>
     <userInterface code="list_ui" type="ca_lists">
       <labels>
         <label locale="en_US">
@@ -11610,27 +11503,6 @@
       <labels>
         <label locale="en_US">
           <name>Interstitial Object Editor</name>
-        </label>
-      </labels>
-      <screens>
-        <screen idno="record" default="1">
-          <labels>
-            <label locale="en_US">
-              <name>Record</name>
-            </label>
-          </labels>
-          <bundlePlacements>
-            <placement code="ca_attribute_relationshipExplanation">
-              <bundle>ca_attribute_relationshipExplanation</bundle>
-            </placement>
-          </bundlePlacements>
-        </screen>
-      </screens>
-    </userInterface>
-    <userInterface code="interstitial_observation_ui" type="ca_occurrences_x_occurrences">
-      <labels>
-        <label locale="en_US">
-          <name>Interstitial Occurrence Editor</name>
         </label>
       </labels>
       <screens>
