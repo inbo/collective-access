@@ -1428,47 +1428,55 @@
           </label>
         </labels>
         <items>
-            <item idno="preparationID" enabled="1" default="0"><!--Given at the time the object was generated, usually unique in the research/project context.-->
+            <item idno="arbitraryID" enabled="1" default="0"><!--An identifier for the sampling point or object. This can be given by the researcher at point of sampling, not respecting convention/agreements made with a larger group / made by a system.-->
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>preparation ID</name_singular>
-                  <name_plural>preparation ID</name_plural>
+                  <name_singular>arbitrary ID</name_singular>
+                  <name_plural>arbitrary IDs</name_plural>
                 </label>
               </labels>
             </item>
-            <item idno="INBOsubCollectionID" enabled="1" default="0"><!--Given at the time it was added to subcollection, so its unique in the subcollection context.-->
-              <labels>
-                <label locale="en_US" preferred="1">
-                  <name_singular>subcollection ID</name_singular>
-                  <name_plural>subcollection IDs</name_plural>
-                </label>
-              </labels>
-            </item>
-            <item idno="INBOCollectionID" enabled="1" default="0"><!--Given at the time it was defined in the collection, so its unique in the complete INBO collection.-->
-              <labels>
-                <label locale="en_US" preferred="1">
-                  <name_singular>INBO collection ID</name_singular>
-                  <name_plural>INBO collection IDs</name_plural>
-                </label>
-              </labels>
-            </item>
-            <item idno="INBOlabID" enabled="1" default="0"><!--Unique numbering system of the labs prior the INBO-LIMS.-->
-              <labels>
-                <label locale="en_US" preferred="1">
-                  <name_singular>Lab ID</name_singular>
-                  <name_plural>Lab IDs</name_plural>
-                </label>
-              </labels>
-            </item>
-            <item idno="LabwareLIMSID" enabled="1" default="0"><!--Unique numbering system of INBO-Labware-LIMS.-->
+            <item idno="LabwareLIMSID" enabled="1" default="0"><!--For example: 16-001460. An identifier for the specimen as given by INBO-Labware-LIMS. The first part of the ID is for the year (in example: 2016). The second part is an incremental numbering.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Labware-LIMS-generated ID</name_singular>
-                  <name_plural>Labware-LIMS-generated ID</name_plural>
+                  <name_plural>Labware-LIMS-generated IDs</name_plural>
                 </label>
               </labels>
             </item>
-            <item idno="unknownTypeID" enabled="1" default="0"><!--A numbering system is applied but it is not known to which system it refers at the time of logging the ID.-->
+            <item idno="preLIMSlabID" enabled="1" default="0"><!--An identifier for the specimen given by the INBO genetic or analytical labs prior usage of the INBO-LIMS. This is any lab numbering, not constituing the LIMS-ID. Examples: FSM 3073, A/09/0683.-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>pre-LIMS lab ID</name_singular>
+                  <name_plural>pre-LIMS lab IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="mammalAutopsyLabID" enabled="1" default="0"><!--For example: da1488tong1. An identifier for the specimen, given by the INBO mammal autopsy lab. The first two letters are for the animal. da = das. The next four numbers are an incremental numbering. Then the type of tissue: "tong" is given. If there are replicates of the sample, an incremental number is given after the tissue type. Here "1".-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>mammal autopsy lab ID</name_singular>
+                  <name_plural>mammal autopsy lab IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="marternetwerkdbID" enabled="1" default="0"><!--For example: e.g. me/18012022/001. An identifier for the sampling point - a cadavers in situ, as constructed in the marternerwork database. Here the first part is a two letter code for the species (me = meles meles). The second part represents a date: 18 January 2022. The last part represents an incremental numbering.-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>marternetwerk-database ID</name_singular>
+                  <name_plural>marternetwerk-database IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="seedlotID" enabled="1" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>seedlot ID</name_singular>
+                  <name_plural>sedlot IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="unknownTypeID" enabled="1" default="0"><!--A ID-type is applied (following a logic, by something/someone) but it is not known to which system it refers at the time of logging the ID.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Unknown type of ID</name_singular>
