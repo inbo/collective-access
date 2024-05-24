@@ -1428,7 +1428,7 @@
           </label>
         </labels>
         <items>
-            <item idno="arbitraryID" enabled="1" default="0"><!--An identifier for the sampling point or object. This can be given by the researcher at point of sampling, not respecting convention/agreements made with a larger group / made by a system.-->
+            <item idno="arbitraryID" enabled="1" default="0"><!--An identifier for the sampling point or object. This can be given by the researcher at point of sampling, not respecting convention/agreements made with a larger group / made by a system. This type of ID can also be applied if there seems to be a logic applied by something/someone but it is not known to which system it refers at the time of logging the ID.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>arbitrary ID</name_singular>
@@ -1493,35 +1493,11 @@
           </label>
         </labels>
         <items>
-            <item idno="preparationID" enabled="1" default="0"><!--Given at the time the object lot was generated, usually unique in the research/project context.-->
+            <item idno="lotID" enabled="1" default="0"><!--The curator names the object lot with a meaningful short description. This includes the year of receival and a description of the common denominator(s) of the lot. This is often donating entity, project, taxon or locality.-->
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>preparation ID</name_singular>
-                  <name_plural>preparation ID</name_plural>
-                </label>
-              </labels>
-            </item>
-            <item idno="INBOsubCollectionID" enabled="1" default="0"><!--Given at the time it was defined in the subcollection, so its unique in the subcollection context.-->
-              <labels>
-                <label locale="en_US" preferred="1">
-                  <name_singular>subcollection ID</name_singular>
-                  <name_plural>subcollection IDs</name_plural>
-                </label>
-              </labels>
-            </item>
-            <item idno="INBOCollectionID" enabled="1" default="0"><!--Given at the time it was defined in the collection, so its unique in the complete INBO collection.-->
-              <labels>
-                <label locale="en_US" preferred="1">
-                  <name_singular>INBO collection ID</name_singular>
-                  <name_plural>INBO collection IDs</name_plural>
-                </label>
-              </labels>
-            </item>
-            <item idno="unknownTypeID" enabled="1" default="0"><!--A numbering system is applied but it is not known to which system it refers at the time of logging the ID.-->
-              <labels>
-                <label locale="en_US" preferred="1">
-                  <name_singular>Unknown type of ID</name_singular>
-                  <name_plural>Unknown type of IDs</name_plural>
+                  <name_singular>lot ID</name_singular>
+                  <name_plural>lot IDs</name_plural>
                 </label>
               </labels>
             </item>
@@ -1534,11 +1510,11 @@
           </label>
         </labels>
         <items>
-            <item idno="INBOCollectionID" enabled="1" default="0"><!--Given at the time it was defined in the collection, so its unique in the complete INBO collection.-->
+            <item idno="entityID" enabled="1" default="0"><!--Person: given name surname. E.g. Bruno De Vos. Institute: abbreviation. E.g. INBO-->
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>INBO collection ID</name_singular>
-                  <name_plural>INBO collection IDs</name_plural>
+                  <name_singular>entity ID</name_singular>
+                  <name_plural>entity IDs</name_plural>
                 </label>
               </labels>
             </item>
@@ -1551,11 +1527,11 @@
           </label>
         </labels>
         <items>
-            <item idno="INBOCollectionID" enabled="1" default="0"><!--Given at the time it was defined in the collection, so its unique in the complete INBO collection.-->
+            <item idno="placeID" enabled="1" default="0"><!--Name of the place as most commonly used / standardly described.-->
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>INBO collection ID</name_singular>
-                  <name_plural>INBO collection IDs</name_plural>
+                  <name_singular>place ID</name_singular>
+                  <name_plural>place collection IDs</name_plural>
                 </label>
               </labels>
             </item>
@@ -1568,35 +1544,27 @@
           </label>
         </labels>
         <items>
-            <item idno="INBOsubCollectionID" enabled="1" default="0"><!--Given at the time it was defined in the subcollection, so its unique in the subcollection context.-->
+            <item idno="arbitraryID" enabled="1" default="0"><!--This can be given by the researcher or curator, to either the project, fieldwork, valuation event or curation event. Not respecting convention/agreements made with a larger group / made by a system. This type of ID can also be applied if there seems to be a logic applied by something/someone but it is not known to which system it refers at the time of logging the ID.-->
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>subcollection ID</name_singular>
-                  <name_plural>subcollection IDs</name_plural>
+                  <name_singular>arbitrary ID</name_singular>
+                  <name_plural>arbitrary IDs</name_plural>
                 </label>
               </labels>
             </item>
-            <item idno="INBOCollectionID" enabled="1" default="0"><!--Given at the time it was defined in the collection, so its unique in the complete INBO collection.-->
-              <labels>
-                <label locale="en_US" preferred="1">
-                  <name_singular>INBO collection ID</name_singular>
-                  <name_plural>INBO collection IDs</name_plural>
-                </label>
-              </labels>
-            </item>
-            <item idno="INBOlabID" enabled="1" default="0"><!--Unique numbering system of the labs prior the INBO-LIMS.-->
-              <labels>
-                <label locale="en_US" preferred="1">
-                  <name_singular>Lab ID</name_singular>
-                  <name_plural>Lab IDs</name_plural>
-                </label>
-              </labels>
-            </item>
-            <item idno="LabwareLIMSID" enabled="1" default="0"><!--Unique numbering system of INBO-Labware-LIMS.-->
+            <item idno="LabwareLIMSID" enabled="1" default="0"><!--E.g. V-19V049-01. An identifier for the project as given by INBO-Labware-LIMS.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Labware-LIMS-generated ID</name_singular>
-                  <name_plural>Labware-LIMS-generated ID</name_plural>
+                  <name_plural>Labware-LIMS-generated IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="preLIMSlabID" enabled="1" default="0"><!--An identifier for the project given by the INBO genetic or analytical labs prior usage of the INBO-LIMS. This is any lab numbering, not constituing the LIMS-ID. Examples: BF, INBO11.0004B.-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>pre-LIMS lab ID</name_singular>
+                  <name_plural>pre-LIMS lab IDs</name_plural>
                 </label>
               </labels>
             </item>
@@ -1605,14 +1573,6 @@
                 <label locale="en_US" preferred="1">
                   <name_singular>JIRA ID (unique numbering system of INBO-JIRA)</name_singular>
                   <name_plural>JIRA IDs</name_plural>
-                </label>
-              </labels>
-            </item>
-            <item idno="unknownTypeID" enabled="1" default="0"><!--A numbering system is applied but it is not known to which system it refers at the time of logging the ID.-->
-              <labels>
-                <label locale="en_US" preferred="1">
-                  <name_singular>Unknown type of ID</name_singular>
-                  <name_plural>Unknown type of IDs</name_plural>
                 </label>
               </labels>
             </item>
@@ -1625,19 +1585,19 @@
           </label>
         </labels>
         <items>
-            <item idno="INBOsubCollectionID" enabled="1" default="0"><!--Given at the time it was defined in the subcollection, so its unique in the subcollection context.-->
+            <item idno="arbitraryID" enabled="1" default="0"><!--Names as given to the collection by curators, researchers, users, .. Not respecting convention/agreements made with a larger group / made by a system.-->
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>subcollection ID</name_singular>
-                  <name_plural>subcollection IDs</name_plural>
+                  <name_singular>arbitrary ID</name_singular>
+                  <name_plural>arbitrary IDs</name_plural>
                 </label>
               </labels>
             </item>
-            <item idno="INBOCollectionID" enabled="1" default="0"><!--Given at the time it was defined in the collection, so its unique in the complete INBO collection.-->
+            <item idno="GrSciCollID" enabled="1" default="0"><!--The identifier for the subcollection as given on GrSCiColl-->
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>INBO collection ID</name_singular>
-                  <name_plural>INBO collection IDs</name_plural>
+                  <name_singular>GrSciColl ID</name_singular>
+                  <name_plural>GrSciColl IDs</name_plural>
                 </label>
               </labels>
             </item>
@@ -1650,28 +1610,19 @@
           </label>
         </labels>
         <items>
-          <item idno="uf" enabled="1" default="0">
+          <item idno="hierarchialID" enabled="1" default="0"><!--Identifiers of the storage location need to be read in their hierarchy (room, cabinet, drawer, location) to physically retrieve a specimen.-->
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>use for</name_singular>
-                <name_plural>use for</name_plural>
+                <name_singular>hierarchial ID</name_singular>
+                <name_plural>hierarchial IDs</name_plural>
               </label>
             </labels>
           </item>
-        </items>
-      </list>
-      <list code="object_representation_label_types" hierarchical="0" system="0" vocabulary="0">
-        <labels>
-          <label locale="en_US">
-            <name>Storage location label type values</name>
-          </label>
-        </labels>
-        <items>
-          <item idno="uf" enabled="1" default="0">
+          <item idno="uniqueStorageID" enabled="1" default="0"><!--Identifiers of the storage location that on their own allow to retrieve the sample (in comparison to the hierarchial ID)-->
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>use for</name_singular>
-                <name_plural>use for</name_plural>
+                <name_singular>unique storage ID</name_singular>
+                <name_plural>unique storage IDs</name_plural>
               </label>
             </labels>
           </item>
@@ -1684,11 +1635,11 @@
           </label>
         </labels>
         <items>
-          <item idno="uf" enabled="1" default="0">
+          <item idno="loanID" enabled="1" default="0"><!--E.g. 2024-KULEUVEN-BIOTA4C. The convention is to name: year-requester-shortname. For internal reuse or for incoming loans, the requester is INBO. THe short name is ofter the projectname, something to be quickly reminded of the scope of the request.-->
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>use for</name_singular>
-                <name_plural>use for</name_plural>
+                <name_singular>loan ID</name_singular>
+                <name_plural>loan IDs</name_plural>
               </label>
             </labels>
           </item>
