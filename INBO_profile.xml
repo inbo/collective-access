@@ -8029,6 +8029,70 @@
         </typeRestrictions>
 	    </metadataElement>
 	  <!--Administration-->
+      <metadataElement code="admin" datatype="Url">
+        <labels>
+          <label locale="en_US">
+            <name>Admin</name>
+            <description>An URL that can be used to link documents saved in the google workspace to records (objects, object lots, loans, ..).</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">90</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_occurrences">
+            <table>ca_occurrences</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_loans">
+            <table>ca_loans</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_entities">
+            <table>ca_entities</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_collections">
+            <table>ca_collections</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
 	    <metadataElement code="adminObligation" datatype="Container">
         <labels>
           <label locale="en_US">
@@ -10845,7 +10909,7 @@
 			        </settings>
             </placement>
             <placement code="reference">
-              <bundle>ca_attribute_filesURL</bundle>
+              <bundle>ca_attribute_reference</bundle>
 			        <settings>
 				        <setting name="add_label" locale="en_US">Add reference URL</setting>
 			        </settings>
@@ -10997,43 +11061,17 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="plantedSiteOwner" typeRestrictions="plantedSite">
-              <bundle>ca_entities</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Owner of the site</setting>
-                <setting name="restrict_to_types">ind</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_relationship_types">ownerPlantedSite</setting>
-              </settings>
-            </placement>
-            <placement code="multimediaURL" typeRestrictions="box,drawerShelf,cabinetFridgeFreezer,room,floor,building,plantedSite">
+            <placement code="multimediaURL" typeRestrictions="box,drawerShelf,cabinetFridgeFreezer,room,floor,building">
               <bundle>ca_attribute_multimediaURL</bundle>
 			        <settings>
 				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
 			        </settings>
             </placement>
-            <placement code="reference" typeRestrictions="box,drawerShelf,cabinetFridgeFreezer,room,floor,building,plantedSite">
-              <bundle>ca_attribute_filesURL</bundle>
+            <placement code="reference" typeRestrictions="box,drawerShelf,cabinetFridgeFreezer,room,floor,building">
+              <bundle>ca_attribute_reference</bundle>
 			        <settings>
 				        <setting name="add_label" locale="en_US">Add reference URL</setting>
 			        </settings>
-            </placement>
-			      <placement code="localityContainer" typeRestrictions="plantedSite,externalPlantedSite">
-              <bundle>ca_attribute_localityContainer</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Locality</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
-            <placement code="plantedSitePlace" typeRestrictions="plantedSite,externalPlantedSite">
-              <bundle>ca_places</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Place of the site</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
             </placement>
           </bundlePlacements>
         </screen>
@@ -11059,10 +11097,12 @@
                 <setting name="label" locale="en_US">CMS ID</setting>
               </settings>
             </placement>
-			      <placement code="status">
-              <bundle>status</bundle>
+            <placement code="objectlot_type_description">
+              <bundle>ca_attribute_description</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Cataloguing status</setting>
+                <setting name="label" locale="en_US">Sampling point (type) description</setting>
+                <setting name="description" locale="en_US">As you have chosen no specific sampling point type registred in the system, please describe the sampling point type. If this was chosen by mistake, restart the proces of making a new record and select the correct type. The type of record determines which data fields are shown or hidden.</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
               </settings>
             </placement>
 			      <placement code="preferred_labels">
@@ -11079,6 +11119,15 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
+            <placement code="externalRecord" type="plantation">
+              <bundle>ca_attribute_externalRecord</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">External record (URL)</setting>
+                <setting name="description" locale="en_US">The plantation record on a public GIS-layer, .. This is a sister-record of the current digital record of the specimen or sampling point.</setting>
+				        <setting name="add_label" locale="en_US">Add external record</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
             <placement code="object_lot_description">
               <bundle>ca_attribute_descriptionContainer</bundle>
               <settings>
@@ -11086,7 +11135,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="object_lot_dateRange">
+			      <placement code="object_lot_dateRange" typeRestrictions="specimenLot">
               <bundle>ca_attribute_dateRange</bundle>
               <settings>
                 <setting name="label" locale="en_US">Date (range) of the object lot</setting>
@@ -11094,16 +11143,188 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
+            <placement code="preparationDate" typeRestrictions="plantation">
+              <bundle>ca_attribute_preparationDate</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Specimen creation date</setting>
+                <setting name="description" locale="en_US">This is the date/time that the specimen/object was created. When this is the first object in the hierarchy, this date equals the sampling date. When this a second or third object in the sequence (e.g. a DNA sample is created on a later date than the sampling of the tissue sample). The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
+				        <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
 			      <placement code="object_lot_admin">
-              <bundle>ca_attribute_externalRecord</bundle>
+              <bundle>ca_attribute_admin</bundle>
               <settings>
                 <setting name="label" locale="en_US">Link to documents (e.g., contracts, mails) linked to the object lot</setting>
 				        <setting name="add_label" locale="en_US">Add other url</setting>
                 <setting name="expand_collapse_no_value">expand</setting>
               </settings>
             </placement>
+			      <placement code="status">
+              <bundle>status</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Cataloguing status</setting>
+              </settings>
+            </placement>
           </bundlePlacements>
         </screen>
+        <screen idno="objectLot_context" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Admin context</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+			      <placement code="ca_occurrence_project">
+              <bundle>ca_occurrences</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Original project that generated the object lot</setting>
+                <setting name="description" locale="en_US">This can be a project as defined in JIRA, a project as defined in LIMS, ..</setting>
+				        <setting name="restrict_to_types">Project</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">5</setting>
+                <setting name="restrict_to_relationship_types">resultingObjectsProject</setting>
+                <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+				        <setting name="add_label" locale="en_US">Add project</setting>
+              </settings>
+			      </placement>
+            <placement code="ca_occurrence_fieldwork">
+              <bundle>ca_occurrences</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Field campaign of which the object lot is a result</setting>
+                <setting name="description" locale="en_US">Field campaign can be an expedition, a survey event, one day in the field, one hour in the field... The field campaign can be nested (and relevant to document), e.g. during an expedition you visited different localities with different crew; link the object to the smallest unit of time.</setting>
+				        <setting name="restrict_to_types">fieldwork</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="restrict_to_relationship_types">resultingObjectsFieldwork</setting>
+                <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
+        <screen idno="objectLot_locality" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Locality</name>
+            </label>
+          </labels>
+          <typeRestrictions>
+            <restriction code="r_plantation" type="plantation"/>
+          </typeRestrictions>
+          <bundlePlacements>
+            <placement code="ca_places">
+              <bundle>ca_places</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The place</setting>
+                <setting name="description" locale="en_US">The place where the observation(s) occurred.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="useHierarchicalBrowser">0</setting>
+              </settings>
+			      </placement>
+			      <placement code="verbatimLocality">
+              <bundle>ca_attribute_verbatimLocality</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Verbatim locality (dwc:verbatimLocality)</setting>
+                <setting name="description" locale="en_US">The original description of a locality, a place, the geographic coverage, ...</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+            <placement code="ca_entities">
+              <bundle>ca_entities</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Owner of the locality</setting>
+                <setting name="description" locale="en_US">If the locality is on private property, it might be necessary to log who owns the property. The owner can be a private person (individual) or an organization.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="useHierarchicalBrowser">0</setting>
+                <setting name="restrict_to_relationship_types">localityOwner</setting>
+              </settings>
+			      </placement>
+            <placement code="verbatimLongitudeX">
+              <bundle>ca_attribute_verbatimLongitudeX</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Verbatim longitude (X) (dwc:verbatimLongitude)</setting>
+                <setting name="description" locale="en_US">The original description of the longitude (X).</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+            <placement code="verbatimLatitudeY">
+              <bundle>ca_attribute_verbatimLatitudeY</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Verbatim latitude (Y) (dwc:verbatimLatitude)</setting>
+                <setting name="description" locale="en_US">The original description of the latitude (Y).</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+			      <placement code="verbatimSRS">
+              <bundle>ca_attribute_verbatimSRS</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Verbatim SRS (dwc:verbatimSRS)</setting>
+                <setting name="description" locale="en_US">The spatial reference system (SRS) of the original coordinates.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+			      <placement code="verbatimGeoreferenceProtocol">
+              <bundle>ca_attribute_verbatimGeoreferenceProtocol</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Georeference procedure (dwc:georeferenceProtocol)</setting>
+                <setting name="description" locale="en_US">A short description of the procedure that resulting in collecting the verbatim georeference information.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+			      <placement code="standardizedGeoreferenceWGS84">
+              <bundle>ca_attribute_georeference</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Standardized georeference data</setting>
+                <setting name="description" locale="en_US">The georeferenced location of the observation, standardized using the CMS.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+			      <placement code="verbatimElevation">
+              <bundle>ca_attribute_verbatimElevation</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Verbatim elevation (dwc:verbatimElevation)</setting>
+                <setting name="description" locale="en_US">The original description of the elevation. From the notes, Excel/Gsheet, dataset, ...</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+			      <placement code="minimumElevationInMeters">
+              <bundle>ca_attribute_minimumElevationInMeters</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The minimum elevation in meters (dwc:minimumElevationInMeters)</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+			      <placement code="maximumElevationInMeters">
+              <bundle>ca_attribute_maximumElevationInMeters</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The maximum elevation in meters (dwc:maximumElevationInMeters)</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+			      <placement code="verticalDatum">
+              <bundle>ca_attribute_verticalDatum</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Vertical datum (dwc:verticalDatum)</setting>
+                <setting name="description" locale="en_US">The vertical datum used as the reference upon which the values in the elevation terms are based.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+          </bundlePlacements>
+		    </screen>
         <screen idno="objectLot_derivates" default="0">
 		      <labels>
             <label locale="en_US">
@@ -11118,6 +11339,80 @@
                 <setting name="add_label" locale="en_US">Add new object</setting>
                 <setting name="list_format">list</setting>
                 <setting name="restrict_to_types">object</setting>
+              </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
+		    <screen idno="objectLot_reference" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Files/Refs/Photos</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="objectLot_multimediaURL">
+              <bundle>ca_attribute_multimediaURL</bundle>
+			        <settings>
+				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
+                <setting name="description" locale="en_US">Relevant multimedia linked to the object/specimen. This could be relevant field photo's (identification), relevant measurement photo's, ...</setting>
+			        </settings>
+            </placement>
+            <placement code="objectLot_reference">
+              <bundle>ca_attribute_reference</bundle>
+			        <settings>
+				        <setting name="add_label" locale="en_US">Add reference URL</setting>
+                <setting name="description" locale="en_US">A relevant URL that refers to the object/specimen. This can be an internal INBO document on the Google drive, a published or unpublished dataset, a link to an INBO database (use the INBO datacatalogue),..</setting>
+			        </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
+        <screen idno="objectLot_management" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Curation/Management</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+			      <placement code="status">
+              <bundle>status</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Cataloguing status</setting>
+				        <setting name="minRelationshipsPerRow">1</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+            <placement code="ca_entities_Contact">
+              <bundle>ca_entities</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Contact</setting>
+                <setting name="description" locale="en_US">A person that can be contacted in case more information on the object lot is asked, or needed. Ideally this is at least one person from within INBO, and optionally a second (external) contact can be listed. Better would be that all information is recorded in the database, so a contact person becomes unnecessary.</setting>
+				        <setting name="add_label" locale="en_US">Add contact</setting>
+                <setting name="restrict_to_types">ind</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">2</setting>
+                <setting name="restrict_to_relationship_types">knowsMost</setting>
+              </settings>
+            </placement>
+            <placement code="ca_occurrences_valuation">
+              <bundle>ca_occurrences</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Valuation event</setting>
+                <setting name="description" locale="en_US">The event of someone evaluating the object lot resulting in a measure of value for that object. The value can differ through time and through the eye of the beholder. The valuation event in this context exists of a standardized list of value types, and the possibility to add more information to why this value was chosen.</setting>
+                <setting name="add_label" locale="en_US">Add valuation event</setting>
+                <setting name="restrict_to_types">valuation</setting>
+                <setting name="list_format">list</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+			        </settings>
+            </placement>
+			      <placement code="ca_occurrences_curation">
+              <bundle>ca_occurrences</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Curation event</setting>
+                <setting name="description" locale="en_US">Curation = the action or process of selecting, organizing, and looking after the items in a collection or exhibition. Examples: repacking the object, adding a new label, adding new buffer, a cold/heat treatment,...</setting>
+                <setting name="add_label" locale="en_US">Add curation event</setting>
+                <setting name="restrict_to_types">curation</setting>
+                <setting name="list_format">list</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -11279,7 +11574,7 @@
               </settings>
             </placement>
             <placement code="reference">
-              <bundle>ca_attribute_filesURL</bundle>
+              <bundle>ca_attribute_reference</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">File associated with loan</setting>
                 <setting name="description" locale="en_US">For example: loan agreement, material transfer agreement, prints of mail communication, evidence of mailing the material, ... Note: results (publications, datasets) can be linked here, but should also be linked to the separate specimens that were used in that publication.</setting>
