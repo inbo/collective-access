@@ -2,14 +2,22 @@
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
   <profileName>[INBO] INBO natural science collection v0.57.03</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
-  <!--Changes compared to the previous version 0.56: issue 109, 110, 111, 113, 114-->
+  <!--Changes compared to the previous version 0.56: see list of issues below; to be validated-->
+  <!--https://github.com/inbo/collective-access/issues/98-->
   <!--https://github.com/inbo/collective-access/issues/109-->
   <!--https://github.com/inbo/collective-access/issues/110-->
   <!--https://github.com/inbo/collective-access/issues/111-->
   <!--https://github.com/inbo/collective-access/issues/113-->
+  <!--https://github.com/inbo/collective-access/issues/118-->
+  <!--https://github.com/inbo/collective-access/issues/124-->
+  <!--https://github.com/inbo/collective-access/issues/125-->
+  <!--https://github.com/inbo/collective-access/issues/126-->
+  <!--https://github.com/inbo/collective-access/issues/127-->
+  <!--https://github.com/inbo/collective-access/issues/132-->
+  <!--https://github.com/inbo/collective-access/issues/134-->
   <locales>
     <locale lang="en" country="US">English</locale>
-    <locale lang="nl" country="BE">Nederlands</locale>
+    <locale lang="nl" country="BE" dontUseForCataloguing="1">Nederlands</locale>
     <locale lang="de" country="DE" dontUseForCataloguing="1">Deutsch (Deutschland)</locale>
     <locale lang="fr" country="FR" dontUseForCataloguing="1">Français</locale>
     <locale lang="it" country="IT" dontUseForCataloguing="1">Italiano</locale>
@@ -912,7 +920,35 @@
           <name>Objects higher hiërarchy: relevant groupings of NS objects</name>
         </label>
         </labels>
-		    <items>
+        <items>
+          <item idno="specimenLot" rank="1" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>specimen lot</name_singular>
+                <name_plural>specimen lots</name_plural>
+              </label>
+            </labels>
+            <settings>
+             <setting name="render_in_new_menu">1</setting>
+             <setting name="render_in_find_menu">1</setting>
+            </settings>
+            <items>
+            </items>
+          </item>
+          <item idno="plantation" rank="1" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>plantation</name_singular>
+                <name_plural>plantations</name_plural>
+              </label>
+            </labels>
+            <settings>
+             <setting name="render_in_new_menu">1</setting>
+             <setting name="render_in_find_menu">1</setting>
+            </settings>
+            <items>
+            </items>
+          </item>  
 		    </items>
       </list>
 	    <list code="entity_types" hierarchical="1" system="0" vocabulary="0">
@@ -8486,7 +8522,7 @@
             </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="schemeName" datatype="List" list="basis_of_scheme">
+	    <metadataElement code="schemeName" datatype="Text">
         <labels>
           <label locale="en_US">
             <name>ltc:schemeName</name>
@@ -8847,7 +8883,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-            <placement code="ca_storage_location" typeRestrictions="animalObject,soilObject,waterObject,dnaSample,plantObject" includeSubtypes="1">
+            <placement code="ca_storage_location" typeRestrictions="object" includeSubtypes="1">
               <bundle>ca_storage_locations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at</setting>
@@ -8867,6 +8903,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Object belongs to collection</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+				        <setting name="add_label" locale="en_US">Add collection</setting>
                 <setting name="restrict_to_relationship_types">partOf</setting>
               </settings>
             </placement>
@@ -8890,7 +8927,7 @@
               <bundle>ca_attribute_sexAnimal</bundle>
 			        <settings>
                 <setting name="description" locale="en_US">If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
 				        <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
@@ -8939,6 +8976,7 @@
                 <restriction code="r_sampleMammalCyste" type="sampleMammalCyste"/>
                 <restriction code="r_sampleMammalEarpunch" type="sampleMammalEarpunch"/>
                 <restriction code="r_sampleMammalEmbryo" type="sampleMammalEmbryo"/>
+                <restriction code="r_sampleMammalFat" type="sampleMammalFat"/>
                 <restriction code="r_sampleMammalFeces" type="sampleMammalFeces"/>
                 <restriction code="r_sampleMammalHead" type="sampleMammalBaculum"/>
                 <restriction code="r_sampleMammalHeart" type="sampleMammalHeart"/>
@@ -9083,8 +9121,8 @@
                 <setting name="useHierarchicalBrowser">0</setting>
               </settings>
 			      </placement>
-			      <placement code="localityTimestamped" typeRestrictions="observationAnimal">
-              <bundle>ca_attribute_localityTimeContainer2</bundle>
+			      <placement code="localityTimestamped5" typeRestrictions="observationAnimal">
+              <bundle>ca_attribute_localityTimestamped5</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Localities + time of observation</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
@@ -9100,7 +9138,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-            <placement code="ca_entities">
+            <placement code="ca_entities" typeRestrictions=observationPlant>
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Owner of the locality</setting>
@@ -9250,6 +9288,7 @@
                 <restriction code="r_sampleMammalCyste" type="sampleMammalCyste"/>
                 <restriction code="r_sampleMammalEarpunch" type="sampleMammalEarpunch"/>
                 <restriction code="r_sampleMammalEmbryo" type="sampleMammalEmbryo"/>
+                <restriction code="r_sampleMammalFat" type="sampleMammalFat"/>
                 <restriction code="r_sampleMammalFeces" type="sampleMammalFeces"/>
                 <restriction code="r_sampleMammalHead" type="sampleMammalBaculum"/>
                 <restriction code="r_sampleMammalHeart" type="sampleMammalHeart"/>
@@ -9321,7 +9360,15 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="verbatimDepth" typeRestrictions="eDnaWaterFilter,watersample,mineralSoilSample,peatSoilSample,organicSoilSample">
+			      <placement code="verbatimDepthSoil" typeRestrictions="mineralSoilSample,peatSoilSample,organicSoilSample">
+              <bundle>ca_attribute_verbatimDepth</bundle>
+              <settings>
+                <setting name="label" locale="en_US">The original description of the depth of sampling</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
+				        <setting name="maxRelationshipsPerRow">2</setting>
+              </settings>
+			      </placement>
+			      <placement code="verbatimDepth" typeRestrictions="eDnaWaterFilter,watersample">
               <bundle>ca_attribute_verbatimDepth</bundle>
               <settings>
                 <setting name="label" locale="en_US">The original description of the depth of sampling</setting>
@@ -9433,6 +9480,54 @@
           </labels>
           <typeRestrictions>
                 <restriction code="r_animalBulk" type="animalBulk"/>
+                <restriction code="r_animalEntireLiving" type="animalEntireLiving"/>
+                <restriction code="r_animalEntireCadaver" type="animalEntireCadaver"/>       
+                <restriction code="r_animalEntireEthanol" type="animalEntireEthanol"/>
+                <restriction code="r_sampleAmphibianLarva" type="sampleAmphibianLarva"/>
+                <restriction code="r_sampleAmphibianEmbryo" type="sampleAmphibianEmbryo"/>
+                <restriction code="r_sampleAmphibianTailclip" type="sampleAmphibianTailclip"/>
+                <restriction code="r_sampleAmphibianFrogspawn" type="sampleAmphibianFrogspawn"/>
+                <restriction code="r_sampleAmphibianSwabCloaca" type="sampleAmphibianSwabCloaca"/>
+                <restriction code="r_sampleAmphibianSwabMouth" type="sampleAmphibianSwabMouth"/>
+                <restriction code="r_sampleAmphibianSwabEar" type="sampleAmphibianSwabEar"/>
+                <restriction code="r_sampleAmphibianToeclip" type="sampleAmphibianToeclip"/>
+                <restriction code="r_sampleFishFinclip" type="sampleFishFinclip"/>
+                <restriction code="r_sampleFishMuscle" type="sampleFishMuscle"/>
+                <restriction code="r_sampleInvertebrateLarva" type="sampleInvertebrateLarva"/>
+                <restriction code="r_sampleInvertebrateLeg" type="sampleInvertebrateLeg"/>
+                <restriction code="r_sampleInvertebrateWingclip" type="sampleInvertebrateWingclip"/>
+                <restriction code="r_sampleReptileSkin" type="sampleReptileSkin"/>
+                <restriction code="r_sampleReptileTailclip" type="sampleReptileTailclip"/>
+                <restriction code="r_sampleMammalBaculum" type="sampleMammalBaculum"/>
+                <restriction code="r_sampleMammalBladder" type="sampleMammalBladder"/>
+                <restriction code="r_sampleMammalBlood" type="sampleMammalBlood"/>
+                <restriction code="r_sampleMammalBrain" type="sampleMammalBrain"/>
+                <restriction code="r_sampleMammalConjuctivum" type="sampleMammalConjuctivum"/>
+                <restriction code="r_sampleMammalCyste" type="sampleMammalCyste"/>
+                <restriction code="r_sampleMammalEarpunch" type="sampleMammalEarpunch"/>
+                <restriction code="r_sampleMammalEmbryo" type="sampleMammalEmbryo"/>
+                <restriction code="r_sampleMammalFat" type="sampleMammalFat"/>
+                <restriction code="r_sampleMammalFeces" type="sampleMammalFeces"/>
+                <restriction code="r_sampleMammalHead" type="sampleMammalBaculum"/>
+                <restriction code="r_sampleMammalHeart" type="sampleMammalHeart"/>
+                <restriction code="r_sampleMammalHair" type="sampleMammalHair"/>
+                <restriction code="r_sampleMammalIntestine" type="sampleMammalIntestine"/>
+                <restriction code="r_sampleMammalLiver" type="sampleMammalLiver"/>
+                <restriction code="r_sampleMammalLung" type="sampleMammalLung"/>
+                <restriction code="r_sampleMammalLymphNode" type="sampleMammalLymphNode"/>
+                <restriction code="r_sampleMammalKidney" type="sampleMammalKidney"/>
+                <restriction code="r_sampleMammalMuscle" type="sampleMammalMuscle"/>
+                <restriction code="r_sampleMammalSkinPiece" type="sampleMammalSkinPiece"/>
+                <restriction code="r_sampleMammalSkinComplete" type="sampleMammalSkinComplete"/>
+                <restriction code="r_sampleMammalSkull" type="sampleMammalSkull"/>
+                <restriction code="r_sampleMammalSpleen" type="sampleMammalSpleen"/>
+                <restriction code="r_sampleMammalStomach" type="sampleMammalStomach"/>
+                <restriction code="r_sampleMammalSwabBite" type="sampleMammalSwabBite"/>
+                <restriction code="r_sampleMammalTongue" type="sampleMammalTongue"/>
+                <restriction code="r_sampleMammalTooth" type="sampleMammalSkull"/>
+                <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
+                <restriction code="r_leafSample" type="leafSample"/>
+                <restriction code="r_littertrapSample" type="littertrapSample"/>
                 <restriction code="r_seedlot" type="seedlot"/>
                 <restriction code="r_oDNA" type="oDNA"/>
                 <restriction code="r_waterSample" type="waterSample"/>
@@ -9472,7 +9567,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="dna_volume" typeRestrictions="oDNA,eDNA">
+            <placement code="dna_volume" typeRestrictions="oDNA,eDNA,littertrapSample">
               <bundle>ca_attribute_dnaVolumeContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">DNA sample volume measurement</setting>
@@ -9482,7 +9577,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="object_volume" typeRestrictions="eDnaWaterFilter,waterSample">
+            <placement code="object_volume" typeRestrictions="eDnaWaterFilter,waterSample,animalBulk,sampleFishMuscle,sampleMammal" includeSubtypes="1">
               <bundle>ca_attribute_volumeContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Volume measurement</setting>
@@ -9518,7 +9613,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="object_count" typeRestrictions="seedlot,animalBulk">
+            <placement code="object_count" typeRestrictions="leafSample,seedlot,animalBulk,sampleAmphibian,sampleFishFinclip,sampleInvertebrate,sampleReptile,sampleMammal" includeSubtypes="1">
               <bundle>ca_attribute_countContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Count</setting>
@@ -9627,6 +9722,7 @@
                 <restriction code="r_sampleMammalCyste" type="sampleMammalCyste"/>
                 <restriction code="r_sampleMammalEarpunch" type="sampleMammalEarpunch"/>
                 <restriction code="r_sampleMammalEmbryo" type="sampleMammalEmbryo"/>
+                <restriction code="r_sampleMammalFat" type="sampleMammalFat"/>
                 <restriction code="r_sampleMammalFeces" type="sampleMammalFeces"/>
                 <restriction code="r_sampleMammalHead" type="sampleMammalBaculum"/>
                 <restriction code="r_sampleMammalHeart" type="sampleMammalHeart"/>
@@ -9770,6 +9866,7 @@
                 <restriction code="r_sampleMammalCyste" type="sampleMammalCyste"/>
                 <restriction code="r_sampleMammalEarpunch" type="sampleMammalEarpunch"/>
                 <restriction code="r_sampleMammalEmbryo" type="sampleMammalEmbryo"/>
+                <restriction code="r_sampleMammalFat" type="sampleMammalFat"/>
                 <restriction code="r_sampleMammalFeces" type="sampleMammalFeces"/>
                 <restriction code="r_sampleMammalHead" type="sampleMammalBaculum"/>
                 <restriction code="r_sampleMammalHeart" type="sampleMammalHeart"/>
@@ -10066,22 +10163,13 @@
             <restriction code="r_fieldwork" type="fieldwork"/>		
           </typeRestrictions>
           <bundlePlacements>
-            <placement code="resultingobjects">
+            <placement code="resultingObjects">
               <bundle>ca_objects</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Resulting objects</setting>
 				        <setting name="add_label" locale="en_US">Add object</setting>
                 <setting name="list_format">list</setting>
                 <setting name="restrict_to_types">objects</setting>
-			        </settings>
-            </placement>
-            <placement code="resultingobservations">
-              <bundle>ca_objects</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Resulting observations</setting>
-				        <setting name="add_label" locale="en_US">Add observation</setting>
-                <setting name="list_format">list</setting>
-                <setting name="restrict_to_types">observation</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -12022,6 +12110,20 @@
          </labels>
           <subTypeLeft></subTypeLeft>
           <subTypeRight>fieldwork</subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_places_x_collections">
+      <types>
+        <type code="collectionPlace" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is geographic scope of collection</typename>
+              <typename_reverse>has specimens of geographic scope</typename_reverse>
+            </label>
+         </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
