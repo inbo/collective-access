@@ -15,6 +15,7 @@
   <!--https://github.com/inbo/collective-access/issues/127-->
   <!--https://github.com/inbo/collective-access/issues/132-->
   <!--https://github.com/inbo/collective-access/issues/134-->
+  <!--https://github.com/inbo/collective-access/issues/135-->
   <locales>
     <locale lang="en" country="US">English</locale>
     <locale lang="nl" country="BE" dontUseForCataloguing="1">Nederlands</locale>
@@ -7461,7 +7462,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-    <!--Classification-->
+    <!--Object characteristics-->
 	    <metadataElement code="IDContainer" datatype="Container">
         <labels>
           <label locale="en_US">
@@ -7621,6 +7622,93 @@
             </settings>
           </restriction>
 			  </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="genotype" datatype="Container">
+        <labels>
+          <label locale="en_US">
+            <name>Genotype</name>
+          </label>
+        </labels>
+			  <settings>
+          <setting name="lineBreakAfterNumberOfElements">2</setting>
+        </settings>
+	      <elements>
+		      <metadataElement code="genotypeName" datatype="Text">
+            <labels>
+            <label locale="en_US">
+              <name>Genotype name</name>
+              <description>The genotype name</description>
+            </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+		      <metadataElement code="genotypeReference" datatype="Url">
+            <labels>
+            <label locale="en_US">
+              <name>Genotype reference</name>
+              <description>Genotypification usually occurs with a set of genetic markers. Here it should be specified where a person, not familiar with the research, can retrieve how the genotypification occured.</description>
+            </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+		      <metadataElement code="genotypeDate" datatype="DateRange">
+            <labels>
+              <label locale="en_US">
+                <name>Date of genotypification</name>
+                <description>It is generally assumed that the most recent identification, is the correct identification.</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+		      </metadataElement>
+		      <metadataElement code="genotypeNote" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Notes on the genotypification</name>
+                <description>Any notes such as expressions of uncertainty (or certainty), ..</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+		      </metadataElement>
+        </elements>
+        <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_objectLots">
+            <table>ca_object_lots</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
 	  <!--Sampling event-->
       <metadataElement code="eventProcedure" datatype="Text">
         <labels>
@@ -8932,6 +9020,15 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
+			      <placement code="genotype" typeRestrictions="observationPlant,observationAnimal">
+              <bundle>ca_attribute_genotype</bundle>
+			        <settings>
+                <setting name="description" locale="en_US">It is possible that a plant or animal (and its derived objects) are genotyped by different genetic markers, new genotypes can be added over time.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+				        <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">25</setting>
+              </settings>
+			      </placement>
 			      <placement code="status">
               <bundle>status</bundle>
 			        <settings>
@@ -10163,6 +10260,14 @@
             <restriction code="r_fieldwork" type="fieldwork"/>		
           </typeRestrictions>
           <bundlePlacements>
+            <placement code="resultingObjectLots">
+              <bundle>ca_object_lots</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Resulting object lots</setting>
+				        <setting name="add_label" locale="en_US">Add object lot</setting>
+                <setting name="list_format">list</setting>
+			        </settings>
+            </placement>
             <placement code="resultingObjects">
               <bundle>ca_objects</bundle>
 			        <settings>
