@@ -876,30 +876,6 @@
                     <setting name="render_in_find_menu">0</setting>
                     </settings>
                     <items>
-                      <item idno="mineralSoilSample" enabled="1" default="0">
-                        <labels>
-                          <label locale="en_US" preferred="1">
-                            <name_singular>Mineral soil sample</name_singular>
-                            <name_plural>Mineral soil samples</name_plural>
-                          </label>
-                        </labels>
-                      </item>
-                      <item idno="peatSoilSample" enabled="1" default="0">
-                        <labels>
-                          <label locale="en_US" preferred="1">
-                            <name_singular>Peat soil sample</name_singular>
-                            <name_plural>Peat soil samples</name_plural>
-                          </label>
-                        </labels>
-                      </item>
-                      <item idno="organicSoilSample" enabled="1" default="0">
-                        <labels>
-                          <label locale="en_US" preferred="1">
-                            <name_singular>Organic layer sample</name_singular>
-                            <name_plural>Organic layer samples</name_plural>
-                          </label>
-                        </labels>
-                      </item>
                     </items>
                   </item>
                   <item idno="nonInboObject" rank="6" enabled="1" default="0">
@@ -9102,9 +9078,7 @@
                 <restriction code="r_oDNA" type="oDNA"/>
                 <restriction code="r_waterSample" type="waterSample"/>
                 <restriction code="r_eDNA" type="eDNA"/>
-                <restriction code="r_mineralSoilSample" type="mineralSoilSample"/>
-                <restriction code="r_peatSoilSample" type="peatSoilSample"/>
-                <restriction code="r_organicSoilSample" type="organicSoilSample"/>
+                <restriction code="r_soilObject" type="soilObject"/>
           </typeRestrictions>
           <bundlePlacements>
             <placement code="is_deaccessioned">
@@ -9382,9 +9356,7 @@
                 <restriction code="r_oDNA" type="oDNA"/>
                 <restriction code="r_waterSample" type="waterSample"/>
                 <restriction code="r_eDNA" type="eDNA"/>
-                <restriction code="r_mineralSoilSample" type="mineralSoilSample"/>
-                <restriction code="r_peatSoilSample" type="peatSoilSample"/>
-                <restriction code="r_organicSoilSample" type="organicSoilSample"/>
+                <restriction code="r_soilObject" type="soilObject"/>
           </typeRestrictions>
           <bundlePlacements>
             <placement code="samplingDate" typeRestrictions="object" includeSubtypes="1">
@@ -9425,7 +9397,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="verbatimDepthSoil" typeRestrictions="mineralSoilSample,peatSoilSample,organicSoilSample">
+			      <placement code="verbatimDepthSoil" typeRestrictions="soilObject">
               <bundle>ca_attribute_verbatimDepth</bundle>
               <settings>
                 <setting name="label" locale="en_US">The original description of the depth of sampling</setting>
@@ -9441,7 +9413,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="minimumDepthInMetres" typeRestrictions="eDnaWaterFilter,watersample,mineralSoilSample,peatSoilSample,organicSoilSample">
+			      <placement code="minimumDepthInMetres" typeRestrictions="eDnaWaterFilter,watersample,soilObject">
               <bundle>ca_attribute_minimumDepthInMetres</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The minimum sampling depth in meters</setting>
@@ -9449,7 +9421,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="maximumDepthInMetres" typeRestrictions="eDnaWaterFilter,watersample,mineralSoilSample,peatSoilSample,organicSoilSample">
+			      <placement code="maximumDepthInMetres" typeRestrictions="eDnaWaterFilter,watersample,soilObject">
               <bundle>ca_attribute_maximumDepthInMeters</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The maximum sampling depth in meters</setting>
@@ -9597,9 +9569,7 @@
                 <restriction code="r_oDNA" type="oDNA"/>
                 <restriction code="r_waterSample" type="waterSample"/>
                 <restriction code="r_eDNA" type="eDNA"/>
-                <restriction code="r_mineralSoilSample" type="mineralSoilSample"/>
-                <restriction code="r_peatSoilSample" type="peatSoilSample"/>
-                <restriction code="r_organicSoilSample" type="organicSoilSample"/>
+                <restriction code="r_soilObject" type="soilObject"/>
           </typeRestrictions>
           <bundlePlacements>
             <placement code="dna_conc" typeRestrictions="oDNA,eDNA">
@@ -9651,7 +9621,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="object_weight" typeRestrictions="seedlot,mineralSoilSample,peatSoilSample,organicSoilSample,oDNA,eDNA">
+            <placement code="object_weight" typeRestrictions="seedlot,soilObject,oDNA,eDNA">
               <bundle>ca_attribute_weightContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Weight measurement</setting>
@@ -9699,9 +9669,7 @@
                 <restriction code="r_eDNA" type="eDNA"/>
                 <restriction code="r_eDnaWaterFilter" type="eDnaWaterFilter"/>
                 <restriction code="r_waterSample" type="waterSample"/>
-                <restriction code="r_mineralSoilSample" type="mineralSoilSample"/>
-                <restriction code="r_peatSoilSample" type="peatSoilSample"/>
-                <restriction code="r_organicSoilSample" type="organicSoilSample"/>
+                <restriction code="r_soilObject" type="soilObject"/>
                 <restriction code="r_observationSoil" type="observationSoil"/>
                 <restriction code="r_observationWater" type="observationWater"/>
           </typeRestrictions>
@@ -9816,9 +9784,7 @@
                 <restriction code="r_oDNA" type="oDNA"/>
                 <restriction code="r_waterSample" type="waterSample"/>
                 <restriction code="r_eDNA" type="eDNA"/>
-                <restriction code="r_mineralSoilSample" type="mineralSoilSample"/>
-                <restriction code="r_peatSoilSample" type="peatSoilSample"/>
-                <restriction code="r_organicSoilSample" type="organicSoilSample"/>
+                <restriction code="r_soilObject" type="soilObject"/>
           </typeRestrictions>
           <bundlePlacements>
 			      <placement code="status">
@@ -9960,9 +9926,7 @@
                 <restriction code="r_oDNA" type="oDNA"/>
                 <restriction code="r_waterSample" type="waterSample"/>
                 <restriction code="r_eDNA" type="eDNA"/>
-                <restriction code="r_mineralSoilSample" type="mineralSoilSample"/>
-                <restriction code="r_peatSoilSample" type="peatSoilSample"/>
-                <restriction code="r_organicSoilSample" type="organicSoilSample"/>
+                <restriction code="r_soilObject" type="soilObject"/>
           </typeRestrictions>
           <bundlePlacements>
             <placement code="blocked_until">
@@ -10025,8 +9989,8 @@
 			      <placement code="preferred_labels_fieldwork" typeRestrictions="fieldwork">
               <bundle>preferred_labels</bundle>
               <settings>
-                <setting name="label" locale="en_US">Field campaign identifier (preferred)</setting>
-                <setting name="description" locale="en_US">The field campaign identifier for the event used in notes, datasets, publication, ... if there are multiple identifiers for the event, this is the preferred identifier. You can add context information to make the record more unique and findable in the database e.g. if your sample is numbered 52.04, you can name it 52.04 (EV Magnolia ). This aligns with the concept of the record Number in DwC: http://rs.tdwg.org/dwc/terms/recordNumber</setting>
+                <setting name="label" locale="en_US">Field campaign name (preferred)</setting>
+                <setting name="description" locale="en_US">The field campaign name used in notes, datasets, publication, ... if there are multiple names or identifiers for the field campaign, all other identifiers are put in the "non-preferred labels" below.</setting>
               </settings>
             </placement>
 			      <placement code="preferred_labels_project" typeRestrictions="project">
@@ -12705,9 +12669,6 @@
       </labels>
       <typeRestrictions>
         <restriction code="r_soilObject" type="soilObject"/>
-        <restriction code="r_mineralSoilSample" type="mineralSoilSample"/>
-        <restriction code="r_peatSoilSample" type="peatSoilSample"/>
-        <restriction code="r_organicSoilSample" type="organicSoilSample"/>
       </typeRestrictions>
       <bundlePlacements>
         <placement code="ca_objects_idno">
