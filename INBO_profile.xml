@@ -16,6 +16,7 @@
   <!--https://github.com/inbo/collective-access/issues/132-->
   <!--https://github.com/inbo/collective-access/issues/134-->
   <!--https://github.com/inbo/collective-access/issues/135-->
+  <!--https://github.com/inbo/collective-access/issues/137-->
   <locales>
     <locale lang="en" country="US">English</locale>
     <locale lang="nl" country="BE" dontUseForCataloguing="1">Nederlands</locale>
@@ -1064,11 +1065,11 @@
                   </label>
                 </labels>
               </item>
-              <item idno="place" enabled="1" default="0"><!--This allows linking of multiple sampling points and specimens to a defined place concept, below the level of a city or town; where relevant. For example a name of a Forest Reserve.-->
+              <item idno="toponym" enabled="1" default="0"><!--This allows linking of multiple sampling points and specimens to a defined place concept, below the level of a city or town; where relevant. For example a name of a Forest Reserve.-->
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>place</name_singular>
-                    <name_plural>places</name_plural>
+                    <name_singular>toponym</name_singular>
+                    <name_plural>toponym</name_plural>
                   </label>
                 </labels>
               </item>
@@ -1537,6 +1538,14 @@
                 </label>
               </labels>
             </item>
+            <item idno="GenbosID" enabled="1" default="0"><!--The ID as defined in the Genbos database.-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>Genbos ID</name_singular>
+                  <name_plural>Genbos IDs</name_plural>
+                </label>
+              </labels>
+            </item>
         </items>
       </list>
       <list code="entity_label_types" hierarchical="0" system="0" vocabulary="0">
@@ -1607,8 +1616,16 @@
             <item idno="JIRAID" enabled="1" default="0"><!--The ID for a project as defined in JIRA.-->
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>JIRA ID (unique numbering system of INBO-JIRA)</name_singular>
+                  <name_singular>JIRA ID</name_singular>
                   <name_plural>JIRA IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="GenbosID" enabled="1" default="0"><!--The ID as defined in the Genbos database.-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>Genbos ID</name_singular>
+                  <name_plural>Genbos IDs</name_plural>
                 </label>
               </labels>
             </item>
@@ -3953,6 +3970,39 @@
           </item>
         </items>
       </list>
+      <list code="type_plantation" hierarchical="0" system="0" vocabulary="1">
+        <labels>
+          <label locale="en_US">
+            <name>Plantation category</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="zaadtuin" enabled="1" default="0"><!--The temporal coverage of the specimens in the collection, the scope, the content of the collection.-->
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Uitgangsmateriaal: zaadtuin</name_singular>
+                <name_plural>Uitgangsmateriaal: zaadtuin</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="proefperceel" enabled="1" default="0"><!--The temporal coverage of the collection itself: when was it established? when was it formalized as a collection? When was the collection as such stopped (e.g. merged with another collection).-->
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Proefperceel: klonale test</name_singular>
+                <name_plural>Proefperceel: klonale test</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="basiscollectie" enabled="1" default="0"><!--The temporal coverage of the collection itself: when was it established? when was it formalized as a collection? When was the collection as such stopped (e.g. merged with another collection).-->
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Basiscollectie</name_singular>
+                <name_plural>Basiscollectie</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
   </lists>
   <elementSets>
     <!--General-->
@@ -5240,7 +5290,7 @@
             <labels>
               <label locale="en_US">
                 <name>Procedure</name>
-                <description>Description of the measurment procedure that took place</description>
+                <description>Description of the measurment procedure.</description>
               </label>
             </labels>
             <settings>
@@ -7259,209 +7309,6 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="localityTimestamped5" datatype="Container">
-        <labels>
-          <label locale="en_US">
-            <name>Field metadata of the animal</name>
-          </label>
-        </labels>
-	      <elements>
-              <metadataElement code="dateRange5" datatype="DateRange">
-                <labels>
-                  <label locale="en_US">
-                    <name>Date (range) and time (range)</name>
-                    <description>Represents an historic date range accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
-                  </label>
-                </labels>
-                <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">40</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                  <setting name="canBeUsedInSort">1</setting>
-                  <setting name="canBeUsedInSearchForm">1</setting>
-                  <setting name="canBeUsedInDisplay">1</setting>
-                </settings>
-              </metadataElement>	    
-              <metadataElement code="verbatimLocality5" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>verbatimLocality</name>
-                    <description>The original textual description of the place.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimLocality</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="verbatimLongitudeX5" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Verbatim Longitude (X)</name>
-                    <description>A free text format for the longitude component of the coordinates that are not expressed in a pure decimal format.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/abcd/terms/longitudeText</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="verbatimLatitudeY5" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Verbatim Latitude (Y)</name>
-                    <description>A free text format for the latitude component of the coordinates that are not expressed in a pure decimal format.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/abcd/terms/latitudeText</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="verbatimSRS5" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>verbatimSRS</name>
-                    <description>The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which coordinates given in verbatimLatitude and verbatimLongitude, or verbatimCoordinates are based.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimSRS</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="verbatimGeoreferenceProtocol5" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>(Verbatim) Georeference Protocol</name>
-                    <description>A description or reference to the methods used to determine the spatial footprint, coordinates, and uncertainties.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/georeferenceProtocol</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="verbatimElevation5" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>verbatimElevation</name>
-                    <description>The original description of the elevation (altitude, usually above sea level) of the Location.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimElevation</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="minimumElevationInMeters5" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>minimumElevationInMeters</name>
-                    <description>The lower limit of the range of elevation (altitude, usually above sea level), in meters.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/minimumElevationInMeters</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="maximumElevationInMeters5" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>maximumElevationInMeters</name>
-                    <description>The upper limit of the range of elevation (altitude, usually above sea level), in meters.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/maximumElevationInMeters</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="verticalDatum5" datatype="List" list="vertical_datum">
-                <labels>
-                  <label locale="en_US">
-                    <name>verticalDatum</name>
-                    <description>The vertical datum used as the reference upon which the values in the elevation terms are based.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/verticalDatum</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="waterbodyType5" datatype="List" list="waterbody_type">
-                <labels>
-                  <label locale="en_US">
-                    <name>waterbodyType</name>
-                    <description>A category of the waterbody in which the Event occurred.</description>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="habitat5" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>habitat</name>
-                    <description>A category or description of the habitat in which the Event occurred.</description>
-                  </label>
-                </labels>
-                <documentationUrl>http://rs.tdwg.org/dwc/terms/habitat</documentationUrl>
-                <settings>
-                  <setting name="fieldWidth">70</setting>
-                  <setting name="fieldHeight">1</setting>
-                  <setting name="minChars">0</setting>
-                  <setting name="maxChars">65535</setting>
-                </settings>
-              </metadataElement>
-        </elements>
-        <typeRestrictions>
-          <restriction code="observationAnimal">
-            <table>ca_objects</table>
-            <type>observationAnimal</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
     <!--Object characteristics-->
 	    <metadataElement code="IDContainer" datatype="Container">
         <labels>
@@ -7709,12 +7556,92 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
+	    <metadataElement code="plantationCatContainer" datatype="Container">
+        <labels>
+          <label locale="en_US">
+            <name>Plantation category</name>
+          </label>
+        </labels>
+			  <settings>
+          <setting name="lineBreakAfterNumberOfElements">2</setting>
+        </settings>
+	      <elements>
+		      <metadataElement code="plantationCategory" datatype="List" list="type_plantation">
+            <labels>
+            <label locale="en_US">
+              <name>Plantation category</name>
+            </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+		      <metadataElement code="startDate" datatype="DateRange">
+            <labels>
+            <label locale="en_US">
+              <name>Start date of the plantation type label</name>
+            </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">40</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+              <setting name="canBeUsedInSort">1</setting>
+              <setting name="canBeUsedInSearchForm">1</setting>
+              <setting name="canBeUsedInDisplay">1</setting>
+            </settings>
+          </metadataElement>
+		      <metadataElement code="endDate" datatype="DateRange">
+            <labels>
+              <label locale="en_US">
+                <name>End date of the plantation type label</name>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">40</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+              <setting name="canBeUsedInSort">1</setting>
+              <setting name="canBeUsedInSearchForm">1</setting>
+              <setting name="canBeUsedInDisplay">1</setting>
+            </settings>
+		      </metadataElement>
+		      <metadataElement code="plantationRef" datatype="Text">
+            <labels>
+            <label locale="en_US">
+              <name>Reference number of the plantation (e.g. PAV-KL-01-01)</name>
+            </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+        </elements>
+        <typeRestrictions>
+          <restriction code="r_objectLots">
+            <table>ca_object_lots</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
 	  <!--Sampling event-->
       <metadataElement code="eventProcedure" datatype="Text">
         <labels>
           <label locale="en_US">
             <name>eventProcedure</name>
-            <description>Description of the procedure that took place.</description>
+            <description>Description of the procedure.</description>
           </label>
         </labels>
         <settings>
@@ -9017,6 +8944,13 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
+            <placement code="objectDescription">
+              <bundle>ca_attribute_description</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Description (free text)</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
             <placement code="samplingDate" typeRestrictions="object" includeSubtypes="1">
               <bundle>ca_attribute_dateRange</bundle>
 			        <settings>
@@ -9043,7 +8977,7 @@
                 <setting name="useHierarchicalBrowser">0</setting>
               </settings>
             </placement>
-            <placement code="verbatimLocality" typeRestrictions="observation" includeSubtypes="1">
+            <placement code="verbatimLocality">
               <bundle>ca_attribute_verbatimLocality</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Sampling point is located at (dwc:verbatimLocality)</setting>
@@ -9066,7 +9000,7 @@
 				        <setting name="add_label" locale="en_US">Add a new taxon</setting>
 			        </settings>
             </placement>
-			      <placement code="sexPlant" typeRestrictions="observationPlant">
+			      <placement code="sexPlant" typeRestrictions="observationPlant,plantObject,oDNA" includeSubtypes="1">
               <bundle>ca_attribute_sexPlant</bundle>
 			        <settings>
                 <setting name="description" locale="en_US">If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
@@ -9075,7 +9009,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="sexAnimal" typeRestrictions="observationAnimal">
+			      <placement code="sexAnimal" typeRestrictions="observationAnimal,animalObject,oDNA" includeSubtypes="1">
               <bundle>ca_attribute_sexAnimal</bundle>
 			        <settings>
                 <setting name="description" locale="en_US">If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
@@ -9084,7 +9018,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="genotype" typeRestrictions="observationPlant,observationAnimal">
+			      <placement code="genotype" typeRestrictions="animalObject,observationAnimal,plantObject,observationPlant,oDNA" includeSubtypes="1">
               <bundle>ca_attribute_genotype</bundle>
 			        <settings>
                 <setting name="description" locale="en_US">It is possible that a plant or animal (and its derived objects) are genotyped by different genetic markers, new genotypes can be added over time.</setting>
@@ -9264,13 +9198,6 @@
               <name>Locality</name>
             </label>
           </labels>
-          <typeRestrictions>
-            <restriction code="r_observation" type="observation"/>
-            <restriction code="r_observationWater" type="observationWater"/>
-            <restriction code="r_observationSoil" type="observationSoil"/>
-            <restriction code="r_observationPlant" type="observationPlant"/>
-            <restriction code="r_observationAnimal" type="observationAnimal"/>
-          </typeRestrictions>
           <bundlePlacements>
             <placement code="ca_places">
               <bundle>ca_places</bundle>
@@ -9282,15 +9209,7 @@
                 <setting name="useHierarchicalBrowser">0</setting>
               </settings>
 			      </placement>
-			      <placement code="localityTimestamped5" typeRestrictions="observationAnimal">
-              <bundle>ca_attribute_localityTimestamped5</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Localities + time of observation</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">20</setting>
-              </settings>
-			      </placement>
-			      <placement code="verbatimLocality" typeRestrictions="observationSoil,observationPlant,observationWater">
+			      <placement code="verbatimLocality">
               <bundle>ca_attribute_verbatimLocality</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim locality (dwc:verbatimLocality)</setting>
@@ -9299,17 +9218,6 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-            <placement code="ca_entities" typeRestrictions=observationPlant>
-              <bundle>ca_entities</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Owner of the locality</setting>
-                <setting name="description" locale="en_US">If the locality is on private property, it might be necessary to log who owns the property. The owner can be a private person (individual) or an organization.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="useHierarchicalBrowser">0</setting>
-                <setting name="restrict_to_relationship_types">localityOwner</setting>
-              </settings>
-			      </placement>
             <placement code="provenance" typeRestrictions="observationPlant">
               <bundle>ca_attribute_provenance</bundle>
 			        <settings>
@@ -9320,7 +9228,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="verbatimLongitudeX" typeRestrictions="observationSoil,observationPlant,observationWater">
+            <placement code="verbatimLongitudeX">
               <bundle>ca_attribute_verbatimLongitudeX</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim longitude (X) (dwc:verbatimLongitude)</setting>
@@ -9329,7 +9237,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-            <placement code="verbatimLatitudeY" typeRestrictions="observationSoil,observationPlant,observationWater">
+            <placement code="verbatimLatitudeY">
               <bundle>ca_attribute_verbatimLatitudeY</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim latitude (Y) (dwc:verbatimLatitude)</setting>
@@ -9338,7 +9246,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="verbatimSRS" typeRestrictions="observationSoil,observationPlant,observationWater">
+			      <placement code="verbatimSRS">
               <bundle>ca_attribute_verbatimSRS</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim SRS (dwc:verbatimSRS)</setting>
@@ -9347,7 +9255,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="verbatimGeoreferenceProtocol" typeRestrictions="observationSoil,observationPlant,observationWater">
+			      <placement code="verbatimGeoreferenceProtocol">
               <bundle>ca_attribute_verbatimGeoreferenceProtocol</bundle>
               <settings>
                 <setting name="label" locale="en_US">Georeference procedure (dwc:georeferenceProtocol)</setting>
@@ -9356,7 +9264,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="standardizedGeoreferenceWGS84" typeRestrictions="observationSoil,observationPlant,observationWater">
+			      <placement code="standardizedGeoreferenceWGS84">
               <bundle>ca_attribute_georeference</bundle>
               <settings>
                 <setting name="label" locale="en_US">Standardized georeference data</setting>
@@ -9365,7 +9273,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="verbatimElevation" typeRestrictions="observationSoil,observationPlant,observationWater">
+			      <placement code="verbatimElevation">
               <bundle>ca_attribute_verbatimElevation</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim elevation (dwc:verbatimElevation)</setting>
@@ -9374,7 +9282,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="minimumElevationInMeters" typeRestrictions="observationSoil,observationPlant,observationWater">
+			      <placement code="minimumElevationInMeters">
               <bundle>ca_attribute_minimumElevationInMeters</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The minimum elevation in meters (dwc:minimumElevationInMeters)</setting>
@@ -9382,7 +9290,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="maximumElevationInMeters" typeRestrictions="observationSoil,observationPlant,observationWater">
+			      <placement code="maximumElevationInMeters">
               <bundle>ca_attribute_maximumElevationInMeters</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The maximum elevation in meters (dwc:maximumElevationInMeters)</setting>
@@ -9390,7 +9298,7 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="verticalDatum" typeRestrictions="observationSoil,observationPlant,observationWater">
+			      <placement code="verticalDatum">
               <bundle>ca_attribute_verticalDatum</bundle>
               <settings>
                 <setting name="label" locale="en_US">Vertical datum (dwc:verticalDatum)</setting>
@@ -9399,19 +9307,13 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
-			      <placement code="waterbodyType" typeRestrictions="observationSoil,observationPlant,observationWater">
+			      <placement code="waterbodyType">
               <bundle>ca_attribute_waterbodyType</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Waterbody type</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
-			      </placement>
-			      <placement code="observationSoilCont3" typeRestrictions="observationSoil">
-              <bundle>ca_attribute_observationSoilCont3</bundle>
-			      </placement>
-			      <placement code="observationWaterCont4" typeRestrictions="observationWater">
-              <bundle>ca_attribute_observationWaterCont4</bundle>
 			      </placement>
           </bundlePlacements>
 		    </screen>
@@ -11052,7 +10954,7 @@
             <placement code="maintenancePerson" typeRestrictions="cabinetFridgeFreezer,room,building,plantedSite">
               <bundle>ca_entities</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Responsible person for maintenance of storage space</setting>
+                <setting name="label" locale="en_US">Responsible person for maintenance of storage space or planted site.</setting>
 				        <setting name="add_label" locale="en_US">Add individual</setting>
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
@@ -11095,14 +10997,6 @@
               <bundle>idno_stub</bundle>
               <settings>
                 <setting name="label" locale="en_US">CMS ID</setting>
-              </settings>
-            </placement>
-            <placement code="objectlot_type_description">
-              <bundle>ca_attribute_description</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Sampling point (type) description</setting>
-                <setting name="description" locale="en_US">As you have chosen no specific sampling point type registred in the system, please describe the sampling point type. If this was chosen by mistake, restart the proces of making a new record and select the correct type. The type of record determines which data fields are shown or hidden.</setting>
-                <setting name="expand_collapse_no_value">expand</setting>
               </settings>
             </placement>
 			      <placement code="preferred_labels">
@@ -11150,6 +11044,15 @@
                 <setting name="description" locale="en_US">This is the date/time that the specimen/object was created. When this is the first object in the hierarchy, this date equals the sampling date. When this a second or third object in the sequence (e.g. a DNA sample is created on a later date than the sampling of the tissue sample). The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
 				        <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+            <placement code="plantationCatContainer" typeRestrictions="plantation">
+              <bundle>ca_attribute_plantationCatContainer</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Category of plantation</setting>
+                <setting name="description" locale="en_US">This is the category of the plantation. This can change over time.</setting>
+				        <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">10</setting>
               </settings>
             </placement>
 			      <placement code="object_lot_admin">
