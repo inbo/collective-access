@@ -19,6 +19,7 @@
   <!--https://github.com/inbo/collective-access/issues/137-->
   <!--https://github.com/inbo/collective-access/issues/138-->
   <!--https://github.com/inbo/collective-access/issues/139-->
+  <!--https://github.com/inbo/collective-access/issues/140-->
   <locales>
     <locale lang="en" country="US">English</locale>
     <locale lang="nl" country="BE" dontUseForCataloguing="1">Nederlands</locale>
@@ -12477,105 +12478,486 @@
         <action>can_manage_system_bundle_displays</action>
       </actions>
     </role>
-    <role code="cataloguer">
-      <name>Cataloguers</name>
-      <description>Confers actions needed by those editing catalogue entries</description>
+    <role code="viewer">
+      <name>Viewer</name>
+      <description>Allows users to only search and view - but not edit - catalogue entries</description>
       <actions>
-        <action>can_search</action>
         <action>can_quicksearch</action>
-        <action>can_browse</action>
         <action>can_set_preferences</action>
-        <action>can_create_adv_search_forms</action>
-        <action>can_edit_adv_search_forms</action>
-        <action>can_delete_adv_search_forms</action>
         <action>can_use_adv_search_forms</action>
+        <action>can_create_sets</action>
+        <action>can_edit_sets</action>
+        <action>can_delete_own_sets</action>
+        <action>can_view_sets</action>
+        <action>can_quickadd_ca_sets</action>
+        <action>can_search_ca_objects</action>
+        <action>can_browse_ca_objects</action>
+        <action>can_search_ca_object_lots</action>
+        <action>can_browse_ca_object_lots</action>
+        <action>can_search_ca_entities</action>
+        <action>can_browse_ca_entities</action>
+        <action>can_search_ca_places</action>
+        <action>can_browse_ca_places</action>
+        <action>can_search_ca_occurrences</action>
+        <action>can_browse_ca_occurrences</action>
+        <action>can_search_ca_collections</action>
+        <action>can_browse_ca_collections</action>
+        <action>can_search_ca_storage_locations</action>
+        <action>can_browse_ca_storage_locations</action>
+      </actions>
+    </role>
+    <role code="soil-archive-cataloguer">
+      <name>Cataloguer of the INBO soil archive</name>
+      <description>The cataloguer for the soil archive can only edit reocrds with the type=soilObject (soil samples).</description>
+      <actions>
+        <action>can_quicksearch</action>
+        <action>can_set_preferences</action>
         <action>can_use_adv_search_forms</action>
-        <action>can_create_ca_bundle_displays</action>
-        <action>can_edit_ca_bundle_displays</action>
-        <action>can_delete_ca_bundle_displays</action>
         <action>can_use_ca_bundle_displays</action>
-        <action>can_create_user_groups</action>
+        <action>can_create_sets</action>
+        <action>can_edit_sets</action>
+        <action>can_delete_own_sets</action>
+        <action>can_view_sets</action>
+        <action>can_duplicate_ca_sets</action>
+        <action>can_quickadd_ca_sets</action>
+        <action>can_create_ca_objects</action>
+        <action>can_edit_ca_objects</action>
+        <action>can_search_ca_objects</action>
+        <action>can_browse_ca_objects</action>
+        <action>can_quickadd_ca_objects</action>
+        <action>can_export_ca_objects</action>
+        <action>can_batch_edit_ca_objects</action>
+        <action>can_see_current_location_in_inspector_ca_objects</action>
+        <action>can_view_change_log_ca_objects</action>
+        <action>can_create_ca_object_lots</action>
+        <action>can_edit_ca_object_lots</action>
+        <action>can_search_ca_object_lots</action>
+        <action>can_browse_ca_object_lots</action>
+        <action>can_export_ca_object_lots</action>
+        <action>can_quickadd_ca_object_lots</action>
+        <action>can_view_change_log_ca_object_lots</action>
+        <action>can_create_ca_entities</action>
+        <action>can_edit_ca_entities</action>
+        <action>can_search_ca_entities</action>
+        <action>can_browse_ca_entities</action>
+        <action>can_quickadd_ca_entities</action>
+        <action>can_create_ca_occurrences</action>
+        <action>can_edit_ca_occurrences</action>
+        <action>can_search_ca_occurrences</action>
+        <action>can_browse_ca_occurrences</action>
+        <action>can_export_ca_occurrences</action>
+        <action>can_quickadd_ca_occurrences</action>
+        <action>can_search_ca_collections</action>
+        <action>can_browse_ca_collections</action>
+        <action>can_search_ca_storage_locations</action>
+        <action>can_browse_ca_storage_locations</action>
+        <action>can_search_ca_loans</action>
+        <action>can_browse_ca_loans</action>
+      </actions>
+      <bundleLevelAccessControl/>
+      <typeLevelAccessControl>
+        <permission table="ca_objects" type="observation" access="read"/>
+        <permission table="ca_objects" type="animalObject" access="read"/>
+        <permission table="ca_objects" type="plantObject" access="read"/>
+        <permission table="ca_objects" type="object" access="read"/>
+        <permission table="ca_objects" type="dnaSample" access="read"/>
+        <permission table="ca_objects" type="soilObject" access="edit"/>
+        <permission table="ca_objects" type="waterObject" access="read"/>
+        <permission table="ca_objects" type="nonInboObject" access="read"/>
+        <permission table="ca_objects" type="Root node for object_types" access="none"/>
+        <permission table="ca_objects" type="observationAnimal" access="read"/>
+        <permission table="ca_objects" type="observationPlant" access="read"/>
+        <permission table="ca_objects" type="observationSoil" access="read"/>
+        <permission table="ca_objects" type="observationWater" access="read"/>
+        <permission table="ca_objects" type="animalBulk" access="read"/>
+        <permission table="ca_objects" type="animalEntire" access="read"/>
+        <permission table="ca_objects" type="animalEntireLiving" access="read"/>
+        <permission table="ca_objects" type="animalEntireCadaver" access="read"/>
+        <permission table="ca_objects" type="animalEntireEthanol" access="read"/>
+        <permission table="ca_objects" type="animalEntireDry" access="read"/>
+        <permission table="ca_objects" type="animalSample" access="read"/>
+        <permission table="ca_objects" type="sampleAmphibian" access="read"/>
+        <permission table="ca_objects" type="sampleAmphibianTailclip" access="read"/>
+        <permission table="ca_objects" type="sampleAmphibianSwabCloaca" access="read"/>
+        <permission table="ca_objects" type="sampleAmphibianSwabMouth" access="read"/>
+        <permission table="ca_objects" type="sampleAmphibianSwabEar" access="read"/>
+        <permission table="ca_objects" type="sampleAmphibianToeclip" access="read"/>
+        <permission table="ca_objects" type="sampleFish" access="read"/>
+        <permission table="ca_objects" type="sampleFishFinclip" access="read"/>
+        <permission table="ca_objects" type="sampleFishMuscle" access="read"/>
+        <permission table="ca_objects" type="sampleInvertebrate" access="read"/>
+        <permission table="ca_objects" type="sampleInvertebrateLeg" access="read"/>
+        <permission table="ca_objects" type="sampleInvertebrateWingclip" access="read"/>
+        <permission table="ca_objects" type="sampleMammal" access="read"/>
+        <permission table="ca_objects" type="sampleMammalBaculum" access="read"/>
+        <permission table="ca_objects" type="sampleMammalBladder" access="read"/>
+        <permission table="ca_objects" type="sampleMammalBlood" access="read"/>
+        <permission table="ca_objects" type="sampleMammalBrain" access="read"/>
+        <permission table="ca_objects" type="sampleMammalConjuctivum" access="read"/>
+        <permission table="ca_objects" type="sampleMammalCyste" access="read"/>
+        <permission table="ca_objects" type="sampleMammalEarpunch" access="read"/>
+        <permission table="ca_objects" type="sampleMammalEmbryo" access="read"/>
+        <permission table="ca_objects" type="sampleMammalFat" access="read"/>
+        <permission table="ca_objects" type="sampleMammalFeces" access="read"/>
+        <permission table="ca_objects" type="sampleMammalHead" access="read"/>
+        <permission table="ca_objects" type="sampleMammalHeart" access="read"/>
+        <permission table="ca_objects" type="sampleMammalHair" access="read"/>
+        <permission table="ca_objects" type="sampleMammalIntestine" access="read"/>
+        <permission table="ca_objects" type="sampleMammalLiver" access="read"/>
+        <permission table="ca_objects" type="sampleMammalLowerJaw" access="read"/>
+        <permission table="ca_objects" type="sampleMammalLung" access="read"/>
+        <permission table="ca_objects" type="sampleMammalLymphNode" access="read"/>
+        <permission table="ca_objects" type="sampleMammalKidney" access="read"/>
+        <permission table="ca_objects" type="sampleMammalMuscle" access="read"/>
+        <permission table="ca_objects" type="sampleMammalSkinComplete" access="read"/>
+        <permission table="ca_objects" type="sampleMammalSkinPiece" access="read"/>
+        <permission table="ca_objects" type="sampleMammalSkull" access="read"/>
+        <permission table="ca_objects" type="sampleMammalSpleen" access="read"/>
+        <permission table="ca_objects" type="sampleMammalStomach" access="read"/>
+        <permission table="ca_objects" type="sampleMammalStomachContent" access="read"/>
+        <permission table="ca_objects" type="sampleMammalSwabBite" access="read"/>
+        <permission table="ca_objects" type="sampleMammalTongue" access="read"/>
+        <permission table="ca_objects" type="sampleMammalTooth" access="read"/>
+        <permission table="ca_objects" type="sampleMammalUterus" access="read"/>
+        <permission table="ca_objects" type="sampleReptile" access="read"/>
+        <permission table="ca_objects" type="sampleReptileSkin" access="read"/>
+        <permission table="ca_objects" type="sampleReptileTailclip" access="read"/>
+        <permission table="ca_objects" type="leafSample" access="read"/>
+        <permission table="ca_objects" type="littertrapSample" access="read"/>
+        <permission table="ca_objects" type="livingPlant" access="read"/>
+        <permission table="ca_objects" type="seedlot" access="read"/>
+        <permission table="ca_objects" type="stemDisc" access="read"/>
+        <permission table="ca_objects" type="oDNA" access="read"/>
+        <permission table="ca_objects" type="eDNA" access="read"/>
+        <permission table="ca_objects" type="eDnaWaterFilter" access="read"/>
+        <permission table="ca_objects" type="waterSample" access="read"/>
+        <permission table="ca_object_lots" type="specimenLot" access="edit"/>
+        <permission table="ca_object_lots" type="plantation" access="read"/>
+        <permission table="ca_object_lots" type="Root node for object_lot_types" access="none"/>
+        <permission table="ca_entities" type="ind" access="read"/>
+        <permission table="ca_entities" type="org" access="read"/>
+        <permission table="ca_entities" type="Root node for entity_types" access="none"/>
+        <permission table="ca_places" type="cityTownMunicipalityVillage" access="read"/>
+        <permission table="ca_places" type="continent" access="read"/>
+        <permission table="ca_places" type="countyShireDepartment" access="read"/>
+        <permission table="ca_places" type="country" access="read"/>
+        <permission table="ca_places" type="inSituPlot" access="read"/>
+        <permission table="ca_places" type="islandGroup" access="read"/>
+        <permission table="ca_places" type="island" access="read"/>
+        <permission table="ca_places" type="place" access="read"/>
+        <permission table="ca_places" type="Root node for place_types" access="none"/>
+        <permission table="ca_places" type="stateProvince" access="read"/>
+        <permission table="ca_places" type="transect" access="read"/>
+        <permission table="ca_places" type="waterBody" access="read"/>
+        <permission table="ca_occurrences" type="project" access="edit"/>
+        <permission table="ca_occurrences" type="fieldwork" access="edit"/>
+        <permission table="ca_occurrences" type="curation" access="read"/>
+        <permission table="ca_occurrences" type="valuation" access="edit"/>
+        <permission table="ca_occurrences" type="Root node for occurrence_types" access="none"/>
+        <permission table="ca_occurrences" type="disposal" access="read"/>
+        <permission table="ca_occurrences" type="treatment" access="read"/>
+        <permission table="ca_occurrences" type="renewal" access="read"/>
+        <permission table="ca_occurrences" type="transfer" access="read"/>
+        <permission table="ca_collections" type="archiveCollection" access="read"/>
+        <permission table="ca_collections" type="didacticCollection" access="read"/>
+        <permission table="ca_collections" type="externalCollection" access="read"/>
+        <permission table="ca_collections" type="internalCollection" access="read"/>
+        <permission table="ca_collections" type="Root node for collection_types" access="none"/>
+        <permission table="ca_collections" type="referenceCollection" access="read"/>
+        <permission table="ca_storage_locations" type="Root node for storage_location_types" access="none"/>
+        <permission table="ca_storage_locations" type="INBOStorage" access="read"/>
+        <permission table="ca_storage_locations" type="plantedSite" access="read"/>
+        <permission table="ca_storage_locations" type="spotPlantedSite" access="read"/>
+        <permission table="ca_storage_locations" type="building" access="read"/>
+        <permission table="ca_storage_locations" type="floor" access="read"/>
+        <permission table="ca_storage_locations" type="room" access="read"/>
+        <permission table="ca_storage_locations" type="cabinetFridgeFreezer" access="read"/>
+        <permission table="ca_storage_locations" type="drawerShelf" access="read"/>
+        <permission table="ca_storage_locations" type="box" access="read"/>
+        <permission table="ca_storage_locations" type="spot" access="read"/>
+        <permission table="ca_storage_locations" type="nonINBOStorage" access="read"/>
+        <permission table="ca_storage_locations" type="externalPlantedSite" access="read"/>
+        <permission table="ca_loans" type="external" access="read"/>
+        <permission table="ca_loans" type="external_in" access="read"/>
+        <permission table="ca_loans" type="internal" access="read"/>
+        <permission table="ca_loans" type="external_out" access="read"/>
+        <permission table="ca_loans" type="Root node for loan_types" access="none"/>
+        <permission table="ca_object_representations" type="collectionMultimedia" access="read"/>
+        <permission table="ca_object_representations" type="curationMultimedia" access="read"/>
+        <permission table="ca_object_representations" type="loanMultimedia" access="read"/>
+        <permission table="ca_object_representations" type="measurementMultimedia" access="read"/>
+        <permission table="ca_object_representations" type="objectMultimedia" access="read"/>
+        <permission table="ca_object_representations" type="observationMultimedia" access="read"/>
+        <permission table="ca_object_representations" type="Root node for object_representation_types" access="none"/>
+        <permission table="ca_object_representations" type="samplingMultimedia" access="read"/>
+        <permission table="ca_sets" type="user" access="read"/>
+        <permission table="ca_sets" type="public_presentation" access="read"/>
+        <permission table="ca_sets" type="Root node for set_types" access="none"/>
+        <permission table="ca_set_items" type="user" access="edit"/>
+        <permission table="ca_set_items" type="public_presentation" access="edit"/>
+        <permission table="ca_set_items" type="Root node for set_types" access="none"/>
+        <permission table="ca_list_items" type="concept" access="edit"/>
+        <permission table="ca_list_items" type="facet" access="edit"/>
+        <permission table="ca_list_items" type="guide_term" access="edit"/>
+        <permission table="ca_list_items" type="hierarchy_name" access="edit"/>
+        <permission table="ca_list_items" type="Root node for list_item_types" access="none"/>
+      </typeLevelAccessControl>
+    </role>
+    <role code="soil-archive-manager">
+      <name>Cataloguer of the INBO soil archive</name>
+      <description>The manager for the soil archive can only edit and delete records with the type=soilObject (soil samples).</description>
+      <actions>
+        <action>can_quicksearch</action>
+        <action>can_set_preferences</action>
+        <action>can_use_adv_search_forms</action>
+        <action>can_use_ca_bundle_displays</action>
         <action>can_create_sets</action>
         <action>can_edit_sets</action>
         <action>can_delete_sets</action>
+        <action>can_delete_own_sets</action>
         <action>can_view_sets</action>
+        <action>can_duplicate_ca_sets</action>
+        <action>can_quickadd_ca_sets</action>
         <action>can_create_ca_objects</action>
         <action>can_edit_ca_objects</action>
         <action>can_delete_ca_objects</action>
         <action>can_search_ca_objects</action>
         <action>can_browse_ca_objects</action>
+        <action>can_quickadd_ca_objects</action>
+        <action>can_export_ca_objects</action>
+        <action>can_batch_edit_ca_objects</action>
+        <action>can_batch_delete_ca_objects</action>
+        <action>can_see_current_location_in_inspector_ca_objects</action>
+        <action>can_view_change_log_ca_objects</action>
         <action>can_create_ca_object_lots</action>
         <action>can_edit_ca_object_lots</action>
         <action>can_delete_ca_object_lots</action>
         <action>can_search_ca_object_lots</action>
         <action>can_browse_ca_object_lots</action>
+        <action>can_export_ca_object_lots</action>
+        <action>can_quickadd_ca_object_lots</action>
+        <action>can_view_change_log_ca_object_lots</action>
         <action>can_create_ca_entities</action>
         <action>can_edit_ca_entities</action>
         <action>can_delete_ca_entities</action>
         <action>can_search_ca_entities</action>
         <action>can_browse_ca_entities</action>
-        <action>can_create_ca_places</action>
-        <action>can_edit_ca_places</action>
-        <action>can_delete_ca_places</action>
-        <action>can_search_ca_places</action>
-        <action>can_browse_ca_places</action>
+        <action>can_quickadd_ca_entities</action>
         <action>can_create_ca_occurrences</action>
         <action>can_edit_ca_occurrences</action>
         <action>can_delete_ca_occurrences</action>
         <action>can_search_ca_occurrences</action>
         <action>can_browse_ca_occurrences</action>
-        <action>can_create_ca_collections</action>
-        <action>can_edit_ca_collections</action>
-        <action>can_delete_ca_collections</action>
+        <action>can_export_ca_occurrences</action>
+        <action>can_quickadd_ca_occurrences</action>
         <action>can_search_ca_collections</action>
         <action>can_browse_ca_collections</action>
-        <action>can_create_ca_storage_locations</action>
-        <action>can_edit_ca_storage_locations</action>
-        <action>can_delete_ca_storage_locations</action>
         <action>can_search_ca_storage_locations</action>
         <action>can_browse_ca_storage_locations</action>
-        <action>can_create_ca_lists</action>
-        <action>can_edit_ca_lists</action>
-        <action>can_delete_ca_lists</action>
+        <action>can_search_ca_loans</action>
+        <action>can_browse_ca_loans</action>
       </actions>
+      <bundleLevelAccessControl/l>
+      <typeLevelAccessControl>
+        <permission table="ca_objects" type="observation" access="read"/>
+        <permission table="ca_objects" type="animalObject" access="read"/>
+        <permission table="ca_objects" type="plantObject" access="read"/>
+        <permission table="ca_objects" type="object" access="read"/>
+        <permission table="ca_objects" type="dnaSample" access="read"/>
+        <permission table="ca_objects" type="soilObject" access="edit"/>
+        <permission table="ca_objects" type="waterObject" access="read"/>
+        <permission table="ca_objects" type="nonInboObject" access="read"/>
+        <permission table="ca_objects" type="Root node for object_types" access="none"/>
+        <permission table="ca_objects" type="observationAnimal" access="read"/>
+        <permission table="ca_objects" type="observationPlant" access="read"/>
+        <permission table="ca_objects" type="observationSoil" access="read"/>
+        <permission table="ca_objects" type="observationWater" access="read"/>
+        <permission table="ca_objects" type="animalBulk" access="read"/>
+        <permission table="ca_objects" type="animalEntire" access="read"/>
+        <permission table="ca_objects" type="animalEntireLiving" access="read"/>
+        <permission table="ca_objects" type="animalEntireCadaver" access="read"/>
+        <permission table="ca_objects" type="animalEntireEthanol" access="read"/>
+        <permission table="ca_objects" type="animalEntireDry" access="read"/>
+        <permission table="ca_objects" type="animalSample" access="read"/>
+        <permission table="ca_objects" type="sampleAmphibian" access="read"/>
+        <permission table="ca_objects" type="sampleAmphibianTailclip" access="read"/>
+        <permission table="ca_objects" type="sampleAmphibianSwabCloaca" access="read"/>
+        <permission table="ca_objects" type="sampleAmphibianSwabMouth" access="read"/>
+        <permission table="ca_objects" type="sampleAmphibianSwabEar" access="read"/>
+        <permission table="ca_objects" type="sampleAmphibianToeclip" access="read"/>
+        <permission table="ca_objects" type="sampleFish" access="read"/>
+        <permission table="ca_objects" type="sampleFishFinclip" access="read"/>
+        <permission table="ca_objects" type="sampleFishMuscle" access="read"/>
+        <permission table="ca_objects" type="sampleInvertebrate" access="read"/>
+        <permission table="ca_objects" type="sampleInvertebrateLeg" access="read"/>
+        <permission table="ca_objects" type="sampleInvertebrateWingclip" access="read"/>
+        <permission table="ca_objects" type="sampleMammal" access="read"/>
+        <permission table="ca_objects" type="sampleMammalBaculum" access="read"/>
+        <permission table="ca_objects" type="sampleMammalBladder" access="read"/>
+        <permission table="ca_objects" type="sampleMammalBlood" access="read"/>
+        <permission table="ca_objects" type="sampleMammalBrain" access="read"/>
+        <permission table="ca_objects" type="sampleMammalConjuctivum" access="read"/>
+        <permission table="ca_objects" type="sampleMammalCyste" access="read"/>
+        <permission table="ca_objects" type="sampleMammalEarpunch" access="read"/>
+        <permission table="ca_objects" type="sampleMammalEmbryo" access="read"/>
+        <permission table="ca_objects" type="sampleMammalFat" access="read"/>
+        <permission table="ca_objects" type="sampleMammalFeces" access="read"/>
+        <permission table="ca_objects" type="sampleMammalHead" access="read"/>
+        <permission table="ca_objects" type="sampleMammalHeart" access="read"/>
+        <permission table="ca_objects" type="sampleMammalHair" access="read"/>
+        <permission table="ca_objects" type="sampleMammalIntestine" access="read"/>
+        <permission table="ca_objects" type="sampleMammalLiver" access="read"/>
+        <permission table="ca_objects" type="sampleMammalLowerJaw" access="read"/>
+        <permission table="ca_objects" type="sampleMammalLung" access="read"/>
+        <permission table="ca_objects" type="sampleMammalLymphNode" access="read"/>
+        <permission table="ca_objects" type="sampleMammalKidney" access="read"/>
+        <permission table="ca_objects" type="sampleMammalMuscle" access="read"/>
+        <permission table="ca_objects" type="sampleMammalSkinComplete" access="read"/>
+        <permission table="ca_objects" type="sampleMammalSkinPiece" access="read"/>
+        <permission table="ca_objects" type="sampleMammalSkull" access="read"/>
+        <permission table="ca_objects" type="sampleMammalSpleen" access="read"/>
+        <permission table="ca_objects" type="sampleMammalStomach" access="read"/>
+        <permission table="ca_objects" type="sampleMammalStomachContent" access="read"/>
+        <permission table="ca_objects" type="sampleMammalSwabBite" access="read"/>
+        <permission table="ca_objects" type="sampleMammalTongue" access="read"/>
+        <permission table="ca_objects" type="sampleMammalTooth" access="read"/>
+        <permission table="ca_objects" type="sampleMammalUterus" access="read"/>
+        <permission table="ca_objects" type="sampleReptile" access="read"/>
+        <permission table="ca_objects" type="sampleReptileSkin" access="read"/>
+        <permission table="ca_objects" type="sampleReptileTailclip" access="read"/>
+        <permission table="ca_objects" type="leafSample" access="read"/>
+        <permission table="ca_objects" type="littertrapSample" access="read"/>
+        <permission table="ca_objects" type="livingPlant" access="read"/>
+        <permission table="ca_objects" type="seedlot" access="read"/>
+        <permission table="ca_objects" type="stemDisc" access="read"/>
+        <permission table="ca_objects" type="oDNA" access="read"/>
+        <permission table="ca_objects" type="eDNA" access="read"/>
+        <permission table="ca_objects" type="eDnaWaterFilter" access="read"/>
+        <permission table="ca_objects" type="waterSample" access="read"/>
+        <permission table="ca_object_lots" type="specimenLot" access="edit"/>
+        <permission table="ca_object_lots" type="plantation" access="read"/>
+        <permission table="ca_object_lots" type="Root node for object_lot_types" access="none"/>
+        <permission table="ca_entities" type="ind" access="read"/>
+        <permission table="ca_entities" type="org" access="read"/>
+        <permission table="ca_entities" type="Root node for entity_types" access="none"/>
+        <permission table="ca_places" type="cityTownMunicipalityVillage" access="read"/>
+        <permission table="ca_places" type="continent" access="read"/>
+        <permission table="ca_places" type="countyShireDepartment" access="read"/>
+        <permission table="ca_places" type="country" access="read"/>
+        <permission table="ca_places" type="inSituPlot" access="read"/>
+        <permission table="ca_places" type="islandGroup" access="read"/>
+        <permission table="ca_places" type="island" access="read"/>
+        <permission table="ca_places" type="place" access="read"/>
+        <permission table="ca_places" type="Root node for place_types" access="none"/>
+        <permission table="ca_places" type="stateProvince" access="read"/>
+        <permission table="ca_places" type="transect" access="read"/>
+        <permission table="ca_places" type="waterBody" access="read"/>
+        <permission table="ca_occurrences" type="project" access="edit"/>
+        <permission table="ca_occurrences" type="fieldwork" access="edit"/>
+        <permission table="ca_occurrences" type="curation" access="read"/>
+        <permission table="ca_occurrences" type="valuation" access="edit"/>
+        <permission table="ca_occurrences" type="Root node for occurrence_types" access="none"/>
+        <permission table="ca_occurrences" type="disposal" access="read"/>
+        <permission table="ca_occurrences" type="treatment" access="read"/>
+        <permission table="ca_occurrences" type="renewal" access="read"/>
+        <permission table="ca_occurrences" type="transfer" access="read"/>
+        <permission table="ca_collections" type="archiveCollection" access="read"/>
+        <permission table="ca_collections" type="didacticCollection" access="read"/>
+        <permission table="ca_collections" type="externalCollection" access="read"/>
+        <permission table="ca_collections" type="internalCollection" access="read"/>
+        <permission table="ca_collections" type="Root node for collection_types" access="none"/>
+        <permission table="ca_collections" type="referenceCollection" access="read"/>
+        <permission table="ca_storage_locations" type="Root node for storage_location_types" access="none"/>
+        <permission table="ca_storage_locations" type="INBOStorage" access="read"/>
+        <permission table="ca_storage_locations" type="plantedSite" access="read"/>
+        <permission table="ca_storage_locations" type="spotPlantedSite" access="read"/>
+        <permission table="ca_storage_locations" type="building" access="read"/>
+        <permission table="ca_storage_locations" type="floor" access="read"/>
+        <permission table="ca_storage_locations" type="room" access="read"/>
+        <permission table="ca_storage_locations" type="cabinetFridgeFreezer" access="read"/>
+        <permission table="ca_storage_locations" type="drawerShelf" access="read"/>
+        <permission table="ca_storage_locations" type="box" access="read"/>
+        <permission table="ca_storage_locations" type="spot" access="read"/>
+        <permission table="ca_storage_locations" type="nonINBOStorage" access="read"/>
+        <permission table="ca_storage_locations" type="externalPlantedSite" access="read"/>
+        <permission table="ca_loans" type="external" access="read"/>
+        <permission table="ca_loans" type="external_in" access="read"/>
+        <permission table="ca_loans" type="internal" access="read"/>
+        <permission table="ca_loans" type="external_out" access="read"/>
+        <permission table="ca_loans" type="Root node for loan_types" access="none"/>
+        <permission table="ca_object_representations" type="collectionMultimedia" access="read"/>
+        <permission table="ca_object_representations" type="curationMultimedia" access="read"/>
+        <permission table="ca_object_representations" type="loanMultimedia" access="read"/>
+        <permission table="ca_object_representations" type="measurementMultimedia" access="read"/>
+        <permission table="ca_object_representations" type="objectMultimedia" access="read"/>
+        <permission table="ca_object_representations" type="observationMultimedia" access="read"/>
+        <permission table="ca_object_representations" type="Root node for object_representation_types" access="none"/>
+        <permission table="ca_object_representations" type="samplingMultimedia" access="read"/>
+        <permission table="ca_sets" type="user" access="read"/>
+        <permission table="ca_sets" type="public_presentation" access="read"/>
+        <permission table="ca_sets" type="Root node for set_types" access="none"/>
+        <permission table="ca_set_items" type="user" access="edit"/>
+        <permission table="ca_set_items" type="public_presentation" access="edit"/>
+        <permission table="ca_set_items" type="Root node for set_types" access="none"/>
+        <permission table="ca_list_items" type="concept" access="edit"/>
+        <permission table="ca_list_items" type="facet" access="edit"/>
+        <permission table="ca_list_items" type="guide_term" access="edit"/>
+        <permission table="ca_list_items" type="hierarchy_name" access="edit"/>
+        <permission table="ca_list_items" type="Root node for list_item_types" access="none"/>
+      </typeLevelAccessControl>
     </role>
-    <role code="researcher">
-      <name>Researcher</name>
-      <description>Allows users to only search and view - but not edit - catalogue entries</description>
+    <role code="collection-steward">
+      <name>INBO collection steward</name>
+      <description>Can edit information considering loans: loan table, entity table. View all the rest.</description>
       <actions>
-        <action>can_search</action>
         <action>can_quicksearch</action>
-        <action>can_browse</action>
-        <action>can_set_preferences</action>
-        <action>can_use_adv_search_forms</action>
-        <action>can_create_user_groups</action>
-        <action>can_create_sets</action>
-        <action>can_edit_sets</action>
-        <action>can_delete_sets</action>
-        <action>can_view_sets</action>
-        <action>can_search_ca_object_lots</action>
-        <action>can_browse_ca_object_lots</action>
         <action>can_search_ca_objects</action>
         <action>can_browse_ca_objects</action>
+        <action>can_edit_ca_objects</action>
+        <action>can_search_ca_object_lots</action>
+        <action>can_browse_ca_object_lots</action>
+        <action>can_edit_ca_object_lots</action>
+        <action>can_batch_edit_ca_objects</action>
+        <action>can_create_ca_entities</action>
+        <action>can_edit_ca_entities</action>
         <action>can_search_ca_entities</action>
         <action>can_browse_ca_entities</action>
+        <action>can_duplicate_ca_entities</action>
+        <action>can_quickadd_ca_entities</action>
+        <action>can_view_change_log_ca_entities</action>
         <action>can_search_ca_places</action>
         <action>can_browse_ca_places</action>
         <action>can_search_ca_occurrences</action>
         <action>can_browse_ca_occurrences</action>
+        <action>can_edit_ca_occurrences</action>
         <action>can_search_ca_collections</action>
         <action>can_browse_ca_collections</action>
         <action>can_search_ca_storage_locations</action>
         <action>can_browse_ca_storage_locations</action>
+        <action>can_create_ca_loans</action>
+        <action>can_edit_ca_loans</action>
+        <action>can_delete_ca_loans</action>
+        <action>can_search_ca_loans</action>
+        <action>can_browse_ca_loans</action>
+        <action>can_duplicate_ca_loans</action>
+        <action>can_export_ca_loans</action>
+        <action>can_quickadd_ca_loans</action>
+        <action>can_change_type_ca_loans</action>
+        <action>can_batch_edit_ca_loans</action>
+        <action>can_view_change_log_ca_loans</action>
       </actions>
-    </role>
-    <role code="moderator">
-      <name>User content moderator</name>
-      <description>Allows users to moderate user generated tags and comments</description>
-      <actions>
-        <action>can_manage_user_comments</action>
-        <action>can_manage_user_tags</action>
-      </actions>
+      <bundleLevelAccessControl/l>
+      <typeLevelAccessControl>
+        <permission table="ca_objects" type="soilObject" access="edit"/>
+        <permission table="ca_objects" type="observationSoil" access="edit"/>
+        <permission table="ca_objects" type="observationWater" access="read"/>
+        <permission table="ca_objects" type="observationAnimal" access="read"/>
+        <permission table="ca_objects" type="observationPlant" access="read"/>
+        <permission table="ca_objects" type="animalObject" access="read"/>
+        <permission table="ca_objects" type="plantObject" access="read"/>
+        <permission table="ca_objects" type="waterObject" access="read"/>
+      </typeLevelAccessControl>
+      <sourceLevelAccessControl/>
     </role>
   </roles>
   <groups>
