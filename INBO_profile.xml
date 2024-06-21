@@ -12508,8 +12508,8 @@
         <action>can_browse_ca_storage_locations</action>
       </actions>
     </role>
-    <role code="soilArchiveCataloguer">
-      <name>Cataloguer of the INBO soil archive</name>
+    <role code="soilcataloguer">
+      <name>Soilcataloguers</name>
       <description>The cataloguer for the soil archive can only edit reocrds with the type=soilObject (soil samples).</description>
       <actions>
         <action>can_quicksearch</action>
@@ -12704,8 +12704,8 @@
         <permission table="ca_list_items" type="Root node for list_item_types" access="none"/>
       </typeLevelAccessControl>
     </role>
-    <role code="soilArchiveManager">
-      <name>Cataloguer of the INBO soil archive</name>
+    <role code="soilmanager">
+      <name>Soilmanagers</name>
       <description>The manager for the soil archive can only edit and delete records with the type=soilObject (soil samples).</description>
       <actions>
         <action>can_quicksearch</action>
@@ -12906,8 +12906,8 @@
         <permission table="ca_list_items" type="Root node for list_item_types" access="none"/>
       </typeLevelAccessControl>
     </role>
-    <role code="collectionSteward">
-      <name>INBO collection steward</name>
+    <role code="collectionsteward">
+      <name>Collectionstewards</name>
       <description>Can edit information considering loans: loan table, entity table. View all the rest.</description>
       <actions>
         <action>can_quicksearch</action>
@@ -12969,11 +12969,25 @@
         <role>moderator</role>
       </roles>
     </group>
-    <group code="cataloguer">
-      <name>Cataloguers</name>
+    <group code="soilcataloguer">
+      <name>soilcataloguers</name>
       <description>Users who can add and edit catalogue entries</description>
       <roles>
-        <role>cataloguer</role>
+        <role>soilcataloguer</role>
+      </roles>
+    </group>
+    <group code="soilmanager">
+      <name>soilmanagers</name>
+      <description>Users who can add, edit and delete catalogue entries</description>
+      <roles>
+        <role>soilmanager</role>
+      </roles>
+    </group>
+    <group code="collectionsteward">
+      <name>collectionstewards</name>
+      <description>Users who can add, edit and delete loans and edit catalogue entries</description>
+      <roles>
+        <role>collectionsteward</role>
       </roles>
     </group>
   </groups>
