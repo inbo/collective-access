@@ -3,6 +3,8 @@
   <profileName>[INBO] INBO natural science collection v0.58</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Changes compared to the previous version 0.57: see list of issues below; to be validated-->
+  <!--https://github.com/inbo/collective-access/issues/77-->
+  <!--https://github.com/inbo/collective-access/issues/87-->
   <!--https://github.com/inbo/collective-access/issues/111-->
   <!--https://github.com/inbo/collective-access/issues/132-->
   <!--https://github.com/inbo/collective-access/issues/138-->
@@ -961,8 +963,8 @@
               <item idno="waterBody" enabled="1" default="0"><!--http://rs.tdwg.org/dwc/terms/waterBody-->
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>Waterbody</name_singular>
-                    <name_plural>Waterbodies</name_plural>
+                    <name_singular>waterbody</name_singular>
+                    <name_plural>waterbodies</name_plural>
                   </label>
                 </labels>
               </item>
@@ -1017,16 +1019,16 @@
               <item idno="inSituPlot" enabled="1" default="0"><!--This allows linking of multiple sampling points and specimens to defined plots, if relevant. For example uitgangsmateriaal defined in a GIS layer (https://www.vlaanderen.be/inbo/genenbronnen-bosbouw/kaart/) or a long-term-monitoring plot.-->
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>In-situ plot</name_singular>
-                    <name_plural>In-situ plots</name_plural>
+                    <name_singular>in-situ plot</name_singular>
+                    <name_plural>in-situ plots</name_plural>
                   </label>
                 </labels>
               </item>
               <item idno="transect" enabled="1" default="0"><!--This allows linking of multiple sampling points and specimens to a defined transect, if relevant.-->
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>Transect</name_singular>
-                    <name_plural>Transects</name_plural>
+                    <name_singular>transect</name_singular>
+                    <name_plural>transects</name_plural>
                   </label>
                 </labels>
               </item>
@@ -1041,8 +1043,8 @@
               <item idno="provenanceRegion" enabled="1" default="0"><!--This allows linking of multiple sampling points and specimens to a defined provenance. Be aware that provenance is country and species specific. The Provenance region should hence be defined under a country and the taxonomic scope should be added to the name e.g. Germany -> Alnus_glutinosa_80204.-->
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>Provenance region</name_singular>
-                    <name_plural>Provenance regions</name_plural>
+                    <name_singular>provenance region</name_singular>
+                    <name_plural>provenance regions</name_plural>
                   </label>
                 </labels>
               </item>
@@ -2301,7 +2303,7 @@
       <list code="life_stage_animal" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
         <labels>
           <label locale="en_US">
-            <name>Life stage</name>
+            <name>Life stage (animal)</name>
           </label>
         </labels>
         <items>
@@ -2382,7 +2384,7 @@
       <list code="life_stage_plant" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
         <labels>
           <label locale="en_US">
-            <name>Life stage</name>
+            <name>Life stage (plant)</name>
           </label>
         </labels>
         <items>
@@ -2447,7 +2449,7 @@
 	    <list code="repr_cond_plant" hierarchical="0" system="0" vocabulary="1">
         <labels>
           <label locale="en_US">
-            <name>Reproductive condition</name>
+            <name>Reproductive condition (plant)</name>
           </label>
         </labels>
         <items>
@@ -2496,7 +2498,7 @@
 	    <list code="repr_cond_animal" hierarchical="0" system="0" vocabulary="1">
         <labels>
           <label locale="en_US">
-            <name>Reproductive condition</name>
+            <name>Reproductive condition (animal)</name>
           </label>
         </labels>
         <items>
@@ -2725,7 +2727,7 @@
 	    <list code="dna_volume_unit" hierarchical="0" system="0" vocabulary="1">
         <labels>
           <label locale="en_US">
-            <name>Unit used for volume measurement</name>
+            <name>Unit used for volume measurement (dna)</name>
           </label>
         </labels>
         <items>
@@ -3365,39 +3367,6 @@
               <label locale="en_US" preferred="1">
                 <name_singular>collection unit for assessment</name_singular>
                 <name_plural>collection units for assessment</name_plural>
-              </label>
-            </labels>
-          </item>
-        </items>
-      </list>
-      <list code="collection_categories" hierarchical="0" system="0" vocabulary="1">
-        <labels>
-          <label locale="en_US">
-            <name>Base Type Of Collection</name>
-          </label>
-        </labels>
-        <items>
-          <item idno="PreservedSpecimens" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>PreservedSpecimens</name_singular>
-                <name_plural>PreservedSpecimens</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="MaterialSamples" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>MaterialSamples</name_singular>
-                <name_plural>MaterialSamples</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="LivingSpecimens" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>LivingSpecimens</name_singular>
-                <name_plural>LivingSpecimens</name_plural>
               </label>
             </labels>
           </item>
@@ -4957,7 +4926,7 @@
               <setting name="canBeUsedInDisplay">1</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="concentration" datatype="Text">
+          <metadataElement code="concentration" datatype="Numeric">
             <labels>
               <label locale="en_US">
                 <name>DNA concentration</name>
@@ -4970,6 +4939,9 @@
               <setting name="fieldHeight">1</setting>
               <setting name="minChars">0</setting>
               <setting name="maxChars">65535</setting>
+              <setting name="minValue">-1</setting>
+              <setting name="maxValue">1000</setting>
+              <setting name="mustNotBeBlank">0</setting>
             </settings>
           </metadataElement>
           <metadataElement code="concentrationUnit" datatype="List" list="concentration_unit">
@@ -6177,7 +6149,7 @@
             <labels>
             <label locale="en_US">
               <name>Unit</name>
-              <description>Unit used for the measurement.</description>
+              <description>Unit used for the measurement</description>
             </label>
             </labels>
             <documentationUrl>	http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
@@ -6442,9 +6414,19 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_objects">
+          <restriction code="r_plantsp">
             <table>ca_objects</table>
             <type>observationPlant</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_plantobj">
+            <table>ca_objects</table>
+            <type>plantObject</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -6470,7 +6452,6 @@
 	      <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
-            <type>observation</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -6489,6 +6470,7 @@
           </restriction>
           <restriction code="r_object_lots">
             <table>ca_object_lots</table>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -6533,7 +6515,6 @@
 	      <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
-            <type>observation</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -6597,7 +6578,6 @@
         <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
-            <type>observation</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -6661,7 +6641,6 @@
         <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
-            <type>observation</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -6725,7 +6704,6 @@
         <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
-            <type>observation</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -6789,7 +6767,6 @@
         <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
-            <type>observation</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -6853,7 +6830,6 @@
         <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
-            <type>observation</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -6917,7 +6893,6 @@
         <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
-            <type>observation</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -7213,7 +7188,6 @@
         <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
-            <type>observation</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -7832,7 +7806,6 @@
         <labels>
         <label locale="en_US">
           <name>Arguments for object value</name>
-          <description>Arguments for object value</description>
         </label>
         </labels>
         <settings>
@@ -7981,8 +7954,7 @@
 		      <metadataElement code="obligationType" datatype="List" list="obligation_type">
             <labels>
             <label locale="en_US">
-              <name>obligationType</name>
-              <description>Type of obligation</description>
+              <name>Obligation type</name>
             </label>
             </labels>
             <settings>
@@ -8010,8 +7982,8 @@
 		      <metadataElement code="obligationStatus" datatype="List" list="obligation_status">
             <labels>
               <label locale="en_US">
-                <name>obligationStatus</name>
-                <description>Status of meeting the obligation</description>
+                <name>Obligation status</name>
+                <description>Status of meeting the given obligation</description>
               </label>
             </labels>
             <settings>
@@ -8876,6 +8848,7 @@
                 <setting name="label" locale="en_US">Preferred ID</setting>
                 <setting name="description" locale="en_US">This is the preferred identifier. For collected objects this identifier has to be physically present on/with the object, on the label or written on the object. For DNA-samples this is the LIMS-code e.g. 19-009625. For soil samples, this is the SID = sample ID. For sampling points, this is the field code you gave the data point, if need be, by adding prefixes or suffixes to make it unique in the full database.</setting>
                 <setting name="expand_collapse_no_value">expand</setting>
+                <setting name="documentation_url"https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0</setting>
               </settings>
             </placement>
 			      <placement code="nonpreferred_labels">
@@ -8884,6 +8857,7 @@
                 <setting name="label" locale="en_US">Other identifiers (non-preferred)</setting>
 				        <setting name="add_label" locale="en_US">Add other non-preferred identifier</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="documentation_url"https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0</setting>
               </settings>
             </placement>
             <placement code="externalRecord">
@@ -8983,6 +8957,7 @@
                 <setting name="label" locale="en_US">Cataloguing status</setting>
 				        <setting name="minRelationshipsPerRow">1</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="documentation_url"https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -9089,7 +9064,7 @@
               <bundle>hierarchy_location</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Relationships hierarchy browser</setting>
-                <setting name="description" locale="en_US">The relationship between sampling point and all the directly related objects (subsamples, DNA-extractions, parasites from cadaver, ...)</setting>
+                <setting name="description" locale="en_US">The relationship between sampling point and all the directly related objects (subsamples, DNA-extractions, parasites from cadaver, ...). TIP: to view sibling specimens, move to the parent specimen.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="expand_collapse_value">collapse</setting>
               </settings>
@@ -12685,15 +12660,12 @@
     </group>
   </groups>
   <displays>
-    <display code="soilsp_display" type="ca_objects" system="1">
+    <display code="object_display" type="ca_objects" system="1">
       <labels>
         <label locale="en_US">
-          <name>Soil sampling point Display</name>
+          <name>ObjectGroup Display</name>
         </label>
       </labels>
-      <typeRestrictions>
-        <restriction code="r_observationSoil" type="observationSoil"/>
-      </typeRestrictions>
       <bundlePlacements>
         <placement code="ca_objects_idno">
           <bundle>ca_objects.idno</bundle>
@@ -12704,71 +12676,11 @@
         <placement code="ca_objects_preferred_labels">
           <bundle>ca_objects.preferred_labels</bundle>
 			    <settings>
-            <setting name="label" locale="en_US">label</setting>
+            <setting name="label" locale="en_US">specimen-ID</setting>
           </settings>
         </placement>
-        <placement code="ca_objects_verbatimLocality">
-          <bundle>ca_objects.verbatimLocality</bundle>
-			    <settings>
-            <setting name="label" locale="en_US">locality</setting>
-          </settings>
-        </placement>
-        <placement code="ca_places">
-          <bundle>ca_places</bundle>
-        </placement>
-        <placement code="ca_objects_georeference">
-          <bundle>ca_objects.georeference</bundle>
-			    <settings>
-            <setting name="label" locale="en_US">georeference</setting>
-          </settings>
-        </placement>
-        <placement code="ca_objects_children_test1">
-          <bundle>ca_objects</bundle>
- 			    <settings>
-            <setting name="label" locale="en_US">Objects test1</setting>
-            <setting name="delimiter"><![CDATA[<br/><br/>]]></setting>
-            <setting name="display_template" locale="en_US"><![CDATA[<unit><unit relativeTo="ca_objects.children"><l>^ca_objects.preferred_label</l> (^ca_objects.verbatimDepth, ^ca_objects.preparationDate)</unit></unit>]]></setting>
-          </settings>         
-        </placement>
-        <placement code="ca_objects_children_test2">
-          <bundle>ca_objects.children</bundle>
- 			    <settings>
-            <setting name="label" locale="en_US">Objects test2</setting>
-            <setting name="delimiter"><![CDATA[<br/><br/>]]></setting>
-            <setting name="display_template" locale="en_US"><![CDATA[<unit><unit relativeTo="ca_objects.children"><l>^ca_objects.preferred_label</l> (^ca_objects.verbatimDepth, ^ca_objects.preparationDate)</unit></unit>]]></setting>
-          </settings>         
-        </placement>
-        <placement code="ca_objects_children_test3">
-          <bundle>ca_objects.preferred_labels</bundle>
- 			    <settings>
-            <setting name="label" locale="en_US">Objects test3</setting>
-            <setting name="delimiter"><![CDATA[<br/><br/>]]></setting>
-            <setting name="display_template" locale="en_US"><![CDATA[<unit><unit relativeTo="ca_objects.children"><l>^ca_objects.preferred_label</l> (^ca_objects.verbatimDepth, ^ca_objects.preparationDate)</unit></unit>]]></setting>
-          </settings>         
-        </placement>
-      </bundlePlacements>
-    </display>
-    <display code="soilobject_display" type="ca_objects" system="1">
-      <labels>
-        <label locale="en_US">
-          <name>Soil sample Display</name>
-        </label>
-      </labels>
-      <typeRestrictions>
-        <restriction code="r_soilObject" type="soilObject"/>
-      </typeRestrictions>
-      <bundlePlacements>
-        <placement code="ca_objects_idno">
-          <bundle>ca_objects.idno</bundle>
-			    <settings>
-            <setting name="label" locale="en_US">CMS-ID</setting>
-          </settings>
-        </placement>
-        <placement code="ca_objects_preferred_labels">
-          <bundle>ca_objects.preferred_labels</bundle>
-			    <settings>
-            <setting name="label" locale="en_US">label</setting>
-          </settings>
+        <placement code="is_deaccessioned">
+          <bundle>ca_objects.is_deaccessioned</bundle>
         </placement>
         <placement code="ca_storage_locations">
           <bundle>ca_storage_locations</bundle>
@@ -12776,37 +12688,41 @@
             <setting name="label" locale="en_US">storage</setting>
           </settings>
         </placement>
-        <placement code="ca_objects_preparationDate">
-          <bundle>ca_objects.preparationDate</bundle>
+        <placement code="ca_objects_dateRange">
+          <bundle>ca_objects.dateRange</bundle>
 			    <settings>
             <setting name="label" locale="en_US">date</setting>
           </settings>
         </placement>
-        <placement code="ca_objects_hierarchy_verbatimLocality">
-          <bundle>ca_objects.hierarchy</bundle>
- 			    <settings>
-            <setting name="label" locale="en_US">Locality</setting>
-            <setting name="display_template" locale="en_US"><![CDATA[<unit relativeTo="ca_objects.hierarchy" restrictToTypes="observationSoil"><l>^ca_objects.preferred_label</l>: ^ca_objects.verbatimlocality</unit>]]></setting>
-          </settings>         
-        </placement>
-        <placement code="ca_objects_hierarchy_place">
-          <bundle>ca_objects.hierarchy</bundle>
- 			    <settings>
-            <setting name="label" locale="en_US">Place</setting>
-            <setting name="display_template" locale="en_US"><![CDATA[<unit relativeTo="ca_objects.hierarchy" restrictToTypes="observationSoil"><l>^ca_objects.preferred_label</l>: ^ca_places</unit>]]></setting>
-          </settings>         
-        </placement>
-        <placement code="ca_objects_verbatimSamplingDepth">
-          <bundle>ca_objects.verbatimDepth</bundle>
+        <placement code="ca_places">
+          <bundle>ca_places.prefferred_label</bundle>
+          <settings>
+            <setting name="label" locale="en_US">place</setting>
+          </settings>
         </placement>
         <placement code="ca_objects_minimumDepthInMetres">
           <bundle>ca_objects.minimumDepthInMetres</bundle>
+			    <settings>
+            <setting name="label" locale="en_US">min</setting>
+          </settings>
         </placement>
         <placement code="ca_objects_maximumDepthInMetres">
           <bundle>ca_objects.maximumDepthInMetres</bundle>
+			    <settings>
+            <setting name="label" locale="en_US">max</setting>
+          </settings>
         </placement>
-        <placement code="is_deaccessioned">
-          <bundle>ca_objects.is_deaccessioned</bundle>
+        <placement code="ca_objects_verbatimTaxon">
+          <bundle>ca_objects.IDContainer.verbatim_ID</bundle>
+			    <settings>
+            <setting name="label" locale="en_US">vtaxon</setting>
+          </settings>
+        </placement>
+        <placement code="ca_objects_standTaxon">
+          <bundle>ca_objects.IDContainer.stand_ID</bundle>
+			    <settings>
+            <setting name="label" locale="en_US">staxon</setting>
+          </settings>
         </placement>
       </bundlePlacements>
     </display>
