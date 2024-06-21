@@ -7386,7 +7386,6 @@
           </label>
 			  </labels>
 			  <documentationUrl>http://rs.tdwg.org/dwc/terms/sex</documentationUrl>
-			  <documentationUrl>https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0</documentationUrl>
 			  <settings>
           <setting name="fieldWidth">40</setting>
           <setting name="fieldHeight">1</setting>
@@ -10983,7 +10982,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="externalRecord" type="plantation">
+            <placement code="externalRecord" typeRestrictions="plantation">
               <bundle>ca_attribute_externalRecord</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">External record (URL)</setting>
@@ -12509,7 +12508,7 @@
         <action>can_browse_ca_storage_locations</action>
       </actions>
     </role>
-    <role code="soil-archive-cataloguer">
+    <role code="soilArchiveCataloguer">
       <name>Cataloguer of the INBO soil archive</name>
       <description>The cataloguer for the soil archive can only edit reocrds with the type=soilObject (soil samples).</description>
       <actions>
@@ -12557,7 +12556,6 @@
         <action>can_search_ca_loans</action>
         <action>can_browse_ca_loans</action>
       </actions>
-      <bundleLevelAccessControl/>
       <typeLevelAccessControl>
         <permission table="ca_objects" type="observation" access="read"/>
         <permission table="ca_objects" type="animalObject" access="read"/>
@@ -12706,7 +12704,7 @@
         <permission table="ca_list_items" type="Root node for list_item_types" access="none"/>
       </typeLevelAccessControl>
     </role>
-    <role code="soil-archive-manager">
+    <role code="soilArchiveManager">
       <name>Cataloguer of the INBO soil archive</name>
       <description>The manager for the soil archive can only edit and delete records with the type=soilObject (soil samples).</description>
       <actions>
@@ -12760,7 +12758,6 @@
         <action>can_search_ca_loans</action>
         <action>can_browse_ca_loans</action>
       </actions>
-      <bundleLevelAccessControl/>
       <typeLevelAccessControl>
         <permission table="ca_objects" type="observation" access="read"/>
         <permission table="ca_objects" type="animalObject" access="read"/>
@@ -12909,7 +12906,7 @@
         <permission table="ca_list_items" type="Root node for list_item_types" access="none"/>
       </typeLevelAccessControl>
     </role>
-    <role code="collection-steward">
+    <role code="collectionSteward">
       <name>INBO collection steward</name>
       <description>Can edit information considering loans: loan table, entity table. View all the rest.</description>
       <actions>
@@ -12949,7 +12946,6 @@
         <action>can_batch_edit_ca_loans</action>
         <action>can_view_change_log_ca_loans</action>
       </actions>
-      <bundleLevelAccessControl/>
       <typeLevelAccessControl>
         <permission table="ca_objects" type="soilObject" access="edit"/>
         <permission table="ca_objects" type="observationSoil" access="edit"/>
@@ -12960,7 +12956,6 @@
         <permission table="ca_objects" type="plantObject" access="read"/>
         <permission table="ca_objects" type="waterObject" access="read"/>
       </typeLevelAccessControl>
-      <sourceLevelAccessControl/>
     </role>
   </roles>
   <groups>
