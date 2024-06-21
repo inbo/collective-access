@@ -1,26 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.57.05</profileName>
+  <profileName>[INBO] INBO natural science collection v0.58</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
-  <!--Changes compared to the previous version 0.56: see list of issues below; to be validated-->
-  <!--https://github.com/inbo/collective-access/issues/98-->
-  <!--https://github.com/inbo/collective-access/issues/109-->
-  <!--https://github.com/inbo/collective-access/issues/110-->
+  <!--Changes compared to the previous version 0.57: see list of issues below; to be validated-->
   <!--https://github.com/inbo/collective-access/issues/111-->
-  <!--https://github.com/inbo/collective-access/issues/113-->
-  <!--https://github.com/inbo/collective-access/issues/118-->
-  <!--https://github.com/inbo/collective-access/issues/124-->
-  <!--https://github.com/inbo/collective-access/issues/125-->
-  <!--https://github.com/inbo/collective-access/issues/126-->
-  <!--https://github.com/inbo/collective-access/issues/127-->
   <!--https://github.com/inbo/collective-access/issues/132-->
-  <!--https://github.com/inbo/collective-access/issues/134-->
-  <!--https://github.com/inbo/collective-access/issues/135-->
-  <!--https://github.com/inbo/collective-access/issues/137-->
   <!--https://github.com/inbo/collective-access/issues/138-->
-  <!--https://github.com/inbo/collective-access/issues/139-->
-  <!--https://github.com/inbo/collective-access/issues/140-->
-  <!--https://github.com/inbo/collective-access/issues/141-->
   <locales>
     <locale lang="en" country="US">English</locale>
     <locale lang="nl" country="BE" dontUseForCataloguing="1">Nederlands</locale>
@@ -4123,19 +4108,18 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="multimediaURL" datatype="Container">
+	    <metadataElement code="internalURL" datatype="Container">
         <labels>
           <label locale="en_US">
-            <name>Multimedia URL</name>
-            <description>An URL that leads to a photo, video, sound, ... file that is online. This could be on the INBO google folders, the INBO tandemVault or any other stable published open web URL.</description>
+            <name>Internal URL</name>
           </label>
         </labels>
 	      <elements>
-		      <metadataElement code="multimediaURL_URL" datatype="Url">
+		      <metadataElement code="internalURL_URL" datatype="Url">
             <labels>
             <label locale="en_US">
-              <name>Multimedia URL</name>
-              <description>Relevant multimedia linked to the sampling point or specimen. This could be relevant field photo's (identification), relevant measurement photo's, ...</description>
+              <name>URL</name>
+              <description>An URL that leads to a folder, file, photo, video, sound, ... that is saved in an INBO archive space. This could be on the INBO google folders, the INBO tandemVault or any other published open web URL.</description>
             </label>
             </labels>
             <settings>
@@ -4145,11 +4129,11 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
-		      <metadataElement code="multimediaURL_descr" datatype="Text">
+		      <metadataElement code="internalURL_descr" datatype="Text">
             <labels>
               <label locale="en_US">
                 <name>Multimedia description</name>
-                <description>Short escription of the file and its relevance</description>
+                <description>Short description of the file and its relevance</description>
               </label>
             </labels>
             <settings>
@@ -5549,23 +5533,12 @@
           </metadataElement>
 	      </elements>
         <typeRestrictions>
-          <restriction code="r_waterObject">
+          <restriction code="r_object">
             <table>ca_objects</table>
-            <type>waterObject</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">20</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_dnaSample">
-            <table>ca_objects</table>
-            <type>dnaSample</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">50</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -6411,8 +6384,6 @@
         <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
-            <type>observation</type>
-            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -7846,7 +7817,7 @@
 			  <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
-            <type>plantObject</type>
+            <type>animalObject</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -8944,7 +8915,7 @@
               <bundle>ca_attribute_preparationDate</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Specimen creation date</setting>
-                <setting name="description" locale="en_US">This is the date/time that the specimen/object was created. When this is the first object in the hierarchy, this date equals the sampling date. When this a second or third object in the sequence (e.g. a DNA sample is created on a later date than the sampling of the tissue sample). The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
+                <setting name="description" locale="en_US">This is the date/time that the specimen/object was created. When this is the first object in the hierarchy, this date equals the sampling date. When this a second or third object in the sequence, it will differ (e.g. a DNA sample is created on a later date than the sampling of the tissue sample). The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
 				        <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
@@ -8983,11 +8954,9 @@
 			      <placement code="sexPlant" typeRestrictions="observationPlant,plantObject,oDNA" includeSubtypes="1">
               <bundle>ca_attribute_sexPlant</bundle>
 			        <settings>
-                <setting name="description" locale="en_US">Explanation to list options: https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0. If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 				        <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="documentation_url">https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0</setting>
               </settings>
 			      </placement>
 			      <placement code="sexAnimal" typeRestrictions="observationAnimal,animalObject,oDNA" includeSubtypes="1">
@@ -9465,51 +9434,6 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-			      <placement code="decompositionCategory" typeRestrictions="animalObject" includeSubtypes="1">
-              <bundle>ca_attribute_decompositionCategory</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Decomposition category of the animal(s) at the time of sampling</setting>
-		            <setting name="description" locale="en_US">DCC1: extremely fresh (e.g. animal was still alive at collection, or the animal was euthanized and collection occurred immediately after). DCC2: fresh (i.e. animal that has only recently died, no signs of decomposition). DCC3: moderate decomposition (for example: mammal its belly is swollen, hair detaches, fly eggs, ..). DCC4: advanced decomposition (for example: mammal its belly is swollen, hair detaches, maggots, ...). DCC5: mummified (animal is (partly) decomposed).</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
-			      <placement code="lifeStage_animal" typeRestrictions="animalObject" includeSubtypes="1">
-              <bundle>ca_attribute_lifeStageAnimal</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
-                <setting name="description" locale="en_US">Due to sampling, the life stage of the animal at time object(s) were collected becomes a fixed value.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
-			      <placement code="lifeStage_plant" typeRestrictions="plantObject" includeSubtypes="1">
-              <bundle>ca_attribute_lifeStagePlant</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
-                <setting name="description" locale="en_US">Due to sampling, the life stage of the plant at time object(s) were collected becomes a fixed value.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-            </placement>
-			      <placement code="reprCond_animal" typeRestrictions="animalObject" includeSubtypes="1">
-              <bundle>ca_attribute_reprCondAnimal</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Reproductive condition (dwc:reproductiveCondition)</setting>
-                <setting name="description" locale="en_US">Reproductive condition of the organism at time object(s) were collected</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="expand_collapse_value">collapse</setting>
-			        </settings>
-            </placement>
-			      <placement code="reprCond_plant" typeRestrictions="plantObject" includeSubtypes="1">
-              <bundle>ca_attribute_reprCondPlant</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Reproductive condition (dwc:reproductiveCondition)</setting>
-                <setting name="description" locale="en_US">Reproductive condition of the organism at time object(s) were collected</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="expand_collapse_value">collapse</setting>
-			        </settings>
-            </placement>		 		 		 		 		 		 		 		 
           </bundlePlacements>
         </screen>
 		    <screen idno="obj_measurements" default="0">
@@ -9660,6 +9584,79 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
+			      <placement code="decompositionCategory" typeRestrictions="animalObject" includeSubtypes="1">
+              <bundle>ca_attribute_decompositionCategory</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Decomposition category of the animal(s) at the time of sampling</setting>
+		            <setting name="description" locale="en_US">DCC1: extremely fresh (e.g. animal was still alive at collection, or the animal was euthanized and collection occurred immediately after). DCC2: fresh (i.e. animal that has only recently died, no signs of decomposition). DCC3: moderate decomposition (for example: mammal its belly is swollen, hair detaches, fly eggs, ..). DCC4: advanced decomposition (for example: mammal its belly is swollen, hair detaches, maggots, ...). DCC5: mummified (animal is (partly) decomposed).</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+			      <placement code="sexPlant" typeRestrictions="observationPlant,plantObject,oDNA" includeSubtypes="1">
+              <bundle>ca_attribute_sexPlant</bundle>
+			        <settings>
+                <setting name="description" locale="en_US">Explanation to list options: https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0. If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+				        <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="documentation_url">https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0</setting>
+              </settings>
+			      </placement>
+			      <placement code="sexAnimal" typeRestrictions="observationAnimal,animalObject,oDNA" includeSubtypes="1">
+              <bundle>ca_attribute_sexAnimal</bundle>
+			        <settings>
+                <setting name="description" locale="en_US">If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
+				        <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+			      </placement>
+			      <placement code="genotype" typeRestrictions="animalObject,observationAnimal,plantObject,observationPlant,oDNA" includeSubtypes="1">
+              <bundle>ca_attribute_genotype</bundle>
+			        <settings>
+                <setting name="description" locale="en_US">It is possible that a plant or animal (and its derived objects) are genotyped by different genetic markers, new genotypes can be added over time.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+				        <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">25</setting>
+              </settings>
+			      </placement>
+			      <placement code="lifeStage_animal" typeRestrictions="animalObject" includeSubtypes="1">
+              <bundle>ca_attribute_lifeStageAnimal</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
+                <setting name="description" locale="en_US">Due to sampling, the life stage of the animal at time object(s) were collected becomes a fixed value.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+			      <placement code="lifeStage_plant" typeRestrictions="plantObject" includeSubtypes="1">
+              <bundle>ca_attribute_lifeStagePlant</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
+                <setting name="description" locale="en_US">Due to sampling, the life stage of the plant at time object(s) were collected becomes a fixed value.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+			      <placement code="reprCond_animal" typeRestrictions="animalObject" includeSubtypes="1">
+              <bundle>ca_attribute_reprCondAnimal</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Reproductive condition (dwc:reproductiveCondition)</setting>
+                <setting name="description" locale="en_US">Reproductive condition of the organism at time object(s) were collected</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
+			        </settings>
+            </placement>
+			      <placement code="reprCond_plant" typeRestrictions="plantObject" includeSubtypes="1">
+              <bundle>ca_attribute_reprCondPlant</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Reproductive condition (dwc:reproductiveCondition)</setting>
+                <setting name="description" locale="en_US">Reproductive condition of the organism at time object(s) were collected</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
+			        </settings>
+            </placement>		 		 		 		 		 		 		 		 
           </bundlePlacements>
         </screen>
 		    <screen idno="biodiversity" default="0">
@@ -9694,18 +9691,18 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="multimediaURL_obj" typeRestrictions="object" includeSubtypes="1">
-              <bundle>ca_attribute_multimediaURL</bundle>
+            <placement code="internalURL_obj" typeRestrictions="object" includeSubtypes="1">
+              <bundle>ca_attribute_internalURL</bundle>
 			        <settings>
-				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
-                <setting name="description" locale="en_US">Relevant multimedia linked to the object/specimen. This could be relevant field photo's (identification), relevant measurement photo's, ...</setting>
+				        <setting name="add_label" locale="en_US">Add URL</setting>
+                <description>An URL LINKED TO THE OBJECT (i.e. not the sampling point). This URL leads to a folder, file, photo, video, sound, ... that is saved in an INBO archive space. This could be on the INBO google folders, the INBO tandemVault or any other published open web URL.</description>
 			        </settings>
             </placement>
-            <placement code="multimediaURL_obs" typeRestrictions="observation" includeSubtypes="1">
-              <bundle>ca_attribute_multimediaURL</bundle>
+            <placement code="internalURL_obs" typeRestrictions="observation" includeSubtypes="1">
+              <bundle>ca_attribute_internalURL</bundle>
 			        <settings>
-				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
-                <setting name="description" locale="en_US">Relevant multimedia linked to the sampling point. This could be relevant field photo's (identification), relevant measurement photo's, ...</setting>
+				        <setting name="add_label" locale="en_US">Add URL</setting>
+                <description>An URL LINKED TO THE SAMPLING POINT (i.e. not the object). This URL leads to a folder, file, photo, video, sound, ... that is saved in an INBO archive space. This could be on the INBO google folders, the INBO tandemVault or any other published open web URL.</description>
 			        </settings>
             </placement>
             <placement code="reference_obj" typeRestrictions="object" includeSubtypes="1">
@@ -10773,10 +10770,10 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="multimediaURL">
-              <bundle>ca_attribute_multimediaURL</bundle>
+            <placement code="internalURL">
+              <bundle>ca_attribute_internalURL</bundle>
 			        <settings>
-				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
+				        <setting name="add_label" locale="en_US">Add URL</setting>
 			        </settings>
             </placement>
             <placement code="reference">
@@ -10932,10 +10929,10 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="multimediaURL" typeRestrictions="box,drawerShelf,cabinetFridgeFreezer,room,floor,building">
-              <bundle>ca_attribute_multimediaURL</bundle>
+            <placement code="internalURL" typeRestrictions="box,drawerShelf,cabinetFridgeFreezer,room,floor,building">
+              <bundle>ca_attribute_internalURL</bundle>
 			        <settings>
-				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
+				        <setting name="add_label" locale="en_US">Add URL</setting>
 			        </settings>
             </placement>
             <placement code="reference" typeRestrictions="box,drawerShelf,cabinetFridgeFreezer,room,floor,building">
@@ -11222,11 +11219,11 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="objectLot_multimediaURL">
-              <bundle>ca_attribute_multimediaURL</bundle>
+            <placement code="objectLot_internalURL">
+              <bundle>ca_attribute_internalURL</bundle>
 			        <settings>
-				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
-                <setting name="description" locale="en_US">Relevant multimedia linked to the object/specimen. This could be relevant field photo's (identification), relevant measurement photo's, ...</setting>
+				        <setting name="add_label" locale="en_US">Add URL</setting>
+                <description>An URL LINKED TO THE OBJECT LOT (i.e. not the sampling point, nor the objects within the object lot). This URL leads to a folder, file, photo, video, sound, ... that is saved in an INBO archive space. This could be on the INBO google folders, the INBO tandemVault or any other published open web URL.</description>
 			        </settings>
             </placement>
             <placement code="objectLot_reference">
@@ -11472,12 +11469,12 @@
                 <setting name="restrict_to_types">object</setting>
 			        </settings>
             </placement>
-            <placement code="multimediaURL">
-              <bundle>ca_attribute_multimediaURL</bundle>
+            <placement code="internalURL">
+              <bundle>ca_attribute_internalURL</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Visual representation of the loan</setting>
-                <setting name="description" locale="en_US">This can be photos or videos, to document condition, volume, ...; either before sending out the loan, or when receiving the loan.</setting>
-				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
+                <setting name="description" locale="en_US">This can be photos or videos, to document condition, volume, ...; either before sending out the loan, or when receiving the loan. This URL leads to a folder, photo, video, ... that is saved in an INBO archive space. This could be on the INBO google folders, the INBO tandemVault or any other published open web URL.</setting>
+				        <setting name="add_label" locale="en_US">Add URL</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
