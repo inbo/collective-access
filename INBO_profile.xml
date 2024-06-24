@@ -8,14 +8,14 @@
   <!--https://github.com/inbo/collective-access/issues/93-->
   <!--https://github.com/inbo/collective-access/issues/111-->
   <!--https://github.com/inbo/collective-access/issues/112-->
+  <!--https://github.com/inbo/collective-access/issues/116-->
   <!--https://github.com/inbo/collective-access/issues/132-->
   <!--https://github.com/inbo/collective-access/issues/138-->
+  <!--https://github.com/inbo/collective-access/issues/145-->
+  <!--https://github.com/inbo/collective-access/issues/118-->
+  <!--https://github.com/inbo/collective-access/issues/120-->
   <locales>
     <locale lang="en" country="US">English</locale>
-    <locale lang="nl" country="BE" dontUseForCataloguing="1">Nederlands</locale>
-    <locale lang="de" country="DE" dontUseForCataloguing="1">Deutsch (Deutschland)</locale>
-    <locale lang="fr" country="FR" dontUseForCataloguing="1">Français</locale>
-    <locale lang="it" country="IT" dontUseForCataloguing="1">Italiano</locale>
   </locales>
   <lists>
     <!--Management lists-->
@@ -1319,71 +1319,6 @@
           </item>
         </items>
 	    </list>
-      <list code="object_representation_types" hierarchical="1" system="0" vocabulary="0">
-        <labels>
-          <label locale="en_US">
-            <name>Multimedia types</name>
-          </label>
-        </labels>
-        <items>
-          <item idno="objectMultimedia" enabled="1" default="1"><!--For example: a photo of the object-->
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>object multimedia</name_singular>
-                <name_plural>object multimedia</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="observationMultimedia" enabled="1" default="1"><!--For example: a photo of the plant,animal-->
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>observation multimedia</name_singular>
-                <name_plural>observation multimedia</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="samplingMultimedia" enabled="1" default="1"><!--For example: a photo of the procedure/sampling-->
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>sampling multimedia</name_singular>
-                <name_plural>sampling multimedia</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="measurementMultimedia" enabled="1" default="1"><!--For example: a photo of the measurement-->
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>measurement multimedia</name_singular>
-                <name_plural>measurement multimedia</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="collectionMultimedia" enabled="1" default="1"><!--For example: a photo of the collection-->
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>collection multimedia</name_singular>
-                <name_plural>collection multimedia</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="curationMultimedia" enabled="1" default="1"><!--For example: a photo of the collection-->
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>curation multimedia</name_singular>
-                <name_plural>curation multimedia</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="loanMultimedia" enabled="1" default="1"><!--For example: a photo of the collection-->
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>curation multimedia</name_singular>
-                <name_plural>curation multimedia</name_plural>
-              </label>
-            </labels>
-          </item>
-        </items>
-      </list>
       <list code="loan_types" hierarchical="0" system="0" vocabulary="0">
         <labels>
           <label locale="en_US">
@@ -4555,14 +4490,6 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_object_representations">
-            <table>ca_object_representations</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
         </typeRestrictions>
       </metadataElement>	    
       <metadataElement code="verbatimDate" datatype="Text">
@@ -4748,6 +4675,42 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
+	    <metadataElement code="samplingDate" datatype="DateRange">
+        <labels>
+          <label locale="en_US">
+            <name>Sampling date (range) and time (range)</name>
+            <description>Represents an historic date (range) of sampling accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
+          </label>
+        </labels>
+	      <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">40</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">1</setting>
+          <setting name="maxChars">65535</setting>
+          <setting name="canBeUsedInSort">1</setting>
+          <setting name="canBeUsedInSearchForm">1</setting>
+          <setting name="canBeUsedInDisplay">1</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <settings>
+              <setting name="minAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>	    
       <metadataElement code="preparationDate" datatype="DateRange">
         <labels>
           <label locale="en_US">
@@ -4759,7 +4722,7 @@
         <settings>
           <setting name="fieldWidth">40</setting>
           <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
+          <setting name="minChars">1</setting>
           <setting name="maxChars">65535</setting>
           <setting name="useDatePicker">1</setting>
           <setting name="canBeUsedInSort">1</setting>
@@ -4772,7 +4735,7 @@
             <type>object</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
-              <setting name="minAttributesPerRow">0</setting>
+              <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
@@ -4832,7 +4795,7 @@
         <labels>
           <label locale="en_US">
             <name>Decomposition category</name>
-		        <description>Decomposition category of the organism at the time of collection. DCC1: extremely fresh (e.g. animal/plant was still alive at collection, or the animal was euthanized and collection occurred immediately after). DCC2: fresh (i.e. animal that has only recently died, no signs of decomposition / the collected leaves were fallen off the tree but still green). DCC3: moderate decomposition (for example: mammal its belly is swollen, hair detaches, fly eggs, .. / leaves start to turn brown). DCC4: advanced decomposition (for example: mammal its belly is swollen, hair detaches, maggots, ... / leaves are completely brown). DCC5: mummified (animal is (partly) decomposed).</description>
+		        <description>Decomposition category of the organism at the time of sampling. DCC1: extremely fresh (e.g. animal/plant was still alive at collection, or the animal was euthanized and collection occurred immediately after). DCC2: fresh (i.e. animal that has only recently died, no signs of decomposition / the collected leaves were fallen off the tree but still green). DCC3: moderate decomposition (for example: mammal its belly is swollen, hair detaches, fly eggs, .. / leaves start to turn brown). DCC4: advanced decomposition (for example: mammal its belly is swollen, hair detaches, maggots, ... / leaves are completely brown). DCC5: mummified (animal is (partly) decomposed).</description>
           </label>
         </labels>
 	      <settings>
@@ -4975,7 +4938,7 @@
           <metadataElement code="dnaConcProcedure" datatype="Text">
             <labels>
               <label locale="en_US">
-                <name>eventProcedure</name>
+                <name>DNA concentration procedure</name>
                 <description>Description of the measurement procedure.</description>
               </label>
             </labels>
@@ -6355,14 +6318,14 @@
         <settings>
           <setting name="fieldWidth">70</setting>
           <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
+          <setting name="minChars">1</setting>
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
             <settings>
-              <setting name="minAttributesPerRow">0</setting>
+              <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
@@ -6955,7 +6918,7 @@
         <settings>
           <setting name="fieldWidth">70</setting>
           <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
+          <setting name="minChars">1</setting>
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
@@ -6964,7 +6927,7 @@
             <type>soilObject</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
-              <setting name="minAttributesPerRow">0</setting>
+              <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
@@ -6974,7 +6937,7 @@
             <type>waterObject</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
-              <setting name="minAttributesPerRow">0</setting>
+              <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
@@ -7239,6 +7202,35 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
+	    <metadataElement code="waterbodyType" datatype="List" list="waterbody_type">
+        <labels>
+          <label locale="en_US">
+            <name>Waterbody types</name>
+          </label>
+        </labels>
+	      <settings>
+          <setting name="fieldWidth">40</setting>
+          <setting name="doesNotTakeLocale">1</setting>
+        </settings>
+	      <typeRestrictions>
+          <restriction code="r_object">
+            <table>ca_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_objectLots">
+            <table>ca_object_lots</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
     <!--Object characteristics-->
 	    <metadataElement code="IDContainer" datatype="Container">
         <labels>
@@ -7310,11 +7302,77 @@
 		      </metadataElement>
         </elements>
         <typeRestrictions>
-          <restriction code="r_ID_objects">
+          <restriction code="r_observationSoil">
             <table>ca_objects</table>
+            <type>observationSoil</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">25</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_soilObjects">
+            <table>ca_objects</table>
+            <type>soilObject</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_observationWater">
+            <table>ca_objects</table>
+            <type>observationWater</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_waterObjects">
+            <table>ca_objects</table>
+            <type>waterObject</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_observationAnimal">
+            <table>ca_objects</table>
+            <type>observationAnimal</type>
+            <settings>
+              <setting name="minAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_animalObject">
+            <table>ca_objects</table>
+            <type>animalObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_observationPlant">
+            <table>ca_objects</table>
+            <type>observationPlant</type>
+            <settings>
+              <setting name="minAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_plantObject">
+            <table>ca_objects</table>
+            <type>plantObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -7343,7 +7401,7 @@
           <setting name="maxChars">65535</setting>
 			  </settings>
 			  <typeRestrictions>
-          <restriction code="r_objects">
+          <restriction code="r_animalObjects">
             <table>ca_objects</table>
             <type>animalObject</type>
             <includeSubtypes>1</includeSubtypes>
@@ -7560,67 +7618,13 @@
             <table>ca_object_lots</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="maxAttributesPerRow">10</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
         </typeRestrictions>
       </metadataElement>
 	  <!--Sampling event-->
-      <metadataElement code="eventProcedure" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>eventProcedure</name>
-            <description>Description of the procedure.</description>
-          </label>
-        </labels>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-	        <restriction code="r_observation">
-            <table>ca_occurrences</table>
-		        <type>observation</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-	        <restriction code="r_fieldwork">
-            <table>ca_occurrences</table>
-		        <type>fieldwork</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-	        <restriction code="r_valuation">
-            <table>ca_occurrences</table>
-		        <type>valuation</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-	        <restriction code="r_curation">
-            <table>ca_occurrences</table>
-		        <type>curation</type>
-            <includeSubtypes> 1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-	      </typeRestrictions>
-      </metadataElement>
       <metadataElement code="samplingProtocol" datatype="Container">
         <labels>
           <label locale="en_US">
@@ -7809,6 +7813,88 @@
           </restriction>
 			  </typeRestrictions>
 	    </metadataElement>	    	    	    	    
+    <!--Events-->
+	    <metadataElement code="eventDate" datatype="DateRange">
+        <labels>
+          <label locale="en_US">
+            <name>Event date (range) and time (range)</name>
+            <description>Represents an historic date (range) of an event. Accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
+          </label>
+        </labels>
+	      <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">40</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">1</setting>
+          <setting name="maxChars">65535</setting>
+          <setting name="canBeUsedInSort">1</setting>
+          <setting name="canBeUsedInSearchForm">1</setting>
+          <setting name="canBeUsedInDisplay">1</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_events">
+            <table>ca_occurrences</table>
+            <settings>
+              <setting name="minAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="eventProcedure" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Event Procedure</name>
+            <description>Description of the procedure. Could be including relevant URLs.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+	        <restriction code="r_objects">
+            <table>ca_objects</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+	        <restriction code="r_fieldwork">
+            <table>ca_occurrences</table>
+		        <type>fieldwork</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+	        <restriction code="r_valuation">
+            <table>ca_occurrences</table>
+		        <type>valuation</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+	        <restriction code="r_curation">
+            <table>ca_occurrences</table>
+		        <type>curation</type>
+            <includeSubtypes> 1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+	      </typeRestrictions>
+      </metadataElement>
     <!--Valuation-->
 	    <metadataElement code="valuationArgument" datatype="List" list="value_argument">
         <labels>
@@ -7829,7 +7915,7 @@
             <type>valuation</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">20</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -7946,7 +8032,15 @@
             <table>ca_collections</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_places">
+            <table>ca_places</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -8067,7 +8161,7 @@
             <table>ca_entities</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">10</setting>
+              <setting name="maxAttributesPerRow">5</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -8090,7 +8184,7 @@
             <table>ca_entities</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">10</setting>
+              <setting name="maxAttributesPerRow">5</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -8232,7 +8326,7 @@
         <settings>
           <setting name="fieldWidth">70</setting>
           <setting name="fieldHeight">5</setting>
-          <setting name="minChars">0</setting>
+          <setting name="minChars">1</setting>
           <setting name="maxChars">65535</setting>
         </settings>
 	      <typeRestrictions>
@@ -8677,7 +8771,7 @@
               <table>ca_collections</table>
               <settings>
                 <setting name="minAttributesPerRow">0</setting>
-                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="maxAttributesPerRow">50</setting>
                 <setting name="minimumAttributeBundlesToDisplay">1</setting>
               </settings>
             </restriction>
@@ -8885,12 +8979,10 @@
               </settings>
             </placement>
             <placement code="samplingDate" typeRestrictions="object" includeSubtypes="1">
-              <bundle>ca_attribute_dateRange</bundle>
+              <bundle>ca_attribute_samplingDate</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Sampling date</setting>
                 <setting name="description" locale="en_US">This is the date/time that becomes fixed due to sampling the sampling point to its first object. The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
-				        <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
             <placement code="preparationDate" typeRestrictions="object" includeSubtypes="1">
@@ -8898,8 +8990,6 @@
 			        <settings>
                 <setting name="label" locale="en_US">Specimen creation date</setting>
                 <setting name="description" locale="en_US">This is the date/time that the specimen/object was created. When this is the first object in the hierarchy, this date equals the sampling date. When this a second or third object in the sequence, it will differ (e.g. a DNA sample is created on a later date than the sampling of the tissue sample). The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
-				        <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
             <placement code="ca_storage_location" typeRestrictions="object" includeSubtypes="1">
@@ -8937,8 +9027,6 @@
               <bundle>ca_attribute_sexPlant</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
-				        <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
 			      <placement code="sexAnimal" typeRestrictions="observationAnimal,animalObject,oDNA" includeSubtypes="1">
@@ -8946,8 +9034,6 @@
 			        <settings>
                 <setting name="description" locale="en_US">If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
                 <setting name="expand_collapse_no_value">expand</setting>
-				        <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
 			      <placement code="genotype" typeRestrictions="animalObject,observationAnimal,plantObject,observationPlant,oDNA" includeSubtypes="1">
@@ -8955,16 +9041,12 @@
 			        <settings>
                 <setting name="description" locale="en_US">It is possible that a plant or animal (and its derived objects) are genotyped by different genetic markers, new genotypes can be added over time.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-				        <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">25</setting>
               </settings>
 			      </placement>
 			      <placement code="status">
               <bundle>status</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Cataloguing status</setting>
-				        <setting name="minRelationshipsPerRow">1</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="documentation_url"https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0</setting>
               </settings>
             </placement>
@@ -9056,7 +9138,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Object belongs to collection</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">10</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -9081,8 +9163,6 @@
               <bundle>ca_attribute_seedlotRelationContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Relation of the seeds in the seedlot</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -9145,17 +9225,13 @@
               <settings>
                 <setting name="label" locale="en_US">Verbatim locality (dwc:verbatimLocality)</setting>
                 <setting name="description" locale="en_US">The original description of a locality, a place, the geographic coverage, ...</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-            <placement code="provenance" typeRestrictions="observationPlant">
+            <placement code="provenance" typeRestrictions="observationPlant,plantObject" includeSubtypes="1">
               <bundle>ca_attribute_provenance</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The provenance</setting>
                 <setting name="description" locale="en_US">The plant sampling point has the provenance. As provenance concepts are dependent on the taxon, these are logged separately.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
@@ -9164,8 +9240,6 @@
               <settings>
                 <setting name="label" locale="en_US">Verbatim longitude (X) (dwc:verbatimLongitude)</setting>
                 <setting name="description" locale="en_US">The original description of the longitude (X).</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
             <placement code="verbatimLatitudeY">
@@ -9173,8 +9247,6 @@
               <settings>
                 <setting name="label" locale="en_US">Verbatim latitude (Y) (dwc:verbatimLatitude)</setting>
                 <setting name="description" locale="en_US">The original description of the latitude (Y).</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
 			      <placement code="verbatimSRS">
@@ -9182,8 +9254,6 @@
               <settings>
                 <setting name="label" locale="en_US">Verbatim SRS (dwc:verbatimSRS)</setting>
                 <setting name="description" locale="en_US">The spatial reference system (SRS) of the original coordinates.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
 			      <placement code="verbatimGeoreferenceProtocol">
@@ -9191,8 +9261,6 @@
               <settings>
                 <setting name="label" locale="en_US">Georeference procedure (dwc:georeferenceProtocol)</setting>
                 <setting name="description" locale="en_US">A short description of the procedure that resulting in collecting the verbatim georeference information.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
 			      <placement code="standardizedGeoreferenceWGS84">
@@ -9200,8 +9268,6 @@
               <settings>
                 <setting name="label" locale="en_US">Standardized georeference data</setting>
                 <setting name="description" locale="en_US">The georeferenced location of the observation, standardized using the CMS.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
 			      <placement code="verbatimElevation">
@@ -9209,24 +9275,18 @@
               <settings>
                 <setting name="label" locale="en_US">Verbatim elevation (dwc:verbatimElevation)</setting>
                 <setting name="description" locale="en_US">The original description of the elevation. From the notes, Excel/Gsheet, dataset, ...</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
 			      <placement code="minimumElevationInMeters">
               <bundle>ca_attribute_minimumElevationInMeters</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The minimum elevation in meters (dwc:minimumElevationInMeters)</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
 			      <placement code="maximumElevationInMeters">
               <bundle>ca_attribute_maximumElevationInMeters</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The maximum elevation in meters (dwc:maximumElevationInMeters)</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
 			      <placement code="verticalDatum">
@@ -9234,16 +9294,12 @@
               <settings>
                 <setting name="label" locale="en_US">Vertical datum (dwc:verticalDatum)</setting>
                 <setting name="description" locale="en_US">The vertical datum used as the reference upon which the values in the elevation terms are based.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
 			      <placement code="waterbodyType">
               <bundle>ca_attribute_waterbodyType</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Waterbody type</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
           </bundlePlacements>
@@ -9315,12 +9371,10 @@
           </typeRestrictions>
           <bundlePlacements>
             <placement code="samplingDate" typeRestrictions="object" includeSubtypes="1">
-              <bundle>ca_attribute_dateRange</bundle>
+              <bundle>ca_attribute_samplingDate</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Sampling date</setting>
                 <setting name="description" locale="en_US">This is the date/time that becomes fixed due to sampling the sampling point to its first object. The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
-				        <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
             <placement code="preparationDate" typeRestrictions="object" includeSubtypes="1">
@@ -9328,11 +9382,9 @@
 			        <settings>
                 <setting name="label" locale="en_US">Specimen creation date</setting>
                 <setting name="description" locale="en_US">This is the date/time that the specimen/object was created. When this is the first object in the hierarchy, this date equals the sampling date. When this a second or third object in the sequence (e.g. a DNA sample is created on a later date than the sampling of the tissue sample), this date will differ from the sampling date. The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
-				        <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-            <placement code="preparedBy">
+            <placement code="ca_entities_preparedBy">
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Prepared by</setting>
@@ -9347,65 +9399,43 @@
 			        <settings>
                 <setting name="label" locale="en_US">Verbatim notes</setting>
                 <setting name="description" locale="en_US">Any relevant unstructured information on the object (e.g. notes, comments) literally transcribed from the original source (e.g. paper inventory, field notes). Tip: under the screen "Multimedia and files" you can link any relevant field files, photos, ...</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="verbatimDepthSoil" typeRestrictions="soilObject">
-              <bundle>ca_attribute_verbatimDepth</bundle>
-              <settings>
-                <setting name="label" locale="en_US">The original description of the depth of sampling</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
-				        <setting name="maxRelationshipsPerRow">2</setting>
-              </settings>
-			      </placement>
 			      <placement code="verbatimDepth" typeRestrictions="eDnaWaterFilter,watersample">
               <bundle>ca_attribute_verbatimDepth</bundle>
               <settings>
                 <setting name="label" locale="en_US">The original description of the depth of sampling</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
 			      <placement code="minimumDepthInMetres" typeRestrictions="eDnaWaterFilter,watersample,soilObject">
               <bundle>ca_attribute_minimumDepthInMetres</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The minimum sampling depth in meters</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
 			      <placement code="maximumDepthInMetres" typeRestrictions="eDnaWaterFilter,watersample,soilObject">
               <bundle>ca_attribute_maximumDepthInMeters</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The maximum sampling depth in meters</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
 			      <placement code="verbatimHeight" typeRestrictions="stemDisc">
               <bundle>ca_attribute_verbatimHeight</bundle>
               <settings>
                 <setting name="label" locale="en_US">The original description of the height of sampling on the plant.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
 			      <placement code="minimumHeightInMetres" typeRestrictions="stemDisc">
               <bundle>ca_attribute_minimumHeightInMetres</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The minimum sampling height in metres</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
 			      <placement code="maximumHeightInMetres" typeRestrictions="stemDisc">
               <bundle>ca_attribute_maximumHeightInMetres</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The maximum sampling height in metres.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
 			      <placement code="samplingProtocol">
@@ -9413,8 +9443,6 @@
               <settings>
                 <setting name="label" locale="en_US">Sampling procedure</setting>
                 <setting name="description" locale="en_US">Text field to (concisely) describe the procedure (if relevant).</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -9572,8 +9600,6 @@
 			        <settings>
                 <setting name="label" locale="en_US">Decomposition category of the animal(s) at the time of sampling</setting>
 		            <setting name="description" locale="en_US">DCC1: extremely fresh (e.g. animal was still alive at collection, or the animal was euthanized and collection occurred immediately after). DCC2: fresh (i.e. animal that has only recently died, no signs of decomposition). DCC3: moderate decomposition (for example: mammal its belly is swollen, hair detaches, fly eggs, ..). DCC4: advanced decomposition (for example: mammal its belly is swollen, hair detaches, maggots, ...). DCC5: mummified (animal is (partly) decomposed).</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
 			      <placement code="sexPlant" typeRestrictions="observationPlant,plantObject,oDNA" includeSubtypes="1">
@@ -9581,8 +9607,6 @@
 			        <settings>
                 <setting name="description" locale="en_US">Explanation to list options: https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0. If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-				        <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="documentation_url">https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0</setting>
               </settings>
 			      </placement>
@@ -9591,8 +9615,6 @@
 			        <settings>
                 <setting name="description" locale="en_US">If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
                 <setting name="expand_collapse_no_value">expand</setting>
-				        <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
 			      <placement code="genotype" typeRestrictions="animalObject,observationAnimal,plantObject,observationPlant,oDNA" includeSubtypes="1">
@@ -9600,8 +9622,6 @@
 			        <settings>
                 <setting name="description" locale="en_US">It is possible that a plant or animal (and its derived objects) are genotyped by different genetic markers, new genotypes can be added over time.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-				        <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">25</setting>
               </settings>
 			      </placement>
 			      <placement code="lifeStage_animal" typeRestrictions="animalObject" includeSubtypes="1">
@@ -9609,8 +9629,6 @@
 			        <settings>
                 <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
                 <setting name="description" locale="en_US">Due to sampling, the life stage of the animal at time object(s) were collected becomes a fixed value.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
 			      <placement code="lifeStage_plant" typeRestrictions="plantObject" includeSubtypes="1">
@@ -9618,8 +9636,6 @@
 			        <settings>
                 <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
                 <setting name="description" locale="en_US">Due to sampling, the life stage of the plant at time object(s) were collected becomes a fixed value.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
 			      <placement code="reprCond_animal" typeRestrictions="animalObject" includeSubtypes="1">
@@ -9774,8 +9790,6 @@
               <bundle>status</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Cataloguing status</setting>
-				        <setting name="minRelationshipsPerRow">1</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
 			      <placement code="qualityFlag">
@@ -9810,7 +9824,7 @@
                 <setting name="restrict_to_relationship_types">previousOwner</setting>
               </settings>
             </placement>
-            <placement code="ca_entities_Contact">
+            <placement code="ca_entities_contact">
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Contact</setting>
@@ -9916,8 +9930,6 @@
               <bundle>ca_attribute_blockedUntil</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Re-use of the object is blocked until this date</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
             <placement code="restriction_use">
@@ -9973,14 +9985,14 @@
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Field campaign name (preferred)</setting>
-                <setting name="description" locale="en_US">The field campaign name used in notes, datasets, publication, ... if there are multiple names or identifiers for the field campaign, all other identifiers are put in the "non-preferred labels" below.</setting>
+                <setting name="description" locale="en_US">The field campaign name used in notes, datasets, publications, ... if there are multiple names or identifiers for the field campaign, all other identifiers are put in the "non-preferred labels" below.</setting>
               </settings>
             </placement>
 			      <placement code="preferred_labels_project" typeRestrictions="project">
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Project (short) name</setting>
-                <setting name="description" locale="en_US">The project name used in notes, datasets, publication, ... if there are multiple names or identifiers for the project, all other identifiers (e.g. JIRA URL) are put in the "non-preferred labels" below.</setting>
+                <setting name="description" locale="en_US">The project name used in notes, datasets, publications, ... if there are multiple names or identifiers for the project, all other identifiers (e.g. JIRA URL) are put in the "non-preferred labels" below.</setting>
               </settings>
             </placement>
 			      <placement code="preferred_labels_valuation" typeRestrictions="valuation">
@@ -10015,12 +10027,10 @@
               </settings>
             </placement>
 			      <placement code="dateRange" typeRestrictions="fieldwork,project,valuation,disposal,treatment,renewal,transfer">
-              <bundle>ca_attribute_dateRange</bundle>
+              <bundle>ca_attribute_eventDate</bundle>
               <!--http://rs.tdwg.org/dwc/terms/dateIdentified-->
               <settings>
                 <setting name="label" locale="en_US">Date (range) and time (range), standardised.</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
 			      <placement code="verbatimLocality" typeRestrictions="fieldwork,project">
@@ -10028,8 +10038,6 @@
               <settings>
                 <setting name="label" locale="en_US">Verbatim locality</setting>
                 <setting name="description" locale="en_US">The original description of a locality, a place, the geographic coverage, ...</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
             <placement code="ca_places_fieldworkProject" typeRestrictions="fieldwork,project">
@@ -10046,8 +10054,6 @@
               <bundle>status</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Cataloguing status</setting>
-				        <setting name="minRelationshipsPerRow">1</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
             <placement code="valuationArgument" typeRestrictions="valuation">
@@ -10122,35 +10128,18 @@
                 <setting name="list_format" locale="en_US">list</setting>
               </settings>
             </placement>
-			      <placement code="eventPublishedProcedure" typeRestrictions="fieldwork,valuation,curation,disposal,treatment,renewal,transfer">
-              <bundle>ca_attribute_publication</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Procedure doi</setting>
-                <setting name="description" locale="en_US">Procedure doi if published, such as in an article, a standardized opering procedure (SOP), ...</setting>
-				        <!--http://rs.tdwg.org/dwc/terms/identificationReferences-->
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-			      <placement code="eventProcedure" typeRestrictions="fieldwork,valuation,curation,disposal,treatment,renewal,transfer">
+			      <placement code="eventProcedure" typeRestrictions="valuation,curation,disposal,treatment,renewal,transfer">
               <bundle>ca_attribute_eventProcedure</bundle>
               <settings>
                 <setting name="label" locale="en_US">Description of event procedure</setting>
                 <setting name="description" locale="en_US">Text field to (concisely) describe the procedure (if relevant). Can be if: no doi-reference for procedure description or to add notes/addenda on the given published procedure.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="ca_object_representations" typeRestrictions="curation,disposal,treatment,renewal,transfer">
-              <bundle>ca_object_representations</bundle>
+            <placement code="internalURL" typeRestrictions="curation,disposal,treatment,renewal,transfer">
+              <bundle>ca_attribute_internalURL</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Photo or video of the used procedure</setting>
-                <setting name="description" locale="en_US">Photos or video that shows the handling, the executed steps.</setting>
 				        <setting name="add_label" locale="en_US">Add media</setting>
-                <setting name="restrict_to_types">curationMultimedia</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
 			      <placement code="samplingEffort" typeRestrictions="fieldwork">
@@ -10158,8 +10147,6 @@
 			        <settings>
                 <setting name="label" locale="en_US">Sampling effort</setting>
                 <setting name="description" locale="en_US">For example: if the field campaign is focussed on populations: "sampled until 30 samples of population/locality was reached".</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
@@ -10307,8 +10294,6 @@
               <bundle>status</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Cataloguing status</setting>
-				        <setting name="minRelationshipsPerRow">1</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
             <placement code="preferred_labels">
@@ -10441,8 +10426,6 @@
               <bundle>status</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Cataloguing status</setting>
-				        <setting name="minRelationshipsPerRow">1</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
 			      <placement code="preferred_labels">
@@ -10559,8 +10542,6 @@
               <bundle>status</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Cataloguing status</setting>
-				        <setting name="minRelationshipsPerRow">1</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
 			      <placement code="currentCollection">
@@ -10587,7 +10568,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="collection_place">
+			      <placement code="ca_places_collectionPlace">
               <bundle>ca_places</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Place</setting>
@@ -10860,8 +10841,6 @@
               <bundle>status</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Cataloguing status</setting>
-				        <setting name="minRelationshipsPerRow">1</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
 			      <placement code="preferred_labels">
@@ -10983,8 +10962,6 @@
               <bundle>ca_attribute_dateRange</bundle>
               <settings>
                 <setting name="label" locale="en_US">Date (range) of the object lot</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
             <placement code="preparationDate" typeRestrictions="plantation">
@@ -10992,8 +10969,6 @@
 			        <settings>
                 <setting name="label" locale="en_US">Specimen creation date</setting>
                 <setting name="description" locale="en_US">This is the date/time that the specimen/object was created. When this is the first object in the hierarchy, this date equals the sampling date. When this a second or third object in the sequence (e.g. a DNA sample is created on a later date than the sampling of the tissue sample). The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
-				        <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
             <placement code="plantationCatContainer" typeRestrictions="plantation">
@@ -11001,8 +10976,6 @@
 			        <settings>
                 <setting name="label" locale="en_US">Category of plantation</setting>
                 <setting name="description" locale="en_US">This is the category of the plantation. This can change over time.</setting>
-				        <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">10</setting>
               </settings>
             </placement>
 			      <placement code="object_lot_admin">
@@ -11082,8 +11055,6 @@
               <settings>
                 <setting name="label" locale="en_US">Verbatim locality (dwc:verbatimLocality)</setting>
                 <setting name="description" locale="en_US">The original description of a locality, a place, the geographic coverage, ...</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
             <placement code="ca_entities">
@@ -11111,8 +11082,6 @@
               <settings>
                 <setting name="label" locale="en_US">Verbatim latitude (Y) (dwc:verbatimLatitude)</setting>
                 <setting name="description" locale="en_US">The original description of the latitude (Y).</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
 			      <placement code="verbatimSRS">
@@ -11120,8 +11089,6 @@
               <settings>
                 <setting name="label" locale="en_US">Verbatim SRS (dwc:verbatimSRS)</setting>
                 <setting name="description" locale="en_US">The spatial reference system (SRS) of the original coordinates.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
 			      <placement code="verbatimGeoreferenceProtocol">
@@ -11129,8 +11096,6 @@
               <settings>
                 <setting name="label" locale="en_US">Georeference procedure (dwc:georeferenceProtocol)</setting>
                 <setting name="description" locale="en_US">A short description of the procedure that resulting in collecting the verbatim georeference information.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
 			      <placement code="standardizedGeoreferenceWGS84">
@@ -11138,8 +11103,6 @@
               <settings>
                 <setting name="label" locale="en_US">Standardized georeference data</setting>
                 <setting name="description" locale="en_US">The georeferenced location of the observation, standardized using the CMS.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
 			      <placement code="verbatimElevation">
@@ -11147,24 +11110,18 @@
               <settings>
                 <setting name="label" locale="en_US">Verbatim elevation (dwc:verbatimElevation)</setting>
                 <setting name="description" locale="en_US">The original description of the elevation. From the notes, Excel/Gsheet, dataset, ...</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
 			      <placement code="minimumElevationInMeters">
               <bundle>ca_attribute_minimumElevationInMeters</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The minimum elevation in meters (dwc:minimumElevationInMeters)</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
 			      <placement code="maximumElevationInMeters">
               <bundle>ca_attribute_maximumElevationInMeters</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The maximum elevation in meters (dwc:maximumElevationInMeters)</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
 			      <placement code="verticalDatum">
@@ -11172,8 +11129,6 @@
               <settings>
                 <setting name="label" locale="en_US">Vertical datum (dwc:verticalDatum)</setting>
                 <setting name="description" locale="en_US">The vertical datum used as the reference upon which the values in the elevation terms are based.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
           </bundlePlacements>
@@ -11230,8 +11185,6 @@
               <bundle>status</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Cataloguing status</setting>
-				        <setting name="minRelationshipsPerRow">1</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
             <placement code="ca_entities_Contact">
@@ -11315,8 +11268,6 @@
               <bundle>ca_attribute_loanStatus</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Loan status</setting>
-				        <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -11335,7 +11286,7 @@
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="restrict_to_relationship_types">requester</setting>
 				        <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">2</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
             <placement code="ca_entities_requesterBackup">
@@ -11346,7 +11297,7 @@
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="restrict_to_relationship_types">backupRequester</setting>
 				        <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">5</setting>
+                <setting name="maxRelationshipsPerRow">3</setting>
               </settings>
             </placement>
             <placement code="ca_entities_requestingInstitute">
@@ -11364,16 +11315,12 @@
               <bundle>ca_attribute_organisationalUnitName</bundle>
 			        <settings>
                 <setting name="description" locale="en_US">For the loan at hand, any extra information to be added on the package label, next to the requester and address; can be specified here; e.g. department, team or research group (at the time of loan).</setting>
-				        <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
             <placement code="address" typeRestrictions="external_out">
               <bundle>ca_attribute_address</bundle>
 			        <settings>
                 <setting name="description" locale="en_US">The full address to which the loan will be, or was, send.</setting>
-				        <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -12280,20 +12227,6 @@
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-	  <relationshipTable name="ca_entities_x_object_representations">
-      <types>
-        <type code="creator" default="1">
-          <labels>
-            <label locale="en_US">
-              <typename>created media</typename>
-              <typename_reverse>was created by</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>creator</subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
       </types>
