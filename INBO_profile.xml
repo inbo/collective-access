@@ -15,6 +15,8 @@
   <!--https://github.com/inbo/collective-access/issues/118-->
   <!--https://github.com/inbo/collective-access/issues/120-->
   <!--https://github.com/inbo/collective-access/issues/123-->
+  <!--https://github.com/inbo/collective-access/issues/129-->
+  <!--https://github.com/inbo/collective-access/issues/130-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -8475,7 +8477,7 @@
 	    <metadataElement code="basisOfScheme" datatype="List" list="basis_of_scheme">
         <labels>
           <label locale="en_US">
-            <name>ltc:basisOfScheme</name>
+            <name>Collection's basis of scheme (ltc:basisOfScheme)</name>
             <description>A summary of the basis or purpose for the CollectionDescriptionScheme. A CollectionDescriptionScheme is a grouping of multiple ObjectGroups for a particular use case, purpose or implementation.</description>
           </label>
         </labels>
@@ -8500,7 +8502,7 @@
 	    <metadataElement code="schemeName" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>ltc:schemeName</name>
+            <name>Collection's scheme name (ltc:schemeName)</name>
             <description>A short descriptive name given to the CollectionDescriptionScheme.</description>
           </label>
         </labels>
@@ -8525,7 +8527,7 @@
 	    <metadataElement code="distinctObjects" datatype="List" list="true_false">
         <labels>
           <label locale="en_US">
-            <name>ltc:distinctObjects</name>
+            <name>Collection's objects are disctinct (ltc:distinctObjects)</name>
             <description>A flag to designate whether a physical object may be described by more than one ObjectGroup within the CollectionDescriptionScheme.</description>
           </label>
         </labels>
@@ -8550,7 +8552,7 @@
 	    <metadataElement code="conditionsOfAccess" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>ltc:conditionsOfAccess</name>
+            <name>Collection's access conditions (ltc:conditionsOfAccess)</name>
             <description>Information about who can access the collection being described or an indication of its security status. If available, this should be a URL to a stable policy page.</description>
           </label>
         </labels>
@@ -8575,7 +8577,7 @@
 	    <metadataElement code="currentCollection" datatype="List" list="true_false">
         <labels>
           <label locale="en_US">
-            <name>ltc:currentCollection</name>
+            <name>Current collection (ltc:currentCollection)</name>
             <description>A flag to indicate whether the collection still exists as a single entity.</description>
           </label>
         </labels>
@@ -8600,7 +8602,7 @@
 	    <metadataElement code="knownToContainTypes" datatype="List" list="true_false">
         <labels>
           <label locale="en_US">
-            <name>ltc:knownToContainTypes</name>
+            <name>Collection has type specimens (ltc:knownToContainTypes)</name>
             <description>Flag property to indicate that the collection is known to include type specimens.</description>
           </label>
         </labels>
@@ -8625,7 +8627,7 @@
 	    <metadataElement code="discipline" datatype="List" list="discipline">
         <labels>
           <label locale="en_US">
-            <name>ltc:discipline</name>
+            <name>Collection's discipline(s) (ltc:discipline)</name>
             <description>A high level classification of the scientific discipline to which the objects within the collection belong or are related.</description>
           </label>
         </labels>
@@ -8651,7 +8653,7 @@
 	    <metadataElement code="objectType" datatype="List" list="object_types">
         <labels>
           <label locale="en_US">
-            <name>ltc:objectType</name>
+            <name>Collection's object type(s) (ltc:objectType)</name>
             <description>High-level terms for the classification of curated objects.</description>
           </label>
         </labels>
@@ -8668,7 +8670,7 @@
               <table>ca_collections</table>
               <settings>
                 <setting name="minAttributesPerRow">0</setting>
-                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="maxAttributesPerRow">50</setting>
                 <setting name="minimumAttributeBundlesToDisplay">1</setting>
               </settings>
             </restriction>
@@ -8677,7 +8679,7 @@
 	    <metadataElement code="preservationMethod" datatype="List" list="preservation_method">
         <labels>
           <label locale="en_US">
-            <name>ltc:preservationMethod</name>
+            <name>Collection's preservation method(s) (ltc:preservationMethod)</name>
             <description>A term used to classify or describe an object that indicates the primary or most recent action, measure or process that has been used in order to preserve the objects in the collection for long-term storage.</description>
           </label>
         </labels>
@@ -8694,7 +8696,7 @@
               <table>ca_collections</table>
               <settings>
                 <setting name="minAttributesPerRow">0</setting>
-                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="maxAttributesPerRow">50</setting>
                 <setting name="minimumAttributeBundlesToDisplay">1</setting>
               </settings>
             </restriction>
@@ -8703,8 +8705,8 @@
 	    <metadataElement code="degreeOfEstablishment" datatype="List" list="degree_of_establishment">
         <labels>
           <label locale="en_US">
-            <name>dwc:degreeOfEstablishment</name>
-            <description>The degree to which an Organism survives, reproduces, and expands its range at the given place and time.</description>
+            <name>Collection's dwc:degreeOfEstablishment</name>
+            <description>The degree to which an organism survives, reproduces, and expands its range at the given place and time.</description>
           </label>
         </labels>
         <documentationUrl>	http://rs.tdwg.org/dwc/terms/degreeOfEstablishment</documentationUrl>
@@ -8921,13 +8923,13 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-            <placement code="ca_collection" typeRestrictions="soilObject,waterObject,animalObject,plantObject,dnaSample" includeSubtypes="1">
+            <placement code="ca_collection_current" typeRestrictions="soilObject,waterObject,animalObject,plantObject,dnaSample" includeSubtypes="1">
               <bundle>ca_collections</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object belongs to collection</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">20</setting>
 				        <setting name="add_label" locale="en_US">Add collection</setting>
-                <setting name="restrict_to_relationship_types">partOf</setting>
+                <setting name="restrict_to_relationship_types">currentPartOf</setting>
               </settings>
             </placement>
 			      <placement code="IDContainer" typeRestrictions="animalObject,observationAnimal,plantObject,observationPlant,oDNA" includeSubtypes="1"><!--This should prepopulate with the parent value, if empty-->
@@ -9126,8 +9128,8 @@
             <placement code="ca_places">
               <bundle>ca_places</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The place</setting>
-                <setting name="description" locale="en_US">The place where the observation(s) occurred.</setting>
+                <setting name="label" locale="en_US">Toponym</setting>
+                <setting name="description" locale="en_US">The place or toponym, chosen from the standardized list.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="useHierarchicalBrowser">0</setting>
@@ -9137,7 +9139,7 @@
               <bundle>ca_attribute_verbatimLocality</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim locality (dwc:verbatimLocality)</setting>
-                <setting name="description" locale="en_US">The original description of a locality, a place, the geographic coverage, ...</setting>
+                <setting name="description" locale="en_US">The original description of a locality, a place, the geographic coverage/range, ...</setting>
               </settings>
             </placement>
             <placement code="provenance" typeRestrictions="observationPlant,plantObject" includeSubtypes="1">
