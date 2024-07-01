@@ -23,6 +23,7 @@
   <!--https://github.com/inbo/collective-access/issues/143-->
   <!--https://github.com/inbo/collective-access/issues/144-->
   <!--https://github.com/inbo/collective-access/issues/146-->
+  <!--https://github.com/inbo/collective-access/issues/148-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -1185,6 +1186,14 @@
         </labels>
         <items>
               <item idno="forestTreePopulationSite" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>Forest tree population site</name_singular>
+                    <name_plural>Forest tree population sites</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="forestTreePopulationSiteSpot" enabled="1" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>Forest tree population site</name_singular>
@@ -9107,12 +9116,22 @@
                 <setting name="description" locale="en_US">This is the date/time that the specimen/object was created. When this is the first object in the hierarchy, this date equals the sampling date. When this a second or third object in the sequence, it will differ (e.g. a DNA sample is created on a later date than the sampling of the tissue sample). The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
               </settings>
             </placement>
-            <placement code="ca_storage_location" typeRestrictions="soilObject,waterObject,animalObject,plantObject,dnaSample" includeSubtypes="1">
+            <placement code="ca_storage_location" typeRestrictions="livingPlant,forestTreePopulation">
               <bundle>ca_storage_locations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at</setting>
+                <setting name="restrict_to_types">forestTreePopulationSite,forestTreePopulationSiteSpot</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="useHierarchicalBrowser">0</setting>
+              </settings>
+            </placement>
+            <placement code="ca_storage_location" typeRestrictions="animalObject,leafSample,littertrapSample,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1">
+              <bundle>ca_storage_locations</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Object is stored at</setting>
+                <setting name="restrict_to_types">room,cabinetFridgeFreezer,drawershelf,box,spot</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
             <placement code="verbatimLocality">
@@ -9240,10 +9259,20 @@
                 <setting name="description" locale="en_US">Will be 1 when deaccessioned or 0 (the default) when not deaccessioned. This should be visible in the object curation log. Types of deaccesioning are: disposal or transfer.</setting>
               </settings>
             </placement>
-            <placement code="ca_storage_location">
+            <placement code="ca_storage_location" typeRestrictions="livingPlant,forestTreePopulation">
               <bundle>ca_storage_locations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at</setting>
+                <setting name="restrict_to_types">forestTreePopulationSite,forestTreePopulationSiteSpot</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+            <placement code="ca_storage_location" typeRestrictions="animalObject,leafSample,littertrapSample,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1">
+              <bundle>ca_storage_locations</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Object is stored at</setting>
+                <setting name="restrict_to_types">room,cabinetFridgeFreezer,drawershelf,box,spot</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
@@ -9270,6 +9299,16 @@
 			        <settings>
                 <setting name="label" locale="en_US">Relationships hierarchy browser</setting>
                 <setting name="description" locale="en_US">The relationship between sampling point and all the directly related objects (subsamples, DNA-extractions, parasites from cadaver, ...). TIP: to view sibling specimens, move to the parent specimen.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="hierarchy_location_observationAnimal" typeRestrictions="observationAnimal">
+              <bundle>hierarchy_location</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Relationships hierarchy browser</setting>
+                <setting name="description" locale="en_US">The relationship between sampling point and all the directly related objects (subsamples, DNA-extractions, parasites from cadaver, ...). TIP: to view sibling specimens, move to the parent specimen.</setting>
+                <setting name="restrict_to_type">animalObject,oDNA</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="expand_collapse_value">collapse</setting>
               </settings>
