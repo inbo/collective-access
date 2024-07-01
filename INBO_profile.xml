@@ -1,19 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.58.03</profileName>
+  <profileName>[INBO] INBO natural science collection v0.59.01</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Changes compared to the previous version 0.57: see list of issues below; to be validated-->
-  <!--https://github.com/inbo/collective-access/issues/77-->
-  <!--https://github.com/inbo/collective-access/issues/87-->
-  <!--https://github.com/inbo/collective-access/issues/93-->
-  <!--https://github.com/inbo/collective-access/issues/111-->
-  <!--https://github.com/inbo/collective-access/issues/112-->
-  <!--https://github.com/inbo/collective-access/issues/116-->
-  <!--https://github.com/inbo/collective-access/issues/132-->
-  <!--https://github.com/inbo/collective-access/issues/138-->
-  <!--https://github.com/inbo/collective-access/issues/145-->
-  <!--https://github.com/inbo/collective-access/issues/118-->
-  <!--https://github.com/inbo/collective-access/issues/120-->
   <!--https://github.com/inbo/collective-access/issues/123-->
   <!--https://github.com/inbo/collective-access/issues/129-->
   <!--https://github.com/inbo/collective-access/issues/130-->
@@ -24,6 +13,13 @@
   <!--https://github.com/inbo/collective-access/issues/144-->
   <!--https://github.com/inbo/collective-access/issues/146-->
   <!--https://github.com/inbo/collective-access/issues/148-->
+  <!--XXX-->
+  <!--https://github.com/inbo/collective-access/issues/150-->
+  <!--https://github.com/inbo/collective-access/issues/151-->
+  <!--https://github.com/inbo/collective-access/issues/152-->
+  <!--https://github.com/inbo/collective-access/issues/87-->
+  <!--https://github.com/inbo/collective-access/issues/93-->
+  <!--https://github.com/inbo/collective-access/issues/118-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -3982,8 +3978,8 @@
         </labels>
         <documentationUrl>http://dublincore.org/documents/dcmi-terms/#terms-description</documentationUrl>
         <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
+              <setting name="fieldWidth">100</setting>
+              <setting name="fieldHeight">10</setting>
               <setting name="minChars">0</setting>
               <setting name="maxChars">65535</setting>
          </settings>
@@ -4965,7 +4961,7 @@
             </labels>
             <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
             <settings>
-              <setting name="fieldWidth">40</setting>
+              <setting name="fieldWidth">30</setting>
               <setting name="fieldHeight">1</setting>
               <setting name="minChars">0</setting>
               <setting name="maxChars">65535</setting>
@@ -4984,7 +4980,7 @@
             </labels>
             <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/concentration</documentationUrl>
             <settings>
-              <setting name="fieldWidth">70</setting>
+              <setting name="fieldWidth">40</setting>
               <setting name="fieldHeight">1</setting>
               <setting name="minChars">0</setting>
               <setting name="maxChars">65535</setting>
@@ -5001,6 +4997,15 @@
             </label>
             </labels>
             <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/concentrationUnit</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">30</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+              <setting name="minValue">-1</setting>
+              <setting name="maxValue">1000</setting>
+              <setting name="mustNotBeBlank">0</setting>
+            </settings>
           </metadataElement>
           <metadataElement code="dnaConcPublishedProcedure" datatype="Url">
             <labels>
@@ -5010,7 +5015,7 @@
               </label>
             </labels>
             <settings>
-              <setting name="fieldWidth">70</setting>
+              <setting name="fieldWidth">40</setting>
               <setting name="fieldHeight">1</setting>
               <setting name="minChars">0</setting>
               <setting name="maxChars">65535</setting>
@@ -5024,7 +5029,7 @@
               </label>
             </labels>
             <settings>
-              <setting name="fieldWidth">70</setting>
+              <setting name="fieldWidth">35</setting>
               <setting name="fieldHeight">1</setting>
               <setting name="minChars">0</setting>
               <setting name="maxChars">65535</setting>
@@ -5038,6 +5043,12 @@
               </label>
             </labels>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementAccuracy</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
           </metadataElement>
           <metadataElement code="dnaConcRemarks" datatype="Text">
             <labels>
@@ -5046,6 +5057,12 @@
               <description>Any relevant remaining remarks on the measurement. This could be who did the measurement, if something unusual was observed during the measurement,...</description>
             </label>
             </labels>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
           </metadataElement>
 	      </elements>
         <typeRestrictions>
@@ -6800,7 +6817,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="minimumElevationInMeters" datatype="Text">
+	    <metadataElement code="minimumElevationInMeters" datatype="Numeric">
         <labels>
           <label locale="en_US">
             <name>minimumElevationInMeters</name>
@@ -6863,7 +6880,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="maximumElevationInMeters" datatype="Text">
+	    <metadataElement code="maximumElevationInMeters" datatype="Numeric">
         <labels>
           <label locale="en_US">
             <name>maximumElevationInMeters</name>
@@ -7025,10 +7042,10 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="minimumDepthInMetres" datatype="Text">
+	    <metadataElement code="minimumDepthInMeters" datatype="Numeric">
         <labels>
           <label locale="en_US">
-            <name>minimumDepthInMetres</name>
+            <name>minimumDepthInMeters</name>
             <description>The lesser depth of a range of depth below the local surface, in meters.</description>
           </label>
         </labels>
@@ -7421,7 +7438,7 @@
             <table>ca_objects</table>
             <type>observationAnimal</type>
             <settings>
-              <setting name="minAttributesPerRow">1</setting>
+              <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">25</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
@@ -7431,8 +7448,8 @@
             <type>animalObject</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
-              <setting name="minAttributesPerRow">1</setting>
-              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">25</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -7440,7 +7457,7 @@
             <table>ca_objects</table>
             <type>observationPlant</type>
             <settings>
-              <setting name="minAttributesPerRow">1</setting>
+              <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">25</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
@@ -7450,8 +7467,17 @@
             <type>plantObject</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
-              <setting name="minAttributesPerRow">1</setting>
-              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_oDNA">
+            <table>ca_objects</table>
+            <type>oDNA</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">25</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -7732,7 +7758,7 @@
             </labels>
             <documentationUrl>http://rs.tdwg.org/abcd/terms/referenceDetails</documentationUrl>
             <settings>
-              <setting name="fieldWidth">70</setting>
+              <setting name="fieldWidth">85</setting>
               <setting name="fieldHeight">1</setting>
               <setting name="minChars">0</setting>
               <setting name="maxChars">65535</setting>
@@ -9061,7 +9087,7 @@
             <placement code="preferred_labels">
               <bundle>preferred_labels</bundle>
               <settings>
-                <setting name="label" locale="en_US">Preferred ID</setting>
+                <setting name="label" locale="en_US">Preferred ID *</setting>
                 <setting name="description" locale="en_US">This is the preferred identifier. For collected objects this identifier has to be physically present on/with the object, on the label or written on the object. For DNA-samples this is the LIMS-code e.g. 19-009625. For soil samples, this is the SID = sample ID. For sampling points, this is the field code you gave the data point, if need be, by adding prefixes or suffixes to make it unique in the full database.</setting>
                 <setting name="expand_collapse_no_value">expand</setting>
                 <setting name="documentation_url">https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0</setting>
@@ -9092,8 +9118,8 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="forestTreePopulationCatContainer" typeRestrictions="forestTreePopulation">
-              <bundle>ca_attribute_forestTreePopulationCatContainer</bundle>
+            <placement code="forestTreePopCatContainer" typeRestrictions="forestTreePopulation">
+              <bundle>ca_attribute_forestTreePopCatContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Forest tree population type (time-dependent!)</setting>
                 <setting name="description" locale="en_US">Over time the same forest tree population can be appointed a different type.</setting>
@@ -9104,49 +9130,111 @@
             <placement code="samplingDate" typeRestrictions="soilObject,waterObject,animalObject,plantObject,dnaSample" includeSubtypes="1">
               <bundle>ca_attribute_samplingDate</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Sampling date</setting>
+                <setting name="label" locale="en_US">Sampling date *</setting>
                 <setting name="description" locale="en_US">This is the date/time that becomes fixed due to sampling the sampling point to its first object. The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
               </settings>
             </placement>
             <placement code="preparationDate" typeRestrictions="soilObject,waterObject,animalObject,plantObject,dnaSample" includeSubtypes="1">
               <bundle>ca_attribute_preparationDate</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Specimen creation date</setting>
+                <setting name="label" locale="en_US">Specimen creation date *</setting>
                 <setting name="description" locale="en_US">This is the date/time that the specimen/object was created. When this is the first object in the hierarchy, this date equals the sampling date. When this a second or third object in the sequence, it will differ (e.g. a DNA sample is created on a later date than the sampling of the tissue sample). The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
               </settings>
             </placement>
-            <placement code="ca_storage_location_plantlot" typeRestrictions="livingPlant,forestTreePopulation">
+            <placement code="ca_storage_location_plantlot_l" typeRestrictions="livingPlant,forestTreePopulation">
               <bundle>ca_storage_locations</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Object is stored at</setting>
+                <setting name="label" locale="en_US">Object is stored at *</setting>
+                <setting name="restrict_to_types">forestTreePopulationSite,forestTreePopulationSiteSpot</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="useHierarchicalBrowser">0</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
+              </settings>
+            </placement>
+            <placement code="ca_storage_location_plantlot_h" typeRestrictions="livingPlant,forestTreePopulation">
+              <bundle>ca_storage_locations</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Object is stored at *</setting>
                 <setting name="restrict_to_types">forestTreePopulationSite,forestTreePopulationSiteSpot</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="useHierarchicalBrowser">1</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="ca_storage_location" typeRestrictions="animalObject,leafSample,littertrapSample,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1">
+            <placement code="ca_storage_location_l" typeRestrictions="animalObject,leafSample,littertrapSample,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1">
               <bundle>ca_storage_locations</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Object is stored at</setting>
+                <setting name="label" locale="en_US">Object is stored at *</setting>
                 <setting name="restrict_to_types">room,cabinetFridgeFreezer,drawershelf,box,spot</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="useHierarchicalBrowser">0</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
+              </settings>
+            </placement>
+            <placement code="ca_storage_location_h" typeRestrictions="animalObject,leafSample,littertrapSample,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1">
+              <bundle>ca_storage_locations</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Object is stored at *</setting>
+                <setting name="restrict_to_types">room,cabinetFridgeFreezer,drawershelf,box,spot</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="useHierarchicalBrowser">1</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
             <placement code="verbatimLocality">
               <bundle>ca_attribute_verbatimLocality</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Sampling point is located at (dwc:verbatimLocality)</setting>
+                <setting name="label" locale="en_US">Sampling point is located at (dwc:verbatimLocality) *</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
               </settings>
             </placement>
+            <placement code="ca_places_h">
+              <bundle>ca_places</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Toponym (hiërarchial view) *</setting>
+                <setting name="description" locale="en_US">The place or toponym, chosen from the standardized list. This view allows you to browse through the available options already available. To add an option, use the "lookup" above.</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
+              </settings>
+			      </placement>
+			      <placement code="verbatimDepth" typeRestrictions="eDnaWaterFilter,watersample,soilObject">
+              <bundle>ca_attribute_verbatimDepth</bundle>
+              <settings>
+                <setting name="label" locale="en_US">The original description of the depth of sampling</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
+              </settings>
+			      </placement>
+			      <placement code="minimumDepthInMeters" typeRestrictions="eDnaWaterFilter,watersample,soilObject">
+              <bundle>ca_attribute_minimumDepthInMetres</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The minimum sampling depth in meters *</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
+              </settings>
+			      </placement>
+			      <placement code="maximumDepthInMeters" typeRestrictions="eDnaWaterFilter,watersample,soilObject">
+              <bundle>ca_attribute_maximumDepthInMeters</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The maximum sampling depth in meters *</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
+              </settings>
+			      </placement>
             <placement code="ca_collection" typeRestrictions="soilObject,waterObject,animalObject,plantObject,dnaSample" includeSubtypes="1">
               <bundle>ca_collections</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object belongs to collection(s)</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">20</setting>
 				        <setting name="add_label" locale="en_US">Add collection</setting>
                 <setting name="restrict_to_relationship_types">partOf</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
               </settings>
             </placement>
 			      <placement code="IDContainer" typeRestrictions="animalObject,observationAnimal,plantObject,observationPlant,oDNA" includeSubtypes="1"><!--This should prepopulate with the parent value, if empty-->
@@ -9154,6 +9242,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">The verbatim taxonomic identification</setting>
 				        <setting name="add_label" locale="en_US">Add a new taxon</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
 			        </settings>
             </placement>
 			      <placement code="sexPlant" typeRestrictions="observationPlant,livingPlant,leafSample,oDNA" includeSubtypes="1">
@@ -9166,7 +9255,7 @@
               <bundle>ca_attribute_sexAnimal</bundle>
 			        <settings>
                 <setting name="description" locale="en_US">If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
-                <setting name="expand_collapse_no_value">expand</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
 			      <placement code="genotype" typeRestrictions="animalObject,observationAnimal,plantObject,observationPlant,oDNA" includeSubtypes="1">
@@ -9289,7 +9378,7 @@
         <screen idno="relations" default="0">
           <labels>
             <label locale="en_US">
-              <name>Relationships to other specimens</name>
+              <name>Relations</name>
             </label>
           </labels>
           <bundlePlacements>
@@ -9370,8 +9459,8 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="forestTreePopulationCatContainer" typeRestrictions="forestTreePopulation">
-              <bundle>ca_attribute_forestTreePopulationCatContainer</bundle>
+            <placement code="forestTreePopCatContainer" typeRestrictions="forestTreePopulation">
+              <bundle>ca_attribute_forestTreePopCatContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Forest tree population type (time-dependent)</setting>
                 <setting name="description" locale="en_US">Over time the same forest tree population can have a different type.</setting>
@@ -9588,19 +9677,19 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="verbatimDepth" typeRestrictions="eDnaWaterFilter,watersample">
+			      <placement code="verbatimDepth" typeRestrictions="eDnaWaterFilter,watersample,soilObject">
               <bundle>ca_attribute_verbatimDepth</bundle>
               <settings>
                 <setting name="label" locale="en_US">The original description of the depth of sampling</setting>
               </settings>
 			      </placement>
-			      <placement code="minimumDepthInMetres" typeRestrictions="eDnaWaterFilter,watersample,soilObject">
+			      <placement code="minimumDepthInMeters" typeRestrictions="eDnaWaterFilter,watersample,soilObject">
               <bundle>ca_attribute_minimumDepthInMetres</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The minimum sampling depth in meters</setting>
               </settings>
 			      </placement>
-			      <placement code="maximumDepthInMetres" typeRestrictions="eDnaWaterFilter,watersample,soilObject">
+			      <placement code="maximumDepthInMeters" typeRestrictions="eDnaWaterFilter,watersample,soilObject">
               <bundle>ca_attribute_maximumDepthInMeters</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The maximum sampling depth in meters</setting>
@@ -12693,6 +12782,9 @@
         </placement>
         <placement code="is_deaccessioned">
           <bundle>ca_objects.is_deaccessioned</bundle>
+			    <settings>
+            <setting name="label" locale="en_US">disposed?</setting>
+          </settings>
         </placement>
         <placement code="ca_storage_locations">
           <bundle>ca_storage_locations</bundle>
@@ -12700,8 +12792,8 @@
             <setting name="label" locale="en_US">storage</setting>
           </settings>
         </placement>
-        <placement code="ca_objects_dateRange">
-          <bundle>ca_objects.dateRange</bundle>
+        <placement code="ca_objects_samplingDate">
+          <bundle>ca_objects.samplingDate</bundle>
 			    <settings>
             <setting name="label" locale="en_US">date</setting>
           </settings>
@@ -12712,14 +12804,14 @@
             <setting name="label" locale="en_US">place</setting>
           </settings>
         </placement>
-        <placement code="ca_objects_minimumDepthInMetres">
-          <bundle>ca_objects.minimumDepthInMetres</bundle>
+        <placement code="ca_objects_minimumDepthInMeters">
+          <bundle>ca_objects.minimumDepthInMeters</bundle>
 			    <settings>
             <setting name="label" locale="en_US">min</setting>
           </settings>
         </placement>
-        <placement code="ca_objects_maximumDepthInMetres">
-          <bundle>ca_objects.maximumDepthInMetres</bundle>
+        <placement code="ca_objects_maximumDepthInMeters">
+          <bundle>ca_objects.maximumDepthInMeters</bundle>
 			    <settings>
             <setting name="label" locale="en_US">max</setting>
           </settings>
