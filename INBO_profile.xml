@@ -22,6 +22,7 @@
   <!--https://github.com/inbo/collective-access/issues/142-->
   <!--https://github.com/inbo/collective-access/issues/143-->
   <!--https://github.com/inbo/collective-access/issues/144-->
+  <!--https://github.com/inbo/collective-access/issues/146-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -3812,6 +3813,47 @@
           </item>
         </items>
       </list>
+      <list code="external_specimen_relationship" hierarchical="0" system="0" vocabulary="1">
+        <labels>
+          <label locale="en_US">
+            <name>External specimen relationship</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="externalSpecimenParent" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>the external specimen is the parent</name_singular>
+                <name_plural>the external specimen is the parent</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="externalSpecimenChild" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>The external specimen is a subsample</name_singular>
+                <name_plural>The external specimen is a subsample</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="externalSpecimenReplicate" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>The external specimen is a replicate specimen</name_singular>
+                <name_plural>The external specimen is a replicate specimen</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="externalSpecimenOther" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Other type of relationship, see specification</name_singular>
+                <name_plural>Other type of relationship, see specification</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
   </lists>
   <elementSets>
     <!--General-->
@@ -4796,6 +4838,99 @@
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="externalSpecimen" datatype="Container">
+        <labels>
+          <label locale="en_US">
+            <name>External relationship</name>
+            <description>If the specimen is related to a external specimen = a specimen held at another Natural Science collection; as specified.</description>
+          </label>
+        </labels>
+	      <elements>
+		      <metadataElement code="externalSpecimenURI" datatype="Url">
+            <labels>
+              <label locale="en_US">
+                <name>Resource URI</name>
+                <description>A preferably resolvable URI to uniquely identify the related specimen, not held in the INBO collection. For example a DOI-url.</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/abcd/terms/resourceURI</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+		      <metadataElement code="specimenRelationship" datatype="List" list="external_specimen_relationship">
+            <labels>
+              <label locale="en_US">
+                <name>Reference Details</name>
+                <description>Relevant information about the reference - why is it listed? - what does it say about the specimen/collection?</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">40</setting>
+              <setting name="doesNotTakeLocale">1</setting>
+            </settings>
+		      </metadataElement>
+          <metadataElement code="relationSpecification" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Relation specification</name>
+                <description>Specification on the type of relation.</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+	      </elements>
+        <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_occurrences">
+            <table>ca_occurrences</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_entities">
+            <table>ca_entities</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_loans">
+            <table>ca_loans</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -9126,7 +9261,7 @@
         <screen idno="relations" default="0">
           <labels>
             <label locale="en_US">
-              <name>Relations</name>
+              <name>Relationships to other specimens</name>
             </label>
           </labels>
           <bundlePlacements>
@@ -9153,6 +9288,14 @@
                 <setting name="expand_collapse_value">collapse</setting>
               </settings>
             </placement>
+            <placement code="externalSpecimen">
+              <bundle>ca_attribute_externalSpecimen</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
+				        <setting name="add_label" locale="en_US">Add relationship to an external specimen</setting>
+              </settings>
+            </placement>externalSpecimen
           </bundlePlacements>
         </screen>
         <screen idno="context" default="0">
