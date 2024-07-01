@@ -18,6 +18,10 @@
   <!--https://github.com/inbo/collective-access/issues/129-->
   <!--https://github.com/inbo/collective-access/issues/130-->
   <!--https://github.com/inbo/collective-access/issues/134-->
+  <!--https://github.com/inbo/collective-access/issues/137-->
+  <!--https://github.com/inbo/collective-access/issues/142-->
+  <!--https://github.com/inbo/collective-access/issues/143-->
+  <!--https://github.com/inbo/collective-access/issues/144-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -6258,6 +6262,7 @@
         <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -6859,7 +6864,6 @@
           <restriction code="r_soilObject">
             <table>ca_objects</table>
             <type>soilObject</type>
-            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -6896,7 +6900,6 @@
           <restriction code="r_soilObject">
             <table>ca_objects</table>
             <type>soilObject</type>
-            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -6933,7 +6936,6 @@
           <restriction code="r_soilObject">
             <table>ca_objects</table>
             <type>soilObject</type>
-            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -9143,6 +9145,14 @@
                 <setting name="label" locale="en_US">Relation of the seeds in the seedlot</setting>
               </settings>
             </placement>
+            <placement code="ca_object_lots">
+              <bundle>ca_object_lots</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Specimen belongs to specimen lot (only 1 entry allowed)</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
+              </settings>
+            </placement>
           </bundlePlacements>
         </screen>
         <screen idno="context" default="0">
@@ -9197,14 +9207,23 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="ca_places">
+            <placement code="ca_places_lookup">
               <bundle>ca_places</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Toponym</setting>
-                <setting name="description" locale="en_US">The place or toponym, chosen from the standardized list.</setting>
+                <setting name="label" locale="en_US">Toponym (Lookup view)</setting>
+                <setting name="description" locale="en_US">The place or toponym, chosen from the standardized list. This viewer allows you to add a new place if not yet in the standardized list.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="useHierarchicalBrowser">0</setting>
+              </settings>
+			      </placement>
+            <placement code="ca_places_hierarchyBrowser">
+              <bundle>ca_places</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Toponym (hiërarchial view)</setting>
+                <setting name="description" locale="en_US">The place or toponym, chosen from the standardized list. This view allows you to browse through the available options already available. To add an option, use the "lookup" above.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
 			      </placement>
 			      <placement code="verbatimLocality">
@@ -10573,16 +10592,6 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="ca_places_collectionPlace">
-              <bundle>ca_places</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Place</setting>
-                <setting name="description" locale="en_US">The place (country, city, ..) where the current collection is hold. This can be relevant to track for outdoor living collections mostly (e.g. living plants).</setting>
-				        <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
             <placement code="externalRecord">
               <bundle>ca_attribute_externalRecord</bundle>
               <settings>
@@ -10711,6 +10720,8 @@
                 <setting name="label" locale="en_US">Geographic scope</setting>
                 <setting name="description" locale="en_US">The collection geographic scope.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+				        <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">10</setting>
                 <setting name="add_label" locale="en_US">Add places</setting>
               </settings>
             </placement>
