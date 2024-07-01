@@ -17,6 +17,7 @@
   <!--https://github.com/inbo/collective-access/issues/123-->
   <!--https://github.com/inbo/collective-access/issues/129-->
   <!--https://github.com/inbo/collective-access/issues/130-->
+  <!--https://github.com/inbo/collective-access/issues/134-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -772,11 +773,11 @@
                             </label>
                           </labels>
                       </item>
-                      <item idno="plantlot" enabled="1" default="0">
+                      <item idno="forestTreePopulation" enabled="1" default="0">
                           <labels>
                             <label locale="en_US" preferred="1">
-                              <name_singular>Plantlot</name_singular>
-                              <name_plural>Plantlots</name_plural>
+                              <name_singular>Forest tree population</name_singular>
+                              <name_plural>Forest tree populations</name_plural>
                             </label>
                           </labels>
                       </item>
@@ -867,7 +868,7 @@
         </label>
         </labels>
         <items>
-          <item idno="specimenLot" rank="1" enabled="1" default="0">
+          <item idno="specimenLot" rank="1" enabled="1" default="0"><!--This is if different types of specimens are combined in a lot and need information logged (like administrational information) to the lot-->
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>specimen lot</name_singular>
@@ -881,20 +882,6 @@
             <items>
             </items>
           </item>
-          <item idno="plantation" rank="1" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>plantation</name_singular>
-                <name_plural>plantations</name_plural>
-              </label>
-            </labels>
-            <settings>
-             <setting name="render_in_new_menu">1</setting>
-             <setting name="render_in_find_menu">1</setting>
-            </settings>
-            <items>
-            </items>
-          </item>  
 		    </items>
       </list>
 	    <list code="entity_types" hierarchical="1" system="0" vocabulary="0">
@@ -1191,6 +1178,72 @@
             <name>Storage location types</name>
           </label>
         </labels>
+        <items>
+              <item idno="forestTreePopulationSite" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>Forest tree population site</name_singular>
+                    <name_plural>Forest tree population sites</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="building" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>building</name_singular>
+                    <name_plural>buildings</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="floor" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>floor</name_singular>
+                    <name_plural>floors</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="room" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>room</name_singular>
+                    <name_plural>rooms</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="cabinetFridgeFreezer" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>cabinet, fridge or freezer</name_singular>
+                    <name_plural>cabinets, fridges and freezers</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="drawerShelf" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>drawer or shelf</name_singular>
+                    <name_plural>drawers and shelves</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="box" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>box</name_singular>
+                    <name_plural>boxes</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="spot" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>spot</name_singular>
+                    <name_plural>spots</name_plural>
+                  </label>
+                </labels>
+              </item>
+        </items>
 	    </list>
       <list code="loan_types" hierarchical="0" system="0" vocabulary="0">
         <labels>
@@ -3714,34 +3767,42 @@
           </item>
         </items>
       </list>
-      <list code="type_plantation" hierarchical="0" system="0" vocabulary="1">
+      <list code="type_forestTreePopulation" hierarchical="0" system="0" vocabulary="1">
         <labels>
           <label locale="en_US">
-            <name>Plantation category</name>
+            <name>Forest Tree Population Type</name>
           </label>
         </labels>
         <items>
-          <item idno="zaadtuin" enabled="1" default="0"><!--The temporal coverage of the specimens in the collection, the scope, the content of the collection.-->
+          <item idno="seedOrchard" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>Uitgangsmateriaal: zaadtuin</name_singular>
-                <name_plural>Uitgangsmateriaal: zaadtuin</name_plural>
+                <name_singular>Forest basic material - Seed orchard (Dutch: "Uitgangsmateriaal: zaadtuin)</name_singular>
+                <name_plural>Forest basic material - Seed orchard (Dutch: "Uitgangsmateriaal: zaadtuin)</name_plural>
               </label>
             </labels>
           </item>
-          <item idno="proefperceel" enabled="1" default="0"><!--The temporal coverage of the collection itself: when was it established? when was it formalized as a collection? When was the collection as such stopped (e.g. merged with another collection).-->
+          <item idno="clonalTest" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>Proefperceel: klonale test</name_singular>
-                <name_plural>Proefperceel: klonale test</name_plural>
+                <name_singular>Experimental plot: clonal test (Durch: "Proefperceel: klonale test")</name_singular>
+                <name_plural>Experimental plot: clonal test (Durch: "Proefperceel: klonale test")</name_plural>
               </label>
             </labels>
           </item>
-          <item idno="basiscollectie" enabled="1" default="0"><!--The temporal coverage of the collection itself: when was it established? when was it formalized as a collection? When was the collection as such stopped (e.g. merged with another collection).-->
+          <item idno="breedingCollection" enabled="1" default="0"><!--Forest tree populations with the purpose of plant breeding.-->
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>Basiscollectie</name_singular>
-                <name_plural>Basiscollectie</name_plural>
+                <name_singular>Breeding collection</name_singular>
+                <name_plural>Breeding collection</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="basicCollection" enabled="1" default="0"><!--Forest tree populations with the purpose of preserving valuable genotypes-->
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Basic collection</name_singular>
+                <name_plural>Basic collection</name_plural>
               </label>
             </labels>
           </item>
@@ -3890,18 +3951,18 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="internalURL" datatype="Container">
+	    <metadataElement code="multimediaURL" datatype="Container">
         <labels>
           <label locale="en_US">
             <name>Internal URL</name>
           </label>
         </labels>
 	      <elements>
-		      <metadataElement code="internalURL_URL" datatype="Url">
+		      <metadataElement code="multimediaURL_URL" datatype="Url">
             <labels>
             <label locale="en_US">
-              <name>URL</name>
-              <description>An URL that leads to a folder, file, photo, video, sound, ... that is saved in an INBO archive space. This could be on the INBO google folders, the INBO tandemVault or any other published open web URL.</description>
+              <name>Media-URL</name>
+              <description>An URL that leads to a multimedia file or folder containing multimedia (photo, video, sound,...) that is saved in an INBO archive space. This could be on the INBO google folders, the INBO tandemVault or any other published open web URL.</description>
             </label>
             </labels>
             <settings>
@@ -3911,7 +3972,7 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
-		      <metadataElement code="internalURL_descr" datatype="Text">
+		      <metadataElement code="multimediaURL_descr" datatype="Text">
             <labels>
               <label locale="en_US">
                 <name>Multimedia description</name>
@@ -4038,7 +4099,7 @@
         <labels>
           <label locale="en_US">
             <name>Reference</name>
-            <description>A relevant URL that refers to the sampling point, specimen or collection. This can be an internal INBO document on the Google drive, a published or unpublished dataset, a link to an INBO database (use the INBO datacatalogue),..</description>
+            <description>A (DOI of) a publication that refers to the sampling point, specimen or collection. This can be an internal INBO document on the Google drive, a published or unpublished dataset, a link to an INBO database (use the INBO datacatalogue),..</description>
           </label>
         </labels>
 	      <elements>
@@ -6220,9 +6281,9 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_plantedSite">
+          <restriction code="r_forestTreePopulationSite">
             <table>ca_storage_locations</table>
-            <type>plantedSite</type>
+            <type>forestTreePopulationSite</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -6318,9 +6379,9 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_plantedSite">
+          <restriction code="r_forestTreePopulationSite">
             <table>ca_storage_locations</table>
-            <type>plantedSite</type>
+            <type>forestTreePopulationSite</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -6381,9 +6442,9 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_plantedSite">
+          <restriction code="r_forestTreePopulationSite">
             <table>ca_storage_locations</table>
-            <type>plantedSite</type>
+            <type>forestTreePopulationSite</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -6444,9 +6505,9 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_plantedSite">
+          <restriction code="r_forestTreePopulationSite">
             <table>ca_storage_locations</table>
-            <type>plantedSite</type>
+            <type>forestTreePopulationSite</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -6507,9 +6568,9 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_plantedSite">
+          <restriction code="r_forestTreePopulationSite">
             <table>ca_storage_locations</table>
-            <type>plantedSite</type>
+            <type>forestTreePopulationSite</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -6570,9 +6631,9 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_plantedSite">
+          <restriction code="r_forestTreePopulationSite">
             <table>ca_storage_locations</table>
-            <type>plantedSite</type>
+            <type>forestTreePopulationSite</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -6633,9 +6694,9 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_plantedSite">
+          <restriction code="r_forestTreePopulationSite">
             <table>ca_storage_locations</table>
-            <type>plantedSite</type>
+            <type>forestTreePopulationSite</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -6696,9 +6757,9 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_plantedSite">
+          <restriction code="r_forestTreePopulationSite">
             <table>ca_storage_locations</table>
-            <type>plantedSite</type>
+            <type>forestTreePopulationSite</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -6759,9 +6820,9 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_plantedSite">
+          <restriction code="r_forestTreePopulationSite">
             <table>ca_storage_locations</table>
-            <type>plantedSite</type>
+            <type>forestTreePopulationSite</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -7054,9 +7115,9 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_plantedSite">
+          <restriction code="r_forestTreePopulationSite">
             <table>ca_storage_locations</table>
-            <type>plantedSite</type>
+            <type>forestTreePopulationSite</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -7407,30 +7468,22 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_objectLots">
-            <table>ca_object_lots</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="plantationCatContainer" datatype="Container">
+	    <metadataElement code="forestTreePopulationCatContainer" datatype="Container">
         <labels>
           <label locale="en_US">
-            <name>Plantation category</name>
+            <name>Forest tree population category</name>
           </label>
         </labels>
 			  <settings>
           <setting name="lineBreakAfterNumberOfElements">2</setting>
         </settings>
 	      <elements>
-		      <metadataElement code="plantationCategory" datatype="List" list="type_plantation">
+		      <metadataElement code="forestTreePopulationCategory" datatype="List" list="type_forestTreePopulation">
             <labels>
             <label locale="en_US">
-              <name>Plantation category</name>
+              <name>Forest tree population category</name>
             </label>
             </labels>
             <settings>
@@ -7443,7 +7496,7 @@
 		      <metadataElement code="startDate" datatype="DateRange">
             <labels>
             <label locale="en_US">
-              <name>Start date of the plantation type label</name>
+              <name>Start date of the forest tree population type label</name>
             </label>
             </labels>
             <settings>
@@ -7459,7 +7512,7 @@
 		      <metadataElement code="endDate" datatype="DateRange">
             <labels>
               <label locale="en_US">
-                <name>End date of the plantation type label</name>
+                <name>End date of the forest tree population type label</name>
               </label>
             </labels>
             <settings>
@@ -7472,10 +7525,10 @@
               <setting name="canBeUsedInDisplay">1</setting>
             </settings>
 		      </metadataElement>
-		      <metadataElement code="plantationRef" datatype="Text">
+		      <metadataElement code="forestTreePopulationRef" datatype="Text">
             <labels>
             <label locale="en_US">
-              <name>Reference number of the plantation (e.g. PAV-KL-01-01)</name>
+              <name>Reference number of the forest tree population (e.g. PAV-KL-01-01)</name>
             </label>
             </labels>
             <settings>
@@ -8836,7 +8889,7 @@
                 <restriction code="r_leafSample" type="leafSample"/>
                 <restriction code="r_littertrapSample" type="littertrapSample"/>
                 <restriction code="r_seedlot" type="seedlot"/>
-                <restriction code="r_plantlot" type="plantlot"/>
+                <restriction code="r_forestTreePopulation" type="forestTreePopulation"/>
                 <restriction code="r_livingPlant" type="livingPlant"/>
                 <restriction code="r_oDNA" type="oDNA"/>
                 <restriction code="r_waterSample" type="waterSample"/>
@@ -8882,7 +8935,7 @@
               <bundle>ca_attribute_externalRecord</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">External record (URL)</setting>
-                <setting name="description" locale="en_US">The object published on DiSSCo, occurrence data of the sampling point published on GBIF, .. This is a sister-record of the current digital record of the specimen or sampling point.</setting>
+                <setting name="description" locale="en_US">The object published on DiSSCo, occurrence data of the sampling point published on GBIF,.. This is a sister-record of the current digital record of the specimen or sampling point.</setting>
 				        <setting name="add_label" locale="en_US">Add external record</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
@@ -8892,6 +8945,15 @@
 			        <settings>
                 <setting name="label" locale="en_US">Description (free text)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="forestTreePopulationCatContainer" typeRestrictions="forestTreePopulation">
+              <bundle>ca_attribute_forestTreePopulationCatContainer</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Forest tree population type (time-dependent!)</setting>
+                <setting name="description" locale="en_US">Over time the same forest tree population can be appointed a different type.</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
+				        <setting name="add_label" locale="en_US">Add forest tree population type</setting>
               </settings>
             </placement>
             <placement code="samplingDate" typeRestrictions="soilObject,waterObject,animalObject,plantObject,dnaSample" includeSubtypes="1">
@@ -8923,13 +8985,13 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-            <placement code="ca_collection_current" typeRestrictions="soilObject,waterObject,animalObject,plantObject,dnaSample" includeSubtypes="1">
+            <placement code="ca_collection" typeRestrictions="soilObject,waterObject,animalObject,plantObject,dnaSample" includeSubtypes="1">
               <bundle>ca_collections</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Object belongs to collection</setting>
+                <setting name="label" locale="en_US">Object belongs to collection(s)</setting>
                 <setting name="maxRelationshipsPerRow">20</setting>
 				        <setting name="add_label" locale="en_US">Add collection</setting>
-                <setting name="restrict_to_relationship_types">currentPartOf</setting>
+                <setting name="restrict_to_relationship_types">partOf</setting>
               </settings>
             </placement>
 			      <placement code="IDContainer" typeRestrictions="animalObject,observationAnimal,plantObject,observationPlant,oDNA" includeSubtypes="1"><!--This should prepopulate with the parent value, if empty-->
@@ -8939,7 +9001,7 @@
 				        <setting name="add_label" locale="en_US">Add a new taxon</setting>
 			        </settings>
             </placement>
-			      <placement code="sexPlant" typeRestrictions="observationPlant,plantObject,oDNA" includeSubtypes="1">
+			      <placement code="sexPlant" typeRestrictions="observationPlant,livingPlant,leafSample,oDNA" includeSubtypes="1">
               <bundle>ca_attribute_sexPlant</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -8955,8 +9017,9 @@
 			      <placement code="genotype" typeRestrictions="animalObject,observationAnimal,plantObject,observationPlant,oDNA" includeSubtypes="1">
               <bundle>ca_attribute_genotype</bundle>
 			        <settings>
-                <setting name="description" locale="en_US">It is possible that a plant or animal (and its derived objects) are genotyped by different genetic markers, new genotypes can be added over time.</setting>
+                <setting name="description" locale="en_US">Genotype(s). For a single object: new genotypes can be added over time. For bulk samples (e.g. forest tree populations): different genotypes can be listed.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+				        <setting name="add_label" locale="en_US">Add genotype</setting>
               </settings>
 			      </placement>
 			      <placement code="status">
@@ -9023,7 +9086,7 @@
                 <restriction code="r_herbariumSpecimen" type="herbariumSpecimen"/>
                 <restriction code="r_livingPlant" type="livingPlant"/>
                 <restriction code="r_seedlot" type="seedlot"/>
-                <restriction code="r_plantlot" type="plantlot"/>
+                <restriction code="r_forestTreePopulation" type="forestTreePopulation"/>
                 <restriction code="r_livingPlant" type="livingPlant"/>
                 <restriction code="r_stemDisc" type="stemDisc"/>
                 <restriction code="r_oDNA" type="oDNA"/>
@@ -9114,6 +9177,15 @@
                 <setting name="restrict_to_relationship_types">resultingObjectsFieldwork</setting>
                 <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="forestTreePopulationCatContainer" typeRestrictions="forestTreePopulation">
+              <bundle>ca_attribute_forestTreePopulationCatContainer</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Forest tree population type (time-dependent)</setting>
+                <setting name="description" locale="en_US">Over time the same forest tree population can have a different type.</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
+				        <setting name="add_label" locale="en_US">Add forest tree population type</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -9274,7 +9346,7 @@
                 <restriction code="r_herbariumSpecimen" type="herbariumSpecimen"/>
                 <restriction code="r_livingPlant" type="livingPlant"/>
                 <restriction code="r_seedlot" type="seedlot"/>
-                <restriction code="r_plantlot" type="plantlot"/>
+                <restriction code="r_forestTreePopulation" type="forestTreePopulation"/>
                 <restriction code="r_livingPlant" type="livingPlant"/>
                 <restriction code="r_stemDisc" type="stemDisc"/>
                 <restriction code="r_oDNA" type="oDNA"/>
@@ -9414,7 +9486,7 @@
                 <restriction code="r_leafSample" type="leafSample"/>
                 <restriction code="r_littertrapSample" type="littertrapSample"/>
                 <restriction code="r_seedlot" type="seedlot"/>
-                <restriction code="r_plantlot" type="plantlot"/>
+                <restriction code="r_forestTreePopulation" type="forestTreePopulation"/>
                 <restriction code="r_livingPlant" type="livingPlant"/>
                 <restriction code="r_oDNA" type="oDNA"/>
                 <restriction code="r_waterSample" type="waterSample"/>
@@ -9603,32 +9675,32 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="internalURL_obj" typeRestrictions="object" includeSubtypes="1">
-              <bundle>ca_attribute_internalURL</bundle>
+            <placement code="multimediaURL_obj" typeRestrictions="object" includeSubtypes="1">
+              <bundle>ca_attribute_multimediaURL</bundle>
 			        <settings>
-				        <setting name="add_label" locale="en_US">Add URL</setting>
-                <description>An URL LINKED TO THE OBJECT (i.e. not the sampling point). This URL leads to a folder, file, photo, video, sound, ... that is saved in an INBO archive space. This could be on the INBO google folders, the INBO tandemVault or any other published open web URL.</description>
+				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
+                <description>Multimedia LINKED TO THE OBJECT (i.e. not the sampling point).</description>
 			        </settings>
             </placement>
-            <placement code="internalURL_obs" typeRestrictions="observation" includeSubtypes="1">
-              <bundle>ca_attribute_internalURL</bundle>
+            <placement code="multimediaURL_obs" typeRestrictions="observation" includeSubtypes="1">
+              <bundle>ca_attribute_multimediaURL</bundle>
 			        <settings>
-				        <setting name="add_label" locale="en_US">Add URL</setting>
-                <description>An URL LINKED TO THE SAMPLING POINT (i.e. not the object). This URL leads to a folder, file, photo, video, sound, ... that is saved in an INBO archive space. This could be on the INBO google folders, the INBO tandemVault or any other published open web URL.</description>
+				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
+                <description>An URL LINKED TO INFORMATION OF THE SAMPLING POINT (i.e. not the object).</description>
 			        </settings>
             </placement>
             <placement code="reference_obj" typeRestrictions="object" includeSubtypes="1">
               <bundle>ca_attribute_reference</bundle>
 			        <settings>
-				        <setting name="add_label" locale="en_US">Add reference URL</setting>
-                <setting name="description" locale="en_US">A relevant URL that refers to the object/specimen. This can be an internal INBO document on the Google drive, a published or unpublished dataset, a link to an INBO database (use the INBO datacatalogue),..</setting>
+				        <setting name="add_label" locale="en_US">Add publication URL</setting>
+                <setting name="description" locale="en_US">A relevant URL of a (data) publication that refers to the object/specimen.</setting>
 			        </settings>
             </placement>
             <placement code="reference_obs" typeRestrictions="observation" includeSubtypes="1">
               <bundle>ca_attribute_reference</bundle>
 			        <settings>
-				        <setting name="add_label" locale="en_US">Add reference URL</setting>
-                <setting name="description" locale="en_US">A relevant URL that refers to the sampling point. This can be an internal INBO document on the Google drive, a published or unpublished dataset, a link to an INBO database (use the INBO datacatalogue),..</setting>
+				        <setting name="add_label" locale="en_US">Add publication URL</setting>
+                <setting name="description" locale="en_US">A relevant URL of a (data) publication that refers to the sampling point e.g. an article, a GIS-layer, ...</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -9828,7 +9900,7 @@
                 <restriction code="r_herbariumSpecimen" type="herbariumSpecimen"/>
                 <restriction code="r_livingPlant" type="livingPlant"/>
                 <restriction code="r_seedlot" type="seedlot"/>
-                <restriction code="r_plantlot" type="plantlot"/>
+                <restriction code="r_forestTreePopulation" type="forestTreePopulation"/>
                 <restriction code="r_stemDisc" type="stemDisc"/>
                 <restriction code="r_oDNA" type="oDNA"/>
                 <restriction code="r_waterSample" type="waterSample"/>
@@ -10069,10 +10141,10 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="internalURL" typeRestrictions="curation,disposal,treatment,renewal,transfer">
-              <bundle>ca_attribute_internalURL</bundle>
+            <placement code="multimediaURL" typeRestrictions="curation,disposal,treatment,renewal,transfer">
+              <bundle>ca_attribute_multimediaURL</bundle>
 			        <settings>
-				        <setting name="add_label" locale="en_US">Add media</setting>
+				        <setting name="add_label" locale="en_US">Add multimedia</setting>
 			        </settings>
             </placement>
 			      <placement code="samplingEffort" typeRestrictions="fieldwork">
@@ -10668,16 +10740,16 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="internalURL">
-              <bundle>ca_attribute_internalURL</bundle>
+            <placement code="coll_multimediaURL">
+              <bundle>ca_attribute_multimediaURL</bundle>
 			        <settings>
-				        <setting name="add_label" locale="en_US">Add URL</setting>
+				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
 			        </settings>
             </placement>
-            <placement code="reference">
+            <placement code="coll_reference">
               <bundle>ca_attribute_reference</bundle>
 			        <settings>
-				        <setting name="add_label" locale="en_US">Add reference URL</setting>
+				        <setting name="add_label" locale="en_US">Add publication URL</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -10712,12 +10784,12 @@
             <placement code="ca_storage_locations" typeRestrictions="internalCollection">
               <bundle>ca_storage_locations</bundle>
               <settings>
-                <setting name="restrict_to_type">box,drawerShelf,cabinetFridgeFreezer,room,floor,building,plantedSite</setting>
+                <setting name="restrict_to_type">box,drawerShelf,cabinetFridgeFreezer,room,floor,building,forestTreePopulationSite</setting>
                 <setting name="description" locale="en_US">Smallest possible storage location that withholds the full collection</setting>
                 <setting name="label" locale="en_US">Storage location of collection</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_types">plantedSite,building,floor,room,cabinetFridgeFreezer,drawerShelf,box</setting>
+                <setting name="restrict_to_types">forestTreePopulationSite,building,floor,room,cabinetFridgeFreezer,drawerShelf,box</setting>
               </settings>
             </placement>
             <placement code="ca_entities_currentCollectionOwner">
@@ -10767,9 +10839,6 @@
                 <setting name="label" locale="en_US">CMS ID</setting>
               </settings>
             </placement>
-            <placement code="type_id">
-              <bundle>type_id</bundle>
-            </placement>
 			      <placement code="status">
               <bundle>status</bundle>
 			        <settings>
@@ -10794,11 +10863,12 @@
               <bundle>hierarchy_location</bundle>
             </placement>
 			      <placement code="ca_objects">
-              <bundle>hca_objects</bundle>
+              <bundle>ca_objects</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Objects stored</setting>
                 <setting name="list_format">list</setting>
                 <setting name="restrict_to_types">animalObject,soilObject,waterObject,dnaSample,plantObject</setting>
+                <setting name="dont_include_subtypes_in_type_restriction">0</setting>
               </settings>
             </placement>
             <placement code="ca_attribute_descriptionContainer">
@@ -10813,7 +10883,7 @@
                 <setting name="label" locale="en_US">Preservation temperature of the cabinet, fridge or freezer</setting>
               </settings>
             </placement>
-            <placement code="maintenancePerson" typeRestrictions="cabinetFridgeFreezer,room,building,plantedSite">
+            <placement code="maintenancePerson" typeRestrictions="cabinetFridgeFreezer,room,building,forestTreePopulationSite">
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Responsible person for maintenance of storage space or planted site.</setting>
@@ -10825,16 +10895,17 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="internalURL" typeRestrictions="box,drawerShelf,cabinetFridgeFreezer,room,floor,building">
-              <bundle>ca_attribute_internalURL</bundle>
+            <placement code="multimediaURL" typeRestrictions="box,drawerShelf,cabinetFridgeFreezer,room,floor,building">
+              <bundle>ca_attribute_multimediaURL</bundle>
 			        <settings>
-				        <setting name="add_label" locale="en_US">Add URL</setting>
+				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
 			        </settings>
             </placement>
             <placement code="reference" typeRestrictions="box,drawerShelf,cabinetFridgeFreezer,room,floor,building">
               <bundle>ca_attribute_reference</bundle>
 			        <settings>
-				        <setting name="add_label" locale="en_US">Add reference URL</setting>
+                <setting name="description" locale="en_US">This could be a document describing the storage space, giving technical information, ...</setting>
+				        <setting name="add_label" locale="en_US">Add publication URL</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -10875,15 +10946,6 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="externalRecord" typeRestrictions="plantation">
-              <bundle>ca_attribute_externalRecord</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">External record (URL)</setting>
-                <setting name="description" locale="en_US">The plantation record on a public GIS-layer, .. This is a sister-record of the current digital record of the specimen or sampling point.</setting>
-				        <setting name="add_label" locale="en_US">Add external record</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
             <placement code="object_lot_description">
               <bundle>ca_attribute_descriptionContainer</bundle>
               <settings>
@@ -10895,20 +10957,6 @@
               <bundle>ca_attribute_dateRange</bundle>
               <settings>
                 <setting name="label" locale="en_US">Date (range) of the object lot</setting>
-              </settings>
-            </placement>
-            <placement code="preparationDate" typeRestrictions="plantation">
-              <bundle>ca_attribute_preparationDate</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Specimen creation date</setting>
-                <setting name="description" locale="en_US">This is the date/time that the specimen/object was created. When this is the first object in the hierarchy, this date equals the sampling date. When this a second or third object in the sequence (e.g. a DNA sample is created on a later date than the sampling of the tissue sample). The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
-              </settings>
-            </placement>
-            <placement code="plantationCatContainer" typeRestrictions="plantation">
-              <bundle>ca_attribute_plantationCatContainer</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Category of plantation</setting>
-                <setting name="description" locale="en_US">This is the category of the plantation. This can change over time.</setting>
               </settings>
             </placement>
 			      <placement code="object_lot_admin">
@@ -10963,109 +11011,6 @@
             </placement>
           </bundlePlacements>
         </screen>
-        <screen idno="objectLot_locality" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>Locality</name>
-            </label>
-          </labels>
-          <typeRestrictions>
-            <restriction code="r_plantation" type="plantation"/>
-          </typeRestrictions>
-          <bundlePlacements>
-            <placement code="ca_places">
-              <bundle>ca_places</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The place</setting>
-                <setting name="description" locale="en_US">The place where the observation(s) occurred.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="useHierarchicalBrowser">0</setting>
-              </settings>
-			      </placement>
-			      <placement code="verbatimLocality">
-              <bundle>ca_attribute_verbatimLocality</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Verbatim locality (dwc:verbatimLocality)</setting>
-                <setting name="description" locale="en_US">The original description of a locality, a place, the geographic coverage, ...</setting>
-              </settings>
-            </placement>
-            <placement code="ca_entities">
-              <bundle>ca_entities</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Owner of the locality</setting>
-                <setting name="description" locale="en_US">If the locality is on private property, it might be necessary to log who owns the property. The owner can be a private person (individual) or an organization.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="useHierarchicalBrowser">0</setting>
-                <setting name="restrict_to_relationship_types">localityOwner</setting>
-              </settings>
-			      </placement>
-            <placement code="verbatimLongitudeX">
-              <bundle>ca_attribute_verbatimLongitudeX</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Verbatim longitude (X) (dwc:verbatimLongitude)</setting>
-                <setting name="description" locale="en_US">The original description of the longitude (X).</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
-              </settings>
-			      </placement>
-            <placement code="verbatimLatitudeY">
-              <bundle>ca_attribute_verbatimLatitudeY</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Verbatim latitude (Y) (dwc:verbatimLatitude)</setting>
-                <setting name="description" locale="en_US">The original description of the latitude (Y).</setting>
-              </settings>
-			      </placement>
-			      <placement code="verbatimSRS">
-              <bundle>ca_attribute_verbatimSRS</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Verbatim SRS (dwc:verbatimSRS)</setting>
-                <setting name="description" locale="en_US">The spatial reference system (SRS) of the original coordinates.</setting>
-              </settings>
-			      </placement>
-			      <placement code="verbatimGeoreferenceProtocol">
-              <bundle>ca_attribute_verbatimGeoreferenceProtocol</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Georeference procedure (dwc:georeferenceProtocol)</setting>
-                <setting name="description" locale="en_US">A short description of the procedure that resulting in collecting the verbatim georeference information.</setting>
-              </settings>
-			      </placement>
-			      <placement code="standardizedGeoreferenceWGS84">
-              <bundle>ca_attribute_georeference</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Standardized georeference data</setting>
-                <setting name="description" locale="en_US">The georeferenced location of the observation, standardized using the CMS.</setting>
-              </settings>
-			      </placement>
-			      <placement code="verbatimElevation">
-              <bundle>ca_attribute_verbatimElevation</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Verbatim elevation (dwc:verbatimElevation)</setting>
-                <setting name="description" locale="en_US">The original description of the elevation. From the notes, Excel/Gsheet, dataset, ...</setting>
-              </settings>
-			      </placement>
-			      <placement code="minimumElevationInMeters">
-              <bundle>ca_attribute_minimumElevationInMeters</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The minimum elevation in meters (dwc:minimumElevationInMeters)</setting>
-              </settings>
-			      </placement>
-			      <placement code="maximumElevationInMeters">
-              <bundle>ca_attribute_maximumElevationInMeters</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The maximum elevation in meters (dwc:maximumElevationInMeters)</setting>
-              </settings>
-			      </placement>
-			      <placement code="verticalDatum">
-              <bundle>ca_attribute_verticalDatum</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Vertical datum (dwc:verticalDatum)</setting>
-                <setting name="description" locale="en_US">The vertical datum used as the reference upon which the values in the elevation terms are based.</setting>
-              </settings>
-			      </placement>
-          </bundlePlacements>
-		    </screen>
         <screen idno="objectLot_derivates" default="0">
 		      <labels>
             <label locale="en_US">
@@ -11091,11 +11036,11 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="objectLot_internalURL">
-              <bundle>ca_attribute_internalURL</bundle>
+            <placement code="objectLot_mulitmediaURL">
+              <bundle>ca_attribute_multimediaURL</bundle>
 			        <settings>
-				        <setting name="add_label" locale="en_US">Add URL</setting>
-                <description>An URL LINKED TO THE OBJECT LOT (i.e. not the sampling point, nor the objects within the object lot). This URL leads to a folder, file, photo, video, sound, ... that is saved in an INBO archive space. This could be on the INBO google folders, the INBO tandemVault or any other published open web URL.</description>
+				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
+                <description>An URL that leads to multimedia LINKED TO THE OBJECT LOT (i.e. not the sampling point, nor the objects within the object lot).</description>
 			        </settings>
             </placement>
             <placement code="objectLot_reference">
@@ -11333,12 +11278,12 @@
                 <setting name="restrict_to_types">object</setting>
 			        </settings>
             </placement>
-            <placement code="internalURL">
-              <bundle>ca_attribute_internalURL</bundle>
+            <placement code="multimediaURL">
+              <bundle>ca_attribute_multimediaURL</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Visual representation of the loan</setting>
                 <setting name="description" locale="en_US">This can be photos or videos, to document condition, volume, ...; either before sending out the loan, or when receiving the loan. This URL leads to a folder, photo, video, ... that is saved in an INBO archive space. This could be on the INBO google folders, the INBO tandemVault or any other published open web URL.</setting>
-				        <setting name="add_label" locale="en_US">Add URL</setting>
+				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -12142,7 +12087,7 @@
     </relationshipTable>
 	  <relationshipTable name="ca_entities_x_storage_locations">
       <types>
-        <type code="ownerPlantedSite" default="1">
+        <type code="ownerForestTreePopulationSite" default="1">
           <labels>
             <label locale="en_US">
               <typename>owns</typename>
@@ -12150,7 +12095,7 @@
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
-          <subTypeRight>plantedSite</subTypeRight>
+          <subTypeRight>forestTreePopulationSite</subTypeRight>
         </type>
         <type code="maintainsStorageLocation" default="1">
           <labels>
@@ -12270,7 +12215,7 @@
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
-          <subTypeRight>plantedSite</subTypeRight>
+          <subTypeRight>forestTreePopulationSite</subTypeRight>
         </type>
       </types>
     </relationshipTable>
