@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO] INBO natural science collection v0.58</profileName>
+  <profileName>[INBO] INBO natural science collection v0.58.02</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Changes compared to the previous version 0.57: see list of issues below; to be validated-->
   <!--https://github.com/inbo/collective-access/issues/77-->
@@ -4855,7 +4855,7 @@
       <metadataElement code="externalSpecimen" datatype="Container">
         <labels>
           <label locale="en_US">
-            <name>External relationship</name>
+            <name>External specimen relationship</name>
             <description>If the specimen is related to a external specimen = a specimen held at another Natural Science collection; as specified.</description>
           </label>
         </labels>
@@ -4875,11 +4875,10 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
-		      <metadataElement code="specimenRelationship" datatype="List" list="external_specimen_relationship">
+		      <metadataElement code="externalSpecimenRelationship" datatype="List" list="external_specimen_relationship">
             <labels>
               <label locale="en_US">
-                <name>Reference Details</name>
-                <description>Relevant information about the reference - why is it listed? - what does it say about the specimen/collection?</description>
+                <name>Type of relationship with the external specimen</name>
               </label>
             </labels>
             <settings>
@@ -4887,7 +4886,7 @@
               <setting name="doesNotTakeLocale">1</setting>
             </settings>
 		      </metadataElement>
-          <metadataElement code="relationSpecification" datatype="Text">
+          <metadataElement code="externalSpecimenRelationshipSpec" datatype="Text">
             <labels>
               <label locale="en_US">
                 <name>Relation specification</name>
@@ -7616,7 +7615,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="forestTreePopulationCatContainer" datatype="Container">
+	    <metadataElement code="forestTreePopCatContainer" datatype="Container">
         <labels>
           <label locale="en_US">
             <name>Forest tree population category</name>
@@ -7704,10 +7703,10 @@
             <description>The methods or protocols used during a sampling event.</description>
           </label>
         </labels>
+        <documentationUrl>https://dwc.tdwg.org/list/#dwciri_samplingProtocol</documentationUrl>
 			  <settings>
           <setting name="lineBreakAfterNumberOfElements">1</setting>
         </settings>
-        <documentationUrl>https://dwc.tdwg.org/list/#dwciri_samplingProtocol</documentationUrl>
 	      <elements>
 		      <metadataElement code="protocolURI" datatype="Url">
             <labels>
@@ -9065,7 +9064,7 @@
                 <setting name="label" locale="en_US">Preferred ID</setting>
                 <setting name="description" locale="en_US">This is the preferred identifier. For collected objects this identifier has to be physically present on/with the object, on the label or written on the object. For DNA-samples this is the LIMS-code e.g. 19-009625. For soil samples, this is the SID = sample ID. For sampling points, this is the field code you gave the data point, if need be, by adding prefixes or suffixes to make it unique in the full database.</setting>
                 <setting name="expand_collapse_no_value">expand</setting>
-                <setting name="documentation_url"https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0</setting>
+                <setting name="documentation_url>"https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0</setting>
               </settings>
             </placement>
 			      <placement code="nonpreferred_labels">
@@ -9116,7 +9115,7 @@
                 <setting name="description" locale="en_US">This is the date/time that the specimen/object was created. When this is the first object in the hierarchy, this date equals the sampling date. When this a second or third object in the sequence, it will differ (e.g. a DNA sample is created on a later date than the sampling of the tissue sample). The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
               </settings>
             </placement>
-            <placement code="ca_storage_location" typeRestrictions="livingPlant,forestTreePopulation">
+            <placement code="ca_storage_location_plantlot" typeRestrictions="livingPlant,forestTreePopulation">
               <bundle>ca_storage_locations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at</setting>
@@ -9182,7 +9181,7 @@
               <bundle>status</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Cataloguing status</setting>
-                <setting name="documentation_url"https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0</setting>
+                <setting name="documentation_url>"https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -9259,7 +9258,7 @@
                 <setting name="description" locale="en_US">Will be 1 when deaccessioned or 0 (the default) when not deaccessioned. This should be visible in the object curation log. Types of deaccesioning are: disposal or transfer.</setting>
               </settings>
             </placement>
-            <placement code="ca_storage_location" typeRestrictions="livingPlant,forestTreePopulation">
+            <placement code="ca_storage_location_plantlot" typeRestrictions="livingPlant,forestTreePopulation">
               <bundle>ca_storage_locations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at</setting>
@@ -9334,7 +9333,7 @@
                 <setting name="expand_collapse_value">collapse</setting>
 				        <setting name="add_label" locale="en_US">Add relationship to an external specimen</setting>
               </settings>
-            </placement>externalSpecimen
+            </placement>
           </bundlePlacements>
         </screen>
         <screen idno="context" default="0">
@@ -9880,14 +9879,14 @@
               <bundle>ca_attribute_multimediaURL</bundle>
 			        <settings>
 				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
-                <description>Multimedia LINKED TO THE OBJECT (i.e. not the sampling point).</description>
+                <setting name="description" locale="en_US">Multimedia LINKED TO THE OBJECT (i.e. not the sampling point).</setting>
 			        </settings>
             </placement>
             <placement code="multimediaURL_obs" typeRestrictions="observation" includeSubtypes="1">
               <bundle>ca_attribute_multimediaURL</bundle>
 			        <settings>
 				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
-                <description>An URL LINKED TO INFORMATION OF THE SAMPLING POINT (i.e. not the object).</description>
+                <setting name="description" locale="en_US">An URL LINKED TO INFORMATION OF THE SAMPLING POINT (i.e. not the object).</setting>
 			        </settings>
             </placement>
             <placement code="reference_obj" typeRestrictions="object" includeSubtypes="1">
@@ -11233,7 +11232,7 @@
               <bundle>ca_attribute_multimediaURL</bundle>
 			        <settings>
 				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
-                <description>An URL that leads to multimedia LINKED TO THE OBJECT LOT (i.e. not the sampling point, nor the objects within the object lot).</description>
+                <setting name="description" locale="en_US">An URL that leads to multimedia LINKED TO THE OBJECT LOT (i.e. not the sampling point, nor the objects within the object lot).</setting>
 			        </settings>
             </placement>
             <placement code="objectLot_reference">
