@@ -5,6 +5,7 @@
   <!--Changes compared to the previous version 0.58: see list of issues below; to be validated-->
   <!--https://github.com/inbo/collective-access/issues/87-->
   <!--https://github.com/inbo/collective-access/issues/93-->
+  <!--https://github.com/inbo/collective-access/issues/115-->
   <!--https://github.com/inbo/collective-access/issues/118-->
   <!--https://github.com/inbo/collective-access/issues/149-->
   <!--https://github.com/inbo/collective-access/issues/150-->
@@ -1637,7 +1638,7 @@
           </label>
         </labels>
         <items>
-          <item idno="restrictionAccess" enabled="1" default="0">
+          <item idno="restrictionAccess" enabled="0" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>Restriction on access</name_singular>
@@ -1687,7 +1688,7 @@
                 </item>																																
             </items>
           </item>		
-          <item idno="restrictionTransfer" enabled="1" default="0">
+          <item idno="restrictionTransfer" enabled="0" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>Restriction on transfer</name_singular>
@@ -1721,7 +1722,7 @@
               </item>
             </items>
           </item>
-          <item idno="restrictionResearch" enabled="1" default="0">
+          <item idno="restrictionResearch" enabled="0" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>Restriction on research</name_singular>
@@ -9488,16 +9489,6 @@
                 <setting name="expand_collapse_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="hierarchy_location_observationAnimal" typeRestrictions="observationAnimal">
-              <bundle>hierarchy_location</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Relationships with other INBO-specimens</setting>
-                <setting name="description" locale="en_US">The relationship between sampling point and all the directly related objects (subsamples, DNA-extractions, parasites from cadaver, ...). TIP: to view sibling specimens, move to the parent specimen.</setting>
-                <setting name="restrict_to_type">animalObject,oDNA</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="expand_collapse_value">collapse</setting>
-              </settings>
-            </placement>
 			      <placement code="seedlot_relationContainer" typeRestrictions="seedlot">
               <bundle>ca_attribute_seedlotRelationContainer</bundle>
 			        <settings>
@@ -10216,7 +10207,7 @@
                 <setting name="restrict_to_types">valuation</setting>
                 <setting name="list_format">list</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="display">^ca_occurrences.valuationArgument (^ca_occurrences.eventDate)</setting>
+                <setting name="format">^ca_occurrences.valuationArgument (^ca_occurrences.eventDate)</setting>
 			        </settings>
             </placement>
 			      <placement code="ca_occurrences_curation">
