@@ -9,6 +9,7 @@
   <!--https://github.com/inbo/collective-access/issues/150-->
   <!--https://github.com/inbo/collective-access/issues/151-->
   <!--https://github.com/inbo/collective-access/issues/152-->
+  <!--https://github.com/inbo/collective-access/issues/153-->
   <!--https://github.com/inbo/collective-access/issues/154-->
   <!--https://github.com/inbo/collective-access/issues/155-->
   <!--https://github.com/inbo/collective-access/issues/156-->
@@ -10214,6 +10215,7 @@
                 <setting name="restrict_to_types">valuation</setting>
                 <setting name="list_format">list</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="display">^ca_occurrences.valuationArgument (^ca_occurrences.eventDate)</setting>
 			        </settings>
             </placement>
 			      <placement code="ca_occurrences_curation">
@@ -10415,9 +10417,8 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="dateRange" typeRestrictions="fieldwork,project,valuation,disposal,treatment,renewal,transfer">
+			      <placement code="eventDate" typeRestrictions="fieldwork,project,valuation,disposal,treatment,renewal,transfer">
               <bundle>ca_attribute_eventDate</bundle>
-              <!--http://rs.tdwg.org/dwc/terms/dateIdentified-->
               <settings>
                 <setting name="label" locale="en_US">Date (range) and time (range), standardised.</setting>
               </settings>
