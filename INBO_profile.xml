@@ -9,6 +9,11 @@
   <!--https://github.com/inbo/collective-access/issues/150-->
   <!--https://github.com/inbo/collective-access/issues/151-->
   <!--https://github.com/inbo/collective-access/issues/152-->
+  <!--https://github.com/inbo/collective-access/issues/156-->
+  <!--https://github.com/inbo/collective-access/issues/157-->
+  <!--https://github.com/inbo/collective-access/issues/159-->
+  <!--https://github.com/inbo/collective-access/issues/160-->
+  <!--https://github.com/inbo/collective-access/issues/161-->
   <!--https://github.com/inbo/collective-access/issues/162-->
   <locales>
     <locale lang="en" country="US">English</locale>
@@ -887,14 +892,14 @@
           </item>
         </items>
       </list>
-      <list code="place_types" hierarchical="1" system="0" vocabulary="0">
+      <list code="place_types" hierarchical="1" system="0" vocabulary="0" efaultSort="1">
         <labels>
           <label locale="en_US">
             <name>Place types</name>
           </label>
         </labels>
          <items>
-              <item idno="continent" enabled="1" default="0"><!--http://rs.tdwg.org/dwc/terms/continent-->
+              <item idno="continent" rank="1" enabled="1" default="0"><!--http://rs.tdwg.org/dwc/terms/continent-->
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>continent</name_singular>
@@ -902,7 +907,7 @@
                   </label>
                 </labels>
               </item>
-              <item idno="waterBody" enabled="1" default="0"><!--http://rs.tdwg.org/dwc/terms/waterBody-->
+              <item idno="waterBody" rank="2" enabled="1" default="0"><!--http://rs.tdwg.org/dwc/terms/waterBody-->
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>waterbody</name_singular>
@@ -910,7 +915,7 @@
                   </label>
                 </labels>
               </item>
-              <item idno="islandGroup" enabled="1" default="0"><!--http://rs.tdwg.org/dwc/terms/islandGroup-->
+              <item idno="islandGroup" rank="3" enabled="1" default="0"><!--http://rs.tdwg.org/dwc/terms/islandGroup-->
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>island group</name_singular>
@@ -918,7 +923,7 @@
                   </label>
                 </labels>
               </item>
-              <item idno="island" enabled="1" default="0"><!--http://rs.tdwg.org/dwc/terms/island-->
+              <item idno="island" rank="4" enabled="1" default="0"><!--http://rs.tdwg.org/dwc/terms/island-->
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>island</name_singular>
@@ -926,7 +931,7 @@
                   </label>
                 </labels>
               </item>
-              <item idno="country" enabled="1" default="1"><!--http://rs.tdwg.org/dwc/terms/country-->
+              <item idno="country" rank="5" enabled="1" default="1"><!--http://rs.tdwg.org/dwc/terms/country-->
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>country</name_singular>
@@ -934,7 +939,15 @@
                   </label>
                 </labels>
               </item>
-              <item idno="stateProvince" enabled="1" default="0"><!--http://rs.tdwg.org/dwc/terms/stateProvince-->
+              <item idno="provenanceRegion" rank="6" enabled="1" default="0"><!--This allows linking of multiple sampling points and specimens to a defined provenance. Be aware that provenance is country and species specific. The Provenance region should hence be defined under a country and the taxonomic scope should be added to the name e.g. Germany -> Alnus_glutinosa_80204.-->
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>provenance region</name_singular>
+                    <name_plural>provenance regions</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="stateProvince" rank="7" enabled="1" default="0"><!--http://rs.tdwg.org/dwc/terms/stateProvince-->
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>state/province</name_singular>
@@ -942,7 +955,7 @@
                   </label>
                 </labels>
               </item>
-              <item idno="countyShireDepartment" enabled="1" default="0"><!--http://rs.tdwg.org/dwc/terms/county-->
+              <item idno="countyShireDepartment" rank="8" enabled="1" default="0"><!--http://rs.tdwg.org/dwc/terms/county-->
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>county, shire, department, ...</name_singular>
@@ -950,7 +963,7 @@
                   </label>
                 </labels>
               </item>
-              <item idno="cityTownMunicipalityVillage" enabled="1" default="0"><!--http://rs.tdwg.org/dwc/terms/municipality-->
+              <item idno="cityTownMunicipalityVillage" rank="9" enabled="1" default="0"><!--http://rs.tdwg.org/dwc/terms/municipality-->
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>city, town, municipality, village, ...</name_singular>
@@ -958,7 +971,7 @@
                   </label>
                 </labels>
               </item>
-              <item idno="inSituPlot" enabled="1" default="0"><!--This allows linking of multiple sampling points and specimens to defined plots, if relevant. For example uitgangsmateriaal defined in a GIS layer (https://www.vlaanderen.be/inbo/genenbronnen-bosbouw/kaart/) or a long-term-monitoring plot.-->
+              <item idno="inSituPlot" rank="10" enabled="1" default="0"><!--This allows linking of multiple sampling points and specimens to defined plots, if relevant. For example uitgangsmateriaal defined in a GIS layer (https://www.vlaanderen.be/inbo/genenbronnen-bosbouw/kaart/) or a long-term-monitoring plot.-->
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>in-situ plot</name_singular>
@@ -966,7 +979,7 @@
                   </label>
                 </labels>
               </item>
-              <item idno="transect" enabled="1" default="0"><!--This allows linking of multiple sampling points and specimens to a defined transect, if relevant.-->
+              <item idno="transect" rank="11" enabled="1" default="0"><!--This allows linking of multiple sampling points and specimens to a defined transect, if relevant.-->
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>transect</name_singular>
@@ -974,19 +987,11 @@
                   </label>
                 </labels>
               </item>
-              <item idno="toponym" enabled="1" default="0"><!--This allows linking of multiple sampling points and specimens to a defined place concept, below the level of a city or town; where relevant. For example a name of a Forest Reserve.-->
+              <item idno="toponym" rank="12" enabled="1" default="0"><!--This allows linking of multiple sampling points and specimens to a defined place concept, below the level of a city or town; where relevant. For example a name of a Forest Reserve.-->
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>toponym</name_singular>
                     <name_plural>toponym</name_plural>
-                  </label>
-                </labels>
-              </item>
-              <item idno="provenanceRegion" enabled="1" default="0"><!--This allows linking of multiple sampling points and specimens to a defined provenance. Be aware that provenance is country and species specific. The Provenance region should hence be defined under a country and the taxonomic scope should be added to the name e.g. Germany -> Alnus_glutinosa_80204.-->
-                <labels>
-                  <label locale="en_US" preferred="1">
-                    <name_singular>provenance region</name_singular>
-                    <name_plural>provenance regions</name_plural>
                   </label>
                 </labels>
               </item>
@@ -999,31 +1004,31 @@
           </label>
         </labels>
         <items>
-          <item idno="internalCollection" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>INBO collection</name_singular>
-                <name_plural>INBO collections</name_plural>
-              </label>
-            </labels>
-            <items>
               <item idno="archiveCollection" enabled="1" default="0"><!--Purpose: validate executed research, re-use samples. To be inventoried at the object-level.-->
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>Archive collection</name_singular>
-                    <name_plural>Archive collections</name_plural>
+                    <name_singular>INBO archive collection</name_singular>
+                    <name_plural>INBO archive collections</name_plural>
                   </label>
                 </labels>
               </item>
               <item idno="referenceCollection" enabled="1" default="0"><!--Purpose: to help identify in research. This collection is actively referenced to in the material and methods of published research. Best practice is that the objects are rich in metadata as possible, including date and place information per object.-->
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>Working/Reference collection</name_singular>
-                    <name_plural>Working/Reference collections</name_plural>
+                    <name_singular>INBO working/Reference collection</name_singular>
+                    <name_plural>INBO working/Reference collections</name_plural>
                   </label>
                 </labels>
               </item>
               <item idno="didacticCollection" enabled="1" default="0"><!--Purpose: to train staff in taxonomic identifications. To be inventoried at the collection-level.-->
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>INBO didactic collection</name_singular>
+                    <name_plural>INBO didactic collections</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="assessmentCollection" enabled="1" default="0"><!--Purpose: to make artificial collections from the INBO-collection as required for reporting (e.g. contribution to dashboards)-->
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>Didactic collection</name_singular>
@@ -1031,16 +1036,6 @@
                   </label>
                 </labels>
               </item>
-            </items>
-          </item>
-          <item idno="externalCollection" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>External collection</name_singular>
-                <name_plural>External collections</name_plural>
-              </label>
-            </labels>
-          </item>
         </items>
       </list>
       <list code="occurrence_types" hierarchical="1" system="0" vocabulary="0" defaultSort="1">
@@ -8806,6 +8801,77 @@
             </restriction>
         </typeRestrictions>
       </metadataElement>
+      <metadataElement code="collectionDateContainer" datatype="Container">
+        <labels>
+          <label locale="en_US">
+            <name>Collection date container</name>
+		        <description>Information on the collection concept it's timeline</description>
+          </label>
+        </labels>
+        <elements>
+          <metadataElement code="currentCollection" datatype="List" list="true_false">
+            <labels>
+              <label locale="en_US">
+                <name>Current collection (ltc:currentCollection)</name>
+                <description>A flag to indicate whether the collection still exists as a single entity.</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/ltc/terms/currentCollection</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="collectionStartDate" datatype="DateRange">
+            <labels>
+              <label locale="en_US">
+                <name>Collection Concept start date</name>
+                <description>Accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
+              </label>
+            </labels>
+            <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">40</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">1</setting>
+              <setting name="maxChars">65535</setting>
+              <setting name="canBeUsedInSort">1</setting>
+              <setting name="canBeUsedInSearchForm">1</setting>
+              <setting name="canBeUsedInDisplay">1</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="collectionEndDate" datatype="DateRange">
+            <labels>
+              <label locale="en_US">
+                <name>Collection concept end date</name>
+                <description>Accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
+              </label>
+            </labels>
+            <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">40</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">1</setting>
+              <setting name="maxChars">65535</setting>
+              <setting name="canBeUsedInSort">1</setting>
+              <setting name="canBeUsedInSearchForm">1</setting>
+              <setting name="canBeUsedInDisplay">1</setting>
+            </settings>
+          </metadataElement>
+		    </elements>
+        <typeRestrictions>
+          <restriction code="r_collection">
+            <table>ca_collections</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
 	    <metadataElement code="currentCollection" datatype="List" list="true_false">
         <labels>
           <label locale="en_US">
@@ -9404,7 +9470,7 @@
             <placement code="hierarchy_location">
               <bundle>hierarchy_location</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Relationships hierarchy browser</setting>
+                <setting name="label" locale="en_US">Relationships with other INBO-specimens</setting>
                 <setting name="description" locale="en_US">The relationship between sampling point and all the directly related objects (subsamples, DNA-extractions, parasites from cadaver, ...). TIP: to view sibling specimens, move to the parent specimen.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="expand_collapse_value">collapse</setting>
@@ -9413,7 +9479,7 @@
             <placement code="hierarchy_location_observationAnimal" typeRestrictions="observationAnimal">
               <bundle>hierarchy_location</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Relationships hierarchy browser</setting>
+                <setting name="label" locale="en_US">Relationships with other INBO-specimens</setting>
                 <setting name="description" locale="en_US">The relationship between sampling point and all the directly related objects (subsamples, DNA-extractions, parasites from cadaver, ...). TIP: to view sibling specimens, move to the parent specimen.</setting>
                 <setting name="restrict_to_type">animalObject,oDNA</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -10857,9 +10923,6 @@
                 <setting name="label" locale="en_US">Cataloguing status</setting>
               </settings>
             </placement>
-			      <placement code="currentCollection">
-              <bundle>ca_attribute_currentCollection</bundle>
-            </placement>
 			      <placement code="preferred_labels">
               <bundle>preferred_labels</bundle>
               <settings>
@@ -10875,6 +10938,12 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
+			      <placement code="currentCollection">
+              <bundle>ca_attribute_currentCollection</bundle>
+            </placement>
+			      <placement code="distinctObjects">
+              <bundle>ca_attribute_distinctObjects</bundle>
+            </placement>
             <placement code="descriptionContainer">
               <bundle>ca_attribute_descriptionContainer</bundle>
 			        <settings>
@@ -10889,24 +10958,6 @@
                 <setting name="description" locale="en_US">For example, the collection on the Global Registry of Scientific Collections. See: https://www.gbif.org/grscicoll.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
-            </placement>
-          </bundlePlacements>
-        </screen>
-		    <screen idno="coll_scheme" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>Description scheme</name>
-            </label>
-          </labels>
-          <bundlePlacements>
-			      <placement code="basisOfScheme">
-              <bundle>ca_attribute_basisOfScheme</bundle>
-            </placement>
-			      <placement code="schemeName">
-              <bundle>ca_attribute_schemeName</bundle>
-            </placement>
-			      <placement code="distinctObjects">
-              <bundle>ca_attribute_distinctObjects</bundle>
             </placement>
           </bundlePlacements>
         </screen>
