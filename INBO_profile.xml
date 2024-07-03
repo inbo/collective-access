@@ -2,18 +2,7 @@
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
   <profileName>[INBO] INBO natural science collection v0.59.01</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
-  <!--Changes compared to the previous version 0.57: see list of issues below; to be validated-->
-  <!--https://github.com/inbo/collective-access/issues/123-->
-  <!--https://github.com/inbo/collective-access/issues/129-->
-  <!--https://github.com/inbo/collective-access/issues/130-->
-  <!--https://github.com/inbo/collective-access/issues/134-->
-  <!--https://github.com/inbo/collective-access/issues/137-->
-  <!--https://github.com/inbo/collective-access/issues/142-->
-  <!--https://github.com/inbo/collective-access/issues/143-->
-  <!--https://github.com/inbo/collective-access/issues/144-->
-  <!--https://github.com/inbo/collective-access/issues/146-->
-  <!--https://github.com/inbo/collective-access/issues/148-->
-  <!--XXX-->
+  <!--Changes compared to the previous version 0.58: see list of issues below; to be validated-->
   <!--https://github.com/inbo/collective-access/issues/150-->
   <!--https://github.com/inbo/collective-access/issues/151-->
   <!--https://github.com/inbo/collective-access/issues/152-->
@@ -870,20 +859,6 @@
         </label>
         </labels>
         <items>
-          <item idno="specimenLot" rank="1" enabled="1" default="0"><!--This is if different types of specimens are combined in a lot and need information logged (like administrational information) to the lot-->
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>specimen lot</name_singular>
-                <name_plural>specimen lots</name_plural>
-              </label>
-            </labels>
-            <settings>
-             <setting name="render_in_new_menu">1</setting>
-             <setting name="render_in_find_menu">1</setting>
-            </settings>
-            <items>
-            </items>
-          </item>
 		    </items>
       </list>
 	    <list code="entity_types" hierarchical="1" system="0" vocabulary="0">
@@ -7644,14 +7619,14 @@
 	    <metadataElement code="forestTreePopCatContainer" datatype="Container">
         <labels>
           <label locale="en_US">
-            <name>Forest tree population category</name>
+            <name>Forest tree population category (container)</name>
           </label>
         </labels>
 			  <settings>
-          <setting name="lineBreakAfterNumberOfElements">2</setting>
+          <setting name="lineBreakAfterNumberOfElements">1</setting>
         </settings>
 	      <elements>
-		      <metadataElement code="forestTreePopulationCategory" datatype="List" list="type_forestTreePopulation">
+		      <metadataElement code="forestTreePopCat" datatype="List" list="type_forestTreePopulation">
             <labels>
             <label locale="en_US">
               <name>Forest tree population category</name>
@@ -7696,7 +7671,7 @@
               <setting name="canBeUsedInDisplay">1</setting>
             </settings>
 		      </metadataElement>
-		      <metadataElement code="forestTreePopulationRef" datatype="Text">
+		      <metadataElement code="forestTreePopRef" datatype="Text">
             <labels>
             <label locale="en_US">
               <name>Reference number of the forest tree population (e.g. PAV-KL-01-01)</name>
@@ -9356,13 +9331,24 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-            <placement code="ca_storage_location" typeRestrictions="animalObject,leafSample,littertrapSample,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1">
+            <placement code="ca_storage_location_lookup" typeRestrictions="animalObject,leafSample,littertrapSample,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1">
               <bundle>ca_storage_locations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at</setting>
                 <setting name="restrict_to_types">room,cabinetFridgeFreezer,drawershelf,box,spot</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="useHierarchicalBrowser">0</setting>
+              </settings>
+            </placement>
+            <placement code="ca_storage_location_hierarchyBrowser" typeRestrictions="animalObject,leafSample,littertrapSample,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1">
+              <bundle>ca_storage_locations</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Object is stored at</setting>
+                <setting name="restrict_to_types">room,cabinetFridgeFreezer,drawershelf,box,spot</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="useHierarchicalBrowser">1</setting>
               </settings>
             </placement>
             <placement code="ca_collection">
