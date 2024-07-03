@@ -5,6 +5,7 @@
   <!--Changes compared to the previous version 0.58: see list of issues below; to be validated-->
   <!--https://github.com/inbo/collective-access/issues/87-->
   <!--https://github.com/inbo/collective-access/issues/93-->
+  <!--https://github.com/inbo/collective-access/issues/108-->
   <!--https://github.com/inbo/collective-access/issues/115-->
   <!--https://github.com/inbo/collective-access/issues/118-->
   <!--https://github.com/inbo/collective-access/issues/149-->
@@ -228,97 +229,11 @@
                     <setting name="render_in_find_menu">0</setting>
                     </settings>
                     <items>
-                      <item idno="animalBulk" enabled="1" default="0"><!--For example: bulk sample of insects e.g. in a pan trap-->
-                        <labels>
-                          <label locale="en_US" preferred="1">
-                            <name_singular>Animal bulk sample</name_singular>
-                            <name_plural>Animal bulk samples</name_plural>
-                          </label>
-                        </labels>
-                        <settings>
-                        <setting name="render_in_new_menu">1</setting>
-                        <setting name="render_in_find_menu">0</setting>
-                        </settings>
-                      </item>
-                      <item idno="animalEntire" enabled="0" default="0">
-                        <labels>
-                          <label locale="en_US" preferred="1">
-                            <name_singular>Animal, entire</name_singular>
-                            <name_plural>Animal, entire</name_plural>
-                          </label>
-                        </labels>
-                        <settings>
-                        <setting name="render_in_new_menu">1</setting>
-                        <setting name="render_in_find_menu">0</setting>
-                        </settings>
-                        <items>
-                          <item idno="animalEntireLiving" enabled="1" default="0">
+                          <item idno="amphibian" enabled="0" default="0">
                             <labels>
                               <label locale="en_US" preferred="1">
-                                <name_singular>Living animal</name_singular>
-                                <name_plural>Living animals</name_plural>
-                              </label>
-                            </labels>
-                            <settings>
-                            <setting name="render_in_new_menu">1</setting>
-                            <setting name="render_in_find_menu">0</setting>
-                            </settings>
-                          </item>
-                          <item idno="animalEntireCadaver" enabled="1" default="0"><!--unprocessed, frozen-->
-                            <labels>
-                              <label locale="en_US" preferred="1">
-                                <name_singular>Cadaver</name_singular>
-                                <name_plural>Cadavers</name_plural>
-                              </label>
-                            </labels>
-                            <settings>
-                            <setting name="render_in_new_menu">1</setting>
-                            <setting name="render_in_find_menu">0</setting>
-                            </settings>
-                          </item>
-                          <item idno="animalEntireEthanol" enabled="1" default="0">
-                            <labels>
-                              <label locale="en_US" preferred="1">
-                                <name_singular>Animal on ethanol</name_singular>
-                                <name_plural>Animals on ethanol</name_plural>
-                              </label>
-                            </labels>
-                            <settings>
-                            <setting name="render_in_new_menu">1</setting>
-                            <setting name="render_in_find_menu">0</setting>
-                            </settings>
-                          </item>
-                          <item idno="animalEntireDry" enabled="1" default="0"><!--often processed, room temperature-->
-                            <labels>
-                              <label locale="en_US" preferred="1">
-                                <name_singular>Dry animal specimen</name_singular>
-                                <name_plural>Dry animal specimens</name_plural>
-                              </label>
-                            </labels>
-                            <settings>
-                            <setting name="render_in_new_menu">1</setting>
-                            <setting name="render_in_find_menu">0</setting>
-                            </settings>
-                          </item>
-                        </items>
-                      </item>
-                      <item idno="animalSample" enabled="0" default="0">
-                        <labels>
-                          <label locale="en_US" preferred="1">
-                            <name_singular>Animal sample</name_singular>
-                            <name_plural>Animal sample</name_plural>
-                          </label>
-                        </labels>
-                        <settings>
-                        <setting name="render_in_new_menu">1</setting>
-                        <setting name="render_in_find_menu">0</setting>
-                        </settings>
-                        <items>
-                          <item idno="sampleAmphibian" enabled="0" default="0">
-                            <labels>
-                              <label locale="en_US" preferred="1">
-                                <name_singular>Amphibian sample</name_singular>
-                                <name_plural>Amphibian samples</name_plural>
+                                <name_singular>Amphibian</name_singular>
+                                <name_plural>Amphibians</name_plural>
                               </label>
                             </labels>
                             <settings>
@@ -326,6 +241,18 @@
                             <setting name="render_in_find_menu">0</setting>
                             </settings>
                             <items>
+                              <item idno="amphibianEntireEthanol" enabled="1" default="0">
+                                <labels>
+                                  <label locale="en_US" preferred="1">
+                                    <name_singular>Entire amphibian on ethanol</name_singular>
+                                    <name_plural>Entire amphibian on ethanol</name_plural>
+                                  </label>
+                                </labels>
+                                <settings>
+                                <setting name="render_in_new_menu">1</setting>
+                                <setting name="render_in_find_menu">0</setting>
+                                </settings>
+                              </item>
                               <item idno="sampleAmphibianTailclip" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
@@ -388,11 +315,11 @@
                               </item>
                             </items>
                           </item>
-                          <item idno="sampleFish" enabled="0" default="0">
+                          <item idno="fish" enabled="0" default="0">
                             <labels>
                               <label locale="en_US" preferred="1">
-                                <name_singular>Fish sample</name_singular>
-                                <name_plural>Fish samples</name_plural>
+                                <name_singular>Fish</name_singular>
+                                <name_plural>Fishes</name_plural>
                               </label>
                             </labels>
                             <settings>
@@ -400,6 +327,18 @@
                             <setting name="render_in_find_menu">0</setting>
                             </settings>
                             <items>
+                              <item idno="fishEntireEthanol" enabled="1" default="0">
+                                <labels>
+                                  <label locale="en_US" preferred="1">
+                                    <name_singular>Entire fish on ethanol</name_singular>
+                                    <name_plural>Entire fishes on ethanol</name_plural>
+                                  </label>
+                                </labels>
+                                <settings>
+                                <setting name="render_in_new_menu">1</setting>
+                                <setting name="render_in_find_menu">0</setting>
+                                </settings>
+                              </item>
                               <item idno="sampleFishFinclip" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
@@ -426,11 +365,11 @@
                               </item>
                             </items>
                           </item>
-                          <item idno="sampleInvertebrate" enabled="0" default="0">
+                          <item idno="invertebrate" enabled="0" default="0">
                             <labels>
                               <label locale="en_US" preferred="1">
-                                <name_singular>Invertebrate sample</name_singular>
-                                <name_plural>Invertebrate samples</name_plural>
+                                <name_singular>Invertebrate</name_singular>
+                                <name_plural>Invertebrates</name_plural>
                               </label>
                             </labels>
                             <settings>
@@ -438,6 +377,42 @@
                             <setting name="render_in_find_menu">0</setting>
                             </settings>
                             <items>
+                              <item idno="invertebrateBulk" enabled="1" default="0"><!--For example: bulk sample of insects e.g. in a pan trap-->
+                                <labels>
+                                  <label locale="en_US" preferred="1">
+                                    <name_singular>Animal bulk sample</name_singular>
+                                    <name_plural>Animal bulk samples</name_plural>
+                                  </label>
+                                </labels>
+                                <settings>
+                                <setting name="render_in_new_menu">1</setting>
+                                <setting name="render_in_find_menu">0</setting>
+                                </settings>
+                              </item>
+                              <item idno="invertebrateEntireEthanol" enabled="1" default="0">
+                                <labels>
+                                  <label locale="en_US" preferred="1">
+                                    <name_singular>Animal on ethanol</name_singular>
+                                    <name_plural>Animals on ethanol</name_plural>
+                                  </label>
+                                </labels>
+                                <settings>
+                                <setting name="render_in_new_menu">1</setting>
+                                <setting name="render_in_find_menu">0</setting>
+                                </settings>
+                              </item>
+                              <item idno="invertebrateEntireDry" enabled="1" default="0"><!--often processed, room temperature-->
+                                <labels>
+                                  <label locale="en_US" preferred="1">
+                                    <name_singular>Dry animal specimen</name_singular>
+                                    <name_plural>Dry animal specimens</name_plural>
+                                  </label>
+                                </labels>
+                                <settings>
+                                <setting name="render_in_new_menu">1</setting>
+                                <setting name="render_in_find_menu">0</setting>
+                                </settings>
+                              </item>
                               <item idno="sampleInvertebrateLeg" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
@@ -464,11 +439,11 @@
                               </item>
                             </items>
                           </item>
-                          <item idno="sampleMammal" enabled="0" default="0">
+                          <item idno="mammal" enabled="0" default="0">
                             <labels>
                               <label locale="en_US" preferred="1">
-                                <name_singular>Mammal sample</name_singular>
-                                <name_plural>Mammal samples</name_plural>
+                                <name_singular>Mammal</name_singular>
+                                <name_plural>Mammals</name_plural>
                               </label>
                             </labels>
                             <settings>
@@ -476,6 +451,30 @@
                             <setting name="render_in_find_menu">0</setting>
                             </settings>
                             <items>
+                              <item idno="mammalEntireCadaver" enabled="1" default="0"><!--unprocessed, frozen-->
+                                <labels>
+                                  <label locale="en_US" preferred="1">
+                                    <name_singular>Mammal cadaver</name_singular>
+                                    <name_plural>Mammal cadavers</name_plural>
+                                  </label>
+                                </labels>
+                                <settings>
+                                <setting name="render_in_new_menu">1</setting>
+                                <setting name="render_in_find_menu">0</setting>
+                                </settings>
+                              </item>
+                              <item idno="mammalEntireEthanol" enabled="1" default="0"><!--unprocessed, frozen-->
+                                <labels>
+                                  <label locale="en_US" preferred="1">
+                                    <name_singular>Mammal entire in ethanol</name_singular>
+                                    <name_plural>Mammals entire in ethanol</name_plural>
+                                  </label>
+                                </labels>
+                                <settings>
+                                <setting name="render_in_new_menu">1</setting>
+                                <setting name="render_in_find_menu">0</setting>
+                                </settings>
+                              </item>
                               <item idno="sampleMammalBaculum" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
@@ -702,14 +701,26 @@
                               </item>
                             </items>
                           </item>
-                          <item idno="sampleReptile" enabled="0" default="0">
+                          <item idno="reptile" enabled="0" default="0">
                             <labels>
                               <label locale="en_US" preferred="1">
-                                <name_singular>Reptile sample</name_singular>
-                                <name_plural>Reptile samples</name_plural>
+                                <name_singular>Reptile</name_singular>
+                                <name_plural>Reptiles</name_plural>
                               </label>
                             </labels>
-                            <items>	
+                            <items>
+                              <item idno="reptileEntireEthanol" enabled="1" default="0"><!--unprocessed, frozen-->
+                                <labels>
+                                  <label locale="en_US" preferred="1">
+                                    <name_singular>Reptile entire in ethanol</name_singular>
+                                    <name_plural>Reptile entire in ethanol</name_plural>
+                                  </label>
+                                </labels>
+                                <settings>
+                                <setting name="render_in_new_menu">1</setting>
+                                <setting name="render_in_find_menu">0</setting>
+                                </settings>
+                              </item>	
                               <item idno="sampleReptileSkin" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
@@ -728,8 +739,6 @@
                               </item>
                             </items>
                           </item>
-                        </items>
-                      </item>
                     </items>
                   </item>
                   <item idno="plantObject" rank="2" enabled="0" default="0">
@@ -2108,27 +2117,11 @@
                 </label>
             </labels>
           </item>
-          <item idno="monoeciousHermaphrodite" enabled="1" default="0">
+          <item idno="monoecious" enabled="1" default="0">
             <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>monoecious: hermaphrodite</name_singular>
                   <name_plural>monoecious: hermaphrodite</name_plural>
-                </label>
-            </labels>
-          </item>
-          <item idno="monoeciousFemale" enabled="1" default="0">
-            <labels>
-                <label locale="en_US" preferred="1">
-                  <name_singular>monoecious: female</name_singular>
-                  <name_plural>monoecious: female</name_plural>
-                </label>
-            </labels>
-          </item>
-          <item idno="monoeciousMale" enabled="1" default="0">
-            <labels>
-                <label locale="en_US" preferred="1">
-                  <name_singular>monoecious: male</name_singular>
-                  <name_plural>monoecious: male</name_plural>
                 </label>
             </labels>
           </item>
@@ -2158,7 +2151,7 @@
           </item>
         </items>
       </list>
-      <list code="life_stage_animal" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
+      <list code="life_stage_mammal" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
         <labels>
           <label locale="en_US">
             <name>Life stage (animal)</name>
@@ -2181,6 +2174,113 @@
               </label>
             </labels>
           </item>
+          <item idno="notRecorded" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>not recorded</name_singular>
+                <name_plural>not recorded</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="other" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>other</name_singular>
+                <name_plural>other</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
+      <list code="life_stage_fish" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
+        <labels>
+          <label locale="en_US">
+            <name>Life stage (animal)</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="juvenile" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>juvenile</name_singular>
+                <name_plural>juveniles</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="adult" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>adult</name_singular>
+                <name_plural>adults</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="notRecorded" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>not recorded</name_singular>
+                <name_plural>not recorded</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="other" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>other</name_singular>
+                <name_plural>other</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
+      <list code="life_stage_reptile" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
+        <labels>
+          <label locale="en_US">
+            <name>Life stage (animal)</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="juvenile" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>juvenile</name_singular>
+                <name_plural>juveniles</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="adult" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>adult</name_singular>
+                <name_plural>adults</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="notRecorded" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>not recorded</name_singular>
+                <name_plural>not recorded</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="other" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>other</name_singular>
+                <name_plural>other</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
+      <list code="life_stage_invertebrate" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
+        <labels>
+          <label locale="en_US">
+            <name>Life stage (animal)</name>
+          </label>
+        </labels>
+        <items>
           <item idno="egg" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
@@ -2197,11 +2297,11 @@
               </label>
             </labels>
           </item>
-          <item idno="subadult" enabled="1" default="0">
+          <item idno="nymph" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>subadult</name_singular>
-                <name_plural>subadults</name_plural>
+                <name_singular>nymph</name_singular>
+                <name_plural>nymphs</name_plural>
               </label>
             </labels>
           </item>
@@ -2213,11 +2313,60 @@
               </label>
             </labels>
           </item>
-          <item idno="nymph" enabled="1" default="0">
+          <item idno="adult" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>nymph</name_singular>
-                <name_plural>nymphs</name_plural>
+                <name_singular>adult</name_singular>
+                <name_plural>adults</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="notRecorded" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>not recorded</name_singular>
+                <name_plural>not recorded</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="other" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>other</name_singular>
+                <name_plural>other</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
+      <list code="life_stage_amphibian" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
+        <labels>
+          <label locale="en_US">
+            <name>Life stage (animal)</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="egg" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>egg</name_singular>
+                <name_plural>eggs</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="juvenile" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>juvenile</name_singular>
+                <name_plural>juveniles</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="adult" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>adult</name_singular>
+                <name_plural>adults</name_plural>
               </label>
             </labels>
           </item>
@@ -2246,6 +2395,14 @@
           </label>
         </labels>
         <items>
+          <item idno="seedling" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>seedling (plants)</name_singular>
+                <name_plural>seedlings (plants)</name_plural>
+              </label>
+            </labels>
+          </item>
           <item idno="juvenile" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
@@ -2259,30 +2416,6 @@
               <label locale="en_US" preferred="1">
                 <name_singular>adult</name_singular>
                 <name_plural>adults</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="seedling" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>seedling (plants)</name_singular>
-                <name_plural>seedlings (plants)</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="gametophyte" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>gametophyte</name_singular>
-                <name_plural>gametophytes</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="sporophyte" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>sporophyte</name_singular>
-                <name_plural>sporophytes</name_plural>
               </label>
             </labels>
           </item>
@@ -2311,14 +2444,6 @@
           </label>
         </labels>
         <items>
-          <item idno="notApplicable" enabled="1" default="0">
-		        <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>not applicable (e.g. juvenile)</name_singular>
-                <name_plural>not applicable (e.g. juvenile)</name_plural>
-              </label>
-            </labels>
-          </item>
 		      <item idno="nonReproductive" enabled="1" default="0">
 		        <labels>
               <label locale="en_US" preferred="1">
@@ -2353,21 +2478,13 @@
           </item>
         </items>
       </list>
-	    <list code="repr_cond_animal" hierarchical="0" system="0" vocabulary="1">
+	    <list code="repr_cond_mammal" hierarchical="0" system="0" vocabulary="1">
         <labels>
           <label locale="en_US">
             <name>Reproductive condition (animal)</name>
           </label>
         </labels>
         <items>
-          <item idno="notApplicable" enabled="1" default="0">
-		        <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>not applicable (e.g. juvenile)</name_singular>
-                <name_plural>not applicable (e.g. juvenile)</name_plural>
-              </label>
-            </labels>
-          </item>
 		      <item idno="nonReproductive" enabled="1" default="0">
 		        <labels>
               <label locale="en_US" preferred="1">
@@ -4957,7 +5074,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-    <!--Measurement and Facts-->
+    <!--Measurements-->
       <metadataElement code="dnaConcContainer" datatype="Container">
         <labels>
           <label locale="en_US">
@@ -7738,6 +7855,237 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
+	    <metadataElement code="lifeStageMammal" datatype="List" list="life_stage_mammal">
+			  <labels>
+          <label locale="en_US">
+            <name>lifeStage animal</name>
+            <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
+          </label>
+			  </labels>
+			  <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
+			  <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+			  </settings>
+			  <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>animalObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+			  </typeRestrictions>
+	    </metadataElement>
+	    <metadataElement code="lifeStageInvertebrate" datatype="List" list="life_stage_invertebrate">
+			  <labels>
+          <label locale="en_US">
+            <name>lifeStage animal</name>
+            <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
+          </label>
+			  </labels>
+			  <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
+			  <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+			  </settings>
+			  <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>animalObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+			  </typeRestrictions>
+	    </metadataElement>
+	    <metadataElement code="lifeStageFish" datatype="List" list="life_stage_fish">
+			  <labels>
+          <label locale="en_US">
+            <name>lifeStage animal</name>
+            <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
+          </label>
+			  </labels>
+			  <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
+			  <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+			  </settings>
+			  <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>animalObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+			  </typeRestrictions>
+	    </metadataElement>
+	    <metadataElement code="lifeStageAmphibian" datatype="List" list="life_stage_amphibian">
+			  <labels>
+          <label locale="en_US">
+            <name>lifeStage animal</name>
+            <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
+          </label>
+			  </labels>
+			  <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
+			  <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+			  </settings>
+			  <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>animalObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+			  </typeRestrictions>
+	    </metadataElement>
+	    <metadataElement code="lifeStageReptile" datatype="List" list="life_stage_reptile">
+			  <labels>
+          <label locale="en_US">
+            <name>lifeStage animal</name>
+            <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
+          </label>
+			  </labels>
+			  <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
+			  <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+			  </settings>
+			  <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>animalObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+			  </typeRestrictions>
+	    </metadataElement>
+	    <metadataElement code="lifeStagePlant" datatype="List" list="life_stage_plant">
+			  <labels>
+          <label locale="en_US">
+            <name>lifeStage plant</name>
+            <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
+          </label>
+			  </labels>
+			  <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
+			  <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+			  </settings>
+			  <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>plantObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+			  </typeRestrictions>
+	    </metadataElement>
+	    <metadataElement code="reprCondPlant" datatype="List" list="repr_cond_plant">
+			  <labels>
+          <label locale="en_US">
+            <name>reproductiveCondition</name>
+            <description>The reproductive condition of the biological individual(s) represented in the Occurrence. Recommended best practice is to use a controlled vocabulary.</description>
+          </label>
+			  </labels>
+			  <documentationUrl>http://rs.tdwg.org/dwc/terms/reproductiveCondition</documentationUrl>
+			  <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+          <setting name="hideIfSelected_dioeciousMale">object_ui/measurements/ca_attribute_sexPlant</setting>
+          <setting name="hideIfSelected_notRecorded">object_ui/measurements/ca_attribute_sexPlant</setting>
+          <setting name="hideIfSelected_notApplicable">object_ui/measurements/ca_attribute_sexPlant</setting>
+          <setting name="hideIfSelected_other">object_ui/measurements/ca_attribute_sexPlant</setting>
+          <setting name="hideIfSelected_juvenile">object_ui/measurements/ca_attribute_lifeStagePlant</setting>
+          <setting name="hideIfSelected_seedling">object_ui/measurements/ca_attribute_lifeStagePlant</setting>
+          <setting name="hideIfSelected_notRecorded">object_ui/measurements/ca_attribute_lifeStagePlant</setting>
+          <setting name="hideIfSelected_other">object_ui/measurements/ca_attribute_lifeStagePlant</setting>
+			  </settings>
+			  <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>plantObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+			  </typeRestrictions>
+	    </metadataElement>
+	    <metadataElement code="reprCondMammal" datatype="List" list="repr_cond_mammal">
+			  <labels>
+          <label locale="en_US">
+            <name>reproductiveCondition</name>
+            <description>The reproductive condition of the biological individual(s) represented in the Occurrence. Recommended best practice is to use a controlled vocabulary.</description>
+          </label>
+			  </labels>
+			  <documentationUrl>http://rs.tdwg.org/dwc/terms/reproductiveCondition</documentationUrl>
+			  <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+          <setting name="hideIfSelected_male">object_ui/measurements/ca_attribute_sexAnimal</setting>
+          <setting name="hideIfSelected_notRecorded">object_ui/measurements/ca_attribute_sexAnimal</setting>
+          <setting name="hideIfSelected_hermaphrodite">object_ui/measurements/ca_attribute_sexAnimal</setting>
+          <setting name="hideIfSelected_notApplicable">object_ui/measurements/ca_attribute_sexAnimal</setting>
+          <setting name="hideIfSelected_other">object_ui/measurements/ca_attribute_sexAnimal</setting>
+          <setting name="hideIfSelected_juvenile">object_ui/measurements/ca_attribute_lifeStageMammal</setting>
+          <setting name="hideIfSelected_notRecorded">object_ui/measurements/ca_attribute_lifeStageMammal</setting>
+			  </settings>
+			  <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>animalObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+			  </typeRestrictions>
+	    </metadataElement>	    	    	    	    
 	  <!--Sampling event-->
       <metadataElement code="samplingProtocol" datatype="Container">
         <labels>
@@ -7819,114 +8167,6 @@
           </restriction>
 	      </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="lifeStageAnimal" datatype="List" list="life_stage_animal">
-			  <labels>
-          <label locale="en_US">
-            <name>lifeStage animal</name>
-            <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
-          </label>
-			  </labels>
-			  <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
-			  <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-			  </settings>
-			  <typeRestrictions>
-          <restriction code="r_objects">
-            <table>ca_objects</table>
-            <type>animalObject</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-			  </typeRestrictions>
-	    </metadataElement>
-	    <metadataElement code="lifeStagePlant" datatype="List" list="life_stage_plant">
-			  <labels>
-          <label locale="en_US">
-            <name>lifeStage plant</name>
-            <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
-          </label>
-			  </labels>
-			  <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
-			  <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-			  </settings>
-			  <typeRestrictions>
-          <restriction code="r_objects">
-            <table>ca_objects</table>
-            <type>plantObject</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-			  </typeRestrictions>
-	    </metadataElement>
-	    <metadataElement code="reprCondPlant" datatype="List" list="repr_cond_plant">
-			  <labels>
-          <label locale="en_US">
-            <name>reproductiveCondition</name>
-            <description>The reproductive condition of the biological individual(s) represented in the Occurrence. Recommended best practice is to use a controlled vocabulary.</description>
-          </label>
-			  </labels>
-			  <documentationUrl>http://rs.tdwg.org/dwc/terms/reproductiveCondition</documentationUrl>
-			  <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-			  </settings>
-			  <typeRestrictions>
-          <restriction code="r_objects">
-            <table>ca_objects</table>
-            <type>plantObject</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-			  </typeRestrictions>
-	    </metadataElement>
-	    <metadataElement code="reprCondAnimal" datatype="List" list="repr_cond_animal">
-			  <labels>
-          <label locale="en_US">
-            <name>reproductiveCondition</name>
-            <description>The reproductive condition of the biological individual(s) represented in the Occurrence. Recommended best practice is to use a controlled vocabulary.</description>
-          </label>
-			  </labels>
-			  <documentationUrl>http://rs.tdwg.org/dwc/terms/reproductiveCondition</documentationUrl>
-			  <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-			  </settings>
-			  <typeRestrictions>
-          <restriction code="r_objects">
-            <table>ca_objects</table>
-            <type>animalObject</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-			  </typeRestrictions>
-	    </metadataElement>	    	    	    	    
     <!--Events-->
 	    <metadataElement code="eventDate" datatype="DateRange">
         <labels>
@@ -9102,11 +9342,14 @@
                 <restriction code="r_ObservationWater" type="ObservationWater"/>
                 <restriction code="r_ObservationAnimal" type="ObservationAnimal"/>
                 <restriction code="r_ObservationPlant" type="ObservationPlant"/>
-                <restriction code="r_animalBulk" type="animalBulk"/>
-                <restriction code="r_animalEntireLiving" type="animalEntireLiving"/>
-                <restriction code="r_animalEntireCadaver" type="animalEntireCadaver"/>       
-                <restriction code="r_animalEntireEthanol" type="animalEntireEthanol"/>
-                <restriction code="r_animalEntireDry" type="animalEntireDry"/>
+                <restriction code="r_invertebrateBulk" type="invertebrateBulk"/>
+                <restriction code="r_mammalEntireCadaver" type="mammalEntireCadaver"/>       
+                <restriction code="r_invertebrateEntireEthanol" type="invertebrateEntireEthanol"/>
+                <restriction code="r_fishEntireEthanol" type="fishEntireEthanol"/>
+                <restriction code="r_amphibianEntireEthanol" type="amphibianEntireEthanol"/>
+                <restriction code="r_mammalEntireEthanol" type="mammalEntireEthanol"/>
+                <restriction code="r_reptileEntireEthanol" type="reptileEntireEthanol"/>
+                <restriction code="r_invertebrateEntireDry" type="invertebrateEntireDry"/>
                 <restriction code="r_sampleAmphibianTailclip" type="sampleAmphibianTailclip"/>
                 <restriction code="r_sampleAmphibianSwabCloaca" type="sampleAmphibianSwabCloaca"/>
                 <restriction code="r_sampleAmphibianSwabMouth" type="sampleAmphibianSwabMouth"/>
@@ -9333,12 +9576,6 @@
                 <setting name="expand_collapse_no_value">expand</setting>
 			        </settings>
             </placement>
-			      <placement code="sexPlant" typeRestrictions="observationPlant,livingPlant,leafSample,oDNA" includeSubtypes="1">
-              <bundle>ca_attribute_sexPlant</bundle>
-			        <settings>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-			      </placement>
 			      <placement code="sexAnimal" typeRestrictions="observationAnimal,animalObject,oDNA" includeSubtypes="1">
               <bundle>ca_attribute_sexAnimal</bundle>
 			        <settings>
@@ -9370,11 +9607,14 @@
             </label>
           </labels>
           <typeRestrictions>
-                <restriction code="r_animalBulk" type="animalBulk"/>
-                <restriction code="r_animalEntireLiving" type="animalEntireLiving"/>
-                <restriction code="r_animalEntireCadaver" type="animalEntireCadaver"/>       
-                <restriction code="r_animalEntireEthanol" type="animalEntireEthanol"/>
-                <restriction code="r_animalEntireDry" type="animalEntireDry"/>
+                <restriction code="r_invertebrateBulk" type="invertebrateBulk"/>
+                <restriction code="r_mammalEntireCadaver" type="mammalEntireCadaver"/>       
+                <restriction code="r_invertebrateEntireEthanol" type="invertebrateEntireEthanol"/>
+                <restriction code="r_fishEntireEthanol" type="fishEntireEthanol"/>
+                <restriction code="r_amphibianEntireEthanol" type="amphibianEntireEthanol"/>
+                <restriction code="r_mammalEntireEthanol" type="mammalEntireEthanol"/>
+                <restriction code="r_reptileEntireEthanol" type="reptileEntireEthanol"/>
+                <restriction code="r_invertebrateEntireDry" type="invertebrateEntireDry"/>
                 <restriction code="r_sampleAmphibianTailclip" type="sampleAmphibianTailclip"/>
                 <restriction code="r_sampleAmphibianSwabCloaca" type="sampleAmphibianSwabCloaca"/>
                 <restriction code="r_sampleAmphibianSwabMouth" type="sampleAmphibianSwabMouth"/>
@@ -9676,11 +9916,14 @@
             </label>
           </labels>
           <typeRestrictions>
-                <restriction code="r_animalBulk" type="animalBulk"/>
-                <restriction code="r_animalEntireLiving" type="animalEntireLiving"/>
-                <restriction code="r_animalEntireCadaver" type="animalEntireCadaver"/>       
-                <restriction code="r_animalEntireEthanol" type="animalEntireEthanol"/>
-                <restriction code="r_animalEntireDry" type="animalEntireDry"/>
+                <restriction code="r_invertebrateBulk" type="invertebrateBulk"/>
+                <restriction code="r_mammalEntireCadaver" type="mammalEntireCadaver"/>       
+                <restriction code="r_invertebrateEntireEthanol" type="invertebrateEntireEthanol"/>
+                <restriction code="r_fishEntireEthanol" type="fishEntireEthanol"/>
+                <restriction code="r_amphibianEntireEthanol" type="amphibianEntireEthanol"/>
+                <restriction code="r_mammalEntireEthanol" type="mammalEntireEthanol"/>
+                <restriction code="r_reptileEntireEthanol" type="reptileEntireEthanol"/>
+                <restriction code="r_invertebrateEntireDry" type="invertebrateEntireDry"/>
                 <restriction code="r_sampleAmphibianTailclip" type="sampleAmphibianTailclip"/>
                 <restriction code="r_sampleAmphibianSwabCloaca" type="sampleAmphibianSwabCloaca"/>
                 <restriction code="r_sampleAmphibianSwabMouth" type="sampleAmphibianSwabMouth"/>
@@ -9818,11 +10061,14 @@
             </label>
           </labels>
           <typeRestrictions>
-                <restriction code="r_animalBulk" type="animalBulk"/>
-                <restriction code="r_animalEntireLiving" type="animalEntireLiving"/>
-                <restriction code="r_animalEntireCadaver" type="animalEntireCadaver"/>       
-                <restriction code="r_animalEntireEthanol" type="animalEntireEthanol"/>
-                <restriction code="r_animalEntireDry" type="animalEntireDry"/>
+                <restriction code="r_invertebrateBulk" type="invertebrateBulk"/>
+                <restriction code="r_mammalEntireCadaver" type="mammalEntireCadaver"/>       
+                <restriction code="r_invertebrateEntireEthanol" type="invertebrateEntireEthanol"/>
+                <restriction code="r_fishEntireEthanol" type="fishEntireEthanol"/>
+                <restriction code="r_amphibianEntireEthanol" type="amphibianEntireEthanol"/>
+                <restriction code="r_mammalEntireEthanol" type="mammalEntireEthanol"/>
+                <restriction code="r_reptileEntireEthanol" type="reptileEntireEthanol"/>
+                <restriction code="r_invertebrateEntireDry" type="invertebrateEntireDry"/>
                 <restriction code="r_sampleAmphibianTailclip" type="sampleAmphibianTailclip"/>
                 <restriction code="r_sampleAmphibianSwabCloaca" type="sampleAmphibianSwabCloaca"/>
                 <restriction code="r_sampleAmphibianSwabMouth" type="sampleAmphibianSwabMouth"/>
@@ -9913,7 +10159,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="object_volume" typeRestrictions="eDnaWaterFilter,waterSample,animalBulk,sampleFishMuscle,sampleMammal" includeSubtypes="1">
+            <placement code="object_volume" typeRestrictions="eDnaWaterFilter,waterSample,invertebrateBulk,sampleFishMuscle,sampleMammal" includeSubtypes="1">
               <bundle>ca_attribute_volumeContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Volume measurement</setting>
@@ -9949,7 +10195,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="object_count" typeRestrictions="leafSample,seedlot,animalBulk,sampleAmphibian,sampleFishFinclip,sampleInvertebrate,sampleReptile,sampleMammal" includeSubtypes="1">
+            <placement code="object_count" typeRestrictions="leafSample,seedlot,invertebrateBulk,sampleAmphibian,sampleFishFinclip,sampleInvertebrate,sampleReptile,sampleMammal" includeSubtypes="1">
               <bundle>ca_attribute_countContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Count</setting>
@@ -9965,14 +10211,6 @@
 		            <setting name="description" locale="en_US">DCC1: extremely fresh (e.g. animal was still alive at collection, or the animal was euthanized and collection occurred immediately after). DCC2: fresh (i.e. animal that has only recently died, no signs of decomposition). DCC3: moderate decomposition (for example: mammal its belly is swollen, hair detaches, fly eggs, ..). DCC4: advanced decomposition (for example: mammal its belly is swollen, hair detaches, maggots, ...). DCC5: mummified (animal is (partly) decomposed).</setting>
               </settings>
             </placement>
-			      <placement code="sexPlant" typeRestrictions="observationPlant,plantObject,oDNA" includeSubtypes="1">
-              <bundle>ca_attribute_sexPlant</bundle>
-			        <settings>
-                <setting name="description" locale="en_US">Explanation to list options: https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0. If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="documentation_url">https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0</setting>
-              </settings>
-			      </placement>
 			      <placement code="sexAnimal" typeRestrictions="observationAnimal,animalObject,oDNA" includeSubtypes="1">
               <bundle>ca_attribute_sexAnimal</bundle>
 			        <settings>
@@ -9987,8 +10225,36 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-			      <placement code="lifeStage_animal" typeRestrictions="animalObject" includeSubtypes="1">
-              <bundle>ca_attribute_lifeStageAnimal</bundle>
+			      <placement code="lifeStage_mammal" typeRestrictions="mammal" includeSubtypes="1">
+              <bundle>ca_attribute_lifeStageMammal</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
+                <setting name="description" locale="en_US">Due to sampling, the life stage of the animal at time object(s) were collected becomes a fixed value.</setting>
+              </settings>
+            </placement>
+			      <placement code="lifeStage_invertebrate" typeRestrictions="invertebrate" includeSubtypes="1">
+              <bundle>ca_attribute_lifeStageInvertebrate</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
+                <setting name="description" locale="en_US">Due to sampling, the life stage of the animal at time object(s) were collected becomes a fixed value.</setting>
+              </settings>
+            </placement>
+			      <placement code="lifeStage_fish" typeRestrictions="fish" includeSubtypes="1">
+              <bundle>ca_attribute_lifeStageFish</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
+                <setting name="description" locale="en_US">Due to sampling, the life stage of the animal at time object(s) were collected becomes a fixed value.</setting>
+              </settings>
+            </placement>
+			      <placement code="lifeStage_reptile" typeRestrictions="reptile" includeSubtypes="1">
+              <bundle>ca_attribute_lifeStageReptile</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
+                <setting name="description" locale="en_US">Due to sampling, the life stage of the animal at time object(s) were collected becomes a fixed value.</setting>
+              </settings>
+            </placement>
+			      <placement code="lifeStage_amphibian" typeRestrictions="amphibian" includeSubtypes="1">
+              <bundle>ca_attribute_lifeStageAmphibian</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
                 <setting name="description" locale="en_US">Due to sampling, the life stage of the animal at time object(s) were collected becomes a fixed value.</setting>
@@ -10001,11 +10267,19 @@
                 <setting name="description" locale="en_US">Due to sampling, the life stage of the plant at time object(s) were collected becomes a fixed value.</setting>
               </settings>
             </placement>
-			      <placement code="reprCond_animal" typeRestrictions="animalObject" includeSubtypes="1">
+			      <placement code="sexPlant" typeRestrictions="observationPlant,plantObject,oDNA" includeSubtypes="1">
+              <bundle>ca_attribute_sexPlant</bundle>
+			        <settings>
+                <setting name="description" locale="en_US">Explanation to list options: https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0. If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="documentation_url">https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0</setting>
+              </settings>
+			      </placement>
+			      <placement code="reprCond_mammal" typeRestrictions="mammal" includeSubtypes="1">
               <bundle>ca_attribute_reprCondAnimal</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Reproductive condition (dwc:reproductiveCondition)</setting>
-                <setting name="description" locale="en_US">Reproductive condition of the organism at time object(s) were collected</setting>
+                <setting name="description" locale="en_US">Reproductive condition of the mammal at time object(s) were collected</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="expand_collapse_value">collapse</setting>
 			        </settings>
@@ -10090,10 +10364,13 @@
             </label>
           </labels>
           <typeRestrictions>
-                <restriction code="r_animalBulk" type="animalBulk"/>
-                <restriction code="r_animalEntireLiving" type="animalEntireLiving"/>
-                <restriction code="r_animalEntireCadaver" type="animalEntireCadaver"/>       
-                <restriction code="r_animalEntireEthanol" type="animalEntireEthanol"/>
+                <restriction code="r_invertebrateBulk" type="invertebrateBulk"/>
+                <restriction code="r_mammalEntireCadaver" type="mammalEntireCadaver"/>       
+                <restriction code="r_invertebrateEntireEthanol" type="invertebrateEntireEthanol"/>
+                <restriction code="r_fishEntireEthanol" type="fishEntireEthanol"/>
+                <restriction code="r_amphibianEntireEthanol" type="amphibianEntireEthanol"/>
+                <restriction code="r_mammalEntireEthanol" type="mammalEntireEthanol"/>
+                <restriction code="r_reptileEntireEthanol" type="reptileEntireEthanol"/>
                 <restriction code="r_sampleAmphibianLarva" type="sampleAmphibianLarva"/>
                 <restriction code="r_sampleAmphibianEmbryo" type="sampleAmphibianEmbryo"/>
                 <restriction code="r_sampleAmphibianTailclip" type="sampleAmphibianTailclip"/>
@@ -10231,11 +10508,14 @@
             </label>
           </labels>
           <typeRestrictions>
-                <restriction code="r_animalBulk" type="animalBulk"/>
-                <restriction code="r_animalEntireLiving" type="animalEntireLiving"/>
-                <restriction code="r_animalEntireCadaver" type="animalEntireCadaver"/>       
-                <restriction code="r_animalEntireEthanol" type="animalEntireEthanol"/>
-                <restriction code="r_animalEntireDry" type="animalEntireDry"/>
+                <restriction code="r_invertebrateBulk" type="invertebrateBulk"/>
+                <restriction code="r_mammalEntireCadaver" type="mammalEntireCadaver"/>       
+                <restriction code="r_invertebrateEntireEthanol" type="invertebrateEntireEthanol"/>
+                <restriction code="r_fishEntireEthanol" type="fishEntireEthanol"/>
+                <restriction code="r_amphibianEntireEthanol" type="amphibianEntireEthanol"/>
+                <restriction code="r_mammalEntireEthanol" type="mammalEntireEthanol"/>
+                <restriction code="r_reptileEntireEthanol" type="reptileEntireEthanol"/>
+                <restriction code="r_invertebrateEntireDry" type="invertebrateEntireDry"/>
                 <restriction code="r_sampleAmphibianTailclip" type="sampleAmphibianTailclip"/>
                 <restriction code="r_sampleAmphibianSwabCloaca" type="sampleAmphibianSwabCloaca"/>
                 <restriction code="r_sampleAmphibianSwabMouth" type="sampleAmphibianSwabMouth"/>
