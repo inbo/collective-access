@@ -3,12 +3,13 @@
   <profileName>[INBO] INBO natural science collection v0.59.01</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Changes compared to the previous version 0.58: see list of issues below; to be validated-->
-  <!--https://github.com/inbo/collective-access/issues/150-->
-  <!--https://github.com/inbo/collective-access/issues/151-->
-  <!--https://github.com/inbo/collective-access/issues/152-->
   <!--https://github.com/inbo/collective-access/issues/87-->
   <!--https://github.com/inbo/collective-access/issues/93-->
   <!--https://github.com/inbo/collective-access/issues/118-->
+  <!--https://github.com/inbo/collective-access/issues/150-->
+  <!--https://github.com/inbo/collective-access/issues/151-->
+  <!--https://github.com/inbo/collective-access/issues/152-->
+  <!--https://github.com/inbo/collective-access/issues/162-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -4826,16 +4827,48 @@
       <metadataElement code="externalSpecimen" datatype="Container">
         <labels>
           <label locale="en_US">
-            <name>External specimen relationship</name>
-            <description>If the specimen is related to a external specimen = a specimen held at another Natural Science collection; as specified.</description>
+            <name>Realtionships to non-INBO specimen(s)</name>
+            <description>The specimen is related to a external specimen = a specimen held at another Natural Science collection; as specified.</description>
           </label>
         </labels>
+			  <settings>
+          <setting name="lineBreakAfterNumberOfElements">1</setting>
+        </settings>
 	      <elements>
 		      <metadataElement code="externalSpecimenURI" datatype="Url">
             <labels>
               <label locale="en_US">
                 <name>Resource URI</name>
                 <description>A preferably resolvable URI to uniquely identify the related specimen, not held in the INBO collection. For example a DOI-url.</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/abcd/terms/resourceURI</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+		      <metadataElement code="externalSpecimenID" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>External specimen ID</name>
+                <description>Identifier of the external specimen</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+		      <metadataElement code="externalSpecimenDesc" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>External specimen description</name>
+                <description>Identifier of the external specimen</description>
               </label>
             </labels>
             <documentationUrl>http://rs.tdwg.org/abcd/terms/resourceURI</documentationUrl>
