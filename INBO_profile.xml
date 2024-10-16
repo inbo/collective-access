@@ -11745,7 +11745,7 @@
             <restriction code="r_identification" type="identification"/>
           </typeRestrictions>
           <bundlePlacements>
-            <placement code="ca_entities_executor">
+            <placement code="ca_entities_executor" typeRestrictions="valuation,disposal,treatment,renewal,transfer,fieldwork">
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="label" locale="en_US">Executor</setting>
@@ -11754,6 +11754,16 @@
 				        <setting name="add_label" locale="en_US">Add individual</setting>
               </settings>
             </placement>
+            <placement code="ca_entities_identifier" typeRestrictions="identification">
+              <bundle>ca_entities</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Identification</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
+				        <setting name="maxRelationshipsPerRow">20</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
+                <setting name="restrict_to_relationship_types">identifier</setting>
+              </settings>
+			      </placement>
             <placement code="ca_object" typeRestrictions="valuation,disposal,treatment,renewal,transfer,identification">
               <bundle>ca_objects</bundle>
 			        <settings>
@@ -11763,7 +11773,7 @@
                 <setting name="list_format" locale="en_US">list</setting>
               </settings>
             </placement>
-			      <placement code="eventProcedure" typeRestrictions="valuation,curation,disposal,treatment,renewal,transfer,identification">
+			      <placement code="eventProcedure" typeRestrictions="valuation,curation,disposal,treatment,renewal,transfer">
               <bundle>ca_attribute_eventProcedure</bundle>
               <settings>
                 <setting name="label" locale="en_US">Description of event procedure</setting>
