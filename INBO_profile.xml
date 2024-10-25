@@ -10913,7 +10913,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-            <placement code="ca_storage_location_lookup" typeRestrictions="animalObject,leafSample,littertrapSample,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1">
+            <placement code="ca_storage_location_lookup" typeRestrictions="animalObject,leafSample,littertrapSample,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1"><!--This one is to be deleted for the users, all the storage locations should be prefilled and loaded in the system-->
               <bundle>ca_storage_locations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at</setting>
@@ -11051,6 +11051,7 @@
               <settings>
                 <setting name="label" locale="en_US">Verbatim locality (dwc:verbatimLocality)</setting>
                 <setting name="description" locale="en_US">The original description of a locality, a place, the geographic coverage/range, ...</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
               </settings>
             </placement>
             <placement code="verbatimLongitudeX">
@@ -11058,6 +11059,7 @@
               <settings>
                 <setting name="label" locale="en_US">Verbatim longitude (X) (dwc:verbatimLongitude)</setting>
                 <setting name="description" locale="en_US">The original description of the longitude (X).</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
             <placement code="verbatimLatitudeY">
@@ -11065,16 +11067,29 @@
               <settings>
                 <setting name="label" locale="en_US">Verbatim latitude (Y) (dwc:verbatimLatitude)</setting>
                 <setting name="description" locale="en_US">The original description of the latitude (Y).</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
 			      <placement code="verbatimcoordinatesRemarks">
               <bundle>ca_attribute_verbatimcoordinatesRemarks</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Remarks on the coordinates as originally recorded</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
 			      </placement>
-            <placement code="decimalLatitudeX">
+            <placement code="decimalLatitude">
               <bundle>ca_attribute_decimalLatitude</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Decimal latitude *</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
+              </settings>
 			      </placement>
-            <placement code="decimalLongitudeY">
+            <placement code="decimalLongitude">
               <bundle>ca_attribute_decimalLongitude</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Decimal longitude *</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
+              </settings>
 			      </placement>
 			      <placement code="map">
               <bundle>ca_attribute_georeference</bundle>
@@ -11095,28 +11110,50 @@
 			        <settings>
                 <setting name="label" locale="en_US">Location ID</setting>
                 <setting name="description" locale="en_US">As given by the georeference tool (e.g. https://geopick.gbif.org/)</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
             <placement code="coordinateUncertaintyInMeters">
               <bundle>ca_attribute_coordinateUncertaintyInMeters</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
 			      </placement>
             <placement code="geodeticDatum">
               <bundle>ca_attribute_geodeticDatum</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
 			      </placement>
             <placement code="coordinatePrecision">
               <bundle>ca_attribute_coordinatePrecision</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
 			      </placement>
             <placement code="pointRadiusSpatialFit">
               <bundle>ca_attribute_pointRadiusSpatialFit</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
 			      </placement>
             <placement code="georeferenceProtocol">
               <bundle>ca_attribute_georeferenceProtocol</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
 			      </placement>
             <placement code="georeferenceSources">
               <bundle>ca_attribute_georeferenceSources</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
 			      </placement>
             <placement code="locality">
               <bundle>ca_attribute_locality</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
 			      </placement>
             <placement code="ca_entities_georeferencedBy">
               <bundle>ca_entities</bundle>
@@ -11126,19 +11163,24 @@
 				        <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="restrict_to_relationship_types">georeferencer</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
             <placement code="georeferenceRemarks">
               <bundle>ca_attribute_georeferenceRemarks</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
 			      </placement>
-            <placement code="ca_places_lookup">
+            <placement code="ca_places_lookup"><!--This one is to be deleted for the users if a standardized lists of place names (land and water) are added. New names can be added on request.-->
               <bundle>ca_places</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Toponym (Lookup view)</setting>
-                <setting name="description" locale="en_US">The place or toponym, chosen from the standardized list. This viewer allows you to add a new place if not yet in the standardized list. TIP: Always interpret the place name in the historical context! For example municipalities can fuse or split. Each place attribution has a reference and time stamp.</setting>
+                <setting name="description" locale="en_US">The place or toponym, chosen from the standardized list. TIP: Always interpret the place name in the historical context! For example municipalities can fuse or split. Each place attribution has a reference and time stamp.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="useHierarchicalBrowser">0</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
             <placement code="ca_places_hierarchyBrowser">
@@ -11148,6 +11190,7 @@
                 <setting name="description" locale="en_US">The place or toponym, chosen from the standardized list. This view allows you to browse through the available options already available. To add an option, use the "lookup" above.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
             <placement code="provenance" typeRestrictions="observationPlant,plantObject" includeSubtypes="1">
@@ -11160,6 +11203,9 @@
 			      </placement>
             <placement code="habitat">
               <bundle>ca_attribute_habitat</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
             </placement>
           </bundlePlacements>
 		    </screen>
