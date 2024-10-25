@@ -3,12 +3,6 @@
   <profileName>[INBO] INBO natural science collection v0.61</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Changes compared to the previous version 0.60: see list of issues below; to be validated in still in 0.61-->
-  <!--https://github.com/inbo/collective-access/issues/87-->
-  <!--https://github.com/inbo/collective-access/issues/93-->
-  <!--https://github.com/inbo/collective-access/issues/108-->
-  <!--https://github.com/inbo/collective-access/issues/115-->
-  <!--https://github.com/inbo/collective-access/issues/118-->
-  <!--https://github.com/inbo/collective-access/issues/149-->
   <!--https://github.com/inbo/collective-access/issues/153-->
   <!--https://github.com/inbo/collective-access/issues/154-->
   <!--https://github.com/inbo/collective-access/issues/155-->
@@ -10740,18 +10734,7 @@
                 <setting name="expand_collapse_no_value">expand</setting>
               </settings>
             </placement>
-            <placement code="ca_storage_location_plantlot_l" typeRestrictions="livingPlant,forestTreePopulation">
-              <bundle>ca_storage_locations</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Object is stored at *</setting>
-                <setting name="restrict_to_types">forestTreePopulationSite,forestTreePopulationSiteSpot</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="useHierarchicalBrowser">0</setting>
-                <setting name="expand_collapse_no_value">expand</setting>
-              </settings>
-            </placement>
-            <placement code="ca_storage_location_plantlot_h" typeRestrictions="livingPlant,forestTreePopulation">
+            <placement code="ca_storage_location_plantlot" typeRestrictions="livingPlant,forestTreePopulation">
               <bundle>ca_storage_locations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at *</setting>
@@ -10762,18 +10745,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="ca_storage_location_l" typeRestrictions="animalObject,leafSample,littertrapSample,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1">
-              <bundle>ca_storage_locations</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Object is stored at *</setting>
-                <setting name="restrict_to_types">room,cabinetFridgeFreezer,drawershelf,box,spot</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="useHierarchicalBrowser">0</setting>
-                <setting name="expand_collapse_no_value">expand</setting>
-              </settings>
-            </placement>
-            <placement code="ca_storage_location_h" typeRestrictions="animalObject,leafSample,littertrapSample,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1">
+            <placement code="ca_storage_location" typeRestrictions="animalObject,leafSample,littertrapSample,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1">
               <bundle>ca_storage_locations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at *</setting>
@@ -12231,7 +12203,7 @@
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Identification</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">20</setting>
                 <setting name="expand_collapse_no_value">expand</setting>
                 <setting name="restrict_to_relationship_types">identifier</setting>
@@ -12297,7 +12269,7 @@
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Identification</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">20</setting>
                 <setting name="expand_collapse_no_value">expand</setting>
                 <setting name="restrict_to_relationship_types">identifier</setting>
@@ -14712,7 +14684,7 @@
           </settings>
         </placement>
         <placement code="ca_places">
-          <bundle>ca_places.prefferred_label</bundle>
+          <bundle>ca_places.preferred_label</bundle>
           <settings>
             <setting name="label" locale="en_US">place</setting>
           </settings>
