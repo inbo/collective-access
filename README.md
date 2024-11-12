@@ -19,8 +19,3 @@ The basic functionalities this application covers
 Additional functionalities that this application could cover
 - log the value of the objects so future decision making can occur without the lead scientists' involvement
 - log curatorial activities that can influence the quality of the objects
-
-----
-
-The INBO test is currently available here:	18.203.229.50/ca. 
-The INBO specific configuration is in the INBO_profiel_XXX.xml files, currently loaded on the website is INBO_profiel_031.xml.
