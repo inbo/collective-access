@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.62</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.63</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
-  <!--Issues fixed in version 0.62: to confirm-->
-  <!--https://github.com/inbo/collective-access/issues/156-->
-  <!--https://github.com/inbo/collective-access/issues/170-->
+  <!--Issues fixed in version 0.63: to confirm-->
+  <!--https://github.com/inbo/collective-access/issues/171-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -12947,7 +12946,6 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="restrict_to_relationship_types">curator</setting>
                 <setting name="sort">relation_id</setting>
-                <setting name="display_template">^ca_entities.preferred_label (^ca_entities_x_collections.roleRangeContainer.roleStartedAtTime to ^ca_entities_x_collections.roleRangeContainer.roleEndedAtTime</setting>                
               </settings>
             </placement>
             <placement code="ca_entities_assistantCurator">
@@ -12960,7 +12958,6 @@
                 <setting name="restrict_to_relationship_types">assistantCurator</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="sort">relation_id</setting>
-                <setting name="display_template">^ca_entities.preferred_label (^ca_entities_x_collections.roleRangeContainer.roleStartedAtTime to ^ca_entities_x_collections.roleRangeContainer.roleEndedAtTime</setting>                
               </settings>
             </placement>
             <placement code="ca_entities_archivist">
@@ -12972,7 +12969,6 @@
                 <setting name="restrict_to_relationship_types">archivist</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="sort">relation_id</setting>
-                <setting name="display_template">^ca_entities.preferred_label (^ca_entities_x_collections.roleRangeContainer.roleStartedAtTime to ^ca_entities_x_collections.roleRangeContainer.roleEndedAtTime</setting>                
               </settings>
             </placement>
             <placement code="ca_entities_assistantArchivist">
@@ -12985,7 +12981,6 @@
                 <setting name="restrict_to_relationship_types">assistantArchivist</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="sort">relation_id</setting>
-                <setting name="display_template">^ca_entities.preferred_label (^ca_entities_x_collections.roleRangeContainer.roleStartedAtTime to ^ca_entities_x_collections.roleRangeContainer.roleEndedAtTime</setting>                
               </settings>
             </placement>
             <placement code="ca_entities_collectionSteward">
@@ -12998,7 +12993,6 @@
                 <setting name="restrict_to_relationship_types">collectionSteward</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="sort">relation_id</setting>
-                <setting name="display_template">^ca_entities.preferred_label (^ca_entities_x_collections.roleRangeContainer.roleStartedAtTime to ^ca_entities_x_collections.roleRangeContainer.roleEndedAtTime</setting>                
               </settings>
             </placement>  
             <placement code="ca_storage_locations" typeRestrictions="internalCollection">
@@ -13897,27 +13891,6 @@
         </screen>
       </screens>
     </userInterface>
-    <userInterface code="interstitial_curatorship_ui" type="ca_entities_x_collections" typeRestrictions="curator,assistantCurator,collectionOwner">
-      <labels>
-        <label locale="en_US">
-          <name>Curatorship Editor</name>
-        </label>
-      </labels>
-      <screens>
-        <screen idno="record" default="1">
-          <labels>
-            <label locale="en_US">
-              <name>Record</name>
-            </label>
-          </labels>
-          <bundlePlacements>
-			      <placement code="roleRangeContainer">
-              <bundle>ca_attribute_roleRangeContainer</bundle>
-            </placement>
-          </bundlePlacements>
-        </screen>
-      </screens>
-    </userInterface>
   </userInterfaces>
   <relationshipTypes>
     <relationshipTable name="ca_objects_x_objects">
@@ -14306,7 +14279,7 @@
           <subTypeLeft>ind</subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
-        <type code="archivist" default="1">
+        <type code="assistantArchivist" default="1">
           <labels>
             <label locale="en_US">
               <typename>co-manages</typename>
