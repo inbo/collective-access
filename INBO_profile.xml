@@ -12935,9 +12935,10 @@
           </labels>
           <bundlePlacements>
             <placement code="ca_entities_curator">
-              <bundle>ca_entities_ind</bundle>
+              <bundle>ca_entities</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Curator of the collection</setting>
+                <setting name="label" locale="en_US">Collection manager (synonym: curator)</setting>
+                <setting name="description" locale="en_US">The collection manager is an INBO-scientist that is knowledgable on the specimens of the collection it manages, its applications and its management. This person has the responsibility for the collection management.</setting>
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
@@ -12947,10 +12948,11 @@
               </settings>
             </placement>
             <placement code="ca_entities_assistantCurator">
-              <bundle>ca_entities_ind</bundle>
+              <bundle>ca_entities</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Assistant-curator of collection</setting>
-                <setting name="add_label" locale="en_US">Add new assistant-curator</setting>
+                <setting name="label" locale="en_US">Assistant collection manager (synonym: assistant curator)</setting>
+                <setting name="description" locale="en_US">The assistant collection manager is an INBO-scientist that assists the collection manager. This could be assistance in making decisions (on how to manage, what to loan, ..); assistance in representing the collection at meetings or assistance in collection management documentation. This person does not have the end responsibility for the collection.</setting>
+                <setting name="add_label" locale="en_US">Add new assistant collection manager</setting>
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="restrict_to_relationship_types">assistantCurator</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -12958,6 +12960,44 @@
                 <setting name="display_template">^ca_entities.preferred_label (^ca_entities_x_collections.roleRangeContainer.roleStartedAtTime to ^ca_entities_x_collections.roleRangeContainer.roleEndedAtTime</setting>                
               </settings>
             </placement>
+            <placement code="ca_entities_archivist">
+              <bundle>ca_entities</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Archivist</setting>
+                <setting name="description" locale="en_US">The collection archivist manages the physical collection. He/She is responsible that the physical collection is properly monitored and he/she keeps the collection manager informed. This role has the end responsibility considering accessioning new specimen, retrieving specimen for loans, label quality monitoring, monitoring correct logging of the storage location, ...</setting>
+                <setting name="restrict_to_types">ind</setting>
+                <setting name="restrict_to_relationship_types">archivist</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="sort">relation_id</setting>
+                <setting name="display_template">^ca_entities.preferred_label (^ca_entities_x_collections.roleRangeContainer.roleStartedAtTime to ^ca_entities_x_collections.roleRangeContainer.roleEndedAtTime</setting>                
+              </settings>
+            </placement>
+            <placement code="ca_entities_assistantArchivist">
+              <bundle>ca_entities</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Assistant archivist</setting>
+                <setting name="description" locale="en_US">The assistant archivist helps the archivist manage the physical collection. He/She does not have an end responsibility, but is allowed to assist/help or take over the work of the archivist in his/her absence (e.g. illness).</setting>
+                <setting name="add_label" locale="en_US">Add new assistant archivist</setting>
+                <setting name="restrict_to_types">ind</setting>
+                <setting name="restrict_to_relationship_types">assistantArchivist</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="sort">relation_id</setting>
+                <setting name="display_template">^ca_entities.preferred_label (^ca_entities_x_collections.roleRangeContainer.roleStartedAtTime to ^ca_entities_x_collections.roleRangeContainer.roleEndedAtTime</setting>                
+              </settings>
+            </placement>
+            <placement code="ca_entities_collectionSteward">
+              <bundle>ca_entities</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Collection steward</setting>
+                <setting name="description" locale="en_US">The collection steward is responsible for handling loan administration, reporting on the collections and manageing the joint (quality) documentation of the different collections. He/she also oversees data quality in the INBO-CMS database.</setting>
+                <setting name="add_label" locale="en_US">Add new collection steward</setting>
+                <setting name="restrict_to_types">ind</setting>
+                <setting name="restrict_to_relationship_types">collectionSteward</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="sort">relation_id</setting>
+                <setting name="display_template">^ca_entities.preferred_label (^ca_entities_x_collections.roleRangeContainer.roleStartedAtTime to ^ca_entities_x_collections.roleRangeContainer.roleEndedAtTime</setting>                
+              </settings>
+            </placement>  
             <placement code="ca_storage_locations" typeRestrictions="internalCollection">
               <bundle>ca_storage_locations</bundle>
               <settings>
@@ -14236,8 +14276,8 @@
         <type code="curator" default="1">
           <labels>
             <label locale="en_US">
-              <typename>curates</typename>
-              <typename_reverse>curator</typename_reverse>
+              <typename>manages</typename>
+              <typename_reverse>collection manager of</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>ind</subTypeLeft>
@@ -14246,8 +14286,38 @@
         <type code="assistantCurator" default="1">
           <labels>
             <label locale="en_US">
-              <typename>co-curates</typename>
-              <typename_reverse>co-curator</typename_reverse>
+              <typename>co-manages</typename>
+              <typename_reverse>assistant collection manager of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>ind</subTypeLeft>
+          <subTypeRight></subTypeRight>
+        </type>
+        <type code="archivist" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>co-manages</typename>
+              <typename_reverse>archivist of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>ind</subTypeLeft>
+          <subTypeRight></subTypeRight>
+        </type>
+        <type code="archivist" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>co-manages</typename>
+              <typename_reverse>assistant archivist of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>ind</subTypeLeft>
+          <subTypeRight></subTypeRight>
+        </type>
+        <type code="collectionSteward" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>co-manages</typename>
+              <typename_reverse>collection steward of</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>ind</subTypeLeft>
