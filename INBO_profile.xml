@@ -10330,7 +10330,15 @@
             </restriction>
         </typeRestrictions>
       </metadataElement>
-      <metadataElement code="currentCollection" datatype="List" list="true_false">
+      <metadataElement code="collectionDateContainer" datatype="Container">
+        <labels>
+          <label locale="en_US">
+            <name>Collection date container</name>
+		        <description>Information on the collection concept it's timeline</description>
+          </label>
+        </labels>
+        <elements>
+          <metadataElement code="currentCollection" datatype="List" list="true_false">
             <labels>
               <label locale="en_US">
                 <name>Current collection (ltc:currentCollection)</name>
@@ -10343,6 +10351,42 @@
               <setting name="fieldHeight">1</setting>
               <setting name="minChars">0</setting>
               <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="collectionStartDate" datatype="DateRange">
+            <labels>
+              <label locale="en_US">
+                <name>Collection Concept start date</name>
+                <description>Accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
+              </label>
+            </labels>
+            <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">40</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">1</setting>
+              <setting name="maxChars">65535</setting>
+              <setting name="canBeUsedInSort">1</setting>
+              <setting name="canBeUsedInSearchForm">1</setting>
+              <setting name="canBeUsedInDisplay">1</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="collectionEndDate" datatype="DateRange">
+            <labels>
+              <label locale="en_US">
+                <name>Collection concept end date</name>
+                <description>Accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
+              </label>
+            </labels>
+            <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">40</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">1</setting>
+              <setting name="maxChars">65535</setting>
+              <setting name="canBeUsedInSort">1</setting>
+              <setting name="canBeUsedInSearchForm">1</setting>
+              <setting name="canBeUsedInDisplay">1</setting>
             </settings>
           </metadataElement>
 		    </elements>
@@ -12716,8 +12760,8 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="currentCollection">
-              <bundle>ca_attribute_currentCollection</bundle>
+			      <placement code="collectionDateContainer">
+              <bundle>ca_attribute_collectionDateContainer</bundle>
             </placement>
 			      <placement code="distinctObjects">
               <bundle>ca_attribute_distinctObjects</bundle>
