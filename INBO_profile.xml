@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.63</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.64</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
-  <!--Issues fixed in version 0.63: to confirm-->
-  <!--https://github.com/inbo/collective-access/issues/171-->
+  <!--Issues fixed in version 0.64: to confirm: none-->
+  <!--New features in version 0.64: to confirm GBIF information service-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -9222,6 +9222,109 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
+      <metadataElement code="GBIF" datatype="InformationService">
+        <labels>
+          <label locale="en_US">
+            <name>GBIF taxonomy lookup</name>
+          </label>
+        </labels>
+        <settings>
+          <setting name="GBIF"><!-- enter service here --></setting>
+        </settings>
+        <typeRestrictions>
+          <restriction>
+            <table>ca_objects</table>
+            <type>observationSoil</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction>
+            <table>ca_objects</table>
+            <type>soilObject</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction>
+            <table>ca_objects</table>
+            <type>observationWater</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction>
+            <table>ca_objects</table>
+            <type>waterObject</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction>
+            <table>ca_objects</table>
+            <type>observationAnimal</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction>
+            <table>ca_objects</table>
+            <type>animalObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction>
+            <table>ca_objects</table>
+            <type>observationPlant</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction>
+            <table>ca_objects</table>
+            <type>plantObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction>
+            <table>ca_objects</table>
+            <type>oDNA</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction>
+            <table>ca_object_lots</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
 	  <!--Sampling event-->
       <metadataElement code="samplingProtocol" datatype="Container">
         <labels>
@@ -11733,6 +11836,12 @@
             </placement>
 			      <placement code="standTaxon"><!--This should prepopulate with the parent value, if empty-->
               <bundle>ca_attribute_standTaxon</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">expand</setting>
+			        </settings>
+            </placement>
+			      <placement code="GBIF"><!--This should prepopulate with the parent value, if empty-->
+              <bundle>ca_attribute_GBIF</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">expand</setting>
 			        </settings>
