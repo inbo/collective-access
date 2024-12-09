@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.64</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.65</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
-  <!--Issues fixed in version 0.64: to confirm: none-->
-  <!--New features in version 0.64: to confirm GBIF information service-->
+  <!--Issues fixed in version 0.65: to confirm: none-->
+  <!--New features in version 0.65: to confirm GBIF information service + test service Wikipedia-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -9229,7 +9229,7 @@
           </label>
         </labels>
         <settings>
-          <setting name="GBIF"><!-- enter service here --></setting>
+          <setting name="service">GBIF</setting>
         </settings>
         <typeRestrictions>
           <restriction>
@@ -9320,6 +9320,26 @@
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">25</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="wikipedia" datatype="InformationService">
+        <labels>
+          <label locale="en_US">
+            <name>Wikipedia lookup</name>
+          </label>
+        </labels>
+        <settings>
+          <setting name="service">Wikipedia</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r1">
+            <table>ca_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">255</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -11842,6 +11862,12 @@
             </placement>
 			      <placement code="GBIF"><!--This should prepopulate with the parent value, if empty-->
               <bundle>ca_attribute_GBIF</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">expand</setting>
+			        </settings>
+            </placement>
+			      <placement code="wikipedia"><!--This should prepopulate with the parent value, if empty-->
+              <bundle>ca_attribute_wikipedia</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">expand</setting>
 			        </settings>
