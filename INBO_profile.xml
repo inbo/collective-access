@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.65</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.66</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues fixed in version 0.65: to confirm: none-->
-  <!--New features in version 0.65: to confirm GBIF information service + test service Wikipedia-->
+  <!--New features in version 0.65: taxonomy tab-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -8637,48 +8637,12 @@
               <setting name="maxChars">65535</setting>
             </settings>
         <typeRestrictions>
-          <restriction code="r_observationSoil">
-            <table>ca_objects</table>
-            <type>observationSoil</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_soilObjects">
-            <table>ca_objects</table>
-            <type>soilObject</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_observationWater">
-            <table>ca_objects</table>
-            <type>observationWater</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_waterObjects">
-            <table>ca_objects</table>
-            <type>waterObject</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
           <restriction code="r_observationAnimal">
             <table>ca_objects</table>
             <type>observationAnimal</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -8688,7 +8652,7 @@
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -8697,7 +8661,7 @@
             <type>observationPlant</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -8707,7 +8671,7 @@
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -8716,7 +8680,7 @@
             <type>oDNA</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -8724,7 +8688,7 @@
             <table>ca_object_lots</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="maxAttributesPerRow">100</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -8744,48 +8708,12 @@
               <setting name="maxChars">65535</setting>
             </settings>
         <typeRestrictions>
-          <restriction code="r_observationSoil">
-            <table>ca_objects</table>
-            <type>observationSoil</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_soilObjects">
-            <table>ca_objects</table>
-            <type>soilObject</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_observationWater">
-            <table>ca_objects</table>
-            <type>observationWater</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_waterObjects">
-            <table>ca_objects</table>
-            <type>waterObject</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
           <restriction code="r_observationAnimal">
             <table>ca_objects</table>
             <type>observationAnimal</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -8795,7 +8723,7 @@
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -8804,7 +8732,7 @@
             <type>observationPlant</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -8814,7 +8742,7 @@
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -8823,7 +8751,7 @@
             <type>oDNA</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -8831,7 +8759,7 @@
             <table>ca_object_lots</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="maxAttributesPerRow">100</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -8851,48 +8779,12 @@
               <setting name="maxChars">65535</setting>
             </settings>
         <typeRestrictions>
-          <restriction code="r_observationSoil">
-            <table>ca_objects</table>
-            <type>observationSoil</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_soilObjects">
-            <table>ca_objects</table>
-            <type>soilObject</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_observationWater">
-            <table>ca_objects</table>
-            <type>observationWater</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_waterObjects">
-            <table>ca_objects</table>
-            <type>waterObject</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
           <restriction code="r_observationAnimal">
             <table>ca_objects</table>
             <type>observationAnimal</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -8902,7 +8794,7 @@
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -8911,7 +8803,7 @@
             <type>observationPlant</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -8921,7 +8813,7 @@
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -8930,7 +8822,7 @@
             <type>oDNA</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -8938,7 +8830,7 @@
             <table>ca_object_lots</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="maxAttributesPerRow">100</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -8959,48 +8851,12 @@
               <setting name="maxChars">65535</setting>
             </settings>
         <typeRestrictions>
-          <restriction code="r_observationSoil">
-            <table>ca_objects</table>
-            <type>observationSoil</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_soilObjects">
-            <table>ca_objects</table>
-            <type>soilObject</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_observationWater">
-            <table>ca_objects</table>
-            <type>observationWater</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_waterObjects">
-            <table>ca_objects</table>
-            <type>waterObject</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
           <restriction code="r_observationAnimal">
             <table>ca_objects</table>
             <type>observationAnimal</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -9010,7 +8866,7 @@
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -9019,7 +8875,7 @@
             <type>observationPlant</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -9029,7 +8885,7 @@
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -9038,7 +8894,7 @@
             <type>oDNA</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -9046,7 +8902,7 @@
             <table>ca_object_lots</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="maxAttributesPerRow">100</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -9113,6 +8969,16 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
+          <metadataElement code="IDc_GBIF" datatype="InformationService">
+          <labels>
+            <label locale="en_US">
+              <name>GBIF taxonomy lookup</name>
+            </label>
+          </labels>
+          <settings>
+            <setting name="service">GBIF</setting>
+          </settings>
+          </metadataElement>
           <metadataElement code="IDc_taxonNote" datatype="Text">
             <labels>
               <label locale="en_US">
@@ -9131,84 +8997,9 @@
         <typeRestrictions>
           <restriction>
             <table>ca_objects</table>
-            <type>observationSoil</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction>
-            <table>ca_objects</table>
-            <type>soilObject</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction>
-            <table>ca_objects</table>
-            <type>observationWater</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction>
-            <table>ca_objects</table>
-            <type>waterObject</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction>
-            <table>ca_objects</table>
-            <type>observationAnimal</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction>
-            <table>ca_objects</table>
-            <type>animalObject</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction>
-            <table>ca_objects</table>
-            <type>observationPlant</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction>
-            <table>ca_objects</table>
-            <type>plantObject</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction>
-            <table>ca_objects</table>
-            <type>oDNA</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="maxAttributesPerRow">100</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -9216,7 +9007,7 @@
             <table>ca_object_lots</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="maxAttributesPerRow">100</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -11786,7 +11577,7 @@
 		    <screen idno="taxonomy" default="0">
           <labels>
             <label locale="en_US">
-              <name>Taxonomy</name>
+              <name>taxon</name>
             </label>
           </labels>
           <typeRestrictions>
@@ -11866,12 +11657,6 @@
                 <setting name="expand_collapse_no_value">expand</setting>
 			        </settings>
             </placement>
-			      <placement code="wikipedia"><!--This should prepopulate with the parent value, if empty-->
-              <bundle>ca_attribute_wikipedia</bundle>
-			        <settings>
-                <setting name="expand_collapse_no_value">expand</setting>
-			        </settings>
-            </placement>
 			      <placement code="taxonDate"><!--This should prepopulate with the parent value, if empty-->
               <bundle>ca_attribute_taxonDate</bundle>
 			        <settings>
@@ -11898,7 +11683,7 @@
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Previous taxonomic identifications (nonpreferred)</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">20</setting>
                 <setting name="expand_collapse_no_value">expand</setting>
                 <setting name="restrict_to_types">identification</setting>
@@ -11910,7 +11695,7 @@
 		    <screen idno="biodiversity" default="0">
           <labels>
             <label locale="en_US">
-              <name>e-Biodiversity</name>
+              <name>e-biodiversity</name>
             </label>
           </labels>
           <typeRestrictions>
@@ -11926,8 +11711,6 @@
               <bundle>ca_attribute_IDContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Relevant taxon in environmental sample</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">100</setting>
                 <setting name="expand_collapse_no_value">expand</setting>
               </settings>
             </placement>
@@ -11935,8 +11718,6 @@
               <bundle>ca_attribute_reference</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Published dataset of the environmental biodiversity (absence/presence)</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">5</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -12372,6 +12153,12 @@
             </placement>
 			      <placement code="standTaxon" typeRestrictions="identification">
               <bundle>ca_attribute_standTaxon</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">expand</setting>
+			        </settings>
+            </placement>
+			      <placement code="GBIF" typeRestrictions="identification">
+              <bundle>ca_attribute_GBIF</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">expand</setting>
 			        </settings>
