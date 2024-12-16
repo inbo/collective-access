@@ -1293,8 +1293,16 @@
               <item idno="freezer" rank="4" enabled="1" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>cabinet</name_singular>
-                    <name_plural>cabinets</name_plural>
+                    <name_singular>freezer</name_singular>
+                    <name_plural>freezers</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="fridge" rank="4" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>fridge</name_singular>
+                    <name_plural>fridges</name_plural>
                   </label>
                 </labels>
               </item>
@@ -1317,24 +1325,24 @@
               <item idno="crate" rank="7" enabled="1" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>crateRackDrawer</name_singular>
-                    <name_plural>cratesRacksDrawers</name_plural>
+                    <name_singular>crate</name_singular>
+                    <name_plural>crates</name_plural>
                   </label>
                 </labels>
               </item>
               <item idno="rack" rank="7" enabled="1" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>crateRackDrawer</name_singular>
-                    <name_plural>cratesRacksDrawers</name_plural>
+                    <name_singular>rack</name_singular>
+                    <name_plural>racks</name_plural>
                   </label>
                 </labels>
               </item>
               <item idno="drawer" rank="7" enabled="1" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>crateRackDrawer</name_singular>
-                    <name_plural>cratesRacksDrawers</name_plural>
+                    <name_singular>drawer</name_singular>
+                    <name_plural>drawers</name_plural>
                   </label>
                 </labels>
               </item>
@@ -10694,7 +10702,7 @@
               <bundle>ca_storage_locations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at *</setting>
-                <setting name="restrict_to_types">room,cabinetFridgeFreezer,drawershelf,box,spot</setting>
+                <setting name="restrict_to_types">room,cabinet,freezer,fridge,compartment,drawer,shelf,crate,rack,box,spot</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="useHierarchicalBrowser">1</setting>
@@ -10879,7 +10887,7 @@
               <bundle>ca_storage_locations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at</setting>
-                <setting name="restrict_to_types">room,cabinetFridgeFreezer,drawershelf,box,spot</setting>
+                <setting name="restrict_to_types">room,cabinet,freezer,fridge,compartment,drawer,shelf,crate,rack,box,spot</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="useHierarchicalBrowser">0</setting>
@@ -10889,7 +10897,7 @@
               <bundle>ca_storage_locations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at</setting>
-                <setting name="restrict_to_types">room,cabinetFridgeFreezer,drawershelf,box,spot</setting>
+                <setting name="restrict_to_types">room,cabinet,freezer,fridge,compartment,drawer,shelf,crate,rack,box,spot</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="useHierarchicalBrowser">1</setting>
@@ -12959,12 +12967,11 @@
             <placement code="ca_storage_locations" typeRestrictions="internalCollection">
               <bundle>ca_storage_locations</bundle>
               <settings>
-                <setting name="restrict_to_type">box,drawerShelf,cabinetFridgeFreezer,room,floor,building,forestTreePopulationSite</setting>
                 <setting name="description" locale="en_US">Smallest possible storage location that withholds the full collection</setting>
                 <setting name="label" locale="en_US">Storage location of collection</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_types">forestTreePopulationSite,building,floor,room,cabinetFridgeFreezer,drawerShelf,box</setting>
+                <setting name="restrict_to_types">room,cabinet,freezer,fridge,compartment,drawer,shelf,crate,rack,box,floor,building,forestTreePopulationSite</setting>
               </settings>
             </placement>
             <placement code="ca_entities_collectionOwner">
@@ -13044,13 +13051,13 @@
               <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="preservationTemperature" typeRestrictions="cabinetFridgeFreezer">
+            <placement code="preservationTemperature" typeRestrictions="cabinet,freezer,fridge">
               <bundle>ca_attribute_preservationTemperature</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Preservation temperature of the cabinet, fridge or freezer</setting>
               </settings>
             </placement>
-            <placement code="maintenancePerson" typeRestrictions="cabinetFridgeFreezer,room,building,forestTreePopulationSite">
+            <placement code="maintenancePerson" typeRestrictions="cabinet,freezer,fridge,room,building,forestTreePopulationSite">
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Responsible person for maintenance of storage space or planted site.</setting>
@@ -13062,13 +13069,13 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="multimediaURL" typeRestrictions="box,drawerShelf,cabinetFridgeFreezer,room,floor,building">
+            <placement code="multimediaURL" typeRestrictions="box,drawer,rack,shelf,cabinet,freezer,fridge,room,floor,building">
               <bundle>ca_attribute_multimediaURL</bundle>
 			        <settings>
 				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
 			        </settings>
             </placement>
-            <placement code="reference" typeRestrictions="box,drawerShelf,cabinetFridgeFreezer,room,floor,building">
+            <placement code="reference" typeRestrictions="box,drawer,rack,shelf,cabinet,freezer,fridge,room,floor,building">
               <bundle>ca_attribute_reference</bundle>
 			        <settings>
                 <setting name="description" locale="en_US">This could be a document describing the storage space, giving technical information, ...</setting>
