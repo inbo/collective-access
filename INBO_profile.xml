@@ -9907,6 +9907,30 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
+	    <metadataElement code="boxSpot" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Box spot</name>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">5</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+	      <typeRestrictions>
+          <restriction code="r_storage_location">
+            <table>ca_storage_locations</table>
+            <type>box</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
 	  <!--Loans-->
 	    <metadataElement code="loanStatus" datatype="List" list="loan_status">
         <labels>
@@ -13036,6 +13060,13 @@
 			      <placement code="storage_location_hierarchy_location">
               <bundle>hierarchy_location</bundle>
             </placement>
+            <placement code="boxSpot" typeRestrictions="box">
+              <bundle>ca_attribute_boxSpot</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The location of the box</setting>
+                <setting name="description" locale="en_US">The XY information on where the box can be found in the crate or rack.</setting>
+              </settings>
+            </placement>
 			      <placement code="ca_objects">
               <bundle>ca_objects</bundle>
 			        <settings>
@@ -13054,13 +13085,15 @@
             <placement code="preservationTemperature" typeRestrictions="cabinet,freezer,fridge">
               <bundle>ca_attribute_preservationTemperature</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Preservation temperature of the cabinet, fridge or freezer</setting>
+                <setting name="label" locale="en_US">Preservation temperature</setting>
+                <setting name="description" locale="en_US">Preservation temperature of the cabinet, fridge or freezer.</setting>
               </settings>
             </placement>
             <placement code="maintenancePerson" typeRestrictions="cabinet,freezer,fridge,room,building,forestTreePopulationSite">
               <bundle>ca_entities</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Responsible person for maintenance of storage space or planted site.</setting>
+                <setting name="label" locale="en_US">Concierge</setting>
+                <setting name="description" locale="en_US">Responsible person for maintenance of the storage space or the forest tree population site.</setting>
 				        <setting name="add_label" locale="en_US">Add individual</setting>
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
@@ -13073,6 +13106,7 @@
               <bundle>ca_attribute_multimediaURL</bundle>
 			        <settings>
 				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
+                <setting name="description" locale="en_US">This (google drive) link brings you to relevant multimedia (pictures, videos, ..) of this storage unit.</setting>
 			        </settings>
             </placement>
             <placement code="reference" typeRestrictions="box,drawer,rack,shelf,cabinet,freezer,fridge,room,floor,building">
