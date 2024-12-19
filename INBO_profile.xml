@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.69</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.70</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <locales>
     <locale lang="en" country="US">English</locale>
@@ -3954,7 +3954,7 @@
           <item idno="clonalTest" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>Experimental plot: clonal test (Durch: "Proefperceel: klonale test")</name_singular>
+                <name_singular>Experimental plot: clonal test (Dutch: "Proefperceel: klonale test")</name_singular>
                 <name_plural>Experimental plot: clonal test (Durch: "Proefperceel: klonale test")</name_plural>
               </label>
             </labels>
@@ -10694,7 +10694,7 @@
 				        <setting name="add_label" locale="en_US">Add forest tree population type</setting>
               </settings>
             </placement>
-            <placement code="samplingDate" typeRestrictions="soilObject,waterObject,animalObject,plantObject,dnaSample" includeSubtypes="1">
+            <placement code="samplingDate" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,littertrapSample,seedlot" includeSubtypes="1">
               <bundle>ca_attribute_samplingDate</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Sampling date *</setting>
@@ -10732,28 +10732,28 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="verbatimLocality">
+            <placement code="verbatimLocality" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,littertrapSample,seedlot" includeSubtypes="1">
               <bundle>ca_attribute_verbatimLocality</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Sampling point is located at (dwc:verbatimLocality) *</setting>
                 <setting name="expand_collapse_no_value">expand</setting>
               </settings>
             </placement>
-            <placement code="decimalLatitude">
+            <placement code="decimalLatitude" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,littertrapSample,seedlot" includeSubtypes="1">
               <bundle>ca_attribute_decimalLatitude</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Decimal latitude *</setting>
                 <setting name="expand_collapse_no_value">expand</setting>
               </settings>
 			      </placement>
-            <placement code="decimalLongitude">
+            <placement code="decimalLongitude" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,littertrapSample,seedlot" includeSubtypes="1">
               <bundle>ca_attribute_decimalLongitude</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Decimal longitude *</setting>
                 <setting name="expand_collapse_no_value">expand</setting>
               </settings>
 			      </placement>
-            <placement code="coordinateUncertaintyInMeters">
+            <placement code="coordinateUncertaintyInMeters" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,littertrapSample,seedlot" includeSubtypes="1">
               <bundle>ca_attribute_coordinateUncertaintyInMeters</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Coordinate uncertainty in meters *</setting>
@@ -11038,6 +11038,66 @@
               <name>Locality(XY)</name>
             </label>
           </labels>
+          <typeRestrictions>
+                    <restriction code="r_observationAnimal" type="observationAnimal"/>
+                    <restriction code="r_observationPlant" type="observationPlant"/>
+                    <restriction code="r_observationSoil" type="observationSoil"/>
+                    <restriction code="r_observationWater" type="observationWater"/>
+                    <restriction code="r_invertebrateBulk" type="invertebrateBulk"/>
+                    <restriction code="r_mammalEntireCadaver" type="mammalEntireCadaver"/>       
+                    <restriction code="r_invertebrateEntireEthanol" type="invertebrateEntireEthanol"/>
+                    <restriction code="r_fishEntireEthanol" type="fishEntireEthanol"/>
+                    <restriction code="r_amphibianEntireEthanol" type="amphibianEntireEthanol"/>
+                    <restriction code="r_mammalEntireEthanol" type="mammalEntireEthanol"/>
+                    <restriction code="r_reptileEntireEthanol" type="reptileEntireEthanol"/>
+                    <restriction code="r_invertebrateEntireDry" type="invertebrateEntireDry"/>
+                    <restriction code="r_sampleAmphibianTailclip" type="sampleAmphibianTailclip"/>
+                    <restriction code="r_sampleAmphibianSwabCloaca" type="sampleAmphibianSwabCloaca"/>
+                    <restriction code="r_sampleAmphibianSwabMouth" type="sampleAmphibianSwabMouth"/>
+                    <restriction code="r_sampleAmphibianSwabEar" type="sampleAmphibianSwabEar"/>
+                    <restriction code="r_sampleAmphibianToeclip" type="sampleAmphibianToeclip"/>
+                    <restriction code="r_sampleFishFinclip" type="sampleFishFinclip"/>
+                    <restriction code="r_sampleFishMuscle" type="sampleFishMuscle"/>
+                    <restriction code="r_sampleInvertebrateLeg" type="sampleInvertebrateLeg"/>
+                    <restriction code="r_sampleInvertebrateWingclip" type="sampleInvertebrateWingclip"/>
+                    <restriction code="r_sampleReptileSkin" type="sampleReptileSkin"/>
+                    <restriction code="r_sampleReptileTailclip" type="sampleReptileTailclip"/>
+                    <restriction code="r_sampleMammalBaculum" type="sampleMammalBaculum"/>
+                    <restriction code="r_sampleMammalBladder" type="sampleMammalBladder"/>
+                    <restriction code="r_sampleMammalBlood" type="sampleMammalBlood"/>
+                    <restriction code="r_sampleMammalBrain" type="sampleMammalBrain"/>
+                    <restriction code="r_sampleMammalConjuctivum" type="sampleMammalConjuctivum"/>
+                    <restriction code="r_sampleMammalCyste" type="sampleMammalCyste"/>
+                    <restriction code="r_sampleMammalEarpunch" type="sampleMammalEarpunch"/>
+                    <restriction code="r_sampleMammalFat" type="sampleMammalFat"/>
+                    <restriction code="r_sampleMammalFeces" type="sampleMammalFeces"/>
+                    <restriction code="r_sampleMammalHead" type="sampleMammalHead"/>
+                    <restriction code="r_sampleMammalHeart" type="sampleMammalHeart"/>
+                    <restriction code="r_sampleMammalHair" type="sampleMammalHair"/>
+                    <restriction code="r_sampleMammalIntestine" type="sampleMammalIntestine"/>
+                    <restriction code="r_sampleMammalLiver" type="sampleMammalLiver"/>
+                    <restriction code="r_sampleMammalLung" type="sampleMammalLung"/>
+                    <restriction code="r_sampleMammalLymphNode" type="sampleMammalLymphNode"/>
+                    <restriction code="r_sampleMammalKidney" type="sampleMammalKidney"/>
+                    <restriction code="r_sampleMammalMuscle" type="sampleMammalMuscle"/>
+                    <restriction code="r_sampleMammalSkinPiece" type="sampleMammalSkinPiece"/>
+                    <restriction code="r_sampleMammalSkinComplete" type="sampleMammalSkinComplete"/>
+                    <restriction code="r_sampleMammalSkull" type="sampleMammalSkull"/>
+                    <restriction code="r_sampleMammalSpleen" type="sampleMammalSpleen"/>
+                    <restriction code="r_sampleMammalStomach" type="sampleMammalStomach"/>
+                    <restriction code="r_sampleMammalSwabBite" type="sampleMammalSwabBite"/>
+                    <restriction code="r_sampleMammalTongue" type="sampleMammalTongue"/>
+                    <restriction code="r_sampleMammalTooth" type="sampleMammalTooth"/>
+                    <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
+                    <restriction code="r_leafSample" type="leafSample"/>
+                    <restriction code="r_littertrapSample" type="littertrapSample"/>
+                    <restriction code="r_seedlot" type="seedlot"/>
+                    <restriction code="r_oDNA" type="oDNA"/>
+                    <restriction code="r_eDNA" type="eDNA"/>
+                    <restriction code="r_eDnaWaterFilter" type="eDnaWaterFilter"/>
+                    <restriction code="r_waterSample" type="waterSample"/>
+                    <restriction code="r_soilObject" type="soilObject"/>
+          </typeRestrictions>
           <bundlePlacements>
 			      <placement code="verbatimLocality">
               <bundle>ca_attribute_verbatimLocality</bundle>
@@ -11209,6 +11269,66 @@
               <name>Locality(Z)</name>
             </label>
           </labels>
+          <typeRestrictions>
+                    <restriction code="r_observationAnimal" type="observationAnimal"/>
+                    <restriction code="r_observationPlant" type="observationPlant"/>
+                    <restriction code="r_observationSoil" type="observationSoil"/>
+                    <restriction code="r_observationWater" type="observationWater"/>
+                    <restriction code="r_invertebrateBulk" type="invertebrateBulk"/>
+                    <restriction code="r_mammalEntireCadaver" type="mammalEntireCadaver"/>       
+                    <restriction code="r_invertebrateEntireEthanol" type="invertebrateEntireEthanol"/>
+                    <restriction code="r_fishEntireEthanol" type="fishEntireEthanol"/>
+                    <restriction code="r_amphibianEntireEthanol" type="amphibianEntireEthanol"/>
+                    <restriction code="r_mammalEntireEthanol" type="mammalEntireEthanol"/>
+                    <restriction code="r_reptileEntireEthanol" type="reptileEntireEthanol"/>
+                    <restriction code="r_invertebrateEntireDry" type="invertebrateEntireDry"/>
+                    <restriction code="r_sampleAmphibianTailclip" type="sampleAmphibianTailclip"/>
+                    <restriction code="r_sampleAmphibianSwabCloaca" type="sampleAmphibianSwabCloaca"/>
+                    <restriction code="r_sampleAmphibianSwabMouth" type="sampleAmphibianSwabMouth"/>
+                    <restriction code="r_sampleAmphibianSwabEar" type="sampleAmphibianSwabEar"/>
+                    <restriction code="r_sampleAmphibianToeclip" type="sampleAmphibianToeclip"/>
+                    <restriction code="r_sampleFishFinclip" type="sampleFishFinclip"/>
+                    <restriction code="r_sampleFishMuscle" type="sampleFishMuscle"/>
+                    <restriction code="r_sampleInvertebrateLeg" type="sampleInvertebrateLeg"/>
+                    <restriction code="r_sampleInvertebrateWingclip" type="sampleInvertebrateWingclip"/>
+                    <restriction code="r_sampleReptileSkin" type="sampleReptileSkin"/>
+                    <restriction code="r_sampleReptileTailclip" type="sampleReptileTailclip"/>
+                    <restriction code="r_sampleMammalBaculum" type="sampleMammalBaculum"/>
+                    <restriction code="r_sampleMammalBladder" type="sampleMammalBladder"/>
+                    <restriction code="r_sampleMammalBlood" type="sampleMammalBlood"/>
+                    <restriction code="r_sampleMammalBrain" type="sampleMammalBrain"/>
+                    <restriction code="r_sampleMammalConjuctivum" type="sampleMammalConjuctivum"/>
+                    <restriction code="r_sampleMammalCyste" type="sampleMammalCyste"/>
+                    <restriction code="r_sampleMammalEarpunch" type="sampleMammalEarpunch"/>
+                    <restriction code="r_sampleMammalFat" type="sampleMammalFat"/>
+                    <restriction code="r_sampleMammalFeces" type="sampleMammalFeces"/>
+                    <restriction code="r_sampleMammalHead" type="sampleMammalHead"/>
+                    <restriction code="r_sampleMammalHeart" type="sampleMammalHeart"/>
+                    <restriction code="r_sampleMammalHair" type="sampleMammalHair"/>
+                    <restriction code="r_sampleMammalIntestine" type="sampleMammalIntestine"/>
+                    <restriction code="r_sampleMammalLiver" type="sampleMammalLiver"/>
+                    <restriction code="r_sampleMammalLung" type="sampleMammalLung"/>
+                    <restriction code="r_sampleMammalLymphNode" type="sampleMammalLymphNode"/>
+                    <restriction code="r_sampleMammalKidney" type="sampleMammalKidney"/>
+                    <restriction code="r_sampleMammalMuscle" type="sampleMammalMuscle"/>
+                    <restriction code="r_sampleMammalSkinPiece" type="sampleMammalSkinPiece"/>
+                    <restriction code="r_sampleMammalSkinComplete" type="sampleMammalSkinComplete"/>
+                    <restriction code="r_sampleMammalSkull" type="sampleMammalSkull"/>
+                    <restriction code="r_sampleMammalSpleen" type="sampleMammalSpleen"/>
+                    <restriction code="r_sampleMammalStomach" type="sampleMammalStomach"/>
+                    <restriction code="r_sampleMammalSwabBite" type="sampleMammalSwabBite"/>
+                    <restriction code="r_sampleMammalTongue" type="sampleMammalTongue"/>
+                    <restriction code="r_sampleMammalTooth" type="sampleMammalTooth"/>
+                    <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
+                    <restriction code="r_leafSample" type="leafSample"/>
+                    <restriction code="r_littertrapSample" type="littertrapSample"/>
+                    <restriction code="r_seedlot" type="seedlot"/>
+                    <restriction code="r_oDNA" type="oDNA"/>
+                    <restriction code="r_eDNA" type="eDNA"/>
+                    <restriction code="r_eDnaWaterFilter" type="eDnaWaterFilter"/>
+                    <restriction code="r_waterSample" type="waterSample"/>
+                    <restriction code="r_soilObject" type="soilObject"/>
+          </typeRestrictions>
           <bundlePlacements>
 			      <placement code="verbatimElevation">
               <bundle>ca_attribute_verbatimElevation</bundle>
@@ -11884,6 +12004,7 @@
                 <restriction code="r_littertrapSample" type="littertrapSample"/>
                 <restriction code="r_herbariumSpecimen" type="herbariumSpecimen"/>
                 <restriction code="r_livingPlant" type="livingPlant"/>
+                <restriction code="r_forestTreePopulation" type="forestTreePopulation"/>
                 <restriction code="r_seedlot" type="seedlot"/>
                 <restriction code="r_stemDisc" type="stemDisc"/>
                 <restriction code="r_oDNA" type="oDNA"/>
@@ -13066,6 +13187,34 @@
                 <setting name="description" locale="en_US">The XY information on where the box can be found in the crate or rack.</setting>
               </settings>
             </placement>
+            <placement code="verbatimLocality" typeRestrictions="forestTreePopulationSite,forestTreepopulationSpot">
+              <bundle>ca_attribute_verbatimLocality</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Sampling point is located at (dwc:verbatimLocality) *</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
+              </settings>
+            </placement>
+            <placement code="decimalLatitude" typeRestrictions="forestTreePopulationSite,forestTreepopulationSpot">
+              <bundle>ca_attribute_decimalLatitude</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Decimal latitude *</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
+              </settings>
+			      </placement>
+            <placement code="decimalLongitude" typeRestrictions="forestTreePopulationSite,forestTreepopulationSpot">
+              <bundle>ca_attribute_decimalLongitude</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Decimal longitude *</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
+              </settings>
+			      </placement>
+            <placement code="coordinateUncertaintyInMeters" typeRestrictions="forestTreePopulationSite,forestTreepopulationSpot">
+              <bundle>ca_attribute_coordinateUncertaintyInMeters</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Coordinate uncertainty in meters *</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
+              </settings>
+			      </placement>
 			      <placement code="ca_objects">
               <bundle>ca_objects</bundle>
 			        <settings>
