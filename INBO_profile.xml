@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.70</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.71</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <locales>
     <locale lang="en" country="US">English</locale>
@@ -10347,8 +10347,8 @@
             <placement code="preferred_labels">
               <bundle>preferred_labels</bundle>
               <settings>
-                <setting name="label" locale="en_US">Physical Specimen ID *</setting>
-                <setting name="description" locale="en_US">This is the preferred identifier. For objects in an INBO collection this identifier has to be physically present on/with the object, on the label or written on the object. For naming conventions, please contact the manager of the INBO-subcollection your specimen belongs to. Example for DNA-samples: 19-009625 (LIMS-ID). Example for mammal tissue samples: da1488tong2. Example for seedlots: seedlot_ALNUS_GLU-000-156. For soil samples this is the Specimen ID (SID) which has no naming convention overall the INBO soil archive. For other types of specimen or sampling points, not kept in the INBO collection, but important to log information on: please use the (field) ID you gave the occurrence or specimen and add the prefix: "year_projectShortID_" and the suffix "_objectConcept". For example: if you collected samples of crayfish in the field and numbered them incrementally: "124" will most likely not be an unique value in the full database of all the INBO-generated sampling points and specimens. Hence it is changed into: 2024_Craywatch_149_crayfish as a sampling point, and perhaps 2024_Craywatch_149_muscle for the collected muscle tissue and 2024_Craywatch_149_leg for the collected leg. Later on a DNA specimen can be generated from (parts of) the tissues which will be named according to the convention of that INBO subcollection e.g. 24-000978.</setting>
+                <setting name="label" locale="en_US">Specimen ID *</setting>
+                <setting name="description" locale="en_US">This is the preferred identifier. For (non-living) objects in an INBO collection this identifier has to be physically present on/with the object, on the label or written on the object. For naming conventions, please contact the manager of the INBO-subcollection your specimen belongs to. Example for DNA-samples: 19-009625 (LIMS-ID). Example for mammal tissue samples: da1488tong2. Example for seedlots: seedlot_ALNUS_GLU-000-156. For soil samples this is the Specimen ID (SID). If not part of an INBO-collection: please use the (field) ID you gave the specimen and add the prefix: "year_projectShortID_" and the suffix "_objectConcept". For example: if you collected samples of crayfish in the field and numbered them incrementally: "124" will most likely not be an unique value in the full database of all the INBO-generated sampling points and specimens. Hence it is changed into: 2024_Craywatch_149_crayfish for the entire collected animal, and 2024_Craywatch_149_muscle for the collected muscle tissue and 2024_Craywatch_149_leg for the collected leg. Later on a DNA specimen can be generated from (parts of) the tissues which will be named according to the convention of that INBO subcollection e.g. 24-000978.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="documentation_url">http://rs.dissco.eu/opends/terms/physicalSpecimenID</setting>
               </settings>
@@ -10501,6 +10501,7 @@
 			      <placement code="genotype" typeRestrictions="animalObject,plantObject,oDNA" includeSubtypes="1">
               <bundle>ca_objects</bundle>
 			        <settings>
+                <setting name="label" locale="en_US">Genotype</setting>
                 <setting name="description" locale="en_US">Genotype(s). For a single object: new genotypes can be added over time. For bulk samples (e.g. forest tree populations): different genotypes can be listed.</setting>
                 <setting name="restrict_to_types">genotype</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -10762,7 +10763,7 @@
 		    <screen idno="obj_preparation" default="0">
           <labels>
             <label locale="en_US">
-              <name>Sampling-event</name>
+              <name>Creation object</name>
             </label>
           </labels>
           <typeRestrictions>
@@ -11359,7 +11360,7 @@
             <placement code="ca_entities_identifier">
               <bundle>ca_entities</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Identifier</setting>
+                <setting name="label" locale="en_US">Identified by</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
