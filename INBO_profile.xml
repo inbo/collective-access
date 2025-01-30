@@ -4262,18 +4262,18 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="multimediaURL" datatype="Container">
+	    <metadataElement code="fileURL" datatype="Container">
         <labels>
           <label locale="en_US">
             <name>Internal URL</name>
           </label>
         </labels>
 	      <elements>
-		      <metadataElement code="multimediaURL_URL" datatype="Url">
+		      <metadataElement code="fileURL_URL" datatype="Url">
             <labels>
             <label locale="en_US">
-              <name>Media-URL</name>
-              <description>An URL that leads to a multimedia file or folder containing multimedia (photo, video, sound,...) that is saved in an INBO archive space. This could be on the INBO google folders, the INBO tandemVault or any other published open web URL.</description>
+              <name>File-URL</name>
+              <description>An URL that leads to a (multimedia) file or folder (containing multimedia such as photo, video, sound,...) that is saved in the INBO-CMS shared folder, the INBO tandemVault or any other published open web URL.</description>
             </label>
             </labels>
             <settings>
@@ -4283,7 +4283,7 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
-		      <metadataElement code="multimediaURL_descr" datatype="Text">
+		      <metadataElement code="fileURL_descr" datatype="Text">
             <labels>
               <label locale="en_US">
                 <name>Multimedia description</name>
@@ -6697,6 +6697,68 @@
           </label>
         </labels>
         <documentationUrl>http://rs.tdwg.org/abcd/terms/longitudeText</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+	      <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_occurrences">
+            <table>ca_occurrences</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_forestTreePopulationSite">
+            <table>ca_storage_locations</table>
+            <type>forestTreePopulationSite</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_building">
+            <table>ca_storage_locations</table>
+            <type>building</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="verbatimGeodeticDatum" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Verbatim Geodetic Datum</name>
+            <description>The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which the geographic coordinates given in verbatimLatitude and verbatimLongitude are based.</description>
+          </label>
+        </labels>
         <settings>
           <setting name="fieldWidth">70</setting>
           <setting name="fieldHeight">1</setting>
@@ -10614,6 +10676,28 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
+            <placement code="plantplot_verbatimLongitudeX" typeRestrictions="livingPlant,forestTreePopulation">
+              <bundle>ca_attribute_verbatimLongitudeX</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Storage location verbatim longitude (X)</setting>
+                <setting name="description" locale="en_US">The original description of the longitude (X) of the storage location.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+            <placement code="plantplot_verbatimLatitudeY" typeRestrictions="livingPlant,forestTreePopulation">
+              <bundle>ca_attribute_verbatimLatitudeY</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Storage location verbatim latitude (Y) (dwc:verbatimLatitude)</setting>
+                <setting name="description" locale="en_US">The original description of the latitude (Y) of the storage location..</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+            <placement code="plantplot_verbatimGeodeticdatum" typeRestrictions="livingPlant,forestTreePopulation">
+              <bundle>ca_attribute_verbatimGeodeticDatum</bundle>
+              <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
 			      <placement code="storageLocationMap" typeRestrictions="livingPlant,forestTreePopulation">
               <bundle>ca_attribute_georeference</bundle>
               <settings>
@@ -10983,6 +11067,14 @@
               <settings>
                 <setting name="label" locale="en_US">Verbatim latitude (Y) (dwc:verbatimLatitude)</setting>
                 <setting name="description" locale="en_US">The original description of the latitude (Y).</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+            <placement code="verbatimgeodeticDatum">
+              <bundle>ca_attribute_verbatimgeodeticDatum</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Verbatim geodeticDatum</setting>
+                <setting name="description" locale="en_US">The geodetic datum of the verbatim coordinates.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
@@ -11668,12 +11760,12 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="multimediaURL">
-              <bundle>ca_attribute_multimediaURL</bundle>
+            <placement code="fileURL">
+              <bundle>ca_attribute_fileURL</bundle>
 			        <settings>
-				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
+				        <setting name="add_label" locale="en_US">Add file URL</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="description" locale="en_US">Add URL and describe what the multimedia file represents. For example: it represents the living animal from which a toe clip was sampled. For example: it represents the toe clip sample in a cryotube.</setting>
+                <setting name="description" locale="en_US">Add URL and describe what the (multimedia) file represents. For example: it represents the living animal from which a toe clip was sampled. For example: it represents the toe clip sample in a cryotube. For example: it is a scan of the experimental plot outline.</setting>
 			        </settings>
             </placement>
             <placement code="reference">
@@ -12036,11 +12128,11 @@
                 <setting name="description" locale="en_US">A relevant URL of a publication that is directly or indirectly linked to the genotype.</setting>
 			        </settings>
             </placement>
-            <placement code="multimediaURL">
-              <bundle>ca_attribute_multimediaURL</bundle>
+            <placement code="fileURL">
+              <bundle>ca_attribute_fileURL</bundle>
 			        <settings>
-				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
-                <setting name="description" locale="en_US">Add URL and describe what the multimedia file represents. In the case of a genotype, this could be a scan of documents that are relevant for defining the genotype.</setting>
+				        <setting name="add_label" locale="en_US">Add file URL</setting>
+                <setting name="description" locale="en_US">Add URL and describe what the (multimedia) file represents. In the case of a genotype, this could be a scan of documents that are relevant for defining the genotype.</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -12282,8 +12374,8 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="multimediaURL" typeRestrictions="curation,disposal,treatment,renewal,transfer,identification">
-              <bundle>ca_attribute_multimediaURL</bundle>
+            <placement code="fileURL" typeRestrictions="curation,disposal,treatment,renewal,transfer,identification">
+              <bundle>ca_attribute_fileURL</bundle>
 			        <settings>
 				        <setting name="add_label" locale="en_US">Add multimedia</setting>
 			        </settings>
@@ -12599,8 +12691,8 @@
 		        <placement code="descriptionContainer">
               <bundle>ca_attribute_descriptionContainer</bundle>
             </placement>
-			      <placement code="multimediaURL">
-              <bundle>ca_attribute_multimediaURL</bundle>
+			      <placement code="fileURL">
+              <bundle>ca_attribute_fileURL</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Visual representation of the place. Most relevant for in-situ plot or transect (e.g. (publication that contains) map, sketch)</setting>
 				        <setting name="add_label" locale="en_US">Add file</setting>
@@ -12851,8 +12943,8 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="coll_multimediaURL">
-              <bundle>ca_attribute_multimediaURL</bundle>
+            <placement code="coll_fileURL">
+              <bundle>ca_attribute_fileURL</bundle>
 			        <settings>
 				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
 			        </settings>
@@ -13045,8 +13137,8 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="multimediaURL" typeRestrictions="box,drawer,rack,shelf,cabinet,freezer,fridge,room,floor,building">
-              <bundle>ca_attribute_multimediaURL</bundle>
+            <placement code="fileURL" typeRestrictions="box,drawer,rack,shelf,cabinet,freezer,fridge,room,floor,building">
+              <bundle>ca_attribute_fileURL</bundle>
 			        <settings>
 				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
                 <setting name="description" locale="en_US">This (google drive) link brings you to relevant multimedia (pictures, videos, ..) of this storage unit.</setting>
@@ -13188,7 +13280,7 @@
           </labels>
           <bundlePlacements>
             <placement code="objectLot_mulitmediaURL">
-              <bundle>ca_attribute_multimediaURL</bundle>
+              <bundle>ca_attribute_fileURL</bundle>
 			        <settings>
 				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
                 <setting name="description" locale="en_US">An URL that leads to multimedia LINKED TO THE OBJECT LOT (i.e. not the sampling point, nor the objects within the object lot).</setting>
@@ -13429,8 +13521,8 @@
                 <setting name="restrict_to_types">object</setting>
 			        </settings>
             </placement>
-            <placement code="multimediaURL">
-              <bundle>ca_attribute_multimediaURL</bundle>
+            <placement code="fileURL">
+              <bundle>ca_attribute_fileURL</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Visual representation of the loan</setting>
                 <setting name="description" locale="en_US">This can be photos or videos, to document condition, volume, ...; either before sending out the loan, or when receiving the loan. This URL leads to a folder, photo, video, ... that is saved in an INBO archive space. This could be on the INBO google folders, the INBO tandemVault or any other published open web URL.</setting>
