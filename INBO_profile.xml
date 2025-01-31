@@ -4003,7 +4003,15 @@
               </label>
             </labels>
           </item>
-          <item idno="missing" rank="4" enabled="1" default="0">
+          <item idno="converted" rank="4" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>converted</name_singular>
+                <name_plural>converted</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="missing" rank="5" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>missing</name_singular>
@@ -4011,15 +4019,23 @@
               </label>
             </labels>
           </item>
-          <item idno="emptyConsumed" rank="5" enabled="1" default="0">
+          <item idno="dead" rank="6" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>empty/consumed</name_singular>
-                <name_plural>empty/consumed</name_plural>
+                <name_singular>missing</name_singular>
+                <name_plural>missing</name_plural>
               </label>
             </labels>
           </item>
-          <item idno="disposed" rank="6" enabled="1" default="0">
+          <item idno="consumed" rank="7" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>consumed</name_singular>
+                <name_plural>consumed</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="disposed" rank="8" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>disposed</name_singular>
@@ -4027,7 +4043,7 @@
               </label>
             </labels>
           </item>
-          <item idno="transferred" rank="7" enabled="1" default="0">
+          <item idno="transferred" rank="9" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>transferred</name_singular>
@@ -10749,14 +10765,6 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="ca_entities" typeRestrictions="livingPlant,forestTreePopulation">
-              <bundle>ca_entities</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Owner</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="plantSiteOwner">directRelationship</setting>
-              </settings>
-			      </placement>
             <placement code="ca_collection">
               <bundle>ca_collections</bundle>
 			        <settings>
@@ -11894,7 +11902,7 @@
               <bundle>is_deaccessioned</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">A flag indicating whether the object is deaccessioned</setting>
-                <setting name="description" locale="en_US">Will be 1 when deaccessioned or 0 (the default) when not deaccessioned. This should be visible in the object curation log. Types of deaccesioning are: disposal or transfer.</setting>
+                <setting name="description" locale="en_US">Will be 1 when deaccessioned or 0 (the default) when not deaccessioned. This should be visible in the object curation log. If the object is not existing anymore (dead, consumed, disposed of, ...) or if the ownership is not of INBO anymore (transferred), the object is deaccessionned. This means that we no longer have it in the INBO-collection.</setting>
               </settings>
             </placement>
             <placement code="disposition">
@@ -11912,6 +11920,30 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
+            <placement code="ownedBy" typeRestrictions="forestTreePopulation">
+              <bundle>ca_entities</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Land is owned by</setting>
+                <setting name="description" locale="en_US">Person or organization that owns the land on which forest tree population grows.</setting>
+				        <setting name="add_label" locale="en_US">Add owner</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">3</setting>
+                <setting name="restrict_to_relationship_types">plantSiteOwner</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="managedBy" typeRestrictions="forestTreePopulation">
+              <bundle>ca_entities</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Managed by</setting>
+                <setting name="description" locale="en_US">Responsible person or organization for the maintenance of the forest tree population.</setting>
+				        <setting name="add_label" locale="en_US">Add manager</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">3</setting>
+                <setting name="restrict_to_relationship_types">manager</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
 			      <placement code="ca_entities_previousOwner">
               <bundle>ca_entities</bundle>
 			        <settings>
@@ -11926,7 +11958,7 @@
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Contact</setting>
-                <setting name="description" locale="en_US">A person that can be contacted in case more information on the object is asked, or needed. Ideally this is at least one person from within INBO, and optionally a second (external) contact can be listed. Better would be that all information is recorded in the database, so a contact person becomes unnecessary.</setting>
+                <setting name="description" locale="en_US">A person (preferably working at INBO) that can be contacted in case more information on the object is asked, or needed. Ideally this is at least one person from within INBO, and optionally a second (external) contact can be listed. Better would be that all information is recorded in the database, so a contact person becomes unnecessary.</setting>
 				        <setting name="add_label" locale="en_US">Add contact</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="restrict_to_types">ind</setting>
@@ -13152,7 +13184,7 @@
                 <setting name="description" locale="en_US">Preservation temperature of the cabinet, fridge or freezer.</setting>
               </settings>
             </placement>
-            <placement code="maintenancePerson" typeRestrictions="cabinet,freezer,fridge,room,building,forestTreePopulationSite">
+            <placement code="maintenancePerson" typeRestrictions="cabinet,freezer,fridge,room,building">
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Concierge</setting>
@@ -14055,7 +14087,17 @@
               <typename_reverse>is owned by</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>livingPlant,forestTreePopulation</subTypeLeft>
+          <subTypeLeft>forestTreePopulation</subTypeLeft>
+          <subTypeRight></subTypeRight>
+        </type>
+        <type code="manager" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>is managed by</typename>
+              <typename_reverse>manages</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>forestTreePopulation</subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
         <type code="knowsMost" default="0">
