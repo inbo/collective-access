@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.71</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.72</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <locales>
     <locale lang="en" country="US">English</locale>
@@ -5189,6 +5189,384 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
+	    <metadataElement code="forestTreePopCatContainer" datatype="Container">
+        <labels>
+          <label locale="en_US">
+            <name>Forest tree population category (container)</name>
+          </label>
+        </labels>
+			  <settings>
+          <setting name="lineBreakAfterNumberOfElements">1</setting>
+        </settings>
+	      <elements>
+		      <metadataElement code="forestTreePopCat" datatype="List" list="type_forestTreePopulation">
+            <labels>
+            <label locale="en_US">
+              <name>Forest tree population category</name>
+            </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+		      <metadataElement code="forestTreePopStartDate" datatype="DateRange">
+            <labels>
+            <label locale="en_US">
+              <name>Start date of the forest tree population type label</name>
+            </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">40</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+              <setting name="canBeUsedInSort">1</setting>
+              <setting name="canBeUsedInSearchForm">1</setting>
+              <setting name="canBeUsedInDisplay">1</setting>
+            </settings>
+          </metadataElement>
+		      <metadataElement code="forestTreePopEndDate" datatype="DateRange">
+            <labels>
+              <label locale="en_US">
+                <name>End date of the forest tree population type label</name>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">40</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+              <setting name="canBeUsedInSort">1</setting>
+              <setting name="canBeUsedInSearchForm">1</setting>
+              <setting name="canBeUsedInDisplay">1</setting>
+            </settings>
+		      </metadataElement>
+		      <metadataElement code="forestTreePopRef" datatype="Text">
+            <labels>
+            <label locale="en_US">
+              <name>Reference number of the forest tree population (e.g. PAV-KL-01-01)</name>
+            </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+		      <metadataElement code="forestTreePopRemarks" datatype="Text">
+            <labels>
+            <label locale="en_US">
+              <name>Any remaining relevant information on the Forest tree population category</name>
+            </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">5</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+        </elements>
+        <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">10</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="sexAnimal" datatype="List" list="sex_animal">
+			  <labels>
+          <label locale="en_US">
+            <name>sex (dwc:sex)</name>
+            <description>The sex of the biological individual(s) represented in the Occurrence.</description>
+          </label>
+			  </labels>
+			  <documentationUrl>http://rs.tdwg.org/dwc/terms/sex</documentationUrl>
+			  <settings>
+          <setting name="fieldWidth">40</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+			  </settings>
+			  <typeRestrictions>
+          <restriction code="r_animalObjects">
+            <table>ca_objects</table>
+            <type>animalObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+			  </typeRestrictions>
+	    </metadataElement>
+	    <metadataElement code="sexPlant" datatype="List" list="sex_plant">
+			  <labels>
+          <label locale="en_US">
+            <name>sex (dwc:sex)</name>
+            <description>The sex of the biological individual(s) represented in the Occurrence.</description>
+          </label>
+			  </labels>
+			  <documentationUrl>http://rs.tdwg.org/dwc/terms/sex</documentationUrl>
+			  <settings>
+          <setting name="fieldWidth">40</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+			  </settings>
+			  <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>plantObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+			  </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="lifeStageMammal" datatype="List" list="life_stage_mammal">
+			  <labels>
+          <label locale="en_US">
+            <name>lifeStage animal</name>
+            <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
+          </label>
+			  </labels>
+			  <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
+			  <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+			  </settings>
+			  <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>animalObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+			  </typeRestrictions>
+	    </metadataElement>
+	    <metadataElement code="lifeStageInvertebrate" datatype="List" list="life_stage_invertebrate">
+			  <labels>
+          <label locale="en_US">
+            <name>lifeStage animal</name>
+            <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
+          </label>
+			  </labels>
+			  <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
+			  <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+			  </settings>
+			  <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>animalObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+			  </typeRestrictions>
+	    </metadataElement>
+	    <metadataElement code="lifeStageFish" datatype="List" list="life_stage_fish">
+			  <labels>
+          <label locale="en_US">
+            <name>lifeStage animal</name>
+            <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
+          </label>
+			  </labels>
+			  <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
+			  <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+			  </settings>
+			  <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>animalObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+			  </typeRestrictions>
+	    </metadataElement>
+	    <metadataElement code="lifeStageAmphibian" datatype="List" list="life_stage_amphibian">
+			  <labels>
+          <label locale="en_US">
+            <name>lifeStage animal</name>
+            <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
+          </label>
+			  </labels>
+			  <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
+			  <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+			  </settings>
+			  <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>animalObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+			  </typeRestrictions>
+	    </metadataElement>
+	    <metadataElement code="lifeStageReptile" datatype="List" list="life_stage_reptile">
+			  <labels>
+          <label locale="en_US">
+            <name>lifeStage animal</name>
+            <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
+          </label>
+			  </labels>
+			  <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
+			  <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+			  </settings>
+			  <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>animalObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+			  </typeRestrictions>
+	    </metadataElement>
+	    <metadataElement code="lifeStagePlant" datatype="List" list="life_stage_plant">
+			  <labels>
+          <label locale="en_US">
+            <name>lifeStage plant</name>
+            <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
+          </label>
+			  </labels>
+			  <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
+			  <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+			  </settings>
+			  <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>plantObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+			  </typeRestrictions>
+	    </metadataElement>
+	    <metadataElement code="reprCondPlant" datatype="List" list="repr_cond_plant">
+			  <labels>
+          <label locale="en_US">
+            <name>reproductiveCondition</name>
+            <description>The reproductive condition of the biological individual(s) represented in the Occurrence. Recommended best practice is to use a controlled vocabulary.</description>
+          </label>
+			  </labels>
+			  <documentationUrl>http://rs.tdwg.org/dwc/terms/reproductiveCondition</documentationUrl>
+			  <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+          <setting name="hideIfSelected_dioeciousMale">object_ui/obj_measurements/ca_attribute_sexPlant</setting>
+          <setting name="hideIfSelected_notRecorded">object_ui/obj_measurements/ca_attribute_sexPlant</setting>
+          <setting name="hideIfSelected_notApplicable">object_ui/obj_measurements/ca_attribute_sexPlant</setting>
+          <setting name="hideIfSelected_other">object_ui/obj_measurements/ca_attribute_sexPlant</setting>
+          <setting name="hideIfSelected_juvenile">object_ui/obj_measurements/ca_attribute_lifeStagePlant</setting>
+          <setting name="hideIfSelected_seedling">object_ui/obj_measurements/ca_attribute_lifeStagePlant</setting>
+          <setting name="hideIfSelected_notRecorded">object_ui/obj_measurements/ca_attribute_lifeStagePlant</setting>
+          <setting name="hideIfSelected_other">object_ui/obj_measurements/ca_attribute_lifeStagePlant</setting>
+			  </settings>
+			  <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>plantObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+			  </typeRestrictions>
+	    </metadataElement>
+	    <metadataElement code="reprCondMammal" datatype="List" list="repr_cond_mammal">
+			  <labels>
+          <label locale="en_US">
+            <name>reproductiveCondition</name>
+            <description>The reproductive condition of the biological individual(s) represented in the Occurrence. Recommended best practice is to use a controlled vocabulary.</description>
+          </label>
+			  </labels>
+			  <documentationUrl>http://rs.tdwg.org/dwc/terms/reproductiveCondition</documentationUrl>
+			  <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+          <setting name="hideIfSelected_male">object_ui/obj_measurements/ca_attribute_sexAnimal</setting>
+          <setting name="hideIfSelected_notRecorded">object_ui/obj_measurements/ca_attribute_sexAnimal</setting>
+          <setting name="hideIfSelected_hermaphrodite">object_ui/obj_measurements/ca_attribute_sexAnimal</setting>
+          <setting name="hideIfSelected_notApplicable">object_ui/obj_measurements/ca_attribute_sexAnimal</setting>
+          <setting name="hideIfSelected_other">object_ui/obj_measurements/ca_attribute_sexAnimal</setting>
+          <setting name="hideIfSelected_juvenile">object_ui/obj_measurements/ca_attribute_lifeStageMammal</setting>
+          <setting name="hideIfSelected_notRecorded">object_ui/obj_measurements/ca_attribute_lifeStageMammal</setting>
+			  </settings>
+			  <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>animalObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+			  </typeRestrictions>
+	    </metadataElement>
     <!--Measurements-->
       <metadataElement code="dnaConcContainer" datatype="Container">
         <labels>
@@ -8176,372 +8554,6 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-    <!--Object characteristics-->
-	    <metadataElement code="sexAnimal" datatype="List" list="sex_animal">
-			  <labels>
-          <label locale="en_US">
-            <name>sex (dwc:sex)</name>
-            <description>The sex of the biological individual(s) represented in the Occurrence.</description>
-          </label>
-			  </labels>
-			  <documentationUrl>http://rs.tdwg.org/dwc/terms/sex</documentationUrl>
-			  <settings>
-          <setting name="fieldWidth">40</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-			  </settings>
-			  <typeRestrictions>
-          <restriction code="r_animalObjects">
-            <table>ca_objects</table>
-            <type>animalObject</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-			  </typeRestrictions>
-	    </metadataElement>
-	    <metadataElement code="sexPlant" datatype="List" list="sex_plant">
-			  <labels>
-          <label locale="en_US">
-            <name>sex (dwc:sex)</name>
-            <description>The sex of the biological individual(s) represented in the Occurrence.</description>
-          </label>
-			  </labels>
-			  <documentationUrl>http://rs.tdwg.org/dwc/terms/sex</documentationUrl>
-			  <settings>
-          <setting name="fieldWidth">40</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-			  </settings>
-			  <typeRestrictions>
-          <restriction code="r_objects">
-            <table>ca_objects</table>
-            <type>plantObject</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-			  </typeRestrictions>
-      </metadataElement>
-	    <metadataElement code="forestTreePopCatContainer" datatype="Container">
-        <labels>
-          <label locale="en_US">
-            <name>Forest tree population category (container)</name>
-          </label>
-        </labels>
-			  <settings>
-          <setting name="lineBreakAfterNumberOfElements">1</setting>
-        </settings>
-	      <elements>
-		      <metadataElement code="forestTreePopCat" datatype="List" list="type_forestTreePopulation">
-            <labels>
-            <label locale="en_US">
-              <name>Forest tree population category</name>
-            </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">35</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
-		      <metadataElement code="startDate" datatype="DateRange">
-            <labels>
-            <label locale="en_US">
-              <name>Start date of the forest tree population type label</name>
-            </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">40</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-              <setting name="canBeUsedInSort">1</setting>
-              <setting name="canBeUsedInSearchForm">1</setting>
-              <setting name="canBeUsedInDisplay">1</setting>
-            </settings>
-          </metadataElement>
-		      <metadataElement code="endDate" datatype="DateRange">
-            <labels>
-              <label locale="en_US">
-                <name>End date of the forest tree population type label</name>
-              </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">40</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-              <setting name="canBeUsedInSort">1</setting>
-              <setting name="canBeUsedInSearchForm">1</setting>
-              <setting name="canBeUsedInDisplay">1</setting>
-            </settings>
-		      </metadataElement>
-		      <metadataElement code="forestTreePopRef" datatype="Text">
-            <labels>
-            <label locale="en_US">
-              <name>Reference number of the forest tree population (e.g. PAV-KL-01-01)</name>
-            </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">35</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
-        </elements>
-        <typeRestrictions>
-          <restriction code="r_objects">
-            <table>ca_objects</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">10</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-	    <metadataElement code="lifeStageMammal" datatype="List" list="life_stage_mammal">
-			  <labels>
-          <label locale="en_US">
-            <name>lifeStage animal</name>
-            <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
-          </label>
-			  </labels>
-			  <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
-			  <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-			  </settings>
-			  <typeRestrictions>
-          <restriction code="r_objects">
-            <table>ca_objects</table>
-            <type>animalObject</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-			  </typeRestrictions>
-	    </metadataElement>
-	    <metadataElement code="lifeStageInvertebrate" datatype="List" list="life_stage_invertebrate">
-			  <labels>
-          <label locale="en_US">
-            <name>lifeStage animal</name>
-            <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
-          </label>
-			  </labels>
-			  <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
-			  <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-			  </settings>
-			  <typeRestrictions>
-          <restriction code="r_objects">
-            <table>ca_objects</table>
-            <type>animalObject</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-			  </typeRestrictions>
-	    </metadataElement>
-	    <metadataElement code="lifeStageFish" datatype="List" list="life_stage_fish">
-			  <labels>
-          <label locale="en_US">
-            <name>lifeStage animal</name>
-            <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
-          </label>
-			  </labels>
-			  <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
-			  <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-			  </settings>
-			  <typeRestrictions>
-          <restriction code="r_objects">
-            <table>ca_objects</table>
-            <type>animalObject</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-			  </typeRestrictions>
-	    </metadataElement>
-	    <metadataElement code="lifeStageAmphibian" datatype="List" list="life_stage_amphibian">
-			  <labels>
-          <label locale="en_US">
-            <name>lifeStage animal</name>
-            <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
-          </label>
-			  </labels>
-			  <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
-			  <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-			  </settings>
-			  <typeRestrictions>
-          <restriction code="r_objects">
-            <table>ca_objects</table>
-            <type>animalObject</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-			  </typeRestrictions>
-	    </metadataElement>
-	    <metadataElement code="lifeStageReptile" datatype="List" list="life_stage_reptile">
-			  <labels>
-          <label locale="en_US">
-            <name>lifeStage animal</name>
-            <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
-          </label>
-			  </labels>
-			  <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
-			  <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-			  </settings>
-			  <typeRestrictions>
-          <restriction code="r_objects">
-            <table>ca_objects</table>
-            <type>animalObject</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-			  </typeRestrictions>
-	    </metadataElement>
-	    <metadataElement code="lifeStagePlant" datatype="List" list="life_stage_plant">
-			  <labels>
-          <label locale="en_US">
-            <name>lifeStage plant</name>
-            <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
-          </label>
-			  </labels>
-			  <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
-			  <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-			  </settings>
-			  <typeRestrictions>
-          <restriction code="r_objects">
-            <table>ca_objects</table>
-            <type>plantObject</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-			  </typeRestrictions>
-	    </metadataElement>
-	    <metadataElement code="reprCondPlant" datatype="List" list="repr_cond_plant">
-			  <labels>
-          <label locale="en_US">
-            <name>reproductiveCondition</name>
-            <description>The reproductive condition of the biological individual(s) represented in the Occurrence. Recommended best practice is to use a controlled vocabulary.</description>
-          </label>
-			  </labels>
-			  <documentationUrl>http://rs.tdwg.org/dwc/terms/reproductiveCondition</documentationUrl>
-			  <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-          <setting name="hideIfSelected_dioeciousMale">object_ui/obj_measurements/ca_attribute_sexPlant</setting>
-          <setting name="hideIfSelected_notRecorded">object_ui/obj_measurements/ca_attribute_sexPlant</setting>
-          <setting name="hideIfSelected_notApplicable">object_ui/obj_measurements/ca_attribute_sexPlant</setting>
-          <setting name="hideIfSelected_other">object_ui/obj_measurements/ca_attribute_sexPlant</setting>
-          <setting name="hideIfSelected_juvenile">object_ui/obj_measurements/ca_attribute_lifeStagePlant</setting>
-          <setting name="hideIfSelected_seedling">object_ui/obj_measurements/ca_attribute_lifeStagePlant</setting>
-          <setting name="hideIfSelected_notRecorded">object_ui/obj_measurements/ca_attribute_lifeStagePlant</setting>
-          <setting name="hideIfSelected_other">object_ui/obj_measurements/ca_attribute_lifeStagePlant</setting>
-			  </settings>
-			  <typeRestrictions>
-          <restriction code="r_objects">
-            <table>ca_objects</table>
-            <type>plantObject</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-			  </typeRestrictions>
-	    </metadataElement>
-	    <metadataElement code="reprCondMammal" datatype="List" list="repr_cond_mammal">
-			  <labels>
-          <label locale="en_US">
-            <name>reproductiveCondition</name>
-            <description>The reproductive condition of the biological individual(s) represented in the Occurrence. Recommended best practice is to use a controlled vocabulary.</description>
-          </label>
-			  </labels>
-			  <documentationUrl>http://rs.tdwg.org/dwc/terms/reproductiveCondition</documentationUrl>
-			  <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-          <setting name="hideIfSelected_male">object_ui/obj_measurements/ca_attribute_sexAnimal</setting>
-          <setting name="hideIfSelected_notRecorded">object_ui/obj_measurements/ca_attribute_sexAnimal</setting>
-          <setting name="hideIfSelected_hermaphrodite">object_ui/obj_measurements/ca_attribute_sexAnimal</setting>
-          <setting name="hideIfSelected_notApplicable">object_ui/obj_measurements/ca_attribute_sexAnimal</setting>
-          <setting name="hideIfSelected_other">object_ui/obj_measurements/ca_attribute_sexAnimal</setting>
-          <setting name="hideIfSelected_juvenile">object_ui/obj_measurements/ca_attribute_lifeStageMammal</setting>
-          <setting name="hideIfSelected_notRecorded">object_ui/obj_measurements/ca_attribute_lifeStageMammal</setting>
-			  </settings>
-			  <typeRestrictions>
-          <restriction code="r_objects">
-            <table>ca_objects</table>
-            <type>animalObject</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-			  </typeRestrictions>
-	    </metadataElement>
     <!--Taxonomic identification-->
 		  <metadataElement code="verbatimTaxon" datatype="Text">
             <labels>
@@ -10687,7 +10699,7 @@
             <placement code="plantplot_verbatimLatitudeY" typeRestrictions="livingPlant,forestTreePopulation">
               <bundle>ca_attribute_verbatimLatitudeY</bundle>
               <settings>
-                <setting name="label" locale="en_US">Storage location verbatim latitude (Y) (dwc:verbatimLatitude)</setting>
+                <setting name="label" locale="en_US">Storage location verbatim latitude (Y)</setting>
                 <setting name="description" locale="en_US">The original description of the latitude (Y) of the storage location..</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
@@ -13951,6 +13963,16 @@
           </labels>
           <subTypeLeft></subTypeLeft>
           <subTypeRight></subTypeRight>
+        </type>
+        <type code="genotypeOf" default="0" rank="8">
+          <labels>
+            <label locale="en_US">
+              <typename>is genotype of</typename>
+              <typename_reverse>is object with genotype</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>genotype</subTypeLeft>
+          <subTypeRight>object</subTypeRight>
         </type>
 	   </types>
     </relationshipTable>
