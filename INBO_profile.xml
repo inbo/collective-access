@@ -2,6 +2,7 @@
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
   <profileName>[INBO-CMS] INBO natural science collection v0.73</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
+  <!--https://github.com/inbo/collective-access/issues/185-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -655,7 +656,7 @@
                           </label>
                         </labels>
                       </item>
-                      <item idno="littertrapSample" rank="2" enabled="1" default="0">
+                      <item idno="forestLitter" rank="2" enabled="1" default="0">
                         <labels>
                           <label locale="en_US" preferred="1">
                             <name_singular>Leaf litter trap sample, dried</name_singular>
@@ -679,11 +680,11 @@
                             </label>
                           </labels>
                       </item>
-                      <item idno="cutting" rank="4" enabled="1" default="0">
+                      <item idno="stemdisc" rank="4" enabled="1" default="0">
                           <labels>
                             <label locale="en_US" preferred="1">
-                              <name_singular>Cutting</name_singular>
-                              <name_plural>Cuttings</name_plural>
+                              <name_singular>Stemdisc</name_singular>
+                              <name_plural>Stemdiscs</name_plural>
                             </label>
                           </labels>
                       </item>
@@ -697,7 +698,7 @@
                       </item>
                     </items>
                   </item>
-                  <item idno="dnaSample" rank="3" enabled="1" default="0">
+                  <item idno="dnaSample" rank="3" enabled="0" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>DNA sample</name_singular>
@@ -726,7 +727,7 @@
                       </item>
                     </items>
                   </item>
-                  <item idno="waterObject" rank="5" enabled="0" default="0">
+                  <item idno="waterObject" rank="6" enabled="0" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>Water object</name_singular>
@@ -760,6 +761,19 @@
                       <label locale="en_US" preferred="1">
                         <name_singular>Soil sample</name_singular>
                         <name_plural>Soil samples</name_plural>
+                      </label>
+                    </labels>
+                    <settings>
+                    <setting name="render_in_new_menu">1</setting>
+                    </settings>
+                    <items>
+                    </items>
+                  </item>
+                  <item idno="forestLitter" rank="5" enabled="1" default="0">
+                    <labels>
+                      <label locale="en_US" preferred="1">
+                        <name_singular>Forest litter sample</name_singular>
+                        <name_plural>Forest litter samples</name_plural>
                       </label>
                     </labels>
                     <settings>
@@ -10416,9 +10430,9 @@
                 <restriction code="r_sampleMammalTooth" type="sampleMammalTooth"/>
                 <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
                 <restriction code="r_leafSample" type="leafSample"/>
-                <restriction code="r_littertrapSample" type="littertrapSample"/>
+                <restriction code="r_forestLitter" type="forestLitter"/>
                 <restriction code="r_seedlot" type="seedlot"/>
-                <restriction code="r_cutting" type="cutting"/>
+                <restriction code="r_stemdisc" type="stemdisc"/>
                 <restriction code="r_forestTreePopulation" type="forestTreePopulation"/>
                 <restriction code="r_livingPlant" type="livingPlant"/>
                 <restriction code="r_oDNA" type="oDNA"/>
@@ -10486,7 +10500,7 @@
 				        <setting name="add_label" locale="en_US">Add forest tree population type</setting>
               </settings>
             </placement>
-            <placement code="samplingDate" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,littertrapSample,seedlot,cutting" includeSubtypes="1">
+            <placement code="samplingDate" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc" includeSubtypes="1">
               <bundle>ca_attribute_samplingDate</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Sampling date *</setting>
@@ -10494,7 +10508,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="preparationDate" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,littertrapSample,seedlot,livingPlant,forestTreePopulation" includeSubtypes="1">
+            <placement code="preparationDate" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,livingPlant,forestTreePopulation" includeSubtypes="1">
               <bundle>ca_attribute_preparationDate</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Specimen creation date *</setting>
@@ -10513,7 +10527,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="ca_storage_location" typeRestrictions="animalObject,leafSample,littertrapSample,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1">
+            <placement code="ca_storage_location" typeRestrictions="animalObject,leafSample,forestLitter,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1">
               <bundle>ca_storage_locations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at *</setting>
@@ -10524,28 +10538,28 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="verbatimLocality" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,littertrapSample,seedlot,cutting" includeSubtypes="1">
+            <placement code="verbatimLocality" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc" includeSubtypes="1">
               <bundle>ca_attribute_verbatimLocality</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Sampling point is located at (dwc:verbatimLocality) *</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="decimalLatitude" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,littertrapSample,seedlot,cutting" includeSubtypes="1">
+            <placement code="decimalLatitude" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc" includeSubtypes="1">
               <bundle>ca_attribute_decimalLatitude</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Decimal latitude *</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="decimalLongitude" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,littertrapSample,seedlot,cutting" includeSubtypes="1">
+            <placement code="decimalLongitude" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc" includeSubtypes="1">
               <bundle>ca_attribute_decimalLongitude</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Decimal longitude *</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="coordinateUncertaintyInMeters" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,littertrapSample,seedlot,cutting" includeSubtypes="1">
+            <placement code="coordinateUncertaintyInMeters" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc" includeSubtypes="1">
               <bundle>ca_attribute_coordinateUncertaintyInMeters</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Coordinate uncertainty in meters *</setting>
@@ -10671,7 +10685,7 @@
                 <restriction code="r_sampleMammalTooth" type="sampleMammalTooth"/>
                 <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
                 <restriction code="r_leafSample" type="leafSample"/>
-                <restriction code="r_littertrapSample" type="littertrapSample"/>
+                <restriction code="r_forestLitter" type="forestLitter"/>
                 <restriction code="r_herbariumSpecimen" type="herbariumSpecimen"/>
                 <restriction code="r_livingPlant" type="livingPlant"/>
                 <restriction code="r_seedlot" type="seedlot"/>
@@ -10743,7 +10757,7 @@
                 <setting name="description" locale="en_US">Multiple points can be entered to visualize the different individuals in a plot.</setting>
               </settings>
 			      </placement>
-            <placement code="ca_storage_location_lookup" typeRestrictions="animalObject,leafSample,littertrapSample,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1"><!--This one is to be deleted for the users, all the storage locations should be prefilled and loaded in the system-->
+            <placement code="ca_storage_location_lookup" typeRestrictions="animalObject,leafSample,forestLitter,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1"><!--This one is to be deleted for the users, all the storage locations should be prefilled and loaded in the system-->
               <bundle>ca_storage_locations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at</setting>
@@ -10754,7 +10768,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="ca_storage_location_hierarchyBrowser" typeRestrictions="animalObject,leafSample,littertrapSample,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1">
+            <placement code="ca_storage_location_hierarchyBrowser" typeRestrictions="animalObject,leafSample,forestLitter,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1">
               <bundle>ca_storage_locations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at</setting>
@@ -10927,11 +10941,11 @@
                 <restriction code="r_sampleMammalTooth" type="sampleMammalTooth"/>
                 <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
                 <restriction code="r_leafSample" type="leafSample"/>
-                <restriction code="r_littertrapSample" type="littertrapSample"/>
+                <restriction code="r_forestLitter" type="forestLitter"/>
                 <restriction code="r_herbariumSpecimen" type="herbariumSpecimen"/>
                 <restriction code="r_livingPlant" type="livingPlant"/>
                 <restriction code="r_seedlot" type="seedlot"/>
-                <restriction code="r_cutting" type="cutting"/>
+                <restriction code="r_stemdisc" type="stemdisc"/>
                 <restriction code="r_forestTreePopulation" type="forestTreePopulation"/>
                 <restriction code="r_livingPlant" type="livingPlant"/>
                 <restriction code="r_stemDisc" type="stemDisc"/>
@@ -10942,7 +10956,7 @@
                 <restriction code="r_soilObject" type="soilObject"/>
           </typeRestrictions>
           <bundlePlacements>
-            <placement code="samplingDate" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,littertrapSample,seedlot,cutting" includeSubtypes="1">
+            <placement code="samplingDate" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc" includeSubtypes="1">
               <bundle>ca_attribute_samplingDate</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Sampling date</setting>
@@ -10950,7 +10964,7 @@
                 <setting name="description" locale="en_US">This is the date/time that becomes fixed due to sampling. The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
               </settings>
             </placement>
-            <placement code="ca_entities_sampledBy" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,littertrapSample,seedlot,cutting" includeSubtypes="1">
+            <placement code="ca_entities_sampledBy" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc" includeSubtypes="1">
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Sampled by</setting>
@@ -10961,7 +10975,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="preparationDate" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,littertrapSample,seedlot,livingPlant,forestTreePopulation" includeSubtypes="1">
+            <placement code="preparationDate" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,livingPlant,forestTreePopulation" includeSubtypes="1">
               <bundle>ca_attribute_preparationDate</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Specimen creation date</setting>
@@ -10988,7 +11002,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="samplingProtocolPublished" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,littertrapSample,seedlot,cutting" includeSubtypes="1">
+			      <placement code="samplingProtocolPublished" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc" includeSubtypes="1">
               <bundle>ca_attribute_samplingProtocolPublished</bundle>
               <settings>
                 <setting name="label" locale="en_US">Sampling procedure (URL)</setting>
@@ -10996,7 +11010,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="samplingProtocol" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,littertrapSample,seedlot,cutting" includeSubtypes="1">
+			      <placement code="samplingProtocol" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc" includeSubtypes="1">
               <bundle>ca_attribute_samplingProtocol</bundle>
               <settings>
                 <setting name="label" locale="en_US">Sampling procedure</setting>
@@ -11004,7 +11018,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="samplingEffort" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,littertrapSample,seedlot,cutting" includeSubtypes="1">
+			      <placement code="samplingEffort" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc" includeSubtypes="1">
               <bundle>ca_attribute_samplingEffort</bundle>
               <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -11067,9 +11081,9 @@
                     <restriction code="r_sampleMammalTooth" type="sampleMammalTooth"/>
                     <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
                     <restriction code="r_leafSample" type="leafSample"/>
-                    <restriction code="r_littertrapSample" type="littertrapSample"/>
+                    <restriction code="r_forestLitter" type="forestLitter"/>
                     <restriction code="r_seedlot" type="seedlot"/>
-                    <restriction code="r_cutting" type="cutting"/>
+                    <restriction code="r_stemdisc" type="stemdisc"/>
                     <restriction code="r_oDNA" type="oDNA"/>
                     <restriction code="r_eDNA" type="eDNA"/>
                     <restriction code="r_eDnaWaterFilter" type="eDnaWaterFilter"/>
@@ -11137,7 +11151,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-			      <placement code="map" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,littertrapSample,seedlot,cutting" includeSubtypes="1">
+			      <placement code="map" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc" includeSubtypes="1">
               <bundle>ca_attribute_georeference</bundle>
               <settings>
                 <setting name="label" locale="en_US">Map representation</setting>
@@ -11306,9 +11320,9 @@
                     <restriction code="r_sampleMammalTooth" type="sampleMammalTooth"/>
                     <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
                     <restriction code="r_leafSample" type="leafSample"/>
-                    <restriction code="r_littertrapSample" type="littertrapSample"/>
+                    <restriction code="r_forestLitter" type="forestLitter"/>
                     <restriction code="r_seedlot" type="seedlot"/>
-                    <restriction code="r_cutting" type="cutting"/>
+                    <restriction code="r_stemdisc" type="stemdisc"/>
                     <restriction code="r_oDNA" type="oDNA"/>
                     <restriction code="r_eDNA" type="eDNA"/>
                     <restriction code="r_eDnaWaterFilter" type="eDnaWaterFilter"/>
@@ -11444,9 +11458,9 @@
                     <restriction code="r_sampleMammalTooth" type="sampleMammalTooth"/>
                     <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
                     <restriction code="r_leafSample" type="leafSample"/>
-                    <restriction code="r_littertrapSample" type="littertrapSample"/>
+                    <restriction code="r_forestLitter" type="forestLitter"/>
                     <restriction code="r_seedlot" type="seedlot"/>
-                    <restriction code="r_cutting" type="cutting"/>
+                    <restriction code="r_stemdisc" type="stemdisc"/>
                     <restriction code="r_forestTreePopulation" type="forestTreePopulation"/>
                     <restriction code="r_livingPlant" type="livingPlant"/>
                     <restriction code="r_oDNA" type="oDNA"/>
@@ -11515,6 +11529,7 @@
           </labels>
           <typeRestrictions>
                 <restriction code="r_eDNA" type="eDNA"/>
+                <restriction code="r_oDNA" type="eDNA"/>
                 <restriction code="r_eDnaWaterFilter" type="eDnaWaterFilter"/>
                 <restriction code="r_waterSample" type="waterSample"/>
                 <restriction code="r_soilObject" type="soilObject"/>
@@ -11590,9 +11605,9 @@
                 <restriction code="r_sampleMammalTooth" type="sampleMammalTooth"/>
                 <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
                 <restriction code="r_leafSample" type="leafSample"/>
-                <restriction code="r_littertrapSample" type="littertrapSample"/>
+                <restriction code="r_forestLitter" type="forestLitter"/>
                 <restriction code="r_seedlot" type="seedlot"/>
-                <restriction code="r_cutting" type="cutting"/>
+                <restriction code="r_stemdisc" type="stemdisc"/>
                 <restriction code="r_forestTreePopulation" type="forestTreePopulation"/>
                 <restriction code="r_livingPlant" type="livingPlant"/>
                 <restriction code="r_oDNA" type="oDNA"/>
@@ -11632,7 +11647,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="dna_volume" typeRestrictions="oDNA,eDNA,littertrapSample">
+            <placement code="dna_volume" typeRestrictions="oDNA,eDNA,forestLitter">
               <bundle>ca_attribute_dnaVolumeContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">DNA sample volume measurement</setting>
@@ -11678,7 +11693,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="object_count" typeRestrictions="leafSample,seedlot,cutting,invertebrateBulk,sampleAmphibian,sampleFishFinclip,sampleInvertebrate,sampleReptile,sampleMammal,forestTreePopulation" includeSubtypes="1">
+            <placement code="object_count" typeRestrictions="leafSample,seedlot,stemdisc,invertebrateBulk,sampleAmphibian,sampleFishFinclip,sampleInvertebrate,sampleReptile,sampleMammal,forestTreePopulation" includeSubtypes="1">
               <bundle>ca_attribute_countContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Count</setting>
@@ -11870,12 +11885,12 @@
                 <restriction code="r_sampleMammalTooth" type="sampleMammalTooth"/>
                 <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
                 <restriction code="r_leafSample" type="leafSample"/>
-                <restriction code="r_littertrapSample" type="littertrapSample"/>
+                <restriction code="r_forestLitter" type="forestLitter"/>
                 <restriction code="r_herbariumSpecimen" type="herbariumSpecimen"/>
                 <restriction code="r_livingPlant" type="livingPlant"/>
                 <restriction code="r_forestTreePopulation" type="forestTreePopulation"/>
                 <restriction code="r_seedlot" type="seedlot"/>
-                <restriction code="r_cutting" type="cutting"/>
+                <restriction code="r_stemdisc" type="stemdisc"/>
                 <restriction code="r_stemDisc" type="stemDisc"/>
                 <restriction code="r_oDNA" type="oDNA"/>
                 <restriction code="r_waterSample" type="waterSample"/>
@@ -12048,11 +12063,11 @@
                 <restriction code="r_sampleMammalTooth" type="sampleMammalTooth"/>
                 <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
                 <restriction code="r_leafSample" type="leafSample"/>
-                <restriction code="r_littertrapSample" type="littertrapSample"/>
+                <restriction code="r_forestLitter" type="forestLitter"/>
                 <restriction code="r_herbariumSpecimen" type="herbariumSpecimen"/>
                 <restriction code="r_livingPlant" type="livingPlant"/>
                 <restriction code="r_seedlot" type="seedlot"/>
-                <restriction code="r_cutting" type="cutting"/>
+                <restriction code="r_stemdisc" type="stemdisc"/>
                 <restriction code="r_forestTreePopulation" type="forestTreePopulation"/>
                 <restriction code="r_stemDisc" type="stemDisc"/>
                 <restriction code="r_oDNA" type="oDNA"/>
@@ -15047,9 +15062,9 @@
                 <restriction code="r_sampleMammalTooth" type="sampleMammalTooth"/>
                 <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
                 <restriction code="r_leafSample" type="leafSample"/>
-                <restriction code="r_littertrapSample" type="littertrapSample"/>
+                <restriction code="r_forestLitter" type="forestLitter"/>
                 <restriction code="r_seedlot" type="seedlot"/>
-                <restriction code="r_cutting" type="cutting"/>
+                <restriction code="r_stemdisc" type="stemdisc"/>
                 <restriction code="r_forestTreePopulation" type="forestTreePopulation"/>
                 <restriction code="r_livingPlant" type="livingPlant"/>
                 <restriction code="r_oDNA" type="oDNA"/>
