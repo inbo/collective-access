@@ -9,6 +9,7 @@
   <!--https://github.com/inbo/collective-access/issues/191-->
   <!--https://github.com/inbo/collective-access/issues/192-->
   <!--https://github.com/inbo/collective-access/issues/193-->
+  <!--https://github.com/inbo/collective-access/issues/195-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -1425,7 +1426,7 @@
           </label>
         </labels>
         <items>
-            <item idno="notSet" enabled="0" default="1">
+            <item idno="notSet" enabled="0" rank="1" default="1">
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Not set1</name_singular>
@@ -1433,7 +1434,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="arbitraryID" enabled="1" default="0"><!--An identifier for the sampling point or object. This can be given by the researcher at point of sampling, not respecting convention/agreements made with a larger group / made by a system. This type of ID can also be applied if there seems to be a logic applied by something/someone but it is not known to which system it refers at the time of logging the ID.-->
+            <item idno="arbitraryID" enabled="1" rank="2" default="0"><!--An identifier for the sampling point or object. This can be given by the researcher at point of sampling, not respecting convention/agreements made with a larger group / made by a system. This type of ID can also be applied if there seems to be a logic applied by something/someone but it is not known to which system it refers at the time of logging the ID.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>arbitrary ID</name_singular>
@@ -1441,7 +1442,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="LabwareLIMSID" enabled="1" default="0"><!--For example: 16-001460. An identifier for the specimen as given by INBO-Labware-LIMS. The first part of the ID is for the year (in example: 2016). The second part is an incremental numbering.-->
+            <item idno="LabwareLIMSID" enabled="1" rank="3" default="0"><!--For example: 16-001460. An identifier for the specimen as given by INBO-Labware-LIMS. The first part of the ID is for the year (in example: 2016). The second part is an incremental numbering.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Labware-LIMS-generated ID</name_singular>
@@ -1449,7 +1450,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="preLIMSlabID" enabled="1" default="0"><!--An identifier for the specimen given by the INBO genetic or analytical labs prior usage of the INBO-LIMS. This is any lab numbering, not constituing the LIMS-ID. Examples: FSM 3073, A/09/0683.-->
+            <item idno="preLIMSlabID" enabled="1" rank="4" default="0"><!--An identifier for the specimen given by the INBO genetic or analytical labs prior usage of the INBO-LIMS. This is any lab numbering, not constituing the LIMS-ID. Examples: FSM 3073, A/09/0683.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>pre-LIMS lab ID</name_singular>
@@ -1457,7 +1458,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="mammalAutopsyLabID" enabled="1" default="0"><!--For example: da1488tong1. An identifier for the specimen, given by the INBO mammal autopsy lab. The first two letters are for the animal. da = das. The next four numbers are an incremental numbering. Then the type of tissue: "tong" is given. If there are replicates of the sample, an incremental number is given after the tissue type. Here "1".-->
+            <item idno="mammalAutopsyLabID" rank="5" enabled="1" default="0"><!--For example: da1488tong1. An identifier for the specimen, given by the INBO mammal autopsy lab. The first two letters are for the animal. da = das. The next four numbers are an incremental numbering. Then the type of tissue: "tong" is given. If there are replicates of the sample, an incremental number is given after the tissue type. Here "1".-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>mammal autopsy lab ID</name_singular>
@@ -1465,7 +1466,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="marternetwerkdbID" enabled="1" default="0"><!--For example: e.g. me/18012022/001. An identifier for the sampling point - a cadavers in situ, as constructed in the marternerwork database. Here the first part is a two letter code for the species (me = meles meles). The second part represents a date: 18 January 2022. The last part represents an incremental numbering.-->
+            <item idno="marternetwerkdbID" rank="6" enabled="1" default="0"><!--For example: e.g. me/18012022/001. An identifier for the sampling point - a cadavers in situ, as constructed in the marternerwork database. Here the first part is a two letter code for the species (me = meles meles). The second part represents a date: 18 January 2022. The last part represents an incremental numbering.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>marternetwerk-database ID</name_singular>
@@ -1473,15 +1474,63 @@
                 </label>
               </labels>
             </item>
-            <item idno="seedlotID" enabled="1" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
+            <item idno="seedlotID" rank="6" enabled="1" rank="7" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>seedlot ID</name_singular>
-                  <name_plural>sedlot IDs</name_plural>
+                  <name_plural>seedlot IDs</name_plural>
                 </label>
               </labels>
             </item>
-            <item idno="unknownTypeID" enabled="1" default="0"><!--A ID-type is applied (following a logic, by something/someone) but it is not known to which system it refers at the time of logging the ID.-->
+            <item idno="cmonID" rank="7" enabled="1" rank="7" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>cmon-ID</name_singular>
+                  <name_plural>cmon-IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="icpID" rank="8" enabled="1" rank="7" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>icp-ID</name_singular>
+                  <name_plural>icp-IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="wildcardID" rank="10" enabled="1" rank="7" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>wildcard-ID</name_singular>
+                  <name_plural>wildcard-IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="dredgisID" rank="11" enabled="1" rank="7" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>dredgis-ID</name_singular>
+                  <name_plural>dredgis-IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="habnormID" rank="12" enabled="1" rank="7" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>habnorm-ID</name_singular>
+                  <name_plural>habnorm-IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="dvwID" rank="13" enabled="1" rank="7" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>Habnorm-ID</name_singular>
+                  <name_plural>Habnorm-IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="unknownTypeID" rank="14" enabled="1" default="0"><!--A ID-type is applied (following a logic, by something/someone) but it is not known to which system it refers at the time of logging the ID.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Unknown type of ID</name_singular>
@@ -11906,6 +11955,14 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="description" locale="en_US">Add URL and describe what the (multimedia) file represents. For example: it represents the living animal from which a toe clip was sampled. For example: it represents the toe clip sample in a cryotube. For example: it is a scan of the experimental plot outline.</setting>
 			        </settings>
+            </placement>
+			      <placement code="taxonReference">
+              <bundle>ca_attribute_taxonReference</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Publication on other biodiversity in specimen</setting>
+                <setting name="label" locale="en_US">Publication (dataset, article) that outlines the results of biodiversity present in the specimen, other than the main taxon. In water, soil or air samples, this is the only way biodiversity can be recorded. For all other types of specimen, this is "secondary" biodiveristy, other the main taxon. For example: stomach of a bee (main taxon), tested for presence of which plant pollen. For example tissue of a wolf (main taxon) tested for bacteria. This information is relevant to know (what has been tested on this specimen and how) but not relevant for querying the specimen themselves. Preferably this is a(n open) publication in a repository, but also internal result files (e.g. INBO Google drive) can be linked here.</setting>                
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
             </placement>
             <placement code="reference">
               <bundle>ca_attribute_reference</bundle>
