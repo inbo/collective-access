@@ -10,6 +10,7 @@
   <!--https://github.com/inbo/collective-access/issues/192-->
   <!--https://github.com/inbo/collective-access/issues/193-->
   <!--https://github.com/inbo/collective-access/issues/195-->
+  <!--https://github.com/inbo/collective-access/issues/196-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -6367,7 +6368,7 @@
           <metadataElement code="weightValue" datatype="Text">
             <labels>
               <label locale="en_US">
-                <name>Lower value</name>
+                <name>Value</name>
                 <description>Weight value</description>
               </label>
             </labels>
@@ -9222,6 +9223,82 @@
           </restriction>
 	      </typeRestrictions>
       </metadataElement>
+      <metadataElement code="preparationProtocol" datatype="Container">
+        <labels>
+          <label locale="en_US">
+            <name>preparationProtocol</name>
+            <description>The methods or protocols used during a preparation event.</description>
+          </label>
+        </labels>
+			  <settings>
+          <setting name="lineBreakAfterNumberOfElements">1</setting>
+        </settings>
+	      <elements>
+		      <metadataElement code="pProtocolURI" datatype="Url">
+            <labels>
+              <label locale="en_US">
+                <name>Preparation protocol DOI</name>
+                <description>A preferably resolvable URI to uniquely identify the sampling procedure. For example a DOI-url.</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+		      <metadataElement code="pProtocolDetails" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Preparation protocol details</name>
+                <description>If no DOI in "Sampling protocol DOI": a short description or code that allows validation of the used procedure. If DOI in "sampling DOI" this field can be used to log relevant extra information e.g. deviation of the standard procedure.</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/abcd/terms/referenceDetails</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">85</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+		      </metadataElement>
+	      </elements>
+        <typeRestrictions>
+	        <restriction code="r_object">
+            <table>ca_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+	      </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="preparationProtocolPublished" datatype="Url">
+        <labels>
+          <label locale="en_US">
+            <name>Preparation protocol (URL)</name>
+            <description>The methods or protocols used during a preparation event, published. For example a DNA-extraction procedure.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+	        <restriction code="r_object">
+            <table>ca_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+	      </typeRestrictions>
+      </metadataElement>
       <metadataElement code="samplingEffort" datatype="Text">
         <labels>
           <label locale="en_US">
@@ -10622,8 +10699,8 @@
 			      <placement code="nonpreferred_labels">
               <bundle>nonpreferred_labels</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Other identifiers (non-preferred)</setting>
-				        <setting name="add_label" locale="en_US">Add other non-preferred identifier</setting>
+                <setting name="label" locale="en_US">Other identifiers</setting>
+				        <setting name="add_label" locale="en_US">Add other, non-preferred, identifier</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="documentation_url">https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0</setting>
               </settings>
@@ -10640,7 +10717,7 @@
             <placement code="objectDescription">
               <bundle>ca_attribute_description</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Description (free text)</setting>
+                <setting name="label" locale="en_US">Description</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -10694,21 +10771,21 @@
             <placement code="verbatimLocality" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_attribute_verbatimLocality</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Sampling point is located at (dwc:verbatimLocality) *</setting>
+                <setting name="label" locale="en_US">Verbatim locality of sampling point *</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
             <placement code="decimalLatitude" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_attribute_decimalLatitude</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Decimal latitude *</setting>
+                <setting name="label" locale="en_US">Decimal latitude of sampling point *</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
             <placement code="decimalLongitude" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_attribute_decimalLongitude</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Decimal longitude *</setting>
+                <setting name="label" locale="en_US">Decimal longitude of sampling point *</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
@@ -10722,21 +10799,21 @@
 			      <placement code="verbatimDepth" typeRestrictions="eDnaWaterFilter,watersample,soilObject">
               <bundle>ca_attribute_verbatimDepth</bundle>
               <settings>
-                <setting name="label" locale="en_US">The original description of the depth of sampling</setting>
+                <setting name="label" locale="en_US">Verbatim depth *</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
 			      <placement code="minimumDepthInMeters" typeRestrictions="eDnaWaterFilter,watersample,soilObject">
               <bundle>ca_attribute_minimumDepthInMeters</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The minimum sampling depth in meters *</setting>
+                <setting name="label" locale="en_US">The minimum depth in meters *</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
 			      <placement code="maximumDepthInMeters" typeRestrictions="eDnaWaterFilter,watersample,soilObject">
               <bundle>ca_attribute_maximumDepthInMeters</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The maximum sampling depth in meters *</setting>
+                <setting name="label" locale="en_US">The maximum depth in meters *</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
@@ -11112,10 +11189,32 @@
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Sampled by</setting>
-                <setting name="description" locale="en_US">A person that sampled/collected the object/specimen.</setting>
+                <setting name="description" locale="en_US">A person that sampled/collected the original object/specimen from the field (in situ) to the collection (ex situ). This person recorded the occurrence information, also for derivates (e.g. DNA specimens) created in the lab at a later date (see further).</setting>
 				        <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">5</setting>
                 <setting name="restrict_to_relationship_types">collector</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+			      <placement code="samplingProtocolPublished" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc,cutting" includeSubtypes="1">
+              <bundle>ca_attribute_samplingProtocolPublished</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Sampling procedure (URL)</setting>
+                <setting name="description" locale="en_US">URL to published sampling procedure</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+			      <placement code="samplingProtocol" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc,cutting" includeSubtypes="1">
+              <bundle>ca_attribute_samplingProtocol</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Sampling procedure</setting>
+                <setting name="description" locale="en_US">Text field to (concisely) describe the sampling procedure (if relevant).</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+			      <placement code="samplingEffort" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc,cutting" includeSubtypes="1">
+              <bundle>ca_attribute_samplingEffort</bundle>
+              <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -11138,33 +11237,27 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
+			      <placement code="preparationProtocolPublished" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc,cutting" includeSubtypes="1">
+              <bundle>ca_attribute_preparationProtocolPublished</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Creation procedure (URL)</setting>
+                <setting name="description" locale="en_US">URL to published procedure that created the specimen, if after sampling another manipulation took place. For example: a DNA extraction of the sampled tissue specimen.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+			      <placement code="preparationProtocol" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc,cutting" includeSubtypes="1">
+              <bundle>ca_attribute_samplingProtocol</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Creation procedure</setting>
+                <setting name="description" locale="en_US">Text field to (concisely) describe the procedure that created the specimen.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
 			      <placement code="verbatimNotes">
               <bundle>ca_attribute_verbatimNotes</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Verbatim notes</setting>
-                <setting name="description" locale="en_US">Any relevant unstructured information on the object (e.g. notes, comments) literally transcribed from the original source (e.g. paper inventory, field notes). Tip: under the screen "Multimedia and files" you can link any relevant field files, photos, ...</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-			      <placement code="samplingProtocolPublished" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc,cutting" includeSubtypes="1">
-              <bundle>ca_attribute_samplingProtocolPublished</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Sampling procedure (URL)</setting>
-                <setting name="description" locale="en_US">URL to published sampling procedure</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-			      <placement code="samplingProtocol" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc,cutting" includeSubtypes="1">
-              <bundle>ca_attribute_samplingProtocol</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Sampling procedure</setting>
-                <setting name="description" locale="en_US">Text field to (concisely) describe the procedure (if relevant).</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-			      <placement code="samplingEffort" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc,cutting" includeSubtypes="1">
-              <bundle>ca_attribute_samplingEffort</bundle>
-              <settings>
+                <setting name="description" locale="en_US">Any relevant information on the creation of the object not yet recorded. Tip: under the screen "Multimedia and files" you can link any relevant field files, photos, ...</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -11271,10 +11364,10 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-			      <placement code="verbatimCoordinatesRemarks">
+			      <placement code="verbatimCoordinatesRemarks">  
               <bundle>ca_attribute_verbatimCoordinatesRemarks</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Remarks on the locality / coordinates of the sampling point as originally recorded.</setting>
+                <setting name="label" locale="en_US">Remarks on the verbatim locality data</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
