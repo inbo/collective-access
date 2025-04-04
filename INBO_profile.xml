@@ -2,13 +2,9 @@
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
   <profileName>[INBO-CMS] INBO natural science collection v0.74</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
-  <!--https://github.com/inbo/collective-access/issues/185-->
-  <!--https://github.com/inbo/collective-access/issues/186-->
-  <!--https://github.com/inbo/collective-access/issues/187-->
-  <!--https://github.com/inbo/collective-access/issues/192-->
-  <!--https://github.com/inbo/collective-access/issues/193-->
   <!--https://github.com/inbo/collective-access/issues/195-->
   <!--https://github.com/inbo/collective-access/issues/196-->
+  <!--https://github.com/inbo/collective-access/issues/198-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -871,7 +867,7 @@
           </item>
 		    </items>
       </list>
-	  <list code="entity_types" hierarchical="1" system="0" vocabulary="0">
+	    <list code="entity_types" hierarchical="1" system="0" vocabulary="0">
         <labels>
           <label locale="en_US">
             <name>Entity Types</name>
@@ -1428,30 +1424,22 @@
           </item>
         </items>
       </list>
-      <list code="object_label_types" hierarchical="0" system="0" vocabulary="1">
+      <list code="object_label_types" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
         <labels>
           <label locale="en_US">
             <name>Object label types</name>
           </label>
         </labels>
         <items>
-            <item idno="notSet" enabled="1" rank="1" default="1">
+            <item idno="notSet" enabled="0" rank="1" default="1">
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>Not set1</name_singular>
-                  <name_plural>Not set1</name_plural>
+                  <name_singular>Not set</name_singular>
+                  <name_plural>Not set</name_plural>
                 </label>
               </labels>
             </item>
-            <item idno="arbitraryID" enabled="1" rank="2" default="0"><!--An identifier for the sampling point or object. This can be given by the researcher at point of sampling, not respecting convention/agreements made with a larger group / made by a system. This type of ID can also be applied if there seems to be a logic applied by something/someone but it is not known to which system it refers at the time of logging the ID.-->
-              <labels>
-                <label locale="en_US" preferred="1">
-                  <name_singular>arbitrary ID</name_singular>
-                  <name_plural>arbitrary IDs</name_plural>
-                </label>
-              </labels>
-            </item>
-            <item idno="LabwareLIMSID" enabled="1" rank="3" default="0"><!--For example: 16-001460. An identifier for the specimen as given by INBO-Labware-LIMS. The first part of the ID is for the year (in example: 2016). The second part is an incremental numbering.-->
+            <item idno="LabwareLIMSID" enabled="1" rank="2" default="0"><!--For example: 16-001460. An identifier for the specimen as given by INBO-Labware-LIMS. The first part of the ID is for the year (in example: 2016 gives the number 16). The second part is an incremental numbering.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Labware-LIMS-generated ID</name_singular>
@@ -1459,7 +1447,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="preLIMSlabID" enabled="1" rank="4" default="0"><!--An identifier for the specimen given by the INBO genetic or analytical labs prior usage of the INBO-LIMS. This is any lab numbering, not constituing the LIMS-ID. Examples: FSM 3073, A/09/0683.-->
+            <item idno="preLIMSlabID" enabled="1" rank="3" default="0"><!--An identifier for the specimen given by the INBO genetic or analytical labs prior usage of the INBO-LIMS. This is any lab numbering, not constituting the LIMS-ID. Example: A/09/0683. The A stands for Analytical lab. The 09 stands for the year: 2009. The last four digits are an incremental numbering.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>pre-LIMS lab ID</name_singular>
@@ -1467,7 +1455,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="mammalAutopsyLabID" rank="5" enabled="1" default="0"><!--For example: da1488tong1. An identifier for the specimen, given by the INBO mammal autopsy lab. The first two letters are for the animal. da = das. The next four numbers are an incremental numbering. Then the type of tissue: "tong" is given. If there are replicates of the sample, an incremental number is given after the tissue type. Here "1".-->
+            <item idno="mammalAutopsyLabID" rank="5" enabled="4" default="0"><!--For example: da1488tong1. An identifier for the specimen, given by the INBO mammal autopsy lab. The first two letters are for the animal. da = das. The next four numbers are an incremental numbering. Then the type of tissue: "tong" is given. If there are replicates of the sample, an incremental number is given after the tissue type. Here "1".-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>mammal autopsy lab ID</name_singular>
@@ -1475,15 +1463,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="marternetwerkdbID" rank="6" enabled="1" default="0"><!--For example: e.g. me/18012022/001. An identifier for the sampling point - a cadavers in situ, as constructed in the marternerwork database. Here the first part is a two letter code for the species (me = meles meles). The second part represents a date: 18 January 2022. The last part represents an incremental numbering.-->
-              <labels>
-                <label locale="en_US" preferred="1">
-                  <name_singular>marternetwerk-database ID</name_singular>
-                  <name_plural>marternetwerk-database IDs</name_plural>
-                </label>
-              </labels>
-            </item>
-            <item idno="seedlotID" enabled="1" rank="7" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
+            <item idno="seedlotID" enabled="1" rank="5" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only has the three first letters used.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>seedlot ID</name_singular>
@@ -1491,55 +1471,23 @@
                 </label>
               </labels>
             </item>
-            <item idno="cmonID" enabled="1" rank="8" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
+            <item idno="projectID" enabled="1" rank="6" default="0"><!--The ID convention is linked to a specific project. Details are to be found in the project-DMP. The project-DMP is uploaded in PURE. For example, specimens of the project CMON or WILDCARD have an agreed upon SID (Sample-ID) with the different partner institutes.-->
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>cmon-ID</name_singular>
-                  <name_plural>cmon-IDs</name_plural>
+                  <name_singular>project-ID</name_singular>
+                  <name_plural>project-IDs</name_plural>
                 </label>
               </labels>
             </item>
-            <item idno="icpID" enabled="1" rank="9" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
+            <item idno="prefix-suffix-ID" enabled="1" rank="7" default="0"><!--For objects not belonging to any of the INBO subcollections and not using a project ID that ensures a unique value in the full INBO-CMS; the convention is to make a unique identifier by adding prefixes and suffixes to the field ID that was given to the specimen. The prefix is: "year_projectShortID_" and the suffix is "_objectConcept". For example: if you collected samples of crayfish in the field and numbered them incrementally: "124" will most likely not be an unique value in the full database of all the INBO-generated specimens. Hence it is changed into: 2024_Craywatch_149_crayfish for the entire collected animal, and 2024_Craywatch_149_muscle for the collected muscle tissue and 2024_Craywatch_149_leg for the collected leg. Later on a DNA specimen can be generated from (parts of) the tissues which will be named according to the convention of that INBO subcollection, for example: 24-000978.-->
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>icp-ID</name_singular>
-                  <name_plural>icp-IDs</name_plural>
+                  <name_singular>Prefix-suffix-ID</name_singular>
+                  <name_plural>Prefix-suffix-IDs</name_plural>
                 </label>
               </labels>
             </item>
-            <item idno="wildcardID" rank="10" enabled="1" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
-              <labels>
-                <label locale="en_US" preferred="1">
-                  <name_singular>wildcard-ID</name_singular>
-                  <name_plural>wildcard-IDs</name_plural>
-                </label>
-              </labels>
-            </item>
-            <item idno="dredgisID" rank="11" enabled="1" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
-              <labels>
-                <label locale="en_US" preferred="1">
-                  <name_singular>dredgis-ID</name_singular>
-                  <name_plural>dredgis-IDs</name_plural>
-                </label>
-              </labels>
-            </item>
-            <item idno="habnormID" rank="12" enabled="1" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
-              <labels>
-                <label locale="en_US" preferred="1">
-                  <name_singular>habnorm-ID</name_singular>
-                  <name_plural>habnorm-IDs</name_plural>
-                </label>
-              </labels>
-            </item>
-            <item idno="dvwID" rank="13" enabled="1" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
-              <labels>
-                <label locale="en_US" preferred="1">
-                  <name_singular>Habnorm-ID</name_singular>
-                  <name_plural>Habnorm-IDs</name_plural>
-                </label>
-              </labels>
-            </item>
-            <item idno="unknownTypeID" rank="14" enabled="1" default="0"><!--A ID-type is applied (following a logic, by something/someone) but it is not known to which system it refers at the time of logging the ID.-->
+            <item idno="unknownTypeID" rank="14" enabled="1" default="0"><!--An ID naming convention seems to be applied (following a logic, by something/someone) but it is not known to which system it refers to at the time of logging the ID.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Unknown type of ID</name_singular>
@@ -10701,9 +10649,10 @@
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Specimen ID *</setting>
-                <setting name="description" locale="en_US">This is the preferred identifier. For (non-living) objects in an INBO collection this identifier has to be physically present on/with the object, on the label or written on the object. For naming conventions, please contact the manager of the INBO-subcollection your specimen belongs to. Example for DNA-samples: 19-009625 (LIMS-ID). Example for mammal tissue samples: da1488tong2. Example for seedlots: seedlot_ALNUS_GLU-000-156. For soil samples this is the Specimen ID (SID). If not part of an INBO-collection: please use the (field) ID you gave the specimen and add the prefix: "year_projectShortID_" and the suffix "_objectConcept". For example: if you collected samples of crayfish in the field and numbered them incrementally: "124" will most likely not be an unique value in the full database of all the INBO-generated sampling points and specimens. Hence it is changed into: 2024_Craywatch_149_crayfish for the entire collected animal, and 2024_Craywatch_149_muscle for the collected muscle tissue and 2024_Craywatch_149_leg for the collected leg. Later on a DNA specimen can be generated from (parts of) the tissues which will be named according to the convention of that INBO subcollection e.g. 24-000978.</setting>
+                <setting name="description" locale="en_US">This is the preferred identifier. For (non-living) objects in an INBO collection this identifier has to be physically present on/with the object, on the label or written on the object. The naming conventions are documented in the linked document (push the black circkeld "i"). Example for DNA-samples: 19-009625 (LIMS-ID). Example for mammal tissue samples: da1488tong2. Example for seedlots: seedlot_ALNUS_GLU-000-156. For soil samples this is the Specimen ID (SID).</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="documentation_url">http://rs.dissco.eu/opends/terms/physicalSpecimenID</setting>
+                <setting name="documentation_url">https://docs.google.com/document/d/1RZ5-zN5YBkrcTg4Omq-bb-UsRUT4a_DXuy-N2V3SnOU/edit?tab=t.0</setting>
               </settings>
             </placement>
 			      <placement code="nonpreferred_labels">
