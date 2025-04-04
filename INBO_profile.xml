@@ -559,6 +559,7 @@
                                       </label>
                                     </labels>
                                   </item>
+								</items>
                               </item>
                               <item idno="mammalBonesSkins" enabled="1" default="0">
                                 <labels>
@@ -611,6 +612,7 @@
                                       </label>
                                     </labels>
                                   </item>
+								</items>
                               </item>
                               <item idno="sampleMammalCyste" enabled="1" default="0">
                                 <labels>
@@ -704,19 +706,19 @@
                     <setting name="render_in_new_menu">1</setting>
                     </settings>
                     <items>
-                      <item idno="leafSample" rank="1" enabled="1" default="0">
+                      <item idno="leafSampleGenetic" rank="1" enabled="1" default="0">
                         <labels>
                           <label locale="en_US" preferred="1">
-                            <name_singular>Leaf sample, dried</name_singular>
-                            <name_plural>Leaf samples, dried</name_plural>
+                            <name_singular>Leaf sample, genetic</name_singular>
+                            <name_plural>Leaf samples, genetic</name_plural>
                           </label>
                         </labels>
                       </item>
-                      <item idno="forestLitter" rank="2" enabled="1" default="0">
+                      <item idno="leafSampleAnalytic" rank="2" enabled="1" default="0">
                         <labels>
                           <label locale="en_US" preferred="1">
-                            <name_singular>Leaf litter trap sample, dried</name_singular>
-                            <name_plural>Leaf litter trap samples, dried</name_plural>
+                            <name_singular>Leaf sample, analytic</name_singular>
+                            <name_plural>Leaf sample, analytic</name_plural>
                           </label>
                         </labels>
                       </item>
@@ -759,6 +761,14 @@
                               <name_plural>Forest tree populations</name_plural>
                             </label>
                           </labels>
+                      </item>
+                      <item idno="moss" rank="8" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>Moss</name_singular>
+                            <name_plural>Mosses</name_plural>
+                          </label>
+                        </labels>
                       </item>
                     </items>
                   </item>
@@ -815,11 +825,11 @@
                     <items>
                     </items>
                   </item>
-                  <item idno="forestLitter" rank="5" enabled="1" default="0">
+                  <item idno="organicTopSoil" rank="5" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Forest litter sample</name_singular>
-                        <name_plural>Forest litter samples</name_plural>
+                        <name_singular>Top layer soil (organic)</name_singular>
+                        <name_plural>Top layers soil (organic)</name_plural>
                       </label>
                     </labels>
                     <settings>
@@ -863,7 +873,7 @@
           </item>
 		    </items>
       </list>
-	    <list code="entity_types" hierarchical="1" system="0" vocabulary="0">
+	  <list code="entity_types" hierarchical="1" system="0" vocabulary="0">
         <labels>
           <label locale="en_US">
             <name>Entity Types</name>
@@ -1427,7 +1437,7 @@
           </label>
         </labels>
         <items>
-            <item idno="notSet" enabled="0" rank="1" default="1">
+            <item idno="notSet" enabled="1" rank="1" default="1">
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Not set1</name_singular>
@@ -1475,7 +1485,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="seedlotID" rank="6" enabled="1" rank="7" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
+            <item idno="seedlotID" enabled="1" rank="7" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>seedlot ID</name_singular>
@@ -1483,7 +1493,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="cmonID" rank="7" enabled="1" rank="7" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
+            <item idno="cmonID" enabled="1" rank="8" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>cmon-ID</name_singular>
@@ -1491,7 +1501,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="icpID" rank="8" enabled="1" rank="7" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
+            <item idno="icpID" enabled="1" rank="9" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>icp-ID</name_singular>
@@ -1499,7 +1509,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="wildcardID" rank="10" enabled="1" rank="7" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
+            <item idno="wildcardID" rank="10" enabled="1" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>wildcard-ID</name_singular>
@@ -1507,7 +1517,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="dredgisID" rank="11" enabled="1" rank="7" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
+            <item idno="dredgisID" rank="11" enabled="1" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>dredgis-ID</name_singular>
@@ -1515,7 +1525,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="habnormID" rank="12" enabled="1" rank="7" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
+            <item idno="habnormID" rank="12" enabled="1" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>habnorm-ID</name_singular>
@@ -1523,7 +1533,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="dvwID" rank="13" enabled="1" rank="7" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
+            <item idno="dvwID" rank="13" enabled="1" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only the three first letters are used.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Habnorm-ID</name_singular>
@@ -4538,7 +4548,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-      <metadataElement code="reference" datatype="Container">
+		<metadataElement code="reference" datatype="Container">
         <labels>
           <label locale="en_US">
             <name>Reference</name>
@@ -4546,10 +4556,10 @@
           </label>
         </labels>
 	      <elements>
-		      <metadataElement code="resourceURI" datatype="Url">
+		      <metadataElement code="referenceURI" datatype="Url">
             <labels>
               <label locale="en_US">
-                <name>resourceURI</name>
+                <name>referenceURI</name>
                 <description>A preferably resolvable URI to uniquely identify a concept. For example a DOI-url.</description>
               </label>
             </labels>
@@ -4620,7 +4630,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-      <metadataElement code="externalRecord" datatype="Url">
+		<metadataElement code="externalRecord" datatype="Url">
         <labels>
           <label locale="en_US">
             <name>External record</name>
@@ -4692,7 +4702,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-      <metadataElement code="dataset" datatype="Url">
+		<metadataElement code="dataset" datatype="Url">
         <labels>
           <label locale="en_US">
             <name>Dataset</name>
@@ -4748,7 +4758,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-      <metadataElement code="verbatimNotes" datatype="Text">
+		<metadataElement code="verbatimNotes" datatype="Text">
         <labels>
           <label locale="en_US">
             <name>Verbatim Notes</name>
@@ -4867,7 +4877,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>	    
-      <metadataElement code="verbatimDate" datatype="Text">
+		<metadataElement code="verbatimDate" datatype="Text">
         <labels>
           <label locale="en_US">
             <name>verbatimDate</name>
@@ -5083,7 +5093,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>	    
-      <metadataElement code="preparationDate" datatype="DateRange">
+		<metadataElement code="preparationDate" datatype="DateRange">
         <labels>
           <label locale="en_US">
             <name>Preparation Date</name>
@@ -5114,7 +5124,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-      <metadataElement code="seedlotRelationContainer" datatype="Container">
+		<metadataElement code="seedlotRelationContainer" datatype="Container">
         <labels>
           <label locale="en_US">
             <name>Seedlot relation</name>
@@ -5197,7 +5207,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-      <metadataElement code="externalSpecimen" datatype="Container">
+		<metadataElement code="externalSpecimen" datatype="Container">
         <labels>
           <label locale="en_US">
             <name>Realtionships to non-INBO specimen(s)</name>
@@ -5211,7 +5221,7 @@
 		      <metadataElement code="externalSpecimenURI" datatype="Url">
             <labels>
               <label locale="en_US">
-                <name>Resource URI</name>
+                <name>External specimen URI</name>
                 <description>A preferably resolvable URI to uniquely identify the related specimen, not held in the INBO collection. For example a DOI-url.</description>
               </label>
             </labels>
@@ -5700,7 +5710,7 @@
 			  </typeRestrictions>
 	    </metadataElement>
     <!--Measurements-->
-      <metadataElement code="dnaConcContainer" datatype="Container">
+		<metadataElement code="dnaConcContainer" datatype="Container">
         <labels>
           <label locale="en_US">
             <name>DNA concentration measurement</name>
@@ -8687,7 +8697,7 @@
         </typeRestrictions>
       </metadataElement>
     <!--Taxonomic identification-->
-		  <metadataElement code="verbatimTaxon" datatype="Text">
+		<metadataElement code="verbatimTaxon" datatype="Text">
             <labels>
             <label locale="en_US">
               <name>Verbatim taxonomic identification</name>
@@ -8741,7 +8751,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-		  <metadataElement code="standTaxon" datatype="Url">
+		<metadataElement code="standTaxon" datatype="Url">
             <labels>
             <label locale="en_US">
               <name>Standardized taxonomic identification</name>
@@ -8794,7 +8804,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-		  <metadataElement code="taxonDate" datatype="DateRange">
+		<metadataElement code="taxonDate" datatype="DateRange">
             <labels>
               <label locale="en_US">
                 <name>Date of taxonomic identification</name>
@@ -8847,7 +8857,7 @@
           </restriction>
         </typeRestrictions>
 		  </metadataElement>
-		  <metadataElement code="taxonNote" datatype="Text">
+		<metadataElement code="taxonNote" datatype="Text">
             <labels>
               <label locale="en_US">
                 <name>Notes on the taxonomic identification</name>
@@ -8901,7 +8911,7 @@
           </restriction>
         </typeRestrictions>
 		  </metadataElement>
-      <metadataElement code="IDContainer" datatype="Container">
+		<metadataElement code="IDContainer" datatype="Container">
         <labels>
           <label locale="en_US">
             <name>ID container</name>
@@ -9006,7 +9016,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-      <metadataElement code="GBIF" datatype="InformationService">
+		<metadataElement code="GBIF" datatype="InformationService">
         <labels>
           <label locale="en_US">
             <name>GBIF taxonomy lookup</name>
@@ -9065,7 +9075,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-      <metadataElement code="wikipedia" datatype="InformationService">
+		<metadataElement code="wikipedia" datatype="InformationService">
         <labels>
           <label locale="en_US">
             <name>Wikipedia lookup</name>
@@ -9085,7 +9095,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-      <metadataElement code="taxonReference" datatype="Container">
+		<metadataElement code="taxonReference" datatype="Container">
         <labels>
           <label locale="en_US">
             <name>Taxon reference</name>
@@ -9093,10 +9103,10 @@
           </label>
         </labels>
 	      <elements>
-		      <metadataElement code="resourceURI" datatype="Url">
+		      <metadataElement code="taxonURI" datatype="Url">
             <labels>
               <label locale="en_US">
-                <name>resourceURI</name>
+                <name>Taxon URI</name>
                 <description>A preferably resolvable URI to uniquely identify a concept. For example a DOI-url.</description>
               </label>
             </labels>
@@ -9108,10 +9118,10 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
-		      <metadataElement code="referenceDetails" datatype="Text">
+		      <metadataElement code="taxonURIDetails" datatype="Text">
             <labels>
               <label locale="en_US">
-                <name>Reference Details</name>
+                <name>Taxon URI Details</name>
                 <description>Relevant information about the reference - why is it listed? - what does it say about the specimen/collection?</description>
               </label>
             </labels>
@@ -9143,8 +9153,8 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	  <!--Sampling event-->
-      <metadataElement code="samplingProtocol" datatype="Container">
+	<!--Sampling event-->
+		<metadataElement code="samplingProtocol" datatype="Container">
         <labels>
           <label locale="en_US">
             <name>samplingProtocol</name>
@@ -9159,7 +9169,7 @@
 		      <metadataElement code="protocolURI" datatype="Url">
             <labels>
               <label locale="en_US">
-                <name>Sampling protocol DOI</name>
+                <name>Sampling protocol URI</name>
                 <description>A preferably resolvable URI to uniquely identify the sampling procedure. For example a DOI-url.</description>
               </label>
             </labels>
@@ -9198,7 +9208,7 @@
           </restriction>
 	      </typeRestrictions>
       </metadataElement>
-      <metadataElement code="samplingProtocolPublished" datatype="Url">
+		<metadataElement code="samplingProtocolPublished" datatype="Url">
         <labels>
           <label locale="en_US">
             <name>sampling protocol (url)</name>
@@ -9223,7 +9233,7 @@
           </restriction>
 	      </typeRestrictions>
       </metadataElement>
-      <metadataElement code="preparationProtocol" datatype="Container">
+		<metadataElement code="preparationProtocol" datatype="Container">
         <labels>
           <label locale="en_US">
             <name>preparationProtocol</name>
@@ -9252,7 +9262,7 @@
             <labels>
               <label locale="en_US">
                 <name>Preparation protocol details</name>
-                <description>If no DOI in "Sampling protocol DOI": a short description or code that allows validation of the used procedure. If DOI in "sampling DOI" this field can be used to log relevant extra information e.g. deviation of the standard procedure.</description>
+                <description>If no DOI in "Preparation protocol DOI": a short description or code that allows validation of the used procedure. If DOI in "sampling DOI" this field can be used to log relevant extra information e.g. deviation of the standard procedure.</description>
               </label>
             </labels>
             <documentationUrl>http://rs.tdwg.org/abcd/terms/referenceDetails</documentationUrl>
@@ -9275,7 +9285,7 @@
           </restriction>
 	      </typeRestrictions>
       </metadataElement>
-      <metadataElement code="preparationProtocolPublished" datatype="Url">
+		<metadataElement code="preparationProtocolPublished" datatype="Url">
         <labels>
           <label locale="en_US">
             <name>Preparation protocol (URL)</name>
@@ -9299,7 +9309,7 @@
           </restriction>
 	      </typeRestrictions>
       </metadataElement>
-      <metadataElement code="samplingEffort" datatype="Text">
+		<metadataElement code="samplingEffort" datatype="Text">
         <labels>
           <label locale="en_US">
             <name>samplingEffort</name>
@@ -9354,7 +9364,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-      <metadataElement code="eventProcedure" datatype="Text">
+		<metadataElement code="eventProcedure" datatype="Text">
         <labels>
           <label locale="en_US">
             <name>Event Procedure</name>
@@ -9485,8 +9495,8 @@
           </restriction>
         </typeRestrictions>
 	    </metadataElement>
-	  <!--Administration-->
-      <metadataElement code="admin" datatype="Url">
+	<!--Administration-->
+		<metadataElement code="admin" datatype="Url">
         <labels>
           <label locale="en_US">
             <name>Admin</name>
@@ -9781,7 +9791,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	  <!--Entity-->
+	<!--Entity-->
 	    <metadataElement code="telephone" datatype="Text">
         <labels>
           <label locale="en_US">
@@ -9852,7 +9862,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-      <metadataElement code="roleRangeContainer" datatype="Container">
+		<metadataElement code="roleRangeContainer" datatype="Container">
         <labels>
           <label locale="en_US">
             <name>Person Role</name>
@@ -9919,7 +9929,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	  <!--Storage locations-->
+	<!--Storage locations-->
 	    <metadataElement code="preservationTemperature" datatype="List" list="preservation_temperature">
         <labels>
           <label locale="en_US">
@@ -9967,7 +9977,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	  <!--Loans-->
+	<!--Loans-->
 	    <metadataElement code="loanStatus" datatype="List" list="loan_status">
         <labels>
           <label locale="en_US">
@@ -10016,7 +10026,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-      <metadataElement code="loan_in_date" datatype="DateRange">
+		<metadataElement code="loan_in_date" datatype="DateRange">
         <labels>
           <label locale="en_US">
             <name>Loan in date</name>
@@ -10041,7 +10051,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-      <metadataElement code="loan_out_date" datatype="DateRange">
+		<metadataElement code="loan_out_date" datatype="DateRange">
         <labels>
           <label locale="en_US">
             <name>Loan out date</name>
@@ -10066,7 +10076,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-      <metadataElement code="loan_return_date" datatype="DateRange">
+		<metadataElement code="loan_return_date" datatype="DateRange">
         <labels>
           <label locale="en_US">
             <name>Loan return date</name>
@@ -10090,7 +10100,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-      <metadataElement code="loan_renewal_date" datatype="DateRange">
+		<metadataElement code="loan_renewal_date" datatype="DateRange">
         <labels>
           <label locale="en_US">
             <name>Loan renewal application date</name>
@@ -10114,7 +10124,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-      <metadataElement code="loan_conditions" datatype="Text">
+		<metadataElement code="loan_conditions" datatype="Text">
         <labels>
           <label locale="en_US">
             <name>Loan conditions</name>
@@ -10138,7 +10148,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-      <metadataElement code="loan_note" datatype="Text">
+		<metadataElement code="loan_note" datatype="Text">
         <labels>
           <label locale="en_US">
             <name>Loan note</name>
@@ -10162,7 +10172,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-      <metadataElement code="loan_purpose" datatype="Text">
+		<metadataElement code="loan_purpose" datatype="Text">
         <labels>
           <label locale="en_US">
             <name>Loan purpose</name>
@@ -10186,8 +10196,8 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	  <!--Sets-->
-      <metadataElement code="set_description" datatype="Text">
+	<!--Sets-->
+		<metadataElement code="set_description" datatype="Text">
         <labels>
           <label locale="en_US">
             <name>Set description</name>
@@ -10211,8 +10221,8 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	  <!--SetItem-->
-      <metadataElement code="set_item_description" datatype="Text">
+	<!--SetItem-->
+		<metadataElement code="set_item_description" datatype="Text">
         <labels>
           <label locale="en_US">
             <name>Set item description</name>
@@ -10237,7 +10247,7 @@
         </typeRestrictions>
       </metadataElement>
     <!--InterstitialDataRelationships-->
-      <metadataElement code="relationshipExplanation" datatype="Text">
+		<metadataElement code="relationshipExplanation" datatype="Text">
         <labels>
           <label locale="en_US">
             <name>Relationship explanation</name>
@@ -10353,7 +10363,7 @@
             </restriction>
         </typeRestrictions>
       </metadataElement>
-      <metadataElement code="collectionDateContainer" datatype="Container">
+		<metadataElement code="collectionDateContainer" datatype="Container">
         <labels>
           <label locale="en_US">
             <name>Collection date container</name>
@@ -10659,8 +10669,10 @@
                 <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
                 <restriction code="r_sampleMammalStomachContent" type="sampleMammalStomachContent"/>
                 <restriction code="r_mammalEntireZoological" type="mammalEntireZoological"/>
-                <restriction code="r_leafSample" type="leafSample"/>
-                <restriction code="r_forestLitter" type="forestLitter"/>
+                <restriction code="r_leafSampleGenetic" type="leafSampleGenetic"/>
+                <restriction code="r_leafSampleAnalytic" type="leafSampleAnalytic"/>
+                <restriction code="r_organicTopSoil" type="organicTopSoil"/>
+                <restriction code="r_moss" type="moss"/>
                 <restriction code="r_seedlot" type="seedlot"/>
                 <restriction code="r_stemdisc" type="stemdisc"/>
                 <restriction code="r_cutting" type="cutting"/>
@@ -10730,7 +10742,7 @@
 				        <setting name="add_label" locale="en_US">Add forest tree population type</setting>
               </settings>
             </placement>
-            <placement code="samplingDate" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc" includeSubtypes="1">
+            <placement code="samplingDate" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,stemdisc" includeSubtypes="1">
               <bundle>ca_attribute_samplingDate</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Sampling date *</setting>
@@ -10738,7 +10750,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="preparationDate" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,livingPlant,forestTreePopulation,cutting,stemdisc" includeSubtypes="1">
+            <placement code="preparationDate" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,livingPlant,forestTreePopulation,cutting,stemdisc" includeSubtypes="1">
               <bundle>ca_attribute_preparationDate</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Specimen creation date *</setting>
@@ -10757,7 +10769,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="ca_storage_location" typeRestrictions="animalObject,leafSample,forestLitter,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1">
+            <placement code="ca_storage_location" typeRestrictions="animalObject,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1">
               <bundle>ca_storage_locations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at *</setting>
@@ -10768,28 +10780,28 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="verbatimLocality" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc,cutting" includeSubtypes="1">
+            <placement code="verbatimLocality" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_attribute_verbatimLocality</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Verbatim locality of sampling point *</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="decimalLatitude" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc,cutting" includeSubtypes="1">
+            <placement code="decimalLatitude" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_attribute_decimalLatitude</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Decimal latitude of sampling point *</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="decimalLongitude" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc,cutting" includeSubtypes="1">
+            <placement code="decimalLongitude" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_attribute_decimalLongitude</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Decimal longitude of sampling point *</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="coordinateUncertaintyInMeters" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc,cutting" includeSubtypes="1">
+            <placement code="coordinateUncertaintyInMeters" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_attribute_coordinateUncertaintyInMeters</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Coordinate uncertainty in meters *</setting>
@@ -10817,7 +10829,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="ca_collection" typeRestrictions="soilObject,waterObject,animalObject,plantObject,dnaSample,forestLitter" includeSubtypes="1">
+            <placement code="ca_collection" typeRestrictions="soilObject,waterObject,animalObject,plantObject,dnaSample,organicTopSoil" includeSubtypes="1">
               <bundle>ca_collections</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object belongs to collection(s)</setting>
@@ -10906,8 +10918,10 @@
                 <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
                 <restriction code="r_sampleMammalStomachContent" type="sampleMammalStomachContent"/>
                 <restriction code="r_mammalEntireZoological" type="mammalEntireZoological"/>
-                <restriction code="r_leafSample" type="leafSample"/>
-                <restriction code="r_forestLitter" type="forestLitter"/>
+                <restriction code="r_leafSampleGenetic" type="leafSampleGenetic"/>
+                <restriction code="r_leafSampleAnalytic" type="leafSampleAnalytic"/>
+                <restriction code="r_organicTopSoil" type="organicTopSoil"/>
+                <restriction code="r_moss" type="moss"/>
                 <restriction code="r_livingPlant" type="livingPlant"/>
                 <restriction code="r_seedlot" type="seedlot"/>
                 <restriction code="r_forestTreePopulation" type="forestTreePopulation"/>
@@ -10978,7 +10992,7 @@
                 <setting name="description" locale="en_US">Multiple points can be entered to visualize the different individuals in a plot.</setting>
               </settings>
 			      </placement>
-            <placement code="ca_storage_location_lookup" typeRestrictions="animalObject,leafSample,forestLitter,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1"><!--This one is to be deleted for the users, all the storage locations should be prefilled and loaded in the system-->
+            <placement code="ca_storage_location_lookup" typeRestrictions="animalObject,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1"><!--This one is to be deleted for the users, all the storage locations should be prefilled and loaded in the system-->
               <bundle>ca_storage_locations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at</setting>
@@ -10989,7 +11003,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="ca_storage_location_hierarchyBrowser" typeRestrictions="animalObject,leafSample,forestLitter,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1">
+            <placement code="ca_storage_location_hierarchyBrowser" typeRestrictions="animalObject,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1">
               <bundle>ca_storage_locations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at</setting>
@@ -11163,8 +11177,10 @@
                 <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
                 <restriction code="r_sampleMammalStomachContent" type="sampleMammalStomachContent"/>
                 <restriction code="r_mammalEntireZoological" type="mammalEntireZoological"/>
-                <restriction code="r_leafSample" type="leafSample"/>
-                <restriction code="r_forestLitter" type="forestLitter"/>
+                <restriction code="r_leafSampleGenetic" type="leafSampleGenetic"/>
+                <restriction code="r_leafSampleAnalytic" type="leafSampleAnalytic"/>
+                <restriction code="r_organicTopSoil" type="organicTopSoil"/>
+                <restriction code="r_moss" type="moss"/>
                 <restriction code="r_livingPlant" type="livingPlant"/>
                 <restriction code="r_seedlot" type="seedlot"/>
                 <restriction code="r_stemdisc" type="stemdisc"/>
@@ -11177,7 +11193,7 @@
                 <restriction code="r_soilObject" type="soilObject"/>
           </typeRestrictions>
           <bundlePlacements>
-            <placement code="samplingDate" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc,cutting" includeSubtypes="1">
+            <placement code="samplingDate" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_attribute_samplingDate</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Sampling date</setting>
@@ -11185,7 +11201,7 @@
                 <setting name="description" locale="en_US">This is the date/time that becomes fixed due to sampling. The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
               </settings>
             </placement>
-            <placement code="ca_entities_sampledBy" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc,cutting" includeSubtypes="1">
+            <placement code="ca_entities_sampledBy" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Sampled by</setting>
@@ -11196,7 +11212,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="samplingProtocolPublished" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc,cutting" includeSubtypes="1">
+			      <placement code="samplingProtocolPublished" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_attribute_samplingProtocolPublished</bundle>
               <settings>
                 <setting name="label" locale="en_US">Sampling procedure (URL)</setting>
@@ -11204,7 +11220,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="samplingProtocol" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc,cutting" includeSubtypes="1">
+			      <placement code="samplingProtocol" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_attribute_samplingProtocol</bundle>
               <settings>
                 <setting name="label" locale="en_US">Sampling procedure</setting>
@@ -11212,13 +11228,13 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="samplingEffort" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc,cutting" includeSubtypes="1">
+			      <placement code="samplingEffort" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_attribute_samplingEffort</bundle>
               <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="preparationDate" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,livingPlant,forestTreePopulation" includeSubtypes="1">
+            <placement code="preparationDate" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,livingPlant,forestTreePopulation" includeSubtypes="1">
               <bundle>ca_attribute_preparationDate</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Specimen creation date</setting>
@@ -11237,7 +11253,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="preparationProtocolPublished" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc,cutting" includeSubtypes="1">
+			      <placement code="preparationProtocolPublished" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_attribute_preparationProtocolPublished</bundle>
               <settings>
                 <setting name="label" locale="en_US">Creation procedure (URL)</setting>
@@ -11245,7 +11261,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="preparationProtocol" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc,cutting" includeSubtypes="1">
+			      <placement code="preparationProtocol" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_attribute_samplingProtocol</bundle>
               <settings>
                 <setting name="label" locale="en_US">Creation procedure</setting>
@@ -11319,8 +11335,10 @@
                     <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
                     <restriction code="r_sampleMammalStomachContent" type="sampleMammalStomachContent"/>
                     <restriction code="r_mammalEntireZoological" type="mammalEntireZoological"/>
-                    <restriction code="r_leafSample" type="leafSample"/>
-                    <restriction code="r_forestLitter" type="forestLitter"/>
+					<restriction code="r_leafSampleGenetic" type="leafSampleGenetic"/>
+					<restriction code="r_leafSampleAnalytic" type="leafSampleAnalytic"/>
+                    <restriction code="r_organicTopSoil" type="organicTopSoil"/>
+                    <restriction code="r_moss" type="moss"/>
                     <restriction code="r_seedlot" type="seedlot"/>
                     <restriction code="r_stemdisc" type="stemdisc"/>
                     <restriction code="r_cutting" type="cutting"/>
@@ -11392,7 +11410,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-			      <placement code="map" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSample,forestLitter,seedlot,stemdisc,cutting" includeSubtypes="1">
+			      <placement code="map" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_attribute_georeference</bundle>
               <settings>
                 <setting name="label" locale="en_US">Map representation</setting>
@@ -11562,8 +11580,10 @@
                     <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
                     <restriction code="r_sampleMammalStomachContent" type="sampleMammalStomachContent"/>
                     <restriction code="r_mammalEntireZoological" type="mammalEntireZoological"/>
-                    <restriction code="r_leafSample" type="leafSample"/>
-                    <restriction code="r_forestLitter" type="forestLitter"/>
+					<restriction code="r_leafSampleGenetic" type="leafSampleGenetic"/>
+					<restriction code="r_leafSampleAnalytic" type="leafSampleAnalytic"/>
+                    <restriction code="r_organicTopSoil" type="organicTopSoil"/>
+                    <restriction code="r_moss" type="moss"/>
                     <restriction code="r_seedlot" type="seedlot"/>
                     <restriction code="r_stemdisc" type="stemdisc"/>
                     <restriction code="r_cutting" type="cutting"/>
@@ -11704,8 +11724,10 @@
                     <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
                     <restriction code="r_sampleMammalStomachContent" type="sampleMammalStomachContent"/>
                     <restriction code="r_mammalEntireZoological" type="mammalEntireZoological"/>
-                    <restriction code="r_leafSample" type="leafSample"/>
-                    <restriction code="r_forestLitter" type="forestLitter"/>
+					<restriction code="r_leafSampleGenetic" type="leafSampleGenetic"/>
+					<restriction code="r_leafSampleAnalytic" type="leafSampleAnalytic"/>
+                    <restriction code="r_organicTopSoil" type="organicTopSoil"/>
+                    <restriction code="r_moss" type="moss"/>
                     <restriction code="r_seedlot" type="seedlot"/>
                     <restriction code="r_stemdisc" type="stemdisc"/>
                     <restriction code="r_cutting" type="cutting"/>
@@ -11836,8 +11858,10 @@
                 <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
                 <restriction code="r_sampleMammalStomachContent" type="sampleMammalStomachContent"/>
                 <restriction code="r_mammalEntireZoological" type="mammalEntireZoological"/>
-                <restriction code="r_leafSample" type="leafSample"/>
-                <restriction code="r_forestLitter" type="forestLitter"/>
+				<restriction code="r_leafSampleGenetic" type="leafSampleGenetic"/>
+				<restriction code="r_leafSampleAnalytic" type="leafSampleAnalytic"/>
+                <restriction code="r_moss" type="moss"/>
+                <restriction code="r_organicTopSoil" type="organicTopSoil"/>
                 <restriction code="r_seedlot" type="seedlot"/>
                 <restriction code="r_stemdisc" type="stemdisc"/>
                 <restriction code="r_cutting" type="cutting"/>
@@ -11879,7 +11903,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="dna_volume" typeRestrictions="dnaSample,forestLitter">
+            <placement code="dna_volume" typeRestrictions="dnaSample">
               <bundle>ca_attribute_dnaVolumeContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">DNA sample volume measurement</setting>
@@ -11925,7 +11949,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="object_count" typeRestrictions="leafSample,seedlot,stemdisc,cutting,invertebrateBulk,sampleAmphibian,sampleFishFinclip,sampleInvertebrate,sampleReptile,sampleMammal,forestTreePopulation" includeSubtypes="1">
+            <placement code="object_count" typeRestrictions="leafSampleGenetic,seedlot,stemdisc,cutting,invertebrateBulk,sampleAmphibian,sampleFishFinclip,sampleInvertebrate,sampleReptile,sampleMammal,forestTreePopulation" includeSubtypes="1">
               <bundle>ca_attribute_countContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Count</setting>
@@ -12126,8 +12150,10 @@
                 <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
                 <restriction code="r_sampleMammalStomachContent" type="sampleMammalStomachContent"/>
                 <restriction code="r_mammalEntireZoological" type="mammalEntireZoological"/>
-                <restriction code="r_leafSample" type="leafSample"/>
-                <restriction code="r_forestLitter" type="forestLitter"/>
+				<restriction code="r_leafSampleGenetic" type="leafSampleGenetic"/>
+				<restriction code="r_leafSampleAnalytic" type="leafSampleAnalytic"/>
+                <restriction code="r_organicTopSoil" type="organicTopSoil"/>
+                <restriction code="r_moss" type="moss"/>
                 <restriction code="r_livingPlant" type="livingPlant"/>
                 <restriction code="r_forestTreePopulation" type="forestTreePopulation"/>
                 <restriction code="r_seedlot" type="seedlot"/>
@@ -12304,8 +12330,10 @@
                 <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
                 <restriction code="r_sampleMammalStomachContent" type="sampleMammalStomachContent"/>
                 <restriction code="r_mammalEntireZoological" type="mammalEntireZoological"/>
-                <restriction code="r_leafSample" type="leafSample"/>
-                <restriction code="r_forestLitter" type="forestLitter"/>
+				<restriction code="r_leafSampleGenetic" type="leafSampleGenetic"/>
+				<restriction code="r_leafSampleAnalytic" type="leafSampleAnalytic"/>
+                <restriction code="r_organicTopSoil" type="organicTopSoil"/>
+                <restriction code="r_moss" type="moss"/>
                 <restriction code="r_livingPlant" type="livingPlant"/>
                 <restriction code="r_seedlot" type="seedlot"/>
                 <restriction code="r_stemdisc" type="stemdisc"/>
@@ -15303,8 +15331,10 @@
                 <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
                 <restriction code="r_sampleMammalStomachContent" type="sampleMammalStomachContent"/>
                 <restriction code="r_mammalEntireZoological" type="mammalEntireZoological"/>
-                <restriction code="r_leafSample" type="leafSample"/>
-                <restriction code="r_forestLitter" type="forestLitter"/>
+				<restriction code="r_leafSampleGenetic" type="leafSampleGenetic"/>
+				<restriction code="r_leafSampleAnalytic" type="leafSampleAnalytic"/>
+                <restriction code="r_organicTopSoil" type="organicTopSoil"/>
+                <restriction code="r_moss" type="moss"/>
                 <restriction code="r_seedlot" type="seedlot"/>
                 <restriction code="r_stemdisc" type="stemdisc"/>
                 <restriction code="r_cutting" type="cutting"/>
