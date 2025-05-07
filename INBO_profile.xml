@@ -1427,7 +1427,7 @@
           </item>
         </items>
       </list>
-      <list code="object_label_types" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
+      <list code="object_label_types" hierarchical="0" system="0" vocabulary="1" defaultSort="1"><!-- documented in: https://docs.google.com/document/d/1RZ5-zN5YBkrcTg4Omq-bb-UsRUT4a_DXuy-N2V3SnOU/edit?tab=t.0-->
         <labels>
           <label locale="en_US">
             <name>Object label types</name>
@@ -1445,8 +1445,8 @@
             <item idno="LabwareLIMSID" enabled="1" rank="2" default="0"><!--For example: 16-001460. An identifier for the specimen as given by INBO-Labware-LIMS. The first part of the ID is for the year (in example: 2016 gives the number 16). The second part is an incremental numbering.-->
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>Labware LIMS generated ID</name_singular>
-                  <name_plural>Labware LIMS generated IDs</name_plural>
+                  <name_singular>LIMS ID (Labware)</name_singular>
+                  <name_plural>LIMS IDs (Labware)</name_plural>
                 </label>
               </labels>
             </item>
@@ -1458,7 +1458,15 @@
                 </label>
               </labels>
             </item>
-            <item idno="mammalAutopsyLabID" rank="4" enabled="4" default="0"><!--For example: da1488tong1. An identifier for the specimen, given by the INBO mammal autopsy lab. The first two letters are for the animal. da = das. The next four numbers are an incremental numbering. Then the type of tissue: "tong" is given. If there are replicates of the sample, an incremental number is given after the tissue type. Here "1".-->
+            <item idno="ednaID" enabled="1" rank="4" default="0"><!--An identifier for the specimen given by the INBO genetic or analytical labs prior usage of the INBO-LIMS. This is any lab numbering, not constituting the LIMS-ID. Example: A/09/0683. The A stands for Analytical lab. The 09 stands for the year: 2009. The last four digits are an incremental numbering.-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>eDNA ID</name_singular>
+                  <name_plural>eDNA IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="mammalAutopsyLabID" rank="5" enabled="4" default="0"><!--For example: da1488tong1. An identifier for the specimen, given by the INBO mammal autopsy lab. The first two letters are for the animal. da = das. The next four numbers are an incremental numbering. Then the type of tissue: "tong" is given. If there are replicates of the sample, an incremental number is given after the tissue type. Here "1".-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Mammal autopsy lab ID</name_singular>
@@ -1466,7 +1474,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="seedlotID" enabled="1" rank="5" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only has the three first letters used.-->
+            <item idno="seedlotID" enabled="1" rank="6" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only has the three first letters used.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Seedlot ID</name_singular>
@@ -1474,7 +1482,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="projectID" enabled="1" rank="6" default="0"><!--The ID convention is linked to a specific project. Details are to be found in the project-DMP. The project-DMP is uploaded in PURE. For example, specimens of the project CMON or WILDCARD have an agreed upon SID (Sample-ID) with the different partner institutes.-->
+            <item idno="projectID" enabled="1" rank="7" default="0"><!--The ID convention is linked to a specific project. Details are to be found in the project-DMP. The project-DMP is uploaded in PURE. For example, specimens of the project CMON or WILDCARD have an agreed upon SID (Sample-ID) with the different partner institutes.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Project ID</name_singular>
@@ -1482,7 +1490,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="prefix-suffix-ID" enabled="1" rank="7" default="0"><!--For objects not belonging to any of the INBO subcollections and not using a project ID that ensures a unique value in the full INBO-CMS; the convention is to make a unique identifier by adding prefixes and suffixes to the field ID that was given to the specimen. The prefix is: "year_projectShortID_" and the suffix is "_objectConcept". For example: if you collected samples of crayfish in the field and numbered them incrementally: "124" will most likely not be an unique value in the full database of all the INBO-generated specimens. Hence it is changed into: 2024_Craywatch_149_crayfish for the entire collected animal, and 2024_Craywatch_149_muscle for the collected muscle tissue and 2024_Craywatch_149_leg for the collected leg. Later on a DNA specimen can be generated from (parts of) the tissues which will be named according to the convention of that INBO subcollection, for example: 24-000978.-->
+            <item idno="prefix-suffix-ID" enabled="1" rank="8" default="0"><!--For objects not belonging to any of the INBO subcollections and not using a project ID that ensures a unique value in the full INBO-CMS; the convention is to make a unique identifier by adding prefixes and suffixes to the field ID that was given to the specimen. The prefix is: "year_projectShortID_" and the suffix is "_objectConcept". For example: if you collected samples of crayfish in the field and numbered them incrementally: "124" will most likely not be an unique value in the full database of all the INBO-generated specimens. Hence it is changed into: 2024_Craywatch_149_crayfish for the entire collected animal, and 2024_Craywatch_149_muscle for the collected muscle tissue and 2024_Craywatch_149_leg for the collected leg. Later on a DNA specimen can be generated from (parts of) the tissues which will be named according to the convention of that INBO subcollection, for example: 24-000978.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Prefix-suffix ID</name_singular>
@@ -1490,7 +1498,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="unknownTypeID" rank="8" enabled="1" default="0"><!--An ID naming convention seems to be applied (following a logic, by something/someone) but it is not known to which system it refers to at the time of logging the ID.-->
+            <item idno="unknownTypeID" rank="89" enabled="1" default="0"><!--An ID naming convention seems to be applied (following a logic, by something/someone) but it is not known to which system it refers to at the time of logging the ID.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Unknown type of ID</name_singular>
@@ -11145,7 +11153,7 @@
               </settings>
             </placement>
 			      <placement code="preparationProtocol" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
-              <bundle>ca_attribute_samplingProtocol</bundle>
+              <bundle>ca_attribute_preparationProtocol</bundle>
               <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
@@ -11857,8 +11865,8 @@
 			      <placement code="genotype" typeRestrictions="animalObject,plantObject,dnaSample" includeSubtypes="1">
               <bundle>ca_objects</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Associated genotypes</setting>
-                <setting name="description" locale="en_US">It is possible that a plant or animal (and its derived objects) are genotyped by different genetic markers, new genotypes can be added over time.</setting>
+                <setting name="label" locale="en_US">Genotype (1:n)</setting>
+                <setting name="description" locale="en_US">A specific code given to describe a genotype that occurs in more than one individual. For example: a specific haplotype. For example: a specific genotype for which there are multiple clones (plant breeding). If there is an individual genotype or sequence data that you would like to log with this specific sample, this can be done under FILE/REFS/PHOTOS, because this is only relevant to add together with the link to the data.</setting>
                 <setting name="restrict_to_types">genotype</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 				        <setting name="add_label" locale="en_US">Add genotype</setting>
@@ -11943,29 +11951,22 @@
 		    <screen idno="reference" default="0">
           <labels>
             <label locale="en_US">
-              <name>Files/Refs/Photos</name>
+              <name>Files/(Data)Pubs</name>
             </label>
           </labels>
           <bundlePlacements>
             <placement code="fileURL">
               <bundle>ca_attribute_fileURL</bundle>
 			        <settings>
-				        <setting name="add_label" locale="en_US">Add file URL</setting>
+				        <setting name="add_label" locale="en_US">Add INBO file URL</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="description" locale="en_US">Add URL and describe what the (multimedia) file represents. For example: it represents the living animal from which a toe clip was sampled. For example: it represents the toe clip sample in a cryotube. For example: it is a scan of the experimental plot outline.</setting>
+                <setting name="description" locale="en_US">Add URL (e.g. to a file on the Google drive) and describe what the (multimedia) file represents. For example: it represents the living animal from which a toe clip was sampled. For example: it represents the toe clip sample in a cryotube. For example: it is a scan of the experimental plot outline. For example: this is the msat genotype data of 2018. For example: this is the sequence data of 2020. Preferably this data is on the INBO archive drive or similar (less chance of broken links).</setting>
 			        </settings>
-            </placement>
-			      <placement code="taxonReference">
-              <bundle>ca_attribute_taxonReference</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Publication on other biodiversity in specimen</setting>
-                <setting name="label" locale="en_US">Publication (dataset, article) that outlines the results of biodiversity present in the specimen, other than the main taxon. In water, soil or air samples, this is the only way biodiversity can be recorded. For all other types of specimen, this is "secondary" biodiveristy, other the main taxon. For example: stomach of a bee (main taxon), tested for presence of which plant pollen. For example tissue of a wolf (main taxon) tested for bacteria. This information is relevant to know (what has been tested on this specimen and how) but not relevant for querying the specimen themselves. Preferably this is a(n open) publication in a repository, but also internal result files (e.g. INBO Google drive) can be linked here.</setting>                
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
             </placement>
             <placement code="reference">
               <bundle>ca_attribute_reference</bundle>
 			        <settings>
+                <setting name="label" locale="en_US">Publication URL</setting>
 				        <setting name="add_label" locale="en_US">Add publication URL</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="description" locale="en_US">A relevant URL of a (data) publication that is directly or indirectly linked to the object/specimen or the sampling point the specimen represents. This could be datasets on GBIF, Zenodo, Genbank - related to the specimen. This could be any type of publications such as A1 pulications, GIS-layers, ..</setting>
