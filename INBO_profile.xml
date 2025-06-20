@@ -10,6 +10,9 @@
   <!--https://github.com/inbo/collective-access/issues/211-->
   <!--https://github.com/inbo/collective-access/issues/213-->
   <!--https://github.com/inbo/collective-access/issues/214-->
+  <!--https://github.com/inbo/collective-access/issues/224-->
+  <!--https://github.com/inbo/collective-access/issues/235-->
+  <!--https://github.com/inbo/collective-access/issues/237-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -1476,7 +1479,15 @@
                 </label>
               </labels>
             </item>
-            <item idno="projectID" enabled="1" rank="7" default="0"><!--The ID convention is linked to a specific project. Details are to be found in the project-DMP. The project-DMP is uploaded in PURE. For example, specimens of the project CMON or WILDCARD have an agreed upon SID (Sample-ID) with the different partner institutes.-->
+            <item idno="Twnumber" rank="7" enabled="1" default="0"><!--An ID naming convention seems to be applied (following a logic, by something/someone) but it is not known to which system it refers to at the time of logging the ID.-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>Unknown type of ID</name_singular>
+                  <name_plural>Unknown type of IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="projectID" enabled="1" rank="8" default="0"><!--The ID convention is linked to a specific project. Details are to be found in the project-DMP. The project-DMP is uploaded in PURE. For example, specimens of the project CMON or WILDCARD have an agreed upon SID (Sample-ID) with the different partner institutes.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Project ID</name_singular>
@@ -1484,7 +1495,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="prefix-suffix-ID" enabled="1" rank="8" default="0"><!--For objects not belonging to any of the INBO subcollections and not using a project ID that ensures a unique value in the full INBO-CMS; the convention is to make a unique identifier by adding prefixes and suffixes to the field ID that was given to the specimen. The prefix is: "year_projectShortID_" and the suffix is "_objectConcept". For example: if you collected samples of crayfish in the field and numbered them incrementally: "124" will most likely not be an unique value in the full database of all the INBO-generated specimens. Hence it is changed into: 2024_Craywatch_149_crayfish for the entire collected animal, and 2024_Craywatch_149_muscle for the collected muscle tissue and 2024_Craywatch_149_leg for the collected leg. Later on a DNA specimen can be generated from (parts of) the tissues which will be named according to the convention of that INBO subcollection, for example: 24-000978.-->
+            <item idno="prefix-suffix-ID" enabled="1" rank="9" default="0"><!--For objects not belonging to any of the INBO subcollections and not using a project ID that ensures a unique value in the full INBO-CMS; the convention is to make a unique identifier by adding prefixes and suffixes to the field ID that was given to the specimen. The prefix is: "year_projectShortID_" and the suffix is "_objectConcept". For example: if you collected samples of crayfish in the field and numbered them incrementally: "124" will most likely not be an unique value in the full database of all the INBO-generated specimens. Hence it is changed into: 2024_Craywatch_149_crayfish for the entire collected animal, and 2024_Craywatch_149_muscle for the collected muscle tissue and 2024_Craywatch_149_leg for the collected leg. Later on a DNA specimen can be generated from (parts of) the tissues which will be named according to the convention of that INBO subcollection, for example: 24-000978.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Prefix-suffix ID</name_singular>
@@ -1492,7 +1503,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="unknownTypeID" rank="89" enabled="1" default="0"><!--An ID naming convention seems to be applied (following a logic, by something/someone) but it is not known to which system it refers to at the time of logging the ID.-->
+            <item idno="unknownTypeID" rank="10" enabled="1" default="0"><!--An ID naming convention seems to be applied (following a logic, by something/someone) but it is not known to which system it refers to at the time of logging the ID.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Unknown type of ID</name_singular>
@@ -8422,7 +8433,7 @@
         <settings>
           <setting name="fieldWidth">70</setting>
           <setting name="fieldHeight">1</setting>
-          <setting name="minChars">1</setting>
+          <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
@@ -8646,7 +8657,7 @@
             <labels>
             <label locale="en_US">
               <name>Verbatim taxonomic identification</name>
-              <description>Taxonomic identification of the specimen, to the lowest level possible. This can be species name in any language, genus, family, ...</description>
+              <description>Taxonomic identification of the specimen, to the lowest level possible. This can be species name in any language, genus, family, ... This is the main taxonomic unit you can appoint to the specimen. For soil, water and air samples, this should be blank. For all others, there normally is a notion of the main associated taxon. For example: tissue or a swab of species or genus X. Feces or pawprint of a carnivore.</description>
             </label>
             </labels>
 			      <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimIdentification</documentationUrl>
@@ -8893,7 +8904,7 @@
             <labels>
               <label locale="en_US">
                 <name>verbatimIdentification</name>
-                <description>Identification of the specimen, to the lowest level possible. This can be species name in any language, genus, family, ...</description>
+                <description>Taxonomic identification of the specimen, to the lowest level possible. This can be species name in any language, genus, family, ... This is the main taxonomic unit you can appoint to the specimen. For soil, water and air samples, this should be blank. For all others, there normally is a notion of the main associated taxon. For example: tissue or a swab of species or genus X. Feces or pawprint of a carnivore.</description>
               </label>
             </labels>
             <settings>
@@ -10724,7 +10735,7 @@
             <placement code="ca_collection" typeRestrictions="soilObject,waterObject,animalObject,plantObject,dnaSample,organicTopSoil" includeSubtypes="1">
               <bundle>ca_collections</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Object belongs to collection(s)</setting>
+                <setting name="label" locale="en_US">Object belongs to collection(s) *</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">20</setting>
 				        <setting name="add_label" locale="en_US">Add collection</setting>
@@ -10857,16 +10868,16 @@
             <placement code="plantplot_verbatimLongitudeX" typeRestrictions="livingPlant,forestTreePopulation">
               <bundle>ca_attribute_verbatimLongitudeX</bundle>
               <settings>
-                <setting name="label" locale="en_US">Storage location verbatim longitude (X)</setting>
-                <setting name="description" locale="en_US">The original description of the longitude (X) of the storage location.</setting>
+                <setting name="label" locale="en_US">Ex situ plant (plot) verbatim longitude (X)</setting>
+                <setting name="description" locale="en_US">The original description of the longitude (X) of the ex situ plant (plot).</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
             <placement code="plantplot_verbatimLatitudeY" typeRestrictions="livingPlant,forestTreePopulation">
               <bundle>ca_attribute_verbatimLatitudeY</bundle>
               <settings>
-                <setting name="label" locale="en_US">Storage location verbatim latitude (Y)</setting>
-                <setting name="description" locale="en_US">The original description of the latitude (Y) of the storage location..</setting>
+                <setting name="label" locale="en_US">Ex situ plant (plot) verbatim latitude (Y)</setting>
+                <setting name="description" locale="en_US">The original description of the latitude (Y) of the ex situ plant (plot).</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
@@ -11234,7 +11245,6 @@
               <bundle>ca_attribute_verbatimLongitudeX</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim longitude (X) of the sampling point</setting>
-                <setting name="description" locale="en_US">The original description of the longitude (X) of the sampling point.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
@@ -11242,7 +11252,6 @@
               <bundle>ca_attribute_verbatimLatitudeY</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim latitude (Y) of the sampling point.</setting>
-                <setting name="description" locale="en_US">The original description of the latitude (Y) of the sampling point.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
@@ -11615,7 +11624,6 @@
               <bundle>ca_attribute_verbatimTaxon</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The verbatim taxonomic identification</setting>
-                <setting name="description" locale="en_US">This is the main taxonomic unit you can appoint to the specimen. For soil, water and air samples, this should be blank. For all others, there normally is a notion of the main associated taxon. For example: tissue or a swab of species or genus X. Feces or pawprint of a carnivore.</setting>
 				        <setting name="add_label" locale="en_US">Add a new taxon</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
