@@ -2,6 +2,7 @@
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
   <profileName>[INBO-CMS] INBO natural science collection v0.74</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
+  <!--https://github.com/inbo/collective-access/issues/128-->
   <!--https://github.com/inbo/collective-access/issues/195-->
   <!--https://github.com/inbo/collective-access/issues/196-->
   <!--https://github.com/inbo/collective-access/issues/198-->
@@ -4837,11 +4838,11 @@
 		  <metadataElement code="verbatimDate" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>verbatimDate</name>
+            <name>verbatimEventDate</name>
             <description>The verbatim original representation of the date and time information for an Event.</description>
           </label>
         </labels>
-        <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimDate</documentationUrl>
+        <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimEventDate</documentationUrl>
         <settings>
           <setting name="fieldWidth">70</setting>
           <setting name="fieldHeight">1</setting>
@@ -5208,10 +5209,9 @@
             <labels>
               <label locale="en_US">
                 <name>External specimen description</name>
-                <description>Identifier of the external specimen</description>
+                <description>Description of the external specimen</description>
               </label>
             </labels>
-            <documentationUrl>http://rs.tdwg.org/abcd/terms/resourceURI</documentationUrl>
             <settings>
               <setting name="fieldWidth">41</setting>
               <setting name="fieldHeight">5</setting>
@@ -5498,6 +5498,7 @@
               <description>Any relevant remaining remarks on the measurement. This could be who did the measurement, if something unusual was observed during the measurement,...</description>
             </label>
             </labels>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementRemarks</documentationUrl>
             <settings>
               <setting name="fieldWidth">35</setting>
               <setting name="fieldHeight">1</setting>
@@ -5623,6 +5624,7 @@
               <description>Any relevant remaining remarks on the measurement. This could be who did the measurement, if something unusual was observed during the measurement,...</description>
             </label>
             </labels>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementRemarks</documentationUrl>
           </metadataElement>
 	      </elements>
         <typeRestrictions>
@@ -5683,7 +5685,7 @@
                 <description>Percent of your DNA at or above the size of the ≥ 9KB threshold. E.g.: 10%, 35%, 50%, 80%. Usually a protocol considers 50% of fragments ≥ 9KB to be high genomic quality.</description>
               </label>
             </labels>
-            <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/fragmentLength</documentationUrl>
+            <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/percentAboveThreshold</documentationUrl>
           </metadataElement>
           <metadataElement code="gelDuration" datatype="TimeCode">
             <labels>
@@ -5707,7 +5709,7 @@
                 <description>A Gel Ladder is a combination of various known-length fragments of DNA or RNA used to measure DNA or RNA fragments of unknown lengths.</description>
               </label>
             </labels>
-            <documentationUrl>	http://data.ggbn.org/schemas/ggbn/terms/gelLadder</documentationUrl>
+            <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/gelLadder</documentationUrl>
             <settings>
               <setting name="fieldWidth">70</setting>
               <setting name="fieldHeight">1</setting>
@@ -5872,7 +5874,7 @@
               <description>Any relevant remaining remarks on the measurement. This could be who did the measurement, if something unusual was observed during the measurement,...</description>
             </label>
             </labels>
-            <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/gelRemarks</documentationUrl>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementRemarks</documentationUrl>
           </metadataElement>
 	      </elements>
         <typeRestrictions>
@@ -5933,7 +5935,7 @@
                 <description>Volume of sample</description>
               </label>
             </labels>
-            <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/volume</documentationUrl>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementValue</documentationUrl>
             <settings>
               <setting name="fieldWidth">70</setting>
               <setting name="fieldHeight">1</setting>
@@ -5994,7 +5996,7 @@
               <description>Any relevant remaining remarks on the measurement. This could be who did the measurement, if something unusual was observed during the measurement,...</description>
             </label>
             </labels>
-            <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/gelRemarks</documentationUrl>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementRemarks</documentationUrl>
           </metadataElement>
 	      </elements>
         <typeRestrictions>
@@ -6054,7 +6056,7 @@
                 <description>Weight value</description>
               </label>
             </labels>
-            <documentationUrl>http://rs.tdwg.org/abcd/terms/lowerValue</documentationUrl>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementValue</documentationUrl>
             <settings>
               <setting name="fieldWidth">35</setting>
               <setting name="fieldHeight">1</setting>
@@ -6069,7 +6071,7 @@
               <description>Unit used for the weight measurement.</description>
             </label>
             </labels>
-            <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/volumeUnit</documentationUrl>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
           </metadataElement>
           <metadataElement code="weightAccuracy" datatype="Text">
             <labels>
@@ -6115,7 +6117,7 @@
               <description>Any relevant remaining remarks on the measurement. This could be who did the measurement, if something unusual was observed during the measurement,... For weight measurements this can be a text value expressing the weight, if no actual numeric value is present, e.g. "too low to measure".</description>
             </label>
             </labels>
-            <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/gelRemarks</documentationUrl>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementRemarks</documentationUrl>
           </metadataElement>
 	      </elements>
         <typeRestrictions>
@@ -6162,8 +6164,10 @@
             <labels>
               <label locale="en_US">
                 <name>Type of length measurement</name>
+                <description>Further specification of what length exactly was measured. For example: height, length, width.</description>
               </label>
             </labels>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementType</documentationUrl>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -6174,28 +6178,18 @@
             <labels>
               <label locale="en_US">
                 <name>measurementAppliesTo</name>
-                <description>Further specification of what exactly was measured. For example: length/width: "of the arm/leg/tail". For example: diameter: "of the main trunk".</description>
+                <description>Further specification of what thing its length was exactly was measured. For example: length of the arm, leg, tail. For example: height of the tree, of the first branch on the tree.</description>
               </label>
             </labels>
             <documentationUrl>http://rs.tdwg.org/abcd/terms/appliesTo</documentationUrl>
           </metadataElement>
-          <metadataElement code="lengthUnit" datatype="List" list="length_unit">
-            <labels>
-            <label locale="en_US">
-              <name>Unit</name>
-              <description>Unit used for the measurement.</description>
-            </label>
-            </labels>
-            <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/volumeUnit</documentationUrl>
-          </metadataElement>
           <metadataElement code="lengthValue" datatype="Text">
             <labels>
               <label locale="en_US">
-                <name>Lower value</name>
-                <description>Lower or only value</description>
+                <name>Length value</name>
               </label>
             </labels>
-            <documentationUrl>http://rs.tdwg.org/abcd/terms/lowerValue</documentationUrl>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementValue</documentationUrl>
             <settings>
               <setting name="fieldWidth">35</setting>
               <setting name="fieldHeight">1</setting>
@@ -6203,10 +6197,18 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
+          <metadataElement code="lengthUnit" datatype="List" list="length_unit">
+            <labels>
+            <label locale="en_US">
+              <name>Length unit</name>
+            </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
+          </metadataElement>
           <metadataElement code="lengthAccuracy" datatype="Text">
             <labels>
               <label locale="en_US">
-                <name>Accuracy</name>
+                <name>Length accuracy</name>
                 <description>The description of the potential error associated with the measurementValue.</description>
               </label>
             </labels>
@@ -6247,7 +6249,7 @@
               <description>Any relevant remaining remarks on the measurement. This could be who did the measurement, if something unusual was observed during the measurement,...</description>
             </label>
             </labels>
-            <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/gelRemarks</documentationUrl>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementRemarks</documentationUrl>
           </metadataElement>
 	      </elements>
         <typeRestrictions>
@@ -6303,11 +6305,10 @@
           <metadataElement code="ageValue" datatype="Text">
             <labels>
               <label locale="en_US">
-                <name>Lower value</name>
-                <description>Lower or only value</description>
+                <name>Age value</name>
               </label>
             </labels>
-            <documentationUrl>http://rs.tdwg.org/abcd/terms/lowerValue</documentationUrl>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementValue</documentationUrl>
             <settings>
               <setting name="fieldWidth">70</setting>
               <setting name="fieldHeight">1</setting>
@@ -6318,11 +6319,10 @@
           <metadataElement code="ageUnit" datatype="List" list="age_unit">
             <labels>
             <label locale="en_US">
-              <name>Unit</name>
-              <description>Unit used for the measurement.</description>
+              <name>Age unit</name>
             </label>
             </labels>
-            <documentationUrl>	http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
           </metadataElement>
           <metadataElement code="agePublishedProcedure" datatype="Url">
             <labels>
@@ -6359,7 +6359,7 @@
               <description>Any relevant remaining remarks on the measurement. This could be who did the measurement, if something unusual was observed during the measurement,... For age measurements this can be a text value expressing the age, e.g. "estimated to be younger than five", which could be complemented by the minimum value 0 and the maximum value 5.</description>
             </label>
             </labels>
-            <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/gelRemarks</documentationUrl>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementRemarks</documentationUrl>
           </metadataElement>
 	      </elements>
         <typeRestrictions>
@@ -6426,11 +6426,10 @@
           <metadataElement code="germinationValue" datatype="Text">
             <labels>
               <label locale="en_US">
-                <name>Lower value</name>
-                <description>Lower or only value</description>
+                <name>Germination value</name>
               </label>
             </labels>
-            <documentationUrl>http://rs.tdwg.org/abcd/terms/lowerValue</documentationUrl>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementValue</documentationUrl>
             <settings>
               <setting name="fieldWidth">70</setting>
               <setting name="fieldHeight">1</setting>
@@ -6442,10 +6441,9 @@
             <labels>
             <label locale="en_US">
               <name>Unit</name>
-              <description>Unit used for the measurement.</description>
             </label>
             </labels>
-            <documentationUrl>	http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
           </metadataElement>
           <metadataElement code="germinationPublishedProcedure" datatype="Url">
             <labels>
@@ -6482,7 +6480,7 @@
               <description>Any relevant remaining remarks on the measurement. This could be who did the measurement, if something unusual was observed during the measurement,... For age measurements this can be a text value expressing the age, e.g. "estimated to be younger than five", which could be complemented by the minimum value 0 and the maximum value 5.</description>
             </label>
             </labels>
-            <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/gelRemarks</documentationUrl>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementRemarks</documentationUrl>
           </metadataElement>
 	      </elements>
         <typeRestrictions>
@@ -6538,11 +6536,10 @@
           <metadataElement code="purityValue" datatype="Text">
             <labels>
               <label locale="en_US">
-                <name>Lower value</name>
-                <description>Lower or only value</description>
+                <name>Value</name>
               </label>
             </labels>
-            <documentationUrl>http://rs.tdwg.org/abcd/terms/lowerValue</documentationUrl>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementValue</documentationUrl>
             <settings>
               <setting name="fieldWidth">70</setting>
               <setting name="fieldHeight">1</setting>
@@ -6554,7 +6551,6 @@
             <labels>
             <label locale="en_US">
               <name>Unit</name>
-              <description>Unit used for the measurement</description>
             </label>
             </labels>
             <documentationUrl>	http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
@@ -6594,7 +6590,7 @@
               <description>Any relevant remaining remarks on the measurement. This could be who did the measurement, if something unusual was observed during the measurement,... For age measurements this can be a text value expressing the age, e.g. "estimated to be younger than five", which could be complemented by the minimum value 0 and the maximum value 5.</description>
             </label>
             </labels>
-            <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/gelRemarks</documentationUrl>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementRemarks</documentationUrl>
           </metadataElement>
 	      </elements>
         <typeRestrictions>
@@ -6650,11 +6646,11 @@
           <metadataElement code="countValue" datatype="Text">
             <labels>
               <label locale="en_US">
-                <name>Lower value</name>
+                <name>Value</name>
                 <description>Lower or only value</description>
               </label>
             </labels>
-            <documentationUrl>http://rs.tdwg.org/abcd/terms/lowerValue</documentationUrl>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementValue</documentationUrl>
             <settings>
               <setting name="fieldWidth">70</setting>
               <setting name="fieldHeight">1</setting>
@@ -6669,7 +6665,7 @@
               <description>Unit used for the measurement.</description>
             </label>
             </labels>
-            <documentationUrl>	http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
           </metadataElement>
           <metadataElement code="countAppliesTo" datatype="Text">
             <labels>
@@ -6715,7 +6711,7 @@
               <description>Any relevant remaining remarks on the measurement. This could be who did the measurement, if something unusual was observed during the measurement,... For age measurements this can be a text value expressing the age, e.g. "estimated to be younger than five", which could be complemented by the minimum value 0 and the maximum value 5.</description>
             </label>
             </labels>
-            <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/gelRemarks</documentationUrl>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementRemarks</documentationUrl>
           </metadataElement>
 	      </elements>
         <typeRestrictions>
@@ -7107,7 +7103,7 @@
         <labels>
           <label locale="en_US">
             <name>Verbatim Latitude (Y)</name>
-            <description>A free text format for the latitude component of the coordinates, as they were originally recorded / noted down.</description>
+            <description>A free text format for the latitude component of the coordinates, as they were originally recorded / noted down. Careful: latitude is N to S. For example for Belgium: 50.5039° N.</description>
           </label>
         </labels>
         <documentationUrl>http://rs.tdwg.org/abcd/terms/latitudeText</documentationUrl>
@@ -7170,7 +7166,7 @@
         <labels>
           <label locale="en_US">
             <name>Verbatim Longitude (X)</name>
-            <description>A free text format for the longitude component of the coordinates, as they were originally recorded / noted down.</description>
+            <description>A free text format for the longitude component of the coordinates, as they were originally recorded / noted down. Careful longitude is E to W. For example: Belgium 4.4699° E.</description>
           </label>
         </labels>
         <documentationUrl>http://rs.tdwg.org/abcd/terms/longitudeText</documentationUrl>
@@ -7542,11 +7538,11 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="decimalLatitude" datatype="Numeric">
+	    <metadataElement code="decimalLatitudeY" datatype="Numeric">
         <labels>
           <label locale="en_US">
-            <name>decimalLatitude</name>
-            <description>The geographic latitude (in decimal degrees, using the spatial reference system given in dwc:geodeticDatum) of the geographic center of a dcterms:Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive.</description>
+            <name>decimalLatitude (Y)</name>
+            <description>The geographic latitude (in decimal degrees, using the spatial reference system given in dwc:geodeticDatum) of the geographic center of a dcterms:Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive. Careful: latitude is N to S. For example the Herman Teirlinck building: 50.86638999067575.</description>
           </label>
         </labels>
         <documentationUrl>http://rs.tdwg.org/dwc/terms/decimalLatitude</documentationUrl>
@@ -7605,11 +7601,11 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="decimalLongitude" datatype="Numeric">
+	    <metadataElement code="decimalLongitudeX" datatype="Numeric">
         <labels>
           <label locale="en_US">
-            <name>decimalLongitude</name>
-            <description>The geographic longitude (in decimal degrees, using the spatial reference system given in dwc:geodeticDatum) of the geographic center of a dcterms:Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive.</description>
+            <name>decimalLongitude (X)</name>
+            <description>The geographic longitude (in decimal degrees, using the spatial reference system given in dwc:geodeticDatum) of the geographic center of a dcterms:Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive. Careful longitude is E to W. For example: For example the Herman Teirlinck building: 4.350147058474895.</description>
           </label>
         </labels>
         <documentationUrl>http://rs.tdwg.org/dwc/terms/decimalLongitude</documentationUrl>
@@ -8537,7 +8533,6 @@
             <description>The original description of the height above the local surface.</description>
           </label>
         </labels>
-        <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimDepth</documentationUrl>
         <settings>
           <setting name="fieldWidth">70</setting>
           <setting name="fieldHeight">1</setting>
@@ -8661,7 +8656,7 @@
               <description>Taxonomic identification of the specimen, to the lowest level possible. This can be species name in any language, genus, family, ...</description>
             </label>
             </labels>
-			      <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimIdentification></documentationUrl>
+			      <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimIdentification</documentationUrl>
             <settings>
               <setting name="fieldWidth">70</setting>
               <setting name="fieldHeight">1</setting>
@@ -8821,7 +8816,7 @@
                 <description>Any notes such as expressions of uncertainty (or certainty), methods (did you use an ID key), mismatch or match with Catalogue of life, ..</description>
               </label>
             </labels>
-			      <documentationUrl>http://rs.tdwg.org/dwc/terms/identificationRemarks></documentationUrl>
+			      <documentationUrl>http://rs.tdwg.org/dwc/terms/identificationRemarks</documentationUrl>
             <settings>
               <setting name="fieldWidth">70</setting>
               <setting name="fieldHeight">1</setting>
@@ -8930,14 +8925,14 @@
             </settings>
           </metadataElement>
           <metadataElement code="IDc_GBIF" datatype="InformationService">
-          <labels>
-            <label locale="en_US">
-              <name>GBIF taxonomy lookup</name>
-            </label>
-          </labels>
-          <settings>
-            <setting name="service">GBIF</setting>
-          </settings>
+            <labels>
+              <label locale="en_US">
+                <name>GBIF taxonomy lookup</name>
+             </label>
+           </labels>
+            <settings>
+              <setting name="service">GBIF</setting>
+            </settings>
           </metadataElement>
           <metadataElement code="IDc_taxonNote" datatype="Text">
             <labels>
@@ -9082,7 +9077,6 @@
                 <description>Relevant information about the reference - why is it listed? - what does it say about the specimen/collection?</description>
               </label>
             </labels>
-            <documentationUrl>http://rs.tdwg.org/abcd/terms/referenceDetails</documentationUrl>
             <settings>
               <setting name="fieldWidth">35</setting>
               <setting name="fieldHeight">1</setting>
@@ -9197,7 +9191,6 @@
                 <description>A short description or code that allows validation of the used preparation procedure. If DOI in "preparation DOI" this field can be used to log relevant extra information e.g. deviation of the standard procedure.</description>
               </label>
             </labels>
-            <documentationUrl>http://rs.tdwg.org/abcd/terms/referenceDetails</documentationUrl>
             <settings>
               <setting name="fieldWidth">85</setting>
               <setting name="fieldHeight">1</setting>
@@ -9785,7 +9778,6 @@
                 <description>The date or time when a Person started fulfilling the role specified in the role property.</description>
               </label>
             </labels>
-            <documentationUrl>http://rs.tdwg.org/ltc/terms/startedAtTime</documentationUrl>
             <settings/>
           </metadataElement>
           <metadataElement code="roleEndedAtTime" datatype="DateRange">
@@ -9795,7 +9787,6 @@
                 <description>The date or time when a Person stopped fulfilling the role specified in the role property.</description>
               </label>
             </labels>
-            <documentationUrl>http://rs.tdwg.org/ltc/terms/endedAtTime</documentationUrl>
             <settings/>
           </metadataElement>
 		    </elements>
@@ -10130,32 +10121,32 @@
         </typeRestrictions>
       </metadataElement>
 	  <!--SetItem-->
-		<metadataElement code="set_item_description" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>Set item description</name>
-            <description>Narrative description for item in this set.</description>
-          </label>
-        </labels>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">3</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="ca_set_item">
-            <table>ca_set_items</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
+      <metadataElement code="set_item_description" datatype="Text">
+          <labels>
+            <label locale="en_US">
+              <name>Set item description</name>
+              <description>Narrative description for item in this set.</description>
+            </label>
+          </labels>
+          <settings>
+            <setting name="fieldWidth">70</setting>
+            <setting name="fieldHeight">3</setting>
+            <setting name="minChars">0</setting>
+            <setting name="maxChars">65535</setting>
+          </settings>
+          <typeRestrictions>
+            <restriction code="ca_set_item">
+              <table>ca_set_items</table>
+              <settings>
+                <setting name="minAttributesPerRow">0</setting>
+                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              </settings>
+            </restriction>
+          </typeRestrictions>
       </metadataElement>
     <!--InterstitialDataRelationships-->
-		<metadataElement code="relationshipExplanation" datatype="Text">
+		  <metadataElement code="relationshipExplanation" datatype="Text">
         <labels>
           <label locale="en_US">
             <name>Relationship explanation</name>
@@ -10228,7 +10219,7 @@
             <description>A flag to designate whether a physical object may be described by more than one ObjectGroup within the CollectionDescriptionScheme.</description>
           </label>
         </labels>
-        <documentationUrl>http://rs.tdwg.org/ltc/terms/distinctObjects</documentationUrl>
+        <documentationUrl>http://rs.tdwg.org/ltc/terms/isDistinctObjects</documentationUrl>
         <settings>
           <setting name="fieldWidth">70</setting>
           <setting name="fieldHeight">1</setting>
@@ -10271,76 +10262,76 @@
             </restriction>
         </typeRestrictions>
       </metadataElement>
-		<metadataElement code="collectionDateContainer" datatype="Container">
-        <labels>
-          <label locale="en_US">
-            <name>Collection date container</name>
-		        <description>Information on the collection concept it's timeline</description>
-          </label>
-        </labels>
-        <elements>
-          <metadataElement code="currentCollection" datatype="List" list="true_false">
-            <labels>
-              <label locale="en_US">
-                <name>Current collection</name>
-                <description>A flag to indicate whether the collection still exists as a single entity (ltc:currentCollection).</description>
-              </label>
-            </labels>
-            <documentationUrl>http://rs.tdwg.org/ltc/terms/currentCollection</documentationUrl>
-            <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
-          <metadataElement code="collectionStartDate" datatype="DateRange">
-            <labels>
-              <label locale="en_US">
-                <name>Collection Concept start date</name>
-                <description>Accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
-              </label>
-            </labels>
-            <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
-            <settings>
-              <setting name="fieldWidth">25</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">1</setting>
-              <setting name="maxChars">65535</setting>
-              <setting name="canBeUsedInSort">1</setting>
-              <setting name="canBeUsedInSearchForm">1</setting>
-              <setting name="canBeUsedInDisplay">1</setting>
-            </settings>
-          </metadataElement>
-          <metadataElement code="collectionEndDate" datatype="DateRange">
-            <labels>
-              <label locale="en_US">
-                <name>Collection concept end date</name>
-                <description>Accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
-              </label>
-            </labels>
-            <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
-            <settings>
-              <setting name="fieldWidth">25</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">1</setting>
-              <setting name="maxChars">65535</setting>
-              <setting name="canBeUsedInSort">1</setting>
-              <setting name="canBeUsedInSearchForm">1</setting>
-              <setting name="canBeUsedInDisplay">1</setting>
-            </settings>
-          </metadataElement>
-		    </elements>
-        <typeRestrictions>
-          <restriction code="r_collection">
-            <table>ca_collections</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
+      <metadataElement code="collectionDateContainer" datatype="Container">
+          <labels>
+            <label locale="en_US">
+              <name>Collection date container</name>
+              <description>Information on the collection concept it's timeline</description>
+            </label>
+          </labels>
+          <elements>
+            <metadataElement code="currentCollection" datatype="List" list="true_false">
+              <labels>
+                <label locale="en_US">
+                  <name>Current collection</name>
+                  <description>A flag to indicate whether the collection still exists as a single entity (ltc:currentCollection).</description>
+                </label>
+              </labels>
+              <documentationUrl>http://rs.tdwg.org/ltc/terms/isCurrentCollection</documentationUrl>
+              <settings>
+                <setting name="fieldWidth">70</setting>
+                <setting name="fieldHeight">1</setting>
+                <setting name="minChars">0</setting>
+                <setting name="maxChars">65535</setting>
+              </settings>
+            </metadataElement>
+            <metadataElement code="collectionStartDate" datatype="DateRange">
+              <labels>
+                <label locale="en_US">
+                  <name>Collection Concept start date</name>
+                  <description>Accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
+                </label>
+              </labels>
+              <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
+              <settings>
+                <setting name="fieldWidth">25</setting>
+                <setting name="fieldHeight">1</setting>
+                <setting name="minChars">1</setting>
+                <setting name="maxChars">65535</setting>
+                <setting name="canBeUsedInSort">1</setting>
+                <setting name="canBeUsedInSearchForm">1</setting>
+                <setting name="canBeUsedInDisplay">1</setting>
+              </settings>
+            </metadataElement>
+            <metadataElement code="collectionEndDate" datatype="DateRange">
+              <labels>
+                <label locale="en_US">
+                  <name>Collection concept end date</name>
+                  <description>Accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
+                </label>
+              </labels>
+              <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
+              <settings>
+                <setting name="fieldWidth">25</setting>
+                <setting name="fieldHeight">1</setting>
+                <setting name="minChars">1</setting>
+                <setting name="maxChars">65535</setting>
+                <setting name="canBeUsedInSort">1</setting>
+                <setting name="canBeUsedInSearchForm">1</setting>
+                <setting name="canBeUsedInDisplay">1</setting>
+              </settings>
+            </metadataElement>
+          </elements>
+          <typeRestrictions>
+            <restriction code="r_collection">
+              <table>ca_collections</table>
+              <settings>
+                <setting name="minAttributesPerRow">0</setting>
+                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              </settings>
+            </restriction>
+          </typeRestrictions>
       </metadataElement>
 	    <metadataElement code="knownToContainTypes" datatype="List" list="true_false">
         <labels>
@@ -10349,7 +10340,7 @@
             <description>Flag property to indicate that the collection is known to include type specimens.</description>
           </label>
         </labels>
-        <documentationUrl>http://rs.tdwg.org/ltc/terms/knownToContainTypes</documentationUrl>
+        <documentationUrl>http://rs.tdwg.org/ltc/terms/isKnownToContainTypes</documentationUrl>
         <settings>
           <setting name="fieldWidth">70</setting>
           <setting name="fieldHeight">1</setting>
@@ -10452,7 +10443,7 @@
             <description>The degree to which an organism survives, reproduces, and expands its range at the given place and time.</description>
           </label>
         </labels>
-        <documentationUrl>	http://rs.tdwg.org/dwc/terms/degreeOfEstablishment</documentationUrl>
+        <documentationUrl>http://rs.tdwg.org/dwc/terms/degreeOfEstablishment</documentationUrl>
         <settings>
           <setting name="fieldWidth">70</setting>
           <setting name="fieldHeight">1</setting>
@@ -10495,7 +10486,7 @@
                 <description>Start date of the time range of the collection.</description>
               </label>
             </labels>
-            <documentationUrl>http://rs.tdwg.org/ltc/terms/temporalCoverageStartDate</documentationUrl>
+            <documentationUrl>http://rs.tdwg.org/ltc/terms/temporalCoverageStartDateTime</documentationUrl>
             <settings/>
           </metadataElement>
           <metadataElement code="temporalCoverageEndDate" datatype="DateRange">
@@ -10505,7 +10496,7 @@
                 <description>End date of the time range of the collection.</description>
               </label>
             </labels>
-            <documentationUrl>http://rs.tdwg.org/ltc/terms/temporalCoverageEndDate</documentationUrl>
+            <documentationUrl>http://rs.tdwg.org/ltc/terms/temporalCoverageEndDateTime</documentationUrl>
             <settings/>
           </metadataElement>
 		    </elements>
@@ -10613,7 +10604,6 @@
                 <setting name="label" locale="en_US">Specimen ID *</setting>
                 <setting name="description" locale="en_US">This is the preferred identifier. This identifier should be physically present on/with the object. For example on the object label. The naming conventions are documented in the linked document (push the black "i"). Example for DNA-samples: 19-009625 (LIMS-ID). Example for mammal tissue samples: da1488tong2. Example for seedlots: seedlot_ALNUS_GLU-000-156. For soil samples this is the Specimen ID (SID).</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="documentation_url">http://rs.dissco.eu/opends/terms/physicalSpecimenID</setting>
                 <setting name="documentation_url">https://docs.google.com/document/d/1RZ5-zN5YBkrcTg4Omq-bb-UsRUT4a_DXuy-N2V3SnOU/edit?tab=t.0</setting>
               </settings>
             </placement>
@@ -10696,15 +10686,15 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="decimalLatitude" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
-              <bundle>ca_attribute_decimalLatitude</bundle>
+            <placement code="decimalLatitudeY" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
+              <bundle>ca_attribute_decimalLatitudeY</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Decimal latitude of sampling point *</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="decimalLongitude" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
-              <bundle>ca_attribute_decimalLongitude</bundle>
+            <placement code="decimalLongitudeX" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
+              <bundle>ca_attribute_decimalLongitudeX</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Decimal longitude of sampling point *</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
