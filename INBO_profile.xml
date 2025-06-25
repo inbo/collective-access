@@ -11,9 +11,10 @@
   <!--https://github.com/inbo/collective-access/issues/213-->
   <!--https://github.com/inbo/collective-access/issues/214-->
   <!--https://github.com/inbo/collective-access/issues/224-->
+  <!--https://github.com/inbo/collective-access/issues/228-->
   <!--https://github.com/inbo/collective-access/issues/235-->
   <!--https://github.com/inbo/collective-access/issues/237-->
-  <!--https://github.com/inbo/collective-access/issues/248-->
+  <!--https://github.com/inbo/collective-access/issues/240-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -1451,7 +1452,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="LabwareLIMSID" enabled="1" rank="2" default="0"><!--For example: 16-001460. An identifier for the specimen as given by INBO-Labware-LIMS. The first part of the ID is for the year (in example: 2016 gives the number 16). The second part is an incremental numbering.-->
+            <item idno="LabwareLIMSID" enabled="1" rank="2" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>LIMS ID (Labware)</name_singular>
@@ -1459,7 +1460,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="preLIMSlabID" enabled="1" rank="3" default="0"><!--An identifier for the specimen given by the INBO genetic or analytical labs prior usage of the INBO-LIMS. This is any lab numbering, not constituting the LIMS-ID. Example: A/09/0683. The A stands for Analytical lab. The 09 stands for the year: 2009. The last four digits are an incremental numbering.-->
+            <item idno="preLIMSlabID" enabled="1" rank="2" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Pre-LIMS lab ID</name_singular>
@@ -1467,7 +1468,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="ednaID" enabled="1" rank="4" default="0"><!--An identifier for the specimen given by the INBO genetic or analytical labs prior usage of the INBO-LIMS. This is any lab numbering, not constituting the LIMS-ID. Example: A/09/0683. The A stands for Analytical lab. The 09 stands for the year: 2009. The last four digits are an incremental numbering.-->
+            <item idno="ednaID" enabled="1" rank="2" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>eDNA ID</name_singular>
@@ -1475,7 +1476,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="mammalAutopsyLabID" rank="5" enabled="4" default="0"><!--For example: da1488tong1. An identifier for the specimen, given by the INBO mammal autopsy lab. The first two letters are for the animal. da = das. The next four numbers are an incremental numbering. Then the type of tissue: "tong" is given. If there are replicates of the sample, an incremental number is given after the tissue type. Here "1".-->
+            <item idno="mammalAutopsyLabID" rank="2" enabled="4" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Mammal autopsy lab ID</name_singular>
@@ -1483,7 +1484,23 @@
                 </label>
               </labels>
             </item>
-            <item idno="seedlotID" enabled="1" rank="6" default="0"><!--For example: seedlot_ALNUS_COR-000-016. An identifier for the specimen: seedlot, constructed as follows: seedlot_GENUS_SPECIES_000-000. The GENUS name is written in full. The species name only has the three first letters used.-->
+            <item idno="GenbosFTPID" rank="4" enabled="4" default="0">
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>Genbos FTP ID</name_singular>
+                  <name_plural>Genbos FTP IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="GenbosPlantID" rank="4" enabled="4" default="0">
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>Genbos plant ID</name_singular>
+                  <name_plural>Genbos plant IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="seedlotID" enabled="1" rank="6" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Seedlot ID</name_singular>
@@ -1491,7 +1508,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="Twnumber" rank="7" enabled="1" default="0"><!--An ID naming convention seems to be applied (following a logic, by something/someone) but it is not known to which system it refers to at the time of logging the ID.-->
+            <item idno="Twnumber" rank="7" enabled="1" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Unknown type of ID</name_singular>
@@ -1499,7 +1516,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="projectID" enabled="1" rank="8" default="0"><!--The ID convention is linked to a specific project. Details are to be found in the project-DMP. The project-DMP is uploaded in PURE. For example, specimens of the project CMON or WILDCARD have an agreed upon SID (Sample-ID) with the different partner institutes.-->
+            <item idno="projectID" enabled="1" rank="8" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Project ID</name_singular>
@@ -1507,7 +1524,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="prefix-suffix-ID" enabled="1" rank="9" default="0"><!--For objects not belonging to any of the INBO subcollections and not using a project ID that ensures a unique value in the full INBO-CMS; the convention is to make a unique identifier by adding prefixes and suffixes to the field ID that was given to the specimen. The prefix is: "year_projectShortID_" and the suffix is "_objectConcept". For example: if you collected samples of crayfish in the field and numbered them incrementally: "124" will most likely not be an unique value in the full database of all the INBO-generated specimens. Hence it is changed into: 2024_Craywatch_149_crayfish for the entire collected animal, and 2024_Craywatch_149_muscle for the collected muscle tissue and 2024_Craywatch_149_leg for the collected leg. Later on a DNA specimen can be generated from (parts of) the tissues which will be named according to the convention of that INBO subcollection, for example: 24-000978.-->
+            <item idno="prefix-suffix-ID" enabled="1" rank="9" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Prefix-suffix ID</name_singular>
@@ -1515,14 +1532,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="unknownTypeID" rank="10" enabled="1" default="0"><!--An ID naming convention seems to be applied (following a logic, by something/someone) but it is not known to which system it refers to at the time of logging the ID.-->
-              <labels>
-                <label locale="en_US" preferred="1">
-                  <name_singular>Unknown type of ID</name_singular>
-                  <name_plural>Unknown type of IDs</name_plural>
-                </label>
-              </labels>
-            </item>
+            <item idno="unknownTypeID" rank="10" enabled="1" default="0">
         </items>
       </list>
       <list code="object_lot_label_types" hierarchical="0" system="0" vocabulary="0">
@@ -11617,30 +11627,40 @@
                 <setting name="label" locale="en_US">The verbatim taxonomic identification</setting>
 				        <setting name="add_label" locale="en_US">Add a new taxon</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
 			        </settings>
             </placement>
 			      <placement code="standTaxon"><!--This should prepopulate with the parent value, if empty-->
               <bundle>ca_attribute_standTaxon</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
 			        </settings>
             </placement>
 			      <placement code="GBIF"><!--This should prepopulate with the parent value, if empty-->
               <bundle>ca_attribute_GBIF</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
 			        </settings>
             </placement>
 			      <placement code="taxonDate"><!--This should prepopulate with the parent value, if empty-->
               <bundle>ca_attribute_taxonDate</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
 			        </settings>
             </placement>
 			      <placement code="taxonNote"><!--This should prepopulate with the parent value, if empty-->
               <bundle>ca_attribute_taxonNote</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
 			        </settings>
             </placement>
             <placement code="ca_entities_identifier">
@@ -11651,6 +11671,8 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="restrict_to_relationship_types">identifier</setting>
+                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
               </settings>
 			      </placement>
             <placement code="ca_occurrences_identification">
@@ -11661,6 +11683,8 @@
 				        <setting name="maxRelationshipsPerRow">20</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="restrict_to_types">identification</setting>
+                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
                 <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences">^ca_occurrences.verbatimTaxon, ^ca_occurrences.standTaxon<br/> (^ca_occurrences.taxonDate)</unit>]]></setting>
               </settings>
 			      </placement>
