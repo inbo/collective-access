@@ -3,18 +3,22 @@
   <profileName>[INBO-CMS] INBO natural science collection v0.74</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--https://github.com/inbo/collective-access/issues/128-->
+  <!--https://github.com/inbo/collective-access/issues/189-->
   <!--https://github.com/inbo/collective-access/issues/194-->
   <!--https://github.com/inbo/collective-access/issues/195-->
   <!--https://github.com/inbo/collective-access/issues/196-->
   <!--https://github.com/inbo/collective-access/issues/198-->
+  <!--https://github.com/inbo/collective-access/issues/199-->
   <!--https://github.com/inbo/collective-access/issues/211-->
   <!--https://github.com/inbo/collective-access/issues/213-->
   <!--https://github.com/inbo/collective-access/issues/214-->
   <!--https://github.com/inbo/collective-access/issues/224-->
   <!--https://github.com/inbo/collective-access/issues/228-->
+  <!--https://github.com/inbo/collective-access/issues/230-->
   <!--https://github.com/inbo/collective-access/issues/235-->
   <!--https://github.com/inbo/collective-access/issues/237-->
   <!--https://github.com/inbo/collective-access/issues/240-->
+  <!--https://github.com/inbo/collective-access/issues/248-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -10177,6 +10181,38 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
+	    <metadataElement code="verbatimStorageLocation" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Description of the storage location</name>
+          </label>
+        </labels>
+        <documentationUrl>http://dublincore.org/documents/dcmi-terms/#terms-description</documentationUrl>
+        <settings>
+              <setting name="fieldWidth">100</setting>
+              <setting name="fieldHeight">10</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+         </settings>
+         <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_loans">
+            <table>ca_loans</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
 	  <!--Loans-->
 	    <metadataElement code="loanStatus" datatype="List" list="loan_status">
         <labels>
@@ -10970,7 +11006,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at *</setting>
                 <setting name="restrict_to_types">forestTreePopulationSite</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="useHierarchicalBrowser">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -10981,7 +11017,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at *</setting>
                 <setting name="restrict_to_types">room,cabinet,freezer,fridge,compartment,drawer,shelf,crate,rack,box,spot</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="useHierarchicalBrowser">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -11060,6 +11096,9 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
+            <placement code="deaccession">
+              <bundle>ca_objects_deaccession</bundle>
+            </placement>
 			      <placement code="status">
               <bundle>status</bundle>
 			        <settings>
@@ -11079,73 +11118,18 @@
           <typeRestrictions>
           </typeRestrictions>
           <bundlePlacements>
-            <placement code="is_deaccessioned">
-              <bundle>is_deaccessioned</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">A flag indicating whether the object is deaccessioned</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="description" locale="en_US">Will be 1 when deaccessioned or 0 (the default) when not deaccessioned. This should be visible in the object curation log. Types of deaccesioning are: disposal or transfer.</setting>
-              </settings>
+            <placement code="deaccession">
+              <bundle>ca_objects_deaccession</bundle>
             </placement>
-            <placement code="ca_storage_location_plantlot" typeRestrictions="livingPlant,forestTreePopulation">
+            <placement code="ca_storage_location_plant" typeRestrictions="forestTreePopulation,livingPlant">
               <bundle>ca_storage_locations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at</setting>
                 <setting name="restrict_to_types">forestTreePopulationSite</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-            <placement code="description_storage_location" typeRestrictions="livingPlant,forestTreePopulation">
-              <bundle>ca_attribute_description</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Description of storage location</setting>
-                <setting name="description" locale="en_US">This allows a description of the storage location of the plant (plot), free text.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-            <placement code="plantplot_verbatimLongitudeX" typeRestrictions="livingPlant,forestTreePopulation">
-              <bundle>ca_attribute_verbatimLongitudeX</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Ex situ plant (plot) verbatim longitude (X)</setting>
-                <setting name="description" locale="en_US">The original description of the longitude (X) of the ex situ plant (plot).</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-			      </placement>
-            <placement code="plantplot_verbatimLatitudeY" typeRestrictions="livingPlant,forestTreePopulation">
-              <bundle>ca_attribute_verbatimLatitudeY</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Ex situ plant (plot) verbatim latitude (Y)</setting>
-                <setting name="description" locale="en_US">The original description of the latitude (Y) of the ex situ plant (plot).</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-			      </placement>
-            <placement code="plantplot_verbatimGeodeticdatum" typeRestrictions="livingPlant,forestTreePopulation">
-              <bundle>ca_attribute_verbatimGeodeticDatum</bundle>
-              <settings>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-			      </placement>
-			      <placement code="storageLocationMap" typeRestrictions="livingPlant,forestTreePopulation">
-              <bundle>ca_attribute_georeference</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Map representation of the storage location</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="description" locale="en_US">Multiple points can be entered to visualize the different individuals in a plot.</setting>
-              </settings>
-			      </placement>
-            <placement code="ca_storage_location_lookup" typeRestrictions="animalObject,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1"><!--This one is to be deleted for the users, all the storage locations should be prefilled and loaded in the system-->
-              <bundle>ca_storage_locations</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Object is stored at</setting>
-                <setting name="restrict_to_types">room,cabinet,freezer,fridge,compartment,drawer,shelf,crate,rack,box,spot</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="useHierarchicalBrowser">0</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="display_template">^ca_storage_locations.preferred_labels.name ^ca_storage_locations.georeference</setting>
               </settings>
             </placement>
             <placement code="ca_storage_location_hierarchyBrowser" typeRestrictions="animalObject,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1">
@@ -11943,12 +11927,8 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="is_deaccessioned">
-              <bundle>is_deaccessioned</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">A flag indicating whether the object is deaccessioned</setting>
-                <setting name="description" locale="en_US">Will be 1 when deaccessioned or 0 (the default) when not deaccessioned. This should be visible in the object curation log. If the object is not existing anymore (dead, consumed, disposed of, ...) or if the ownership is not of INBO anymore (transferred), the object is deaccessionned. This means that we no longer have it in the INBO-collection.</setting>
-              </settings>
+            <placement code="deaccession">
+              <bundle>ca_objects_deaccession</bundle>
             </placement>
             <placement code="disposition">
               <bundle>ca_attribute_disposition</bundle>
@@ -13196,6 +13176,18 @@
                 <setting name="description" locale="en_US">This could be a document describing the storage space, giving technical information, ...</setting>
 				        <setting name="add_label" locale="en_US">Add publication URL</setting>
 			        </settings>
+            </placement>
+            <placement code="storageLocation_verbatimLocality" typeRestrictions="forestTreePopulationSite">
+              <bundle>ca_attribute_verbatimLocality</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Verbatim locality of the site where the forest tree populaiton is located</setting>
+              </settings>
+            </placement>
+            <placement code="storageLocation_georeference" typeRestrictions="forestTreePopulationSite">
+              <bundle>ca_attribute_georeference</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Map of the forest tree population site</setting>
+              </settings>
             </placement>
           </bundlePlacements>
         </screen>
