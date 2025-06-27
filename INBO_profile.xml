@@ -21,6 +21,7 @@
   <!--https://github.com/inbo/collective-access/issues/211-->
   <!--https://github.com/inbo/collective-access/issues/213-->
   <!--https://github.com/inbo/collective-access/issues/214-->
+  <!--https://github.com/inbo/collective-access/issues/215-->
   <!--https://github.com/inbo/collective-access/issues/224-->
   <!--https://github.com/inbo/collective-access/issues/225-->
   <!--https://github.com/inbo/collective-access/issues/226-->
@@ -12246,6 +12247,7 @@
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">The preferred genotype name</setting>
+                <setting name="description" locale="en_US">Sometimes certain genotypes are to be easily retrived from the specimens. For example a plant genotype (like Solre) or a animal genotype like GW979m to group (or "tag") all samples of wolf August.</setting>
                 <setting name="expand_collapse_no_value">expand</setting>
               </settings>
             </placement>
@@ -12260,22 +12262,16 @@
             <placement code="objectDescription">
               <bundle>ca_attribute_description</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Description (free text)</setting>
+                <setting name="label" locale="en_US">Decription of the genotype</setting>
+                <setting name="description" locale="en_US">Free text to describe the genotype (relevant to do if there is no clear documentation - see next field). For example: the wolf genotype-identifiers like GW979m means = Grey Wolf number 979 male and is appointed using an international list of German, Belgian, Dutch, .. scientists. This list is maintained by X.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
             <placement code="reference">
               <bundle>ca_attribute_reference</bundle>
 			        <settings>
-				        <setting name="add_label" locale="en_US">Add publication URL</setting>
-                <setting name="description" locale="en_US">A relevant URL of a publication that is directly or indirectly linked to the genotype.</setting>
-			        </settings>
-            </placement>
-            <placement code="fileURL">
-              <bundle>ca_attribute_fileURL</bundle>
-			        <settings>
-				        <setting name="add_label" locale="en_US">Add file URL</setting>
-                <setting name="description" locale="en_US">Add URL and describe what the (multimedia) file represents. In the case of a genotype, this could be a scan of documents that are relevant for defining the genotype.</setting>
+				        <setting name="add_label" locale="en_US">Genotype documentation</setting>
+                <setting name="description" locale="en_US">Add the URL of a document (DOI if published) that documents the genotype, if this documentation exists. For the wolf example of the previous field, this would mean that there is a link that explains the procedure of the international unique identifier, for example or a link to a dataset that show the different msat markers that make up this specific genotype.</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
