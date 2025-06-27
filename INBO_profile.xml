@@ -22,6 +22,7 @@
   <!--https://github.com/inbo/collective-access/issues/213-->
   <!--https://github.com/inbo/collective-access/issues/214-->
   <!--https://github.com/inbo/collective-access/issues/215-->
+  <!--https://github.com/inbo/collective-access/issues/221-->
   <!--https://github.com/inbo/collective-access/issues/224-->
   <!--https://github.com/inbo/collective-access/issues/225-->
   <!--https://github.com/inbo/collective-access/issues/226-->
@@ -4420,7 +4421,7 @@
               </label>
             </labels>
           </item>
-          <item idno="Tooth" enabled="1" default="0"><!--Labware-LIMS SAMPLING_POINT "TAND"-->
+          <item idno="tooth" enabled="1" default="0"><!--Labware-LIMS SAMPLING_POINT "TAND"-->
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>tooth</name_singular>
@@ -4505,6 +4506,71 @@
               <label locale="en_US" preferred="1">
                 <name_singular>unspecified</name_singular>
                 <name_plural>unspecified</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
+      <list code="animal_taxon_group" hierarchical="0" system="0" vocabulary="1">
+        <labels>
+          <label locale="en_US">
+            <name>Main taxonomic grouping of animals</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="mammal" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>mammal</name_singular>
+                <name_plural>mammals</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="invertebrate" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>invertebrate</name_singular>
+                <name_plural>invertebrates</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="fish" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>fish</name_singular>
+                <name_plural>fishes</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="reptile" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>reptile</name_singular>
+                <name_plural>reptiles</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="amphibian" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>amphibian</name_singular>
+                <name_plural>amphibians</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="plant" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>plant</name_singular>
+                <name_plural>plant</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="notSelected" enabled="1" default="1">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>not selected</name_singular>
+                <name_plural>not selected</name_plural>
               </label>
             </labels>
           </item>
@@ -5700,6 +5766,30 @@
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="taxonGroup" datatype="List" list="animal_taxon_group">
+        <labels>
+          <label locale="en_US">
+            <name>Taxon group</name>
+		        <description>If selected, this will enable certain types of measurements in the measurement screen. It is the taxon group of the MAIN taxon expected to be present in the specimen.</description>
+          </label>
+        </labels>
+	      <settings>
+          <setting name="fieldWidth">40</setting>
+          <setting name="doesNotTakeLocale">1</setting>
+        </settings>
+	      <typeRestrictions>
+          <restriction code="r_dnaSample">
+            <table>ca_objects</table>
+            <type>dnaSample</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
@@ -10982,6 +11072,14 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
+            <placement code="taxonGroup" typeRestrictions="dnaSample">
+              <bundle>ca_attribute_taxonGroup</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
+              </settings>
+            </placement>
             <placement code="preparationDate" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,livingPlant,forestTreePopulation,cutting,stemdisc" includeSubtypes="1">
               <bundle>ca_attribute_preparationDate</bundle>
 			        <settings>
@@ -11078,11 +11176,16 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
-			      <placement code="sexAnimal" typeRestrictions="animalObject" includeSubtypes="1">
+			      <placement code="sexAnimal" typeRestrictions="animalObject,dnaSample" includeSubtypes="1">
               <bundle>ca_attribute_sexAnimal</bundle>
 			        <settings>
                 <setting name="description" locale="en_US">If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="hideIfSelected_bud">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_leaf">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_cambium">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
               </settings>
 			      </placement>
             <placement code="deaccession">
@@ -11272,6 +11375,14 @@
               <bundle>ca_attribute_matrixType</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="taxonGroup" typeRestrictions="dnaSample">
+              <bundle>ca_attribute_taxonGroup</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
               </settings>
             </placement>
 			      <placement code="samplingProtocol" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
@@ -11897,7 +12008,7 @@
 			      <placement code="decompositionCategory" typeRestrictions="animalObject" includeSubtypes="1">
               <bundle>ca_attribute_decompositionCategory</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Decomposition category of the animal(s) at the time of sampling</setting>
+                <setting name="label" locale="en_US">Decomposition category of the animal(s) at the time of sampling.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 		            <setting name="description" locale="en_US">DCC1: extremely fresh (e.g. animal was still alive at collection, or the animal was euthanized and collection occurred immediately after). DCC2: fresh (i.e. animal that has only recently died, no signs of decomposition). DCC3: moderate decomposition (for example: mammal its belly is swollen, hair detaches, fly eggs, ..). DCC4: advanced decomposition (for example: mammal its belly is swollen, hair detaches, maggots, ...). DCC5: mummified (animal is (partly) decomposed).</setting>
               </settings>
@@ -11907,6 +12018,13 @@
 			        <settings>
                 <setting name="description" locale="en_US">If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="hideIfSelected_bud">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_leaf">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_cambium">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_plant">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_notSelected">object_ui/record/ca_attribute_taxonGroup</setting>
               </settings>
 			      </placement>
 			      <placement code="genotype" typeRestrictions="animalObject,plantObject,dnaSample" includeSubtypes="1">
@@ -11919,52 +12037,98 @@
 				        <setting name="add_label" locale="en_US">Add genotype</setting>
               </settings>
 			      </placement>
-			      <placement code="lifeStage_mammal" typeRestrictions="mammal" includeSubtypes="1">
+			      <placement code="lifeStage_mammal" typeRestrictions="mammal,dnaSample" includeSubtypes="1">
               <bundle>ca_attribute_lifeStageMammal</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="description" locale="en_US">Due to sampling, the life stage of the animal at time object(s) were collected becomes a fixed value.</setting>
+                <setting name="hideIfSelected_plant">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_invertebrate">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_fish">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_reptile">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_amphibian">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_notSelected">object_ui/record/ca_attribute_taxonGroup</setting>
               </settings>
             </placement>
-			      <!--<placement code="lifeStage_invertebrate" typeRestrictions="invertebrate" includeSubtypes="1">
+			      <placement code="lifeStage_invertebrate" typeRestrictions="dnaSample" includeSubtypes="1">
               <bundle>ca_attribute_lifeStageInvertebrate</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="description" locale="en_US">Due to sampling, the life stage of the animal at time object(s) were collected becomes a fixed value.</setting>
+                <setting name="hideIfSelected_plant">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_mammal">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_fish">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_reptile">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_amphibian">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_notSelected">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
               </settings>
             </placement>-->
-			      <placement code="lifeStage_fish" typeRestrictions="fish" includeSubtypes="1">
+			      <placement code="lifeStage_fish" typeRestrictions="fish,dnaSample" includeSubtypes="1">
               <bundle>ca_attribute_lifeStageFish</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="description" locale="en_US">Due to sampling, the life stage of the animal at time object(s) were collected becomes a fixed value.</setting>
+                <setting name="hideIfSelected_plant">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_mammal">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_invertebrate">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_reptile">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_amphibian">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_notSelected">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
               </settings>
             </placement>
-			      <!--<placement code="lifeStage_reptile" typeRestrictions="reptile" includeSubtypes="1">
+			      <placement code="lifeStage_reptile" typeRestrictions="dnaSample" includeSubtypes="1">
               <bundle>ca_attribute_lifeStageReptile</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="description" locale="en_US">Due to sampling, the life stage of the animal at time object(s) were collected becomes a fixed value.</setting>
+                <setting name="hideIfSelected_plant">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_mammal">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_invertebrate">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_fish">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_amphibian">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_notSelected">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
               </settings>
             </placement>-->
-			      <!--<placement code="lifeStage_amphibian" typeRestrictions="amphibian" includeSubtypes="1">
+			      <placement code="lifeStage_amphibian" typeRestrictions="dnaSample" includeSubtypes="1">
               <bundle>ca_attribute_lifeStageAmphibian</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="description" locale="en_US">Due to sampling, the life stage of the animal at time object(s) were collected becomes a fixed value.</setting>
+                <setting name="hideIfSelected_plant">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_mammal">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_invertebrate">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_fish">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_reptile">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_notSelected">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
               </settings>
             </placement>-->
-			      <placement code="lifeStage_plant" typeRestrictions="plantObject" includeSubtypes="1">
+			      <placement code="lifeStage_plant" typeRestrictions="plantObject,dnaSample" includeSubtypes="1">
               <bundle>ca_attribute_lifeStagePlant</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="description" locale="en_US">Due to sampling, the life stage of the plant at time object(s) were collected becomes a fixed value.</setting>
+                <setting name="hideIfSelected_amphibian">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_mammal">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_invertebrate">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_fish">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_reptile">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_notSelected">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
               </settings>
             </placement>
 			      <placement code="sexPlant" typeRestrictions="plantObject,dnaSample" includeSubtypes="1">
@@ -11973,6 +12137,14 @@
                 <setting name="description" locale="en_US">Explanation to list options: https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0. If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="documentation_url">https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0</setting>
+                <setting name="hideIfSelected_amphibian">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_mammal">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_invertebrate">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_fish">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_reptile">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_notSelected">object_ui/record/ca_attribute_taxonGroup</setting>
+                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
               </settings>
 			      </placement>
 			      <placement code="reprCond_mammal" typeRestrictions="mammal" includeSubtypes="1">
