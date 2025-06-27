@@ -23,6 +23,7 @@
   <!--https://github.com/inbo/collective-access/issues/214-->
   <!--https://github.com/inbo/collective-access/issues/215-->
   <!--https://github.com/inbo/collective-access/issues/221-->
+  <!--https://github.com/inbo/collective-access/issues/223-->
   <!--https://github.com/inbo/collective-access/issues/224-->
   <!--https://github.com/inbo/collective-access/issues/225-->
   <!--https://github.com/inbo/collective-access/issues/226-->
@@ -6192,17 +6193,17 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="dnaVolumeContainer" datatype="Container">
+	    <metadataElement code="volumeContainer" datatype="Container">
         <labels>
           <label locale="en_US">
-            <name>DNA volume</name>
+            <name>Volume</name>
           </label>
         </labels>
 			  <settings>
           <setting name="lineBreakAfterNumberOfElements">2</setting>
         </settings>
 	      <elements>
-          <metadataElement code="dnaVolumeDateRange" datatype="DateRange">
+          <metadataElement code="volumeDateRange" datatype="DateRange">
             <labels>
               <label locale="en_US">
                 <name>Date (range) and time (range)</name>
@@ -6221,14 +6222,23 @@
               <setting name="canBeUsedInDisplay">1</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="dnaVolumeValue" datatype="Text">
+          <metadataElement code="volumeAppliesTo" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>measurementAppliesTo</name>
+                <description>Further specification of what exactly was measured. For example: volume.. of water that ran through the water filter, volume.. of lysis buffer that was retained.</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/abcd/terms/appliesTo</documentationUrl>
+          </metadataElement>
+          <metadataElement code="volumeValue" datatype="Text">
             <labels>
               <label locale="en_US">
                 <name>Volume</name>
                 <description>Volume of sample</description>
               </label>
             </labels>
-            <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/volume</documentationUrl>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementValue</documentationUrl>
             <settings>
               <setting name="fieldWidth">70</setting>
               <setting name="fieldHeight">1</setting>
@@ -6236,16 +6246,16 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="dnaVolumeUnit" datatype="List" list="dna_volume_unit">
+          <metadataElement code="volumeUnit" datatype="List" list="volume_unit">
             <labels>
             <label locale="en_US">
-              <name>Unit of Volume</name>
-              <description>Unit used for volume measurement.</description>
+              <name>Unit</name>
+              <description>Unit used for measurement.</description>
             </label>
             </labels>
-            <documentationUrl>http://data.ggbn.org/schemas/ggbn/terms/volumeUnit</documentationUrl>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
           </metadataElement>
-          <metadataElement code="dnaVolumePublishedProcedure" datatype="Url">
+          <metadataElement code="volumePublishedProcedure" datatype="Url">
             <labels>
               <label locale="en_US">
                 <name>Published procedure</name>
@@ -6259,7 +6269,7 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="dnaVolumeProcedure" datatype="Text">
+          <metadataElement code="volumeProcedure" datatype="Text">
             <labels>
               <label locale="en_US">
                 <name>Procedure</name>
@@ -6273,16 +6283,16 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="dnaVolumeAccuracy" datatype="Text">
+          <metadataElement code="volumeAccuracy" datatype="Text">
             <labels>
               <label locale="en_US">
-                <name>Accuracy</name>
+                <name>measurementAccuracy</name>
                 <description>The description of the potential error associated with the measurementValue.</description>
               </label>
             </labels>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementAccuracy</documentationUrl>
           </metadataElement>
-          <metadataElement code="dnaVolumeRemarks" datatype="Text">
+          <metadataElement code="volumeRemarks" datatype="Text">
             <labels>
             <label locale="en_US">
               <name>Remarks</name>
@@ -6293,9 +6303,8 @@
           </metadataElement>
 	      </elements>
         <typeRestrictions>
-          <restriction code="r_dnaSample">
+          <restriction code="r_object">
             <table>ca_objects</table>
-            <type>dnaSample</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -6305,10 +6314,10 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="volumeContainer" datatype="Container">
+	    <metadataElement code="preparationVolumeContainer" datatype="Container">
         <labels>
           <label locale="en_US">
-            <name>Volume</name>
+            <name>Volume relevant to log in the preparation procedure</name>
           </label>
         </labels>
 			  <settings>
@@ -11385,6 +11394,43 @@
                 <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
               </settings>
             </placement>
+            <placement code="preparation_volume" typeRestrictions="dnaSample" includeSubtypes="1">
+              <bundle>ca_attribute_volumeContainer</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Volume measurements logged during preparation</setting>
+                <setting name="description" locale="en_US">For example volume of water on eDNA filter. This can be relevant for quantification analysis on the specimen.</setting>
+				        <setting name="add_label" locale="en_US">Add volume measurement</setting>
+                <setting name="list_format">list</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="hideIfSelected_bud">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_leaf">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_cambium">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_blood">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_embryo">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_feces">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_ear">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_leg">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_toe">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_tongue">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_muscle">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_urine">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_swabBlood">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_swabBite">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_swabFeces">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_swabCloaca">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_swabSkin">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_swabMouth">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_swab">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_wingclip">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_tail">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_larva">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_liver">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_hair">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_fin">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_tooth">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_unspecified">object_ui/record/ca_attribute_matrixType</setting>
+              </settings>
+            </placement>
 			      <placement code="samplingProtocol" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_attribute_samplingProtocol</bundle>
               <settings>
@@ -11950,23 +11996,50 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="dna_volume" typeRestrictions="dnaSample">
-              <bundle>ca_attribute_dnaVolumeContainer</bundle>
+            <placement code="object_volume" typeRestrictions="sampleFishMuscle,sampleFishLiver,sampleMammal,dnaSample" includeSubtypes="1">
+              <bundle>ca_attribute_volumeContainer</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">DNA sample volume measurement</setting>
+                <setting name="label" locale="en_US">Volume measurement of the object</setting>
 				        <setting name="add_label" locale="en_US">Add volume measurement</setting>
-                <setting name="description" locale="en_US">This can be an exact measurement of volume, or derived measurement volume. This allows to track the volume through time. Example of the latter: we started with 100 µL and we took out 20 µL - hence the new "measured" volume is 80 µL.</setting>
                 <setting name="list_format">list</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="object_volume" typeRestrictions="sampleFishMuscle,sampleFishLiver,sampleMammal" includeSubtypes="1">
+            <placement code="preparation_volume" typeRestrictions="dnaSample" includeSubtypes="1">
               <bundle>ca_attribute_volumeContainer</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Volume measurement</setting>
+                <setting name="label" locale="en_US">Volume measurements logged during preparation</setting>
+                <setting name="description" locale="en_US">For example volume of water on eDNA filter. This can be relevant for quantification analysis on the specimen.</setting>
 				        <setting name="add_label" locale="en_US">Add volume measurement</setting>
                 <setting name="list_format">list</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="hideIfSelected_bud">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_leaf">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_cambium">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_blood">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_embryo">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_feces">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_ear">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_leg">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_toe">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_tongue">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_muscle">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_urine">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_swabBlood">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_swabBite">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_swabFeces">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_swabCloaca">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_swabSkin">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_swabMouth">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_swab">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_wingclip">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_tail">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_larva">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_liver">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_hair">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_fin">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_tooth">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_unspecified">object_ui/record/ca_attribute_matrixType</setting>
               </settings>
             </placement>
             <placement code="object_weight" typeRestrictions="seedlot,soilObject,dnaSample,leafSampleAnalytic">
