@@ -16,6 +16,7 @@
   <!--https://github.com/inbo/collective-access/issues/204-->
   <!--https://github.com/inbo/collective-access/issues/205-->
   <!--https://github.com/inbo/collective-access/issues/206-->
+  <!--https://github.com/inbo/collective-access/issues/207-->
   <!--https://github.com/inbo/collective-access/issues/211-->
   <!--https://github.com/inbo/collective-access/issues/213-->
   <!--https://github.com/inbo/collective-access/issues/214-->
@@ -11755,17 +11756,11 @@
                 <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
 			        </settings>
             </placement>
-			      <placement code="standTaxon">
-              <bundle>ca_attribute_standTaxon</bundle>
-			        <settings>
-                <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
-			        </settings>
-            </placement>
 			      <placement code="GBIF">
               <bundle>ca_attribute_GBIF</bundle>
 			        <settings>
+                <setting name="label" locale="en_US">GBIF taxon lookup</setting>
+                <setting name="description" locale="en_US">This is the taxon as far as can be identified of the MAIN biodiversity the sample represents. For example a tongue tissue sample of a wolf (which can be tested for bacteria): enter Canis lupus. </setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
                 <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
@@ -11803,6 +11798,7 @@
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Previous taxonomic identifications (nonpreferred)</setting>
+                <setting name="description" locale="en_US">Only 1 (the presumed: true) identification (taxonomy) is linked to the specimen in the fields above. It can occur that over time, new information delivers a new taxonomic identification linked to the specimen. For example: a living plant in collection which was thought to be species X, turns out, after genetic screening to be a hybrid of species X and Y. In that case, the old information should be linked here as an 'identification event', after which the new information is added in the fields above. This is expected to happen rarely for the INBO collection as taxonomic uncertainty or changes are not expected to occur often. This will create a log of different taxonomic identificaiton, over time, associated with the specimen. Similar to annotations on a specimen label.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">20</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
