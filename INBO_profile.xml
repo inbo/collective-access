@@ -3,6 +3,7 @@
   <profileName>[INBO-CMS] INBO natural science collection v0.74</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--https://github.com/inbo/collective-access/issues/128-->
+  <!--https://github.com/inbo/collective-access/issues/174-->
   <!--https://github.com/inbo/collective-access/issues/189-->
   <!--https://github.com/inbo/collective-access/issues/194-->
   <!--https://github.com/inbo/collective-access/issues/195-->
@@ -21,6 +22,7 @@
   <!--https://github.com/inbo/collective-access/issues/213-->
   <!--https://github.com/inbo/collective-access/issues/214-->
   <!--https://github.com/inbo/collective-access/issues/224-->
+  <!--https://github.com/inbo/collective-access/issues/225-->
   <!--https://github.com/inbo/collective-access/issues/226-->
   <!--https://github.com/inbo/collective-access/issues/228-->
   <!--https://github.com/inbo/collective-access/issues/230-->
@@ -9023,6 +9025,15 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
+          <restriction code="r_identification">
+            <table>ca_occurrence</table>
+            <type>identificaiton</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
         </typeRestrictions>
       </metadataElement>
 		  <metadataElement code="standTaxon" datatype="Url">
@@ -9092,40 +9103,22 @@
               <setting name="maxChars">65535</setting>
             </settings>
         <typeRestrictions>
-          <restriction code="r_animalObject">
+          <restriction code="r_objects_objects">
             <table>ca_objects</table>
-            <type>animalObject</type>
+            <type>object</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">25</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_plantObject">
-            <table>ca_objects</table>
-            <type>plantObject</type>
-            <includeSubtypes>1</includeSubtypes>
+          <restriction code="r_identification">
+            <table>ca_occurrence</table>
+            <type>identificaiton</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_dnaSample">
-            <table>ca_objects</table>
-            <type>dnaSample</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_ID_objectLots">
-            <table>ca_object_lots</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">100</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -9146,40 +9139,22 @@
               <setting name="maxChars">65535</setting>
             </settings>
         <typeRestrictions>
-          <restriction code="r_animalObject">
+          <restriction code="r_objects_objects">
             <table>ca_objects</table>
-            <type>animalObject</type>
+            <type>object</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">25</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_plantObject">
-            <table>ca_objects</table>
-            <type>plantObject</type>
-            <includeSubtypes>1</includeSubtypes>
+          <restriction code="r_identification">
+            <table>ca_occurrence</table>
+            <type>identificaiton</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_dnaSample">
-            <table>ca_objects</table>
-            <type>dnaSample</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_ID_objectLots">
-            <table>ca_object_lots</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">100</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -9300,27 +9275,9 @@
           <setting name="service">GBIF</setting>
         </settings>
         <typeRestrictions>
-          <restriction>
+          <restriction code="r_objects_objects">
             <table>ca_objects</table>
-            <type>soilObject</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction>
-            <table>ca_objects</table>
-            <type>waterObject</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction>
-            <table>ca_objects</table>
-            <type>animalObject</type>
+            <type>object</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -9328,9 +9285,30 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction>
+          <restriction code="r_identification">
+            <table>ca_occurrence</table>
+            <type>identificaiton</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+		  <metadataElement code="GBIFedna" datatype="InformationService">
+        <labels>
+          <label locale="en_US">
+            <name>GBIF taxonomy lookup</name>
+          </label>
+        </labels>
+        <settings>
+          <setting name="service">GBIF</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_objects_objects">
             <table>ca_objects</table>
-            <type>plantObject</type>
+            <type>object</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -9338,12 +9316,12 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction>
-            <table>ca_objects</table>
-            <type>dnaSample</type>
+          <restriction code="r_identification">
+            <table>ca_occurrence</table>
+            <type>identificaiton</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">25</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -9406,21 +9384,14 @@
               <setting name="maxChars">65535</setting>
             </settings>
 		      </metadataElement>
-	      </elements>
         <typeRestrictions>
-          <restriction code="r_objects">
+          <restriction code="r_objects_objects">
             <table>ca_objects</table>
+            <type>object</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">100</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_object_lots">
-            <table>ca_object_lots</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="maxAttributesPerRow">25</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
@@ -11749,7 +11720,8 @@
 			      <placement code="verbatimTaxon">
               <bundle>ca_attribute_verbatimTaxon</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The verbatim taxonomic identification</setting>
+                <setting name="label" locale="en_US">The verbatim taxonomic identification (main taxon)</setting>
+                <setting name="description" locale="en_US">This is the (non GBIF standardized) taxonomic identification (free text) of the MAIN biodiversity the sample represents. For example a tongue tissue sample of a wolf (which can be tested for bacteria): enter wolf / grey wolf / Wolf / Canis lupus. </setting>
 				        <setting name="add_label" locale="en_US">Add a new taxon</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
@@ -11759,7 +11731,7 @@
 			      <placement code="GBIF">
               <bundle>ca_attribute_GBIF</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">GBIF taxon lookup</setting>
+                <setting name="label" locale="en_US">GBIF taxon lookup (main taxon)</setting>
                 <setting name="description" locale="en_US">This is the taxon as far as can be identified of the MAIN biodiversity the sample represents. For example a tongue tissue sample of a wolf (which can be tested for bacteria): enter Canis lupus. </setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
@@ -11769,14 +11741,7 @@
 			      <placement code="taxonDate">
               <bundle>ca_attribute_taxonDate</bundle>
 			        <settings>
-                <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
-			        </settings>
-            </placement>
-			      <placement code="taxonNote">
-              <bundle>ca_attribute_taxonNote</bundle>
-			        <settings>
+                <setting name="label" locale="en_US">Date of taxonomic identification (main taxon)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
                 <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
@@ -11797,7 +11762,7 @@
             <placement code="ca_occurrences_identification">
               <bundle>ca_occurrences</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Previous taxonomic identifications (nonpreferred)</setting>
+                <setting name="label" locale="en_US">Previous taxonomic identifications of the main taxon (nonpreferred)</setting>
                 <setting name="description" locale="en_US">Only 1 (the presumed: true) identification (taxonomy) is linked to the specimen in the fields above. It can occur that over time, new information delivers a new taxonomic identification linked to the specimen. For example: a living plant in collection which was thought to be species X, turns out, after genetic screening to be a hybrid of species X and Y. In that case, the old information should be linked here as an 'identification event', after which the new information is added in the fields above. This is expected to happen rarely for the INBO collection as taxonomic uncertainty or changes are not expected to occur often. This will create a log of different taxonomic identificaiton, over time, associated with the specimen. Similar to annotations on a specimen label.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">20</setting>
@@ -11811,10 +11776,26 @@
 			      <placement code="taxonReference">
               <bundle>ca_attribute_taxonReference</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Publication on other biodiversity in specimen</setting>
+                <setting name="label" locale="en_US">Publication on other biodiversity in specimen (eDNA)</setting>
                 <setting name="description" locale="en_US">Publication (dataset, article) that outlines the results of biodiversity present in the specimen, other than the main taxon. In water, soil or air samples, this is the only way biodiversity can be recorded. For all other types of specimen, this is "secondary" biodiveristy, other the main taxon. For example: stomach of a bee (main taxon), tested for presence of which plant pollen. For example tissue of a wolf (main taxon) tested for bacteria. This information is relevant to know (what has been tested on this specimen and how) but not relevant for querying the specimen themselves. Preferably this is a(n open) publication in a repository, but also internal result files (e.g. INBO Google drive) can be linked here.</setting>                
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
+            </placement>
+			      <placement code="GBIFedna">
+              <bundle>ca_attribute_GBIFedna</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">GBIF taxon lookup (eDNA)</setting>
+                <setting name="description" locale="en_US">If other than the linked publication, specific taxa are relevant (for example for INBO research, to explicitly link to the specimen, they can be added here.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+			        </settings>
+            </placement>
+			      <placement code="taxonNote">
+              <bundle>ca_attribute_taxonNote</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
+			        </settings>
             </placement>
           </bundlePlacements>
         </screen>
@@ -12315,7 +12296,7 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="idno" typeRestrictions="fieldwork,project,valuation,disposal,treatment,renewal,transfer, identification">
+            <placement code="idno" typeRestrictions="fieldwork,project,valuation,disposal,treatment,renewal,transfer,identification">
               <bundle>idno</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">CMS-ID</setting>
@@ -12408,7 +12389,7 @@
               <bundle>ca_attribute_curationResult</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Result of curation event</setting>
-                <setting name="description" locale="en_US">Here you can specify further on the curation action. For example: disposal because of depletion of DNA/soil, disease (plant), rot (seedlot), ...; treatment: cold treatment -80°C for parasites; renewal: of containers, of labels, of buffer + in the file you can specify the manufacturers information on the new mateiral.; reason why this particular group of samples was transferred.</setting>
+                <setting name="description" locale="en_US">Here you can specify further on the curation action. For example: disposal because of depletion of DNA/soil, disease (plant), rot (seedlot), ...; treatment: cold treatment -80°C for parasites; renewal: of containers, of labels, of buffer + in the file you can specify the manufacturers information on the new material.; reason why this particular group of samples was transferred.</setting>
 			        </settings>
             </placement>
 			      <placement code="verbatimTaxon" typeRestrictions="identification">
@@ -12416,12 +12397,6 @@
 			        <settings>
                 <setting name="label" locale="en_US">The verbatim taxonomic identification</setting>
 				        <setting name="add_label" locale="en_US">Add a new taxon</setting>
-                <setting name="expand_collapse_no_value">expand</setting>
-			        </settings>
-            </placement>
-			      <placement code="standTaxon" typeRestrictions="identification">
-              <bundle>ca_attribute_standTaxon</bundle>
-			        <settings>
                 <setting name="expand_collapse_no_value">expand</setting>
 			        </settings>
             </placement>
@@ -12446,7 +12421,8 @@
             <placement code="ca_entities_identifier" typeRestrictions="identification">
               <bundle>ca_entities</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Identification</setting>
+                <setting name="label" locale="en_US">Identified by</setting>
+                <setting name="description" locale="en_US">Person(s) (individual(s)) that execute the taxonomic identification.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">20</setting>
                 <setting name="expand_collapse_no_value">expand</setting>
