@@ -10,6 +10,7 @@
   <!--https://github.com/inbo/collective-access/issues/198-->
   <!--https://github.com/inbo/collective-access/issues/199-->
   <!--https://github.com/inbo/collective-access/issues/200-->
+  <!--https://github.com/inbo/collective-access/issues/201-->
   <!--https://github.com/inbo/collective-access/issues/211-->
   <!--https://github.com/inbo/collective-access/issues/213-->
   <!--https://github.com/inbo/collective-access/issues/214-->
@@ -907,6 +908,9 @@
                 <name_plural>Individuals</name_plural>
               </label>
             </labels>
+            <settings>
+              <setting name="entity_class">IND</setting>
+            </settings>
           </item>
           <item idno="org" enabled="1" default="0">
             <labels>
@@ -915,6 +919,10 @@
                 <name_plural>Organizations</name_plural>
               </label>
             </labels>
+          <settings>
+            <setting name="entity_class">ORG</setting>
+            <setting name="render_in_new_menu">1</setting>
+          </settings>
           </item>
         </items>
       </list>
@@ -12561,16 +12569,30 @@
                 <setting name="label" locale="en_US">Cataloguing status</setting>
               </settings>
             </placement>
-            <placement code="preferred_labels">
+            <placement code="preferred_labels" typeRestrictions="ind">
               <bundle>preferred_labels</bundle>
               <settings>
-                <setting name="label" locale="en_US">Entity name (preferred)</setting>
+                <setting name="label" locale="en_US">Individual name (preferred)</setting>
               </settings>
             </placement>
-            <placement code="nonpreferred_labels">
+            <placement code="preferred_labels" typeRestrictions="org">
+              <bundle>preferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Organisation name (preferred)</setting>
+              </settings>
+            </placement>
+            <placement code="nonpreferred_labels" typeRestrictions="ind">
               <bundle>nonpreferred_labels</bundle>
               <settings>
-                <setting name="label" locale="en_US">Entity name (other names, nonpreferred)</setting>
+                <setting name="label" locale="en_US">Individual name (other names, nonpreferred)</setting>
+				        <setting name="add_label" locale="en_US">Add other non-preferred identifier</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="nonpreferred_labels" typeRestrictions="org">
+              <bundle>nonpreferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Organisation name (other names, nonpreferred)</setting>
 				        <setting name="add_label" locale="en_US">Add other non-preferred identifier</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
