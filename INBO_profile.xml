@@ -14,6 +14,8 @@
   <!--https://github.com/inbo/collective-access/issues/202-->
   <!--https://github.com/inbo/collective-access/issues/203-->
   <!--https://github.com/inbo/collective-access/issues/204-->
+  <!--https://github.com/inbo/collective-access/issues/205-->
+  <!--https://github.com/inbo/collective-access/issues/206-->
   <!--https://github.com/inbo/collective-access/issues/211-->
   <!--https://github.com/inbo/collective-access/issues/213-->
   <!--https://github.com/inbo/collective-access/issues/214-->
@@ -21,6 +23,7 @@
   <!--https://github.com/inbo/collective-access/issues/226-->
   <!--https://github.com/inbo/collective-access/issues/228-->
   <!--https://github.com/inbo/collective-access/issues/230-->
+  <!--https://github.com/inbo/collective-access/issues/231-->
   <!--https://github.com/inbo/collective-access/issues/235-->
   <!--https://github.com/inbo/collective-access/issues/237-->
   <!--https://github.com/inbo/collective-access/issues/240-->
@@ -9376,8 +9379,8 @@
 		      <metadataElement code="taxonURI" datatype="Url">
             <labels>
               <label locale="en_US">
-                <name>Taxon URI</name>
-                <description>A preferably resolvable URI to uniquely identify a concept. For example a DOI-url.</description>
+                <name>eDNA URI</name>
+                <description>A preferably resolvable URL. For example a DOI-url.</description>
               </label>
             </labels>
             <documentationUrl>http://rs.tdwg.org/abcd/terms/resourceURI</documentationUrl>
@@ -9391,8 +9394,8 @@
 		      <metadataElement code="taxonURIDetails" datatype="Text">
             <labels>
               <label locale="en_US">
-                <name>Taxon URI Details</name>
-                <description>Relevant information about the reference - why is it listed? - what does it say about the specimen/collection?</description>
+                <name>eDNA URI Details</name>
+                <description>Relevant information about the reference (so you don't have to open the URL to see what is listed)</description>
               </label>
             </labels>
             <settings>
@@ -11736,13 +11739,13 @@
 		    <screen idno="taxonomy" default="0">
           <labels>
             <label locale="en_US">
-              <name>taxon</name>
+              <name>taxonomy</name>
             </label>
           </labels>
           <typeRestrictions>
           </typeRestrictions>
           <bundlePlacements>
-			      <placement code="verbatimTaxon"><!--This should prepopulate with the parent value, if empty-->
+			      <placement code="verbatimTaxon">
               <bundle>ca_attribute_verbatimTaxon</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The verbatim taxonomic identification</setting>
@@ -11752,7 +11755,7 @@
                 <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
 			        </settings>
             </placement>
-			      <placement code="standTaxon"><!--This should prepopulate with the parent value, if empty-->
+			      <placement code="standTaxon">
               <bundle>ca_attribute_standTaxon</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -11760,7 +11763,7 @@
                 <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
 			        </settings>
             </placement>
-			      <placement code="GBIF"><!--This should prepopulate with the parent value, if empty-->
+			      <placement code="GBIF">
               <bundle>ca_attribute_GBIF</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -11768,7 +11771,7 @@
                 <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
 			        </settings>
             </placement>
-			      <placement code="taxonDate"><!--This should prepopulate with the parent value, if empty-->
+			      <placement code="taxonDate">
               <bundle>ca_attribute_taxonDate</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -11776,7 +11779,7 @@
                 <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
 			        </settings>
             </placement>
-			      <placement code="taxonNote"><!--This should prepopulate with the parent value, if empty-->
+			      <placement code="taxonNote">
               <bundle>ca_attribute_taxonNote</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
