@@ -2,9 +2,6 @@
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
   <profileName>[INBO-CMS] INBO natural science collection v0.75</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
-  <!--https://github.com/inbo/collective-access/issues/175-->
-  <!--https://github.com/inbo/collective-access/issues/179-->
-  <!--https://github.com/inbo/collective-access/issues/181-->
   <!--https://github.com/inbo/collective-access/issues/182-->
   <!--https://github.com/inbo/collective-access/issues/183-->
   <!--https://github.com/inbo/collective-access/issues/189-->
@@ -54,9 +51,11 @@
   <!--https://github.com/inbo/collective-access/issues/245-->
   <!--https://github.com/inbo/collective-access/issues/246-->
   <!--https://github.com/inbo/collective-access/issues/248-->
-  
+
   <!--https://github.com/inbo/collective-access/issues/251-->
   <!--https://github.com/inbo/collective-access/issues/252-->
+  <!--https://github.com/inbo/collective-access/issues/253-->
+  <!--https://github.com/inbo/collective-access/issues/254-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -326,8 +325,8 @@
                           <item idno="sampleFishLiver" enabled="1" default="0">
                             <labels>
                               <label locale="en_US" preferred="1">
-                                <name_singular>Fish muscle sample</name_singular>
-                                <name_plural>Fish muscle samples</name_plural>
+                                <name_singular>Fish liver sample</name_singular>
+                                <name_plural>Fish liver samples</name_plural>
                               </label>
                             </labels>
                             <settings>
@@ -4587,7 +4586,7 @@
               </label>
             </labels>
           </item>
-          <item idno="soilSample" enabled="1" default="0">
+          <item idno="soilObject" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>soil sample</name_singular>
@@ -4677,7 +4676,7 @@
           </label>
         </labels>
         <items>
-          <item idno="specimen" enabled="1" default="0">
+          <item idno="voucher specimen" rank="1" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>specimen</name_singular>
@@ -4685,7 +4684,7 @@
               </label>
             </labels>
           </item>
-          <item idno="multimedia" enabled="1" default="0">
+          <item idno="multimedia" rank="2" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>multimedia</name_singular>
@@ -4693,7 +4692,7 @@
               </label>
             </labels>
           </item>
-          <item idno="barcoding" enabled="1" default="0">
+          <item idno="barcoding" rank="3" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>barcoding match</name_singular>
@@ -4701,7 +4700,7 @@
               </label>
             </labels>
           </item>
-          <item idno="noVoucher" enabled="1" default="0">
+          <item idno="noVoucher" rank="4" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>No voucher</name_singular>
@@ -5991,7 +5990,7 @@
         <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
-            <type>soilSample</type>
+            <type>soilObject</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -9628,7 +9627,7 @@
           </label>
         </labels>
         <settings>
-          <setting name="render">checklist</setting>
+          <setting name="render">radio_buttons</setting>
           <setting name="fieldWidth">70</setting>
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
@@ -12381,7 +12380,7 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="inbodemdb" typeRestrictions="soilSample" includeSubtypes="1">
+            <placement code="inbodemdb" typeRestrictions="soilObject" includeSubtypes="1">
               <bundle>ca_attribute_inbodem</bundle>
             </placement>
             <placement code="VISdb" typeRestrictions="fish" includeSubtypes="1">
