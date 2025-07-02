@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.74</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.75</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
-  <!--https://github.com/inbo/collective-access/issues/128-->
   <!--https://github.com/inbo/collective-access/issues/174-->
   <!--https://github.com/inbo/collective-access/issues/175-->
   <!--https://github.com/inbo/collective-access/issues/179-->
@@ -13006,6 +13005,13 @@
                 <setting name="label" locale="en_US">CMS-ID</setting>
               </settings>
             </placement>
+			      <placement code="preferred_labels_identification" typeRestrictions="identification">
+              <bundle>preferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Identification event ID</setting>
+                <setting name="description" locale="en_US">Suggested format: year-initials-taxon. For example 2025-EV-wasbeer</setting>
+              </settings>
+            </placement>
 			      <placement code="preferred_labels_fieldwork" typeRestrictions="fieldwork">
               <bundle>preferred_labels</bundle>
               <settings>
@@ -13104,12 +13110,6 @@
 			        <settings>
                 <setting name="label" locale="en_US">The verbatim taxonomic identification</setting>
 				        <setting name="add_label" locale="en_US">Add a new taxon</setting>
-                <setting name="expand_collapse_no_value">expand</setting>
-			        </settings>
-            </placement>
-			      <placement code="GBIF" typeRestrictions="identification">
-              <bundle>ca_attribute_GBIF</bundle>
-			        <settings>
                 <setting name="expand_collapse_no_value">expand</setting>
 			        </settings>
             </placement>
