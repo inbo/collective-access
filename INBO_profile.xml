@@ -5,6 +5,10 @@
   <!--https://github.com/inbo/collective-access/issues/128-->
   <!--https://github.com/inbo/collective-access/issues/174-->
   <!--https://github.com/inbo/collective-access/issues/175-->
+  <!--https://github.com/inbo/collective-access/issues/179-->
+  <!--https://github.com/inbo/collective-access/issues/181-->
+  <!--https://github.com/inbo/collective-access/issues/182-->
+  <!--https://github.com/inbo/collective-access/issues/183-->
   <!--https://github.com/inbo/collective-access/issues/189-->
   <!--https://github.com/inbo/collective-access/issues/194-->
   <!--https://github.com/inbo/collective-access/issues/195-->
@@ -4653,6 +4657,47 @@
               <label locale="en_US" preferred="1">
                 <name_singular>not selected</name_singular>
                 <name_plural>not selected</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
+      <list code="voucher" hierarchical="0" system="0" vocabulary="1">
+        <labels>
+          <label locale="en_US">
+            <name>Voucher options</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="specimen" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>specimen</name_singular>
+                <name_plural>specimens</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="multimedia" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>multimedia</name_singular>
+                <name_plural>multimedia</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="barcoding" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>barcoding match</name_singular>
+                <name_plural>barcoding matches</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="noVoucher" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>No voucher</name_singular>
+                <name_plural>No vouchers</name_plural>
               </label>
             </labels>
           </item>
@@ -9582,6 +9627,31 @@
           </restriction>
         </typeRestrictions>
 		  </metadataElement>
+	    <metadataElement code="voucher" datatype="List" list="voucher">
+        <labels>
+          <label locale="en_US">
+            <name>Voucher</name>
+            <description>Information on the voucher - proving correct identification of the main taxon associated with the specimen. It is expected that the proof is linked in the correct categories. If another linked specimen is proof of correct identification, link the specimen in "Relations". If multimedia or barcoding delivers proof of correct identification, link in Files/Refs/Photos/Dbs.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="render">checklist</setting>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+            <restriction code="r_object">
+              <table>ca_objects</table>
+              <settings>
+                <setting name="minAttributesPerRow">0</setting>
+                <setting name="maxAttributesPerRow">50</setting>
+                <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              </settings>
+            </restriction>
+        </typeRestrictions>
+      </metadataElement>
 		  <metadataElement code="IDContainer" datatype="Container">
         <labels>
           <label locale="en_US">
@@ -12272,6 +12342,9 @@
                 <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
               </settings>
 			      </placement>
+			      <placement code="voucher">
+              <bundle>ca_attribute_voucher</bundle>
+            </placement>
             <placement code="ca_occurrences_identification">
               <bundle>ca_occurrences</bundle>
 			        <settings>
@@ -12352,7 +12425,7 @@
             <placement code="dna_spectro" typeRestrictions="dnaSample">
               <bundle>ca_attribute_dnaSpectroContainer</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Spectophotometry measurement on DNA</setting>
+                <setting name="label" locale="en_US">Spectrophotometry measurement on DNA</setting>
                 <setting name="description" locale="en_US">Using spectrophotometry DNA ratio of absorbance (230/260 and 260/280) is measured. This is a measure of quality. Spectrophotometry measurements are commonly executed with a Nanodrop.</setting>
 				        <setting name="add_label" locale="en_US">Add another spectrophotometry measurement</setting>
                 <setting name="list_format">list</setting>
@@ -12457,7 +12530,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="object_count" typeRestrictions="seedlot,stemdisc,mammalTissue,forestTreePopulation" includeSubtypes="1">
+            <placement code="object_count" typeRestrictions="seedlot,stemdisc,mammalTissue,forestTreePopulation,sampleFishMuscle,sampleFishLiver" includeSubtypes="1">
               <bundle>ca_attribute_countContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Count</setting>
@@ -12631,7 +12704,7 @@
 		    <screen idno="reference" default="0">
           <labels>
             <label locale="en_US">
-              <name>Linkage</name>
+              <name>Files/Refs/Photos/Dbs</name>
             </label>
           </labels>
           <bundlePlacements>
@@ -12662,6 +12735,15 @@
             </placement>
             <placement code="INBODatabase">
               <bundle>ca_attribute_INBODatabase</bundle>
+            </placement>
+            <placement code="publishedRecord">
+              <bundle>ca_attribute_publishedRecord</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Published record (URL)</setting>
+                <setting name="description" locale="en_US">The object published on DiSSCo, occurrence data of the sampling point published on GBIF,.. This is a sister-record of the current digital record of the specimen or sampling point.</setting>
+				        <setting name="add_label" locale="en_US">Add published record</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
             </placement>
           </bundlePlacements>
         </screen>
