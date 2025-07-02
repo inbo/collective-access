@@ -1514,7 +1514,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="mammalAutopsyLabID" rank="2" enabled="4" default="0">
+            <item idno="mammalAutopsyLabID" rank="3" enabled="1" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Mammal autopsy lab ID</name_singular>
@@ -1522,7 +1522,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="GenbosFTPID" rank="4" enabled="4" default="0">
+            <item idno="GenbosFTPID" rank="4" enabled="1" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Genbos FTP ID</name_singular>
@@ -1530,7 +1530,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="GenbosPlantID" rank="4" enabled="4" default="0">
+            <item idno="GenbosPlantID" rank="4" enabled="1" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Genbos plant ID</name_singular>
@@ -1538,7 +1538,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="seedlotID" enabled="1" rank="6" default="0">
+            <item idno="seedlotID" enabled="1" rank="5" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Seedlot ID</name_singular>
@@ -1546,7 +1546,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="Twnumber" rank="7" enabled="1" default="0">
+            <item idno="Twnumber" rank="6" enabled="1" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Unknown type of ID</name_singular>
@@ -1554,7 +1554,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="projectID" enabled="1" rank="8" default="0">
+            <item idno="projectID" enabled="1" rank="7" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Project ID</name_singular>
@@ -1562,7 +1562,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="prefix-suffix-ID" enabled="1" rank="9" default="0">
+            <item idno="prefixSuffixID" enabled="1" rank="8" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Prefix-suffix ID</name_singular>
@@ -1570,7 +1570,14 @@
                 </label>
               </labels>
             </item>
-            <item idno="unknownTypeID" rank="10" enabled="1" default="0">
+            <item idno="unknownTypeID" rank="9" enabled="1" default="0">
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>Unknown label type</name_singular>
+                  <name_plural>Unknown label type</name_plural>
+                </label>
+              </labels>
+            </item>
         </items>
       </list>
       <list code="object_lot_label_types" hierarchical="0" system="0" vocabulary="0">
@@ -2043,7 +2050,7 @@
           <item idno="childOf" rank="1" enabled="1" default="0"><!--From the same motherplant, uncontrolled pollination-->
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>child of</name_singular>c
+                <name_singular>child of</name_singular>
                 <name_plural>children of</name_plural>
               </label>
             </labels>
@@ -4998,21 +5005,6 @@
           </label>
         </labels>
 	      <elements>
-		      <metadataElement code="referencePredicate" datatype="reference_predicates">
-            <labels>
-              <label locale="en_US">
-                <name>reference relation (predicate)</name>
-                <description>This is a dropdown to use standardised ways to describe a relationship</description>
-              </label>
-            </labels>
-            <documentationUrl>http://rs.tdwg.org/abcd/terms/resourceURI</documentationUrl>
-            <settings>
-              <setting name="fieldWidth">35</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
 		      <metadataElement code="referenceURI" datatype="Url">
             <labels>
               <label locale="en_US">
@@ -5589,7 +5581,7 @@
           </label>
         </labels>
         <elements>
-          <metadataElement code="seedlotRelationSeeds" datatype="List" list="seedlot_relation_seeds">
+          <metadataElement code="relationSeeds" datatype="List" list="seedlot_relation_seeds">
             <labels>
               <label locale="en_US">
                 <name>Seedlot relation</name>
@@ -5603,7 +5595,7 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="relationSpecification" datatype="Text">
+          <metadataElement code="SeedsSpecification" datatype="Text">
             <labels>
               <label locale="en_US">
                 <name>Relation specification</name>
@@ -5638,7 +5630,7 @@
           </label>
         </labels>
         <elements>
-          <metadataElement code="seedlotRelationSamplingPoint" datatype="List" list="seedlot_relation_samplingPoint">
+          <metadataElement code="relationSamplingPoint" datatype="List" list="seedlot_relation_samplingPoint">
             <labels>
               <label locale="en_US">
                 <name>Seedlot relation</name>
@@ -5652,7 +5644,7 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="relationSpecification" datatype="Text">
+          <metadataElement code="SamplingPointSpecification" datatype="Text">
             <labels>
               <label locale="en_US">
                 <name>Relation specification</name>
@@ -6682,7 +6674,7 @@
           <setting name="lineBreakAfterNumberOfElements">2</setting>
         </settings>
 	      <elements>
-          <metadataElement code="volumeDateRange" datatype="DateRange">
+          <metadataElement code="pvolumeDateRange" datatype="DateRange">
             <labels>
               <label locale="en_US">
                 <name>Date (range) and time (range)</name>
@@ -6701,7 +6693,7 @@
               <setting name="canBeUsedInDisplay">1</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="volumeAppliesTo" datatype="Text">
+          <metadataElement code="pvolumeAppliesTo" datatype="Text">
             <labels>
               <label locale="en_US">
                 <name>measurementAppliesTo</name>
@@ -6710,7 +6702,7 @@
             </labels>
             <documentationUrl>http://rs.tdwg.org/abcd/terms/appliesTo</documentationUrl>
           </metadataElement>
-          <metadataElement code="volumeValue" datatype="Text">
+          <metadataElement code="pvolumeValue" datatype="Text">
             <labels>
               <label locale="en_US">
                 <name>Volume</name>
@@ -6725,7 +6717,7 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="volumeUnit" datatype="List" list="volume_unit">
+          <metadataElement code="pvolumeUnit" datatype="List" list="volume_unit">
             <labels>
             <label locale="en_US">
               <name>Unit</name>
@@ -6734,7 +6726,7 @@
             </labels>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
           </metadataElement>
-          <metadataElement code="volumePublishedProcedure" datatype="Url">
+          <metadataElement code="pvolumePublishedProcedure" datatype="Url">
             <labels>
               <label locale="en_US">
                 <name>Published procedure</name>
@@ -6748,7 +6740,7 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="volumeProcedure" datatype="Text">
+          <metadataElement code="pvolumeProcedure" datatype="Text">
             <labels>
               <label locale="en_US">
                 <name>Procedure</name>
@@ -6762,7 +6754,7 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="volumeAccuracy" datatype="Text">
+          <metadataElement code="pvolumeAccuracy" datatype="Text">
             <labels>
               <label locale="en_US">
                 <name>measurementAccuracy</name>
@@ -6771,7 +6763,7 @@
             </labels>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementAccuracy</documentationUrl>
           </metadataElement>
-          <metadataElement code="volumeRemarks" datatype="Text">
+          <metadataElement code="pvolumeRemarks" datatype="Text">
             <labels>
             <label locale="en_US">
               <name>Remarks</name>
@@ -7623,7 +7615,7 @@
             </settings>
           </restriction>
 			  </typeRestrictions>
-	    </metadataElement>-->
+	    </metadataElement>
 	    <metadataElement code="lifeStageFish" datatype="List" list="life_stage_fish">
 			  <labels>
           <label locale="en_US">
@@ -7704,7 +7696,7 @@
             </settings>
           </restriction>
 			  </typeRestrictions>
-	    </metadataElement>-->
+	    </metadataElement>
 	    <metadataElement code="lifeStagePlant" datatype="List" list="life_stage_plant">
 			  <labels>
           <label locale="en_US">
@@ -9876,6 +9868,7 @@
               <setting name="maxChars">65535</setting>
             </settings>
 		      </metadataElement>
+        </elements>
         <typeRestrictions>
           <restriction code="r_objects_objects">
             <table>ca_objects</table>
@@ -11634,8 +11627,6 @@
               <name>Storage location</name>
             </label>
           </labels>
-          <typeRestrictions>
-          </typeRestrictions>
           <bundlePlacements>
             <placement code="deaccession">
               <bundle>ca_objects_deaccession</bundle>
@@ -11783,8 +11774,6 @@
               <name>Creation specimen</name>
             </label>
           </labels>
-          <typeRestrictions>
-          </typeRestrictions>
           <bundlePlacements>
             <placement code="samplingDate" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_attribute_samplingDate</bundle>
@@ -12297,8 +12286,6 @@
               <name>taxonomy</name>
             </label>
           </labels>
-          <typeRestrictions>
-          </typeRestrictions>
           <bundlePlacements>
 			      <placement code="verbatimTaxon">
               <bundle>ca_attribute_verbatimTaxon</bundle>
@@ -12391,8 +12378,6 @@
               <name>Measurements/Facts</name>
             </label>
           </labels>
-          <typeRestrictions>
-          </typeRestrictions>
           <bundlePlacements>
             <placement code="inbodemdb" typeRestrictions="soilSample" includeSubtypes="1">
               <bundle>ca_attribute_inbodem</bundle>
@@ -12600,7 +12585,7 @@
                 <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
                 <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
               </settings>
-            </placement>-->
+            </placement>
 			      <placement code="lifeStage_fish" typeRestrictions="fish,dnaSample" includeSubtypes="1">
               <bundle>ca_attribute_lifeStageFish</bundle>
 			        <settings>
@@ -12632,7 +12617,7 @@
                 <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
                 <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
               </settings>
-            </placement>-->
+            </placement>
 			      <placement code="lifeStage_amphibian" typeRestrictions="dnaSample" includeSubtypes="1">
               <bundle>ca_attribute_lifeStageAmphibian</bundle>
 			        <settings>
@@ -12648,7 +12633,7 @@
                 <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
                 <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
               </settings>
-            </placement>-->
+            </placement>
 			      <placement code="lifeStage_plant" typeRestrictions="plantObject,dnaSample" includeSubtypes="1">
               <bundle>ca_attribute_lifeStagePlant</bundle>
 			        <settings>
@@ -12753,8 +12738,6 @@
               <name>Curation/Management</name>
             </label>
           </labels>
-          <typeRestrictions>
-          </typeRestrictions>
           <bundlePlacements>
 			      <placement code="status">
               <bundle>status</bundle>
@@ -12869,8 +12852,6 @@
               <name>(Re)use</name>
             </label>
           </labels>
-          <typeRestrictions>
-          </typeRestrictions>
           <bundlePlacements>
             <placement code="dataExport">
               <bundle>ca_attribute_dataExport</bundle>
@@ -12900,7 +12881,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>               
               </settings>
             </placement>
-            <placement code="loans">
+            <placement code="internal_reuse">
               <bundle>ca_loans</bundle>
               <settings>
                 <setting name="label" locale="en_US">Internal reuse</setting>
@@ -12910,7 +12891,7 @@
 				        <setting name="restrict_to_types">internal_reuse</setting>
               </settings>
             </placement>
-            <placement code="loans">
+            <placement code="external_reuse">
               <bundle>ca_loans</bundle>
               <settings>
                 <setting name="label" locale="en_US">External reuse</setting>
@@ -13398,19 +13379,19 @@
                 <setting name="label" locale="en_US">Cataloguing status</setting>
               </settings>
             </placement>
-            <placement code="preferred_labels" typeRestrictions="ind">
+            <placement code="preferred_labels_ind" typeRestrictions="ind">
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Individual name (preferred)</setting>
               </settings>
             </placement>
-            <placement code="preferred_labels" typeRestrictions="org">
+            <placement code="preferred_labels_org" typeRestrictions="org">
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Organisation name (preferred)</setting>
               </settings>
             </placement>
-            <placement code="nonpreferred_labels" typeRestrictions="ind">
+            <placement code="nonpreferred_labels_ind" typeRestrictions="ind">
               <bundle>nonpreferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Individual name (other names, nonpreferred)</setting>
@@ -13418,7 +13399,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="nonpreferred_labels" typeRestrictions="org">
+            <placement code="nonpreferred_labels_org" typeRestrictions="org">
               <bundle>nonpreferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Organisation name (other names, nonpreferred)</setting>
