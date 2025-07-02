@@ -32,9 +32,12 @@
   <!--https://github.com/inbo/collective-access/issues/229-->
   <!--https://github.com/inbo/collective-access/issues/230-->
   <!--https://github.com/inbo/collective-access/issues/231-->
+  <!--https://github.com/inbo/collective-access/issues/234-->
   <!--https://github.com/inbo/collective-access/issues/235-->
   <!--https://github.com/inbo/collective-access/issues/237-->
+  <!--https://github.com/inbo/collective-access/issues/238-->
   <!--https://github.com/inbo/collective-access/issues/240-->
+  <!--https://github.com/inbo/collective-access/issues/241-->
   <!--https://github.com/inbo/collective-access/issues/248-->
   <locales>
     <locale lang="en" country="US">English</locale>
@@ -2781,7 +2784,15 @@
               </label>
             </labels>
           </item>
-          <item idno="lm_other" rank="6" enabled="1" default="0">
+          <item idno="lm_height" rank="6" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>height</name_singular>
+                <name_plural>height</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="lm_other" rank="7" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>other</name_singular>
@@ -4579,6 +4590,63 @@
           </item>
         </items>
       </list>
+      <list code="INBO_dbs" hierarchical="0" system="0" vocabulary="1">
+        <labels>
+          <label locale="en_US">
+            <name>INBO databases</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="V.I.S." enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>V.I.S.</name_singular>
+                <name_plural>V.I.S.</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="polluentendatabank" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>polluentendatabank</name_singular>
+                <name_plural>polluentendatabank</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="inbodem" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>inbodem</name_singular>
+                <name_plural>inbodem</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="carnivorendatabank" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>carnivorendatabank</name_singular>
+                <name_plural>carnivorendatabank</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="genbosdatabank" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>genbosdatabank</name_singular>
+                <name_plural>genbosdatabank</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="groenbosdatabank" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>groenbosdatabank</name_singular>
+                <name_plural>groenbosdatabank</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
   </lists>
   <elementSets>
     <!--General-->
@@ -5800,7 +5868,87 @@
         </typeRestrictions>
       </metadataElement>
     <!--Measurements-->
-		  <metadataElement code="dnaConcContainer" datatype="Container">
+		  <metadataElement code="INBODatabase" datatype="Container">
+        <labels>
+          <label locale="en_US">
+            <name>INBO Database</name>
+            <description>More data (measurements, facts) are available in the given linked INBO database.</description>
+          </label>
+        </labels>
+	      <elements>
+		      <metadataElement code="database" datatype="List" list="INBO_dbs">
+            <labels>
+              <label locale="en_US">
+                <name>INBO database</name>
+                <description>The name of the INBO database</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+		      <metadataElement code="databaseSpecificationDetails" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Database specification</name>
+                <description>Relevant information about this linkage</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+		      </metadataElement>
+	      </elements>
+        <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_occurrences">
+            <table>ca_occurrences</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_entities">
+            <table>ca_entities</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_loans">
+            <table>ca_loans</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>		  
+      <metadataElement code="dnaConcContainer" datatype="Container">
         <labels>
           <label locale="en_US">
             <name>DNA concentration measurement</name>
@@ -6718,6 +6866,15 @@
               <setting name="canBeUsedInSearchForm">1</setting>
               <setting name="canBeUsedInDisplay">1</setting>
             </settings>
+          </metadataElement>
+          <metadataElement code="ageAppliesTo" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>measurementAppliesTo</name>
+                <description>Further specification of what thing its age was exactly was measured. For example: age of the mother tree.</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/abcd/terms/appliesTo</documentationUrl>
           </metadataElement>
           <metadataElement code="ageAccuracy" datatype="Text">
             <labels>
@@ -11968,6 +12125,9 @@
           <typeRestrictions>
           </typeRestrictions>
           <bundlePlacements>
+            <placement code="INBODatabase">
+              <bundle>ca_attribute_INBODatabase</bundle>
+            </placement>
             <placement code="dna_conc" typeRestrictions="dnaSample">
               <bundle>ca_attribute_dnaConcContainer</bundle>
 			        <settings>
@@ -12049,7 +12209,22 @@
 			        <settings>
                 <setting name="label" locale="en_US">Weight measurement</setting>
 				        <setting name="add_label" locale="en_US">Add weight measurement</setting>
-                <setting name="list_format">list</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="object_length" typeRestrictions="seedlot,stemdisc">
+              <bundle>ca_attribute_lengthContainer</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Lenth measurement</setting>
+				        <setting name="add_label" locale="en_US">Add length measurement</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="object_age" typeRestrictions="seedlot">
+              <bundle>ca_attribute_ageContainer</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Age</setting>
+				        <setting name="add_label" locale="en_US">Add age</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
