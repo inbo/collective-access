@@ -1436,43 +1436,33 @@
       <list code="loan_types" hierarchical="0" system="0" vocabulary="0">
         <labels>
           <label locale="en_US">
-            <name>Loan types</name>
+            <name>Usage types</name>
           </label>
         </labels>
         <items>
-          <item idno="internal" enabled="1" default="0">
+          <item idno="internal_reuse" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>Internal loan</name_singular>
-                <name_plural>Internal loan</name_plural>
+                <name_singular>Internal reuse</name_singular>
+                <name_plural>Internal reuse</name_plural>
               </label>
             </labels>
           </item>
-          <item idno="external" enabled="1" default="0">
+          <item idno="outgoing_reuse" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>External loan</name_singular>
-                <name_plural>External loans</name_plural>
+                <name_singular>Outgoing INBO specimen(s)</name_singular>
+                <name_plural>Outgoing INBO specimen(s)</name_plural>
               </label>
             </labels>
-            <items>
-              <item idno="external_in" enabled="1" default="1">
-                <labels>
-                  <label locale="en_US" preferred="1">
-                    <name_singular>Incoming external loan</name_singular>
-                    <name_plural>Incoming external loans</name_plural>
-                  </label>
-                </labels>
-              </item>
-              <item idno="external_out" enabled="1" default="1">
-                <labels>
-                  <label locale="en_US" preferred="1">
-                    <name_singular>Outgoing external loan</name_singular>
-                    <name_plural>Outgoing external loans</name_plural>
-                  </label>
-                </labels>
-              </item>
-            </items>
+          </item>
+          <item idno="incoming_external" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Incoming external specimen(s)</name_singular>
+                <name_plural>Incoming external specimen(s)</name_plural>
+              </label>
+            </labels>
           </item>
         </items>
       </list>
@@ -1739,11 +1729,11 @@
           </label>
         </labels>
         <items>
-          <item idno="loanID" enabled="1" default="0"><!--E.g. 2024-KULEUVEN-BIOTA4C. The convention is to name: year-requester-shortname. For internal reuse or for incoming loans, the requester is INBO. THe short name is ofter the projectname, something to be quickly reminded of the scope of the request.-->
+          <item idno="usageID" enabled="1" default="0"><!--E.g. 2024-KULEUVEN-BIOTA4C. The convention is to name: year-requester-shortname. For internal reuse or for incoming loans, the requester is INBO. THe short name is ofter the projectname, something to be quickly reminded of the scope of the request.-->
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>loan ID</name_singular>
-                <name_plural>loan IDs</name_plural>
+                <name_singular>usage ID</name_singular>
+                <name_plural>usage IDs</name_plural>
               </label>
             </labels>
           </item>
@@ -1934,8 +1924,8 @@
               <item idno="noExternalTransfer" enabled="1" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>No external loans</name_singular>
-                    <name_plural>No external loans</name_plural>
+                    <name_singular>No transfer to externals</name_singular>
+                    <name_plural>No transfers to externals</name_plural>
                   </label>
                 </labels>
               </item>
@@ -3452,31 +3442,31 @@
       <list code="loan_status" hierarchical="0" system="0" vocabulary="1">
         <labels>
           <label locale="en_US">
-            <name>Loan status</name>
+            <name>Request status</name>
           </label>
         </labels>
         <items>
           <item idno="inPreparation" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>Loan in preparation</name_singular>
-                <name_plural>Loan in preparation</name_plural>
+                <name_singular>in preparation</name_singular>
+                <name_plural>in preparation</name_plural>
               </label>
             </labels>
           </item>
           <item idno="outstanding" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>Oustanding loan</name_singular>
-                <name_plural>Oustanding loans</name_plural>
+                <name_singular>oustanding loan</name_singular>
+                <name_plural>oustanding loan</name_plural>
               </label>
             </labels>
           </item>
           <item idno="concluded" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>Concluded loan</name_singular>
-                <name_plural>Concluded loans</name_plural>
+                <name_singular>concluded</name_singular>
+                <name_plural>concluded</name_plural>
               </label>
             </labels>
           </item>
@@ -5047,10 +5037,10 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-		  <metadataElement code="externalRecord" datatype="Url">
+		  <metadataElement code="publishedRecord" datatype="Url">
         <labels>
           <label locale="en_US">
-            <name>External record</name>
+            <name>Published record</name>
             <description>An URL that can be used to uniquely identify the record, published on an external repository or website.</description>
           </label>
         </labels>
@@ -10521,8 +10511,8 @@
 	    <metadataElement code="loanStatus" datatype="List" list="loan_status">
         <labels>
           <label locale="en_US">
-            <name>Loan status</name>
-            <description>Indication if the loan is still open or concluded.</description>
+            <name>Request status</name>
+            <description>Indication if the usage request is still open or concluded.</description>
           </label>
         </labels>
         <settings>
@@ -10546,7 +10536,7 @@
         <labels>
           <label locale="en_US">
             <name>Authorization date</name>
-            <description>The date when the loan was authorized.</description>
+            <description>The date when the usage request was authorized.</description>
           </label>
         </labels>
         <settings>
@@ -10569,8 +10559,8 @@
 		  <metadataElement code="loan_in_date" datatype="DateRange">
         <labels>
           <label locale="en_US">
-            <name>Loan in date</name>
-            <description>The date a loan will enter the institution.</description>
+            <name>Specimen in date</name>
+            <description>The date a specimen(s) will enter the institution.</description>
           </label>
         </labels>
         <settings>
@@ -10594,8 +10584,8 @@
 		  <metadataElement code="loan_out_date" datatype="DateRange">
         <labels>
           <label locale="en_US">
-            <name>Loan out date</name>
-            <description>The date a loan will enter the institution.</description>
+            <name>Specimen out date</name>
+            <description>The date a specimen(s) will exit the institution.</description>
           </label>
         </labels>
         <settings>
@@ -10643,8 +10633,8 @@
 		  <metadataElement code="loan_renewal_date" datatype="DateRange">
         <labels>
           <label locale="en_US">
-            <name>Loan renewal application date</name>
-            <description>The date to apply for a renewal to the loan.</description>
+            <name>Request renewal application date</name>
+            <description>The date to apply for a renewal to the request.</description>
           </label>
         </labels>
         <settings>
@@ -10667,8 +10657,8 @@
 		  <metadataElement code="loan_conditions" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>Loan conditions</name>
-            <description>A statement of the conditions on a loan.</description>
+            <name>Usage conditions</name>
+            <description>A statement of the conditions of usage.</description>
           </label>
         </labels>
         <settings>
@@ -10691,8 +10681,8 @@
 		  <metadataElement code="loan_note" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>Loan note</name>
-            <description>General information about the loan.</description>
+            <name>Request note</name>
+            <description>General information about the request.</description>
           </label>
         </labels>
         <settings>
@@ -10715,8 +10705,8 @@
 		  <metadataElement code="loan_purpose" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>Loan purpose</name>
-            <description>General information about the purpose of loan.</description>
+            <name>Usage purpose</name>
+            <description>General information about the purpose of usage.</description>
           </label>
         </labels>
         <settings>
@@ -11258,12 +11248,12 @@
                 <setting name="documentation_url">https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0</setting>
               </settings>
             </placement>
-            <placement code="externalRecord">
-              <bundle>ca_attribute_externalRecord</bundle>
+            <placement code="publishedRecord">
+              <bundle>ca_attribute_publishedRecord</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">External record (URL)</setting>
+                <setting name="label" locale="en_US">Published record (URL)</setting>
                 <setting name="description" locale="en_US">The object published on DiSSCo, occurrence data of the sampling point published on GBIF,.. This is a sister-record of the current digital record of the specimen or sampling point.</setting>
-				        <setting name="add_label" locale="en_US">Add external record</setting>
+				        <setting name="add_label" locale="en_US">Add published record</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -12667,20 +12657,9 @@
             <placement code="loans">
               <bundle>ca_loans</bundle>
               <settings>
-                <setting name="label" locale="en_US">The object or a subsample of the object is loaned or donated</setting>
-                <setting name="add_label" locale="en_US">Add new donation/loan</setting>
+                <setting name="label" locale="en_US">The object or a subsample of the object is reused</setting>
+                <setting name="add_label" locale="en_US">Add new usage</setting>
                 <setting name="list_format">list</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-            <placement code="project_reuse">
-              <bundle>ca_occurrences</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Projects</setting>
-                <setting name="description" locale="en_US">The object was (partly) (re-)used in the projects.</setting>
-                <setting name="add_label" locale="en_US">Add new project</setting>
-                <setting name="restrict_to_types">Project</setting>
-                <setting name="restrict_to_relationship_types">reuseObjectsProject</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -13190,10 +13169,10 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="externalRecord">
-              <bundle>ca_attribute_externalRecord</bundle>
+			      <placement code="publishedRecord">
+              <bundle>ca_attribute_publishedRecord</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">External record</setting>
+                <setting name="label" locale="en_US">Published record</setting>
                 <setting name="description" locale="en_US">For individuals: ORCID. For organizations: ROR. For both: WikiData.</setting>
 				        <setting name="add_label" locale="en_US">Add URL</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -13267,8 +13246,8 @@
             <placement code="ca_loans">
               <bundle>ca_loans</bundle>
               <settings>
-                <setting name="label" locale="en_US">Loans associated with entity</setting>
-				        <setting name="add_label" locale="en_US">Add loan</setting>
+                <setting name="label" locale="en_US">Usage requests associated with entity</setting>
+				        <setting name="add_label" locale="en_US">Add usage request</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -13322,10 +13301,10 @@
                 <setting name="autoshrink">1</setting>
               </settings>
             </placement>
-			      <placement code="externalRecord">
-              <bundle>ca_attribute_externalRecord</bundle>
+			      <placement code="publishedRecord">
+              <bundle>ca_attribute_publishedRecord</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">External Record</setting>
+                <setting name="label" locale="en_US">Published Record</setting>
                 <setting name="description" locale="en_US">For example: Getty Thesaurus of Geographic Names - see: https://www.getty.edu/research/tools/vocabularies/tgn/.</setting>
                 <setting name="add_label" locale="en_US">Add URL</setting>
               </settings>
@@ -13444,10 +13423,10 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="externalRecord">
-              <bundle>ca_attribute_externalRecord</bundle>
+            <placement code="publishedRecord">
+              <bundle>ca_attribute_publishedRecord</bundle>
               <settings>
-                <setting name="label" locale="en_US">External record</setting>
+                <setting name="label" locale="en_US">Published record</setting>
                 <setting name="add_label" locale="en_US">Add URL</setting>
                 <setting name="description" locale="en_US">For example, the collection on the Global Registry of Scientific Collections. See: https://www.gbif.org/grscicoll.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -13622,7 +13601,7 @@
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Assistant collection manager (synonym: assistant curator)</setting>
-                <setting name="description" locale="en_US">The assistant collection manager is an INBO-scientist that assists the collection manager. This could be assistance in making decisions (on how to manage, what to loan, ..); assistance in representing the collection at meetings or assistance in collection management documentation. This person does not have the end responsibility for the collection.</setting>
+                <setting name="description" locale="en_US">The assistant collection manager is an INBO-scientist that assists the collection manager. This could be assistance in making decisions (on how to manage, what to subsample for a usage request, ..); assistance in representing the collection at meetings or assistance in collection management documentation. This person does not have the end responsibility for the collection.</setting>
                 <setting name="add_label" locale="en_US">Add new assistant collection manager</setting>
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="restrict_to_relationship_types">assistantCurator</setting>
@@ -13657,7 +13636,7 @@
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Collection steward</setting>
-                <setting name="description" locale="en_US">The collection steward is responsible for handling loan administration, reporting on the collections and manageing the joint (quality) documentation of the different collections. He/she also oversees data quality in the INBO-CMS database.</setting>
+                <setting name="description" locale="en_US">The collection steward is responsible for handling usage requests administration, reporting on the collections and manageing the joint (quality) documentation of the different collections. He/she also oversees data quality in the INBO-CMS database.</setting>
                 <setting name="add_label" locale="en_US">Add new collection steward</setting>
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="restrict_to_relationship_types">collectionSteward</setting>
@@ -14003,14 +13982,14 @@
 	  <userInterface code="loan_cataloguers_ui" type="ca_loans">
       <labels>
         <label locale="en_US">
-          <name>Loan editor</name>
+          <name>Utilisation editor</name>
         </label>
       </labels>
       <screens>
         <screen idno="loan_record" default="1">
           <labels>
             <label locale="en_US">
-              <name>Loan record</name>
+              <name>Usage record</name>
             </label>
           </labels>
           <bundlePlacements>
@@ -14023,26 +14002,26 @@
 			      <placement code="preferred_labels">
               <bundle>preferred_labels</bundle>
               <settings>
-                <setting name="label" locale="en_US">Loan title*</setting>
+                <setting name="label" locale="en_US">Usage title*</setting>
               </settings>
             </placement>
 			      <placement code="nonpreferred_labels">
               <bundle>nonpreferred_labels</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Other identifiers for the loan (non-preferred)</setting>
+                <setting name="label" locale="en_US">Other identifiers for the usage (non-preferred)</setting>
 				        <setting name="add_label" locale="en_US">Add other non preferred identifier</setting>
               </settings>
             </placement>
 			      <placement code="loan_type">
               <bundle>loan_type</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Type of loan</setting>
+                <setting name="label" locale="en_US">Type of usage</setting>
               </settings>
             </placement>
 			      <placement code="loanStatus">
               <bundle>ca_attribute_loanStatus</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Loan status</setting>
+                <setting name="label" locale="en_US">Usage status</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -14050,7 +14029,7 @@
         <screen idno="loan_log" default="0">
           <labels>
             <label locale="en_US">
-              <name>Loan log</name>
+              <name>Usage log</name>
             </label>
           </labels>
           <bundlePlacements>
@@ -14068,7 +14047,7 @@
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Requester back-up*</setting>
-                <setting name="description" locale="en_US">Every loan needs a secondary individual that is registered as a back-up contact. All communication occurs with the requestor and the back-up in cc. This is implemented in case the first individual cannot be reached or becomes disassociated with the organization at the time of loan. This second individual is co-responsible for follow up of the loan agreement and also signs the agreement.</setting>
+                <setting name="description" locale="en_US">Every usage request needs a secondary individual that is registered as a back-up contact. All communication occurs with the requestor and the back-up in cc. This is implemented in case the first individual cannot be reached or becomes disassociated with the organization at the time of usage. This second individual is co-responsible for follow up of the loan agreement and also signs the agreement.</setting>
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="restrict_to_relationship_types">backupRequester</setting>
 				        <setting name="minRelationshipsPerRow">1</setting>
@@ -14079,7 +14058,7 @@
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Institute of request*</setting>
-                <setting name="description" locale="en_US">Every loan needs to be linked to an organization. If the requestor of the loan changes its affiliation, the material stays in the organization that is on the loan agreement. No loans to unaffiliated individuals.</setting>
+                <setting name="description" locale="en_US">Every usage needs to be linked to an organization. If the requestor of the usage changes its affiliation, the material stays in the organization that is on the usage agreement. No loans to unaffiliated individuals.</setting>
                 <setting name="restrict_to_types">org</setting>
                 <setting name="restrict_to_relationship_types">requestingInstitute</setting>
 				        <setting name="minRelationshipsPerRow">1</setting>
@@ -14089,13 +14068,13 @@
             <placement code="organisationalUnitName">
               <bundle>ca_attribute_organisationalUnitName</bundle>
 			        <settings>
-                <setting name="description" locale="en_US">For the loan at hand, any extra information to be added on the package label, next to the requester and address; can be specified here; e.g. department, team or research group (at the time of loan).</setting>
+                <setting name="description" locale="en_US">For the usage at hand, any extra information to be added on the package label, next to the requester and address; can be specified here; e.g. department, team or research group (at the time of usage of the specimen(s)).</setting>
               </settings>
             </placement>
             <placement code="address" typeRestrictions="external_out">
               <bundle>ca_attribute_address</bundle>
 			        <settings>
-                <setting name="description" locale="en_US">The full address to which the loan will be, or was, send.</setting>
+                <setting name="description" locale="en_US">The full address to which the specimens will be, or was, send.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -14151,8 +14130,8 @@
             <placement code="reference">
               <bundle>ca_attribute_reference</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">File associated with loan</setting>
-                <setting name="description" locale="en_US">For example: loan agreement, material transfer agreement, prints of mail communication, evidence of mailing the material, ... Note: results (publications, datasets) can be linked here, but should also be linked to the separate specimens that were used in that publication.</setting>
+                <setting name="label" locale="en_US">File associated with usage request</setting>
+                <setting name="description" locale="en_US">For example: usage agreement, material transfer agreement, prints of mail communication, evidence of mailing the material, ... Note: results (publications, datasets) can be linked here, but should also be linked to the separate specimens that were used in that publication.</setting>
 				        <setting name="add_label" locale="en_US">Add file</setting>
 			        </settings>
             </placement>
@@ -14161,14 +14140,14 @@
         <screen idno="loan_content" default="0">
           <labels>
             <label locale="en_US">
-              <name>Loan content</name>
+              <name>Reused specimens</name>
 			      </label>
           </labels>
           <bundlePlacements>
             <placement code="ca_objects">
               <bundle>ca_objects</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Objects of loan</setting>
+                <setting name="label" locale="en_US">Specimens that are reused</setting>
                 <setting name="description" locale="en_US">Either the full object, or in case of destructive sampling, a part of the listed object (e.g. DNA samples, soil samples, living plants, tissues).</setting>
 				        <setting name="add_label" locale="en_US">Add object</setting>
                 <setting name="list_format">list</setting>
@@ -14178,8 +14157,8 @@
             <placement code="fileURL">
               <bundle>ca_attribute_fileURL</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Visual representation of the loan</setting>
-                <setting name="description" locale="en_US">This can be photos or videos, to document condition, volume, ...; either before sending out the loan, or when receiving the loan. This URL leads to a folder, photo, video, ... that is saved in an INBO archive space. This could be on the INBO google folders, the INBO tandemVault or any other published open web URL.</setting>
+                <setting name="label" locale="en_US">Visual representation of the specimen(s) of the reuse</setting>
+                <setting name="description" locale="en_US">This can be photos or videos, to document condition, volume, ...; either before sending out the specimens, or when receiving the specimens. This URL leads to a folder, photo, video, ... that is saved in an INBO archive space. This could be on the INBO google folders, the INBO tandemVault or any other published open web URL.</setting>
 				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
 			        </settings>
             </placement>
@@ -14835,7 +14814,7 @@
           <labels>
             <label locale="en_US">
               <typename>contains</typename>
-              <typename_reverse>is in loan</typename_reverse>
+              <typename_reverse>is reused in</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
@@ -15193,7 +15172,7 @@
           <labels>
             <label locale="en_US">
               <typename>requester</typename>
-              <typename_reverse>requested loan</typename_reverse>
+              <typename_reverse>requested reuse</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>ind</subTypeLeft>
@@ -15203,7 +15182,7 @@
           <labels>
             <label locale="en_US">
               <typename>back-up of requester of</typename>
-              <typename_reverse>requested loan</typename_reverse>
+              <typename_reverse>requested reuse</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>ind</subTypeLeft>
@@ -15213,7 +15192,7 @@
           <labels>
             <label locale="en_US">
               <typename>requesting institute</typename>
-              <typename_reverse>requested loan</typename_reverse>
+              <typename_reverse>requested reuse</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>org</subTypeLeft>
@@ -15374,7 +15353,7 @@
     </role>
     <role code="collectionsteward">
       <name>Collectionstewards</name>
-      <description>Can edit information considering loans: loan table, entity table. View all the rest.</description>
+      <description>Can edit information considering reuse requests: loan table, entity table. View all the rest.</description>
       <actions>
         <action>can_quicksearch</action>
         <action>can_search_ca_objects</action>
