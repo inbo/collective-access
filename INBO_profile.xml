@@ -4,6 +4,7 @@
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--https://github.com/inbo/collective-access/issues/128-->
   <!--https://github.com/inbo/collective-access/issues/174-->
+  <!--https://github.com/inbo/collective-access/issues/175-->
   <!--https://github.com/inbo/collective-access/issues/189-->
   <!--https://github.com/inbo/collective-access/issues/194-->
   <!--https://github.com/inbo/collective-access/issues/195-->
@@ -4657,63 +4658,6 @@
           </item>
         </items>
       </list>
-      <list code="INBO_dbs" hierarchical="0" system="0" vocabulary="1">
-        <labels>
-          <label locale="en_US">
-            <name>INBO databases</name>
-          </label>
-        </labels>
-        <items>
-          <item idno="V.I.S." enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>V.I.S.</name_singular>
-                <name_plural>V.I.S.</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="polluentendatabank" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>polluentendatabank</name_singular>
-                <name_plural>polluentendatabank</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="inbodem" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>inbodem</name_singular>
-                <name_plural>inbodem</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="carnivorendatabank" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>carnivorendatabank</name_singular>
-                <name_plural>carnivorendatabank</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="genbosdatabank" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>genbosdatabank</name_singular>
-                <name_plural>genbosdatabank</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="groenbosdatabank" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>groenbosdatabank</name_singular>
-                <name_plural>groenbosdatabank</name_plural>
-              </label>
-            </labels>
-          </item>
-        </items>
-      </list>
   </lists>
   <elementSets>
     <!--General-->
@@ -5999,54 +5943,18 @@
         </typeRestrictions>
       </metadataElement>
     <!--Measurements-->
-		  <metadataElement code="INBODatabase" datatype="Container">
+		  <metadataElement code="inbodem" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>INBO Database</name>
-            <description>More data (measurements, facts) are available in the given linked INBO database.</description>
+            <name>Inbodem database</name>
+            <description>Soil specimens usually have research information stored in the inbodem database. Here you can leave a relevant note on this relationship.</description>
           </label>
         </labels>
-	      <elements>
-		      <metadataElement code="database" datatype="List" list="INBO_dbs">
-            <labels>
-              <label locale="en_US">
-                <name>INBO database</name>
-                <description>The name of the INBO database</description>
-              </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">35</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
-		      <metadataElement code="databaseSpecificationDetails" datatype="Text">
-            <labels>
-              <label locale="en_US">
-                <name>Database specification</name>
-                <description>Relevant information about this linkage</description>
-              </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">35</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-		      </metadataElement>
-	      </elements>
         <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">100</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_occurrences">
-            <table>ca_occurrences</table>
+            <type>soilSample</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">100</setting>
@@ -6061,16 +5969,28 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_entities">
-            <table>ca_entities</table>
+        </typeRestrictions>
+      </metadataElement>		  
+		  <metadataElement code="groenbos" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Groenbos database</name>
+            <description>Plant analytical specimens usually have research information stored in the Groenbos database. Here you can leave a relevant note on this relationship.</description>
+          </label>
+        </labels>
+        <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>leafSampleAnalytic</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">100</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_loans">
-            <table>ca_loans</table>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">100</setting>
@@ -6079,6 +5999,118 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>		  
+		  <metadataElement code="carnivoren" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Carnivoren database</name>
+            <description>Mammal specimens usually have research information stored in the Carnivoren database. Here you can leave a relevant note on this relationship.</description>
+          </label>
+        </labels>
+        <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>mammal</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>		  
+		  <metadataElement code="VIS" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>V.I.S. database</name>
+            <description>Fish specimens usually have research information stored in the V.I.S. database. Here you can leave a relevant note on this relationship.</description>
+          </label>
+        </labels>
+        <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>fish</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+		  <metadataElement code="polluenten" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Polluenten database</name>
+            <description>Fish specimens usually have research information stored in the Polluenten database. Here you can leave a relevant note on this relationship.</description>
+          </label>
+        </labels>
+        <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>fish</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>		  		  
+		  <metadataElement code="genbos" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Genbos database</name>
+            <description>Living plants usually have research information stored in the Genbos database. Here you can leave a relevant note on this relationship.</description>
+          </label>
+        </labels>
+        <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>livingPlant</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>		  		  
       <metadataElement code="dnaConcContainer" datatype="Container">
         <labels>
           <label locale="en_US">
@@ -9754,7 +9786,7 @@
             </labels>
             <documentationUrl>http://rs.tdwg.org/abcd/terms/resourceURI</documentationUrl>
             <settings>
-              <setting name="fieldWidth">35</setting>
+              <setting name="fieldWidth">50</setting>
               <setting name="fieldHeight">1</setting>
               <setting name="minChars">0</setting>
               <setting name="maxChars">65535</setting>
@@ -12289,8 +12321,23 @@
           <typeRestrictions>
           </typeRestrictions>
           <bundlePlacements>
-            <placement code="INBODatabase">
-              <bundle>ca_attribute_INBODatabase</bundle>
+            <placement code="inbodemdb" typeRestrictions="soilSample" includeSubtypes="1">
+              <bundle>ca_attribute_inbodem</bundle>
+            </placement>
+            <placement code="VISdb" typeRestrictions="fish" includeSubtypes="1">
+              <bundle>ca_attribute_VIS</bundle>
+            </placement>
+            <placement code="polluentendb" typeRestrictions="fish" includeSubtypes="1">
+              <bundle>ca_attribute_polluenten</bundle>
+            </placement>
+            <placement code="groenbosdb" typeRestrictions="leafSampleAnalytic" includeSubtypes="1">
+              <bundle>ca_attribute_groenbos</bundle>
+            </placement>
+            <placement code="genbosdb" typeRestrictions="forestTreePopulation,livingPlant" includeSubtypes="1">
+              <bundle>ca_attribute_genbos</bundle>
+            </placement>
+            <placement code="carnivorendb" typeRestrictions="mammal" includeSubtypes="1">
+              <bundle>ca_attribute_carnivoren</bundle>
             </placement>
             <placement code="dna_conc" typeRestrictions="dnaSample">
               <bundle>ca_attribute_dnaConcContainer</bundle>
