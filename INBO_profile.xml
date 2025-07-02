@@ -27,7 +27,9 @@
   <!--https://github.com/inbo/collective-access/issues/224-->
   <!--https://github.com/inbo/collective-access/issues/225-->
   <!--https://github.com/inbo/collective-access/issues/226-->
+  <!--https://github.com/inbo/collective-access/issues/227-->
   <!--https://github.com/inbo/collective-access/issues/228-->
+  <!--https://github.com/inbo/collective-access/issues/229-->
   <!--https://github.com/inbo/collective-access/issues/230-->
   <!--https://github.com/inbo/collective-access/issues/231-->
   <!--https://github.com/inbo/collective-access/issues/235-->
@@ -10570,7 +10572,7 @@
             </restriction>
           </typeRestrictions>
       </metadataElement>
-    <!--InterstitialDataRelationships-->
+    <!--Relationships-->
 		  <metadataElement code="relationshipExplanation" datatype="Text">
         <labels>
           <label locale="en_US">
@@ -14319,15 +14321,18 @@
         </label>
       </labels>
       <screens>
-        <screen idno="record" default="1">
+        <screen idno="basic" default="1">
           <labels>
             <label locale="en_US">
-              <name>Record</name>
+              <name>Basic info</name>
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="ca_attribute_relationshipExplanation">
+            <placement code="relationshipExplanation">
               <bundle>ca_attribute_relationshipExplanation</bundle>
+              <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
             </placement>
           </bundlePlacements>
         </screen>
@@ -14342,26 +14347,6 @@
             <label locale="en_US">
               <typename>is related to</typename>
               <typename_reverse>is related to</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-        <type code="association" default="0" rank="8">
-          <labels>
-            <label locale="en_US">
-              <typename>is associated with</typename>
-              <typename_reverse>is associated with</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-        <type code="genotypeOf" default="0" rank="8">
-          <labels>
-            <label locale="en_US">
-              <typename>is genotype of</typename>
-              <typename_reverse>is object with genotype</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
