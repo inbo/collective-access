@@ -22,6 +22,7 @@
   <!--https://github.com/inbo/collective-access/issues/213-->
   <!--https://github.com/inbo/collective-access/issues/214-->
   <!--https://github.com/inbo/collective-access/issues/215-->
+  <!--https://github.com/inbo/collective-access/issues/216-->
   <!--https://github.com/inbo/collective-access/issues/221-->
   <!--https://github.com/inbo/collective-access/issues/223-->
   <!--https://github.com/inbo/collective-access/issues/224-->
@@ -38,6 +39,7 @@
   <!--https://github.com/inbo/collective-access/issues/238-->
   <!--https://github.com/inbo/collective-access/issues/240-->
   <!--https://github.com/inbo/collective-access/issues/241-->
+  <!--https://github.com/inbo/collective-access/issues/242-->
   <!--https://github.com/inbo/collective-access/issues/248-->
   <locales>
     <locale lang="en" country="US">English</locale>
@@ -11417,7 +11419,7 @@
         <screen idno="relations" default="0">
           <labels>
             <label locale="en_US">
-              <name>Relations</name>
+              <name>Specimen relations</name>
             </label>
           </labels>
           <bundlePlacements>
@@ -12158,7 +12160,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="object_volume" typeRestrictions="sampleFishMuscle,sampleFishLiver,sampleMammal,dnaSample" includeSubtypes="1">
+            <placement code="object_volume" typeRestrictions="sampleFishMuscle,sampleFishLiver,mammalTissue,dnaSample" includeSubtypes="1">
               <bundle>ca_attribute_volumeContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Volume measurement of the object</setting>
@@ -12246,7 +12248,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="object_count" typeRestrictions="seedlot,stemdisc,sampleMammal,forestTreePopulation" includeSubtypes="1">
+            <placement code="object_count" typeRestrictions="seedlot,stemdisc,mammalTissue,forestTreePopulation" includeSubtypes="1">
               <bundle>ca_attribute_countContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Count</setting>
@@ -12420,7 +12422,7 @@
 		    <screen idno="reference" default="0">
           <labels>
             <label locale="en_US">
-              <name>Files/(Data)Pubs</name>
+              <name>Linkage</name>
             </label>
           </labels>
           <bundlePlacements>
@@ -12440,6 +12442,17 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="description" locale="en_US">A relevant URL of a (data) publication that is directly or indirectly linked to the object/specimen or the sampling point the specimen represents. This could be datasets on GBIF, Zenodo, Genbank - related to the specimen. This could be any type of publications such as A1 pulications, GIS-layers, ..</setting>
 			        </settings>
+            </placement>
+			      <placement code="taxonReference">
+              <bundle>ca_attribute_taxonReference</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Publication on other biodiversity in specimen (eDNA)</setting>
+                <setting name="description" locale="en_US">Publication (dataset, article) that outlines the results of biodiversity present in the specimen, other than the main taxon. In water, soil or air samples, this is the only way biodiversity can be recorded. For all other types of specimen, this is "secondary" biodiveristy, other the main taxon. For example: stomach of a bee (main taxon), tested for presence of which plant pollen. For example tissue of a wolf (main taxon) tested for bacteria. This information is relevant to know (what has been tested on this specimen and how) but not relevant for querying the specimen themselves. Preferably this is a(n open) publication in a repository, but also internal result files (e.g. INBO Google drive) can be linked here.</setting>                
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="INBODatabase">
+              <bundle>ca_attribute_INBODatabase</bundle>
             </placement>
           </bundlePlacements>
         </screen>
