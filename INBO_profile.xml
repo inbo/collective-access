@@ -46,6 +46,7 @@
   <!--https://github.com/inbo/collective-access/issues/240-->
   <!--https://github.com/inbo/collective-access/issues/241-->
   <!--https://github.com/inbo/collective-access/issues/242-->
+  <!--https://github.com/inbo/collective-access/issues/245-->
   <!--https://github.com/inbo/collective-access/issues/248-->
   <locales>
     <locale lang="en" country="US">English</locale>
@@ -1448,7 +1449,7 @@
               </label>
             </labels>
           </item>
-          <item idno="outgoing_reuse" enabled="1" default="0">
+          <item idno="external_reuse" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>Outgoing INBO specimen(s)</name_singular>
@@ -12657,10 +12658,21 @@
             <placement code="loans">
               <bundle>ca_loans</bundle>
               <settings>
-                <setting name="label" locale="en_US">The object or a subsample of the object is reused</setting>
-                <setting name="add_label" locale="en_US">Add new usage</setting>
+                <setting name="label" locale="en_US">Internal reuse</setting>
+                <setting name="add_label" locale="en_US">Add new internal reuse</setting>
                 <setting name="list_format">list</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+				        <setting name="restrict_to_types">internal_reuse</setting>
+              </settings>
+            </placement>
+            <placement code="loans">
+              <bundle>ca_loans</bundle>
+              <settings>
+                <setting name="label" locale="en_US">External reuse</setting>
+                <setting name="add_label" locale="en_US">Add new external reuse</setting>
+                <setting name="list_format">list</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+				        <setting name="restrict_to_types">external_reuse</setting>
               </settings>
             </placement>
           </bundlePlacements>
