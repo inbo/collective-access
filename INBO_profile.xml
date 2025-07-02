@@ -41,6 +41,7 @@
   <!--https://github.com/inbo/collective-access/issues/233-->
   <!--https://github.com/inbo/collective-access/issues/234-->
   <!--https://github.com/inbo/collective-access/issues/235-->
+  <!--https://github.com/inbo/collective-access/issues/236-->
   <!--https://github.com/inbo/collective-access/issues/237-->
   <!--https://github.com/inbo/collective-access/issues/238-->
   <!--https://github.com/inbo/collective-access/issues/240-->
@@ -1976,7 +1977,7 @@
           </item>
         </items>
       </list>
-      <list code="seedlot_relation" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
+      <list code="seedlot_relation_seeds" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
         <labels>
           <label locale="en_US">
             <name>Types of relation that seeds in a seedlot can have.</name>
@@ -2020,6 +2021,63 @@
               <label locale="en_US" preferred="1">
                 <name_singular>Unknown: unspecified or unclear</name_singular>
                 <name_plural>Unknown: unspecified or unclear</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
+      <list code="seedlot_relation_samplingPoint" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
+        <labels>
+          <label locale="en_US">
+            <name>Types of relation that the seedlot can have towards the sampling point (the tree wild relative).</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="childOf" rank="1" enabled="1" default="0"><!--From the same motherplant, uncontrolled pollination-->
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>child of</name_singular>c
+                <name_plural>children of</name_plural>
+              </label>
+            </labels>
+          </item>		
+          <item idno="cloneOf" rank="1" enabled="1" default="0"><!--from the same mother- and fatherplant-->
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>clone of</name_singular>
+                <name_plural>clones of</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="childOfCloneOf" rank="3" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>child of a clone of</name_singular>
+                <name_plural>children of a clone of</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="grandchildOf" rank="4" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>grandchild of</name_singular>
+                <name_plural>grandchildren of</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="grandchildOfCloneOf" rank="5" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>grandchild of clone of</name_singular>
+                <name_plural>grandchildren of clone of</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="relatedTo" rank="5" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>related to (specifics are not known)</name_singular>
+                <name_plural>related to (specifics are not known)</name_plural>
               </label>
             </labels>
           </item>
@@ -5532,15 +5590,64 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	  	<metadataElement code="seedlotRelationContainer" datatype="Container">
+	  	<metadataElement code="seedlotRelationSeeds" datatype="Container">
         <labels>
           <label locale="en_US">
-            <name>Seedlot relation</name>
+            <name>Seedlot relation of seeds</name>
 		        <description>The relation between the individual seeds of the seedlot</description>
           </label>
         </labels>
         <elements>
-          <metadataElement code="seedlotRelation" datatype="List" list="seedlot_relation">
+          <metadataElement code="seedlotRelationSeeds" datatype="List" list="seedlot_relation_seeds">
+            <labels>
+              <label locale="en_US">
+                <name>Seedlot relation</name>
+                <description>The relation between the individual seeds of the seedlot</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="relationSpecification" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Relation specification</name>
+                <description>Specification on the type of relation.</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+		    </elements>
+        <typeRestrictions>
+          <restriction code="r_seedlot">
+            <table>ca_objects</table>
+            <type>seedlot</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	  	<metadataElement code="seedlotRelationSamplingPoint" datatype="Container">
+        <labels>
+          <label locale="en_US">
+            <name>Seedlot relation with sampling point</name>
+		        <description>The of the seedlot to the original sampling point.</description>
+          </label>
+        </labels>
+        <elements>
+          <metadataElement code="seedlotRelationSamplingPoint" datatype="List" list="seedlot_relation_samplingPoint">
             <labels>
               <label locale="en_US">
                 <name>Seedlot relation</name>
@@ -11489,8 +11596,15 @@
                 <setting name="restrict_to_relationship_types">association</setting>
               </settings>
             </placement>
-			      <placement code="seedlot_relationContainer" typeRestrictions="seedlot">
-              <bundle>ca_attribute_seedlotRelationContainer</bundle>
+			      <placement code="seedlot_relation_seeds" typeRestrictions="seedlot">
+              <bundle>ca_attribute_seedlotRelationSeeds</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Relation of the seeds in the seedlot</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+			      <placement code="seedlot_relation_samplingPoint" typeRestrictions="seedlot">
+              <bundle>ca_attribute_seedlotRelationSamplingPoint</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Relation of the seeds in the seedlot</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
