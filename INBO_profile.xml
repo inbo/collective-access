@@ -36,6 +36,7 @@
   <!--https://github.com/inbo/collective-access/issues/229-->
   <!--https://github.com/inbo/collective-access/issues/230-->
   <!--https://github.com/inbo/collective-access/issues/231-->
+  <!--https://github.com/inbo/collective-access/issues/233-->
   <!--https://github.com/inbo/collective-access/issues/234-->
   <!--https://github.com/inbo/collective-access/issues/235-->
   <!--https://github.com/inbo/collective-access/issues/237-->
@@ -9677,137 +9678,137 @@
         </typeRestrictions>
       </metadataElement>
 	  <!--Sampling event-->
-		<metadataElement code="samplingProtocol" datatype="Container">
-        <labels>
-          <label locale="en_US">
-            <name>Sampling procedure</name>
-            <description>The methods, procedures or protocols used during a sampling event.</description>
-          </label>
-        </labels>
-        <documentationUrl>https://dwc.tdwg.org/list/#dwciri_samplingProtocol</documentationUrl>
-			  <settings>
-          <setting name="lineBreakAfterNumberOfElements">1</setting>
-        </settings>
-	      <elements>
-		      <metadataElement code="protocolURI" datatype="Url">
-            <labels>
-              <label locale="en_US">
-                <name>Sampling procedure URI</name>
-                <description>A preferably resolvable URI to uniquely identify the sampling procedure. For example a DOI-url. Alternatives: URL to the INBO protocol website (https://protocols.inbo.be/) or an URL to an (internal) INBO google document.</description>
-              </label>
-            </labels>
-            <documentationUrl>http://rs.tdwg.org/abcd/terms/resourceURI</documentationUrl>
-            <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
-		      <metadataElement code="protocolDetails" datatype="Text">
-            <labels>
-              <label locale="en_US">
-                <name>Sampling procedure details</name>
-                <description>A short description or code that allows validation of the used sampling procedure. If there is a DOI in "Sampling procedure URI" this field can be used to log relevant extra information e.g. deviation of the standard procedure.</description>
-              </label>
-            </labels>
-            <documentationUrl>http://rs.tdwg.org/abcd/terms/referenceDetails</documentationUrl>
-            <settings>
-              <setting name="fieldWidth">85</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-		      </metadataElement>
-	      </elements>
-        <typeRestrictions>
-	        <restriction code="r_object">
-            <table>ca_objects</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-	      </typeRestrictions>
-      </metadataElement>
-		<metadataElement code="preparationProtocol" datatype="Container">
-        <labels>
-          <label locale="en_US">
-            <name>Preparation procedure URI</name>
-            <description>The methods, procedures or protocols used during a preparation event. Preparation? An object can be sampled (collected) from the field. At INBO, in for example the lab, this object can be "prepared" whereby it transfers into another form. For example: a tissue sample is collected in the field on 2025-01-01. It is transferred to a DNA sample on 2025-03-25. Both dates and procedures are relevant to evaluate the quality of the DNA sample for reuse.</description>
-          </label>
-        </labels>
-			  <settings>
-          <setting name="lineBreakAfterNumberOfElements">1</setting>
-        </settings>
-	      <elements>
-		      <metadataElement code="pProtocolURI" datatype="Url">
-            <labels>
-              <label locale="en_US">
-                <name>Preparation procedure DOI</name>
-                <description>A short description or code that allows validation of the used preparation procedure. If there is a DOI in "Preparation procedure URI" this field can be used to log relevant extra information e.g. deviation of the standard procedure.</description>
-              </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
-		      <metadataElement code="pProtocolDetails" datatype="Text">
-            <labels>
-              <label locale="en_US">
-                <name>Preparation protocol details</name>
-                <description>A short description or code that allows validation of the used preparation procedure. If DOI in "preparation DOI" this field can be used to log relevant extra information e.g. deviation of the standard procedure.</description>
-              </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">85</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-		      </metadataElement>
-	      </elements>
-        <typeRestrictions>
-	        <restriction code="r_object">
-            <table>ca_objects</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-	      </typeRestrictions>
-      </metadataElement>
-		<metadataElement code="samplingEffort" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>samplingEffort</name>
-            <description>The amount of effort expended during an Event.</description>
-          </label>
-        </labels>
-        <documentationUrl>http://rs.tdwg.org/dwc/terms/samplingEffort</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-	        <restriction code="r_fieldwork">
-            <table>ca_occurrences</table>
-		        <type>fieldwork</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-	      </typeRestrictions>
-      </metadataElement>
+      <metadataElement code="samplingProtocol" datatype="Container">
+          <labels>
+            <label locale="en_US">
+              <name>Sampling procedure</name>
+              <description>The methods, procedures or protocols used during a sampling event.</description>
+            </label>
+          </labels>
+          <documentationUrl>https://dwc.tdwg.org/list/#dwciri_samplingProtocol</documentationUrl>
+          <settings>
+            <setting name="lineBreakAfterNumberOfElements">1</setting>
+          </settings>
+          <elements>
+            <metadataElement code="protocolURI" datatype="Url">
+              <labels>
+                <label locale="en_US">
+                  <name>Sampling procedure URI</name>
+                  <description>A preferably resolvable URI to uniquely identify the sampling procedure. For example a DOI-url. Alternatives: URL to the INBO protocol website (https://protocols.inbo.be/) or an URL to an (internal) INBO google document.</description>
+                </label>
+              </labels>
+              <documentationUrl>http://rs.tdwg.org/abcd/terms/resourceURI</documentationUrl>
+              <settings>
+                <setting name="fieldWidth">70</setting>
+                <setting name="fieldHeight">1</setting>
+                <setting name="minChars">0</setting>
+                <setting name="maxChars">65535</setting>
+              </settings>
+            </metadataElement>
+            <metadataElement code="protocolDetails" datatype="Text">
+              <labels>
+                <label locale="en_US">
+                  <name>Sampling procedure details</name>
+                  <description>A short description or code that allows validation of the used sampling procedure. If there is a DOI in "Sampling procedure URI" this field can be used to log relevant extra information e.g. deviation of the standard procedure.</description>
+                </label>
+              </labels>
+              <documentationUrl>http://rs.tdwg.org/abcd/terms/referenceDetails</documentationUrl>
+              <settings>
+                <setting name="fieldWidth">85</setting>
+                <setting name="fieldHeight">1</setting>
+                <setting name="minChars">0</setting>
+                <setting name="maxChars">65535</setting>
+              </settings>
+            </metadataElement>
+          </elements>
+          <typeRestrictions>
+            <restriction code="r_object">
+              <table>ca_objects</table>
+              <settings>
+                <setting name="minAttributesPerRow">0</setting>
+                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              </settings>
+            </restriction>
+          </typeRestrictions>
+        </metadataElement>
+      <metadataElement code="preparationProtocol" datatype="Container">
+          <labels>
+            <label locale="en_US">
+              <name>Preparation procedure URI</name>
+              <description>The methods, procedures or protocols used during a preparation event. Preparation? An object can be sampled (collected) from the field. At INBO, in for example the lab, this object can be "prepared" whereby it transfers into another form. For example: a tissue sample is collected in the field on 2025-01-01. It is transferred to a DNA sample on 2025-03-25. Both dates and procedures are relevant to evaluate the quality of the DNA sample for reuse.</description>
+            </label>
+          </labels>
+          <settings>
+            <setting name="lineBreakAfterNumberOfElements">1</setting>
+          </settings>
+          <elements>
+            <metadataElement code="pProtocolURI" datatype="Url">
+              <labels>
+                <label locale="en_US">
+                  <name>Preparation procedure DOI</name>
+                  <description>A short description or code that allows validation of the used preparation procedure. If there is a DOI in "Preparation procedure URI" this field can be used to log relevant extra information e.g. deviation of the standard procedure.</description>
+                </label>
+              </labels>
+              <settings>
+                <setting name="fieldWidth">70</setting>
+                <setting name="fieldHeight">1</setting>
+                <setting name="minChars">0</setting>
+                <setting name="maxChars">65535</setting>
+              </settings>
+            </metadataElement>
+            <metadataElement code="pProtocolDetails" datatype="Text">
+              <labels>
+                <label locale="en_US">
+                  <name>Preparation protocol details</name>
+                  <description>A short description or code that allows validation of the used preparation procedure. If DOI in "preparation DOI" this field can be used to log relevant extra information e.g. deviation of the standard procedure.</description>
+                </label>
+              </labels>
+              <settings>
+                <setting name="fieldWidth">85</setting>
+                <setting name="fieldHeight">1</setting>
+                <setting name="minChars">0</setting>
+                <setting name="maxChars">65535</setting>
+              </settings>
+            </metadataElement>
+          </elements>
+          <typeRestrictions>
+            <restriction code="r_object">
+              <table>ca_objects</table>
+              <settings>
+                <setting name="minAttributesPerRow">0</setting>
+                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              </settings>
+            </restriction>
+          </typeRestrictions>
+        </metadataElement>
+      <metadataElement code="samplingEffort" datatype="Text">
+          <labels>
+            <label locale="en_US">
+              <name>samplingEffort</name>
+              <description>The amount of effort expended during an Event.</description>
+            </label>
+          </labels>
+          <documentationUrl>http://rs.tdwg.org/dwc/terms/samplingEffort</documentationUrl>
+          <settings>
+            <setting name="fieldWidth">70</setting>
+            <setting name="fieldHeight">1</setting>
+            <setting name="minChars">0</setting>
+            <setting name="maxChars">65535</setting>
+          </settings>
+          <typeRestrictions>
+            <restriction code="r_fieldwork">
+              <table>ca_occurrences</table>
+              <type>fieldwork</type>
+              <settings>
+                <setting name="minAttributesPerRow">0</setting>
+                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              </settings>
+            </restriction>
+          </typeRestrictions>
+        </metadataElement>
     <!--Events-->
 	    <metadataElement code="eventDate" datatype="DateRange">
         <labels>
@@ -9837,58 +9838,58 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-		<metadataElement code="eventProcedure" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>Event Procedure</name>
-            <description>Description of the procedure. Could be including relevant URLs.</description>
-          </label>
-        </labels>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-	        <restriction code="r_objects">
-            <table>ca_objects</table>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-	        <restriction code="r_fieldwork">
-            <table>ca_occurrences</table>
-		        <type>fieldwork</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-	        <restriction code="r_valuation">
-            <table>ca_occurrences</table>
-		        <type>valuation</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-	        <restriction code="r_curation">
-            <table>ca_occurrences</table>
-		        <type>curation</type>
-            <includeSubtypes> 1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-	      </typeRestrictions>
+      <metadataElement code="eventProcedure" datatype="Text">
+          <labels>
+            <label locale="en_US">
+              <name>Event Procedure</name>
+              <description>Description of the procedure. Could be including relevant URLs.</description>
+            </label>
+          </labels>
+          <settings>
+            <setting name="fieldWidth">70</setting>
+            <setting name="fieldHeight">1</setting>
+            <setting name="minChars">0</setting>
+            <setting name="maxChars">65535</setting>
+          </settings>
+          <typeRestrictions>
+            <restriction code="r_objects">
+              <table>ca_objects</table>
+              <includeSubtypes>1</includeSubtypes>
+              <settings>
+                <setting name="minAttributesPerRow">0</setting>
+                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              </settings>
+            </restriction>
+            <restriction code="r_fieldwork">
+              <table>ca_occurrences</table>
+              <type>fieldwork</type>
+              <settings>
+                <setting name="minAttributesPerRow">0</setting>
+                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              </settings>
+            </restriction>
+            <restriction code="r_valuation">
+              <table>ca_occurrences</table>
+              <type>valuation</type>
+              <settings>
+                <setting name="minAttributesPerRow">0</setting>
+                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              </settings>
+            </restriction>
+            <restriction code="r_curation">
+              <table>ca_occurrences</table>
+              <type>curation</type>
+              <includeSubtypes> 1</includeSubtypes>
+              <settings>
+                <setting name="minAttributesPerRow">0</setting>
+                <setting name="maxAttributesPerRow">1</setting>
+                <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              </settings>
+            </restriction>
+          </typeRestrictions>
       </metadataElement>
     <!--Valuation-->
 	    <metadataElement code="valuationArgument" datatype="List" list="value_argument">
@@ -9947,6 +9948,32 @@
         <label locale="en_US">
           <name>Curation result</name>
           <description>A further specification of the curation action. For example: type: renewal -> renewal of the container to aluminum pouch.</description>
+        </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_curation">
+            <table>ca_occurrences</table>
+            <type>curation</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+	    </metadataElement>
+	    <metadataElement code="curationURL" datatype="Url">
+        <labels>
+        <label locale="en_US">
+          <name>Curation URL</name>
+          <description>An URL to relevant information, for example which material was used for the renewal or which method was used for the treatment.</description>
         </label>
         </labels>
         <settings>
@@ -12840,6 +12867,9 @@
                 <setting name="label" locale="en_US">Result of curation event</setting>
                 <setting name="description" locale="en_US">Here you can specify further on the curation action. For example: disposal because of depletion of DNA/soil, disease (plant), rot (seedlot), ...; treatment: cold treatment -80°C for parasites; renewal: of containers, of labels, of buffer + in the file you can specify the manufacturers information on the new material.; reason why this particular group of samples was transferred.</setting>
 			        </settings>
+            </placement>
+            <placement code="curationURL" typeRestrictions="treatment,renewal">
+              <bundle>ca_attribute_curationResult</bundle>
             </placement>
 			      <placement code="verbatimTaxon" typeRestrictions="identification">
               <bundle>ca_attribute_verbatimTaxon</bundle>
