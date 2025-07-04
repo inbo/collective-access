@@ -3,14 +3,6 @@
   <profileName>[INBO-CMS] INBO natural science collection v0.75</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in now loaded v0.74-->
-  <!--https://github.com/inbo/collective-access/issues/205-->
-  <!--https://github.com/inbo/collective-access/issues/206-->
-  <!--https://github.com/inbo/collective-access/issues/207-->
-  <!--https://github.com/inbo/collective-access/issues/210-->
-  <!--https://github.com/inbo/collective-access/issues/211-->
-  <!--https://github.com/inbo/collective-access/issues/213-->
-  <!--https://github.com/inbo/collective-access/issues/214-->
-  <!--https://github.com/inbo/collective-access/issues/215-->
   <!--https://github.com/inbo/collective-access/issues/216-->
   <!--https://github.com/inbo/collective-access/issues/217-->
   <!--https://github.com/inbo/collective-access/issues/218-->
@@ -52,6 +44,7 @@
   <!--https://github.com/inbo/collective-access/issues/259-->
   <!--https://github.com/inbo/collective-access/issues/260-->
   <!--https://github.com/inbo/collective-access/issues/261-->
+  <!--https://github.com/inbo/collective-access/issues/263-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -4719,7 +4712,7 @@
               <description>dc:description</description>
             </label>
             </labels>
-            <documentationUrl>http://dublincore.org/documents/dcmi-terms/#terms-description</documentationUrl>
+            <documentationUrl>http://purl.org/dc/terms/description</documentationUrl>
             <settings>
               <setting name="fieldWidth">100</setting>
               <setting name="fieldHeight">10</setting>
@@ -12227,7 +12220,7 @@
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Nonpreferred taxonomic identifications (main taxon)</setting>
-                <setting name="description" locale="en_US">Only 1 (the presumed: true) identification (taxonomy) is linked to the specimen in the fields above. It can occur that over time, new information delivers a new taxonomic identification linked to the specimen. For example: a living plant in collection which was thought to be species X, turns out, after genetic screening to be a hybrid of species X and Y. In that case, the old information should be linked here as an 'identification event', after which the new information is added in the fields above. This is expected to happen rarely for the INBO collection as taxonomic uncertainty or changes are not expected to occur often. This will create a log of different taxonomic identification, over time, associated with the specimen. Similar to annotations on a specimen label.</setting>
+                <setting name="description" locale="en_US">Only 1 (the presumed: true) identification (taxonomy) is linked to the specimen in the fields above. It can occur that over time, new information delivers a new taxonomic identification linked to the specimen. For example: a living plant in collection which was thought to be species X, turns out, after genetic screening to be a hybrid of species X and Y. In that case, the old information should be linked here as an 'identification event', after which the new information is added in the fields above. This is expected to happen rarely for the INBO collection. This will create a log of different taxonomic identification, over time, associated with the specimen. Similar to annotations on a specimen label.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">20</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -12595,6 +12588,24 @@
                 <setting name="description" locale="en_US">Add URL (e.g. to a file on the Google drive) and describe what the (multimedia) file represents. For example: it represents the living animal from which a toe clip was sampled. For example: it represents the toe clip sample in a cryotube. For example: it is a scan of the experimental plot outline. For example: this is the msat genotype data of 2018. For example: this is the sequence data of 2020. Preferably this data is on the INBO archive drive or similar (less chance of broken links).</setting>
 			        </settings>
             </placement>
+            <placement code="inbodemdb" typeRestrictions="soilObject" includeSubtypes="1">
+              <bundle>ca_attribute_inbodem</bundle>
+            </placement>
+            <placement code="VISdb" typeRestrictions="fish" includeSubtypes="1">
+              <bundle>ca_attribute_VIS</bundle>
+            </placement>
+            <placement code="polluentendb" typeRestrictions="fish" includeSubtypes="1">
+              <bundle>ca_attribute_polluenten</bundle>
+            </placement>
+            <placement code="groenbosdb" typeRestrictions="leafSampleAnalytic" includeSubtypes="1">
+              <bundle>ca_attribute_groenbos</bundle>
+            </placement>
+            <placement code="genbosdb" typeRestrictions="forestTreePopulation,livingPlant" includeSubtypes="1">
+              <bundle>ca_attribute_genbos</bundle>
+            </placement>
+            <placement code="carnivorendb" typeRestrictions="mammal" includeSubtypes="1">
+              <bundle>ca_attribute_carnivoren</bundle>
+            </placement>
             <placement code="reference">
               <bundle>ca_attribute_reference</bundle>
 			        <settings>
@@ -12608,17 +12619,14 @@
               <bundle>ca_attribute_taxonReference</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Publication on other biodiversity in specimen (eDNA)</setting>
-                <setting name="description" locale="en_US">Publication (dataset, article) that outlines the results of biodiversity present in the specimen, other than the main taxon. In water, soil or air samples, this is the only way biodiversity can be recorded. For all other types of specimen, this is "secondary" biodiveristy, other the main taxon. For example: stomach of a bee (main taxon), tested for presence of which plant pollen. For example tissue of a wolf (main taxon) tested for bacteria. This information is relevant to know (what has been tested on this specimen and how) but not relevant for querying the specimen themselves. Preferably this is a(n open) publication in a repository, but also internal result files (e.g. INBO Google drive) can be linked here.</setting>                
+                <setting name="description" locale="en_US">Publication (dataset, article) that outlines the results of biodiversity present in the specimen, other than the main taxon. For example: stomach of a bee (main taxon), tested for presence of which plant pollen. For example tissue of a wolf (main taxon) tested for bacteria. This information is relevant to know (what has been tested on this specimen and how) but not relevant for querying the specimen themselves. Preferably this is a(n open) publication in a repository, but also internal result files (e.g. INBO Google drive) can be linked here.</setting>                
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
-            </placement>
-            <placement code="INBODatabase">
-              <bundle>ca_attribute_INBODatabase</bundle>
             </placement>
             <placement code="publishedRecord">
               <bundle>ca_attribute_publishedRecord</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Published record (URL)</setting>
+                <setting name="label" locale="en_US">Published specimen record</setting>
                 <setting name="description" locale="en_US">The object published on DiSSCo, occurrence data of the sampling point published on GBIF,.. This is a sister-record of the current digital record of the specimen or sampling point.</setting>
 				        <setting name="add_label" locale="en_US">Add published record</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
