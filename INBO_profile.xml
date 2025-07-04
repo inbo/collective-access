@@ -3,10 +3,7 @@
   <profileName>[INBO-CMS] INBO natural science collection v0.75</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in now loaded v0.74-->
-  <!--https://github.com/inbo/collective-access/issues/234-->
-  <!--https://github.com/inbo/collective-access/issues/235-->
-  <!--https://github.com/inbo/collective-access/issues/236-->
-  <!--https://github.com/inbo/collective-access/issues/237-->
+    <!--https://github.com/inbo/collective-access/issues/237-->
   <!--https://github.com/inbo/collective-access/issues/238-->
   <!--https://github.com/inbo/collective-access/issues/240-->
   <!--https://github.com/inbo/collective-access/issues/241-->
@@ -20,6 +17,9 @@
   <!--https://github.com/inbo/collective-access/issues/224-->
   <!--https://github.com/inbo/collective-access/issues/230-->
   <!--https://github.com/inbo/collective-access/issues/233-->
+  <!--https://github.com/inbo/collective-access/issues/234-->
+  <!--https://github.com/inbo/collective-access/issues/235-->
+  <!--https://github.com/inbo/collective-access/issues/236-->
   <!--https://github.com/inbo/collective-access/issues/251-->
   <!--https://github.com/inbo/collective-access/issues/252-->
   <!--https://github.com/inbo/collective-access/issues/253-->
@@ -5555,8 +5555,7 @@
           <metadataElement code="relationSeeds" datatype="List" list="seedlot_relation_seeds">
             <labels>
               <label locale="en_US">
-                <name>Seedlot relation</name>
-                <description>The relation between the individual seeds of the seedlot</description>
+                <name>Relation type</name>
               </label>
             </labels>
             <settings>
@@ -5604,8 +5603,7 @@
           <metadataElement code="relationSamplingPoint" datatype="List" list="seedlot_relation_samplingPoint">
             <labels>
               <label locale="en_US">
-                <name>Seedlot relation</name>
-                <description>The relation between the individual seeds of the seedlot</description>
+                <name>Relation type</name>
               </label>
             </labels>
             <settings>
@@ -7132,6 +7130,16 @@
           <restriction code="r_livingPlant">
             <table>ca_objects</table>
             <type>livingPlant</type>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_seedlot">
+            <table>ca_objects</table>
+            <type>seedlot</type>
             <settings>
               <setting name="fieldWidth">70</setting>
               <setting name="fieldHeight">1</setting>
@@ -11449,14 +11457,14 @@
             <placement code="decimalLatitudeY" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_attribute_decimalLatitudeY</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Decimal latitude of sampling point *</setting>
+                <setting name="label" locale="en_US">Decimal latitude of sampling point (Y)*</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
             <placement code="decimalLongitudeX" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_attribute_decimalLongitudeX</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Decimal longitude of sampling point *</setting>
+                <setting name="label" locale="en_US">Decimal longitude of sampling point (X)*</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
@@ -11611,14 +11619,12 @@
 			      <placement code="seedlot_relation_seeds" typeRestrictions="seedlot">
               <bundle>ca_attribute_seedlotRelationSeeds</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Relation of the seeds in the seedlot</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
 			      <placement code="seedlot_relation_samplingPoint" typeRestrictions="seedlot">
               <bundle>ca_attribute_seedlotRelationSamplingPoint</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Relation of the seeds in the seedlot</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -11916,17 +11922,17 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="decimalLatitude">
-              <bundle>ca_attribute_decimalLatitude</bundle>
+            <placement code="decimalLatitudeY">
+              <bundle>ca_attribute_decimalLatitudeY</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Decimal latitude *</setting>
+                <setting name="label" locale="en_US">Decimal latitude of the sampling point (Y)*</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="decimalLongitude">
-              <bundle>ca_attribute_decimalLongitude</bundle>
+            <placement code="decimalLongitudeX">
+              <bundle>ca_attribute_decimalLongitudeX</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Decimal longitude *</setting>
+                <setting name="label" locale="en_US">Decimal longitude of the sampling point (X)*</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
