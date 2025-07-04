@@ -3,16 +3,6 @@
   <profileName>[INBO-CMS] INBO natural science collection v0.75</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in now loaded v0.74-->
-  <!--https://github.com/inbo/collective-access/issues/216-->
-  <!--https://github.com/inbo/collective-access/issues/217-->
-  <!--https://github.com/inbo/collective-access/issues/218-->
-  <!--https://github.com/inbo/collective-access/issues/219-->
-  <!--https://github.com/inbo/collective-access/issues/220-->
-  <!--https://github.com/inbo/collective-access/issues/221-->
-  <!--https://github.com/inbo/collective-access/issues/223-->
-  <!--https://github.com/inbo/collective-access/issues/224-->
-  <!--https://github.com/inbo/collective-access/issues/225-->
-  <!--https://github.com/inbo/collective-access/issues/226-->
   <!--https://github.com/inbo/collective-access/issues/227-->
   <!--https://github.com/inbo/collective-access/issues/228-->
   <!--https://github.com/inbo/collective-access/issues/229-->
@@ -33,6 +23,7 @@
   <!--https://github.com/inbo/collective-access/issues/248-->
   <!--Issues to check if succesful in v0.75-->
   <!--https://github.com/inbo/collective-access/issues/198-->
+  <!--https://github.com/inbo/collective-access/issues/224-->
   <!--https://github.com/inbo/collective-access/issues/251-->
   <!--https://github.com/inbo/collective-access/issues/252-->
   <!--https://github.com/inbo/collective-access/issues/253-->
@@ -45,6 +36,8 @@
   <!--https://github.com/inbo/collective-access/issues/260-->
   <!--https://github.com/inbo/collective-access/issues/261-->
   <!--https://github.com/inbo/collective-access/issues/263-->
+  <!--https://github.com/inbo/collective-access/issues/265-->
+  <!--https://github.com/inbo/collective-access/issues/266-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -4253,7 +4246,7 @@
           </label>
         </labels>
         <items>
-          <item idno="OKpublish" enabled="1" default="0">
+          <item idno="OKpublish" rank="1" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>OK to publish</name_singular>
@@ -4261,7 +4254,7 @@
               </label>
             </labels>
           </item>
-          <item idno="generaliseCoordinates" enabled="1" default="0">
+          <item idno="generaliseCoordinates" rank="2" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>generalise coordinates</name_singular>
@@ -4269,7 +4262,7 @@
               </label>
             </labels>
           </item>
-          <item idno="omitCoordinates" enabled="1" default="0">
+          <item idno="omitCoordinates" rank="3" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>do not publish the coordinates</name_singular>
@@ -4277,7 +4270,7 @@
               </label>
             </labels>
           </item>
-          <item idno="omitVerbatimNotes" enabled="1" default="0">
+          <item idno="omitVerbatimNotes" rank="4" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>do not publish the verbatim notes</name_singular>
@@ -4285,7 +4278,7 @@
               </label>
             </labels>
           </item>
-          <item idno="other" enabled="1" default="0">
+          <item idno="other" rank="5" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>other - please specify in the data export specification field</name_singular>
@@ -4585,7 +4578,7 @@
           </item>
         </items>
       </list>
-      <list code="animal_taxon_group" hierarchical="0" system="0" vocabulary="1">
+      <list code="taxon_group" hierarchical="0" system="0" vocabulary="1">
         <labels>
           <label locale="en_US">
             <name>Main taxonomic grouping of animals</name>
@@ -5936,7 +5929,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="taxonGroup" datatype="List" list="animal_taxon_group">
+	    <metadataElement code="taxonGroup" datatype="List" list="taxon_group">
         <labels>
           <label locale="en_US">
             <name>Taxon group</name>
@@ -9416,8 +9409,8 @@
 		  <metadataElement code="verbatimTaxon" datatype="Text">
             <labels>
             <label locale="en_US">
-              <name>Verbatim taxonomic identification</name>
-              <description>Taxonomic identification of the specimen, to the lowest level possible. This can be species name in any language, genus, family, ... This is the main taxonomic unit you can appoint to the specimen. For soil, water and air samples, this should be blank. For all others, there normally is a notion of the main associated taxon. For example: tissue or a swab of species or genus X. Feces or pawprint of a carnivore.</description>
+              <name>The verbatim taxonomic identification (main taxon)</name>
+              <description>Taxonomic identification of the specimen, to the lowest level possible of the MAIN biodiversity the sample represents. This can be species name in any language, genus, family, ... For soil, water and air samples, this should be blank. For all others, there normally is a notion of the main associated taxon. For example a tongue tissue sample of a wolf (which can be tested for bacteria): enter wolf OR grey wolf OR Wolf OR Canis lupus.</description>
             </label>
             </labels>
 			      <documentationUrl>http://rs.tdwg.org/dwc/terms/verbatimIdentification</documentationUrl>
@@ -12174,8 +12167,6 @@
 			      <placement code="verbatimTaxon">
               <bundle>ca_attribute_verbatimTaxon</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The verbatim taxonomic identification (main taxon)</setting>
-                <setting name="description" locale="en_US">This is the (non GBIF standardized) taxonomic identification (free text) of the MAIN biodiversity the sample represents. For example a tongue tissue sample of a wolf (which can be tested for bacteria): enter wolf / grey wolf / Wolf / Canis lupus. </setting>
 				        <setting name="add_label" locale="en_US">Add a new taxon</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
@@ -12370,7 +12361,7 @@
             <placement code="object_length" typeRestrictions="seedlot,stemdisc">
               <bundle>ca_attribute_lengthContainer</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Lenth measurement</setting>
+                <setting name="label" locale="en_US">Length measurement</setting>
 				        <setting name="add_label" locale="en_US">Add length measurement</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
