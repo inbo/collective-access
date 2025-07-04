@@ -3,10 +3,6 @@
   <profileName>[INBO-CMS] INBO natural science collection v0.75</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in now loaded v0.74-->
-  <!--https://github.com/inbo/collective-access/issues/195-->
-  <!--https://github.com/inbo/collective-access/issues/196-->
-  <!--https://github.com/inbo/collective-access/issues/198-->
-  <!--https://github.com/inbo/collective-access/issues/199-->
   <!--https://github.com/inbo/collective-access/issues/200-->
   <!--https://github.com/inbo/collective-access/issues/201-->
   <!--https://github.com/inbo/collective-access/issues/202-->
@@ -49,6 +45,7 @@
   <!--https://github.com/inbo/collective-access/issues/246-->
   <!--https://github.com/inbo/collective-access/issues/248-->
   <!--Issues to check if succesful in v0.75-->
+  <!--https://github.com/inbo/collective-access/issues/198-->
   <!--https://github.com/inbo/collective-access/issues/251-->
   <!--https://github.com/inbo/collective-access/issues/252-->
   <!--https://github.com/inbo/collective-access/issues/253-->
@@ -56,6 +53,9 @@
   <!--https://github.com/inbo/collective-access/issues/255-->
   <!--https://github.com/inbo/collective-access/issues/256-->
   <!--https://github.com/inbo/collective-access/issues/257-->
+  <!--https://github.com/inbo/collective-access/issues/258-->
+  <!--https://github.com/inbo/collective-access/issues/259-->
+  <!--https://github.com/inbo/collective-access/issues/260-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -1482,14 +1482,6 @@
           </label>
         </labels>
         <items>
-            <item idno="notSet" enabled="0" rank="1" default="1">
-              <labels>
-                <label locale="en_US" preferred="1">
-                  <name_singular>Not set</name_singular>
-                  <name_plural>Not set</name_plural>
-                </label>
-              </labels>
-            </item>
             <item idno="LabwareLIMSID" enabled="1" rank="2" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
@@ -1549,8 +1541,8 @@
             <item idno="Twnumber" rank="6" enabled="1" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>Unknown type of ID</name_singular>
-                  <name_plural>Unknown type of IDs</name_plural>
+                  <name_singular>Tw number</name_singular>
+                  <name_plural>Tw number</name_plural>
                 </label>
               </labels>
             </item>
@@ -10273,103 +10265,6 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="adminObligation" datatype="Container">
-        <labels>
-          <label locale="en_US">
-            <name>Obligations results from the eventAdminFile</name>
-          </label>
-        </labels>
-	      <elements>
-		      <metadataElement code="obligationType" datatype="List" list="obligation_type">
-            <labels>
-            <label locale="en_US">
-              <name>Obligation type</name>
-            </label>
-            </labels>
-            <settings>
-              <setting name="render">checklist</setting>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
-		      <metadataElement code="obligationdeadline" datatype="Text">
-            <labels>
-              <label locale="en_US">
-                <name>obligationdeadline</name>
-                <description>Specify if there is a deadline. Examples: "2026", "2026-12-12", "no deadline", "asap".</description>
-              </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-		      </metadataElement>
-		      <metadataElement code="obligationStatus" datatype="List" list="obligation_status">
-            <labels>
-              <label locale="en_US">
-                <name>Obligation status</name>
-                <description>Status of meeting the given obligation</description>
-              </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
-		      <metadataElement code="statusDate" datatype="DateRange">
-            <labels>
-              <label locale="en_US">
-                <name>statusDate</name>
-                <description>Date at which current status was achieved.</description>
-              </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-		      </metadataElement>
-		      <metadataElement code="obligationDocumentation" datatype="File">
-            <labels>
-              <label locale="en_US">
-                <name>obligationDocumentation</name>
-                <description>File that proves that the obligation was met.</description>
-              </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-		      </metadataElement>
-	      </elements>
-        <typeRestrictions>
-          <restriction code="r_occurrences">
-            <table>ca_occurrences</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">20</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_places">
-            <table>ca_places</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">20</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
     <!--Reuse-->
 	    <metadataElement code="dataExport" datatype="List" list="data_export">
         <labels>
@@ -13052,29 +12947,29 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="externalRecord_project" typeRestrictions="project">
-              <bundle>ca_attribute_externalRecord</bundle>
+            <placement code="publishedRecord_project" typeRestrictions="project">
+              <bundle>ca_attribute_publishedRecord</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">External database containing project</setting>
-                <setting name="description" locale="en_US">For example: the project-URL in JIRA</setting>
+                <setting name="label" locale="en_US">Database containing project</setting>
+                <setting name="description" locale="en_US">The project-URL published on the Pureportal (https://pureportal.inbo.be/nl/projects/)</setting>
 				        <setting name="add_label" locale="en_US">Add URL</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="eventDate" typeRestrictions="fieldwork,project,valuation,disposal,treatment,renewal,transfer,identification">
+			      <placement code="eventDate" typeRestrictions="fieldwork,valuation,disposal,treatment,renewal,transfer,identification">
               <bundle>ca_attribute_eventDate</bundle>
               <settings>
                 <setting name="label" locale="en_US">Date (range) and time (range), standardised.</setting>
               </settings>
             </placement>
-			      <placement code="verbatimLocality" typeRestrictions="fieldwork,project">
+			      <placement code="verbatimLocality" typeRestrictions="fieldwork">
               <bundle>ca_attribute_verbatimLocality</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim locality</setting>
                 <setting name="description" locale="en_US">The original description of a locality, a place, the geographic coverage, ...</setting>
               </settings>
             </placement>
-            <placement code="ca_places_fieldworkProject" typeRestrictions="fieldwork,project">
+            <placement code="ca_places_fieldworkProject" typeRestrictions="fieldwork">
               <bundle>ca_places</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Field campaign/project focal place(s)</setting>
@@ -13338,7 +13233,7 @@
           </typeRestrictions>
           <bundlePlacements>
 			      <placement code="eventAdminFile">
-              <bundle>ca_attribute_file</bundle>
+              <bundle>ca_attribute_fileURL</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">File</setting>
                 <setting name="description" locale="en_US">File associated with field campaign or project that specifies conditions for usage of objects or associated data. For example: a scan of a permit.</setting>				       
@@ -13592,7 +13487,7 @@
           </labels>
           <bundlePlacements>
 			      <placement code="placeAdminFile">
-              <bundle>ca_attribute_file</bundle>
+              <bundle>ca_attribute_fileURL</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">File</setting>
                 <setting name="description" locale="en_US">File associated with place that specifies conditions for executing research or entering a certain place.</setting>				       
