@@ -3,11 +3,6 @@
   <profileName>[INBO-CMS] INBO natural science collection v0.75</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in now loaded v0.74-->
-  <!--https://github.com/inbo/collective-access/issues/200-->
-  <!--https://github.com/inbo/collective-access/issues/201-->
-  <!--https://github.com/inbo/collective-access/issues/202-->
-  <!--https://github.com/inbo/collective-access/issues/203-->
-  <!--https://github.com/inbo/collective-access/issues/204-->
   <!--https://github.com/inbo/collective-access/issues/205-->
   <!--https://github.com/inbo/collective-access/issues/206-->
   <!--https://github.com/inbo/collective-access/issues/207-->
@@ -56,6 +51,7 @@
   <!--https://github.com/inbo/collective-access/issues/258-->
   <!--https://github.com/inbo/collective-access/issues/259-->
   <!--https://github.com/inbo/collective-access/issues/260-->
+  <!--https://github.com/inbo/collective-access/issues/261-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -4993,15 +4989,15 @@
         <labels>
           <label locale="en_US">
             <name>Reference</name>
-            <description>A (DOI of) a publication that refers to the sampling point, specimen or collection. This can be an internal INBO document on the Google drive, a published or unpublished dataset, a link to an INBO database (use the INBO datacatalogue),..</description>
+            <description>A (DOI of a) publication that refers to the sampling point, specimen or collection. This can be an internal INBO document on the Google drive, a published or unpublished dataset, a link to an INBO database (use the INBO datacatalogue),..</description>
           </label>
         </labels>
 	      <elements>
 		      <metadataElement code="referenceURI" datatype="Url">
             <labels>
               <label locale="en_US">
-                <name>referenceURI</name>
-                <description>A preferably resolvable URI to uniquely identify a concept. For example a DOI-url.</description>
+                <name>Publication URI</name>
+                <description>A preferably resolvable URI to uniquely identify the publication. For example a DOI-url.</description>
               </label>
             </labels>
             <documentationUrl>http://rs.tdwg.org/abcd/terms/resourceURI</documentationUrl>
@@ -5015,7 +5011,7 @@
 		      <metadataElement code="referenceDetails" datatype="Text">
             <labels>
               <label locale="en_US">
-                <name>Reference Details</name>
+                <name>Publication Details</name>
                 <description>Relevant information about the reference - why is it listed? - what does it say about the specimen/collection?</description>
               </label>
             </labels>
@@ -12230,7 +12226,7 @@
             <placement code="ca_occurrences_identification">
               <bundle>ca_occurrences</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Previous taxonomic identifications of the main taxon (nonpreferred)</setting>
+                <setting name="label" locale="en_US">Nonpreferred taxonomic identifications (main taxon)</setting>
                 <setting name="description" locale="en_US">Only 1 (the presumed: true) identification (taxonomy) is linked to the specimen in the fields above. It can occur that over time, new information delivers a new taxonomic identification linked to the specimen. For example: a living plant in collection which was thought to be species X, turns out, after genetic screening to be a hybrid of species X and Y. In that case, the old information should be linked here as an 'identification event', after which the new information is added in the fields above. This is expected to happen rarely for the INBO collection as taxonomic uncertainty or changes are not expected to occur often. This will create a log of different taxonomic identification, over time, associated with the specimen. Similar to annotations on a specimen label.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">20</setting>
@@ -12876,8 +12872,15 @@
             <placement code="reference">
               <bundle>ca_attribute_reference</bundle>
 			        <settings>
-				        <setting name="add_label" locale="en_US">Genotype documentation</setting>
-                <setting name="description" locale="en_US">Add the URL of a document (DOI if published) that documents the genotype, if this documentation exists. For the wolf example of the previous field, this would mean that there is a link that explains the procedure of the international unique identifier, for example or a link to a dataset that show the different msat markers that make up this specific genotype.</setting>
+				        <setting name="add_label" locale="en_US">Genotype documentation (published)</setting>
+                <setting name="description" locale="en_US">Add the URL of a publication (DOI if published) that documents the genotype, if this documentation exists. For the wolf example of the previous field, this would mean that there is a link that explains the procedure of the international unique identifier, for example or a link to a dataset that show the different msat markers that make up this specific genotype.</setting>
+			        </settings>
+            </placement>
+            <placement code="fileURL">
+              <bundle>ca_attribute_fileURL</bundle>
+			        <settings>
+				        <setting name="add_label" locale="en_US">Genotype documentation (internal)</setting>
+                <setting name="description" locale="en_US">Add the URL INBO files that documents the genotype, if this documentation exists.</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -13206,9 +13209,9 @@
 			        </settings>
             </placement>
             <placement code="reference" typeRestrictions="disposal,treatment,renewal,transfer">
-              <bundle>ca_attribute_reference</bundle>
+              <bundle>ca_attribute_fileURL</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Relevant curation notes, documents, ...</setting>
+                <setting name="label" locale="en_US">Relevant curation notes, documents, ... (internal)</setting>
 				        <setting name="add_label" locale="en_US">Add file</setting>
 			        </settings>
             </placement>
@@ -13710,7 +13713,7 @@
             <placement code="coll_reference">
               <bundle>ca_attribute_reference</bundle>
 			        <settings>
-				        <setting name="add_label" locale="en_US">Add publication URL</setting>
+				        <setting name="add_label" locale="en_US">Add publication</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -13903,9 +13906,9 @@
 			        </settings>
             </placement>
             <placement code="reference" typeRestrictions="box,drawer,rack,shelf,cabinet,freezer,fridge,room,floor,building">
-              <bundle>ca_attribute_reference</bundle>
+              <bundle>ca_attribute_fileURL</bundle>
 			        <settings>
-                <setting name="description" locale="en_US">This could be a document describing the storage space, giving technical information, ...</setting>
+                <setting name="description" locale="en_US">This could be a document describing the storage space, giving technical information, ... (internal)</setting>
 				        <setting name="add_label" locale="en_US">Add publication URL</setting>
 			        </settings>
             </placement>
@@ -14052,15 +14055,15 @@
             <placement code="objectLot_mulitmediaURL">
               <bundle>ca_attribute_fileURL</bundle>
 			        <settings>
-				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
-                <setting name="description" locale="en_US">An URL that leads to multimedia LINKED TO THE OBJECT LOT (i.e. not the sampling point, nor the objects within the object lot).</setting>
+				        <setting name="add_label" locale="en_US">Add internal URL</setting>
+                <setting name="description" locale="en_US">An URL that leads to relevant internal files, like docs, multimedia LINKED TO THE OBJECT LOT (i.e. not the sampling point, nor the 1 object within the object lot).</setting>
 			        </settings>
             </placement>
             <placement code="objectLot_reference">
               <bundle>ca_attribute_reference</bundle>
 			        <settings>
-				        <setting name="add_label" locale="en_US">Add reference URL</setting>
-                <setting name="description" locale="en_US">A relevant URL that refers to the object/specimen. This can be an internal INBO document on the Google drive, a published or unpublished dataset, a link to an INBO database (use the INBO datacatalogue),..</setting>
+				        <setting name="add_label" locale="en_US">Add publication</setting>
+                <setting name="description" locale="en_US">A relevant publication that refers to the object/specimen THE OBJECT LOT (i.e. not the sampling point, nor the objects within the object lot). This can be an internal INBO document on the Google drive, an unpublished dataset, a link to an INBO database (use the INBO datacatalogue),..</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -14264,12 +14267,20 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
+            <placement code="fileURL">
+              <bundle>ca_attribute_fileURL</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Internal files associated with usage request</setting>
+                <setting name="description" locale="en_US">For example: usage agreement, material transfer agreement, prints of mail communication, evidence of mailing the material, ... Note: published information (articles, reports) should NOT be linked to the loan only, also to each separate specimen.</setting>
+				        <setting name="add_label" locale="en_US">Add file</setting>
+			        </settings>
+            </placement>
             <placement code="reference">
               <bundle>ca_attribute_reference</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">File associated with usage request</setting>
-                <setting name="description" locale="en_US">For example: usage agreement, material transfer agreement, prints of mail communication, evidence of mailing the material, ... Note: results (publications, datasets) can be linked here, but should also be linked to the separate specimens that were used in that publication.</setting>
-				        <setting name="add_label" locale="en_US">Add file</setting>
+                <setting name="label" locale="en_US">Publication associated with usage request</setting>
+                <setting name="description" locale="en_US">Publications (articles, reports) associated with the loan. Note: these should NOT be linked to the loan only, also to each separate specimen.</setting>
+				        <setting name="add_label" locale="en_US">Add publication</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
