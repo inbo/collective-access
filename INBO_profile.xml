@@ -3,12 +3,6 @@
   <profileName>[INBO-CMS] INBO natural science collection v0.75</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in now loaded v0.74-->
-  <!--https://github.com/inbo/collective-access/issues/227-->
-  <!--https://github.com/inbo/collective-access/issues/228-->
-  <!--https://github.com/inbo/collective-access/issues/229-->
-  <!--https://github.com/inbo/collective-access/issues/230-->
-  <!--https://github.com/inbo/collective-access/issues/231-->
-  <!--https://github.com/inbo/collective-access/issues/233-->
   <!--https://github.com/inbo/collective-access/issues/234-->
   <!--https://github.com/inbo/collective-access/issues/235-->
   <!--https://github.com/inbo/collective-access/issues/236-->
@@ -24,6 +18,8 @@
   <!--Issues to check if succesful in v0.75-->
   <!--https://github.com/inbo/collective-access/issues/198-->
   <!--https://github.com/inbo/collective-access/issues/224-->
+  <!--https://github.com/inbo/collective-access/issues/230-->
+  <!--https://github.com/inbo/collective-access/issues/233-->
   <!--https://github.com/inbo/collective-access/issues/251-->
   <!--https://github.com/inbo/collective-access/issues/252-->
   <!--https://github.com/inbo/collective-access/issues/253-->
@@ -5887,6 +5883,8 @@
         <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
+            <type>forestTreePopulation</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">10</setting>
@@ -10589,6 +10587,39 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
+	    <metadataElement code="georeferenceFTP" datatype="Geocode">
+        <labels>
+          <label locale="en_US">
+            <name>WGS84 Standardised coordinates of FTP</name>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_FTP">
+            <table>ca_objects</table>
+            <type>forestTreePopulation</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+      </metadataElement>
 	  <!--Loans-->
 	    <metadataElement code="loanStatus" datatype="List" list="loan_status">
         <labels>
@@ -11516,9 +11547,17 @@
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="display_template">^ca_storage_locations.preferred_labels.name ^ca_storage_locations.georeference</setting>
+                <setting name="display_template">^ca_storage_locations.preferred_labels.name</setting>
               </settings>
             </placement>
+			      <placement code="mapFTP" typeRestrictions="livingPlant" includeSubtypes="1">
+              <bundle>ca_attribute_georeferenceFTP</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Map representation of storage location</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="description" locale="en_US">Please enter [decimalLatitidueX,decimalLongitudeY]. This will allow to execute map searches within the INBO-CMS.</setting>
+              </settings>
+			      </placement>
             <placement code="ca_storage_location_hierarchyBrowser" typeRestrictions="animalObject,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1">
               <bundle>ca_storage_locations</bundle>
 			        <settings>
@@ -13004,7 +13043,7 @@
 			        </settings>
             </placement>
             <placement code="curationURL" typeRestrictions="treatment,renewal">
-              <bundle>ca_attribute_curationResult</bundle>
+              <bundle>ca_attribute_curationURL</bundle>
             </placement>
 			      <placement code="verbatimTaxon" typeRestrictions="identification">
               <bundle>ca_attribute_verbatimTaxon</bundle>
