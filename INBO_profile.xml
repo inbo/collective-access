@@ -3,6 +3,7 @@
   <profileName>[INBO-CMS] INBO natural science collection v0.75</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in v0.75-->
+  <!--https://github.com/inbo/collective-access/issues/121-->
   <!--https://github.com/inbo/collective-access/issues/154-->
   <!--https://github.com/inbo/collective-access/issues/198-->
   <!--https://github.com/inbo/collective-access/issues/224-->
@@ -27,6 +28,7 @@
   <!--https://github.com/inbo/collective-access/issues/266-->
   <!--https://github.com/inbo/collective-access/issues/268-->
   <!--https://github.com/inbo/collective-access/issues/269-->
+  <!--https://github.com/inbo/collective-access/issues/270-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -4681,6 +4683,31 @@
           </item>
         </items>
       </list>
+      <list code="geodetic_datum" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
+        <labels>
+          <label locale="en_US">
+            <name>Geodetic datum</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="WGS84" rank="1" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>EPSG:4326 (WGS84)</name_singular>
+                <name_plural>EPSG:4326 (WGS84)</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="L72" rank="2" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>EPSG:31370 (BD72 / Belgian Lambert72)</name_singular>
+                <name_plural>EPSG:31370 (BD72 / Belgian Lambert72)</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
   </lists>
   <elementSets>
     <!--General-->
@@ -8552,7 +8579,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="geodeticDatum" datatype="Text">
+	    <metadataElement code="geodeticDatum" datatype="List" list="geodetic_datum">
         <labels>
           <label locale="en_US">
             <name>geodeticDatum</name>
@@ -11562,9 +11589,9 @@
 			      <placement code="mapFTP" typeRestrictions="livingPlant" includeSubtypes="1">
               <bundle>ca_attribute_georeferenceFTP</bundle>
               <settings>
-                <setting name="label" locale="en_US">Map representation of storage location</setting>
+                <setting name="label" locale="en_US">Map representation of storage location (WGS84)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="description" locale="en_US">Please enter [decimalLatitidueX,decimalLongitudeY]. This will allow to execute map searches within the INBO-CMS.</setting>
+                <setting name="description" locale="en_US">Please enter [decimalLatitidueX,decimalLongitudeY] in WGS84 format. This will allow to execute map searches within the INBO-CMS.</setting>
               </settings>
 			      </placement>
             <placement code="ca_storage_location_hierarchyBrowser" typeRestrictions="animalObject,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1">
@@ -11936,6 +11963,12 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
+            <placement code="geodeticDatum">
+              <bundle>ca_attribute_geodeticDatum</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
             <placement code="coordinateUncertaintyInMeters">
               <bundle>ca_attribute_coordinateUncertaintyInMeters</bundle>
 			        <settings>
@@ -11946,9 +11979,9 @@
 			      <placement code="map" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_attribute_georeference</bundle>
               <settings>
-                <setting name="label" locale="en_US">Map representation</setting>
+                <setting name="label" locale="en_US">Map representation (WGS84)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="description" locale="en_US">Please enter [decimalLatitidueX,decimalLongitudeY]. This will allow to execute map searches within the INBO-CMS.</setting>
+                <setting name="description" locale="en_US">Please enter [decimalLatitidueX,decimalLongitudeY] in WGS84 format. This will allow to execute map searches within the INBO-CMS.</setting>
               </settings>
 			      </placement>
 			      <placement code="georefVerif">
@@ -11959,63 +11992,6 @@
                 <setting name="description" locale="en_US">The map above is checked: do the decimal coordinates deliver the correct locality? Additional information below is entered, by using the tool: https://geopick.gbif.org/. The most precise placename is linked to the specimen.</setting>
               </settings>
 			      </placement>
-            <placement code="locationID">
-              <bundle>ca_attribute_locationID</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Location ID</setting>
-                <setting name="description" locale="en_US">As given by the georeference tool (e.g. https://geopick.gbif.org/)</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-			      </placement>
-            <placement code="geodeticDatum">
-              <bundle>ca_attribute_geodeticDatum</bundle>
-			        <settings>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-			      </placement>
-            <placement code="coordinatePrecision">
-              <bundle>ca_attribute_coordinatePrecision</bundle>
-			        <settings>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-			      </placement>
-            <placement code="pointRadiusSpatialFit">
-              <bundle>ca_attribute_pointRadiusSpatialFit</bundle>
-			        <settings>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-			      </placement>
-            <placement code="georeferenceProtocol">
-              <bundle>ca_attribute_georeferenceProtocol</bundle>
-			        <settings>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-			      </placement>
-            <placement code="georeferenceSources">
-              <bundle>ca_attribute_georeferenceSources</bundle>
-			        <settings>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-			      </placement>
-            <placement code="locality">
-              <bundle>ca_attribute_locality</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Non-verbatim locality description</setting>                
-                <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="description" locale="en_US">The description of the locality as not originally recorded, for example more precise then originally recorded or as a result of the georeferencing (different from the verbatimLocality field, which specifies how the locality originally was recorded, if applicable).</setting>
-              </settings>
-			      </placement>
-            <placement code="ca_entities_georeferencedBy">
-              <bundle>ca_entities</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Georeferenced by</setting>
-                <setting name="description" locale="en_US">A person (other than the collectors) that georeferenced the object/specimen (e.g. by using https://geopick.gbif.org/).</setting>
-				        <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_relationship_types">georeferencer</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
             <placement code="georeferenceRemarks">
               <bundle>ca_attribute_georeferenceRemarks</bundle>
 			        <settings>
