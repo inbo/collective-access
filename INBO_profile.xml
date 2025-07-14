@@ -2,17 +2,8 @@
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
   <profileName>[INBO-CMS] INBO natural science collection v0.75</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
-  <!--Issues to check if succesful in now loaded v0.74-->
-    <!--https://github.com/inbo/collective-access/issues/237-->
-  <!--https://github.com/inbo/collective-access/issues/238-->
-  <!--https://github.com/inbo/collective-access/issues/240-->
-  <!--https://github.com/inbo/collective-access/issues/241-->
-  <!--https://github.com/inbo/collective-access/issues/242-->
-  <!--https://github.com/inbo/collective-access/issues/243-->
-  <!--https://github.com/inbo/collective-access/issues/245-->
-  <!--https://github.com/inbo/collective-access/issues/246-->
-  <!--https://github.com/inbo/collective-access/issues/248-->
   <!--Issues to check if succesful in v0.75-->
+  <!--https://github.com/inbo/collective-access/issues/154-->
   <!--https://github.com/inbo/collective-access/issues/198-->
   <!--https://github.com/inbo/collective-access/issues/224-->
   <!--https://github.com/inbo/collective-access/issues/230-->
@@ -35,6 +26,7 @@
   <!--https://github.com/inbo/collective-access/issues/265-->
   <!--https://github.com/inbo/collective-access/issues/266-->
   <!--https://github.com/inbo/collective-access/issues/268-->
+  <!--https://github.com/inbo/collective-access/issues/269-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -1461,6 +1453,14 @@
           </label>
         </labels>
         <items>
+            <item idno="notSpecified" rank="1" enabled="1" default="1">
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>Not specified</name_singular>
+                  <name_plural>Not specified</name_plural>
+                </label>
+              </labels>
+            </item>
             <item idno="LabwareLIMSID" enabled="1" rank="2" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
@@ -13004,7 +13004,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="eventDate" typeRestrictions="fieldwork,valuation,disposal,treatment,renewal,transfer,identification">
+			      <placement code="eventDate" typeRestrictions="fieldwork,valuation,disposal,treatment,renewal,transfer">
               <bundle>ca_attribute_eventDate</bundle>
               <settings>
                 <setting name="label" locale="en_US">Date (range) and time (range), standardised.</setting>
