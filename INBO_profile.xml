@@ -29,6 +29,7 @@
   <!--https://github.com/inbo/collective-access/issues/268-->
   <!--https://github.com/inbo/collective-access/issues/269-->
   <!--https://github.com/inbo/collective-access/issues/270-->
+  <!--https://github.com/inbo/collective-access/issues/272-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -4700,6 +4701,31 @@
           </item>
         </items>
       </list>
+      <list code="geodetic_datum2" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
+        <labels>
+          <label locale="en_US">
+            <name>Voucher options</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="WGS84" rank="1" enabled="1" default="1">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>WGS84 (EPSG:4326)</name_singular>
+                <name_plural>WGS84 (EPSG:4326)</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="BD72" rank="1" enabled="1" default="1">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>BD72 Belgian Lambert 72 (EPSG:31370)</name_singular>
+                <name_plural>BD72 Belgian Lambert 72 (EPSG:31370)</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
   </lists>
   <elementSets>
     <!--General-->
@@ -8008,7 +8034,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="verbatimGeodeticDatum" datatype="Text">
+	    <metadataElement code="verbatimGeodeticDatum" datatype="List" list="geodetic_datum2">
         <labels>
           <label locale="en_US">
             <name>Verbatim Geodetic Datum</name>
@@ -11932,11 +11958,9 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="verbatimgeodeticDatum">
-              <bundle>ca_attribute_verbatimgeodeticDatum</bundle>
+            <placement code="verbatimGeodeticDatum">
+              <bundle>ca_attribute_verbatimGeodeticDatum</bundle>
               <settings>
-                <setting name="label" locale="en_US">Verbatim geodeticDatum</setting>
-                <setting name="description" locale="en_US">The geodetic datum of the verbatim coordinates of the sampling point.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
