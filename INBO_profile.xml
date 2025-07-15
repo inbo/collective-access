@@ -6,6 +6,7 @@
   <!--https://github.com/inbo/collective-access/issues/121-->
   <!--https://github.com/inbo/collective-access/issues/154-->
   <!--https://github.com/inbo/collective-access/issues/198-->
+  <!--https://github.com/inbo/collective-access/issues/208-->
   <!--https://github.com/inbo/collective-access/issues/224-->
   <!--https://github.com/inbo/collective-access/issues/230-->
   <!--https://github.com/inbo/collective-access/issues/233-->
@@ -32,6 +33,7 @@
   <!--https://github.com/inbo/collective-access/issues/272-->
   <!--https://github.com/inbo/collective-access/issues/273-->
   <!--https://github.com/inbo/collective-access/issues/274-->
+  <!--https://github.com/inbo/collective-access/issues/275-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -12209,7 +12211,7 @@
             </label>
           </labels>
           <bundlePlacements>
-			      <placement code="verbatimTaxon">
+			      <placement code="verbatimTaxon" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc" includeSubtypes="1">
               <bundle>ca_attribute_verbatimTaxon</bundle>
 			        <settings>
 				        <setting name="add_label" locale="en_US">Add a new taxon</setting>
@@ -12218,7 +12220,7 @@
                 <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
 			        </settings>
             </placement>
-			      <placement code="GBIF">
+			      <placement code="GBIF" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc" includeSubtypes="1">
               <bundle>ca_attribute_GBIF</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">GBIF taxon lookup (main taxon)</setting>
@@ -12228,7 +12230,7 @@
                 <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
 			        </settings>
             </placement>
-			      <placement code="taxonDate">
+			      <placement code="taxonDate" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc" includeSubtypes="1">
               <bundle>ca_attribute_taxonDate</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Date of taxonomic identification (main taxon)</setting>
@@ -12237,7 +12239,7 @@
                 <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
 			        </settings>
             </placement>
-            <placement code="ca_entities_identifier">
+            <placement code="ca_entities_identifier" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc" includeSubtypes="1">
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Identified by</setting>
@@ -12249,10 +12251,18 @@
                 <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
               </settings>
 			      </placement>
-			      <placement code="voucher">
+			      <placement code="voucher" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc" includeSubtypes="1">
               <bundle>ca_attribute_voucher</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Identified by</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
+                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
+              </settings>
             </placement>
-            <placement code="ca_occurrences_identification">
+            <placement code="ca_occurrences_identification" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc" includeSubtypes="1">
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Nonpreferred taxonomic identifications (main taxon)</setting>
