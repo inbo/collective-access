@@ -4683,6 +4683,25 @@
           </item>
         </items>
       </list>
+<<<<<<< HEAD
+      <list code="geodetic_datum" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
+        <labels>
+          <label locale="en_US">
+            <name>Voucher options</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="WGS84" rank="1" enabled="1" default="1">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>WGS84 (EPSG:4326)</name_singular>
+                <name_plural>WGS84 (EPSG:4326)</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
+=======
       <list code="geodetic_datum" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
         <labels>
           <label locale="en_US">
@@ -4708,6 +4727,7 @@
           </item>
         </items>
       </list>
+>>>>>>> ac0d00d0797731f07eb91264c2b9a966a71c4a67
   </lists>
   <elementSets>
     <!--General-->
@@ -8333,7 +8353,7 @@
         <labels>
           <label locale="en_US">
             <name>decimalLatitude (Y)</name>
-            <description>The geographic latitude (in decimal degrees, using the spatial reference system given in dwc:geodeticDatum) of the geographic center of a dcterms:Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive. Careful: latitude is N to S. For example the Herman Teirlinck building: 50.86638999067575.</description>
+            <description>The geographic latitude (in decimal degrees, using the WGS84 spatial reference system given in dwc:geodeticDatum) of the geographic center of a dcterms:Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive. Careful: latitude is N to S. For example the Herman Teirlinck building: 50.86638999067575.</description>
           </label>
         </labels>
         <documentationUrl>http://rs.tdwg.org/dwc/terms/decimalLatitude</documentationUrl>
@@ -8396,7 +8416,7 @@
         <labels>
           <label locale="en_US">
             <name>decimalLongitude (X)</name>
-            <description>The geographic longitude (in decimal degrees, using the spatial reference system given in dwc:geodeticDatum) of the geographic center of a dcterms:Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive. Careful longitude is E to W. For example: For example the Herman Teirlinck building: 4.350147058474895.</description>
+            <description>The geographic longitude (in decimal degrees, using the WGS84 spatial reference system given in dwc:geodeticDatum) of the geographic center of a dcterms:Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive. Careful longitude is E to W. For example: For example the Herman Teirlinck building: 4.350147058474895.</description>
           </label>
         </labels>
         <documentationUrl>http://rs.tdwg.org/dwc/terms/decimalLongitude</documentationUrl>
@@ -11495,6 +11515,12 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
+            <placement code="geodeticDatum">
+              <bundle>ca_attribute_geodeticDatum</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
             <placement code="coordinateUncertaintyInMeters" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_attribute_coordinateUncertaintyInMeters</bundle>
 			        <settings>
@@ -11984,6 +12010,8 @@
                 <setting name="description" locale="en_US">Please enter [decimalLatitidueX,decimalLongitudeY] in WGS84 format. This will allow to execute map searches within the INBO-CMS.</setting>
               </settings>
 			      </placement>
+<<<<<<< HEAD
+=======
 			      <placement code="georefVerif">
               <bundle>ca_attribute_georefVerif</bundle>
 			        <settings>
@@ -11992,6 +12020,7 @@
                 <setting name="description" locale="en_US">The map above is checked: do the decimal coordinates deliver the correct locality? Additional information below is entered, by using the tool: https://geopick.gbif.org/. The most precise placename is linked to the specimen.</setting>
               </settings>
 			      </placement>
+>>>>>>> ac0d00d0797731f07eb91264c2b9a966a71c4a67
             <placement code="georeferenceRemarks">
               <bundle>ca_attribute_georeferenceRemarks</bundle>
 			        <settings>
