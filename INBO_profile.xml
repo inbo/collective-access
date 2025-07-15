@@ -31,6 +31,7 @@
   <!--https://github.com/inbo/collective-access/issues/270-->
   <!--https://github.com/inbo/collective-access/issues/272-->
   <!--https://github.com/inbo/collective-access/issues/273-->
+  <!--https://github.com/inbo/collective-access/issues/274-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -4271,11 +4272,11 @@
               </label>
             </labels>
           </item>
-          <item idno="omitVerbatimNotes" rank="4" enabled="1" default="0">
+          <item idno="omitNotes" rank="4" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>do not publish the verbatim notes</name_singular>
-                <name_plural>do not publish the verbatim notes</name_plural>
+                <name_singular>do not publish the notes</name_singular>
+                <name_plural>do not publish the notes</name_plural>
               </label>
             </labels>
           </item>
@@ -5224,11 +5225,11 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-		  <metadataElement code="verbatimNotes" datatype="Text">
+		  <metadataElement code="notes" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>Verbatim Notes</name>
-		        <description>Any unstructured information (e.g. notes, comments) literally transcribed from the original source.</description>
+            <name>Notes</name>
+		        <description>Any unstructured information (e.g. notes, comments).</description>
           </label>
         </labels>
         <settings>
@@ -11856,11 +11857,11 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="verbatimNotes">
-              <bundle>ca_attribute_verbatimNotes</bundle>
+			      <placement code="notes">
+              <bundle>ca_attribute_notes</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Verbatim notes</setting>
-                <setting name="description" locale="en_US">Any relevant information on the creation of the specimen not yet recorded. Tip: under the screen "Multimedia and files" you can link any relevant field files, photos, ...</setting>
+                <setting name="label" locale="en_US">Notes</setting>
+                <setting name="description" locale="en_US">Any relevant information on the creation of the specimen not yet recorded. Tip: under the screen "Files/Refs/Photos/Dbs" you can link any relevant documents related to the sampling. For example (photos of) a field form.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -12268,7 +12269,7 @@
 			      <placement code="taxonReference">
               <bundle>ca_attribute_taxonReference</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Publication on other biodiversity in specimen (eDNA)</setting>
+                <setting name="label" locale="en_US">Publication on biodiversity in specimen (eDNA)</setting>
                 <setting name="description" locale="en_US">Publication (dataset, article) that outlines the results of biodiversity present in the specimen, other than the main taxon. In water, soil or air samples, this is the only way biodiversity can be recorded. For all other types of specimen, this is "secondary" biodiveristy, other the main taxon. For example: stomach of a bee (main taxon), tested for presence of which plant pollen. For example tissue of a wolf (main taxon) tested for bacteria. This information is relevant to know (what has been tested on this specimen and how) but not relevant for querying the specimen themselves. Preferably this is a(n open) publication in a repository, but also internal result files (e.g. INBO Google drive) can be linked here.</setting>                
                 <setting name="expand_collapse_no_value">collapse</setting>
 				        <setting name="add_label" locale="en_US">Add eDNA publication</setting>
