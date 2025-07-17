@@ -7,6 +7,7 @@
   <!--https://github.com/inbo/collective-access/issues/154-->
   <!--https://github.com/inbo/collective-access/issues/198-->
   <!--https://github.com/inbo/collective-access/issues/208-->
+  <!--https://github.com/inbo/collective-access/issues/221-->
   <!--https://github.com/inbo/collective-access/issues/224-->
   <!--https://github.com/inbo/collective-access/issues/230-->
   <!--https://github.com/inbo/collective-access/issues/233-->
@@ -37,6 +38,8 @@
   <!--https://github.com/inbo/collective-access/issues/278-->
   <!--https://github.com/inbo/collective-access/issues/279-->
   <!--https://github.com/inbo/collective-access/issues/280-->
+  <!--https://github.com/inbo/collective-access/issues/281-->
+  <!--https://github.com/inbo/collective-access/issues/282-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -4575,7 +4578,7 @@
               </label>
             </labels>
           </item>
-          <item idno="soilObject" enabled="1" default="0">
+          <item idno="soilSample" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>soil sample</name_singular>
@@ -4596,10 +4599,18 @@
       <list code="taxon_group" hierarchical="0" system="0" vocabulary="1">
         <labels>
           <label locale="en_US">
-            <name>Main taxonomic grouping of animals</name>
+            <name>Main taxonomic grouping</name>
           </label>
         </labels>
         <items>
+          <item idno="notApplicable" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>not applicable (soil, water)</name_singular>
+                <name_plural>not applicable (soil, water)</name_plural>
+              </label>
+            </labels>
+          </item>
           <item idno="mammal" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
@@ -5963,13 +5974,73 @@
 	    <metadataElement code="matrixType" datatype="List" list="matrix_type">
         <labels>
           <label locale="en_US">
-            <name>Matrix type</name>
-		        <description>This equals the sampling point field in Labware-LIMS</description>
+            <name>Matrix type (!!)</name>
+		        <description>This equals the sampling point field in Labware-LIMS. (!!) This is a trigger field, push save after choosing a value to enable the triggers.</description>
           </label>
         </labels>
 	      <settings>
           <setting name="fieldWidth">40</setting>
           <setting name="doesNotTakeLocale">1</setting>
+          <setting name="hideIfSelected_soilSample">object_ui/obj_measurements/ca_attribute_lifeStageMammal</setting>
+          <setting name="hideIfSelected_waterSample">object_ui/obj_measurements/ca_attribute_lifeStageMammal</setting>
+          <setting name="hideIfSelected_soilSample">object_ui/obj_measurements/ca_attribute_lifeStageInvertebrate</setting>
+          <setting name="hideIfSelected_waterSample">object_ui/obj_measurements/ca_attribute_lifeStageInvertebrate</setting>
+          <setting name="hideIfSelected_soilSample">object_ui/obj_measurements/ca_attribute_lifeStageFish</setting>
+          <setting name="hideIfSelected_waterSample">object_ui/obj_measurements/ca_attribute_lifeStageFish</setting>
+          <setting name="hideIfSelected_soilSample">object_ui/obj_measurements/ca_attribute_lifeStageReptile</setting>
+          <setting name="hideIfSelected_waterSample">object_ui/obj_measurements/ca_attribute_lifeStageReptile</setting>
+          <setting name="hideIfSelected_soilSample">object_ui/obj_measurements/ca_attribute_lifeStageAmphibian</setting>
+          <setting name="hideIfSelected_waterSample">object_ui/obj_measurements/ca_attribute_lifeStageAmphibian</setting>
+          <setting name="hideIfSelected_soilSample">object_ui/obj_measurements/ca_attribute_lifeStagePlant</setting>
+          <setting name="hideIfSelected_waterSample">object_ui/obj_measurements/ca_attribute_lifeStagePlant</setting>
+          <setting name="hideIfSelected_soilSample">object_ui/obj_measurements/ca_attribute_sexPlant</setting>
+          <setting name="hideIfSelected_waterSample">object_ui/obj_measurements/ca_attribute_sexPlant</setting>
+          <setting name="hideIfSelected_soilSample">object_ui/obj_measurements/ca_attribute_sexAnimal</setting>
+          <setting name="hideIfSelected_waterSample">object_ui/obj_measurements/ca_attribute_sexAnimal</setting>
+          <setting name="hideIfSelected_soilSample">object_ui/taxonomy/ca_attribute_verbatimTaxon</setting>
+          <setting name="hideIfSelected_waterSample">object_ui/taxonomy/ca_attribute_verbatimTaxon</setting>
+          <setting name="hideIfSelected_soilSample">object_ui/taxonomy/ca_attribute_GBIF</setting>
+          <setting name="hideIfSelected_waterSample">object_ui/taxonomy/ca_attribute_GBIF</setting>
+          <setting name="hideIfSelected_soilSample">object_ui/taxonomy/ca_attribute_taxonDate</setting>
+          <setting name="hideIfSelected_waterSample">object_ui/taxonomy/ca_attribute_taxonDate</setting>
+          <setting name="hideIfSelected_soilSample">object_ui/taxonomy/ca_entities</setting>
+          <setting name="hideIfSelected_waterSample">object_ui/taxonomy/ca_entities</setting>
+          <setting name="hideIfSelected_soilSample">object_ui/taxonomy/ca_attribute_voucher</setting>
+          <setting name="hideIfSelected_waterSample">object_ui/taxonomy/ca_attribute_voucher</setting>
+          <setting name="hideIfSelected_soilSample">object_ui/taxonomy/ca_occurrences</setting>
+          <setting name="hideIfSelected_waterSample">object_ui/taxonomy/ca_occurrences</setting>
+          <setting name="hideIfSelected_soilSample">object_ui/taxonomy/ca_attribute_taxonNote</setting>
+          <setting name="hideIfSelected_waterSample">object_ui/taxonomy/ca_attribute_taxonNote</setting>
+          <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_taxonGroup</setting>
+          <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_taxonGroup</setting>
+          <setting name="hideIfSelected_bud">object_ui/obj_preparation/ca_attribute_preparationVolumeContainer</setting>
+          <setting name="hideIfSelected_leaf">object_ui/obj_preparation/ca_attribute_preparationVolumeContainer</setting>
+          <setting name="hideIfSelected_cambium">object_ui/obj_preparation/ca_attribute_preparationVolumeContainer</setting>
+          <setting name="hideIfSelected_blood">object_ui/obj_preparation/ca_attribute_preparationVolumeContainer</setting>
+          <setting name="hideIfSelected_embryo">object_ui/obj_preparation/ca_attribute_preparationVolumeContainer</setting>
+          <setting name="hideIfSelected_feces">object_ui/obj_preparation/ca_attribute_preparationVolumeContainer</setting>
+          <setting name="hideIfSelected_ear">object_ui/obj_preparation/ca_attribute_preparationVolumeContainer</setting>
+          <setting name="hideIfSelected_leg">object_ui/obj_preparation/ca_attribute_preparationVolumeContainer</setting>
+          <setting name="hideIfSelected_toe">object_ui/obj_preparation/ca_attribute_preparationVolumeContainer</setting>
+          <setting name="hideIfSelected_tongue">object_ui/obj_preparation/ca_attribute_preparationVolumeContainer</setting>
+          <setting name="hideIfSelected_muscle">object_ui/obj_preparation/ca_attribute_preparationVolumeContainer</setting>
+          <setting name="hideIfSelected_urine">object_ui/obj_preparation/ca_attribute_preparationVolumeContainer</setting>
+          <setting name="hideIfSelected_swabBlood">object_ui/obj_preparation/ca_attribute_preparationVolumeContainer</setting>
+          <setting name="hideIfSelected_swabBite">object_ui/obj_preparation/ca_attribute_preparationVolumeContainer</setting>
+          <setting name="hideIfSelected_swabFeces">object_ui/obj_preparation/ca_attribute_preparationVolumeContainer</setting>
+          <setting name="hideIfSelected_swabCloaca">object_ui/obj_preparation/ca_attribute_preparationVolumeContainer</setting>
+          <setting name="hideIfSelected_swabSkin">object_ui/obj_preparation/ca_attribute_preparationVolumeContainer</setting>
+          <setting name="hideIfSelected_swabMouth">object_ui/obj_preparation/ca_attribute_preparationVolumeContainer</setting>
+          <setting name="hideIfSelected_swab">object_ui/obj_preparation/ca_attribute_preparationVolumeContainer</setting>
+          <setting name="hideIfSelected_swabCottonBud">object_ui/obj_preparation/ca_attribute_preparationVolumeContainer</setting>
+          <setting name="hideIfSelected_wingclip">object_ui/obj_preparation/ca_attribute_preparationVolumeContainer</setting>
+          <setting name="hideIfSelected_tail">object_ui/obj_preparation/ca_attribute_preparationVolumeContainer</setting>
+          <setting name="hideIfSelected_larva">object_ui/obj_preparation/ca_attribute_preparationVolumeContainer</setting>
+          <setting name="hideIfSelected_liver">object_ui/obj_preparation/ca_attribute_preparationVolumeContainer</setting>
+          <setting name="hideIfSelected_hair">object_ui/obj_preparation/ca_attribute_preparationVolumeContainer</setting>
+          <setting name="hideIfSelected_fin">object_ui/obj_preparation/ca_attribute_preparationVolumeContainer</setting>
+          <setting name="hideIfSelected_tooth">object_ui/obj_preparation/ca_attribute_preparationVolumeContainer</setting>
+          <setting name="hideIfSelected_unspecified">object_ui/obj_preparation/ca_attribute_preparationVolumeContainer</setting>
         </settings>
 	      <typeRestrictions>
           <restriction code="r_dnaSample">
@@ -5997,8 +6068,8 @@
 	    <metadataElement code="taxonGroup" datatype="List" list="taxon_group">
         <labels>
           <label locale="en_US">
-            <name>Taxon group</name>
-		        <description>If selected, this will enable certain types of measurements in the measurement screen. It is the taxon group of the MAIN taxon expected to be present in the specimen.</description>
+            <name>Taxon group (!!)</name>
+		        <description>If selected, this will enable certain types of measurements in the measurement screen. It is the taxon group of the MAIN taxon expected to be present in the specimen. (!!) This is a trigger field, push save after choosing a value to enable the triggers.</description>
           </label>
         </labels>
 	      <settings>
@@ -6014,6 +6085,50 @@
               <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              <setting name="hideIfSelected_plant">object_ui/obj_measurements/ca_attribute_lifeStageMammal</setting>
+              <setting name="hideIfSelected_invertebrate">object_ui/obj_measurements/ca_attribute_lifeStageMammal</setting>
+              <setting name="hideIfSelected_fish">object_ui/obj_measurements/ca_attribute_lifeStageMammal</setting>
+              <setting name="hideIfSelected_reptile">object_ui/obj_measurements/ca_attribute_lifeStageMammal</setting>
+              <setting name="hideIfSelected_amphibian">object_ui/obj_measurements/ca_attribute_lifeStageMammal</setting>
+              <setting name="hideIfSelected_notSelected">object_ui/obj_measurements/ca_attribute_lifeStageMammal</setting>
+              <setting name="hideIfSelected_plant">object_ui/obj_measurements/ca_attribute_lifeStageInvertebrate</setting>
+              <setting name="hideIfSelected_mammal">object_ui/obj_measurements/ca_attribute_lifeStageInvertebrate</setting>
+              <setting name="hideIfSelected_fish">object_ui/obj_measurements/ca_attribute_lifeStageInvertebrate</setting>
+              <setting name="hideIfSelected_reptile">object_ui/obj_measurements/ca_attribute_lifeStageInvertebrate</setting>
+              <setting name="hideIfSelected_amphibian">object_ui/obj_measurements/ca_attribute_lifeStageInvertebrate</setting>
+              <setting name="hideIfSelected_notSelected">object_ui/obj_measurements/ca_attribute_lifeStageInvertebrate</setting>
+              <setting name="hideIfSelected_plant">object_ui/obj_measurements/ca_attribute_lifeStageFish</setting>
+              <setting name="hideIfSelected_mammal">object_ui/obj_measurements/ca_attribute_lifeStageFish</setting>
+              <setting name="hideIfSelected_invertebrate">object_ui/obj_measurements/ca_attribute_lifeStageFish</setting>
+              <setting name="hideIfSelected_reptile">object_ui/obj_measurements/ca_attribute_lifeStageFish</setting>
+              <setting name="hideIfSelected_amphibian">object_ui/obj_measurements/ca_attribute_lifeStageFish</setting>
+              <setting name="hideIfSelected_notSelected">object_ui/obj_measurements/ca_attribute_lifeStageFish</setting>
+              <setting name="hideIfSelected_plant">object_ui/obj_measurements/ca_attribute_lifeStageReptile</setting>
+              <setting name="hideIfSelected_mammal">object_ui/obj_measurements/ca_attribute_lifeStageReptile</setting>
+              <setting name="hideIfSelected_invertebrate">object_ui/obj_measurements/ca_attribute_lifeStageReptile</setting>
+              <setting name="hideIfSelected_fish">object_ui/obj_measurements/ca_attribute_lifeStageReptile</setting>
+              <setting name="hideIfSelected_amphibian">object_ui/obj_measurements/ca_attribute_lifeStageReptile</setting>
+              <setting name="hideIfSelected_notSelected">object_ui/obj_measurements/ca_attribute_lifeStageReptile</setting>
+              <setting name="hideIfSelected_plant">object_ui/obj_measurements/ca_attribute_lifeStageAmphibian</setting>
+              <setting name="hideIfSelected_mammal">object_ui/obj_measurements/ca_attribute_lifeStageAmphibian</setting>
+              <setting name="hideIfSelected_invertebrate">object_ui/obj_measurements/ca_attribute_lifeStageAmphibian</setting>
+              <setting name="hideIfSelected_fish">object_ui/obj_measurements/ca_attribute_lifeStageAmphibian</setting>
+              <setting name="hideIfSelected_reptile">object_ui/obj_measurements/ca_attribute_lifeStageAmphibian</setting>
+              <setting name="hideIfSelected_notSelected">object_ui/obj_measurements/ca_attribute_lifeStageAmphibian</setting>
+              <setting name="hideIfSelected_amphibian">object_ui/obj_measurements/ca_attribute_lifeStagePlant</setting>
+              <setting name="hideIfSelected_mammal">object_ui/obj_measurements/ca_attribute_lifeStagePlant</setting>
+              <setting name="hideIfSelected_invertebrate">object_ui/obj_measurements/ca_attribute_lifeStagePlant</setting>
+              <setting name="hideIfSelected_fish">object_ui/obj_measurements/ca_attribute_lifeStagePlant</setting>
+              <setting name="hideIfSelected_reptile">object_ui/obj_measurements/ca_attribute_lifeStagePlant</setting>
+              <setting name="hideIfSelected_notSelected">object_ui/obj_measurements/ca_attribute_lifeStagePlant</setting>
+              <setting name="hideIfSelected_amphibian">object_ui/obj_measurements/ca_attribute_sexPlant</setting>
+              <setting name="hideIfSelected_mammal">object_ui/obj_measurements/ca_attribute_sexPlant</setting>
+              <setting name="hideIfSelected_invertebrate">object_ui/obj_measurements/ca_attribute_sexPlant</setting>
+              <setting name="hideIfSelected_fish">object_ui/obj_measurements/ca_attribute_sexPlant</setting>
+              <setting name="hideIfSelected_reptile">object_ui/obj_measurements/ca_attribute_sexPlant</setting>
+              <setting name="hideIfSelected_notSelected">object_ui/obj_measurements/ca_attribute_sexPlant</setting>
+              <setting name="hideIfSelected_plant">object_ui/obj_measurements/ca_attribute_sexAnimal</setting>
+              <setting name="hideIfSelected_notSelected">object_ui/obj_measurements/ca_attribute_sexAnimal</setting>
             </settings>
           </restriction>
         </typeRestrictions>
@@ -7560,8 +7675,8 @@
 	    <metadataElement code="sexAnimal" datatype="List" list="sex_animal">
 			  <labels>
           <label locale="en_US">
-            <name>sex (dwc:sex)</name>
-            <description>The sex of the biological individual(s) represented in the Occurrence.</description>
+            <name>sex (dwc:sex) (!!)</name>
+            <description>The sex of the biological individual(s) represented in the Occurrence. (!!) This is a trigger field, push save after choosing a value to enable the triggers.</description>
           </label>
 			  </labels>
 			  <documentationUrl>http://rs.tdwg.org/dwc/terms/sex</documentationUrl>
@@ -7570,6 +7685,11 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="hideIfSelected_male">object_ui/obj_measurements/ca_attribute_reprCondMammal</setting>
+          <setting name="hideIfSelected_notRecorded">object_ui/obj_measurements/ca_attribute_reprCondMammal</setting>
+          <setting name="hideIfSelected_hermaphrodite">object_ui/obj_measurements/ca_attribute_reprCondMammal</setting>
+          <setting name="hideIfSelected_notApplicable">object_ui/obj_measurements/ca_attribute_reprCondMammal</setting>
+          <setting name="hideIfSelected_other">object_ui/obj_measurements/ca_attribute_reprCondMammal</setting>
 			  </settings>
 			  <typeRestrictions>
           <restriction code="r_animalObjects">
@@ -7587,8 +7707,8 @@
 	    <metadataElement code="sexPlant" datatype="List" list="sex_plant">
 			  <labels>
           <label locale="en_US">
-            <name>sex (dwc:sex)</name>
-            <description>The sex of the biological individual(s) represented in the Occurrence.</description>
+            <name>sex (dwc:sex) (!!)</name>
+            <description>The sex of the biological individual(s) represented in the Occurrence. (!!) This is a trigger field, push save after choosing a value to enable the triggers.</description>
           </label>
 			  </labels>
 			  <documentationUrl>http://rs.tdwg.org/dwc/terms/sex</documentationUrl>
@@ -7597,6 +7717,10 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="hideIfSelected_dioeciousMale">object_ui/obj_measurements/ca_attribute_reprCondPlant</setting>
+          <setting name="hideIfSelected_notRecorded">object_ui/obj_measurements/ca_attribute_reprCondPlant</setting>
+          <setting name="hideIfSelected_notApplicable">object_ui/obj_measurements/ca_attribute_reprCondPlant</setting>
+          <setting name="hideIfSelected_other">object_ui/obj_measurements/ca_attribute_reprCondPlant</setting>
 			  </settings>
 			  <typeRestrictions>
           <restriction code="r_objects">
@@ -7614,8 +7738,8 @@
 	    <metadataElement code="lifeStageMammal" datatype="List" list="life_stage_mammal">
 			  <labels>
           <label locale="en_US">
-            <name>lifeStage animal</name>
-            <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
+            <name>lifeStage animal (!!)</name>
+            <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded. (!!) This is a trigger field, push save after choosing a value to enable the triggers.</description>
           </label>
 			  </labels>
 			  <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
@@ -7624,6 +7748,8 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="hideIfSelected_juvenile">object_ui/obj_measurements/ca_attribute_reprCondMammal</setting>
+          <setting name="hideIfSelected_notRecorded">object_ui/obj_measurements/ca_attribute_reprCondMammal</setting>
 			  </settings>
 			  <typeRestrictions>
           <restriction code="r_objects">
@@ -7749,8 +7875,8 @@
 	    <metadataElement code="lifeStagePlant" datatype="List" list="life_stage_plant">
 			  <labels>
           <label locale="en_US">
-            <name>lifeStage plant</name>
-            <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
+            <name>Life stage plant (!!)</name>
+            <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded. (!!) This is a trigger field, push save after choosing a value to enable the triggers.</description>
           </label>
 			  </labels>
 			  <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
@@ -7759,6 +7885,10 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="hideIfSelected_juvenile">object_ui/obj_measurements/ca_attribute_reprCondPlant</setting>
+          <setting name="hideIfSelected_seedling">object_ui/obj_measurements/ca_attribute_reprCondPlant</setting>
+          <setting name="hideIfSelected_notRecorded">object_ui/obj_measurements/ca_attribute_reprCondPlant</setting>
+          <setting name="hideIfSelected_other">object_ui/obj_measurements/ca_attribute_reprCondPlant</setting>
 			  </settings>
 			  <typeRestrictions>
           <restriction code="r_objects">
@@ -7786,14 +7916,6 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
-          <setting name="hideIfSelected_dioeciousMale">object_ui/obj_measurements/ca_attribute_sexPlant</setting>
-          <setting name="hideIfSelected_notRecorded">object_ui/obj_measurements/ca_attribute_sexPlant</setting>
-          <setting name="hideIfSelected_notApplicable">object_ui/obj_measurements/ca_attribute_sexPlant</setting>
-          <setting name="hideIfSelected_other">object_ui/obj_measurements/ca_attribute_sexPlant</setting>
-          <setting name="hideIfSelected_juvenile">object_ui/obj_measurements/ca_attribute_lifeStagePlant</setting>
-          <setting name="hideIfSelected_seedling">object_ui/obj_measurements/ca_attribute_lifeStagePlant</setting>
-          <setting name="hideIfSelected_notRecorded">object_ui/obj_measurements/ca_attribute_lifeStagePlant</setting>
-          <setting name="hideIfSelected_other">object_ui/obj_measurements/ca_attribute_lifeStagePlant</setting>
 			  </settings>
 			  <typeRestrictions>
           <restriction code="r_objects">
@@ -7821,13 +7943,6 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
-          <setting name="hideIfSelected_male">object_ui/obj_measurements/ca_attribute_sexAnimal</setting>
-          <setting name="hideIfSelected_notRecorded">object_ui/obj_measurements/ca_attribute_sexAnimal</setting>
-          <setting name="hideIfSelected_hermaphrodite">object_ui/obj_measurements/ca_attribute_sexAnimal</setting>
-          <setting name="hideIfSelected_notApplicable">object_ui/obj_measurements/ca_attribute_sexAnimal</setting>
-          <setting name="hideIfSelected_other">object_ui/obj_measurements/ca_attribute_sexAnimal</setting>
-          <setting name="hideIfSelected_juvenile">object_ui/obj_measurements/ca_attribute_lifeStageMammal</setting>
-          <setting name="hideIfSelected_notRecorded">object_ui/obj_measurements/ca_attribute_lifeStageMammal</setting>
 			  </settings>
 			  <typeRestrictions>
           <restriction code="r_objects">
@@ -10331,6 +10446,7 @@
           </label>
         </labels>
         <settings>
+          <setting name="render">checklist</setting>
           <setting name="fieldWidth">70</setting>
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
@@ -10424,7 +10540,13 @@
                 <name>Check which restriction applies</name>
               </label>
             </labels>
-            <settings/>
+            <settings>
+              <setting name="render">checklist</setting>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
           </metadataElement>
           <metadataElement code="restrictionSpecification" datatype="Text">
             <labels>
@@ -11480,8 +11602,6 @@
               <bundle>ca_attribute_taxonGroup</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
               </settings>
             </placement>
             <placement code="preparationDate" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,livingPlant,forestTreePopulation,cutting,stemdisc" includeSubtypes="1">
@@ -11586,18 +11706,6 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
-			      <placement code="sexAnimal" typeRestrictions="animalObject,dnaSample" includeSubtypes="1">
-              <bundle>ca_attribute_sexAnimal</bundle>
-			        <settings>
-                <setting name="description" locale="en_US">If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="hideIfSelected_bud">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_leaf">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_cambium">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
-              </settings>
-			      </placement>
             <placement code="deaccession">
               <bundle>ca_objects_deaccession</bundle>
             </placement>
@@ -11800,45 +11908,16 @@
               <bundle>ca_attribute_taxonGroup</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
               </settings>
             </placement>
-            <placement code="preparation_volume" typeRestrictions="dnaSample" includeSubtypes="1">
-              <bundle>ca_attribute_volumeContainer</bundle>
+            <placement code="preparationVolumeContainer" typeRestrictions="dnaSample" includeSubtypes="1">
+              <bundle>ca_attribute_preparationVolumeContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Volume measurements logged during preparation</setting>
                 <setting name="description" locale="en_US">For example volume of water on eDNA filter. This can be relevant for quantification analysis on the specimen.</setting>
 				        <setting name="add_label" locale="en_US">Add volume measurement</setting>
                 <setting name="list_format">list</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="hideIfSelected_bud">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_leaf">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_cambium">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_blood">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_embryo">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_feces">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_ear">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_leg">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_toe">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_tongue">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_muscle">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_urine">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_swabBlood">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_swabBite">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_swabFeces">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_swabCloaca">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_swabSkin">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_swabMouth">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_swab">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_wingclip">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_tail">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_larva">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_liver">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_hair">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_fin">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_tooth">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_unspecified">object_ui/record/ca_attribute_matrixType</setting>
               </settings>
             </placement>
 			      <placement code="samplingProtocol" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
@@ -12233,8 +12312,6 @@
 			        <settings>
 				        <setting name="add_label" locale="en_US">Add a new taxon</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
 			        </settings>
             </placement>
 			      <placement code="GBIF" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc" includeSubtypes="1">
@@ -12243,8 +12320,6 @@
                 <setting name="label" locale="en_US">GBIF taxon lookup (main taxon)</setting>
                 <setting name="description" locale="en_US">This is the taxon as far as can be identified of the MAIN biodiversity the sample represents. For example a tongue tissue sample of a wolf (which can be tested for bacteria): enter Canis lupus. </setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
 			        </settings>
             </placement>
 			      <placement code="taxonDate" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc" includeSubtypes="1">
@@ -12252,8 +12327,6 @@
 			        <settings>
                 <setting name="label" locale="en_US">Date of taxonomic identification (main taxon)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
 			        </settings>
             </placement>
             <placement code="ca_entities_identifier" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc" includeSubtypes="1">
@@ -12264,8 +12337,6 @@
 				        <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="restrict_to_relationship_types">identifier</setting>
-                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
               </settings>
 			      </placement>
 			      <placement code="voucher" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc" includeSubtypes="1">
@@ -12275,8 +12346,6 @@
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
               </settings>
             </placement>
             <placement code="ca_occurrences_identification" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc" includeSubtypes="1">
@@ -12288,8 +12357,6 @@
 				        <setting name="maxRelationshipsPerRow">20</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="restrict_to_types">identification</setting>
-                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
                 <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences">^ca_occurrences.verbatimTaxon, ^ca_occurrences.standTaxon<br/> (^ca_occurrences.taxonDate)</unit>]]></setting>
               </settings>
 			      </placement>
@@ -12314,8 +12381,6 @@
               <bundle>ca_attribute_taxonNote</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -12386,40 +12451,13 @@
               </settings>
             </placement>
             <placement code="preparation_volume" typeRestrictions="dnaSample" includeSubtypes="1">
-              <bundle>ca_attribute_volumeContainer</bundle>
+              <bundle>ca_attribute_preparationVolumeContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Volume measurements logged during preparation</setting>
                 <setting name="description" locale="en_US">For example volume of water on eDNA filter. This can be relevant for quantification analysis on the specimen.</setting>
 				        <setting name="add_label" locale="en_US">Add volume measurement</setting>
                 <setting name="list_format">list</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="hideIfSelected_bud">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_leaf">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_cambium">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_blood">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_embryo">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_feces">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_ear">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_leg">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_toe">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_tongue">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_muscle">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_urine">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_swabBlood">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_swabBite">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_swabFeces">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_swabCloaca">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_swabSkin">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_swabMouth">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_swab">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_wingclip">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_tail">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_larva">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_liver">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_hair">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_fin">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_tooth">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_unspecified">object_ui/record/ca_attribute_matrixType</setting>
               </settings>
             </placement>
             <placement code="object_weight" typeRestrictions="seedlot,soilObject,dnaSample,leafSampleAnalytic">
@@ -12487,13 +12525,14 @@
 			        <settings>
                 <setting name="description" locale="en_US">If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="hideIfSelected_bud">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_leaf">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_cambium">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_plant">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_notSelected">object_ui/record/ca_attribute_taxonGroup</setting>
+              </settings>
+			      </placement>
+			      <placement code="sexPlant" typeRestrictions="plantObject,dnaSample" includeSubtypes="1">
+              <bundle>ca_attribute_sexPlant</bundle>
+			        <settings>
+                <setting name="description" locale="en_US">Explanation to list options: https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0. If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="documentation_url">https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0</setting>
               </settings>
 			      </placement>
 			      <placement code="genotype" typeRestrictions="animalObject,plantObject,dnaSample" includeSubtypes="1">
@@ -12512,12 +12551,6 @@
                 <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="description" locale="en_US">Due to sampling, the life stage of the animal at time object(s) were collected becomes a fixed value.</setting>
-                <setting name="hideIfSelected_plant">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_invertebrate">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_fish">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_reptile">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_amphibian">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_notSelected">object_ui/record/ca_attribute_taxonGroup</setting>
               </settings>
             </placement>
 			      <placement code="lifeStage_invertebrate" typeRestrictions="dnaSample" includeSubtypes="1">
@@ -12526,14 +12559,6 @@
                 <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="description" locale="en_US">Due to sampling, the life stage of the animal at time object(s) were collected becomes a fixed value.</setting>
-                <setting name="hideIfSelected_plant">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_mammal">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_fish">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_reptile">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_amphibian">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_notSelected">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
               </settings>
             </placement>
 			      <placement code="lifeStage_fish" typeRestrictions="fish,dnaSample" includeSubtypes="1">
@@ -12542,14 +12567,6 @@
                 <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="description" locale="en_US">Due to sampling, the life stage of the animal at time object(s) were collected becomes a fixed value.</setting>
-                <setting name="hideIfSelected_plant">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_mammal">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_invertebrate">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_reptile">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_amphibian">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_notSelected">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
               </settings>
             </placement>
 			      <placement code="lifeStage_reptile" typeRestrictions="dnaSample" includeSubtypes="1">
@@ -12558,14 +12575,6 @@
                 <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="description" locale="en_US">Due to sampling, the life stage of the animal at time object(s) were collected becomes a fixed value.</setting>
-                <setting name="hideIfSelected_plant">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_mammal">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_invertebrate">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_fish">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_amphibian">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_notSelected">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
               </settings>
             </placement>
 			      <placement code="lifeStage_amphibian" typeRestrictions="dnaSample" includeSubtypes="1">
@@ -12574,14 +12583,6 @@
                 <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="description" locale="en_US">Due to sampling, the life stage of the animal at time object(s) were collected becomes a fixed value.</setting>
-                <setting name="hideIfSelected_plant">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_mammal">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_invertebrate">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_fish">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_reptile">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_notSelected">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
               </settings>
             </placement>
 			      <placement code="lifeStage_plant" typeRestrictions="plantObject,dnaSample" includeSubtypes="1">
@@ -12590,32 +12591,8 @@
                 <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="description" locale="en_US">Due to sampling, the life stage of the plant at time object(s) were collected becomes a fixed value.</setting>
-                <setting name="hideIfSelected_amphibian">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_mammal">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_invertebrate">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_fish">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_reptile">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_notSelected">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
               </settings>
             </placement>
-			      <placement code="sexPlant" typeRestrictions="plantObject,dnaSample" includeSubtypes="1">
-              <bundle>ca_attribute_sexPlant</bundle>
-			        <settings>
-                <setting name="description" locale="en_US">Explanation to list options: https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0. If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="documentation_url">https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0</setting>
-                <setting name="hideIfSelected_amphibian">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_mammal">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_invertebrate">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_fish">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_reptile">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_notSelected">object_ui/record/ca_attribute_taxonGroup</setting>
-                <setting name="hideIfSelected_soilSample">object_ui/record/ca_attribute_matrixType</setting>
-                <setting name="hideIfSelected_waterSample">object_ui/record/ca_attribute_matrixType</setting>
-              </settings>
-			      </placement>
 			      <placement code="reprCond_mammal" typeRestrictions="mammal" includeSubtypes="1">
               <bundle>ca_attribute_reprCondAnimal</bundle>
 			        <settings>
@@ -12841,8 +12818,7 @@
             <placement code="restriction_use">
               <bundle>ca_attribute_restrictionUse</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Restriction for re-use</setting>
-                <setting name="add_label" locale="en_US">Add new restriction</setting>
+                <setting name="label" locale="en_US">Restriction(s) for re-use</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>               
               </settings>
             </placement>
