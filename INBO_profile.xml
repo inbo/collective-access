@@ -3,6 +3,7 @@
   <profileName>[INBO-CMS] INBO natural science collection v0.75</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in v0.75-->
+  <!--https://github.com/inbo/collective-access/issues/77-->
   <!--https://github.com/inbo/collective-access/issues/121-->
   <!--https://github.com/inbo/collective-access/issues/154-->
   <!--https://github.com/inbo/collective-access/issues/198-->
@@ -40,6 +41,7 @@
   <!--https://github.com/inbo/collective-access/issues/280-->
   <!--https://github.com/inbo/collective-access/issues/281-->
   <!--https://github.com/inbo/collective-access/issues/282-->
+  <!--https://github.com/inbo/collective-access/issues/283-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -4760,6 +4762,39 @@
           </item>
         </items>
       </list>
+      <list code="coord_uncertainty" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
+        <labels>
+          <label locale="en_US">
+            <name>Voucher options</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="exact" rank="1" enabled="1" default="1">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>recorded (value is exact)</name_singular>
+                <name_plural>recorded (value is exact)</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="estimate" rank="1" enabled="1" default="1">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>value is an estimate</name_singular>
+                <name_plural>value is an estimate</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="unknown" rank="1" enabled="1" default="1">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>value is unknown</name_singular>
+                <name_plural>value is unknown</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
   </lists>
   <elementSets>
     <!--General-->
@@ -8672,20 +8707,44 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="coordinateUncertaintyInMeters" datatype="Numeric">
+	    <metadataElement code="coordinateUncertaintyInMetersContainer" datatype="Container">
         <labels>
           <label locale="en_US">
-            <name>coordinateUncertaintyInMeters</name>
+            <name>Coordinate uncertainty in meters</name>
             <description>The horizontal distance (in meters) from the given dwc:decimalLatitude and dwc:decimalLongitude describing the smallest circle containing the whole of the dcterms:Location. Leave the value empty if the uncertainty is unknown, cannot be estimated, or is not applicable (because there are no coordinates). Zero is not a valid value for this term.</description>
           </label>
         </labels>
-        <documentationUrl>http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
+	      <elements>
+          <metadataElement code="coordinateUncertaintyInMeters" datatype="Numeric">
+            <labels>
+              <label locale="en_US">
+                <name>Coordinate uncertainty in meters: value</name>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+              <setting name="minValue">0</setting>
+              <setting name="mustNotBeBlank">0</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="coordinateUncertaintyInMetersCertainty" datatype="List" list="coord_uncertainty">
+            <labels>
+              <label locale="en_US">
+                <name>Value certainty</name>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+	      </elements>
 	      <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
@@ -11661,8 +11720,8 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="coordinateUncertaintyInMeters" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
-              <bundle>ca_attribute_coordinateUncertaintyInMeters</bundle>
+            <placement code="coordinateUncertaintyInMetersContainer" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
+              <bundle>ca_attribute_coordinateUncertaintyInMetersContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Coordinate uncertainty in meters *</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -12092,8 +12151,8 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="coordinateUncertaintyInMeters">
-              <bundle>ca_attribute_coordinateUncertaintyInMeters</bundle>
+            <placement code="coordinateUncertaintyInMetersContainer">
+              <bundle>ca_attribute_coordinateUncertaintyInMetersContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Coordinate uncertainty in meters *</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
