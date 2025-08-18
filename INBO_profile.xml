@@ -2,30 +2,7 @@
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
   <profileName>[INBO-CMS] INBO natural science collection v0.76</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
-  <!--Issues to check if succesful in v0.75-->
-  <!--https://github.com/inbo/collective-access/issues/77-->
-  <!--https://github.com/inbo/collective-access/issues/121-->
-  <!--https://github.com/inbo/collective-access/issues/154-->
-  <!--https://github.com/inbo/collective-access/issues/198-->
-  <!--https://github.com/inbo/collective-access/issues/208-->
-  <!--https://github.com/inbo/collective-access/issues/221-->
-  <!--https://github.com/inbo/collective-access/issues/224-->
-  <!--https://github.com/inbo/collective-access/issues/230-->
-  <!--https://github.com/inbo/collective-access/issues/233-->
-  <!--https://github.com/inbo/collective-access/issues/234-->
-  <!--https://github.com/inbo/collective-access/issues/235-->
-  <!--https://github.com/inbo/collective-access/issues/236-->
-  <!--https://github.com/inbo/collective-access/issues/251-->
-  <!--https://github.com/inbo/collective-access/issues/252-->
-  <!--https://github.com/inbo/collective-access/issues/253-->
-  <!--https://github.com/inbo/collective-access/issues/254-->
-  <!--https://github.com/inbo/collective-access/issues/255-->
-  <!--https://github.com/inbo/collective-access/issues/256-->
-  <!--https://github.com/inbo/collective-access/issues/257-->
-  <!--https://github.com/inbo/collective-access/issues/258-->
-  <!--https://github.com/inbo/collective-access/issues/259-->
-  <!--https://github.com/inbo/collective-access/issues/260-->
-  <!--https://github.com/inbo/collective-access/issues/261-->
+  <!--Issues to check if succesful in v0.76-->
   <!--https://github.com/inbo/collective-access/issues/263-->
   <!--https://github.com/inbo/collective-access/issues/265-->
   <!--https://github.com/inbo/collective-access/issues/266-->
@@ -4690,16 +4667,16 @@
           <item idno="multimedia" rank="3" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>multimedia (e.g. photo, video, sound, ..)</name_singular>
-                <name_plural>multimedia (e.g. photo, video, sound, ..)</name_plural>
+                <name_singular>multimedia (e.g. photo, video, sound, .. see files/refs/photos/dbs)</name_singular>
+                <name_plural>multimedia (e.g. photo, video, sound, .. see files/refs/photos/dbs)</name_plural>
               </label>
             </labels>
           </item>
           <item idno="barcoding" rank="4" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>DNA barcoding match</name_singular>
-                <name_plural>DNA barcoding matches</name_plural>
+                <name_singular>DNA barcoding match (see files/refs/photos/dbs)</name_singular>
+                <name_plural>DNA barcoding matches (see files/refs/photos/dbs)</name_plural>
               </label>
             </labels>
           </item>
@@ -4758,7 +4735,7 @@
       <list code="coord_uncertainty" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
         <labels>
           <label locale="en_US">
-            <name>Voucher options</name>
+            <name>Coordinate uncertainty options</name>
           </label>
         </labels>
         <items>
@@ -6360,7 +6337,7 @@
               <setting name="canBeUsedInDisplay">1</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="concentrationValue" datatype="Numeric">
+          <metadataElement code="concentrationValue" datatype="Text"><!--should be Numeric-->
             <labels>
               <label locale="en_US">
                 <name>DNA concentration</name>
@@ -7749,6 +7726,16 @@
             </settings>
           </restriction>
 			  </typeRestrictions>
+          <restriction code="r_dnaSample">
+            <table>ca_objects</table>
+            <type>dnaSample</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+			  </typeRestrictions>
 	    </metadataElement>
 	    <metadataElement code="sexPlant" datatype="List" list="sex_plant">
 			  <labels>
@@ -7779,12 +7766,21 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
+          <restriction code="r_dnaSample">
+            <table>ca_objects</table>
+            <type>dnaSample</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
 			  </typeRestrictions>
       </metadataElement>
 	    <metadataElement code="lifeStageMammal" datatype="List" list="life_stage_mammal">
 			  <labels>
           <label locale="en_US">
-            <name>lifeStage animal (!!)</name>
+            <name>lifeStage mammal</name>
             <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded. (!!) This is a trigger field, push save after choosing a value to enable the triggers.</description>
           </label>
 			  </labels>
@@ -7808,12 +7804,21 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
+          <restriction code="r_dnaSample">
+            <table>ca_objects</table>
+            <type>dnaSample</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
 			  </typeRestrictions>
 	    </metadataElement>
 	    <metadataElement code="lifeStageInvertebrate" datatype="List" list="life_stage_invertebrate">
 			  <labels>
           <label locale="en_US">
-            <name>lifeStage animal</name>
+            <name>lifeStage invertebrate</name>
             <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
           </label>
 			  </labels>
@@ -7829,6 +7834,15 @@
             <table>ca_objects</table>
             <type>animalObject</type>
             <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_dnaSample">
+            <table>ca_objects</table>
+            <type>dnaSample</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -7840,7 +7854,7 @@
 	    <metadataElement code="lifeStageFish" datatype="List" list="life_stage_fish">
 			  <labels>
           <label locale="en_US">
-            <name>lifeStage animal</name>
+            <name>lifeStage fish</name>
             <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
           </label>
 			  </labels>
@@ -7856,6 +7870,15 @@
             <table>ca_objects</table>
             <type>animalObject</type>
             <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_dnaSample">
+            <table>ca_objects</table>
+            <type>dnaSample</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -7867,7 +7890,7 @@
 	    <metadataElement code="lifeStageAmphibian" datatype="List" list="life_stage_amphibian">
 			  <labels>
           <label locale="en_US">
-            <name>lifeStage animal</name>
+            <name>lifeStage amphibian</name>
             <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
           </label>
 			  </labels>
@@ -7883,6 +7906,15 @@
             <table>ca_objects</table>
             <type>animalObject</type>
             <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_dnaSample">
+            <table>ca_objects</table>
+            <type>dnaSample</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -7894,7 +7926,7 @@
 	    <metadataElement code="lifeStageReptile" datatype="List" list="life_stage_reptile">
 			  <labels>
           <label locale="en_US">
-            <name>lifeStage animal</name>
+            <name>lifeStage reptile</name>
             <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded.</description>
           </label>
 			  </labels>
@@ -7916,12 +7948,21 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
+          <restriction code="r_dnaSample">
+            <table>ca_objects</table>
+            <type>dnaSample</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
 			  </typeRestrictions>
 	    </metadataElement>
 	    <metadataElement code="lifeStagePlant" datatype="List" list="life_stage_plant">
 			  <labels>
           <label locale="en_US">
-            <name>Life stage plant (!!)</name>
+            <name>Life stage plant</name>
             <description>The age class or life stage of the biological individual(s) at the time the Occurrence was recorded. (!!) This is a trigger field, push save after choosing a value to enable the triggers.</description>
           </label>
 			  </labels>
@@ -7941,6 +7982,15 @@
             <table>ca_objects</table>
             <type>plantObject</type>
             <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_dnaSample">
+            <table>ca_objects</table>
+            <type>dnaSample</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -7974,6 +8024,15 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
+          <restriction code="r_dnaSample">
+            <table>ca_objects</table>
+            <type>dnaSample</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
 			  </typeRestrictions>
 	    </metadataElement>
 	    <metadataElement code="reprCondMammal" datatype="List" list="repr_cond_mammal">
@@ -7995,6 +8054,15 @@
             <table>ca_objects</table>
             <type>animalObject</type>
             <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_dnaSample">
+            <table>ca_objects</table>
+            <type>dnaSample</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -8531,7 +8599,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="decimalLatitudeY" datatype="Numeric">
+	    <metadataElement code="decimalLatitudeY" datatype="Text"><!--should be Numeric-->
         <labels>
           <label locale="en_US">
             <name>decimalLatitude (Y)</name>
@@ -8594,7 +8662,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="decimalLongitudeX" datatype="Numeric">
+	    <metadataElement code="decimalLongitudeX" datatype="Text"><!--should be Numeric-->
         <labels>
           <label locale="en_US">
             <name>decimalLongitude (X)</name>
@@ -8726,7 +8794,7 @@
           </label>
         </labels>
 	      <elements>
-          <metadataElement code="coordinateUncertaintyInMeters" datatype="Numeric">
+          <metadataElement code="coordinateUncertaintyInMeters" datatype="Text"><!--should be Numeric-->
             <labels>
               <label locale="en_US">
                 <name>Coordinate uncertainty in meters: value</name>
@@ -8734,7 +8802,7 @@
             </labels>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters</documentationUrl>
             <settings>
-              <setting name="fieldWidth">70</setting>
+              <setting name="fieldWidth">30</setting>
               <setting name="fieldHeight">1</setting>
               <setting name="minChars">0</setting>
               <setting name="maxChars">65535</setting>
@@ -8868,7 +8936,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="coordinatePrecision" datatype="Numeric">
+	    <metadataElement code="coordinatePrecision" datatype="Text"><!--should be Numeric-->
         <labels>
           <label locale="en_US">
             <name>coordinatePrecision</name>
@@ -8931,7 +8999,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="pointRadiusSpatialFit" datatype="Numeric">
+	    <metadataElement code="pointRadiusSpatialFit" datatype="Text"><!--should be Numeric-->
         <labels>
           <label locale="en_US">
             <name>pointRadiusSpatialFit</name>
@@ -9246,7 +9314,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="minimumElevationInMeters" datatype="Numeric">
+	    <metadataElement code="minimumElevationInMeters" datatype="Text"><!--should be Numeric-->
         <labels>
           <label locale="en_US">
             <name>Minimum elevation in meters</name>
@@ -9309,7 +9377,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="maximumElevationInMeters" datatype="Numeric">
+	    <metadataElement code="maximumElevationInMeters" datatype="Text"><!--should be Numeric-->
         <labels>
           <label locale="en_US">
             <name>Maximum elevation in meters</name>
@@ -9471,7 +9539,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="minimumDepthInMeters" datatype="Numeric">
+	    <metadataElement code="minimumDepthInMeters" datatype="Text"><!--should be Numeric-->
         <labels>
           <label locale="en_US">
             <name>minimumDepthInMeters</name>
@@ -12413,7 +12481,6 @@
 			      <placement code="voucher" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc" includeSubtypes="1">
               <bundle>ca_attribute_voucher</bundle>
               <settings>
-                <setting name="label" locale="en_US">Identified by</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -12435,7 +12502,7 @@
               <bundle>ca_attribute_taxonReference</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Publication on biodiversity in specimen (eDNA)</setting>
-                <setting name="description" locale="en_US">Publication (dataset, article) that outlines the results of biodiversity present in the specimen, other than the main taxon. In water, soil or air samples, this is the only way biodiversity can be recorded. For all other types of specimen, this is "secondary" biodiveristy, other the main taxon. For example: stomach of a bee (main taxon), tested for presence of which plant pollen. For example tissue of a wolf (main taxon) tested for bacteria. This information is relevant to know (what has been tested on this specimen and how) but not relevant for querying the specimen themselves. Preferably this is a(n open) publication in a repository, but also internal result files (e.g. INBO Google drive) can be linked here.</setting>                
+                <setting name="description" locale="en_US">Publication (dataset, article) that outlines the results of biodiversity present in the specimen, other than the main taxon. In water, soil or air samples, this is the only way biodiversity can be recorded. For all other types of specimen, this is "secondary" biodiversity, other the main taxon. For example: stomach of a bee (main taxon), tested for presence of which plant pollen. For example tissue of a wolf (main taxon) tested for bacteria. This information is relevant to know (what has been tested on this specimen and how) but not relevant for querying the specimen themselves. Preferably this is a(n open) publication in a repository, but also internal result files (e.g. INBO Google drive) can be linked here.</setting>                
                 <setting name="expand_collapse_no_value">collapse</setting>
 				        <setting name="add_label" locale="en_US">Add eDNA publication</setting>
               </settings>
@@ -13071,7 +13138,7 @@
             <placement code="publishedRecord_project" typeRestrictions="project">
               <bundle>ca_attribute_publishedRecord</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Database containing project</setting>
+                <setting name="label" locale="en_US">Project-URL</setting>
                 <setting name="description" locale="en_US">The project-URL published on the Pureportal (https://pureportal.inbo.be/nl/projects/)</setting>
 				        <setting name="add_label" locale="en_US">Add URL</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -13367,14 +13434,6 @@
                 <setting name="add_label" locale="en_US">Add file</setting>
 			        </settings>
             </placement>
-			      <placement code="eventAdminObligation">
-              <bundle>ca_attribute_adminObligation</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Administrational obligations</setting>
-                <setting name="description" locale="en_US">Obligations resulting from administration.</setting>				       
-				        <setting name="add_label" locale="en_US">Add obligation</setting>
-			        </settings>
-            </placement>
           </bundlePlacements>
         </screen>
 	    </screens>
@@ -13619,14 +13678,6 @@
                 <setting name="label" locale="en_US">File</setting>
                 <setting name="description" locale="en_US">File associated with place that specifies conditions for executing research or entering a certain place.</setting>				       
                 <setting name="add_label" locale="en_US">Add file</setting>
-			        </settings>
-            </placement>
-			      <placement code="placeAdminObligation">
-              <bundle>ca_attribute_adminObligation</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Administrational obligations</setting>
-                <setting name="description" locale="en_US">Obligations resulting from administration. For example: asking permission x-days behorehand.</setting>				       
-				        <setting name="add_label" locale="en_US">Add obligation</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
