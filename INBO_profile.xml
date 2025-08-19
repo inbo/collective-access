@@ -3,23 +3,11 @@
   <profileName>[INBO-CMS] INBO natural science collection v0.76</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in v0.76-->
-  <!--https://github.com/inbo/collective-access/issues/263-->
-  <!--https://github.com/inbo/collective-access/issues/265-->
-  <!--https://github.com/inbo/collective-access/issues/266-->
-  <!--https://github.com/inbo/collective-access/issues/268-->
-  <!--https://github.com/inbo/collective-access/issues/269-->
-  <!--https://github.com/inbo/collective-access/issues/270-->
-  <!--https://github.com/inbo/collective-access/issues/272-->
-  <!--https://github.com/inbo/collective-access/issues/273-->
-  <!--https://github.com/inbo/collective-access/issues/274-->
-  <!--https://github.com/inbo/collective-access/issues/275-->
-  <!--https://github.com/inbo/collective-access/issues/278-->
-  <!--https://github.com/inbo/collective-access/issues/279-->
-  <!--https://github.com/inbo/collective-access/issues/280-->
-  <!--https://github.com/inbo/collective-access/issues/281-->
-  <!--https://github.com/inbo/collective-access/issues/282-->
-  <!--https://github.com/inbo/collective-access/issues/283-->
-  <!--https://github.com/inbo/collective-access/issues/284-->
+  <!--https://github.com/inbo/collective-access/issues/287-->
+  <!--https://github.com/inbo/collective-access/issues/288-->
+  <!--https://github.com/inbo/collective-access/issues/289-->
+  <!--https://github.com/inbo/collective-access/issues/290-->
+  <!--https://github.com/inbo/collective-access/issues/291-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -1377,6 +1365,14 @@
                   <label locale="en_US" preferred="1">
                     <name_singular>rack</name_singular>
                     <name_plural>racks</name_plural>
+                  </label>
+                </labels>
+              </item>
+              <item idno="rackSpot" rank="7" enabled="1" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>rackspot</name_singular>
+                    <name_plural>rackspot</name_plural>
                   </label>
                 </labels>
               </item>
@@ -4117,8 +4113,8 @@
           <item idno="externalSpecimenParent" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>the external specimen is the parent</name_singular>
-                <name_plural>the external specimen is the parent</name_plural>
+                <name_singular>The external specimen is the parent</name_singular>
+                <name_plural>The external specimen is the parent</name_plural>
               </label>
             </labels>
           </item>
@@ -4236,7 +4232,7 @@
           </label>
         </labels>
         <items>
-          <item idno="OKpublish" rank="1" enabled="1" default="0">
+          <item idno="OKpublish" rank="1" enabled="1" default="1">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>OK to publish</name_singular>
@@ -6290,6 +6286,16 @@
           <restriction code="r_objects">
             <table>ca_objects</table>
             <type>livingPlant</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>forestTreePopulation</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -10868,30 +10874,6 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="boxSpot" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>Box spot</name>
-          </label>
-        </labels>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">5</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-	      <typeRestrictions>
-          <restriction code="r_storage_location">
-            <table>ca_storage_locations</table>
-            <type>box</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
 	    <metadataElement code="verbatimStorageLocation" datatype="Text">
         <labels>
           <label locale="en_US">
@@ -11756,7 +11738,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at *</setting>
                 <setting name="restrict_to_types">forestTreePopulationSite</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="useHierarchicalBrowser">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -13139,7 +13121,7 @@
               <bundle>ca_attribute_publishedRecord</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Project-URL</setting>
-                <setting name="description" locale="en_US">The project-URL published on the Pureportal (https://pureportal.inbo.be/nl/projects/)</setting>
+                <setting name="description" locale="en_US">Enter project URLs, for example published on the Pureportal (https://pureportal.inbo.be/nl/projects/), the JIRA link, a project website, ...</setting>
 				        <setting name="add_label" locale="en_US">Add URL</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
@@ -14031,13 +14013,6 @@
 			      <placement code="storage_location_hierarchy_location">
               <bundle>hierarchy_location</bundle>
             </placement>
-            <placement code="boxSpot" typeRestrictions="box">
-              <bundle>ca_attribute_boxSpot</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The location of the box</setting>
-                <setting name="description" locale="en_US">The XY information on where the box can be found in the crate or rack.</setting>
-              </settings>
-            </placement>
 			      <placement code="ca_objects">
               <bundle>ca_objects</bundle>
 			        <settings>
@@ -14077,14 +14052,7 @@
               <bundle>ca_attribute_fileURL</bundle>
 			        <settings>
 				        <setting name="add_label" locale="en_US">Add multimedia URL</setting>
-                <setting name="description" locale="en_US">This (google drive) link brings you to relevant multimedia (pictures, videos, ..) of this storage unit.</setting>
-			        </settings>
-            </placement>
-            <placement code="reference" typeRestrictions="box,drawer,rack,shelf,cabinet,freezer,fridge,room,floor,building">
-              <bundle>ca_attribute_fileURL</bundle>
-			        <settings>
-                <setting name="description" locale="en_US">This could be a document describing the storage space, giving technical information, ... (internal)</setting>
-				        <setting name="add_label" locale="en_US">Add publication URL</setting>
+                <setting name="description" locale="en_US">This (google drive) link brings you to relevant multimedia (pictures, videos, ..) of this storage unit or a a document describing the storage space, giving technical information, ...</setting>
 			        </settings>
             </placement>
             <placement code="storageLocation_verbatimLocality" typeRestrictions="forestTreePopulationSite">
