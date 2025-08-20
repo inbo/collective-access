@@ -21,6 +21,8 @@
   <!--https://github.com/inbo/collective-access/issues/300-->
   <!--https://github.com/inbo/collective-access/issues/301-->
   <!--https://github.com/inbo/collective-access/issues/302-->
+  <!--https://github.com/inbo/collective-access/issues/303-->
+  <!--https://github.com/inbo/collective-access/issues/304-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -933,19 +935,11 @@
           </label>
         </labels>
          <items>
-              <item idno="administrativePlace" rank="1" enabled="0" default="0"><!--http://rs.tdwg.org/dwc/terms/continent-->
+              <item idno="placeConcept" rank="1" enabled="0" default="0"><!--http://rs.tdwg.org/dwc/terms/continent-->
                 <labels>
                   <label locale="en_US" preferred="1">
                     <name_singular>administrative</name_singular>
                     <name_plural>administratives</name_plural>
-                  </label>
-                </labels>
-              </item>
-              <item idno="waterbodyPlace" rank="1" enabled="0" default="0"><!--http://rs.tdwg.org/dwc/terms/continent-->
-                <labels>
-                  <label locale="en_US" preferred="1">
-                    <name_singular>waterbody</name_singular>
-                    <name_plural>waterbodies</name_plural>
                   </label>
                 </labels>
               </item>
@@ -1635,11 +1629,11 @@
           </label>
         </labels>
         <items>
-            <item idno="arbitraryID" enabled="1" default="0"><!--This can be given by the researcher or curator, to either the project, fieldwork, valuation event or curation event. Not respecting convention/agreements made with a larger group / made by a system. This type of ID can also be applied if there seems to be a logic applied by something/someone but it is not known to which system it refers at the time of logging the ID.-->
+            <item idno="unregisteredID" enabled="1" default="0"><!--This can be given by the researcher or curator, to either the project, fieldwork, valuation event or curation event. Not respecting convention/agreements made with a larger group / made by a system. This type of ID can also be applied if there seems to be a logic applied by something/someone but it is not known to which system it refers at the time of logging the ID.-->
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>arbitrary ID</name_singular>
-                  <name_plural>arbitrary IDs</name_plural>
+                  <name_singular>unregistered ID</name_singular>
+                  <name_plural>unregistered IDs</name_plural>
                 </label>
               </labels>
             </item>
@@ -6046,7 +6040,7 @@
           <setting name="hideIfSelected_bud">object_ui/obj_preparation/preparationVolumeC</setting>
           <setting name="hideIfSelected_leaf">object_ui/obj_preparation/preparationVolumeC</setting>
           <setting name="hideIfSelected_cambium">object_ui/obj_preparation/preparationVolumeC</setting>
-          <setting name="hideIfSelected_blood">object_ui/obj_preparation/preparationVolumeC</setting>
+          <setting name="hideIfSelected_blood">object_ui/obj_preparation/preparationWeightC</setting>
           <setting name="hideIfSelected_embryo">object_ui/obj_preparation/preparationVolumeC</setting>
           <setting name="hideIfSelected_feces">object_ui/obj_preparation/preparationVolumeC</setting>
           <setting name="hideIfSelected_ear">object_ui/obj_preparation/preparationVolumeC</setting>
@@ -6054,15 +6048,23 @@
           <setting name="hideIfSelected_toe">object_ui/obj_preparation/preparationVolumeC</setting>
           <setting name="hideIfSelected_tongue">object_ui/obj_preparation/preparationVolumeC</setting>
           <setting name="hideIfSelected_muscle">object_ui/obj_preparation/preparationVolumeC</setting>
-          <setting name="hideIfSelected_urine">object_ui/obj_preparation/preparationVolumeC</setting>
+          <setting name="hideIfSelected_urine">object_ui/obj_preparation/preparationWeightC</setting>
           <setting name="hideIfSelected_swabBlood">object_ui/obj_preparation/preparationVolumeC</setting>
+          <setting name="hideIfSelected_swabBlood">object_ui/obj_preparation/preparationWeightC</setting>
           <setting name="hideIfSelected_swabBite">object_ui/obj_preparation/preparationVolumeC</setting>
+          <setting name="hideIfSelected_swabBite">object_ui/obj_preparation/preparationWeightC</setting>
           <setting name="hideIfSelected_swabFeces">object_ui/obj_preparation/preparationVolumeC</setting>
+          <setting name="hideIfSelected_swabFeces">object_ui/obj_preparation/preparationWeightC</setting>
           <setting name="hideIfSelected_swabCloaca">object_ui/obj_preparation/preparationVolumeC</setting>
+          <setting name="hideIfSelected_swabCloaca">object_ui/obj_preparation/preparationWeightC</setting>
           <setting name="hideIfSelected_swabSkin">object_ui/obj_preparation/preparationVolumeC</setting>
+          <setting name="hideIfSelected_swabSkin">object_ui/obj_preparation/preparationWeightC</setting>
           <setting name="hideIfSelected_swabMouth">object_ui/obj_preparation/preparationVolumeC</setting>
+          <setting name="hideIfSelected_swabMouth">object_ui/obj_preparation/preparationWeightC</setting>
           <setting name="hideIfSelected_swab">object_ui/obj_preparation/preparationVolumeC</setting>
+          <setting name="hideIfSelected_swab">object_ui/obj_preparation/preparationWeightC</setting>
           <setting name="hideIfSelected_swabCottonBud">object_ui/obj_preparation/preparationVolumeC</setting>
+          <setting name="hideIfSelected_swabCottonBud">object_ui/obj_preparation/preparationWeightC</setting>
           <setting name="hideIfSelected_wingclip">object_ui/obj_preparation/preparationVolumeC</setting>
           <setting name="hideIfSelected_tail">object_ui/obj_preparation/preparationVolumeC</setting>
           <setting name="hideIfSelected_larva">object_ui/obj_preparation/preparationVolumeC</setting>
@@ -6070,7 +6072,6 @@
           <setting name="hideIfSelected_hair">object_ui/obj_preparation/preparationVolumeC</setting>
           <setting name="hideIfSelected_fin">object_ui/obj_preparation/preparationVolumeC</setting>
           <setting name="hideIfSelected_tooth">object_ui/obj_preparation/preparationVolumeC</setting>
-          <setting name="hideIfSelected_unspecified">object_ui/obj_preparation/preparationVolumeC</setting>
           <setting name="hideIfSelected_bud">object_ui/samplingpointZ/verbatimDepth</setting>
           <setting name="hideIfSelected_bud">object_ui/samplingpointZ/minimumDepthInMeters</setting>
           <setting name="hideIfSelected_bud">object_ui/samplingpointZ/maximumDepthInMeters</setting>
@@ -6942,7 +6943,7 @@
 	    <metadataElement code="preparationVolumeC" datatype="Container">
         <labels>
           <label locale="en_US">
-            <name>Volume relevant to log in the preparation procedure</name>
+            <name>Preparation volume</name>
           </label>
         </labels>
 			  <settings>
@@ -7051,6 +7052,145 @@
             </settings>
           </metadataElement>
           <metadataElement code="pvolumeRemarks" datatype="Text">
+            <labels>
+            <label locale="en_US">
+              <name>Remarks</name>
+              <description>Any relevant remaining remarks on the measurement. This could be who did the measurement, if something unusual was observed during the measurement,...</description>
+            </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementRemarks</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">30</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+	      </elements>
+        <typeRestrictions>
+          <restriction code="r_object">
+            <table>ca_objects</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="preparationWeightC" datatype="Container">
+        <labels>
+          <label locale="en_US">
+            <name>Preparation weight</name>
+          </label>
+        </labels>
+			  <settings>
+          <setting name="lineBreakAfterNumberOfElements">2</setting>
+        </settings>
+	      <elements>
+          <metadataElement code="pweightDateRange" datatype="DateRange">
+            <labels>
+              <label locale="en_US">
+                <name>Date (range) and time (range)</name>
+                <description>Represents an historic date range accepting date/time range expressions in the formats acceptedby the CA TimeExpressionParser module.</description>
+              </label>
+            </labels>
+            <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">30</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+              <setting name="useDatePicker">1</setting>
+              <setting name="canBeUsedInSort">1</setting>
+              <setting name="canBeUsedInSearchForm">1</setting>
+              <setting name="canBeUsedInDisplay">1</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="pweightAppliesTo" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>measurementAppliesTo</name>
+                <description>Further specification of what exactly was measured. For example: volume.. of water that ran through the water filter, volume.. of lysis buffer that was retained.</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/abcd/terms/appliesTo</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">30</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="pweightValue" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Value</name>
+                <description>Weight value</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementValue</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">30</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="pweightUnit" datatype="List" list="weight_unit">
+            <labels>
+            <label locale="en_US">
+              <name>Unit</name>
+              <description>Unit used for measurement.</description>
+            </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
+          </metadataElement>
+          <metadataElement code="pweightPublishedProcedure" datatype="Url">
+            <labels>
+              <label locale="en_US">
+                <name>Published procedure</name>
+                <description>Procedure doi if published, such as in an article, a standardized opering procedure (SOP)</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">30</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="pweightProcedure" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Procedure</name>
+                <description>Description of the measurement procedure.</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">30</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="pweightAccuracy" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>measurementAccuracy</name>
+                <description>The description of the potential error associated with the measurementValue.</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementAccuracy</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">30</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="pweightRemarks" datatype="Text">
             <labels>
             <label locale="en_US">
               <name>Remarks</name>
@@ -10358,7 +10498,7 @@
       <metadataElement code="preparationProtocol" datatype="Container">
           <labels>
             <label locale="en_US">
-              <name>Preparation procedure URI</name>
+              <name>Preparation procedure</name>
               <description>The methods, procedures or protocols used during a preparation event. Preparation? An object can be sampled (collected) from the field. At INBO, in for example the lab, this object can be "prepared" whereby it transfers into another form. For example: a tissue sample is collected in the field on 2025-01-01. It is transferred to a DNA sample on 2025-03-25. Both dates and procedures are relevant to evaluate the quality of the DNA sample for reuse.</description>
             </label>
           </labels>
@@ -12154,9 +12294,17 @@
             <placement code="preparationVolumeC" typeRestrictions="dnaSample" includeSubtypes="1">
               <bundle>ca_attribute_preparationVolumeC</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Volume measurements logged during creation</setting>
                 <setting name="description" locale="en_US">For example volume of water on eDNA filter. This can be relevant for quantification analysis on the specimen.</setting>
-				        <setting name="add_label" locale="en_US">Add volume measurement</setting>
+				        <setting name="add_label" locale="en_US">Add preparation volume measurement</setting>
+                <setting name="list_format">list</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="preparationWeightC" typeRestrictions="dnaSample" includeSubtypes="1">
+              <bundle>ca_attribute_preparationWeightC</bundle>
+			        <settings>
+                <setting name="description" locale="en_US">For example weight of soil used for DNA extraction. This can be relevant for quantification analysis on the specimen.</setting>
+				        <setting name="add_label" locale="en_US">Add preparation weight measurement</setting>
                 <setting name="list_format">list</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
@@ -12672,16 +12820,6 @@
 			        <settings>
                 <setting name="label" locale="en_US">Volume measurement of the object</setting>
                 <setting name="description" locale="en_US">Volume measurement of the object, the specimen (nothing else!).</setting>
-				        <setting name="add_label" locale="en_US">Add volume measurement</setting>
-                <setting name="list_format">list</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-            <placement code="preparation_volume" typeRestrictions="dnaSample" includeSubtypes="1">
-              <bundle>ca_attribute_preparationVolumeC</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Volume measurements logged during preparation</setting>
-                <setting name="description" locale="en_US">For example volume of water on eDNA filter. This can be relevant for quantification analysis on the specimen.</setting>
 				        <setting name="add_label" locale="en_US">Add volume measurement</setting>
                 <setting name="list_format">list</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
