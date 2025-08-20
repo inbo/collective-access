@@ -3,6 +3,8 @@
   <profileName>[INBO-CMS] INBO natural science collection v0.76</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in v0.76-->
+  <!--https://github.com/inbo/collective-access/issues/221-->
+  <!--https://github.com/inbo/collective-access/issues/273-->
   <!--https://github.com/inbo/collective-access/issues/287-->
   <!--https://github.com/inbo/collective-access/issues/288-->
   <!--https://github.com/inbo/collective-access/issues/289-->
@@ -12,6 +14,10 @@
   <!--https://github.com/inbo/collective-access/issues/293-->
   <!--https://github.com/inbo/collective-access/issues/294-->
   <!--https://github.com/inbo/collective-access/issues/295-->
+  <!--https://github.com/inbo/collective-access/issues/296-->
+  <!--https://github.com/inbo/collective-access/issues/297-->
+  <!--https://github.com/inbo/collective-access/issues/298-->
+  <!--https://github.com/inbo/collective-access/issues/299-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -11753,8 +11759,6 @@
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at *</setting>
                 <setting name="restrict_to_types">room,cabinet,freezer,fridge,compartment,drawer,shelf,crate,rack,box,spot</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="useHierarchicalBrowser">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
@@ -12050,7 +12054,7 @@
             <placement code="preparationVolumeC" typeRestrictions="dnaSample" includeSubtypes="1">
               <bundle>ca_attribute_preparationVolumeC</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Volume measurements logged during preparation</setting>
+                <setting name="label" locale="en_US">Volume measurements logged during creation</setting>
                 <setting name="description" locale="en_US">For example volume of water on eDNA filter. This can be relevant for quantification analysis on the specimen.</setting>
 				        <setting name="add_label" locale="en_US">Add volume measurement</setting>
                 <setting name="list_format">list</setting>
@@ -12237,7 +12241,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Verification status of georeference</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="description" locale="en_US">The map above is checked: do the decimal coordinates deliver the correct locality? Additional information below is entered, by using the tool: https://geopick.gbif.org/. The most precise placename is linked to the specimen.</setting>
+                <setting name="description" locale="en_US">The map above is checked: do the decimal coordinates deliver the correct locality as described? If location is descriptive, use: https://geopick.gbif.org/ to link coordinates and a coordinate uncertainty to the locality.</setting>
               </settings>
 			      </placement>
             <placement code="georeferenceRemarks">
@@ -12246,13 +12250,13 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="ca_places_lookup"><!--This one is to be deleted for the users if a standardized lists of place names (land and water) are added. New names can be added on request.-->
+            <placement code="ca_places_lookup"><!--This one is to be deleted for the users if a standardized lists of place names (land and water) are added. New names can be added on request. However also possible to let users regulate this themselves.-->
               <bundle>ca_places</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Toponym (Lookup view)</setting>
                 <setting name="description" locale="en_US">The place or toponym, chosen from the standardized list. TIP: Always interpret the place name in the historical context! For example municipalities can fuse or split. Each place attribution has a reference and time stamp.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
+				        <setting name="maxRelationshipsPerRow">5</setting>
                 <setting name="useHierarchicalBrowser">0</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
@@ -12263,8 +12267,9 @@
                 <setting name="label" locale="en_US">Toponym (hiërarchial view)</setting>
                 <setting name="description" locale="en_US">The place or toponym, chosen from the standardized list. This view allows you to browse through the available options already available. To add an option, use the "lookup" above.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">1</setting>
+				        <setting name="maxRelationshipsPerRow">5</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="useHierarchicalBrowser">1</setting>
               </settings>
 			      </placement>
             <placement code="provenance" typeRestrictions="plantObject" includeSubtypes="1">
@@ -12495,7 +12500,7 @@
               <bundle>ca_attribute_GBIFedna</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">GBIF taxon lookup (eDNA)</setting>
-                <setting name="description" locale="en_US">If other than the linked publication, specific taxa are relevant (for example for INBO research, to explicitly link to the specimen, they can be added here.</setting>
+                <setting name="description" locale="en_US">If other than the linked publication, specific taxa are relevant (for example for INBO research) to explicitly link to the specimen, they can be added here.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
@@ -12582,7 +12587,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="object_weight" typeRestrictions="seedlot,soilObject,dnaSample,leafSampleAnalytic">
+            <placement code="object_weight" typeRestrictions="seedlot,soilObject,leafSampleAnalytic">
               <bundle>ca_attribute_weightContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Weight measurement</setting>
@@ -12810,14 +12815,14 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="qualityFlag">
+			      <!--<placement code="qualityFlag">
               <bundle>ca_attribute_qualityFlag</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Indication of the quality of the object record</setting>
 				        <setting name="add_label" locale="en_US">Add another quality indication</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
-            </placement>
+            </placement>-->
             <placement code="deaccession">
               <bundle>ca_objects_deaccession</bundle>
             </placement>
