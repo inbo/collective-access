@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.77</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.78</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
-  <!--Issues to check if succesful in v0.77-->
-  <!--https://github.com/inbo/collective-access/issues/248-->
-  <!--https://github.com/inbo/collective-access/issues/300-->
+  <!--Issues to check if succesful in v0.78-->
   <!--https://github.com/inbo/collective-access/issues/221-->
+  <!--https://github.com/inbo/collective-access/issues/308-->
+  <!--Issues to check if succesful in v0.77-->
   <!--https://github.com/inbo/collective-access/issues/273-->
   <!--https://github.com/inbo/collective-access/issues/305-->
   <!--https://github.com/inbo/collective-access/issues/292-->
@@ -14,20 +14,22 @@
   <!--https://github.com/inbo/collective-access/issues/264-->
   <!--https://github.com/inbo/collective-access/issues/276-->
   <!--https://github.com/inbo/collective-access/issues/277-->
-  <!--Issues still open for manually adding information-->
-  <!--https://github.com/inbo/collective-access/issues/77-->
-  <!--https://github.com/inbo/collective-access/issues/117-->
-  <!--https://github.com/inbo/collective-access/issues/119-->
-  <!--https://github.com/inbo/collective-access/issues/168-->
-  <!--https://github.com/inbo/collective-access/issues/184-->
-  <!--https://github.com/inbo/collective-access/issues/188-->
-  <!--https://github.com/inbo/collective-access/issues/189-->
-  <!--https://github.com/inbo/collective-access/issues/201-->
-  <!--https://github.com/inbo/collective-access/issues/229-->
-  <!--https://github.com/inbo/collective-access/issues/230-->
-  <!--https://github.com/inbo/collective-access/issues/249-->
-  <!--https://github.com/inbo/collective-access/issues/267-->
-  <!--https://github.com/inbo/collective-access/issues/271--><!--to write in the conf files-->
+  <!--Issues still open-->
+  <!--https://github.com/inbo/collective-access/issues/77--><!--bug-->
+  <!--https://github.com/inbo/collective-access/issues/117--><!--needs extra developing/coding-->
+  <!--https://github.com/inbo/collective-access/issues/119--><!--needs extra developing/coding-->
+  <!--https://github.com/inbo/collective-access/issues/168--><!--ETL/import-->
+  <!--https://github.com/inbo/collective-access/issues/184--><!--user management-->
+  <!--https://github.com/inbo/collective-access/issues/188--><!--user management-->
+  <!--https://github.com/inbo/collective-access/issues/189--><!--needs extra developing/coding-->
+  <!--https://github.com/inbo/collective-access/issues/201--><!--not so important-->
+  <!--https://github.com/inbo/collective-access/issues/229--><!--to check when trying plant use cases-->
+  <!--https://github.com/inbo/collective-access/issues/230--><!--to check when trying plant use cases-->
+  <!--https://github.com/inbo/collective-access/issues/249--><!--to write in the widget-->
+  <!--https://github.com/inbo/collective-access/issues/267--><!--needs extra developing/coding-->
+  <!--https://github.com/inbo/collective-access/issues/271--><!--to write in the .conf files-->
+  <!--https://github.com/inbo/collective-access/issues/307--><!--needs extra developing/coding-->
+  <!--https://github.com/inbo/collective-access/issues/309--><!--needs extra developing/coding-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -6010,40 +6012,11 @@
 	      <settings>
           <setting name="fieldWidth">40</setting>
           <setting name="doesNotTakeLocale">1</setting>
-          <setting name="hideIfSelected_soilSample">object_ui/obj_measurements/lifeStageMammal</setting>
-          <setting name="hideIfSelected_waterSample">object_ui/obj_measurements/lifeStageMammal</setting>
-          <setting name="hideIfSelected_soilSample">object_ui/obj_measurements/lifeStageInvertebrate</setting>
-          <setting name="hideIfSelected_waterSample">object_ui/obj_measurements/lifeStageInvertebrate</setting>
-          <setting name="hideIfSelected_soilSample">object_ui/obj_measurements/lifeStageFish</setting>
-          <setting name="hideIfSelected_waterSample">object_ui/obj_measurements/lifeStageFish</setting>
-          <setting name="hideIfSelected_soilSample">object_ui/obj_measurements/lifeStageReptile</setting>
-          <setting name="hideIfSelected_waterSample">object_ui/obj_measurements/lifeStageReptile</setting>
-          <setting name="hideIfSelected_soilSample">object_ui/obj_measurements/lifeStageAmphibian</setting>
-          <setting name="hideIfSelected_waterSample">object_ui/obj_measurements/lifeStageAmphibian</setting>
-          <setting name="hideIfSelected_soilSample">object_ui/obj_measurements/lifeStagePlant</setting>
-          <setting name="hideIfSelected_waterSample">object_ui/obj_measurements/lifeStagePlant</setting>
-          <setting name="hideIfSelected_soilSample">object_ui/obj_measurements/sexPlant</setting>
-          <setting name="hideIfSelected_waterSample">object_ui/obj_measurements/sexPlant</setting>
-          <setting name="hideIfSelected_soilSample">object_ui/obj_measurements/sexAnimal</setting>
-          <setting name="hideIfSelected_waterSample">object_ui/obj_measurements/sexAnimal</setting>
-          <setting name="hideIfSelected_soilSample">object_ui/taxonomy/verbatimTaxon</setting>
-          <setting name="hideIfSelected_waterSample">object_ui/taxonomy/verbatimTaxon</setting>
+          <setting name="hideIfSelected___null__">object_ui/record/verbatimTaxon</setting>
           <setting name="hideIfSelected_soilSample">object_ui/record/verbatimTaxon</setting>
           <setting name="hideIfSelected_waterSample">object_ui/record/verbatimTaxon</setting>
-          <setting name="hideIfSelected_soilSample">object_ui/taxonomy/verbatimTaxon</setting>
-          <setting name="hideIfSelected_waterSample">object_ui/taxonomy/verbatimTaxon</setting>
-          <setting name="hideIfSelected_soilSample">object_ui/taxonomy/GBIF</setting>
-          <setting name="hideIfSelected_waterSample">object_ui/taxonomy/GBIF</setting>
-          <setting name="hideIfSelected_soilSample">object_ui/taxonomy/taxonDate</setting>
-          <setting name="hideIfSelected_waterSample">object_ui/taxonomy/taxonDate</setting>
-          <setting name="hideIfSelected_soilSample">object_ui/taxonomy/ca_entities</setting>
-          <setting name="hideIfSelected_waterSample">object_ui/taxonomy/ca_entities</setting>
-          <setting name="hideIfSelected_soilSample">object_ui/taxonomy/voucher</setting>
-          <setting name="hideIfSelected_waterSample">object_ui/taxonomy/voucher</setting>
-          <setting name="hideIfSelected_soilSample">object_ui/taxonomy/ca_occurrences</setting>
-          <setting name="hideIfSelected_waterSample">object_ui/taxonomy/ca_occurrences</setting>
-          <setting name="hideIfSelected_soilSample">object_ui/taxonomy/taxonNote</setting>
-          <setting name="hideIfSelected_waterSample">object_ui/taxonomy/taxonNote</setting>
+          <setting name="hideIfSelected___null__">object_ui/obj_preparation/preparationVolumeC</setting>
+          <setting name="hideIfSelected___null__">object_ui/obj_preparation/preparationWeightC</setting>
           <setting name="hideIfSelected_waterSample">object_ui/obj_preparation/preparationWeightC</setting>
           <setting name="hideIfSelected_bud">object_ui/obj_preparation/preparationVolumeC</setting>
           <setting name="hideIfSelected_leaf">object_ui/obj_preparation/preparationVolumeC</setting>
@@ -6080,6 +6053,9 @@
           <setting name="hideIfSelected_hair">object_ui/obj_preparation/preparationVolumeC</setting>
           <setting name="hideIfSelected_fin">object_ui/obj_preparation/preparationVolumeC</setting>
           <setting name="hideIfSelected_tooth">object_ui/obj_preparation/preparationVolumeC</setting>
+          <setting name="hideIfSelected___null__">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected___null__">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected___null__">object_ui/record/maximumDepthInMeters</setting>
           <setting name="hideIfSelected_bud">object_ui/samplingpointZ/verbatimDepth</setting>
           <setting name="hideIfSelected_bud">object_ui/samplingpointZ/minimumDepthInMeters</setting>
           <setting name="hideIfSelected_bud">object_ui/samplingpointZ/maximumDepthInMeters</setting>
@@ -6160,7 +6136,30 @@
           <setting name="hideIfSelected_fin">object_ui/samplingpointZ/maximumDepthInMeters</setting>
           <setting name="hideIfSelected_tooth">object_ui/samplingpointZ/verbatimDepth</setting>
           <setting name="hideIfSelected_tooth">object_ui/samplingpointZ/minimumDepthInMeters</setting>
-          <setting name="hideIfSelected_tooth">object_ui/samplingpointZ/maximumDepthInMeters</setting>                       
+          <setting name="hideIfSelected_tooth">object_ui/samplingpointZ/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected___null__">object_ui/taxonomy/verbatimTaxon</setting>
+          <setting name="hideIfSelected___null__">object_ui/taxonomy/GBIF</setting>
+          <setting name="hideIfSelected___null__">object_ui/taxonomy/taxonDate</setting>
+          <setting name="hideIfSelected___null__">object_ui/taxonomy/ca_entities</setting>
+          <setting name="hideIfSelected___null__">object_ui/taxonomy/voucher</setting>
+          <setting name="hideIfSelected___null__">object_ui/taxonomy/ca_occurrences</setting>
+          <setting name="hideIfSelected___null__">object_ui/taxonomy/taxonNote</setting>
+          <setting name="hideIfSelected_soilSample">object_ui/taxonomy/verbatimTaxon</setting>
+          <setting name="hideIfSelected_waterSample">object_ui/taxonomy/verbatimTaxon</setting>
+          <setting name="hideIfSelected_soilSample">object_ui/taxonomy/verbatimTaxon</setting>
+          <setting name="hideIfSelected_waterSample">object_ui/taxonomy/verbatimTaxon</setting>
+          <setting name="hideIfSelected_soilSample">object_ui/taxonomy/GBIF</setting>
+          <setting name="hideIfSelected_waterSample">object_ui/taxonomy/GBIF</setting>
+          <setting name="hideIfSelected_soilSample">object_ui/taxonomy/taxonDate</setting>
+          <setting name="hideIfSelected_waterSample">object_ui/taxonomy/taxonDate</setting>
+          <setting name="hideIfSelected_soilSample">object_ui/taxonomy/ca_entities</setting>
+          <setting name="hideIfSelected_waterSample">object_ui/taxonomy/ca_entities</setting>
+          <setting name="hideIfSelected_soilSample">object_ui/taxonomy/voucher</setting>
+          <setting name="hideIfSelected_waterSample">object_ui/taxonomy/voucher</setting>
+          <setting name="hideIfSelected_soilSample">object_ui/taxonomy/ca_occurrences</setting>
+          <setting name="hideIfSelected_waterSample">object_ui/taxonomy/ca_occurrences</setting>
+          <setting name="hideIfSelected_soilSample">object_ui/taxonomy/taxonNote</setting>
+          <setting name="hideIfSelected_waterSample">object_ui/taxonomy/taxonNote</setting>
         </settings>
 	      <typeRestrictions>
           <restriction code="r_dnaSample">
@@ -6205,6 +6204,16 @@
               <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              <setting name="hideIfSelected___null__">object_ui/obj_measurements/lifeStageMammal</setting>
+              <setting name="hideIfSelected___null__">object_ui/obj_measurements/lifeStageInvertebrate</setting>
+              <setting name="hideIfSelected___null__">object_ui/obj_measurements/lifeStageFish</setting>
+              <setting name="hideIfSelected___null__">object_ui/obj_measurements/lifeStageReptile</setting>
+              <setting name="hideIfSelected___null__">object_ui/obj_measurements/lifeStageAmphibian</setting>
+              <setting name="hideIfSelected___null__">object_ui/obj_measurements/lifeStagePlant</setting>
+              <setting name="hideIfSelected___null__">object_ui/obj_measurements/sexPlant</setting>
+              <setting name="hideIfSelected___null__">object_ui/obj_measurements/sexAnimal</setting>
+              <setting name="hideIfSelected___null__">object_ui/obj_measurements/reprCondPlant</setting>
+              <setting name="hideIfSelected___null__">object_ui/obj_measurements/reprCondAnimal</setting>
               <setting name="hideIfSelected_notApplicable">object_ui/obj_measurements/lifeStageMammal</setting>
               <setting name="hideIfSelected_notApplicable">object_ui/obj_measurements/lifeStageInvertebrate</setting>
               <setting name="hideIfSelected_notApplicable">object_ui/obj_measurements/lifeStageFish</setting>
@@ -6218,45 +6227,43 @@
               <setting name="hideIfSelected_fish">object_ui/obj_measurements/lifeStageMammal</setting>
               <setting name="hideIfSelected_reptile">object_ui/obj_measurements/lifeStageMammal</setting>
               <setting name="hideIfSelected_amphibian">object_ui/obj_measurements/lifeStageMammal</setting>
-              <setting name="hideIfSelected_notSelected">object_ui/obj_measurements/lifeStageMammal</setting>
               <setting name="hideIfSelected_plant">object_ui/obj_measurements/lifeStageInvertebrate</setting>
               <setting name="hideIfSelected_mammal">object_ui/obj_measurements/lifeStageInvertebrate</setting>
               <setting name="hideIfSelected_fish">object_ui/obj_measurements/lifeStageInvertebrate</setting>
               <setting name="hideIfSelected_reptile">object_ui/obj_measurements/lifeStageInvertebrate</setting>
               <setting name="hideIfSelected_amphibian">object_ui/obj_measurements/lifeStageInvertebrate</setting>
-              <setting name="hideIfSelected_notSelected">object_ui/obj_measurements/lifeStageInvertebrate</setting>
               <setting name="hideIfSelected_plant">object_ui/obj_measurements/lifeStageFish</setting>
               <setting name="hideIfSelected_mammal">object_ui/obj_measurements/lifeStageFish</setting>
               <setting name="hideIfSelected_invertebrate">object_ui/obj_measurements/lifeStageFish</setting>
               <setting name="hideIfSelected_reptile">object_ui/obj_measurements/lifeStageFish</setting>
               <setting name="hideIfSelected_amphibian">object_ui/obj_measurements/lifeStageFish</setting>
-              <setting name="hideIfSelected_notSelected">object_ui/obj_measurements/lifeStageFish</setting>
               <setting name="hideIfSelected_plant">object_ui/obj_measurements/lifeStageReptile</setting>
               <setting name="hideIfSelected_mammal">object_ui/obj_measurements/lifeStageReptile</setting>
               <setting name="hideIfSelected_invertebrate">object_ui/obj_measurements/lifeStageReptile</setting>
               <setting name="hideIfSelected_fish">object_ui/obj_measurements/lifeStageReptile</setting>
               <setting name="hideIfSelected_amphibian">object_ui/obj_measurements/lifeStageReptile</setting>
-              <setting name="hideIfSelected_notSelected">object_ui/obj_measurements/lifeStageReptile</setting>
               <setting name="hideIfSelected_plant">object_ui/obj_measurements/lifeStageAmphibian</setting>
               <setting name="hideIfSelected_mammal">object_ui/obj_measurements/lifeStageAmphibian</setting>
               <setting name="hideIfSelected_invertebrate">object_ui/obj_measurements/lifeStageAmphibian</setting>
               <setting name="hideIfSelected_fish">object_ui/obj_measurements/lifeStageAmphibian</setting>
               <setting name="hideIfSelected_reptile">object_ui/obj_measurements/lifeStageAmphibian</setting>
-              <setting name="hideIfSelected_notSelected">object_ui/obj_measurements/lifeStageAmphibian</setting>
               <setting name="hideIfSelected_amphibian">object_ui/obj_measurements/lifeStagePlant</setting>
               <setting name="hideIfSelected_mammal">object_ui/obj_measurements/lifeStagePlant</setting>
               <setting name="hideIfSelected_invertebrate">object_ui/obj_measurements/lifeStagePlant</setting>
               <setting name="hideIfSelected_fish">object_ui/obj_measurements/lifeStagePlant</setting>
               <setting name="hideIfSelected_reptile">object_ui/obj_measurements/lifeStagePlant</setting>
-              <setting name="hideIfSelected_notSelected">object_ui/obj_measurements/lifeStagePlant</setting>
               <setting name="hideIfSelected_amphibian">object_ui/obj_measurements/sexPlant</setting>
               <setting name="hideIfSelected_mammal">object_ui/obj_measurements/sexPlant</setting>
               <setting name="hideIfSelected_invertebrate">object_ui/obj_measurements/sexPlant</setting>
               <setting name="hideIfSelected_fish">object_ui/obj_measurements/sexPlant</setting>
               <setting name="hideIfSelected_reptile">object_ui/obj_measurements/sexPlant</setting>
-              <setting name="hideIfSelected_notSelected">object_ui/obj_measurements/sexPlant</setting>
               <setting name="hideIfSelected_plant">object_ui/obj_measurements/sexAnimal</setting>
-              <setting name="hideIfSelected_notSelected">object_ui/obj_measurements/sexAnimal</setting>
+              <setting name="hideIfSelected_plant">object_ui/obj_measurements/reprCondAnimal</setting>
+              <setting name="hideIfSelected_amphibian">object_ui/obj_measurements/reprCondPlant</setting>
+              <setting name="hideIfSelected_mammal">object_ui/obj_measurements/reprCondPlant</setting>
+              <setting name="hideIfSelected_invertebrate">object_ui/obj_measurements/reprCondPlant</setting>
+              <setting name="hideIfSelected_fish">object_ui/obj_measurements/reprCondPlant</setting>
+              <setting name="hideIfSelected_reptile">object_ui/obj_measurements/reprCondPlant</setting>
             </settings>
           </restriction>
         </typeRestrictions>
@@ -12930,7 +12937,7 @@
 				        <setting name="add_label" locale="en_US">Add genotype</setting>
               </settings>
 			      </placement>
-			      <placement code="lifeStage_mammal" typeRestrictions="mammal,dnaSample" includeSubtypes="1">
+			      <placement code="lifeStageMammal" typeRestrictions="mammal,dnaSample" includeSubtypes="1">
               <bundle>ca_attribute_lifeStageMammal</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
@@ -12938,7 +12945,7 @@
                 <setting name="description" locale="en_US">Due to sampling, the life stage of the animal at time object(s) were collected becomes a fixed value.</setting>
               </settings>
             </placement>
-			      <placement code="lifeStage_invertebrate" typeRestrictions="dnaSample" includeSubtypes="1">
+			      <placement code="lifeStageInvertebrate" typeRestrictions="dnaSample" includeSubtypes="1">
               <bundle>ca_attribute_lifeStageInvertebrate</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
@@ -12946,7 +12953,7 @@
                 <setting name="description" locale="en_US">Due to sampling, the life stage of the animal at time object(s) were collected becomes a fixed value.</setting>
               </settings>
             </placement>
-			      <placement code="lifeStage_fish" typeRestrictions="fish,dnaSample" includeSubtypes="1">
+			      <placement code="lifeStageFish" typeRestrictions="fish,dnaSample" includeSubtypes="1">
               <bundle>ca_attribute_lifeStageFish</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
@@ -12954,7 +12961,7 @@
                 <setting name="description" locale="en_US">Due to sampling, the life stage of the animal at time object(s) were collected becomes a fixed value.</setting>
               </settings>
             </placement>
-			      <placement code="lifeStage_reptile" typeRestrictions="dnaSample" includeSubtypes="1">
+			      <placement code="lifeStageReptile" typeRestrictions="dnaSample" includeSubtypes="1">
               <bundle>ca_attribute_lifeStageReptile</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
@@ -12962,7 +12969,7 @@
                 <setting name="description" locale="en_US">Due to sampling, the life stage of the animal at time object(s) were collected becomes a fixed value.</setting>
               </settings>
             </placement>
-			      <placement code="lifeStage_amphibian" typeRestrictions="dnaSample" includeSubtypes="1">
+			      <placement code="lifeStageAmphibian" typeRestrictions="dnaSample" includeSubtypes="1">
               <bundle>ca_attribute_lifeStageAmphibian</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
@@ -12970,7 +12977,7 @@
                 <setting name="description" locale="en_US">Due to sampling, the life stage of the animal at time object(s) were collected becomes a fixed value.</setting>
               </settings>
             </placement>
-			      <placement code="lifeStage_plant" typeRestrictions="plantObject,dnaSample" includeSubtypes="1">
+			      <placement code="lifeStagePlant" typeRestrictions="plantObject,dnaSample" includeSubtypes="1">
               <bundle>ca_attribute_lifeStagePlant</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
@@ -12978,7 +12985,7 @@
                 <setting name="description" locale="en_US">Due to sampling, the life stage of the plant at time object(s) were collected becomes a fixed value.</setting>
               </settings>
             </placement>
-			      <placement code="reprCond_mammal" typeRestrictions="mammal" includeSubtypes="1">
+			      <placement code="reprCondAnimal" typeRestrictions="mammal" includeSubtypes="1">
               <bundle>ca_attribute_reprCondAnimal</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Reproductive condition (dwc:reproductiveCondition)</setting>
@@ -12987,7 +12994,7 @@
                 <setting name="expand_collapse_value">collapse</setting>
 			        </settings>
             </placement>
-			      <placement code="reprCond_plant" typeRestrictions="plantObject" includeSubtypes="1">
+			      <placement code="reprCondPlant" typeRestrictions="plantObject" includeSubtypes="1">
               <bundle>ca_attribute_reprCondPlant</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Reproductive condition (dwc:reproductiveCondition)</setting>
