@@ -12,6 +12,8 @@
   <!--https://github.com/inbo/collective-access/issues/293-->
   <!--https://github.com/inbo/collective-access/issues/306-->
   <!--https://github.com/inbo/collective-access/issues/264-->
+  <!--https://github.com/inbo/collective-access/issues/276-->
+  <!--https://github.com/inbo/collective-access/issues/277-->
   <!--Issues still open for manually adding information-->
   <!--https://github.com/inbo/collective-access/issues/77-->
   <!--https://github.com/inbo/collective-access/issues/117-->
@@ -24,6 +26,8 @@
   <!--https://github.com/inbo/collective-access/issues/229-->
   <!--https://github.com/inbo/collective-access/issues/230-->
   <!--https://github.com/inbo/collective-access/issues/249-->
+  <!--https://github.com/inbo/collective-access/issues/267-->
+  <!--https://github.com/inbo/collective-access/issues/271--><!--to write in the conf files-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -13193,7 +13197,7 @@
             <placement code="restriction_use">
               <bundle>ca_attribute_restrictionUse</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Restriction(s) for re-use</setting>
+                <setting name="label" locale="en_US">Restriction(s) for reuse</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>               
               </settings>
             </placement>
@@ -14550,12 +14554,20 @@
 				        <setting name="add_label" locale="en_US">Add other non preferred identifier</setting>
               </settings>
             </placement>
-			      <placement code="loan_type">
-              <bundle>loan_type</bundle>
+			      <placement code="ca_occurrence_project" typeRestrictions="internal_reuse">
+              <bundle>ca_occurrences</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Type of usage</setting>
+                <setting name="label" locale="en_US">INBO roject that reuses the specimen</setting>
+                <setting name="description" locale="en_US">This can be a project as defined in JIRA, a project as defined in LIMS, ..</setting>
+				        <setting name="restrict_to_types">Project</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">20</setting>
+                <setting name="restrict_to_relationship_types">projectReuse</setting>
+                <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+				        <setting name="add_label" locale="en_US">Add project</setting>
               </settings>
-            </placement>
+			      </placement>
 			      <placement code="loanStatus">
               <bundle>ca_attribute_loanStatus</bundle>
 			        <settings>
@@ -15743,6 +15755,20 @@
           </labels>
           <subTypeLeft>org</subTypeLeft>
           <subTypeRight></subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>
+	  <relationshipTable name="ca_loans_x_occurrences">
+      <types>
+        <type code="projectReuse" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>project that reuses</typename>
+              <typename_reverse>reused in project</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>internal_reuse</subTypeLeft>
+          <subTypeRight>project</subTypeRight>
         </type>
       </types>
     </relationshipTable>
