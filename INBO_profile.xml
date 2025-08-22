@@ -4,16 +4,10 @@
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in v0.78-->
   <!--https://github.com/inbo/collective-access/issues/221-->
-  <!--https://github.com/inbo/collective-access/issues/308-->
-  <!--Issues to check if succesful in v0.77-->
   <!--https://github.com/inbo/collective-access/issues/273-->
-  <!--https://github.com/inbo/collective-access/issues/305-->
   <!--https://github.com/inbo/collective-access/issues/292-->
-  <!--https://github.com/inbo/collective-access/issues/293-->
-  <!--https://github.com/inbo/collective-access/issues/306-->
-  <!--https://github.com/inbo/collective-access/issues/264-->
-  <!--https://github.com/inbo/collective-access/issues/276-->
-  <!--https://github.com/inbo/collective-access/issues/277-->
+  <!--https://github.com/inbo/collective-access/issues/308-->
+  <!--https://github.com/inbo/collective-access/issues/311-->
   <!--Issues still open-->
   <!--https://github.com/inbo/collective-access/issues/77--><!--bug-->
   <!--https://github.com/inbo/collective-access/issues/117--><!--needs extra developing/coding-->
@@ -30,6 +24,7 @@
   <!--https://github.com/inbo/collective-access/issues/271--><!--to write in the .conf files-->
   <!--https://github.com/inbo/collective-access/issues/307--><!--needs extra developing/coding-->
   <!--https://github.com/inbo/collective-access/issues/309--><!--needs extra developing/coding-->
+  <!--https://github.com/inbo/collective-access/issues/310--><!--user management--><!--ETL/import-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -1218,6 +1213,24 @@
                     <name_plural>Projects</name_plural>
                   </label>
                 </labels>
+                <items>
+                      <item idno="internalProject" rank="1" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>INBO project</name_singular>
+                            <name_plural>INBO projects</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                      <item idno="external project" rank="2" enabled="1" default="0">
+                        <labels>
+                          <label locale="en_US" preferred="1">
+                            <name_singular>External project</name_singular>
+                            <name_plural>External projects</name_plural>
+                          </label>
+                        </labels>
+                      </item>
+                </items>    
                 <settings>
                 <setting name="render_in_new_menu">1</setting>
                 </settings>
@@ -1735,7 +1748,7 @@
           </label>
         </labels>
         <items>
-          <item idno="usageID" enabled="1" default="0"><!--E.g. 2024-KULEUVEN-BIOTA4C. The convention is to name: year-requester-shortname. For internal reuse or for incoming loans, the requester is INBO. THe short name is ofter the projectname, something to be quickly reminded of the scope of the request.-->
+          <item idno="usageID" enabled="1" default="0"><!--E.g. 2024-KULEUVEN-BIOTA4C. The convention is to name: year-requester-shortname. For internal reuse or for incoming loans, the requester is INBO. The short name is ofter the projectname, something to be quickly reminded of the scope of the request.-->
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>usage ID</name_singular>
@@ -6018,6 +6031,7 @@
           <setting name="hideIfSelected___null__">object_ui/obj_preparation/preparationVolumeC</setting>
           <setting name="hideIfSelected___null__">object_ui/obj_preparation/preparationWeightC</setting>
           <setting name="hideIfSelected_waterSample">object_ui/obj_preparation/preparationWeightC</setting>
+          <setting name="hideIfSelected_soilSample">object_ui/obj_preparation/preparationVolumeC</setting>
           <setting name="hideIfSelected_bud">object_ui/obj_preparation/preparationVolumeC</setting>
           <setting name="hideIfSelected_leaf">object_ui/obj_preparation/preparationVolumeC</setting>
           <setting name="hideIfSelected_cambium">object_ui/obj_preparation/preparationVolumeC</setting>
@@ -8353,7 +8367,7 @@
 	    <metadataElement code="verbatimLocality" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>verbatimLocality</name>
+            <name>Verbatim locality</name>
             <description>The original textual description of the place.</description>
           </label>
         </labels>
@@ -8567,7 +8581,7 @@
 	    <metadataElement code="verbatimGeodeticDatum" datatype="List" list="geodetic_datum2">
         <labels>
           <label locale="en_US">
-            <name>Verbatim Geodetic Datum</name>
+            <name>Verbatim geodetic datum</name>
             <description>The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which the geographic coordinates given in verbatimLatitude and verbatimLongitude are based.</description>
           </label>
         </labels>
@@ -8692,7 +8706,7 @@
 	    <metadataElement code="verbatimCoordinatesRemarks" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>verbatimcoordinatesRemarks</name>
+            <name>Verbatim coordinates remarks</name>
             <description>Any additional information to help correctly georeference the verbatim coordinates such as coordinate system, measurement method, notes taken in the field, ...</description>
           </label>
         </labels>
@@ -8754,7 +8768,7 @@
 	    <metadataElement code="verbatimElevation" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>Verbatim elevation (dwc:verbatimElevation)</name>
+            <name>Verbatim elevation</name>
             <description>The original description of the elevation (altitude, usually above sea level) of the Location.</description>
           </label>
         </labels>
@@ -8880,7 +8894,7 @@
 	    <metadataElement code="decimalLatitudeY" datatype="Text"><!--should be Numeric-->
         <labels>
           <label locale="en_US">
-            <name>decimalLatitude (Y)</name>
+            <name>Decimal latitude (Y)</name>
             <description>The geographic latitude (in decimal degrees, using the WGS84 spatial reference system given in dwc:geodeticDatum) of the geographic center of a dcterms:Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive. Careful: latitude is N to S. For example the Herman Teirlinck building: 50.86638999067575.</description>
           </label>
         </labels>
@@ -8943,7 +8957,7 @@
 	    <metadataElement code="decimalLongitudeX" datatype="Text"><!--should be Numeric-->
         <labels>
           <label locale="en_US">
-            <name>decimalLongitude (X)</name>
+            <name>Decimal longitude (X)</name>
             <description>The geographic longitude (in decimal degrees, using the WGS84 spatial reference system given in dwc:geodeticDatum) of the geographic center of a dcterms:Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive. Careful longitude is E to W. For example: For example the Herman Teirlinck building: 4.350147058474895.</description>
           </label>
         </labels>
@@ -9154,7 +9168,7 @@
 	    <metadataElement code="geodeticDatum" datatype="List" list="geodetic_datum">
         <labels>
           <label locale="en_US">
-            <name>geodeticDatum</name>
+            <name>Geodetic datum</name>
             <description>The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which the geographic coordinates given in dwc:decimalLatitude and dwc:decimalLongitude are based.</description>
           </label>
         </labels>
@@ -9217,7 +9231,7 @@
 	    <metadataElement code="coordinatePrecision" datatype="Text"><!--should be Numeric-->
         <labels>
           <label locale="en_US">
-            <name>coordinatePrecision</name>
+            <name>Coordinate precision</name>
             <description>A decimal representation of the precision of the coordinates given in the dwc:decimalLatitude and dwc:decimalLongitude. 0.00001 (normal GPS limit for decimal degrees); 0.000278 (nearest second); 0.01667 (nearest minute); 1.0 (nearest degree)</description>
           </label>
         </labels>
@@ -9280,7 +9294,7 @@
 	    <metadataElement code="pointRadiusSpatialFit" datatype="Text"><!--should be Numeric-->
         <labels>
           <label locale="en_US">
-            <name>pointRadiusSpatialFit</name>
+            <name>Point radius spatial fit</name>
             <description>The ratio of the area of the point-radius (dwc:decimalLatitude, dwc:decimalLongitude, dwc:coordinateUncertaintyInMeters) to the area of the true (original, or most specific) spatial representation of the dcterms:Location. Legal values are 0, greater than or equal to 1, or undefined. A value of 1 is an exact match or 100% overlap.</description>
           </label>
         </labels>
@@ -9343,7 +9357,7 @@
 	    <metadataElement code="georeferenceProtocol" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>georeferenceProtocol</name>
+            <name>Georeference protocol</name>
             <description>A description or reference to the methods used to determine the spatial footprint, coordinates, and uncertainties.</description>
           </label>
         </labels>
@@ -9406,7 +9420,7 @@
 	    <metadataElement code="georeferenceSources" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>georeferenceSources</name>
+            <name>Georeference sources</name>
             <description>	A list (concatenated and separated) of maps, gazetteers, or other resources used to georeference the dcterms:Location, described specifically enough to allow anyone in the future to use the same resources.</description>
           </label>
         </labels>
@@ -9469,7 +9483,7 @@
 	    <metadataElement code="locality" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>locality</name>
+            <name>Locality</name>
             <description>The specific description of the place.</description>
           </label>
         </labels>
@@ -9532,7 +9546,7 @@
 	    <metadataElement code="georeferenceRemarks" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>georeferenceRemarks</name>
+            <name>Georeference remarks</name>
             <description>Notes or comments about the spatial description determination, explaining assumptions made in addition or opposition to the those formalized in the method referred to in dwc:georeferenceProtocol.</description>
           </label>
         </labels>
@@ -9721,7 +9735,7 @@
 	    <metadataElement code="verticalDatum" datatype="List" list="vertical_datum">
         <labels>
           <label locale="en_US">
-            <name>verticalDatum</name>
+            <name>Vertical datum</name>
             <description>The vertical datum used as the reference upon which the values in the elevation terms are based.</description>
           </label>
         </labels>
@@ -9784,7 +9798,7 @@
 	    <metadataElement code="verbatimDepth" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>Verbatim depth (dwc:verbatimDepth)</name>
+            <name>Verbatim depth</name>
             <description>The original description of the depth below the local surface.</description>
           </label>
         </labels>
@@ -9820,7 +9834,7 @@
 	    <metadataElement code="minimumDepthInMeters" datatype="Text"><!--should be Numeric-->
         <labels>
           <label locale="en_US">
-            <name>minimumDepthInMeters</name>
+            <name>Minimum depth in meters</name>
             <description>The lesser depth of a range of depth below the local surface, in meters.</description>
           </label>
         </labels>
@@ -9856,7 +9870,7 @@
 	    <metadataElement code="maximumDepthInMeters" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>maximumDepthInMeters</name>
+            <name>Maximum depth in meters</name>
             <description>	The greater depth of a range of depth below the local surface, in meters.</description>
           </label>
         </labels>
@@ -9892,7 +9906,7 @@
 	    <metadataElement code="verbatimHeight" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>verbatimHeight</name>
+            <name>Verbatim height</name>
             <description>The original description of the height above the local surface.</description>
           </label>
         </labels>
@@ -9918,7 +9932,7 @@
 	    <metadataElement code="minimumHeightInMeters" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>minimumHeightInMeters</name>
+            <name>Minimum height in meters</name>
             <description>The lower limit of the range of height in meters.</description>
           </label>
         </labels>
@@ -9944,7 +9958,7 @@
 	    <metadataElement code="maximumHeightInMeters" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>maximumHeightInMeters</name>
+            <name>Maximum height in meters</name>
             <description>The upper limit of the range of height in meters.</description>
           </label>
         </labels>
@@ -9970,7 +9984,7 @@
 	    <metadataElement code="habitat" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>habitat</name>
+            <name>Habitat</name>
             <description>A category or description of the habitat in which the Event occurred.</description>
           </label>
         </labels>
@@ -12139,7 +12153,6 @@
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at</setting>
                 <setting name="restrict_to_types">room,cabinet,freezer,fridge,compartment,drawer,shelf,crate,rack,box,spot</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="useHierarchicalBrowser">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -12225,7 +12238,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Original project that generated the record</setting>
                 <setting name="description" locale="en_US">This can be a project as defined in JIRA, a project as defined in LIMS, ..</setting>
-				        <setting name="restrict_to_types">Project</setting>
+				        <setting name="restrict_to_types">project</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">5</setting>
                 <setting name="restrict_to_relationship_types">resultingObjectsProject</setting>
@@ -13334,7 +13347,7 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="idno" typeRestrictions="fieldwork,project,valuation,disposal,treatment,renewal,transfer,identification">
+            <placement code="idno" typeRestrictions="fieldwork,internalProject,externalProject,valuation,disposal,treatment,renewal,transfer,identification">
               <bundle>idno</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">CMS-ID</setting>
@@ -13354,7 +13367,7 @@
                 <setting name="description" locale="en_US">The field campaign name used in notes, datasets, publications, ... if there are multiple names or identifiers for the field campaign, all other identifiers are put in the "non-preferred labels" below.</setting>
               </settings>
             </placement>
-			      <placement code="preferred_labels_project" typeRestrictions="project">
+			      <placement code="preferred_labels_project" typeRestrictions="internalProject,externalProject,">
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Project (short) name</setting>
@@ -13375,7 +13388,7 @@
                 <setting name="description" locale="en_US">The identifier for the curation event used in notes. This can be a descriptive title: for example: Renewal of seedlot bags 2023.</setting>
               </settings>
             </placement>
-            <placement code="nonpreferred_labels" typeRestrictions="fieldwork,project,valuation,disposal,treatment,renewal,transfer">
+            <placement code="nonpreferred_labels" typeRestrictions="fieldwork,internalProject,externalProject,valuation,disposal,treatment,renewal,transfer">
               <bundle>nonpreferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Other identifier (nonpreferred)</setting>
@@ -13383,7 +13396,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="publishedRecord_project" typeRestrictions="project">
+            <placement code="publishedRecord_project" typeRestrictions="internalProject,externalProject,">
               <bundle>ca_attribute_publishedRecord</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Project-URL</setting>
@@ -13392,7 +13405,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="eventDescription" typeRestrictions="fieldwork,project">
+            <placement code="eventDescription" typeRestrictions="fieldwork,internalProject,externalProject,">
               <bundle>ca_attribute_descriptionContainer</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -13421,7 +13434,7 @@
 				        <setting name="add_label" locale="en_US">Add place</setting>
               </settings>
 			      </placement>
-			      <placement code="status" typeRestrictions="fieldwork,project,valuation,disposal,treatment,renewal,transfer">
+			      <placement code="status" typeRestrictions="fieldwork,internalProject,externalProject,valuation,disposal,treatment,renewal,transfer">
               <bundle>status</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Cataloguing status</setting>
@@ -14412,7 +14425,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Original project that generated the object lot</setting>
                 <setting name="description" locale="en_US">This can be a project as defined in JIRA, a project as defined in LIMS, ..</setting>
-				        <setting name="restrict_to_types">Project</setting>
+				        <setting name="restrict_to_types">project</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">5</setting>
                 <setting name="restrict_to_relationship_types">resultingObjectsProject</setting>
@@ -14564,9 +14577,23 @@
 			      <placement code="ca_occurrence_project" typeRestrictions="internal_reuse">
               <bundle>ca_occurrences</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">INBO roject that reuses the specimen</setting>
+                <setting name="label" locale="en_US">INBO project that reuses the specimen</setting>
                 <setting name="description" locale="en_US">This can be a project as defined in JIRA, a project as defined in LIMS, ..</setting>
-				        <setting name="restrict_to_types">Project</setting>
+				        <setting name="restrict_to_types">internalProject</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">20</setting>
+                <setting name="restrict_to_relationship_types">projectReuse</setting>
+                <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+				        <setting name="add_label" locale="en_US">Add project</setting>
+              </settings>
+			      </placement>
+			      <placement code="ca_occurrence_project" typeRestrictions="external_reuse">
+              <bundle>ca_occurrences</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">INBO project that reuses the specimen</setting>
+                <setting name="description" locale="en_US">This can be a project as defined in JIRA, a project as defined in LIMS, ..</setting>
+				        <setting name="restrict_to_types">externalProject</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">20</setting>
                 <setting name="restrict_to_relationship_types">projectReuse</setting>
