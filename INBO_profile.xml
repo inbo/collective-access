@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.76</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.77</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
-  <!--Issues to check if succesful in v0.76-->
+  <!--Issues to check if succesful in v0.77-->
+  <!--https://github.com/inbo/collective-access/issues/248-->
+  <!--https://github.com/inbo/collective-access/issues/300-->
   <!--https://github.com/inbo/collective-access/issues/221-->
   <!--https://github.com/inbo/collective-access/issues/273-->
-  <!--https://github.com/inbo/collective-access/issues/287-->
-  <!--https://github.com/inbo/collective-access/issues/288-->
-  <!--https://github.com/inbo/collective-access/issues/289-->
-  <!--https://github.com/inbo/collective-access/issues/290-->
-  <!--https://github.com/inbo/collective-access/issues/291-->
+  <!--https://github.com/inbo/collective-access/issues/305-->
   <!--https://github.com/inbo/collective-access/issues/292-->
   <!--https://github.com/inbo/collective-access/issues/293-->
-  <!--https://github.com/inbo/collective-access/issues/294-->
-  <!--https://github.com/inbo/collective-access/issues/295-->
-  <!--https://github.com/inbo/collective-access/issues/296-->
-  <!--https://github.com/inbo/collective-access/issues/297-->
-  <!--https://github.com/inbo/collective-access/issues/298-->
-  <!--https://github.com/inbo/collective-access/issues/299-->
-  <!--https://github.com/inbo/collective-access/issues/300-->
-  <!--https://github.com/inbo/collective-access/issues/301-->
-  <!--https://github.com/inbo/collective-access/issues/302-->
-  <!--https://github.com/inbo/collective-access/issues/303-->
-  <!--https://github.com/inbo/collective-access/issues/304-->
+  <!--https://github.com/inbo/collective-access/issues/306-->
+  <!--https://github.com/inbo/collective-access/issues/264-->
+  <!--Issues still open for manually adding information-->
+  <!--https://github.com/inbo/collective-access/issues/77-->
+  <!--https://github.com/inbo/collective-access/issues/117-->
+  <!--https://github.com/inbo/collective-access/issues/119-->
+  <!--https://github.com/inbo/collective-access/issues/168-->
+  <!--https://github.com/inbo/collective-access/issues/184-->
+  <!--https://github.com/inbo/collective-access/issues/188-->
+  <!--https://github.com/inbo/collective-access/issues/189-->
+  <!--https://github.com/inbo/collective-access/issues/201-->
+  <!--https://github.com/inbo/collective-access/issues/229-->
+  <!--https://github.com/inbo/collective-access/issues/230-->
+  <!--https://github.com/inbo/collective-access/issues/249-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -935,11 +936,11 @@
           </label>
         </labels>
          <items>
-              <item idno="placeConcept" rank="1" enabled="0" default="0"><!--http://rs.tdwg.org/dwc/terms/continent-->
+              <item idno="placeConcept" rank="1" enabled="1" default="0">
                 <labels>
                   <label locale="en_US" preferred="1">
-                    <name_singular>administrative</name_singular>
-                    <name_plural>administratives</name_plural>
+                    <name_singular>place concept</name_singular>
+                    <name_plural>place concepts</name_plural>
                   </label>
                 </labels>
               </item>
@@ -4251,7 +4252,7 @@
       <list code="data_export" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
         <labels>
           <label locale="en_US">
-            <name>Disposition</name>
+            <name>Data export</name>
           </label>
         </labels>
         <items>
@@ -6023,6 +6024,10 @@
           <setting name="hideIfSelected_waterSample">object_ui/obj_measurements/sexAnimal</setting>
           <setting name="hideIfSelected_soilSample">object_ui/taxonomy/verbatimTaxon</setting>
           <setting name="hideIfSelected_waterSample">object_ui/taxonomy/verbatimTaxon</setting>
+          <setting name="hideIfSelected_soilSample">object_ui/record/verbatimTaxon</setting>
+          <setting name="hideIfSelected_waterSample">object_ui/record/verbatimTaxon</setting>
+          <setting name="hideIfSelected_soilSample">object_ui/taxonomy/verbatimTaxon</setting>
+          <setting name="hideIfSelected_waterSample">object_ui/taxonomy/verbatimTaxon</setting>
           <setting name="hideIfSelected_soilSample">object_ui/taxonomy/GBIF</setting>
           <setting name="hideIfSelected_waterSample">object_ui/taxonomy/GBIF</setting>
           <setting name="hideIfSelected_soilSample">object_ui/taxonomy/taxonDate</setting>
@@ -6035,8 +6040,7 @@
           <setting name="hideIfSelected_waterSample">object_ui/taxonomy/ca_occurrences</setting>
           <setting name="hideIfSelected_soilSample">object_ui/taxonomy/taxonNote</setting>
           <setting name="hideIfSelected_waterSample">object_ui/taxonomy/taxonNote</setting>
-          <setting name="hideIfSelected_soilSample">object_ui/record/taxonGroup</setting>
-          <setting name="hideIfSelected_waterSample">object_ui/record/taxonGroup</setting>
+          <setting name="hideIfSelected_waterSample">object_ui/obj_preparation/preparationWeightC</setting>
           <setting name="hideIfSelected_bud">object_ui/obj_preparation/preparationVolumeC</setting>
           <setting name="hideIfSelected_leaf">object_ui/obj_preparation/preparationVolumeC</setting>
           <setting name="hideIfSelected_cambium">object_ui/obj_preparation/preparationVolumeC</setting>
@@ -6197,6 +6201,14 @@
               <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              <setting name="hideIfSelected_notApplicable">object_ui/obj_measurements/lifeStageMammal</setting>
+              <setting name="hideIfSelected_notApplicable">object_ui/obj_measurements/lifeStageInvertebrate</setting>
+              <setting name="hideIfSelected_notApplicable">object_ui/obj_measurements/lifeStageFish</setting>
+              <setting name="hideIfSelected_notApplicable">object_ui/obj_measurements/lifeStageReptile</setting>
+              <setting name="hideIfSelected_notApplicable">object_ui/obj_measurements/lifeStageAmphibian</setting>
+              <setting name="hideIfSelected_notApplicable">object_ui/obj_measurements/lifeStagePlant</setting>
+              <setting name="hideIfSelected_notApplicable">object_ui/obj_measurements/sexPlant</setting>
+              <setting name="hideIfSelected_notApplicable">object_ui/obj_measurements/sexAnimal</setting>
               <setting name="hideIfSelected_plant">object_ui/obj_measurements/lifeStageMammal</setting>
               <setting name="hideIfSelected_invertebrate">object_ui/obj_measurements/lifeStageMammal</setting>
               <setting name="hideIfSelected_fish">object_ui/obj_measurements/lifeStageMammal</setting>
@@ -7954,7 +7966,7 @@
 	    <metadataElement code="sexAnimal" datatype="List" list="sex_animal">
 			  <labels>
           <label locale="en_US">
-            <name>sex (dwc:sex) (!!)</name>
+            <name>sex (dwc:sex)</name>
             <description>The sex of the biological individual(s) represented in the Occurrence. (!!) This is a trigger field, push save after choosing a value to enable the triggers.</description>
           </label>
 			  </labels>
@@ -7995,7 +8007,7 @@
 	    <metadataElement code="sexPlant" datatype="List" list="sex_plant">
 			  <labels>
           <label locale="en_US">
-            <name>sex (dwc:sex) (!!)</name>
+            <name>sex (dwc:sex)</name>
             <description>The sex of the biological individual(s) represented in the Occurrence. (!!) This is a trigger field, push save after choosing a value to enable the triggers.</description>
           </label>
 			  </labels>
@@ -8731,7 +8743,7 @@
 	    <metadataElement code="verbatimElevation" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>verbatimElevation</name>
+            <name>Verbatim elevation (dwc:verbatimElevation)</name>
             <description>The original description of the elevation (altitude, usually above sea level) of the Location.</description>
           </label>
         </labels>
@@ -9761,7 +9773,7 @@
 	    <metadataElement code="verbatimDepth" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>verbatimDepth</name>
+            <name>Verbatim depth (dwc:verbatimDepth)</name>
             <description>The original description of the depth below the local surface.</description>
           </label>
         </labels>
@@ -11968,12 +11980,6 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="taxonGroup" typeRestrictions="dnaSample">
-              <bundle>ca_attribute_taxonGroup</bundle>
-			        <settings>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
             <placement code="preparationDate" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,livingPlant,forestTreePopulation,cutting,stemdisc" includeSubtypes="1">
               <bundle>ca_attribute_preparationDate</bundle>
 			        <settings>
@@ -11998,6 +12004,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at *</setting>
                 <setting name="restrict_to_types">room,cabinet,freezer,fridge,compartment,drawer,shelf,crate,rack,box,spot</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="useHierarchicalBrowser">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
@@ -12253,12 +12260,6 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="taxonGroup" typeRestrictions="dnaSample">
-              <bundle>ca_attribute_taxonGroup</bundle>
-			        <settings>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
             <placement code="samplingDate" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_attribute_samplingDate</bundle>
 			        <settings>
@@ -12290,24 +12291,6 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="preparationVolumeC" typeRestrictions="dnaSample" includeSubtypes="1">
-              <bundle>ca_attribute_preparationVolumeC</bundle>
-			        <settings>
-                <setting name="description" locale="en_US">For example volume of water on eDNA filter. This can be relevant for quantification analysis on the specimen.</setting>
-				        <setting name="add_label" locale="en_US">Add preparation volume measurement</setting>
-                <setting name="list_format">list</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-            <placement code="preparationWeightC" typeRestrictions="dnaSample" includeSubtypes="1">
-              <bundle>ca_attribute_preparationWeightC</bundle>
-			        <settings>
-                <setting name="description" locale="en_US">For example weight of soil used for DNA extraction. This can be relevant for quantification analysis on the specimen.</setting>
-				        <setting name="add_label" locale="en_US">Add preparation weight measurement</setting>
-                <setting name="list_format">list</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
             <placement code="preparationDate" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,livingPlant,forestTreePopulation" includeSubtypes="1">
               <bundle>ca_attribute_preparationDate</bundle>
 			        <settings>
@@ -12330,6 +12313,24 @@
 			      <placement code="preparationProtocol" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_attribute_preparationProtocol</bundle>
               <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="preparationVolumeC" typeRestrictions="dnaSample" includeSubtypes="1">
+              <bundle>ca_attribute_preparationVolumeC</bundle>
+			        <settings>
+                <setting name="description" locale="en_US">For example volume of water on eDNA filter. This can be relevant for quantification analysis on the specimen.</setting>
+				        <setting name="add_label" locale="en_US">Add preparation volume measurement</setting>
+                <setting name="list_format">list</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="preparationWeightC" typeRestrictions="dnaSample" includeSubtypes="1">
+              <bundle>ca_attribute_preparationWeightC</bundle>
+			        <settings>
+                <setting name="description" locale="en_US">For example weight of soil used for DNA extraction. This can be relevant for quantification analysis on the specimen.</setting>
+				        <setting name="add_label" locale="en_US">Add preparation weight measurement</setting>
+                <setting name="list_format">list</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -12605,10 +12606,15 @@
                 <restriction code="r_soilObject" type="soilObject"/>
           </typeRestrictions>
           <bundlePlacements>
+            <placement code="matrixType" typeRestrictions="dnaSample">
+              <bundle>ca_attribute_matrixType</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
 			      <placement code="verbatimElevation">
               <bundle>ca_attribute_verbatimElevation</bundle>
               <settings>
-                <setting name="label" locale="en_US">Verbatim elevation (dwc:verbatimElevation)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="description" locale="en_US">The original description of the elevation. From the notes, Excel/Gsheet, dataset, ...</setting>
               </settings>
@@ -12636,7 +12642,6 @@
 			      <placement code="verbatimDepth" typeRestrictions="dnaSample,watersample,soilObject">
               <bundle>ca_attribute_verbatimDepth</bundle>
               <settings>
-                <setting name="label" locale="en_US">The original description of the depth of sampling</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
@@ -12684,6 +12689,12 @@
             </label>
           </labels>
           <bundlePlacements>
+            <placement code="matrixType" typeRestrictions="dnaSample">
+              <bundle>ca_attribute_matrixType</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
 			      <placement code="verbatimTaxon" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc" includeSubtypes="1">
               <bundle>ca_attribute_verbatimTaxon</bundle>
 			        <settings>
@@ -12766,6 +12777,12 @@
             </label>
           </labels>
           <bundlePlacements>
+            <placement code="taxonGroup" typeRestrictions="dnaSample">
+              <bundle>ca_attribute_taxonGroup</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
             <placement code="inbodemdb" typeRestrictions="soilObject" includeSubtypes="1">
               <bundle>ca_attribute_inbodem</bundle>
             </placement>
@@ -13062,12 +13079,6 @@
             </placement>-->
             <placement code="deaccession">
               <bundle>ca_objects_deaccession</bundle>
-            </placement>
-            <placement code="disposition">
-              <bundle>ca_attribute_disposition</bundle>
-			        <settings>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
             </placement>
             <placement code="ca_collection">
               <bundle>ca_collections</bundle>
