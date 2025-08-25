@@ -11,6 +11,8 @@
   <!--https://github.com/inbo/collective-access/issues/230-->
   <!--https://github.com/inbo/collective-access/issues/313-->
   <!--https://github.com/inbo/collective-access/issues/314-->
+  <!--https://github.com/inbo/collective-access/issues/229-->
+  <!--https://github.com/inbo/collective-access/issues/315-->
   <!--Issues still open-->
   <!--https://github.com/inbo/collective-access/issues/77--><!--bug-->
   <!--https://github.com/inbo/collective-access/issues/117--><!--needs extra developing/coding-->
@@ -20,7 +22,6 @@
   <!--https://github.com/inbo/collective-access/issues/188--><!--user management-->
   <!--https://github.com/inbo/collective-access/issues/189--><!--needs extra developing/coding-->
   <!--https://github.com/inbo/collective-access/issues/201--><!--not so important-->
-  <!--https://github.com/inbo/collective-access/issues/229--><!--to check when trying plant use cases-->
   <!--https://github.com/inbo/collective-access/issues/249--><!--to write in the widget-->
   <!--https://github.com/inbo/collective-access/issues/267--><!--needs extra developing/coding-->
   <!--https://github.com/inbo/collective-access/issues/271--><!--to write in the .conf files-->
@@ -12252,8 +12253,20 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="expand_collapse_value">collapse</setting>
 				        <setting name="restrict_to_types">livingPlantWildRelative</setting>
+                <setting name="restrict_to_relationship_types">related</setting>
               </settings>
             </placement>
+			      <placement code="genotype" typeRestrictions="animalObject,plantObject,dnaSample" includeSubtypes="1">
+              <bundle>ca_objects</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Genotype (1:n)</setting>
+                <setting name="description" locale="en_US">A specific code given to describe a genotype that occurs in more than one individual. For example: a specific haplotype. For example: a specific genotype for which there are multiple clones (plant breeding). If there is an individual genotype or sequence data that you would like to log with this specific sample, this can be done under FILE/REFS/PHOTOS, because this is only relevant to add together with the link to the data.</setting>
+                <setting name="restrict_to_types">genotype</setting>
+                <setting name="restrict_to_relationship_types">genotype</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+				        <setting name="add_label" locale="en_US">Add genotype</setting>
+              </settings>
+			      </placement>
 			      <placement code="seedlot_relation_seeds" typeRestrictions="seedlot">
               <bundle>ca_attribute_seedlotRelationSeeds</bundle>
 			        <settings>
@@ -13004,6 +13017,7 @@
                 <setting name="label" locale="en_US">Genotype (1:n)</setting>
                 <setting name="description" locale="en_US">A specific code given to describe a genotype that occurs in more than one individual. For example: a specific haplotype. For example: a specific genotype for which there are multiple clones (plant breeding). If there is an individual genotype or sequence data that you would like to log with this specific sample, this can be done under FILE/REFS/PHOTOS, because this is only relevant to add together with the link to the data.</setting>
                 <setting name="restrict_to_types">genotype</setting>
+                <setting name="restrict_to_relationship_types">genotype</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 				        <setting name="add_label" locale="en_US">Add genotype</setting>
               </settings>
@@ -13174,7 +13188,7 @@
             <placement code="ownedBy" typeRestrictions="forestTreePopulation">
               <bundle>ca_entities</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Land is owned by</setting>
+                <setting name="label" locale="en_US">Land of the forest tree population is owned by</setting>
                 <setting name="description" locale="en_US">Person or organization that owns the land on which forest tree population grows.</setting>
 				        <setting name="add_label" locale="en_US">Add owner</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
@@ -13186,7 +13200,7 @@
             <placement code="managedBy" typeRestrictions="forestTreePopulation">
               <bundle>ca_entities</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Managed by</setting>
+                <setting name="label" locale="en_US">Forest tree population is managed by</setting>
                 <setting name="description" locale="en_US">Responsible person or organization for the maintenance of the forest tree population.</setting>
 				        <setting name="add_label" locale="en_US">Add manager</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
@@ -13386,6 +13400,26 @@
 				        <setting name="add_label" locale="en_US">Genotype documentation (internal)</setting>
                 <setting name="description" locale="en_US">Add the URL INBO files that documents the genotype, if this documentation exists.</setting>
 			        </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
+        <screen idno="relations" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Relations</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="ca_objects">
+              <bundle>ca_objects</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Associations with INBO-specimens</setting>
+                <setting name="description" locale="en_US">Associations between INBO-specimen. For example: host and parasite, host plant and butterfly egg, ... </setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
+				        <setting name="restrict_to_types">object</setting>
+                <setting name="restrict_to_relationship_types">association</setting>
+              </settings>
             </placement>
           </bundlePlacements>
         </screen>
@@ -15678,25 +15712,35 @@
   <relationshipTypes>
     <relationshipTable name="ca_objects_x_objects">
       <types>
-        <type code="directRelationship" default="0" rank="8">
+        <type code="related" default="0">
           <labels>
             <label locale="en_US">
               <typename>is related to</typename>
               <typename_reverse>is related to</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight></subTypeRight>
+          <subTypeLeft>object</subTypeLeft>
+          <subTypeRight>livingPlantWildRelative</subTypeRight>
         </type>
-        <type code="association" default="0" rank="8">
+        <type code="association" default="0">
           <labels>
             <label locale="en_US">
               <typename>is associated with</typename>
               <typename_reverse>is associated with</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight></subTypeRight>
+          <subTypeLeft>object</subTypeLeft>
+          <subTypeRight>ojbect</subTypeRight>
+        </type>
+        <type code="genotype" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>is genotype of</typename>
+              <typename_reverse>has genotype</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>object</subTypeLeft>
+          <subTypeRight>genotype</subTypeRight>
         </type>
 	   </types>
     </relationshipTable>
