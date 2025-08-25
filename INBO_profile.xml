@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.80</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.81</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
-  <!--Issues to check if succesful in v0.80-->
+  <!--Issues to check if succesful in v0.81-->
   <!--https://github.com/inbo/collective-access/issues/221-->
-  <!--https://github.com/inbo/collective-access/issues/317-->
+  <!--https://github.com/inbo/collective-access/issues/318-->
+  <!--https://github.com/inbo/collective-access/issues/319-->
   <!--https://github.com/inbo/collective-access/issues/308-->
   <!--https://github.com/inbo/collective-access/issues/311-->
-  <!--https://github.com/inbo/collective-access/issues/230-->
-  <!--https://github.com/inbo/collective-access/issues/315-->
-  <!--https://github.com/inbo/collective-access/issues/316-->
+  <!--https://github.com/inbo/collective-access/issues/320-->
+  <!--https://github.com/inbo/collective-access/issues/321-->
+  <!--https://github.com/inbo/collective-access/issues/322-->
   <!--Issues still open-->
   <!--https://github.com/inbo/collective-access/issues/77--><!--bug-->
   <!--https://github.com/inbo/collective-access/issues/117--><!--needs extra developing/coding-->
@@ -157,7 +158,7 @@
              <setting name="render_in_new_menu">1</setting>
             </settings>
             <items>
-                  <item idno="animalObject" rank="1" enabled="0" default="0">
+                  <item idno="animalObject" rank="4" enabled="0" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>Animal</name_singular>
@@ -720,7 +721,7 @@
                       </item>-->
                     </items>
                   </item>
-                  <item idno="plantObject" rank="2" enabled="0" default="0">
+                  <item idno="plantObject" rank="3" enabled="0" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>Plant</name_singular>
@@ -797,7 +798,7 @@
                       </item>
                     </items>
                   </item>
-                  <item idno="dnaSample" rank="3" enabled="1" default="0">
+                  <item idno="dnaSample" rank="1" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>DNA sample</name_singular>
@@ -837,7 +838,7 @@
                       </item>
                     </items>
                   </item>-->
-                  <item idno="soilObject" rank="4" enabled="1" default="0">
+                  <item idno="soilObject" rank="2" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>Soil sample</name_singular>
@@ -6033,7 +6034,9 @@
 	      <settings>
           <setting name="fieldWidth">40</setting>
           <setting name="doesNotTakeLocale">1</setting>
-          <setting name="hideIfSelected_[BLANK]">object_ui/record/verbatimTaxon</setting>
+          <setting name="minAttributesPerRow">0</setting>
+          <setting name="maxAttributesPerRow">1</setting>
+          <setting name="hideIfSelected_">object_ui/record/verbatimTaxon</setting>
           <setting name="hideIfSelected_soilSample">object_ui/record/verbatimTaxon</setting>
           <setting name="hideIfSelected_waterSample">object_ui/record/verbatimTaxon</setting>
           <setting name="hideIfSelected___null__">object_ui/obj_preparation/preparationVolumeC</setting>
@@ -6217,6 +6220,8 @@
 	      <settings>
               <setting name="fieldWidth">40</setting>
               <setting name="doesNotTakeLocale">1</setting>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
               <setting name="hideIfSelected___null__">object_ui/obj_measurements/lifeStageMammal</setting>
               <setting name="hideIfSelected___null__">object_ui/obj_measurements/lifeStageInvertebrate</setting>
               <setting name="hideIfSelected___null__">object_ui/obj_measurements/lifeStageFish</setting>
@@ -6226,7 +6231,7 @@
               <setting name="hideIfSelected___null__">object_ui/obj_measurements/sexPlant</setting>
               <setting name="hideIfSelected___null__">object_ui/obj_measurements/sexAnimal</setting>
               <setting name="hideIfSelected___null__">object_ui/obj_measurements/reprCondPlant</setting>
-              <setting name="hideIfSelected___null__">object_ui/obj_measurements/reprCondAnimal</setting>
+              <setting name="hideIfSelected___null__">object_ui/obj_measurements/reprCondMammal</setting>
               <setting name="hideIfSelected_notApplicable">object_ui/obj_measurements/lifeStageMammal</setting>
               <setting name="hideIfSelected_notApplicable">object_ui/obj_measurements/lifeStageInvertebrate</setting>
               <setting name="hideIfSelected_notApplicable">object_ui/obj_measurements/lifeStageFish</setting>
@@ -6236,7 +6241,7 @@
               <setting name="hideIfSelected_notApplicable">object_ui/obj_measurements/sexPlant</setting>
               <setting name="hideIfSelected_notApplicable">object_ui/obj_measurements/sexAnimal</setting>
               <setting name="hideIfSelected_notApplicable">object_ui/obj_measurements/reprCondPlant</setting>
-              <setting name="hideIfSelected_notApplicable">object_ui/obj_measurements/reprCondAnimal</setting>
+              <setting name="hideIfSelected_notApplicable">object_ui/obj_measurements/reprCondMammal</setting>
               <setting name="hideIfSelected_plant">object_ui/obj_measurements/lifeStageMammal</setting>
               <setting name="hideIfSelected_invertebrate">object_ui/obj_measurements/lifeStageMammal</setting>
               <setting name="hideIfSelected_fish">object_ui/obj_measurements/lifeStageMammal</setting>
@@ -6273,7 +6278,7 @@
               <setting name="hideIfSelected_fish">object_ui/obj_measurements/sexPlant</setting>
               <setting name="hideIfSelected_reptile">object_ui/obj_measurements/sexPlant</setting>
               <setting name="hideIfSelected_plant">object_ui/obj_measurements/sexAnimal</setting>
-              <setting name="hideIfSelected_plant">object_ui/obj_measurements/reprCondAnimal</setting>
+              <setting name="hideIfSelected_plant">object_ui/obj_measurements/reprCondMammal</setting>
               <setting name="hideIfSelected_amphibian">object_ui/obj_measurements/reprCondPlant</setting>
               <setting name="hideIfSelected_mammal">object_ui/obj_measurements/reprCondPlant</setting>
               <setting name="hideIfSelected_invertebrate">object_ui/obj_measurements/reprCondPlant</setting>
@@ -10039,6 +10044,15 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
+          <restriction code="r_livingPlantWildRelative">
+            <table>ca_objects</table>
+            <type>livingPlantWildRelative</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
           <restriction code="r_ID_objectLots">
             <table>ca_object_lots</table>
             <settings>
@@ -11926,7 +11940,7 @@
 				        <setting name="add_label" locale="en_US">Add forest tree population type</setting>
               </settings>
             </placement>
-            <placement code="samplingDate" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,stemdisc" includeSubtypes="1">
+            <placement code="samplingDate" typeRestrictions="soilObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,stemdisc" includeSubtypes="1">
               <bundle>ca_attribute_samplingDate</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Sampling date *</setting>
@@ -11940,7 +11954,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="preparationDate" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,livingPlant,forestTreePopulation,cutting,stemdisc" includeSubtypes="1">
+            <placement code="preparationDate" typeRestrictions="soilObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,livingPlant,forestTreePopulation,cutting,stemdisc" includeSubtypes="1">
               <bundle>ca_attribute_preparationDate</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Preparation date *</setting>
@@ -11959,7 +11973,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="ca_storage_location" typeRestrictions="animalObject,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1">
+            <placement code="ca_storage_location" typeRestrictions="animalObject,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,dnaSample,soilObject" includeSubtypes="1">
               <bundle>ca_storage_locations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at *</setting>
@@ -11969,62 +11983,62 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="verbatimLocality" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
+            <placement code="verbatimLocality" typeRestrictions="soilObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_attribute_verbatimLocality</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Verbatim locality of sampling point *</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="decimalLatitudeY" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
+            <placement code="decimalLatitudeY" typeRestrictions="soilObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_attribute_decimalLatitudeY</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Decimal latitude of sampling point (Y)*</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="decimalLongitudeX" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
+            <placement code="decimalLongitudeX" typeRestrictions="soilObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_attribute_decimalLongitudeX</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Decimal longitude of sampling point (X)*</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="geodeticDatum" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
+            <placement code="geodeticDatum" typeRestrictions="soilObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_attribute_geodeticDatum</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="coordinateUncertaintyInMetersC" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
+            <placement code="coordinateUncertaintyInMetersC" typeRestrictions="soilObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_attribute_coordinateUncertaintyInMetersC</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Coordinate uncertainty in meters *</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-			      <placement code="verbatimDepth" typeRestrictions="eDnaWaterFilter,watersample,soilObject">
+			      <placement code="verbatimDepth" typeRestrictions="dnaSample,soilObject">
               <bundle>ca_attribute_verbatimDepth</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim depth *</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-			      <placement code="minimumDepthInMeters" typeRestrictions="eDnaWaterFilter,watersample,soilObject">
+			      <placement code="minimumDepthInMeters" typeRestrictions="dnaSample,soilObject">
               <bundle>ca_attribute_minimumDepthInMeters</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The minimum depth in meters *</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-			      <placement code="maximumDepthInMeters" typeRestrictions="eDnaWaterFilter,watersample,soilObject">
+			      <placement code="maximumDepthInMeters" typeRestrictions="dnaSample,soilObject">
               <bundle>ca_attribute_maximumDepthInMeters</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The maximum depth in meters *</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="ca_collection" typeRestrictions="soilObject,waterObject,animalObject,plantObject,dnaSample" includeSubtypes="1">
+            <placement code="ca_collection" typeRestrictions="soilObject,animalObject,plantObject,dnaSample" includeSubtypes="1">
               <bundle>ca_collections</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object belongs to collection(s) *</setting>
@@ -12041,7 +12055,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
-            <placement code="deaccession" typeRestrictions="soilObject,waterObject,animalObject,plantObject,dnaSample" includeSubtypes="1">
+            <placement code="deaccession" typeRestrictions="soilObject,animalObject,plantObject,dnaSample" includeSubtypes="1">
               <bundle>ca_objects_deaccession</bundle>
             </placement>
 			      <placement code="status">
@@ -12064,7 +12078,7 @@
             <placement code="deaccession">
               <bundle>ca_objects_deaccession</bundle>
             </placement>
-            <placement code="ca_collection" typeRestrictions="soilObject,waterObject,animalObject,plantObject,dnaSample" includeSubtypes="1">
+            <placement code="ca_collection" typeRestrictions="soilObject,animalObject,plantObject,dnaSample" includeSubtypes="1">
               <bundle>ca_collections</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object belongs to collection(s) *</setting>
@@ -12075,7 +12089,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="ca_storage_location" typeRestrictions="animalObject,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1">
+            <placement code="ca_storage_location" typeRestrictions="animalObject,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,dnaSample,soilObject" includeSubtypes="1">
               <bundle>ca_storage_locations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at *</setting>
@@ -12201,40 +12215,12 @@
                 <setting name="restrict_to_relationship_types">association</setting>
               </settings>
             </placement>
-            <placement code="livingPlantWildRelative" typeRestrictions="livingPlant">
-              <bundle>ca_objects</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The wild relative of living plant in collection</setting>
-                <setting name="description" locale="en_US">Wild relative of the living plant. To log if relevant.</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="expand_collapse_value">collapse</setting>
-				        <setting name="restrict_to_types">livingPlantWildRelative</setting>
-                <setting name="restrict_to_relationship_types">related,cloneOf,childOfCloneOf,grandchildOf,grandchildOfCloneOf,childOf</setting>
-              </settings>
-            </placement>
 			      <placement code="seedlot_relation_seeds" typeRestrictions="seedlot">
               <bundle>ca_attribute_seedlotRelationSeeds</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="seedlot_relation_samplingPoint" typeRestrictions="seedlot">
-              <bundle>ca_attribute_seedlotRelationSamplingPoint</bundle>
-			        <settings>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-			      <placement code="genotype" typeRestrictions="animalObject,plantObject,dnaSample" includeSubtypes="1">
-              <bundle>ca_objects</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Genotype (1:n)</setting>
-                <setting name="description" locale="en_US">A specific code given to describe a genotype that occurs in more than one individual. For example: a specific haplotype. For example: a specific genotype for which there are multiple clones (plant breeding). If there is an individual genotype or sequence data that you would like to log with this specific sample, this can be done under FILE/REFS/PHOTOS, because this is only relevant to add together with the link to the data.</setting>
-                <setting name="restrict_to_types">genotype</setting>
-                <setting name="restrict_to_relationship_types">genotype</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-				        <setting name="add_label" locale="en_US">Add genotype</setting>
-              </settings>
-			      </placement>
             <placement code="ca_object_lots">
               <bundle>ca_object_lots</bundle>
 			        <settings>
@@ -12828,6 +12814,34 @@
             </label>
           </labels>
           <bundlePlacements>
+			      <placement code="seedlot_relation_samplingPoint" typeRestrictions="seedlot">
+              <bundle>ca_attribute_seedlotRelationSamplingPoint</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="livingPlantWildRelative" typeRestrictions="livingPlant">
+              <bundle>ca_objects</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The wild relative of living plant specimen</setting>
+                <setting name="description" locale="en_US">Wild relative of the living plant. To log if relevant.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
+				        <setting name="restrict_to_types">livingPlantWildRelative</setting>
+                <setting name="restrict_to_relationship_types">related,cloneOf,childOfCloneOf,grandchildOf,grandchildOfCloneOf,childOf</setting>
+              </settings>
+            </placement>
+			      <placement code="genotype" typeRestrictions="animalObject,plantObject,dnaSample" includeSubtypes="1">
+              <bundle>ca_objects</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Related genotype(s) (1:n)</setting>
+                <setting name="description" locale="en_US">A specific code given to describe a genotype that occurs in more than one individual. For example: a specific haplotype. For example: a specific genotype for which there are multiple clones (plant breeding). If there is an individual genotype or sequence data that you would like to log with this specific sample, this can be done under FILE/REFS/PHOTOS, because this is only relevant to add together with the link to the data.</setting>
+                <setting name="restrict_to_types">genotype</setting>
+                <setting name="restrict_to_relationship_types">genotype</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+				        <setting name="add_label" locale="en_US">Add genotype</setting>
+              </settings>
+			      </placement>
             <placement code="taxonGroup" typeRestrictions="dnaSample">
               <bundle>ca_attribute_taxonGroup</bundle>
 			        <settings>
@@ -12967,17 +12981,6 @@
                 <setting name="documentation_url">https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0</setting>
               </settings>
 			      </placement>
-			      <placement code="genotype" typeRestrictions="animalObject,plantObject,dnaSample" includeSubtypes="1">
-              <bundle>ca_objects</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Genotype (1:n)</setting>
-                <setting name="description" locale="en_US">A specific code given to describe a genotype that occurs in more than one individual. For example: a specific haplotype. For example: a specific genotype for which there are multiple clones (plant breeding). If there is an individual genotype or sequence data that you would like to log with this specific sample, this can be done under FILE/REFS/PHOTOS, because this is only relevant to add together with the link to the data.</setting>
-                <setting name="restrict_to_types">genotype</setting>
-                <setting name="restrict_to_relationship_types">genotype</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-				        <setting name="add_label" locale="en_US">Add genotype</setting>
-              </settings>
-			      </placement>
 			      <placement code="lifeStageMammal" typeRestrictions="mammal,dnaSample" includeSubtypes="1">
               <bundle>ca_attribute_lifeStageMammal</bundle>
 			        <settings>
@@ -13026,8 +13029,8 @@
                 <setting name="description" locale="en_US">Due to sampling, the life stage of the plant at time object(s) were collected becomes a fixed value.</setting>
               </settings>
             </placement>
-			      <placement code="reprCondAnimal" typeRestrictions="mammal,dnaSample" includeSubtypes="1">
-              <bundle>ca_attribute_reprCondAnimal</bundle>
+			      <placement code="reprCondMammal" typeRestrictions="mammal,dnaSample" includeSubtypes="1">
+              <bundle>ca_attribute_reprCondMammal</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Reproductive condition (dwc:reproductiveCondition)</setting>
                 <setting name="description" locale="en_US">Reproductive condition of the mammal at time object(s) were collected</setting>
@@ -15085,12 +15088,12 @@
 			      <placement code="internal_project" typeRestrictions="internal_reuse">
               <bundle>ca_occurrences</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">INBO project that reuses the specimen</setting>
+                <setting name="label" locale="en_US">INBO project that reuses INBO specimens</setting>
                 <setting name="description" locale="en_US">This can be a project as defined in JIRA, a project as defined in LIMS, ..</setting>
 				        <setting name="restrict_to_types">internalProject</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">20</setting>
-                <setting name="restrict_to_relationship_types">projectReuse</setting>
+                <setting name="restrict_to_relationship_types">internalprojectReuse</setting>
                 <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 				        <setting name="add_label" locale="en_US">Add project</setting>
@@ -15099,12 +15102,11 @@
 			      <placement code="external_project" typeRestrictions="external_reuse">
               <bundle>ca_occurrences</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">INBO project that reuses the specimen</setting>
-                <setting name="description" locale="en_US">This can be a project as defined in JIRA, a project as defined in LIMS, ..</setting>
+                <setting name="label" locale="en_US">External project that reuses INBO specimens</setting>
 				        <setting name="restrict_to_types">externalProject</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">20</setting>
-                <setting name="restrict_to_relationship_types">projectReuse</setting>
+                <setting name="restrict_to_relationship_types">externalprojectReuse</setting>
                 <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 				        <setting name="add_label" locale="en_US">Add project</setting>
@@ -15691,8 +15693,8 @@
         <type code="cloneOf" default="0">
           <labels>
             <label locale="en_US">
-              <typename>is clone of</typename>
-              <typename_reverse>is cloned to</typename_reverse>
+              <typename>is clone origin</typename>
+              <typename_reverse>is cloned result</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>object</subTypeLeft>
@@ -15701,8 +15703,8 @@
         <type code="childOfCloneOf" default="0">
           <labels>
             <label locale="en_US">
-              <typename>is child of clone of</typename>
-              <typename_reverse>has child of clone</typename_reverse>
+              <typename>is parent of clone of</typename>
+              <typename_reverse>is child of clone</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>object</subTypeLeft>
@@ -15711,8 +15713,8 @@
         <type code="grandchildOf" default="0">
           <labels>
             <label locale="en_US">
-              <typename>is grandchild of</typename>
-              <typename_reverse>has grandchild</typename_reverse>
+              <typename>is grandparent of</typename>
+              <typename_reverse>is grandchild of</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>object</subTypeLeft>
@@ -15721,8 +15723,8 @@
         <type code="grandchildOfCloneOf" default="0">
           <labels>
             <label locale="en_US">
-              <typename>is grandchild of clone of</typename>
-              <typename_reverse>has grandchild of clone</typename_reverse>
+              <typename>is grandparent of clone of</typename>
+              <typename_reverse>is grandchild of clone of</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>object</subTypeLeft>
@@ -15731,8 +15733,8 @@
         <type code="childOf" default="0">
           <labels>
             <label locale="en_US">
-              <typename>is child of</typename>
-              <typename_reverse>has child</typename_reverse>
+              <typename>is parent of</typename>
+              <typename_reverse>is child of</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>object</subTypeLeft>
@@ -16392,7 +16394,7 @@
     </relationshipTable>
 	  <relationshipTable name="ca_loans_x_occurrences">
       <types>
-        <type code="InternalprojectReuse" default="1">
+        <type code="internalprojectReuse" default="1">
           <labels>
             <label locale="en_US">
               <typename>internal project that reuses</typename>
@@ -16402,7 +16404,7 @@
           <subTypeLeft>internal_reuse</subTypeLeft>
           <subTypeRight>internalProject</subTypeRight>
         </type>
-        <type code="ExternalprojectReuse" default="1">
+        <type code="externalprojectReuse" default="1">
           <labels>
             <label locale="en_US">
               <typename>external project that reuses</typename>
