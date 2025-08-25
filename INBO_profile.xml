@@ -11,6 +11,8 @@
   <!--https://github.com/inbo/collective-access/issues/320-->
   <!--https://github.com/inbo/collective-access/issues/321-->
   <!--https://github.com/inbo/collective-access/issues/322-->
+  <!--https://github.com/inbo/collective-access/issues/323-->
+  <!--https://github.com/inbo/collective-access/issues/324-->
   <!--Issues still open-->
   <!--https://github.com/inbo/collective-access/issues/77--><!--bug-->
   <!--https://github.com/inbo/collective-access/issues/117--><!--needs extra developing/coding-->
@@ -13459,6 +13461,13 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
+            <placement code="coordinateUncertaintyInMetersC">
+              <bundle>ca_attribute_coordinateUncertaintyInMetersC</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Coordinate uncertainty in meters *</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
 			      <placement code="verbatimTaxon">
               <bundle>ca_attribute_verbatimTaxon</bundle>
 			        <settings>
@@ -13479,34 +13488,6 @@
 				        <setting name="add_label" locale="en_US">Documentation (internal)</setting>
                 <setting name="description" locale="en_US">Add the URL INBO files that documents the plant occurrence, if this documentation exists.</setting>
 			        </settings>
-            </placement>
-          </bundlePlacements>
-        </screen>
-        <screen idno="relations" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>Relations</name>
-            </label>
-          </labels>
-          <bundlePlacements>
-            <placement code="ca_objects">
-              <bundle>ca_objects</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Associations with INBO-specimens</setting>
-                <setting name="description" locale="en_US">Associations between INBO-specimen. For example: host and parasite, host plant and butterfly egg, ... </setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="expand_collapse_value">collapse</setting>
-				        <setting name="restrict_to_types">object</setting>
-                <setting name="restrict_to_relationship_types">association</setting>
-              </settings>
-            </placement>
-            <placement code="externalSpecimen">
-              <bundle>ca_attribute_externalSpecimen</bundle>
-			        <settings>
-                <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="expand_collapse_value">collapse</setting>
-				        <setting name="add_label" locale="en_US">Add relationship to an external specimen</setting>
-              </settings>
             </placement>
           </bundlePlacements>
         </screen>
@@ -13747,6 +13728,25 @@
             </label>
           </labels>
           <bundlePlacements>
+            <placement code="ca_objects">
+              <bundle>ca_objects</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Relation with INBO-specimen(s)</setting>
+                <setting name="description" locale="en_US">Relation of the plant (occurrence) in the wild and the INBO specimen(s).</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
+				        <setting name="restrict_to_types">object</setting>
+                <setting name="restrict_to_relationship_types">related,cloneOf,childOfCloneOf,grandchildOf,grandchildOfCloneOf,childOf</setting>
+              </settings>
+            </placement>
+            <placement code="externalSpecimen">
+              <bundle>ca_attribute_externalSpecimen</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
+				        <setting name="add_label" locale="en_US">Add relationship to an external specimen</setting>
+              </settings>
+            </placement>
             <placement code="object_length">
               <bundle>ca_attribute_lengthContainer</bundle>
 			        <settings>
