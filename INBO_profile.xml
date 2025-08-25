@@ -7,6 +7,9 @@
   <!--https://github.com/inbo/collective-access/issues/273-->
   <!--https://github.com/inbo/collective-access/issues/308-->
   <!--https://github.com/inbo/collective-access/issues/311-->
+  <!--https://github.com/inbo/collective-access/issues/312-->
+  <!--https://github.com/inbo/collective-access/issues/230-->
+  <!--https://github.com/inbo/collective-access/issues/313-->
   <!--Issues still open-->
   <!--https://github.com/inbo/collective-access/issues/77--><!--bug-->
   <!--https://github.com/inbo/collective-access/issues/117--><!--needs extra developing/coding-->
@@ -17,7 +20,6 @@
   <!--https://github.com/inbo/collective-access/issues/189--><!--needs extra developing/coding-->
   <!--https://github.com/inbo/collective-access/issues/201--><!--not so important-->
   <!--https://github.com/inbo/collective-access/issues/229--><!--to check when trying plant use cases-->
-  <!--https://github.com/inbo/collective-access/issues/230--><!--to check when trying plant use cases-->
   <!--https://github.com/inbo/collective-access/issues/249--><!--to write in the widget-->
   <!--https://github.com/inbo/collective-access/issues/267--><!--needs extra developing/coding-->
   <!--https://github.com/inbo/collective-access/issues/271--><!--to write in the .conf files-->
@@ -869,6 +871,17 @@
               <label locale="en_US" preferred="1">
                 <name_singular>Genotype</name_singular>
                 <name_plural>Genotypes</name_plural>
+              </label>
+            </labels>
+            <settings>
+             <setting name="render_in_new_menu">0</setting>
+            </settings>
+          </item>
+			    <item idno="livingPlantWildRelative" rank="3" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Wild relative of living plant in collection</name_singular>
+                <name_plural>Wild relatives of living plant in collection</name_plural>
               </label>
             </labels>
             <settings>
@@ -9031,43 +9044,6 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_occurrences">
-            <table>ca_occurrences</table>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_object_lots">
-            <table>ca_object_lots</table>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_forestTreePopulationSite">
-            <table>ca_storage_locations</table>
-            <type>forestTreePopulationSite</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_building">
-            <table>ca_storage_locations</table>
-            <type>building</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
         </typeRestrictions>
       </metadataElement>
 	    <metadataElement code="coordinateUncertaintyInMetersC" datatype="Container">
@@ -11184,40 +11160,6 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="georeferenceFTP" datatype="Geocode"><!--USER RESTRICTION MOET LIVING PLANT ZIJN-->
-        <labels>
-          <label locale="en_US">
-            <name>WGS84 Standardised coordinates of FTP</name>
-          </label>
-        </labels>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_FTP">
-            <table>ca_objects</table>
-            <type>forestTreePopulation</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_object_lots">
-            <table>ca_object_lots</table>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
 	  <!--Loans-->
 	    <metadataElement code="loanStatus" datatype="List" list="loan_status">
         <labels>
@@ -11968,7 +11910,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="objectDescription">
+            <placement code="description">
               <bundle>ca_attribute_description</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -12047,7 +11989,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="geodeticDatum">
+            <placement code="geodeticDatum" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
               <bundle>ca_attribute_geodeticDatum</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -12092,13 +12034,13 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="verbatimTaxon" typeRestrictions="animalObject,plantObject,dnaSample" includeSubtypes="1"><!--This should prepopulate with the parent value, if empty-->
+			      <placement code="verbatimTaxon" typeRestrictions="animalObject,plantObject,dnaSample,livingPlantWildRelative" includeSubtypes="1"><!--This should prepopulate with the parent value, if empty-->
               <bundle>ca_attribute_verbatimTaxon</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
-            <placement code="deaccession">
+            <placement code="deaccession" typeRestrictions="soilObject,waterObject,animalObject,plantObject,dnaSample" includeSubtypes="1">
               <bundle>ca_objects_deaccession</bundle>
             </placement>
 			      <placement code="status">
@@ -12117,18 +12059,61 @@
               <name>Storage location</name>
             </label>
           </labels>
+          <typeRestrictions>
+                <restriction code="r_mammalEntireCadaver" type="mammalEntireCadaver"/>       
+                <restriction code="r_fishEntireEthanol" type="fishEntireEthanol"/>
+                <restriction code="r_sampleFishMuscle" type="sampleFishMuscle"/>
+                <restriction code="r_sampleFishLiver" type="sampleFishLiver"/>
+                <restriction code="r_sampleMammalBaculum" type="sampleMammalBaculum"/>
+                <restriction code="r_sampleMammalBladder" type="sampleMammalBladder"/>
+                <restriction code="r_sampleMammalBlood" type="sampleMammalBlood"/>
+                <restriction code="r_sampleMammalBrain" type="sampleMammalBrain"/>
+                <restriction code="r_sampleMammalConjuctivum" type="sampleMammalConjuctivum"/>
+                <restriction code="r_sampleMammalCyste" type="sampleMammalCyste"/>
+                <restriction code="r_sampleMammalFat" type="sampleMammalFat"/>
+                <restriction code="r_sampleMammalFeces" type="sampleMammalFeces"/>
+                <restriction code="r_sampleMammalHead" type="sampleMammalHead"/>
+                <restriction code="r_sampleMammalHeart" type="sampleMammalHeart"/>
+                <restriction code="r_sampleMammalHair" type="sampleMammalHair"/>
+                <restriction code="r_sampleMammalIntestine" type="sampleMammalIntestine"/>
+                <restriction code="r_sampleMammalLiver" type="sampleMammalLiver"/>
+                <restriction code="r_sampleMammalLung" type="sampleMammalLung"/>
+                <restriction code="r_sampleMammalLymphNode" type="sampleMammalLymphNode"/>
+                <restriction code="r_sampleMammalKidney" type="sampleMammalKidney"/>
+                <restriction code="r_sampleMammalMuscle" type="sampleMammalMuscle"/>
+                <restriction code="r_sampleMammalSkinPiece" type="sampleMammalSkinPiece"/>
+                <restriction code="r_sampleMammalSkinComplete" type="sampleMammalSkinComplete"/>
+                <restriction code="r_sampleMammalSkull" type="sampleMammalSkull"/>
+                <restriction code="r_sampleMammalSpleen" type="sampleMammalSpleen"/>
+                <restriction code="r_sampleMammalStomach" type="sampleMammalStomach"/>
+                <restriction code="r_sampleMammalTongue" type="sampleMammalTongue"/>
+                <restriction code="r_sampleMammalTooth" type="sampleMammalTooth"/>
+                <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
+                <restriction code="r_sampleMammalStomachContent" type="sampleMammalStomachContent"/>
+                <restriction code="r_mammalEntireZoological" type="mammalEntireZoological"/>
+                <!--<restriction code="r_leafSampleGenetic" type="leafSampleGenetic"/>-->
+                <restriction code="r_leafSampleAnalytic" type="leafSampleAnalytic"/>
+                <!--<restriction code="r_organicTopSoil" type="organicTopSoil"/>-->
+                <restriction code="r_moss" type="moss"/>
+                <restriction code="r_seedlot" type="seedlot"/>
+                <restriction code="r_stemdisc" type="stemdisc"/>
+                <!--<restriction code="r_cutting" type="cutting"/>-->
+                <restriction code="r_livingPlant" type="livingPlant"/>
+                <restriction code="r_dnaSample" type="dnaSample"/>
+                <!--<restriction code="r_waterSample" type="waterSample"/>-->
+                <!--<restriction code="r_eDnaWaterFilter" type="eDnaWaterFilter"/>-->
+                <restriction code="r_soilObject" type="soilObject"/>
+          </typeRestrictions>
           <bundlePlacements>
             <placement code="deaccession">
               <bundle>ca_objects_deaccession</bundle>
             </placement>
-            <placement code="ca_storage_location_plantlot" typeRestrictions="livingPlant,forestTreePopulation">
-              <bundle>ca_storage_locations</bundle>
+            <placement code="ca_collection">
+              <bundle>ca_collections</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Object is stored at *</setting>
-                <setting name="restrict_to_types">forestTreePopulationSite</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="useHierarchicalBrowser">1</setting>
+                <setting name="label" locale="en_US">Object belongs to collection</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">10</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -12142,23 +12127,93 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="mapFTP" typeRestrictions="livingPlant" includeSubtypes="1">
-              <bundle>ca_attribute_georeferenceFTP</bundle>
+            <placement code="ca_storage_location_plantlot" typeRestrictions="livingPlant,forestTreePopulation">
+              <bundle>ca_storage_locations</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Object is stored at *</setting>
+                <setting name="restrict_to_types">forestTreePopulationSite</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="useHierarchicalBrowser">1</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="verbatimLongitudeX" typeRestrictions="livingPlant,forestTreePopulation">
+              <bundle>ca_attribute_verbatimLongitudeX</bundle>
               <settings>
-                <setting name="label" locale="en_US">Map representation of storage location (WGS84)</setting>
+                <setting name="label" locale="en_US">Verbatim longitude (X) of the storage location</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+            <placement code="verbatimLatitudeY" typeRestrictions="livingPlant,forestTreePopulation">
+              <bundle>ca_attribute_verbatimLatitudeY</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Verbatim latitude (Y) of the storage location.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+            <placement code="verbatimGeodeticDatum" typeRestrictions="livingPlant,forestTreePopulation">
+              <bundle>ca_attribute_verbatimGeodeticDatum</bundle>
+              <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+			      <placement code="verbatimCoordinatesRemarks" typeRestrictions="livingPlant,forestTreePopulation">  
+              <bundle>ca_attribute_verbatimCoordinatesRemarks</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Remarks on the verbatim locality data</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+            <placement code="decimalLatitudeY" typeRestrictions="livingPlant,forestTreePopulation">
+              <bundle>ca_attribute_decimalLatitudeY</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Decimal latitude of the storage location (Y)*</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+            <placement code="decimalLongitudeX" typeRestrictions="livingPlant,forestTreePopulation">
+              <bundle>ca_attribute_decimalLongitudeX</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Decimal longitude of the storage location (X)*</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+            <placement code="geodeticDatum" typeRestrictions="livingPlant,forestTreePopulation">
+              <bundle>ca_attribute_geodeticDatum</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+            <placement code="coordinateUncertaintyInMetersC" typeRestrictions="livingPlant,forestTreePopulation">
+              <bundle>ca_attribute_coordinateUncertaintyInMetersC</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Coordinate uncertainty in meters *</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+			      <placement code="map" typeRestrictions="livingPlant,forestTreePopulation">
+              <bundle>ca_attribute_georeference</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Map representation (WGS84)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="description" locale="en_US">Please enter [decimalLatitidueX,decimalLongitudeY] in WGS84 format. This will allow to execute map searches within the INBO-CMS.</setting>
               </settings>
 			      </placement>
-            <placement code="ca_collection">
-              <bundle>ca_collections</bundle>
+			      <placement code="georefVerif" typeRestrictions="livingPlant,forestTreePopulation">
+              <bundle>ca_attribute_georefVerif</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Object belongs to collection</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">10</setting>
+                <setting name="label" locale="en_US">Verification status of georeference</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="description" locale="en_US">The map above is checked: do the decimal coordinates deliver the correct locality as described? If location is descriptive, use: https://geopick.gbif.org/ to link coordinates and a coordinate uncertainty to the locality.</setting>
+              </settings>
+			      </placement>
+            <placement code="georeferenceRemarks" typeRestrictions="livingPlant,forestTreePopulation">
+              <bundle>ca_attribute_georeferenceRemarks</bundle>
+			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
-            </placement>
+			      </placement>
           </bundlePlacements>
         </screen>
         <screen idno="relations" default="0">
@@ -12185,7 +12240,17 @@
                 <setting name="description" locale="en_US">Associations between INBO-specimen. For example: host and parasite, host plant and butterfly egg, ... </setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="expand_collapse_value">collapse</setting>
+				        <setting name="restrict_to_types">object</setting>
                 <setting name="restrict_to_relationship_types">association</setting>
+              </settings>
+            </placement>
+            <placement code="livingPlantWildRelative" typeRestrictions="livingPlant,forestTreePopulation">
+              <bundle>ca_objects</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The wild relative of living plant in collection</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
+				        <setting name="restrict_to_types">livingPlantWildRelative</setting>
               </settings>
             </placement>
 			      <placement code="seedlot_relation_seeds" typeRestrictions="seedlot">
@@ -12194,7 +12259,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="seedlot_relation_samplingPoint" typeRestrictions="seedlot">
+			      <placement code="seedlot_relation_samplingPoint" typeRestrictions="seedlot,livingPlant">
               <bundle>ca_attribute_seedlotRelationSamplingPoint</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -12326,7 +12391,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="preparationProtocol" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,stemdisc,cutting" includeSubtypes="1">
+			      <placement code="preparationProtocol" typeRestrictions="soilObject,waterObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,organicTopSoil,moss,seedlot,stemdisc,cutting,livingPlant,forestTreePopulation" includeSubtypes="1">
               <bundle>ca_attribute_preparationProtocol</bundle>
               <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -12711,14 +12776,14 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="verbatimTaxon" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc" includeSubtypes="1">
+			      <placement code="verbatimTaxon" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,livingPlant,forestTreePopulation" includeSubtypes="1">
               <bundle>ca_attribute_verbatimTaxon</bundle>
 			        <settings>
 				        <setting name="add_label" locale="en_US">Add a new taxon</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
-			      <placement code="GBIF" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc" includeSubtypes="1">
+			      <placement code="GBIF" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,livingPlant,forestTreePopulation" includeSubtypes="1">
               <bundle>ca_attribute_GBIF</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">GBIF taxon lookup (main taxon)</setting>
@@ -12726,14 +12791,14 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
-			      <placement code="taxonDate" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc" includeSubtypes="1">
+			      <placement code="taxonDate" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,livingPlant,forestTreePopulation" includeSubtypes="1">
               <bundle>ca_attribute_taxonDate</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Date of taxonomic identification (main taxon)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
-            <placement code="ca_entities_identifier" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc" includeSubtypes="1">
+            <placement code="ca_entities_identifier" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,livingPlant,forestTreePopulation" includeSubtypes="1">
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Identified by</setting>
@@ -12743,13 +12808,13 @@
                 <setting name="restrict_to_relationship_types">identifier</setting>
               </settings>
 			      </placement>
-			      <placement code="voucher" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc" includeSubtypes="1">
+			      <placement code="voucher" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,livingPlant,forestTreePopulation" includeSubtypes="1">
               <bundle>ca_attribute_voucher</bundle>
               <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="ca_occurrences_identification" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc" includeSubtypes="1">
+            <placement code="ca_occurrences_identification" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,livingPlant,forestTreePopulation" includeSubtypes="1">
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Nonpreferred taxonomic identifications (main taxon)</setting>
@@ -13320,6 +13385,466 @@
 				        <setting name="add_label" locale="en_US">Genotype documentation (internal)</setting>
                 <setting name="description" locale="en_US">Add the URL INBO files that documents the genotype, if this documentation exists.</setting>
 			        </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
+	    </screens>
+    </userInterface>
+    <userInterface code="object_livingPlantWildRelative_ui" type="ca_objects">
+      <labels>
+        <label locale="en_US">
+          <name>Object edito 3</name>
+        </label>
+      </labels>
+      <typeRestrictions>
+        <restriction code="r_livingPlantWildRelative" type="livingPlantWildRelative"/>
+      </typeRestrictions>
+      <screens>
+        <screen idno="record" default="1">
+          <labels>
+            <label locale="en_US">
+              <name>Record</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="idno">
+              <bundle>idno</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">CMS-ID</setting>
+                <setting name="description" locale="en_US">This is a unique identifier for the record, automatically assigned by the INBO-CMS.</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
+              </settings>
+            </placement>
+            <placement code="preferred_labels">
+              <bundle>preferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">The preferred identifier for the plant wild relative</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
+              </settings>
+            </placement>
+			      <placement code="nonpreferred_labels">
+              <bundle>nonpreferred_labels</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Other identifiers (non-preferred)</setting>
+				        <setting name="add_label" locale="en_US">Add other non-preferred identifier</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="description">
+              <bundle>ca_attribute_description</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Decription of the plant wild relative</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+			      <placement code="verbatimLocality">
+              <bundle>ca_attribute_verbatimLocality</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Verbatim locality</setting>
+                <setting name="description" locale="en_US">The original description of the locality, a place, the geographic coverage/range, ... of the plan occurrence. (Different from dwc:Locality, which is the alternative (often more accurate/precise) locality description after georeferencing).</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="decimalLatitudeY">
+              <bundle>ca_attribute_decimalLatitudeY</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Decimal latitude of plant occurrence (Y)*</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+            <placement code="decimalLongitudeX">
+              <bundle>ca_attribute_decimalLongitudeX</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Decimal longitude of the plant occurrence (X)*</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+            <placement code="geodeticDatum">
+              <bundle>ca_attribute_geodeticDatum</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+			      <placement code="verbatimTaxon">
+              <bundle>ca_attribute_verbatimTaxon</bundle>
+			        <settings>
+				        <setting name="add_label" locale="en_US">Add a new taxon</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+			        </settings>
+            </placement>
+            <placement code="reference">
+              <bundle>ca_attribute_reference</bundle>
+			        <settings>
+				        <setting name="add_label" locale="en_US">Documentation (published)</setting>
+                <setting name="description" locale="en_US">Add the URL of a publication (DOI if published) that documents the occurrence, if this documentation exists.</setting>
+			        </settings>
+            </placement>
+            <placement code="fileURL">
+              <bundle>ca_attribute_fileURL</bundle>
+			        <settings>
+				        <setting name="add_label" locale="en_US">Documentation (internal)</setting>
+                <setting name="description" locale="en_US">Add the URL INBO files that documents the plant occurrence, if this documentation exists.</setting>
+			        </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
+        <screen idno="relations" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Relations</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="ca_objects">
+              <bundle>ca_objects</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Associations with INBO-specimens</setting>
+                <setting name="description" locale="en_US">Associations between INBO-specimen. For example: host and parasite, host plant and butterfly egg, ... </setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
+				        <setting name="restrict_to_types">object</setting>
+                <setting name="restrict_to_relationship_types">association</setting>
+              </settings>
+            </placement>
+            <placement code="externalSpecimen">
+              <bundle>ca_attribute_externalSpecimen</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
+				        <setting name="add_label" locale="en_US">Add relationship to an external specimen</setting>
+              </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
+        <screen idno="samplingpointXY" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Samplingpoint-XY</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+			      <placement code="verbatimLocality">
+              <bundle>ca_attribute_verbatimLocality</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Verbatim locality</setting>
+                <setting name="description" locale="en_US">The original description of the locality, a place, the geographic coverage/range, ... of the plan occurrence. (Different from dwc:Locality, which is the alternative (often more accurate/precise) locality description after georeferencing).</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="verbatimLongitudeX">
+              <bundle>ca_attribute_verbatimLongitudeX</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Verbatim longitude (X) of the plant occurrence</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+            <placement code="verbatimLatitudeY">
+              <bundle>ca_attribute_verbatimLatitudeY</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Verbatim latitude (Y) of the plant occurrence.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+            <placement code="verbatimGeodeticDatum">
+              <bundle>ca_attribute_verbatimGeodeticDatum</bundle>
+              <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+			      <placement code="verbatimCoordinatesRemarks">  
+              <bundle>ca_attribute_verbatimCoordinatesRemarks</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Remarks on the verbatim locality data</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+            <placement code="decimalLatitudeY">
+              <bundle>ca_attribute_decimalLatitudeY</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Decimal latitude of plant occurrence (Y)*</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+            <placement code="decimalLongitudeX">
+              <bundle>ca_attribute_decimalLongitudeX</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Decimal longitude of the plant occurrence (X)*</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+            <placement code="geodeticDatum">
+              <bundle>ca_attribute_geodeticDatum</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+            <placement code="coordinateUncertaintyInMetersC">
+              <bundle>ca_attribute_coordinateUncertaintyInMetersC</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Coordinate uncertainty in meters *</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+			      <placement code="map">
+              <bundle>ca_attribute_georeference</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Map representation (WGS84)</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="description" locale="en_US">Please enter [decimalLatitidueX,decimalLongitudeY] in WGS84 format. This will allow to execute map searches within the INBO-CMS.</setting>
+              </settings>
+			      </placement>
+			      <placement code="georefVerif">
+              <bundle>ca_attribute_georefVerif</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Verification status of georeference</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="description" locale="en_US">The map above is checked: do the decimal coordinates deliver the correct locality as described? If location is descriptive, use: https://geopick.gbif.org/ to link coordinates and a coordinate uncertainty to the locality.</setting>
+              </settings>
+			      </placement>
+            <placement code="georeferenceRemarks">
+              <bundle>ca_attribute_georeferenceRemarks</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+            <placement code="ca_places_lookup"><!--This one is to be deleted for the users if a standardized lists of place names (land and water) are added. New names can be added on request. However also possible to let users regulate this themselves.-->
+              <bundle>ca_places</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Toponym (Lookup view)</setting>
+                <setting name="description" locale="en_US">The place or toponym, chosen from the standardized list. TIP: Always interpret the place name in the historical context! For example municipalities can fuse or split. Each place attribution has a reference and time stamp.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">5</setting>
+                <setting name="useHierarchicalBrowser">0</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+            <placement code="ca_places_hierarchyBrowser">
+              <bundle>ca_places</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Toponym (hiërarchial view)</setting>
+                <setting name="description" locale="en_US">The place or toponym, chosen from the standardized list. This view allows you to browse through the available options already available. To add an option, use the "lookup" above.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">5</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="useHierarchicalBrowser">1</setting>
+              </settings>
+			      </placement>
+            <placement code="provenance">
+              <bundle>ca_attribute_provenance</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The provenance</setting>
+                <setting name="description" locale="en_US">The plant sampling point has the provenance. As provenance concepts are dependent on the taxon, these are logged separately.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+            <placement code="habitat">
+              <bundle>ca_attribute_habitat</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+          </bundlePlacements>
+		    </screen>
+        <screen idno="samplingpointZ" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Samplingpoint-Z</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+			      <placement code="verbatimElevation">
+              <bundle>ca_attribute_verbatimElevation</bundle>
+              <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="description" locale="en_US">The original description of the elevation. From the notes, Excel/Gsheet, dataset, ...</setting>
+              </settings>
+			      </placement>
+			      <placement code="minimumElevationInMeters">
+              <bundle>ca_attribute_minimumElevationInMeters</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+			      <placement code="maximumElevationInMeters">
+              <bundle>ca_attribute_maximumElevationInMeters</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+			      <placement code="verticalDatum">
+              <bundle>ca_attribute_verticalDatum</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Vertical datum (dwc:verticalDatum)</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="description" locale="en_US">The vertical datum used as the reference upon which the values in the elevation terms are based.</setting>
+              </settings>
+			      </placement>
+          </bundlePlacements>
+		    </screen>
+		    <screen idno="taxonomy" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>taxonomy</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+			      <placement code="verbatimTaxon">
+              <bundle>ca_attribute_verbatimTaxon</bundle>
+			        <settings>
+				        <setting name="add_label" locale="en_US">Add a new taxon</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+			        </settings>
+            </placement>
+			      <placement code="GBIF">
+              <bundle>ca_attribute_GBIF</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">GBIF taxon lookup (main taxon)</setting>
+                <setting name="description" locale="en_US">This is the taxon as far as can be identified of the MAIN biodiversity the sample represents. For example a tongue tissue sample of a wolf (which can be tested for bacteria): enter Canis lupus. </setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+			        </settings>
+            </placement>
+			      <placement code="taxonDate">
+              <bundle>ca_attribute_taxonDate</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Date of taxonomic identification (main taxon)</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+			        </settings>
+            </placement>
+            <placement code="ca_entities_identifier">
+              <bundle>ca_entities</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Identified by</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_relationship_types">identifier</setting>
+              </settings>
+			      </placement>
+			      <placement code="voucher">
+              <bundle>ca_attribute_voucher</bundle>
+              <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="ca_occurrences_identification">
+              <bundle>ca_occurrences</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Nonpreferred taxonomic identifications (main taxon)</setting>
+                <setting name="description" locale="en_US">Only 1 (the presumed: true) identification (taxonomy) is linked to the plant occurrence in the fields above. It can occur that over time, new information delivers a new taxonomic identification linked to the plant occurrence.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">20</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_types">identification</setting>
+                <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences">^ca_occurrences.verbatimTaxon, ^ca_occurrences.standTaxon<br/> (^ca_occurrences.taxonDate)</unit>]]></setting>
+              </settings>
+			      </placement>
+			      <placement code="taxonNote">
+              <bundle>ca_attribute_taxonNote</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+			        </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
+		    <screen idno="obj_measurements" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Measurements/Facts</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="object_length">
+              <bundle>ca_attribute_lengthContainer</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Length measurement</setting>
+				        <setting name="add_label" locale="en_US">Add length measurement</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="object_age">
+              <bundle>ca_attribute_ageContainer</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Age</setting>
+				        <setting name="add_label" locale="en_US">Add age</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="object_count">
+              <bundle>ca_attribute_countContainer</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Count related to object</setting>
+				        <setting name="add_label" locale="en_US">Add count</setting>
+                <setting name="description" locale="en_US">Count related to the object / specimen (nothing else!).</setting>
+                <setting name="list_format">list</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+			      <placement code="sexPlant">
+              <bundle>ca_attribute_sexPlant</bundle>
+			        <settings>
+                <setting name="description" locale="en_US">Explanation to list options: https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0. If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="documentation_url">https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0</setting>
+              </settings>
+			      </placement>
+			      <placement code="genotype">
+              <bundle>ca_objects</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Genotype (1:n)</setting>
+                <setting name="description" locale="en_US">A specific code given to describe a genotype that occurs in more than one individual. For example: a specific haplotype. For example: a specific genotype for which there are multiple clones (plant breeding). If there is an individual genotype or sequence data that you would like to log with this specific sample, this can be done under FILE/REFS/PHOTOS, because this is only relevant to add together with the link to the data.</setting>
+                <setting name="restrict_to_types">genotype</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+				        <setting name="add_label" locale="en_US">Add genotype</setting>
+              </settings>
+			      </placement>
+			      <placement code="lifeStagePlant" typeRestrictions="plantObject,dnaSample" includeSubtypes="1">
+              <bundle>ca_attribute_lifeStagePlant</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="description" locale="en_US">Due to sampling, the life stage of the plant at time object(s) were collected becomes a fixed value.</setting>
+              </settings>
+            </placement>
+			      <placement code="reprCondPlant" typeRestrictions="plantObject" includeSubtypes="1">
+              <bundle>ca_attribute_reprCondPlant</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Reproductive condition (dwc:reproductiveCondition)</setting>
+                <setting name="description" locale="en_US">Reproductive condition of the organism at time object(s) were collected</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
+			        </settings>
+            </placement>		 		 		 		 		 		 		 		 
+          </bundlePlacements>
+        </screen>
+		    <screen idno="reference" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Files/Refs/Photos/Dbs</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="reference">
+              <bundle>ca_attribute_reference</bundle>
+			        <settings>
+				        <setting name="add_label" locale="en_US">Documentation (published)</setting>
+                <setting name="description" locale="en_US">Add the URL of a publication (DOI if published) that documents the occurrence, if this documentation exists.</setting>
+			        </settings>
+            </placement>
+            <placement code="fileURL">
+              <bundle>ca_attribute_fileURL</bundle>
+			        <settings>
+				        <setting name="add_label" locale="en_US">Documentation (internal)</setting>
+                <setting name="description" locale="en_US">Add the URL INBO files that documents the plant occurrence, if this documentation exists.</setting>
+			        </settings>
+            </placement>
+            <placement code="publishedRecord">
+              <bundle>ca_attribute_publishedRecord</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Published occurrence record</setting>
+                <setting name="description" locale="en_US">The object published on GBIF,.. This is a sister-record of the current digital record of the plant occurrence.</setting>
+				        <setting name="add_label" locale="en_US">Add published record</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
             </placement>
           </bundlePlacements>
         </screen>
