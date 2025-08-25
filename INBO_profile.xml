@@ -3,9 +3,9 @@
   <profileName>[INBO-CMS] INBO natural science collection v0.79</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in v0.79-->
-  <!--Issues to check if succesful in v0.78-->
   <!--https://github.com/inbo/collective-access/issues/221-->
   <!--https://github.com/inbo/collective-access/issues/273-->
+  <!--Issues to check if succesful in v0.78-->
   <!--https://github.com/inbo/collective-access/issues/292-->
   <!--https://github.com/inbo/collective-access/issues/308-->
   <!--https://github.com/inbo/collective-access/issues/311-->
@@ -12122,15 +12122,25 @@
             <placement code="deaccession">
               <bundle>ca_objects_deaccession</bundle>
             </placement>
-            <placement code="ca_storage_location_plant" typeRestrictions="forestTreePopulation,livingPlant">
+            <placement code="ca_storage_location_plantlot" typeRestrictions="livingPlant,forestTreePopulation">
               <bundle>ca_storage_locations</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Object is stored at</setting>
+                <setting name="label" locale="en_US">Object is stored at *</setting>
                 <setting name="restrict_to_types">forestTreePopulationSite</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="useHierarchicalBrowser">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="display_template">^ca_storage_locations.preferred_labels.name</setting>
+              </settings>
+            </placement>
+            <placement code="ca_storage_location" typeRestrictions="animalObject,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1">
+              <bundle>ca_storage_locations</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Object is stored at *</setting>
+                <setting name="restrict_to_types">room,cabinet,freezer,fridge,compartment,drawer,shelf,crate,rack,box,spot</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="useHierarchicalBrowser">1</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
 			      <placement code="mapFTP" typeRestrictions="livingPlant" includeSubtypes="1">
@@ -12141,16 +12151,6 @@
                 <setting name="description" locale="en_US">Please enter [decimalLatitidueX,decimalLongitudeY] in WGS84 format. This will allow to execute map searches within the INBO-CMS.</setting>
               </settings>
 			      </placement>
-            <placement code="ca_storage_location_hierarchyBrowser" typeRestrictions="animalObject,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,dnaSample,waterObject,soilObject" includeSubtypes="1">
-              <bundle>ca_storage_locations</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Object is stored at</setting>
-                <setting name="restrict_to_types">room,cabinet,freezer,fridge,compartment,drawer,shelf,crate,rack,box,spot</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="useHierarchicalBrowser">1</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
             <placement code="ca_collection">
               <bundle>ca_collections</bundle>
 			        <settings>
