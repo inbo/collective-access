@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.78</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.79</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
+  <!--Issues to check if succesful in v0.79-->
   <!--Issues to check if succesful in v0.78-->
   <!--https://github.com/inbo/collective-access/issues/221-->
   <!--https://github.com/inbo/collective-access/issues/273-->
@@ -6203,18 +6204,8 @@
           </label>
         </labels>
 	      <settings>
-          <setting name="fieldWidth">40</setting>
-          <setting name="doesNotTakeLocale">1</setting>
-        </settings>
-	      <typeRestrictions>
-          <restriction code="r_dnaSample">
-            <table>ca_objects</table>
-            <type>dnaSample</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">1</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              <setting name="fieldWidth">40</setting>
+              <setting name="doesNotTakeLocale">1</setting>
               <setting name="hideIfSelected___null__">object_ui/obj_measurements/lifeStageMammal</setting>
               <setting name="hideIfSelected___null__">object_ui/obj_measurements/lifeStageInvertebrate</setting>
               <setting name="hideIfSelected___null__">object_ui/obj_measurements/lifeStageFish</setting>
@@ -6275,7 +6266,12 @@
               <setting name="hideIfSelected_invertebrate">object_ui/obj_measurements/reprCondPlant</setting>
               <setting name="hideIfSelected_fish">object_ui/obj_measurements/reprCondPlant</setting>
               <setting name="hideIfSelected_reptile">object_ui/obj_measurements/reprCondPlant</setting>
-            </settings>
+        </settings>
+	      <typeRestrictions>
+          <restriction code="r_dnaSample">
+            <table>ca_objects</table>
+            <type>dnaSample</type>
+            <includeSubtypes>1</includeSubtypes>
           </restriction>
         </typeRestrictions>
       </metadataElement>
