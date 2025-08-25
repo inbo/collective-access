@@ -6,13 +6,8 @@
   <!--https://github.com/inbo/collective-access/issues/221-->
   <!--https://github.com/inbo/collective-access/issues/317-->
   <!--https://github.com/inbo/collective-access/issues/308-->
-  <!--Issues to check if succesful in v0.79-->
   <!--https://github.com/inbo/collective-access/issues/311-->
-  <!--https://github.com/inbo/collective-access/issues/312-->
   <!--https://github.com/inbo/collective-access/issues/230-->
-  <!--https://github.com/inbo/collective-access/issues/313-->
-  <!--https://github.com/inbo/collective-access/issues/314-->
-  <!--https://github.com/inbo/collective-access/issues/229-->
   <!--https://github.com/inbo/collective-access/issues/315-->
   <!--https://github.com/inbo/collective-access/issues/316-->
   <!--Issues still open-->
@@ -12065,51 +12060,6 @@
               <name>Storage location</name>
             </label>
           </labels>
-          <typeRestrictions>
-                <restriction code="r_mammalEntireCadaver" type="mammalEntireCadaver"/>       
-                <restriction code="r_fishEntireEthanol" type="fishEntireEthanol"/>
-                <restriction code="r_sampleFishMuscle" type="sampleFishMuscle"/>
-                <restriction code="r_sampleFishLiver" type="sampleFishLiver"/>
-                <restriction code="r_sampleMammalBaculum" type="sampleMammalBaculum"/>
-                <restriction code="r_sampleMammalBladder" type="sampleMammalBladder"/>
-                <restriction code="r_sampleMammalBlood" type="sampleMammalBlood"/>
-                <restriction code="r_sampleMammalBrain" type="sampleMammalBrain"/>
-                <restriction code="r_sampleMammalConjuctivum" type="sampleMammalConjuctivum"/>
-                <restriction code="r_sampleMammalCyste" type="sampleMammalCyste"/>
-                <restriction code="r_sampleMammalFat" type="sampleMammalFat"/>
-                <restriction code="r_sampleMammalFeces" type="sampleMammalFeces"/>
-                <restriction code="r_sampleMammalHead" type="sampleMammalHead"/>
-                <restriction code="r_sampleMammalHeart" type="sampleMammalHeart"/>
-                <restriction code="r_sampleMammalHair" type="sampleMammalHair"/>
-                <restriction code="r_sampleMammalIntestine" type="sampleMammalIntestine"/>
-                <restriction code="r_sampleMammalLiver" type="sampleMammalLiver"/>
-                <restriction code="r_sampleMammalLung" type="sampleMammalLung"/>
-                <restriction code="r_sampleMammalLymphNode" type="sampleMammalLymphNode"/>
-                <restriction code="r_sampleMammalKidney" type="sampleMammalKidney"/>
-                <restriction code="r_sampleMammalMuscle" type="sampleMammalMuscle"/>
-                <restriction code="r_sampleMammalSkinPiece" type="sampleMammalSkinPiece"/>
-                <restriction code="r_sampleMammalSkinComplete" type="sampleMammalSkinComplete"/>
-                <restriction code="r_sampleMammalSkull" type="sampleMammalSkull"/>
-                <restriction code="r_sampleMammalSpleen" type="sampleMammalSpleen"/>
-                <restriction code="r_sampleMammalStomach" type="sampleMammalStomach"/>
-                <restriction code="r_sampleMammalTongue" type="sampleMammalTongue"/>
-                <restriction code="r_sampleMammalTooth" type="sampleMammalTooth"/>
-                <restriction code="r_sampleMammalUterus" type="sampleMammalUterus"/>
-                <restriction code="r_sampleMammalStomachContent" type="sampleMammalStomachContent"/>
-                <restriction code="r_mammalEntireZoological" type="mammalEntireZoological"/>
-                <!--<restriction code="r_leafSampleGenetic" type="leafSampleGenetic"/>-->
-                <restriction code="r_leafSampleAnalytic" type="leafSampleAnalytic"/>
-                <!--<restriction code="r_organicTopSoil" type="organicTopSoil"/>-->
-                <restriction code="r_moss" type="moss"/>
-                <restriction code="r_seedlot" type="seedlot"/>
-                <restriction code="r_stemdisc" type="stemdisc"/>
-                <!--<restriction code="r_cutting" type="cutting"/>-->
-                <restriction code="r_livingPlant" type="livingPlant"/>
-                <restriction code="r_dnaSample" type="dnaSample"/>
-                <!--<restriction code="r_waterSample" type="waterSample"/>-->
-                <!--<restriction code="r_eDnaWaterFilter" type="eDnaWaterFilter"/>-->
-                <restriction code="r_soilObject" type="soilObject"/>
-          </typeRestrictions>
           <bundlePlacements>
             <placement code="deaccession">
               <bundle>ca_objects_deaccession</bundle>
@@ -12235,7 +12185,6 @@
               <bundle>hierarchy_location</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Relationships with other INBO-specimens</setting>
-                <setting name="description" locale="en_US">The relationship between sampling point and all the directly related objects (subsamples, DNA-extractions, parasites from cadaver, ...). TIP: to view sibling specimens, move to the parent specimen.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="expand_collapse_value">collapse</setting>
                 <setting name="restrict_to_relationship_types">directRelationship</setting>
@@ -12245,21 +12194,22 @@
               <bundle>ca_objects</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Associations with other INBO-specimens</setting>
-                <setting name="description" locale="en_US">Associations between INBO-specimen. For example: host and parasite, host plant and butterfly egg, ... </setting>
+                <setting name="description" locale="en_US">Associations between INBO-specimen. For example: host and parasite, host plant and butterfly egg, ... Not: child/parent/sibling type of relationship.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="expand_collapse_value">collapse</setting>
 				        <setting name="restrict_to_types">object</setting>
                 <setting name="restrict_to_relationship_types">association</setting>
               </settings>
             </placement>
-            <placement code="livingPlantWildRelative" typeRestrictions="livingPlant,forestTreePopulation">
+            <placement code="livingPlantWildRelative" typeRestrictions="livingPlant">
               <bundle>ca_objects</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">The wild relative of living plant in collection</setting>
+                <setting name="description" locale="en_US">Wild relative of the living plant. To log if relevant.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="expand_collapse_value">collapse</setting>
 				        <setting name="restrict_to_types">livingPlantWildRelative</setting>
-                <setting name="restrict_to_relationship_types">related</setting>
+                <setting name="restrict_to_relationship_types">related,cloneOf,childOfCloneOf,grandchildOf,grandchildOfCloneOf,childOf</setting>
               </settings>
             </placement>
 			      <placement code="seedlot_relation_seeds" typeRestrictions="seedlot">
@@ -12268,7 +12218,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="seedlot_relation_samplingPoint" typeRestrictions="seedlot,livingPlant">
+			      <placement code="seedlot_relation_samplingPoint" typeRestrictions="seedlot">
               <bundle>ca_attribute_seedlotRelationSamplingPoint</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -13424,7 +13374,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="expand_collapse_value">collapse</setting>
 				        <setting name="restrict_to_types">object</setting>
-                <setting name="restrict_to_relationship_types">association</setting>
+                <setting name="restrict_to_relationship_types">genotype</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -15718,6 +15668,16 @@
   <relationshipTypes>
     <relationshipTable name="ca_objects_x_objects">
       <types>
+        <type code="directRelationship" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>child/parent/sibling relation</typename>
+              <typename_reverse>child/parent/sibling relation</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>object</subTypeLeft>
+          <subTypeRight>object</subTypeRight>
+        </type>
         <type code="related" default="0">
           <labels>
             <label locale="en_US">
@@ -15768,14 +15728,14 @@
           <subTypeLeft>object</subTypeLeft>
           <subTypeRight>livingPlantWildRelative</subTypeRight>
         </type>
-        <type code="childOfLivingPlant" default="0">
+        <type code="childOf" default="0">
           <labels>
             <label locale="en_US">
               <typename>is child of</typename>
               <typename_reverse>has child</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>livingPlant</subTypeLeft>
+          <subTypeLeft>object</subTypeLeft>
           <subTypeRight>livingPlantWildRelative</subTypeRight>
         </type>
         <type code="association" default="0">
@@ -16432,15 +16392,25 @@
     </relationshipTable>
 	  <relationshipTable name="ca_loans_x_occurrences">
       <types>
-        <type code="projectReuse" default="1">
+        <type code="InternalprojectReuse" default="1">
           <labels>
             <label locale="en_US">
-              <typename>project that reuses</typename>
-              <typename_reverse>reused in project</typename_reverse>
+              <typename>internal project that reuses</typename>
+              <typename_reverse>reused in internal project</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>internal_reuse</subTypeLeft>
-          <subTypeRight>project</subTypeRight>
+          <subTypeRight>internalProject</subTypeRight>
+        </type>
+        <type code="ExternalprojectReuse" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>external project that reuses</typename>
+              <typename_reverse>reused in external project</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>external_reuse</subTypeLeft>
+          <subTypeRight>externalProject</subTypeRight>
         </type>
       </types>
     </relationshipTable>
