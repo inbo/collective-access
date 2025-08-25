@@ -5,8 +5,6 @@
   <!--Issues to check if succesful in v0.79-->
   <!--https://github.com/inbo/collective-access/issues/221-->
   <!--https://github.com/inbo/collective-access/issues/273-->
-  <!--Issues to check if succesful in v0.78-->
-  <!--https://github.com/inbo/collective-access/issues/292-->
   <!--https://github.com/inbo/collective-access/issues/308-->
   <!--https://github.com/inbo/collective-access/issues/311-->
   <!--Issues still open-->
@@ -6023,6 +6021,7 @@
 	      <settings>
           <setting name="fieldWidth">40</setting>
           <setting name="doesNotTakeLocale">1</setting>
+          <setting name="hideIfSelected_null">object_ui/record/verbatimTaxon</setting>
           <setting name="hideIfSelected___null__">object_ui/record/verbatimTaxon</setting>
           <setting name="hideIfSelected_soilSample">object_ui/record/verbatimTaxon</setting>
           <setting name="hideIfSelected_waterSample">object_ui/record/verbatimTaxon</setting>
@@ -15299,7 +15298,7 @@
           <subTypeLeft></subTypeLeft>
           <subTypeRight>fieldwork</subTypeRight>
         </type>
-		    <type code="resultingObjectsProject" default="0">
+		    <type code="resultingObjectsInternalProject" default="0">
           <labels>
             <label locale="en_US">
               <typename>resulted in</typename>
@@ -15307,7 +15306,17 @@
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
-          <subTypeRight>project</subTypeRight>
+          <subTypeRight>internalProject</subTypeRight>
+        </type>
+		    <type code="resultingObjectsExternalProject" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>resulted in</typename>
+              <typename_reverse>result of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>externalProject</subTypeRight>
         </type>
         <type code="execObjValuation" default="0" typeRestrictionRight="valuation" includeSubtypesRight="0">
           <labels>
@@ -15433,7 +15442,7 @@
           <subTypeLeft></subTypeLeft>
           <subTypeRight>fieldwork</subTypeRight>
         </type>
-		    <type code="projectFocus" default="0">
+		    <type code="projectFocusInternal" default="0">
           <labels>
             <label locale="en_US">
               <typename>was focus of</typename>
@@ -15441,7 +15450,17 @@
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
-          <subTypeRight>project</subTypeRight>
+          <subTypeRight>internalProject</subTypeRight>
+        </type>
+		    <type code="projectFocusExternal" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>was focus of</typename>
+              <typename_reverse>was focussed on</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>externalProject</subTypeRight>
         </type>
       </types>
     </relationshipTable>
