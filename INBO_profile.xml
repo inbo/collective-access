@@ -10,6 +10,7 @@
   <!--https://github.com/inbo/collective-access/issues/312-->
   <!--https://github.com/inbo/collective-access/issues/230-->
   <!--https://github.com/inbo/collective-access/issues/313-->
+  <!--https://github.com/inbo/collective-access/issues/314-->
   <!--Issues still open-->
   <!--https://github.com/inbo/collective-access/issues/77--><!--bug-->
   <!--https://github.com/inbo/collective-access/issues/117--><!--needs extra developing/coding-->
@@ -12034,7 +12035,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="verbatimTaxon" typeRestrictions="animalObject,plantObject,dnaSample,livingPlantWildRelative" includeSubtypes="1"><!--This should prepopulate with the parent value, if empty-->
+			      <placement code="verbatimTaxon" typeRestrictions="animalObject,plantObject,dnaSample" includeSubtypes="1"><!--This should prepopulate with the parent value, if empty-->
               <bundle>ca_attribute_verbatimTaxon</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -12989,7 +12990,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-			      <placement code="sexPlant" typeRestrictions="plantObject,dnaSample" includeSubtypes="1">
+			      <placement code="sexPlant" typeRestrictions="livingPlant,leafSampleAnalytic,stemDisc,dnaSample" includeSubtypes="1">
               <bundle>ca_attribute_sexPlant</bundle>
 			        <settings>
                 <setting name="description" locale="en_US">Explanation to list options: https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0. If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
@@ -13047,7 +13048,7 @@
                 <setting name="description" locale="en_US">Due to sampling, the life stage of the animal at time object(s) were collected becomes a fixed value.</setting>
               </settings>
             </placement>
-			      <placement code="lifeStagePlant" typeRestrictions="plantObject,dnaSample" includeSubtypes="1">
+			      <placement code="lifeStagePlant" typeRestrictions="livingPlant,leafSampleAnalytic,stemDisc,dnaSample" includeSubtypes="1">
               <bundle>ca_attribute_lifeStagePlant</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
@@ -13064,7 +13065,7 @@
                 <setting name="expand_collapse_value">collapse</setting>
 			        </settings>
             </placement>
-			      <placement code="reprCondPlant" typeRestrictions="plantObject" includeSubtypes="1">
+			      <placement code="reprCondPlant" typeRestrictions="livingPlant,leafSampleAnalytic,stemDisc,dnaSample" includeSubtypes="1">
               <bundle>ca_attribute_reprCondPlant</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Reproductive condition (dwc:reproductiveCondition)</setting>
