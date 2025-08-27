@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.82</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.83</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
-  <!--Issues to check if succesful in v0.82-->
-  <!--https://github.com/inbo/collective-access/issues/221-->
+  <!--Issues to check if succesful in v0.83-->
   <!--https://github.com/inbo/collective-access/issues/308-->
-  <!--https://github.com/inbo/collective-access/issues/318-->
   <!--https://github.com/inbo/collective-access/issues/319-->
-  <!--https://github.com/inbo/collective-access/issues/327-->
-  <!--https://github.com/inbo/collective-access/issues/328-->
-  <!--https://github.com/inbo/collective-access/issues/329-->
-  <!--https://github.com/inbo/collective-access/issues/330-->
   <!--More difficult issues-->
   <!--https://github.com/inbo/collective-access/issues/77--><!--bug-->
   <!--https://github.com/inbo/collective-access/issues/117--><!--needs extra developing/coding-->
@@ -6036,19 +6030,20 @@
 	      <settings>
           <setting name="fieldWidth">40</setting>
           <setting name="doesNotTakeLocale">1</setting>
-          <setting name="hideIfSelected_$0">object_ui/record/verbatimTaxon</setting>
-          <setting name="hideIfSelected_NULL">object_ui/record/verbatimTaxon</setting>
-          <setting name="hideIfSelected_null">object_ui/record/verbatimTaxon</setting>
-          <setting name="hideIfSelected___NULL__">object_ui/record/verbatimTaxon</setting>
-          <setting name="hideIfSelected___null__">object_ui/record/verbatimTaxon</setting>
-          <setting name="hideIfSelected_EMPTY">object_ui/record/verbatimTaxon</setting>
-          <setting name="hideIfSelected_">object_ui/record/verbatimTaxon</setting>
+          <setting name="implicitNullOption">1</setting><!--testv0.83-->
+          <setting name="hideIfSelected_$0">object_ui/record/verbatimTaxon</setting><!--not working, issue 308-->
+          <setting name="hideIfSelected_NULL">object_ui/record/verbatimTaxon</setting><!--not working, issue 308-->
+          <setting name="hideIfSelected_null">object_ui/record/verbatimTaxon</setting><!--not working, issue 308-->
+          <setting name="hideIfSelected___NULL__">object_ui/record/verbatimTaxon</setting><!--not working, issue 308-->
+          <setting name="hideIfSelected___null__">object_ui/record/verbatimTaxon</setting><!--not working, issue 308-->
+          <setting name="hideIfSelected_EMPTY">object_ui/record/verbatimTaxon</setting><!--not working, issue 308-->
+          <setting name="hideIfSelected_">object_ui/record/verbatimTaxon</setting><!--not working, issue 308-->
+          <setting name="hideIfSelected_0">object_ui/record/verbatimTaxon</setting><!--testv0.83-->
+          <setting name="hideIfSelected_none">object_ui/record/verbatimTaxon</setting><!--testv0.83-->
+          <setting name="hideIfSelected___none__">object_ui/record/verbatimTaxon</setting><!--testv0.83-->
           <setting name="hideIfSelected_soilSample">object_ui/record/verbatimTaxon</setting>
           <setting name="hideIfSelected_waterSample">object_ui/record/verbatimTaxon</setting>
-          <setting name="showIfSelected_soilSample">object_ui/record/verbatimDepth</setting>
-          <setting name="showIfSelected_soilSample">object_ui/record/minimumDepthInMeters</setting>
-          <setting name="showIfSelected_soilSample">object_ui/record/maximumDepthInMeters</setting>
-          <!--<setting name="hideIfSelected_bud">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_bud">object_ui/record/verbatimDepth</setting>
           <setting name="hideIfSelected_bud">object_ui/record/minimumDepthInMeters</setting>
           <setting name="hideIfSelected_bud">object_ui/record/maximumDepthInMeters</setting>
           <setting name="hideIfSelected_leaf">object_ui/record/verbatimDepth</setting>
@@ -6129,12 +6124,12 @@
           <setting name="hideIfSelected_tooth">object_ui/record/verbatimDepth</setting>
           <setting name="hideIfSelected_tooth">object_ui/record/minimumDepthInMeters</setting>
           <setting name="hideIfSelected_tooth">object_ui/record/maximumDepthInMeters</setting>
-          <setting name="hideIfSelected_null">object_ui/record/verbatimDepth</setting>
-          <setting name="hideIfSelected_null">object_ui/record/minimumDepthInMeters</setting>
-          <setting name="hideIfSelected_null">object_ui/record/maximumDepthInMeters</setting>-->
-          <setting name="hideIfSelected___null__">object_ui/obj_preparation/preparationVolumeC</setting>
-          <setting name="hideIfSelected_____">object_ui/obj_preparation/preparationVolumeC</setting>
-          <setting name="hideIfSelected__null__">object_ui/obj_preparation/preparationWeightC</setting>
+          <setting name="hideIfSelected___null__">object_ui/record/verbatimDepth</setting><!--not working, issue 308-->
+          <setting name="hideIfSelected___null__">object_ui/record/minimumDepthInMeters</setting><!--not working, issue 308-->
+          <setting name="hideIfSelected___null__">object_ui/record/maximumDepthInMeters</setting><!--not working, issue 308-->
+          <setting name="hideIfSelected___null__">object_ui/obj_preparation/preparationVolumeC</setting><!--not working, issue 308-->
+          <setting name="hideIfSelected___null__">object_ui/obj_preparation/preparationVolumeC</setting><!--not working, issue 308-->
+          <setting name="hideIfSelected___null__">object_ui/obj_preparation/preparationWeightC</setting><!--not working, issue 308-->
           <setting name="hideIfSelected_waterSample">object_ui/obj_preparation/preparationWeightC</setting>
           <setting name="hideIfSelected_soilSample">object_ui/obj_preparation/preparationVolumeC</setting>
           <setting name="hideIfSelected_bud">object_ui/obj_preparation/preparationVolumeC</setting>
@@ -6172,9 +6167,6 @@
           <setting name="hideIfSelected_hair">object_ui/obj_preparation/preparationVolumeC</setting>
           <setting name="hideIfSelected_fin">object_ui/obj_preparation/preparationVolumeC</setting>
           <setting name="hideIfSelected_tooth">object_ui/obj_preparation/preparationVolumeC</setting>
-          <setting name="hideIfSelected__null_">object_ui/record/verbatimDepth</setting>
-          <setting name="hideIfSelected__none_">object_ui/record/minimumDepthInMeters</setting>
-          <setting name="hideIfSelected___none__">object_ui/record/maximumDepthInMeters</setting>
           <setting name="hideIfSelected_bud">object_ui/samplingpointZ/verbatimDepth</setting>
           <setting name="hideIfSelected_bud">object_ui/samplingpointZ/minimumDepthInMeters</setting>
           <setting name="hideIfSelected_bud">object_ui/samplingpointZ/maximumDepthInMeters</setting>
@@ -6256,13 +6248,13 @@
           <setting name="hideIfSelected_tooth">object_ui/samplingpointZ/verbatimDepth</setting>
           <setting name="hideIfSelected_tooth">object_ui/samplingpointZ/minimumDepthInMeters</setting>
           <setting name="hideIfSelected_tooth">object_ui/samplingpointZ/maximumDepthInMeters</setting>
-          <setting name="hideIfSelected___null__">object_ui/taxonomy/verbatimTaxon</setting>
-          <setting name="hideIfSelected___null__">object_ui/taxonomy/GBIF</setting>
-          <setting name="hideIfSelected___null__">object_ui/taxonomy/taxonDate</setting>
-          <setting name="hideIfSelected___null__">object_ui/taxonomy/ca_entities</setting>
-          <setting name="hideIfSelected___null__">object_ui/taxonomy/voucher</setting>
-          <setting name="hideIfSelected___null__">object_ui/taxonomy/ca_occurrences</setting>
-          <setting name="hideIfSelected___null__">object_ui/taxonomy/taxonNote</setting>
+          <setting name="hideIfSelected___null__">object_ui/taxonomy/verbatimTaxon</setting><!--not working, issue 308-->
+          <setting name="hideIfSelected___null__">object_ui/taxonomy/GBIF</setting><!--not working, issue 308-->
+          <setting name="hideIfSelected___null__">object_ui/taxonomy/taxonDate</setting><!--not working, issue 308-->
+          <setting name="hideIfSelected___null__">object_ui/taxonomy/ca_entities</setting><!--not working, issue 308-->
+          <setting name="hideIfSelected___null__">object_ui/taxonomy/voucher</setting><!--not working, issue 308-->
+          <setting name="hideIfSelected___null__">object_ui/taxonomy/ca_occurrences</setting><!--not working, issue 308-->
+          <setting name="hideIfSelected___null__">object_ui/taxonomy/taxonNote</setting><!--not working, issue 308-->
           <setting name="hideIfSelected_soilSample">object_ui/taxonomy/verbatimTaxon</setting>
           <setting name="hideIfSelected_waterSample">object_ui/taxonomy/verbatimTaxon</setting>
           <setting name="hideIfSelected_soilSample">object_ui/taxonomy/verbatimTaxon</setting>
