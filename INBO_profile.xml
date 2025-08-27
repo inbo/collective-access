@@ -14,7 +14,7 @@
   <!--https://github.com/inbo/collective-access/issues/323-->
   <!--https://github.com/inbo/collective-access/issues/324-->
   <!--https://github.com/inbo/collective-access/issues/325-->
-  <!--https://github.com/inbo/collective-access/issues/326--><!--still to code-->
+  <!--https://github.com/inbo/collective-access/issues/326-->
   <!--Issues still open-->
   <!--https://github.com/inbo/collective-access/issues/77--><!--bug-->
   <!--https://github.com/inbo/collective-access/issues/117--><!--needs extra developing/coding-->
@@ -13258,7 +13258,7 @@
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Contact</setting>
-                <setting name="description" locale="en_US">A person (preferably working at INBO) that can be contacted in case more information on the object is asked, or needed. Ideally this is at least one person from within INBO, and optionally a second (external) contact can be listed. Better would be that all information is recorded in the database, so a contact person becomes unnecessary.</setting>
+                <setting name="description" locale="en_US">A person (preferably working at INBO) that can be contacted in case more information on the occurrence is asked, or needed. Better would be that all information is recorded in the database, so a contact person becomes unnecessary.</setting>
 				        <setting name="add_label" locale="en_US">Add contact</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="restrict_to_types">ind</setting>
@@ -13562,6 +13562,19 @@
 				        <setting name="add_label" locale="en_US">Documentation (internal)</setting>
                 <setting name="description" locale="en_US">Add the URL INBO files that documents the plant occurrence, if this documentation exists.</setting>
 			        </settings>
+            </placement>
+            <placement code="ca_entities_contact">
+              <bundle>ca_entities</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Contact</setting>
+                <setting name="description" locale="en_US">A person (preferably working at INBO) that can be contacted in case more information on the occurrence is asked, or needed. Better would be that all information is recorded in the database, so a contact person becomes unnecessary.</setting>
+				        <setting name="add_label" locale="en_US">Add contact</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_types">ind</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">2</setting>
+                <setting name="restrict_to_relationship_types">knowsMost</setting>
+              </settings>
             </placement>
           </bundlePlacements>
         </screen>
