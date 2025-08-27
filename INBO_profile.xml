@@ -3,24 +3,15 @@
   <profileName>[INBO-CMS] INBO natural science collection v0.82</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in v0.82-->
+  <!--https://github.com/inbo/collective-access/issues/221-->
+  <!--https://github.com/inbo/collective-access/issues/308-->
+  <!--https://github.com/inbo/collective-access/issues/318-->
+  <!--https://github.com/inbo/collective-access/issues/319-->
   <!--https://github.com/inbo/collective-access/issues/327-->
   <!--https://github.com/inbo/collective-access/issues/328-->
   <!--https://github.com/inbo/collective-access/issues/329-->
   <!--https://github.com/inbo/collective-access/issues/330-->
-  <!--Issues to check if succesful in v0.81-->
-  <!--https://github.com/inbo/collective-access/issues/221-->
-  <!--https://github.com/inbo/collective-access/issues/318-->
-  <!--https://github.com/inbo/collective-access/issues/319-->
-  <!--https://github.com/inbo/collective-access/issues/308-->
-  <!--https://github.com/inbo/collective-access/issues/311-->
-  <!--https://github.com/inbo/collective-access/issues/320-->
-  <!--https://github.com/inbo/collective-access/issues/321-->
-  <!--https://github.com/inbo/collective-access/issues/322-->
-  <!--https://github.com/inbo/collective-access/issues/323-->
-  <!--https://github.com/inbo/collective-access/issues/324-->
-  <!--https://github.com/inbo/collective-access/issues/325-->
-  <!--https://github.com/inbo/collective-access/issues/326-->
-  <!--Issues still open-->
+  <!--More difficult issues-->
   <!--https://github.com/inbo/collective-access/issues/77--><!--bug-->
   <!--https://github.com/inbo/collective-access/issues/117--><!--needs extra developing/coding-->
   <!--https://github.com/inbo/collective-access/issues/119--><!--needs extra developing/coding-->
@@ -35,6 +26,8 @@
   <!--https://github.com/inbo/collective-access/issues/307--><!--needs extra developing/coding-->
   <!--https://github.com/inbo/collective-access/issues/309--><!--needs extra developing/coding-->
   <!--https://github.com/inbo/collective-access/issues/310--><!--user management--><!--ETL/import-->
+  <!--https://github.com/inbo/collective-access/issues/332--><!--needs extra developing/coding-->
+  <!--https://github.com/inbo/collective-access/issues/331--><!--to write in the .conf files-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -4867,7 +4860,7 @@
 		      </metadataElement>
 	      </elements>
         <typeRestrictions>
-          <restriction code="r_place">
+          <restriction code="r_ca_places">
             <table>ca_places</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -4875,7 +4868,7 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_collection">
+          <restriction code="r_ca_collections">
             <table>ca_collections</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -4883,7 +4876,7 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_storage_location">
+          <restriction code="r_ca_storage_locations">
             <table>ca_storage_locations</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -4891,7 +4884,7 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_occurrences">
+          <restriction code="r_ca_occurrences">
             <table>ca_occurrences</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -4899,7 +4892,7 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_objects">
+          <restriction code="r_ca_objects">
             <table>ca_objects</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -4907,7 +4900,7 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_object_lots">
+          <restriction code="r_ca_object_lots">
             <table>ca_object_lots</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -4915,7 +4908,7 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_entities">
+          <restriction code="r_ca_entities">
             <table>ca_entities</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -4923,7 +4916,7 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_loans">
+          <restriction code="r_ca_loans">
             <table>ca_loans</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -5574,7 +5567,7 @@
               </metadataElement>
         </elements>
         <typeRestrictions>
-          <restriction code="r_entity">
+          <restriction code="r_entities">
             <table>ca_entities</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -5607,7 +5600,7 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_object">
+          <restriction code="r_objects">
             <table>ca_objects</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -6043,11 +6036,102 @@
 	      <settings>
           <setting name="fieldWidth">40</setting>
           <setting name="doesNotTakeLocale">1</setting>
-          <setting name="minAttributesPerRow">0</setting>
-          <setting name="maxAttributesPerRow">1</setting>
+          <setting name="hideIfSelected_$0">object_ui/record/verbatimTaxon</setting>
+          <setting name="hideIfSelected_NULL">object_ui/record/verbatimTaxon</setting>
+          <setting name="hideIfSelected_null">object_ui/record/verbatimTaxon</setting>
+          <setting name="hideIfSelected___NULL__">object_ui/record/verbatimTaxon</setting>
+          <setting name="hideIfSelected___null__">object_ui/record/verbatimTaxon</setting>
+          <setting name="hideIfSelected_EMPTY">object_ui/record/verbatimTaxon</setting>
           <setting name="hideIfSelected_">object_ui/record/verbatimTaxon</setting>
           <setting name="hideIfSelected_soilSample">object_ui/record/verbatimTaxon</setting>
           <setting name="hideIfSelected_waterSample">object_ui/record/verbatimTaxon</setting>
+          <setting name="showIfSelected_soilSample">object_ui/record/verbatimDepth</setting>
+          <setting name="showIfSelected_soilSample">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="showIfSelected_soilSample">object_ui/record/maximumDepthInMeters</setting>
+          <!--<setting name="hideIfSelected_bud">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_bud">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected_bud">object_ui/record/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected_leaf">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_leaf">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected_leaf">object_ui/record/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected_cambium">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_cambium">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected_cambium">object_ui/record/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected_blood">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_blood">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected_blood">object_ui/record/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected_embryo">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_embryo">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected_embryo">object_ui/record/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected_feces">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_feces">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected_feces">object_ui/record/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected_ear">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_ear">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected_ear">object_ui/record/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected_leg">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_leg">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected_leg">object_ui/record/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected_toe">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_toe">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected_toe">object_ui/record/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected_tongue">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_tongue">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected_tongue">object_ui/record/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected_muscle">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_muscle">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected_muscle">object_ui/record/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected_urine">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_urine">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected_urine">object_ui/record/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected_swabBlood">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_swabBlood">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected_swabBlood">object_ui/record/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected_swabBite">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_swabBite">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected_swabBite">object_ui/record/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected_swabFeces">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_swabFeces">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected_swabFeces">object_ui/record/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected_swabCloaca">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_swabCloaca">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected_swabCloaca">object_ui/record/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected_swabSkin">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_swabSkin">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected_swabSkin">object_ui/record/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected_swabMouth">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_swabMouth">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected_swabMouth">object_ui/record/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected_swab">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_swab">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected_swab">object_ui/record/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected_swabCottonBud">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_swabCottonBud">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected_swabCottonBud">object_ui/record/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected_wingclip">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_wingclip">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected_wingclip">object_ui/record/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected_tail">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_tail">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected_tail">object_ui/record/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected_larva">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_larva">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected_larva">object_ui/record/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected_liver">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_liver">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected_liver">object_ui/record/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected_hair">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_hair">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected_hair">object_ui/record/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected_fin">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_fin">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected_fin">object_ui/record/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected_tooth">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_tooth">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected_tooth">object_ui/record/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected_null">object_ui/record/verbatimDepth</setting>
+          <setting name="hideIfSelected_null">object_ui/record/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected_null">object_ui/record/maximumDepthInMeters</setting>-->
           <setting name="hideIfSelected___null__">object_ui/obj_preparation/preparationVolumeC</setting>
           <setting name="hideIfSelected_____">object_ui/obj_preparation/preparationVolumeC</setting>
           <setting name="hideIfSelected__null__">object_ui/obj_preparation/preparationWeightC</setting>
@@ -6207,16 +6291,6 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_plantObject">
-            <table>ca_objects</table>
-            <type>plantObject</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
         </typeRestrictions>
       </metadataElement>
 	    <metadataElement code="taxonGroup" datatype="List" list="taxon_group">
@@ -6229,8 +6303,6 @@
 	      <settings>
               <setting name="fieldWidth">40</setting>
               <setting name="doesNotTakeLocale">1</setting>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
               <setting name="hideIfSelected___null__">object_ui/obj_measurements/lifeStageMammal</setting>
               <setting name="hideIfSelected___null__">object_ui/obj_measurements/lifeStageInvertebrate</setting>
               <setting name="hideIfSelected___null__">object_ui/obj_measurements/lifeStageFish</setting>
@@ -6289,16 +6361,25 @@
               <setting name="hideIfSelected_plant">object_ui/obj_measurements/sexAnimal</setting>
               <setting name="hideIfSelected_plant">object_ui/obj_measurements/reprCondMammal</setting>
               <setting name="hideIfSelected_amphibian">object_ui/obj_measurements/reprCondPlant</setting>
+              <setting name="hideIfSelected_amphibian">object_ui/obj_measurements/reprCondMammal</setting>
               <setting name="hideIfSelected_mammal">object_ui/obj_measurements/reprCondPlant</setting>
               <setting name="hideIfSelected_invertebrate">object_ui/obj_measurements/reprCondPlant</setting>
+              <setting name="hideIfSelected_invertebrate">object_ui/obj_measurements/reprCondMammal</setting>
               <setting name="hideIfSelected_fish">object_ui/obj_measurements/reprCondPlant</setting>
+              <setting name="hideIfSelected_fish">object_ui/obj_measurements/reprCondMammal</setting>
               <setting name="hideIfSelected_reptile">object_ui/obj_measurements/reprCondPlant</setting>
+              <setting name="hideIfSelected_reptile">object_ui/obj_measurements/reprCondMammal</setting>
         </settings>
 	      <typeRestrictions>
           <restriction code="r_dnaSample">
             <table>ca_objects</table>
             <type>dnaSample</type>
             <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
           </restriction>
         </typeRestrictions>
       </metadataElement>
@@ -7432,11 +7513,6 @@
               </label>
             </labels>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementType</documentationUrl>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
           </metadataElement>
           <metadataElement code="lengthAppliesTo" datatype="Text">
             <labels>
@@ -11078,7 +11154,7 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="ca_entities">
+          <restriction code="r_ca_entities">
             <table>ca_entities</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -11271,7 +11347,7 @@
           <setting name="maxChars">65535</setting>
         </settings>
 	      <typeRestrictions>
-          <restriction code="r_loan">
+          <restriction code="r_loans">
             <table>ca_loans</table>
             <settings>
               <setting name="minAttributesPerRow">1</setting>
@@ -11490,7 +11566,7 @@
           <setting name="maxChars">65535</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="ca_set">
+          <restriction code="r_ca_set">
             <table>ca_sets</table>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -11515,7 +11591,7 @@
             <setting name="maxChars">65535</setting>
           </settings>
           <typeRestrictions>
-            <restriction code="ca_set_item">
+            <restriction code="r_ca_set_item">
               <table>ca_set_items</table>
               <settings>
                 <setting name="minAttributesPerRow">0</setting>
@@ -12913,6 +12989,12 @@
                 <setting name="restrict_to_relationship_types">related,cloneOf,childOfCloneOf,grandchildOf,grandchildOfCloneOf,childOf</setting>
               </settings>
             </placement>
+            <placement code="taxonGroup" typeRestrictions="dnaSample">
+              <bundle>ca_attribute_taxonGroup</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
 			      <placement code="genotype" typeRestrictions="animalObject,plantObject,dnaSample" includeSubtypes="1">
               <bundle>ca_objects</bundle>
 			        <settings>
@@ -12924,12 +13006,6 @@
 				        <setting name="add_label" locale="en_US">Add genotype</setting>
               </settings>
 			      </placement>
-            <placement code="taxonGroup" typeRestrictions="dnaSample">
-              <bundle>ca_attribute_taxonGroup</bundle>
-			        <settings>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
             <placement code="inbodemdb" typeRestrictions="soilObject" includeSubtypes="1">
               <bundle>ca_attribute_inbodem</bundle>
             </placement>
@@ -13517,7 +13593,7 @@
               <bundle>ca_attribute_verbatimLocality</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim locality</setting>
-                <setting name="description" locale="en_US">The original description of the locality, a place, the geographic coverage/range, ... of the plan occurrence. (Different from dwc:Locality, which is the alternative (often more accurate/precise) locality description after georeferencing).</setting>
+                <setting name="description" locale="en_US">The original description of the locality, a place, the geographic coverage/range, ... of the plant occurrence. (Different from dwc:Locality, which is the alternative (often more accurate/precise) locality description after georeferencing).</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
