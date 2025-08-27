@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.81</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.82</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
+  <!--Issues to check if succesful in v0.82-->
+  <!--https://github.com/inbo/collective-access/issues/327-->
+  <!--https://github.com/inbo/collective-access/issues/328-->
+  <!--https://github.com/inbo/collective-access/issues/329-->
+  <!--https://github.com/inbo/collective-access/issues/330-->
   <!--Issues to check if succesful in v0.81-->
   <!--https://github.com/inbo/collective-access/issues/221-->
   <!--https://github.com/inbo/collective-access/issues/318-->
@@ -1546,11 +1551,11 @@
                 </label>
               </labels>
             </item>
-            <item idno="GenbosPlantID" rank="4" enabled="1" default="0">
+            <item idno="GenbosDbID" rank="4" enabled="1" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>Genbos plant ID</name_singular>
-                  <name_plural>Genbos plant IDs</name_plural>
+                  <name_singular>Genbos db ID</name_singular>
+                  <name_plural>Genbos db IDs</name_plural>
                 </label>
               </labels>
             </item>
@@ -10185,7 +10190,7 @@
 		  <metadataElement code="taxonNote" datatype="Text">
             <labels>
               <label locale="en_US">
-                <name>Notes on the taxonomic identification</name>
+                <name>Note(s) on the taxonomic identification(s)</name>
                 <description>Any notes such as expressions of uncertainty (or certainty), methods (did you use an ID key), mismatch or match with Catalogue of life, ..</description>
               </label>
             </labels>
@@ -12043,7 +12048,6 @@
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at *</setting>
                 <setting name="restrict_to_types">forestTreePopulationSite</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="useHierarchicalBrowser">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -12520,7 +12524,7 @@
                 <restriction code="r_seedlot" type="seedlot"/>
                 <restriction code="r_stemdisc" type="stemdisc"/>
                 <!--<restriction code="r_cutting" type="cutting"/>-->
-                <restriction code="r_livingPlant" type="livingPlant"/>
+                <!--<restriction code="r_livingPlant" type="livingPlant"/>-->
                 <restriction code="r_dnaSample" type="dnaSample"/>
                 <!--<restriction code="r_waterSample" type="waterSample"/>-->
                 <!--<restriction code="r_eDnaWaterFilter" type="eDnaWaterFilter"/>-->
@@ -12712,7 +12716,7 @@
                 <restriction code="r_seedlot" type="seedlot"/>
                 <restriction code="r_stemdisc" type="stemdisc"/>
                 <!--<restriction code="r_cutting" type="cutting"/>-->
-                <restriction code="r_livingPlant" type="livingPlant"/>
+                <!--<restriction code="r_livingPlant" type="livingPlant"/>-->
                 <restriction code="r_dnaSample" type="dnaSample"/>
                 <!--<restriction code="r_waterSample" type="waterSample"/>-->
                 <!--<restriction code="r_eDnaWaterFilter" type="eDnaWaterFilter"/>-->
@@ -12811,6 +12815,7 @@
 			      <placement code="verbatimTaxon" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,livingPlant,forestTreePopulation" includeSubtypes="1">
               <bundle>ca_attribute_verbatimTaxon</bundle>
 			        <settings>
+                <setting name="label" locale="en_US">MAIN TAXON: verbatim taxon</setting>
 				        <setting name="add_label" locale="en_US">Add a new taxon</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
@@ -12818,7 +12823,7 @@
 			      <placement code="GBIF" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,livingPlant,forestTreePopulation" includeSubtypes="1">
               <bundle>ca_attribute_GBIF</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">GBIF taxon lookup (main taxon)</setting>
+                <setting name="label" locale="en_US">MAIN TAXON: GBIF taxon lookup</setting>
                 <setting name="description" locale="en_US">This is the taxon as far as can be identified of the MAIN biodiversity the sample represents. For example a tongue tissue sample of a wolf (which can be tested for bacteria): enter Canis lupus. </setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
@@ -12826,14 +12831,14 @@
 			      <placement code="taxonDate" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,livingPlant,forestTreePopulation" includeSubtypes="1">
               <bundle>ca_attribute_taxonDate</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Date of taxonomic identification (main taxon)</setting>
+                <setting name="label" locale="en_US">MAIN TAXON: Date of taxonomic identification</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
             <placement code="ca_entities_identifier" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,livingPlant,forestTreePopulation" includeSubtypes="1">
               <bundle>ca_entities</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Identified by</setting>
+                <setting name="label" locale="en_US">MAIN TAXON: Identified by</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -12843,13 +12848,14 @@
 			      <placement code="voucher" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,livingPlant,forestTreePopulation" includeSubtypes="1">
               <bundle>ca_attribute_voucher</bundle>
               <settings>
+                <setting name="label" locale="en_US">MAIN TAXON: Voucher</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
             <placement code="ca_occurrences_identification" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,livingPlant,forestTreePopulation" includeSubtypes="1">
               <bundle>ca_occurrences</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Nonpreferred taxonomic identifications (main taxon)</setting>
+                <setting name="label" locale="en_US">MAIN TAXON: Nonpreferred taxonomic identifications</setting>
                 <setting name="description" locale="en_US">Only 1 (the presumed: true) identification (taxonomy) is linked to the specimen in the fields above. It can occur that over time, new information delivers a new taxonomic identification linked to the specimen. For example: a living plant in collection which was thought to be species X, turns out, after genetic screening to be a hybrid of species X and Y. In that case, the old information should be linked here as an 'identification event', after which the new information is added in the fields above. This is expected to happen rarely for the INBO collection. This will create a log of different taxonomic identification, over time, associated with the specimen. Similar to annotations on a specimen label.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">20</setting>
@@ -12861,7 +12867,7 @@
 			      <placement code="taxonReference">
               <bundle>ca_attribute_taxonReference</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Publication on biodiversity in specimen (eDNA)</setting>
+                <setting name="label" locale="en_US">eDNA: Publication on biodiversity in specimen</setting>
                 <setting name="description" locale="en_US">Publication (dataset, article) that outlines the results of biodiversity present in the specimen, other than the main taxon. In water, soil or air samples, this is the only way biodiversity can be recorded. For all other types of specimen, this is "secondary" biodiversity, other the main taxon. For example: stomach of a bee (main taxon), tested for presence of which plant pollen. For example tissue of a wolf (main taxon) tested for bacteria. This information is relevant to know (what has been tested on this specimen and how) but not relevant for querying the specimen themselves. Preferably this is a(n open) publication in a repository, but also internal result files (e.g. INBO Google drive) can be linked here.</setting>                
                 <setting name="expand_collapse_no_value">collapse</setting>
 				        <setting name="add_label" locale="en_US">Add eDNA publication</setting>
@@ -12870,7 +12876,7 @@
 			      <placement code="GBIFedna">
               <bundle>ca_attribute_GBIFedna</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">GBIF taxon lookup (eDNA)</setting>
+                <setting name="label" locale="en_US">eDNA: GBIF taxon lookup</setting>
                 <setting name="description" locale="en_US">If other than the linked publication, specific taxa are relevant (for example for INBO research) to explicitly link to the specimen, they can be added here.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
