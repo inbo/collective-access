@@ -5,6 +5,10 @@
   <!--Issues to check if succesful in v0.83-->
   <!--https://github.com/inbo/collective-access/issues/308-->
   <!--https://github.com/inbo/collective-access/issues/319-->
+  <!--https://github.com/inbo/collective-access/issues/334-->
+  <!--https://github.com/inbo/collective-access/issues/335-->
+  <!--https://github.com/inbo/collective-access/issues/336-->
+  <!--https://github.com/inbo/collective-access/issues/333-->
   <!--More difficult issues-->
   <!--https://github.com/inbo/collective-access/issues/77--><!--bug-->
   <!--https://github.com/inbo/collective-access/issues/117--><!--needs extra developing/coding-->
@@ -873,11 +877,11 @@
              <setting name="render_in_new_menu">0</setting>
             </settings>
           </item>
-			    <item idno="livingPlantWildRelative" rank="3" enabled="1" default="0">
+			    <item idno="geneticEntity" rank="3" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>Wild relative of living plant in collection</name_singular>
-                <name_plural>Wild relatives of living plant in collection</name_plural>
+                <name_singular>Genetic entity</name_singular>
+                <name_plural>Genetic entity</name_plural>
               </label>
             </labels>
             <settings>
@@ -1530,19 +1534,27 @@
                 </label>
               </labels>
             </item>
-            <item idno="GenbosFTPID" rank="4" enabled="1" default="0">
+            <item idno="GenbosINBOID" rank="4" enabled="1" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>Genbos FTP ID</name_singular>
-                  <name_plural>Genbos FTP IDs</name_plural>
+                  <name_singular>Genbos INBO ID</name_singular>
+                  <name_plural>Genbos INBO IDs</name_plural>
                 </label>
               </labels>
             </item>
-            <item idno="GenbosDbID" rank="4" enabled="1" default="0">
+            <item idno="GenbosRegNr" rank="4" enabled="1" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
-                  <name_singular>Genbos db ID</name_singular>
-                  <name_plural>Genbos db IDs</name_plural>
+                  <name_singular>Genbos registernummer</name_singular>
+                  <name_plural>Genbos registernummer</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="GenbosPlantID" rank="4" enabled="1" default="0">
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>Genbos plant ID</name_singular>
+                  <name_plural>Genbos plant ID</name_plural>
                 </label>
               </labels>
             </item>
@@ -2051,7 +2063,7 @@
       <list code="seedlot_relation_samplingPoint" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
         <labels>
           <label locale="en_US">
-            <name>Types of relation that the seedlot can have towards the sampling point (the tree wild relative).</name>
+            <name>Types of relation that the seedlot can have towards the sampling point (the wild relative).</name>
           </label>
         </labels>
         <items>
@@ -10121,9 +10133,9 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_livingPlantWildRelative">
+          <restriction code="r_geneticEntity">
             <table>ca_objects</table>
-            <type>livingPlantWildRelative</type>
+            <type>geneticEntity</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -10192,9 +10204,9 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_livingPlantWildRelative">
+          <restriction code="r_geneticEntity">
             <table>ca_objects</table>
-            <type>livingPlantWildRelative</type>
+            <type>geneticEntity</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -10235,9 +10247,9 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_livingPlantWildRelative">
+          <restriction code="r_geneticEntity">
             <table>ca_objects</table>
-            <type>livingPlantWildRelative</type>
+            <type>geneticEntity</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -10280,9 +10292,9 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_livingPlantWildRelative">
+          <restriction code="r_geneticEntity">
             <table>ca_objects</table>
-            <type>livingPlantWildRelative</type>
+            <type>geneticEntity</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -10323,9 +10335,9 @@
                 <setting name="minimumAttributeBundlesToDisplay">1</setting>
               </settings>
             </restriction>
-            <restriction code="r_livingPlantWildRelative">
+            <restriction code="r_geneticEntity">
             <table>ca_objects</table>
-            <type>livingPlantWildRelative</type>
+            <type>geneticEntity</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -10429,9 +10441,9 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_livingPlantWildRelative">
+          <restriction code="r_geneticEntity">
             <table>ca_objects</table>
-            <type>livingPlantWildRelative</type>
+            <type>geneticEntity</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -10477,9 +10489,9 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_livingPlantWildRelative">
+          <restriction code="r_geneticEntity">
             <table>ca_objects</table>
-            <type>livingPlantWildRelative</type>
+            <type>geneticEntity</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -10517,9 +10529,9 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_livingPlantWildRelative">
+          <restriction code="r_geneticEntity">
             <table>ca_objects</table>
-            <type>livingPlantWildRelative</type>
+            <type>geneticEntity</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -10597,9 +10609,9 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_livingPlantWildRelative">
+          <restriction code="r_geneticEntity">
             <table>ca_objects</table>
-            <type>livingPlantWildRelative</type>
+            <type>geneticEntity</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -12080,7 +12092,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="forestTreePopCatContainer" typeRestrictions="forestTreePopulation">
+            <!--<placement code="forestTreePopCatContainer" typeRestrictions="forestTreePopulation">
               <bundle>ca_attribute_forestTreePopCatContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Forest tree population type (time-dependent!)</setting>
@@ -12088,7 +12100,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
 				        <setting name="add_label" locale="en_US">Add forest tree population type</setting>
               </settings>
-            </placement>
+            </placement>-->
             <placement code="samplingDate" typeRestrictions="soilObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,stemdisc" includeSubtypes="1">
               <bundle>ca_attribute_samplingDate</bundle>
 			        <settings>
@@ -12970,14 +12982,13 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="livingPlantWildRelative" typeRestrictions="livingPlant">
+            <placement code="geneticEntity" typeRestrictions="livingPlant">
               <bundle>ca_objects</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The wild relative of living plant specimen</setting>
-                <setting name="description" locale="en_US">Wild relative of the living plant. To log if relevant.</setting>
+                <setting name="label" locale="en_US">The genetic entity of living plant specimen</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="expand_collapse_value">collapse</setting>
-				        <setting name="restrict_to_types">livingPlantWildRelative</setting>
+				        <setting name="restrict_to_types">geneticEntity</setting>
                 <setting name="restrict_to_relationship_types">related,cloneOf,childOfCloneOf,grandchildOf,grandchildOfCloneOf,childOf</setting>
               </settings>
             </placement>
@@ -13534,14 +13545,14 @@
         </screen>
 	    </screens>
     </userInterface>
-    <userInterface code="object_livingPlantWildRelative_ui" type="ca_objects">
+    <userInterface code="object_geneticEntity_ui" type="ca_objects">
       <labels>
         <label locale="en_US">
           <name>Object edito 3</name>
         </label>
       </labels>
       <typeRestrictions>
-        <restriction code="r_livingPlantWildRelative" type="livingPlantWildRelative"/>
+        <restriction code="r_geneticEntity" type="geneticEntity"/>
       </typeRestrictions>
       <screens>
         <screen idno="record" default="1">
@@ -13562,7 +13573,8 @@
             <placement code="preferred_labels">
               <bundle>preferred_labels</bundle>
               <settings>
-                <setting name="label" locale="en_US">The preferred identifier for the plant wild relative</setting>
+                <setting name="label" locale="en_US">The preferred identifier for the genetic entity</setting>
+                <setting name="description" locale="en_US">A genetic entity equals a concept to denote the wild relative of living specimens in collection.</setting>
                 <setting name="expand_collapse_no_value">expand</setting>
               </settings>
             </placement>
@@ -13577,7 +13589,7 @@
             <placement code="description">
               <bundle>ca_attribute_description</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Decription of the plant wild relative</setting>
+                <setting name="label" locale="en_US">Decription of the genetic entity</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -15849,7 +15861,7 @@
             </label>
           </labels>
           <subTypeLeft>object</subTypeLeft>
-          <subTypeRight>livingPlantWildRelative</subTypeRight>
+          <subTypeRight>geneticEntity</subTypeRight>
         </type>
         <type code="cloneOf" default="0">
           <labels>
@@ -15859,7 +15871,7 @@
             </label>
           </labels>
           <subTypeLeft>object</subTypeLeft>
-          <subTypeRight>livingPlantWildRelative</subTypeRight>
+          <subTypeRight>geneticEntity</subTypeRight>
         </type>
         <type code="childOfCloneOf" default="0">
           <labels>
@@ -15869,7 +15881,7 @@
             </label>
           </labels>
           <subTypeLeft>object</subTypeLeft>
-          <subTypeRight>livingPlantWildRelative</subTypeRight>
+          <subTypeRight>geneticEntity</subTypeRight>
         </type>
         <type code="grandchildOf" default="0">
           <labels>
@@ -15879,7 +15891,7 @@
             </label>
           </labels>
           <subTypeLeft>object</subTypeLeft>
-          <subTypeRight>livingPlantWildRelative</subTypeRight>
+          <subTypeRight>geneticEntity</subTypeRight>
         </type>
         <type code="grandchildOfCloneOf" default="0">
           <labels>
@@ -15889,7 +15901,7 @@
             </label>
           </labels>
           <subTypeLeft>object</subTypeLeft>
-          <subTypeRight>livingPlantWildRelative</subTypeRight>
+          <subTypeRight>geneticEntity</subTypeRight>
         </type>
         <type code="childOf" default="0">
           <labels>
@@ -15899,7 +15911,7 @@
             </label>
           </labels>
           <subTypeLeft>object</subTypeLeft>
-          <subTypeRight>livingPlantWildRelative</subTypeRight>
+          <subTypeRight>geneticEntity</subTypeRight>
         </type>
         <type code="association" default="0">
           <labels>
