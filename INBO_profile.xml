@@ -5,8 +5,17 @@
   <!--Issues to check if succesful in v0.84-->
   <!--https://github.com/inbo/collective-access/issues/337-->
   <!--https://github.com/inbo/collective-access/issues/338-->
-  <!--More difficult issues-->
+  <!--https://github.com/inbo/collective-access/issues/339-->
+  <!--https://github.com/inbo/collective-access/issues/341-->
+  <!--https://github.com/inbo/collective-access/issues/342-->
+  <!--https://github.com/inbo/collective-access/issues/343-->
+  <!--https://github.com/inbo/collective-access/issues/344-->
+  <!--https://github.com/inbo/collective-access/issues/345-->
+  <!--https://github.com/inbo/collective-access/issues/346-->
+  <!--More difficult issues / issues for later-->
   <!--https://github.com/inbo/collective-access/issues/77--><!--bug-->
+  <!--https://github.com/inbo/collective-access/issues/89--><!--import check later-->
+  <!--https://github.com/inbo/collective-access/issues/90--><!--import check later-->
   <!--https://github.com/inbo/collective-access/issues/117--><!--needs extra developing/coding-->
   <!--https://github.com/inbo/collective-access/issues/119--><!--needs extra developing/coding-->
   <!--https://github.com/inbo/collective-access/issues/168--><!--ETL/import-->
@@ -23,6 +32,7 @@
   <!--https://github.com/inbo/collective-access/issues/310--><!--user management--><!--ETL/import-->
   <!--https://github.com/inbo/collective-access/issues/332--><!--needs extra developing/coding-->
   <!--https://github.com/inbo/collective-access/issues/331--><!--to write in the .conf files-->
+  <!--https://github.com/inbo/collective-access/issues/340--><!--export to DiSSCo-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -545,8 +555,8 @@
                               <item idno="sampleMammalMuscle" enabled="1" default="0">
                                 <labels>
                                   <label locale="en_US" preferred="1">
-                                    <name_singular>Mammal muscle sample</name_singular>
-                                    <name_plural>Mammal muscle samples</name_plural>
+                                    <name_singular>Muscle sample</name_singular>
+                                    <name_plural>Muscle samples</name_plural>
                                   </label>
                                 </labels>
                               </item>
@@ -1528,6 +1538,14 @@
                 <label locale="en_US" preferred="1">
                   <name_singular>Mammal autopsy lab ID</name_singular>
                   <name_plural>Mammal autopsy lab IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="fishTissueID" rank="3" enabled="1" default="0">
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>Fish tissue ID</name_singular>
+                  <name_plural>Fish tissue IDs</name_plural>
                 </label>
               </labels>
             </item>
@@ -4998,8 +5016,8 @@
               </label>
             </labels>
             <settings>
-              <setting name="fieldWidth">35</setting>
-              <setting name="fieldHeight">1</setting>
+              <setting name="fieldWidth">45</setting>
+              <setting name="fieldHeight">3</setting>
               <setting name="minChars">0</setting>
               <setting name="maxChars">65535</setting>
             </settings>
@@ -6443,11 +6461,11 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>		  
-		  <metadataElement code="carnivoren" datatype="Text">
+		  <metadataElement code="marternetwerk" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>Carnivoren database</name>
-            <description>Mammal specimens usually have research information stored in the Carnivoren database. Here you can leave a relevant note on this relationship.</description>
+            <name>Marternetwerk database</name>
+            <description>Specimens of carnivores usually have research information stored in the Marternetwerk database. Here you can leave a relevant note on this relationship.</description>
           </label>
         </labels>
         <typeRestrictions>
@@ -6470,7 +6488,35 @@
             </settings>
           </restriction>
         </typeRestrictions>
-      </metadataElement>		  
+      </metadataElement>
+		  <metadataElement code="wild" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Wildbeheer database</name>
+            <description>Mammal specimens linked to hunting activities, can have research information stored in the wildbeheer database (ANB) copied on the INBO servers. Here you can leave a relevant note on this relationship like the linked identifier.</description>
+          </label>
+        </labels>
+        <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <type>mammal</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>		  		  
 		  <metadataElement code="VIS" datatype="Text">
         <labels>
           <label locale="en_US">
@@ -8100,6 +8146,7 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="hideIfSelected___null__">object_ui/obj_measurements/reprCondMammal</setting><!--currently not working issue 308-->
           <setting name="hideIfSelected_male">object_ui/obj_measurements/reprCondMammal</setting>
           <setting name="hideIfSelected_notRecorded">object_ui/obj_measurements/reprCondMammal</setting>
           <setting name="hideIfSelected_hermaphrodite">object_ui/obj_measurements/reprCondMammal</setting>
@@ -9614,8 +9661,8 @@
         </labels>
         <documentationUrl>http://rs.tdwg.org/dwc/terms/georeferenceRemarks</documentationUrl>
         <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
+          <setting name="fieldWidth">90</setting>
+          <setting name="fieldHeight">5</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
         </settings>
@@ -13023,8 +13070,11 @@
             <placement code="genbosdb" typeRestrictions="forestTreePopulation,livingPlant" includeSubtypes="1">
               <bundle>ca_attribute_genbos</bundle>
             </placement>
-            <placement code="carnivorendb" typeRestrictions="mammal" includeSubtypes="1">
-              <bundle>ca_attribute_carnivoren</bundle>
+            <placement code="marternetwerkdb" typeRestrictions="mammal" includeSubtypes="1">
+              <bundle>ca_attribute_marternetwerk</bundle>
+            </placement>
+            <placement code="wildbeheerdb" typeRestrictions="mammal" includeSubtypes="1">
+              <bundle>ca_attribute_wild</bundle>
             </placement>
             <placement code="dna_conc" typeRestrictions="dnaSample">
               <bundle>ca_attribute_dnaConcContainer</bundle>
@@ -13056,28 +13106,30 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="object_volume" typeRestrictions="sampleFishMuscle,sampleFishLiver,mammalTissue,dnaSample" includeSubtypes="1">
+            <placement code="volume" typeRestrictions="fish,sampleFishLiver,mammalTissue,dnaSample" includeSubtypes="1">
               <bundle>ca_attribute_volumeContainer</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Volume measurement of the object</setting>
-                <setting name="description" locale="en_US">Volume measurement of the object, the specimen (nothing else!).</setting>
+                <setting name="label" locale="en_US">Volume measurement</setting>
+                <setting name="description" locale="en_US">This is to log the volume of the specimen. Preparation volume can be logged under the "creation" tab. Other volumes can be logged here, but only if relevant for collection management. Ideally measurements on the sampling point are logged in other INBO databases (inbodem, VIS, marternetwerkdatabank, ...).</setting>
 				        <setting name="add_label" locale="en_US">Add volume measurement</setting>
                 <setting name="list_format">list</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="object_weight" typeRestrictions="seedlot,soilObject,leafSampleAnalytic">
+            <placement code="weight" typeRestrictions="seedlot,soilObject,leafSampleAnalytic,animalObject" includeSubtypes="1">
               <bundle>ca_attribute_weightContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Weight measurement</setting>
+                <setting name="description" locale="en_US">This is to log the weight of the specimen. Preparation weight can be logged under the "creation" tab. Other weights can be logged here, but only if relevant for collection management. Ideally measurements on the sampling point are logged in other INBO databases (inbodem, VIS, marternetwerkdatabank, ...).</setting>
 				        <setting name="add_label" locale="en_US">Add weight measurement</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="object_length" typeRestrictions="seedlot,stemdisc">
+            <placement code="length" typeRestrictions="seedlot,stemdisc,fish">
               <bundle>ca_attribute_lengthContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Length measurement</setting>
+                <setting name="description" locale="en_US">This is to log length measurements of the specimen. Other length measurements can be logged here, but only if relevant for collection management. Ideally measurements on the sampling point are logged in other INBO databases (inbodem, VIS, marternetwerkdatabank, ...).</setting>
 				        <setting name="add_label" locale="en_US">Add length measurement</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
