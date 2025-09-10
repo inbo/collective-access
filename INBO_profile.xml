@@ -3,6 +3,7 @@
   <profileName>[INBO-CMS] INBO natural science collection v0.85</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in v0.85-->
+  <!--https://github.com/inbo/collective-access/issues/347-->
   <!--More difficult issues / issues for later-->
   <!--https://github.com/inbo/collective-access/issues/77--><!--bug-->
   <!--https://github.com/inbo/collective-access/issues/89--><!--import check later-->
@@ -22,6 +23,7 @@
   <!--https://github.com/inbo/collective-access/issues/310--><!--user management--><!--ETL/import-->
   <!--https://github.com/inbo/collective-access/issues/332--><!--needs extra developing/coding-->
   <!--https://github.com/inbo/collective-access/issues/340--><!--export to DiSSCo-->
+  <!--https://github.com/inbo/collective-access/issues/348--><!--needs extra developing/coding-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -3706,24 +3708,24 @@
           <item idno="externalSpecimenParent" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>The external specimen is the parent</name_singular>
-                <name_plural>The external specimen is the parent</name_plural>
+                <name_singular>The external specimen is subsampled to the INBO-specimen</name_singular>
+                <name_plural>The external specimen is subsampled to the INBO-specimen</name_plural>
               </label>
             </labels>
           </item>
           <item idno="externalSpecimenChild" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>The external specimen is a subsample</name_singular>
-                <name_plural>The external specimen is a subsample</name_plural>
+                <name_singular>The external specimen is a subsample of the INBO-specimen</name_singular>
+                <name_plural>The external specimen is a subsample of the INBO-specimen</name_plural>
               </label>
             </labels>
           </item>
           <item idno="externalSpecimenReplicate" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>The external specimen is a replicate specimen</name_singular>
-                <name_plural>The external specimen is a replicate specimen</name_plural>
+                <name_singular>The external specimen is a replicate specimen (same occurrence, same date, same place)</name_singular>
+                <name_plural>The external specimen is a replicate specimen (same occurrence, same date, same place)</name_plural>
               </label>
             </labels>
           </item>
@@ -5129,6 +5131,15 @@
           </label>
         </labels>
 	      <documentationUrl>https://manual.collectiveaccess.org/providence/user/dataModelling/metadata/dateTime.html?highlight=time%20expression%20parser</documentationUrl>
+        <precision>day</precision>
+        <display>
+          <list>
+            <date_format>Y-m-d</date_format>
+          </list>
+          <detail>
+            <date_format>Y-m-d</date_format>
+          </detail>
+        </display>
         <settings>
           <setting name="fieldWidth">40</setting>
           <setting name="fieldHeight">1</setting>
@@ -11879,7 +11890,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">CMS ID</setting>
                 <setting name="description" locale="en_US">This is a unique identifier for the record, automatically assigned by the system.</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
               </settings>
             </placement>
             <placement code="preferred_labels">
@@ -11915,15 +11926,6 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <!--<placement code="forestTreePopCatContainer" typeRestrictions="forestTreePopulation">
-              <bundle>ca_attribute_forestTreePopCatContainer</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Forest tree population type (time-dependent!)</setting>
-                <setting name="description" locale="en_US">Over time the same forest tree population can be appointed a different type.</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-				        <setting name="add_label" locale="en_US">Add forest tree population type</setting>
-              </settings>
-            </placement>-->
             <placement code="samplingDate" typeRestrictions="soilObject,animalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,stemdisc" includeSubtypes="1">
               <bundle>ca_attribute_samplingDate</bundle>
 			        <settings>
@@ -12121,7 +12123,7 @@
             <placement code="verbatimLatitudeY" typeRestrictions="livingPlant,forestTreePopulation">
               <bundle>ca_attribute_verbatimLatitudeY</bundle>
               <settings>
-                <setting name="label" locale="en_US">Verbatim latitude (Y) of the storage location.</setting>
+                <setting name="label" locale="en_US">Verbatim latitude (Y) of the storage location</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
@@ -12134,7 +12136,7 @@
 			      <placement code="verbatimCoordinatesRemarks" typeRestrictions="livingPlant,forestTreePopulation">  
               <bundle>ca_attribute_verbatimCoordinatesRemarks</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Remarks on the verbatim locality data</setting>
+                <setting name="label" locale="en_US">Remarks on the verbatim locality data of the storage location</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
@@ -12196,10 +12198,11 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="hierarchy_location">
+            <placement code="hierarchy">
               <bundle>hierarchy_location</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Relationships with other INBO-specimens</setting>
+                <setting name="label" locale="en_US">Direct relationships with other INBO-specimens</setting>
+                <setting name="description" locale="en_US">Direct relationships means that the two objects related in this hierarchy represent the same organism. It is to track subsamples (e.g. cadaver -> tissue -> dna) or replicates (e.g. tissue -> dna replicate 1 and tissue -> dna replicate 2).</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="expand_collapse_value">collapse</setting>
                 <setting name="restrict_to_relationship_types">directRelationship</setting>
@@ -12216,7 +12219,7 @@
                 <setting name="restrict_to_relationship_types">association</setting>
               </settings>
             </placement>
-			      <placement code="seedlot_relation_seeds" typeRestrictions="seedlot">
+			      <placement code="seedlotRelationSeeds" typeRestrictions="seedlot">
               <bundle>ca_attribute_seedlotRelationSeeds</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -15603,8 +15606,8 @@
         <type code="directRelationship" default="0">
           <labels>
             <label locale="en_US">
-              <typename>child/parent/sibling relation</typename>
-              <typename_reverse>child/parent/sibling relation</typename_reverse>
+              <typename>subsample (object of the same organism)</typename>
+              <typename_reverse>subsampled to (object of the same organism)</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>object</subTypeLeft>
