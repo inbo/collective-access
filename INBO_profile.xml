@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.85</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.86</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in v0.85-->
   <!--https://github.com/inbo/collective-access/issues/347-->
@@ -12253,7 +12253,7 @@
 			      <placement code="ca_occurrence_project">
               <bundle>ca_occurrences</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Original project that generated the record</setting>
+                <setting name="label" locale="en_US">Original INBO project that generated the record</setting>
                 <setting name="description" locale="en_US">This can be a project as defined in JIRA, a project as defined in LIMS, ..</setting>
 				        <setting name="restrict_to_types">project</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
@@ -14867,7 +14867,7 @@
 			      <placement code="ca_occurrence_project">
               <bundle>ca_occurrences</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Original project that generated the object lot</setting>
+                <setting name="label" locale="en_US">Original INBO project that generated the object lot</setting>
                 <setting name="description" locale="en_US">This can be a project as defined in JIRA, a project as defined in LIMS, ..</setting>
 				        <setting name="restrict_to_types">project</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
@@ -15819,7 +15819,7 @@
           <subTypeLeft></subTypeLeft>
           <subTypeRight>fieldwork</subTypeRight>
         </type>
-		    <type code="resObjInternalProject" default="0">
+		    <type code="resultingObjectsProject" default="0">
           <labels>
             <label locale="en_US">
               <typename>resulted in</typename>
@@ -15828,16 +15828,6 @@
           </labels>
           <subTypeLeft></subTypeLeft>
           <subTypeRight>internalProject</subTypeRight>
-        </type>
-		    <type code="resObjExternalProject" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>resulted in</typename>
-              <typename_reverse>result of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>externalProject</subTypeRight>
         </type>
         <type code="execObjValuation" default="0" typeRestrictionRight="valuation" includeSubtypesRight="0">
           <labels>
