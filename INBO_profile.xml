@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.96k</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.96l</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in v0.85-->
   <!--https://github.com/inbo/collective-access/issues/347-->
@@ -15859,7 +15859,7 @@
         </type>
       </types>
     </relationshipTable>
-    <!--<relationshipTable name="ca_objects_x_collections">
+    <relationshipTable name="ca_objects_x_collections">
       <types>
         <type code="partOf" default="1">
           <labels>
@@ -15872,7 +15872,7 @@
           <subTypeRight></subTypeRight>
         </type>
       </types>
-    </relationshipTable>-->
+    </relationshipTable>
     <!--<relationshipTable name="ca_objects_x_occurrences">
       <types>
 		    <type code="resObjFieldwork" default="0">
@@ -15979,7 +15979,7 @@
         </type>
       </types>
     </relationshipTable>-->
-	  <!--<relationshipTable name="ca_objects_x_loans">
+	  <!--<relationshipTable name="ca_loans_x_objects">
       <types>
         <type code="objectLoans" default="1">
           <labels>
@@ -16135,14 +16135,106 @@
         </type>
       </types>
     </relationshipTable>-->
-    <!--ca_loans_x_objects-->
-    <!--ca_object_lots_x_storage_locations-->
-    <!--ca_storage_locations_x_storage_locations-->
-    <!--ca_occurrences_x_storage_locations-->
-    <!--ca_places_x_storage_locations-->
-    <!--ca_loans_x_places-->
-    <!--ca_loans_x_occurrences-->
-    <!--ca_loans_x_collections-->
+    <!--<relationshipTable name="ca_places_x_occurrences">
+      <types>
+        <type code="locationOccurrence" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>was place of</typename>
+              <typename_reverse>occurred at</typename_reverse>
+            </label>
+         </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight></subTypeRight>
+        </type>
+        <type code="focusProject" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>was focal location of</typename>
+              <typename_reverse>focused on location</typename_reverse>
+            </label>
+         </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>project</subTypeRight>
+        </type>
+        <type code="focusFieldwork" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>was focal location of</typename>
+              <typename_reverse>focused on location</typename_reverse>
+            </label>
+         </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>fieldwork</subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>-->
+    <!--<relationshipTable name="ca_places_x_collections">
+      <types>
+        <type code="collectionPlace" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is geographic scope of collection</typename>
+              <typename_reverse>has specimens of geographic scope</typename_reverse>
+            </label>
+         </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight></subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>-->
+	  <!--<relationshipTable name="ca_places_x_places">
+      <types>
+        <type code="nested" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is nested in</typename>
+              <typename_reverse>contains</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>-->
+	  <!--<relationshipTable name="ca_places_x_storage_locations">
+      <types>
+        <type code="inLivingCollectionAt" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is place of</typename>
+              <typename_reverse>is located at</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>forestTreePopulationSite</subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>-->
+	  <!--<relationshipTable name="ca_loans_x_occurrences">
+      <types>
+        <type code="internalprojectReuse" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>internal project that reuses</typename>
+              <typename_reverse>reused in internal project</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>internal_reuse</subTypeLeft>
+          <subTypeRight>project</subTypeRight>
+        </type>
+        <type code="externalprojectReuse" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>external project that reuses</typename>
+              <typename_reverse>reused in external project</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>external_reuse</subTypeLeft>
+          <subTypeRight>project</subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>-->
   </relationshipTypes>
   <roles>
     <role code="admin">
