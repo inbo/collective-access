@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.92c</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.94</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in v0.85-->
   <!--https://github.com/inbo/collective-access/issues/347-->
@@ -15595,17 +15595,17 @@
         </type>
       </types>
     </relationshipTable>
-    <relationshipTable name="ca_occurrences_x_entities">
+    <relationshipTable name="ca_entities_x_occurrences">
       <types>
         <type code="executedBy" default="1">
           <labels>
             <label locale="en_US">
-              <typename>was executed by</typename>
-              <typename_reverse>executed</typename_reverse>
+              <typename>executed</typename>
+              <typename_reverse>was executed by</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>org</subTypeLeft>
-          <subTypeRight>ind</subTypeRight>
+          <subTypeLeft>ind</subTypeLeft>
+          <subTypeRight></subTypeRight>
         </type>
         <type code="transferredTo" default="0">
           <labels>
@@ -15614,8 +15614,8 @@
               <typename_reverse>was transferred to</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>org</subTypeRight>
+          <subTypeLeft>org</subTypeLeft>
+          <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
@@ -15633,81 +15633,67 @@
         </type>
       </types>
     </relationshipTable>
-    <relationshipTable name="ca_collections_x_entities">
+    <relationshipTable name="ca_entities_x_collections">
       <types>
         <type code="manager" default="1">
           <labels>
             <label locale="en_US">
-              <typename>managed by</typename>
-              <typename_reverse>manages</typename_reverse>
+              <typename>manages</typename>
+              <typename_reverse>managed by</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>ind</subTypeRight>
+          <subTypeLeft>ind</subTypeLeft>
+          <subTypeRight></subTypeRight>
         </type>
         <type code="coManager" default="0">
           <labels>
             <label locale="en_US">
-              <typename>co-managed by</typename>
-              <typename_reverse>co-manages</typename_reverse>
+              <typename>co-manages</typename>
+              <typename_reverse>co-managed by</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>ind</subTypeRight>
+          <subTypeLeft>ind</subTypeLeft>
+          <subTypeRight></subTypeRight>
         </type>
         <type code="archivist" default="0">
           <labels>
             <label locale="en_US">
-              <typename>supervised by</typename>
-              <typename_reverse>supervises</typename_reverse>
+              <typename>supervises</typename>
+              <typename_reverse>supervised by</typename_reverse>
+            </label>
           </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>ind</subTypeRight>
-          </labels>
+          <subTypeLeft>ind</subTypeLeft>
+          <subTypeRight></subTypeRight>
         </type>
         <type code="coArchivist" default="0">
           <labels>
             <label locale="en_US">
-              <typename>co-supervised by</typename>
-              <typename_reverse>co-supervises</typename_reverse>
+              <typename>co-supervises</typename>
+              <typename_reverse>co-supervised by</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>ind</subTypeRight>
+          <subTypeLeft>ind</subTypeLeft>
+          <subTypeRight></subTypeRight>
         </type>
         <type code="steward" default="0">
           <labels>
             <label locale="en_US">
-              <typename>steward of</typename>
-              <typename_reverse>stewards</typename_reverse>
+              <typename>stewards</typename>
+              <typename_reverse>steward of</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>ind</subTypeRight>
+          <subTypeLeft>ind</subTypeLeft>
+          <subTypeRight></subTypeRight>
         </type>
         <type code="colOwner" default="0">
           <labels>
             <label locale="en_US">
-              <typename>owned by</typename>
-              <typename_reverse>owns</typename_reverse>
+              <typename>owns</typename>
+              <typename_reverse>owned by</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>org</subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-    <relationshipTable name="ca_storage_locations_x_entities">
-      <types>
-        <type code="maintenanceBy" default="1">
-          <labels>
-            <label locale="en_US">
-              <typename>maintenance by</typename>
-              <typename_reverse>executes maintenance</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>ind</subTypeRight>
+          <subTypeLeft>org</subTypeLeft>
+          <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
@@ -15718,40 +15704,6 @@
             <label locale="en_US">
               <typename>knows most</typename>
               <typename_reverse>knows most</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>ind</subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-    <relationshipTable name="ca_loans_x_entities">
-      <types>
-        <type code="requester" default="1">
-          <labels>
-            <label locale="en_US">
-              <typename>was requested by</typename>
-              <typename_reverse>requested</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>ind</subTypeRight>
-        </type>
-        <type code="requesterBackup" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>was backup-requested by</typename>
-              <typename_reverse>backup-requested</typename_reverse>
-            </label>  
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>ind</subTypeRight>
-        </type>
-        <type code="requestingInstitute" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>was requested by</typename>
-              <typename_reverse>requested</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
