@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.96l</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.96m</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in v0.85-->
   <!--https://github.com/inbo/collective-access/issues/347-->
@@ -12186,6 +12186,7 @@
                 <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 				        <setting name="add_label" locale="en_US">Add project</setting>
+                <!--<setting name="restrict_to_relationship_types">resultingObjectsProject</setting>-->
               </settings>
 			      </placement>
             <placement code="ca_occurrence_fieldwork">
@@ -12198,17 +12199,9 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <!--<setting name="restrict_to_relationship_types">resultingObjectsFieldwork</setting>-->
               </settings>
             </placement>
-            <!--<placement code="forestTreePopCatContainer" typeRestrictions="forestTreePopulation">
-              <bundle>ca_attribute_forestTreePopCatContainer</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Forest tree population type (time-dependent)</setting>
-                <setting name="description" locale="en_US">Over time the same forest tree population can have a different type.</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-				        <setting name="add_label" locale="en_US">Add forest tree population type</setting>
-              </settings>
-            </placement>-->
           </bundlePlacements>
         </screen>
 		    <screen idno="obj_preparation" default="0">
@@ -12685,6 +12678,7 @@
                 <setting name="restrict_to_types">genotype</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 				        <setting name="add_label" locale="en_US">Add genotype</setting>
+                <!--<setting name="restrict_to_relationship_types">genotype</setting>-->
               </settings>
 			      </placement>
             <placement code="inbodemdb" typeRestrictions="soilObject" includeSubtypes="1">
@@ -15965,7 +15959,7 @@
         </type>
       </types>
     </relationshipTable>-->
-	  <!--<relationshipTable name="ca_objects_x_storage_locations">
+	  <relationshipTable name="ca_objects_x_storage_locations">
       <types>
         <type code="storedObject" default="1">
           <labels>
@@ -15978,7 +15972,7 @@
           <subTypeRight></subTypeRight>
         </type>
       </types>
-    </relationshipTable>-->
+    </relationshipTable>
 	  <!--<relationshipTable name="ca_loans_x_objects">
       <types>
         <type code="objectLoans" default="1">
