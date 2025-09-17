@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.87</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.89</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in v0.85-->
   <!--https://github.com/inbo/collective-access/issues/347-->
@@ -744,24 +744,6 @@
                     <name_plural>Projects</name_plural>
                   </label>
                 </labels>
-                <items>
-                  <item idno="internalProject" rank="1" enabled="1" default="0">
-                        <labels>
-                          <label locale="en_US" preferred="1">
-                            <name_singular>INBO project</name_singular>
-                            <name_plural>INBO projects</name_plural>
-                          </label>
-                        </labels>
-                  </item>
-                  <item idno="externalProject" rank="2" enabled="1" default="0">
-                        <labels>
-                          <label locale="en_US" preferred="1">
-                            <name_singular>External project</name_singular>
-                            <name_plural>External projects</name_plural>
-                          </label>
-                        </labels>
-                  </item>
-                </items>    
               </item>
               <item idno="curation" rank="4" enabled="1" default="1">
                 <labels>
@@ -13802,7 +13784,7 @@
                 <setting name="description" locale="en_US">The field campaign name used in notes, datasets, publications, ... if there are multiple names or identifiers for the field campaign, all other identifiers are put in the "non-preferred labels" below.</setting>
               </settings>
             </placement>
-			      <placement code="preferred_labels_project" typeRestrictions="internalProject,externalProject,">
+			      <placement code="preferred_labels_project" typeRestrictions="project">
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Project (short) name</setting>
@@ -13831,7 +13813,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="publishedRecord_project" typeRestrictions="internalProject,externalProject,">
+            <placement code="publishedRecord_project" typeRestrictions="project">
               <bundle>ca_attribute_publishedRecord</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Project-URL</setting>
@@ -13862,8 +13844,8 @@
             <placement code="ca_places_fieldworkProject" typeRestrictions="fieldwork">
               <bundle>ca_places</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Field campaign/project focal place(s)</setting>
-                <setting name="description" locale="en_US">The field campaign or project took place at. This can compass administrational places but also plots or transects.</setting>
+                <setting name="label" locale="en_US">Field campaign focal place(s)</setting>
+                <setting name="description" locale="en_US">The field campaign took place at. This can compass administrational places but also plots or transects.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">20</setting>
 				        <setting name="add_label" locale="en_US">Add place</setting>
@@ -14863,7 +14845,6 @@
 				        <setting name="restrict_to_types">project</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">5</setting>
-                <setting name="restrict_to_relationship_types">resultingObjectsProject</setting>
                 <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 				        <setting name="add_label" locale="en_US">Add project</setting>
@@ -15014,10 +14995,8 @@
 			        <settings>
                 <setting name="label" locale="en_US">INBO project that reuses INBO specimens</setting>
                 <setting name="description" locale="en_US">This can be a project as defined in JIRA, a project as defined in LIMS, ..</setting>
-				        <setting name="restrict_to_types">internalProject</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">20</setting>
-                <setting name="restrict_to_relationship_types">projectReuse</setting>
                 <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 				        <setting name="add_label" locale="en_US">Add project</setting>
@@ -15027,10 +15006,8 @@
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">External project that reuses INBO specimens</setting>
-				        <setting name="restrict_to_types">externalProject</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">20</setting>
-                <setting name="restrict_to_relationship_types">projectReuse</setting>
                 <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 				        <setting name="add_label" locale="en_US">Add project</setting>
@@ -16302,11 +16279,11 @@
           <labels>
             <label locale="en_US">
               <typename>reuses</typename>
-              <typename_reverse>reused in</typename_reverse>
+              <typename_reverse>is reused in</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
-          <subTypeRight></subTypeRight>
+          <subTypeRight>project</subTypeRight>
         </type>
       </types>
     </relationshipTable>
