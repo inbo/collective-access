@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.91</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.92</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in v0.85-->
   <!--https://github.com/inbo/collective-access/issues/347-->
@@ -12239,6 +12239,7 @@
 				        <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">5</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_relationship_types">sampledBy</setting>
               </settings>
             </placement>
 			      <placement code="samplingProtocol" typeRestrictions="soilObjectanimalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,stemdisc" includeSubtypes="1">
@@ -12269,6 +12270,7 @@
 				        <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">5</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_relationship_types">preparedBy</setting>
               </settings>
             </placement>
 			      <placement code="preparationProtocol" typeRestrictions="soilObjectanimalObject,dnaSample,leafSampleGenetic,leafSampleAnalytic,moss,seedlot,stemdisc,livingPlant,forestTreePopulation" includeSubtypes="1">
@@ -12594,6 +12596,7 @@
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_relationship_types">identifiedBy</setting>
               </settings>
 			      </placement>
 			      <placement code="voucher" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,livingPlant,forestTreePopulation" includeSubtypes="1">
@@ -12991,6 +12994,7 @@
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">3</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_relationship_types">isOwnedBy</setting>
               </settings>
             </placement>
             <placement code="managedBy" typeRestrictions="forestTreePopulation">
@@ -13002,6 +13006,7 @@
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">3</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_relationship_types">managedBy</setting>
               </settings>
             </placement>
 			      <placement code="ca_entities_previousOwner">
@@ -13011,6 +13016,7 @@
                 <setting name="description" locale="en_US">This can be both an individual (i.e. personal collection that was donated) or organization.</setting>
 				        <setting name="add_label" locale="en_US">Add previous owner</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_relationship_types">wasOwnedBy</setting>
               </settings>
             </placement>
             <placement code="ca_entities_contact">
@@ -13023,6 +13029,7 @@
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">2</setting>
+                <setting name="restrict_to_relationship_types">knowsMost</setting>
               </settings>
             </placement>
             <placement code="ca_occurrences_valuation">
@@ -13331,6 +13338,7 @@
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">2</setting>
+                <setting name="restrict_to_relationship_types">knowsMost</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -13536,6 +13544,7 @@
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_relationship_types">identifiedBy</setting>
               </settings>
 			      </placement>
 			      <placement code="voucher">
@@ -13836,10 +13845,11 @@
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Identified by</setting>
-                <setting name="description" locale="en_US">Person(s) (individual(s)) that execute the taxonomic identification.</setting>
+                <setting name="description" locale="en_US">Person(s) (individual(s)) that executed the taxonomic identification.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">20</setting>
                 <setting name="expand_collapse_no_value">expand</setting>
+                <setting name="restrict_to_relationship_types">executedBy</setting>
               </settings>
 			      </placement>
           </bundlePlacements>
@@ -13889,24 +13899,16 @@
             <restriction code="r_identification" type="identification"/>
           </typeRestrictions>
           <bundlePlacements>
-            <placement code="ca_entities_executor" typeRestrictions="valuation,disposal,treatment,renewal,transfer,fieldwork">
+            <placement code="ca_entities_executor" typeRestrictions="valuation,disposal,treatment,renewal,transfer,fieldwork,identification">
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="label" locale="en_US">Executor</setting>
                 <setting name="restrict_to_type">ind</setting>
                 <setting name="label" locale="en_US">Executed by</setting>
 				        <setting name="add_label" locale="en_US">Add individual</setting>
+                <setting name="restrict_to_relationship_types">executedBy</setting>
               </settings>
             </placement>
-            <placement code="ca_entities_identifier" typeRestrictions="identification">
-              <bundle>ca_entities</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Identification</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">20</setting>
-                <setting name="expand_collapse_no_value">expand</setting>
-              </settings>
-			      </placement>
             <placement code="ca_object" typeRestrictions="valuation,disposal,treatment,renewal,transfer,identification">
               <bundle>ca_objects</bundle>
 			        <settings>
@@ -14038,6 +14040,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Organization to which the samples were transferred</setting>
                 <setting name="restrict_to_type">org</setting>
+                <setting name="restrict_to_relationship_types">transferredTo</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -14174,6 +14177,7 @@
                 <setting name="restrict_to_type">org</setting>
                 <setting name="label" locale="en_US">Current affiliation</setting>
                 <setting name="description" locale="en_US">Organization to which the individual is affiliated.</setting>
+                <setting name="restrict_to_relationship_types">affiliation</setting>
               </settings>
             </placement>
             <placement code="affiliationSpecification" typeRestrictions="ind">
@@ -14525,7 +14529,7 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="ca_entities_curator">
+            <placement code="ca_entities_manager">
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Collection manager (synonym: curator)</setting>
@@ -14534,9 +14538,10 @@
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="sort">relation_id</setting>
+                <setting name="restrict_to_relationship_types">manager</setting>
               </settings>
             </placement>
-            <placement code="ca_entities_assistantCurator">
+            <placement code="ca_entities_assistantManager">
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Assistant collection manager (synonym: assistant curator)</setting>
@@ -14545,6 +14550,7 @@
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="sort">relation_id</setting>
+                <setting name="restrict_to_relationship_types">coManager</setting>
               </settings>
             </placement>
             <placement code="ca_entities_archivist">
@@ -14555,6 +14561,7 @@
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="sort">relation_id</setting>
+                <setting name="restrict_to_relationship_types">archivist</setting>
               </settings>
             </placement>
             <placement code="ca_entities_assistantArchivist">
@@ -14566,6 +14573,7 @@
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="sort">relation_id</setting>
+                <setting name="restrict_to_relationship_types">coArchivist</setting>
               </settings>
             </placement>
             <placement code="ca_entities_collectionSteward">
@@ -14577,6 +14585,7 @@
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="sort">relation_id</setting>
+                <setting name="restrict_to_relationship_types">steward</setting>
               </settings>
             </placement>  
             <placement code="ca_storage_locations" typeRestrictions="internalCollection">
@@ -14586,7 +14595,6 @@
                 <setting name="label" locale="en_US">Storage location of collection</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_types">room,cabinet,freezer,fridge,compartment,drawer,shelf,crate,rack,box,floor,building,forestTreePopulationSite</setting>
               </settings>
             </placement>
             <placement code="ca_entities_collectionOwner">
@@ -14597,7 +14605,8 @@
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">5</setting>
                 <setting name="sort">relation_id</setting>
-                <setting name="display_template">^ca_entities.preferred_label (^ca_entities_x_collections.roleRangeContainer.roleStartedAtTime to ^ca_entities_x_collections.roleRangeContainer.roleEndedAtTime</setting>                
+                <setting name="display_template">^ca_entities.preferred_label (^ca_entities_x_collections.roleRangeContainer.roleStartedAtTime to ^ca_entities_x_collections.roleRangeContainer.roleEndedAtTime</setting>
+                <setting name="restrict_to_relationship_types">colOwner</setting>                
               </settings>
             </placement>
 			      <placement code="conditionsOfAccess">
@@ -14685,6 +14694,7 @@
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">2</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_relationship_types">maintenanceBy</setting>
               </settings>
             </placement>
             <placement code="fileURL" typeRestrictions="box,drawer,rack,shelf,cabinet,freezer,fridge,room,floor,building">
@@ -14870,6 +14880,7 @@
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">2</setting>
+                <setting name="restrict_to_relationship_types">knowsMost2</setting>
               </settings>
             </placement>
             <placement code="ca_occurrences_valuation">
@@ -14931,7 +14942,7 @@
 				        <setting name="add_label" locale="en_US">Add other non preferred identifier</setting>
               </settings>
             </placement>
-			      <placement code="internalProject" typeRestrictions="internalReuse">
+			      <placement code="project" typeRestrictions="internalReuse">
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">INBO project that reuses INBO specimens</setting>
@@ -14976,6 +14987,7 @@
                 <setting name="restrict_to_types">ind</setting>
 				        <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="restrict_to_relationship_types">requester</setting>
               </settings>
             </placement>
             <placement code="ca_entities_requesterBackup">
@@ -14986,6 +14998,7 @@
                 <setting name="restrict_to_types">ind</setting>
 				        <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">3</setting>
+                <setting name="restrict_to_relationship_types">requesterBackup</setting>
               </settings>
             </placement>
             <placement code="ca_entities_requestingInstitute">
@@ -14996,6 +15009,7 @@
                 <setting name="restrict_to_types">org</setting>
 				        <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">2</setting>
+                <setting name="restrict_to_relationship_types">requestingInstitute</setting>
               </settings>
             </placement>
             <placement code="organisationalUnitName">
@@ -15506,8 +15520,278 @@
       </screens>
     </userInterface>
   </userInterfaces>
-  <!--<relationshipTypes>
-  </relationshipTypes>-->
+  <relationshipTypes>
+    <relationshipTable name="ca_objects_x_entities">
+      <types>
+        <type code="knowsMost" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>knows most about</typename>
+              <typename_reverse>knows most about</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+        <type code="sampledBy" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>was sampled by</typename>
+              <typename_reverse>sampled</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>ind</subTypeRight>
+        </type>
+        <type code="preparedBy" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>was prepared by</typename>
+              <typename_reverse>prepared</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>ind</subTypeRight>
+        </type>
+        <type code="identifiedBy" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>was identified by</typename>
+              <typename_reverse>identified</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>ind</subTypeRight>
+        </type>
+        <type code="isOwnedBy" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>is owned by</typename>
+              <typename_reverse>owns</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+        <type code="wasOwnedBy" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>was owned by</typename>
+              <typename_reverse>owned</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+        <type code="managedBy" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>is managed by</typename>
+              <typename_reverse>manages</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_occurrences_x_entities">
+      <types>
+        <type code="executedBy" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>was executed by</typename>
+              <typename_reverse>executed</typename_reverse>
+            </label>
+            <subTypeLeft>org</subTypeLeft>
+            <subTypeRight>ind</subTypeRight>
+        </type>
+        <type code="transferredTo" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>was transferred to</typename>
+              <typename_reverse>was transferred to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>org</subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_entities_x_entities">
+      <types>
+        <type code="affiliation" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>affiliation of</typename>
+              <typename_reverse>affiliated to</typename_reverse>
+            </label>
+            <subTypeLeft>ind</subTypeLeft>
+            <subTypeRight>org</subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_collections_x_entities">
+      <types>
+        <type code="manager" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>managed by</typename>
+              <typename_reverse>manages</typename_reverse>
+            </label>
+            <subTypeLeft></subTypeLeft>
+            <subTypeRight>ind</subTypeRight>
+        </type>
+        <type code="coManager" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>co-managed by</typename>
+              <typename_reverse>co-manages</typename_reverse>
+            </label>
+            <subTypeLeft></subTypeLeft>
+            <subTypeRight>ind</subTypeRight>
+        </type>
+        <type code="archivist" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>supervised by</typename>
+              <typename_reverse>supervises</typename_reverse>
+            </label>
+            <subTypeLeft></subTypeLeft>
+            <subTypeRight>ind</subTypeRight>
+        </type>
+        <type code="coArchivist" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>co-supervised by</typename>
+              <typename_reverse>co-supervises</typename_reverse>
+            </label>
+            <subTypeLeft></subTypeLeft>
+            <subTypeRight>ind</subTypeRight>
+        </type>
+        <type code="steward" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>steward of</typename>
+              <typename_reverse>stewards</typename_reverse>
+            </label>
+            <subTypeLeft></subTypeLeft>
+            <subTypeRight>ind</subTypeRight>
+        </type>
+        <type code="colOwner" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>owned by</typename>
+              <typename_reverse>owns</typename_reverse>
+            </label>
+            <subTypeLeft></subTypeLeft>
+            <subTypeRight>ind</subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_storage_locations_x_entities">
+      <types>
+        <type code="maintenanceBy" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>maintenance by</typename>
+              <typename_reverse>executes maintenance</typename_reverse>
+            </label>
+            <subTypeLeft></subTypeLeft>
+            <subTypeRight>ind</subTypeRight>
+        </type>
+        <type code="coManager" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>co-managed by</typename>
+              <typename_reverse>co-manages</typename_reverse>
+            </label>
+            <subTypeLeft></subTypeLeft>
+            <subTypeRight>ind</subTypeRight>
+        </type>
+        <type code="archivist" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>supervised by</typename>
+              <typename_reverse>supervises</typename_reverse>
+            </label>
+            <subTypeLeft></subTypeLeft>
+            <subTypeRight>ind</subTypeRight>
+        </type>
+        <type code="coArchivist" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>co-supervised by</typename>
+              <typename_reverse>co-supervises</typename_reverse>
+            </label>
+            <subTypeLeft></subTypeLeft>
+            <subTypeRight>ind</subTypeRight>
+        </type>
+        <type code="steward" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>steward of</typename>
+              <typename_reverse>stewards</typename_reverse>
+            </label>
+            <subTypeLeft></subTypeLeft>
+            <subTypeRight>ind</subTypeRight>
+        </type>
+        <type code="colOwner" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>owned by</typename>
+              <typename_reverse>owns</typename_reverse>
+            </label>
+            <subTypeLeft></subTypeLeft>
+            <subTypeRight>ind</subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_object_lots_x_entities">
+      <types>
+        <type code="knowsMost2" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>knows most</typename>
+              <typename_reverse>knows most</typename_reverse>
+            </label>
+            <subTypeLeft></subTypeLeft>
+            <subTypeRight>ind</subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_loans_x_entities">
+      <types>
+        <type code="requester" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>was requested by</typename>
+              <typename_reverse>requested</typename_reverse>
+            </label>
+            <subTypeLeft></subTypeLeft>
+            <subTypeRight>ind</subTypeRight>
+        </type>
+        <type code="requesterBackup" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>was backup-requested by</typename>
+              <typename_reverse>backup-requested</typename_reverse>
+            </label>
+            <subTypeLeft></subTypeLeft>
+            <subTypeRight>ind</subTypeRight>
+        </type>
+        <type code="requestingInstitute" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>was requested by</typename>
+              <typename_reverse>requested</typename_reverse>
+            </label>
+            <subTypeLeft></subTypeLeft>
+            <subTypeRight>org</subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>
+  </relationshipTypes>
   <roles>
     <role code="admin">
       <name>Administrators</name>
@@ -15810,8 +16094,6 @@
         </label>
       </labels>
       <typeRestrictions>
-                <restriction code="r_waterSample" type="waterSample"/>
-                <restriction code="r_eDnaWaterFilter" type="eDnaWaterFilter"/>
                 <restriction code="r_dnaSample" type="dnaSample"/>
                 <restriction code="r_soilObject" type="soilObject"/>
       </typeRestrictions>
