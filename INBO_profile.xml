@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.89</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.90</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in v0.85-->
   <!--https://github.com/inbo/collective-access/issues/347-->
@@ -5445,7 +5445,7 @@
             <labels>
               <label locale="en_US">
                 <name>Relation specification</name>
-                <description>Specification on the type of relation.</description>
+                <description>Specification on the type of relation</description>
               </label>
             </labels>
             <settings>
@@ -5493,7 +5493,7 @@
             <labels>
               <label locale="en_US">
                 <name>Relation specification</name>
-                <description>Specification on the type of relation.</description>
+                <description>Specification on the type of relation</description>
               </label>
             </labels>
             <settings>
@@ -12021,7 +12021,6 @@
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">20</setting>
 				        <setting name="add_label" locale="en_US">Add collection</setting>
-                <setting name="restrict_to_relationship_types">partOf</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -12061,7 +12060,6 @@
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">20</setting>
 				        <setting name="add_label" locale="en_US">Add collection</setting>
-                <setting name="restrict_to_relationship_types">partOf</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -12178,7 +12176,6 @@
                 <setting name="description" locale="en_US">Direct relationships means that the two objects related in this hierarchy represent the same organism. It is to track subsamples (e.g. cadaver -> tissue -> dna) or replicates (e.g. tissue -> dna replicate 1 and tissue -> dna replicate 2).</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="expand_collapse_value">collapse</setting>
-                <setting name="restrict_to_relationship_types">directRelationship</setting>
               </settings>
             </placement>
             <placement code="ca_objects">
@@ -12189,7 +12186,6 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="expand_collapse_value">collapse</setting>
 				        <setting name="restrict_to_types">object</setting>
-                <setting name="restrict_to_relationship_types">association</setting>
               </settings>
             </placement>
 			      <placement code="seedlotRelationSeeds" typeRestrictions="seedlot">
@@ -12231,7 +12227,6 @@
 				        <setting name="restrict_to_types">project</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">5</setting>
-                <setting name="restrict_to_relationship_types">resultingObjectsProject</setting>
                 <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 				        <setting name="add_label" locale="en_US">Add project</setting>
@@ -12245,7 +12240,6 @@
 				        <setting name="restrict_to_types">fieldwork</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_relationship_types">resultingObjectsFieldwork</setting>
                 <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
@@ -12289,7 +12283,6 @@
                 <setting name="description" locale="en_US">A person that sampled/collected the original object/specimen from the field (in situ) to the collection (ex situ). This person recorded the occurrence information, also for derivates (e.g. DNA specimens) created in the lab at a later date (see further).</setting>
 				        <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">5</setting>
-                <setting name="restrict_to_relationship_types">collector</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -12320,7 +12313,6 @@
                 <setting name="description" locale="en_US">A person that created/extracted/prepared the object/specimen. When this is the first object in the hierarchy, this person(s) equal(s) the collectors. When this a second or third object in the hierarchy of objects (e.g. a DNA sample is created on a later date than the sampling of the tissue sample), this person(s) can differ from the collector(s).</setting>
 				        <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">5</setting>
-                <setting name="restrict_to_relationship_types">preparer</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -12647,7 +12639,6 @@
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="restrict_to_relationship_types">identifier</setting>
               </settings>
 			      </placement>
 			      <placement code="voucher" typeRestrictions="animalObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,livingPlant,forestTreePopulation" includeSubtypes="1">
@@ -12714,7 +12705,6 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="expand_collapse_value">collapse</setting>
 				        <setting name="restrict_to_types">geneticEntity</setting>
-                <setting name="restrict_to_relationship_types">related,cloneOf,childOfCloneOf,grandchildOf,grandchildOfCloneOf,childOf</setting>
               </settings>
             </placement>
             <placement code="taxonGroup" typeRestrictions="dnaSample">
@@ -12729,7 +12719,6 @@
                 <setting name="label" locale="en_US">Related genotype(s) (1:n)</setting>
                 <setting name="description" locale="en_US">A specific code given to describe a genotype that occurs in more than one individual. For example: a specific haplotype. For example: a specific genotype for which there are multiple clones (plant breeding). If there is an individual genotype or sequence data that you would like to log with this specific sample, this can be done under FILE/REFS/PHOTOS, because this is only relevant to add together with the link to the data.</setting>
                 <setting name="restrict_to_types">genotype</setting>
-                <setting name="restrict_to_relationship_types">genotype</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 				        <setting name="add_label" locale="en_US">Add genotype</setting>
               </settings>
@@ -13046,7 +13035,6 @@
 				        <setting name="add_label" locale="en_US">Add owner</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">3</setting>
-                <setting name="restrict_to_relationship_types">plantSiteOwner</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -13058,7 +13046,6 @@
 				        <setting name="add_label" locale="en_US">Add manager</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">3</setting>
-                <setting name="restrict_to_relationship_types">manager</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -13069,7 +13056,6 @@
                 <setting name="description" locale="en_US">This can be both an individual (i.e. personal collection that was donated) or organization.</setting>
 				        <setting name="add_label" locale="en_US">Add previous owner</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="restrict_to_relationship_types">previousOwner</setting>
               </settings>
             </placement>
             <placement code="ca_entities_contact">
@@ -13082,7 +13068,6 @@
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">2</setting>
-                <setting name="restrict_to_relationship_types">knowsMost</setting>
               </settings>
             </placement>
             <placement code="ca_occurrences_valuation">
@@ -13271,7 +13256,6 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="expand_collapse_value">collapse</setting>
 				        <setting name="restrict_to_types">object</setting>
-                <setting name="restrict_to_relationship_types">genotype</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -13392,7 +13376,6 @@
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">2</setting>
-                <setting name="restrict_to_relationship_types">knowsMost</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -13598,7 +13581,6 @@
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="restrict_to_relationship_types">identifier</setting>
               </settings>
 			      </placement>
 			      <placement code="voucher">
@@ -13642,7 +13624,6 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="expand_collapse_value">collapse</setting>
 				        <setting name="restrict_to_types">object</setting>
-                <setting name="restrict_to_relationship_types">related,cloneOf,childOfCloneOf,grandchildOf,grandchildOfCloneOf,childOf</setting>
               </settings>
             </placement>
             <placement code="externalSpecimen">
@@ -13904,7 +13885,6 @@
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">20</setting>
                 <setting name="expand_collapse_no_value">expand</setting>
-                <setting name="restrict_to_relationship_types">identifier</setting>
               </settings>
 			      </placement>
           </bundlePlacements>
@@ -13970,7 +13950,6 @@
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">20</setting>
                 <setting name="expand_collapse_no_value">expand</setting>
-                <setting name="restrict_to_relationship_types">identifier</setting>
               </settings>
 			      </placement>
             <placement code="ca_object" typeRestrictions="valuation,disposal,treatment,renewal,transfer,identification">
@@ -13978,7 +13957,6 @@
 			        <settings>
                 <setting name="label" locale="en_US">Object(s) subjected to event</setting>
                 <setting name="description" locale="en_US">Object that was subjected to the event (identification, valuation or curation)</setting>
-                <setting name="restrict_to_relationship_types">execObjIdentification,execObjValuation,execObjCuration</setting>
                 <setting name="list_format" locale="en_US">list</setting>
               </settings>
             </placement>
@@ -14225,7 +14203,6 @@
                 <setting name="restrict_to_type">org</setting>
                 <setting name="label" locale="en_US">Current affiliation</setting>
                 <setting name="description" locale="en_US">Organization to which the individual is affiliated.</setting>
-                <setting name="restrict_to_relationship_types">currentAffilition</setting>
               </settings>
             </placement>
             <placement code="affiliationSpecification" typeRestrictions="ind">
@@ -14515,7 +14492,6 @@
 				        <setting name="restrict_to_types">fieldwork</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_relationship_types">collectionFieldwork</setting>
                 <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
@@ -14586,7 +14562,6 @@
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_relationship_types">curator</setting>
                 <setting name="sort">relation_id</setting>
               </settings>
             </placement>
@@ -14597,7 +14572,6 @@
                 <setting name="description" locale="en_US">The assistant collection manager is an INBO-scientist that assists the collection manager. This could be assistance in making decisions (on how to manage, what to subsample for a usage request, ..); assistance in representing the collection at meetings or assistance in collection management documentation. This person does not have the end responsibility for the collection.</setting>
                 <setting name="add_label" locale="en_US">Add new assistant collection manager</setting>
                 <setting name="restrict_to_types">ind</setting>
-                <setting name="restrict_to_relationship_types">assistantCurator</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="sort">relation_id</setting>
               </settings>
@@ -14608,7 +14582,6 @@
                 <setting name="label" locale="en_US">Archivist</setting>
                 <setting name="description" locale="en_US">The collection archivist manages the physical collection. He/She is responsible that the physical collection is properly monitored and he/she keeps the collection manager informed. This role has the end responsibility considering accessioning new specimen, retrieving specimen for loans, label quality monitoring, monitoring correct logging of the storage location, ...</setting>
                 <setting name="restrict_to_types">ind</setting>
-                <setting name="restrict_to_relationship_types">archivist</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="sort">relation_id</setting>
               </settings>
@@ -14620,7 +14593,6 @@
                 <setting name="description" locale="en_US">The assistant archivist helps the archivist manage the physical collection. He/She does not have an end responsibility, but is allowed to assist/help or take over the work of the archivist in his/her absence (e.g. illness).</setting>
                 <setting name="add_label" locale="en_US">Add new assistant archivist</setting>
                 <setting name="restrict_to_types">ind</setting>
-                <setting name="restrict_to_relationship_types">assistantArchivist</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="sort">relation_id</setting>
               </settings>
@@ -14632,7 +14604,6 @@
                 <setting name="description" locale="en_US">The collection steward is responsible for handling usage requests administration, reporting on the collections and manageing the joint (quality) documentation of the different collections. He/she also oversees data quality in the INBO-CMS database.</setting>
                 <setting name="add_label" locale="en_US">Add new collection steward</setting>
                 <setting name="restrict_to_types">ind</setting>
-                <setting name="restrict_to_relationship_types">collectionSteward</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="sort">relation_id</setting>
               </settings>
@@ -14654,7 +14625,6 @@
                 <setting name="description" locale="en_US">This is preferrably an organization. Best practice is that if personal collections are used for research purposes, a duplicate of the object or the collection (object) as a whole is donated. This is either the current owner, or the last owner if disposed.</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">5</setting>
-                <setting name="restrict_to_relationship_types">collectionOwner</setting>
                 <setting name="sort">relation_id</setting>
                 <setting name="display_template">^ca_entities.preferred_label (^ca_entities_x_collections.roleRangeContainer.roleStartedAtTime to ^ca_entities_x_collections.roleRangeContainer.roleEndedAtTime</setting>                
               </settings>
@@ -14740,7 +14710,6 @@
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">2</setting>
-                <setting name="restrict_to_relationship_types">maintainsStorageLocation</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -14858,7 +14827,6 @@
 				        <setting name="restrict_to_types">fieldwork</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_relationship_types">resultingObjectsFieldwork</setting>
                 <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
@@ -14928,7 +14896,6 @@
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">2</setting>
-                <setting name="restrict_to_relationship_types">knowsMost</setting>
               </settings>
             </placement>
             <placement code="ca_occurrences_valuation">
@@ -15033,7 +15000,6 @@
 			        <settings>
                 <setting name="label" locale="en_US">Requester*</setting>
                 <setting name="restrict_to_types">ind</setting>
-                <setting name="restrict_to_relationship_types">requester</setting>
 				        <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
@@ -15044,7 +15010,6 @@
                 <setting name="label" locale="en_US">Requester back-up*</setting>
                 <setting name="description" locale="en_US">Every usage request needs a secondary individual that is registered as a back-up contact. All communication occurs with the requestor and the back-up in cc. This is implemented in case the first individual cannot be reached or becomes disassociated with the organization at the time of usage. This second individual is co-responsible for follow up of the loan agreement and also signs the agreement.</setting>
                 <setting name="restrict_to_types">ind</setting>
-                <setting name="restrict_to_relationship_types">backupRequester</setting>
 				        <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">3</setting>
               </settings>
@@ -15055,7 +15020,6 @@
                 <setting name="label" locale="en_US">Institute of request*</setting>
                 <setting name="description" locale="en_US">Every usage needs to be linked to an organization. If the requestor of the usage changes its affiliation, the material stays in the organization that is on the usage agreement. No loans to unaffiliated individuals.</setting>
                 <setting name="restrict_to_types">org</setting>
-                <setting name="restrict_to_relationship_types">requestingInstitute</setting>
 				        <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">2</setting>
               </settings>
@@ -15568,725 +15532,7 @@
       </screens>
     </userInterface>
   </userInterfaces>
-  <relationshipTypes>
-    <relationshipTable name="ca_objects_x_objects">
-      <types>
-        <type code="directRelationship" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>subsample (object of the same organism)</typename>
-              <typename_reverse>subsampled to (object of the same organism)</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>object</subTypeLeft>
-          <subTypeRight>object</subTypeRight>
-        </type>
-        <type code="related" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is related to</typename>
-              <typename_reverse>is related to</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>object</subTypeLeft>
-          <subTypeRight>geneticEntity</subTypeRight>
-        </type>
-        <type code="cloneOf" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is clone origin</typename>
-              <typename_reverse>is cloned result</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>object</subTypeLeft>
-          <subTypeRight>geneticEntity</subTypeRight>
-        </type>
-        <type code="childOfCloneOf" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is parent of clone of</typename>
-              <typename_reverse>is child of clone</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>object</subTypeLeft>
-          <subTypeRight>geneticEntity</subTypeRight>
-        </type>
-        <type code="grandchildOf" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is grandparent of</typename>
-              <typename_reverse>is grandchild of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>object</subTypeLeft>
-          <subTypeRight>geneticEntity</subTypeRight>
-        </type>
-        <type code="grandchildOfCloneOf" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is grandparent of clone of</typename>
-              <typename_reverse>is grandchild of clone of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>object</subTypeLeft>
-          <subTypeRight>geneticEntity</subTypeRight>
-        </type>
-        <type code="childOf" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is parent of</typename>
-              <typename_reverse>is child of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>object</subTypeLeft>
-          <subTypeRight>geneticEntity</subTypeRight>
-        </type>
-        <type code="association" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is associated with</typename>
-              <typename_reverse>is associated with</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>object</subTypeLeft>
-          <subTypeRight>object</subTypeRight>
-        </type>
-        <type code="genotype" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is genotype of</typename>
-              <typename_reverse>has genotype</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>object</subTypeLeft>
-          <subTypeRight>genotype</subTypeRight>
-        </type>
-	   </types>
-    </relationshipTable>
-	  <relationshipTable name="ca_objects_x_object_lots">
-      <types>
-        <type code="objectsGrouping" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is grouped in</typename>
-              <typename_reverse>groups</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-    <relationshipTable name="ca_objects_x_entities"><!--http://schema.org/roleName-->
-      <types>
-        <type code="collector" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>collector</typename>
-              <typename_reverse>collected object</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>ind</subTypeRight>
-        </type>
-        <type code="preparer" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>preparer</typename>
-              <typename_reverse>prepared object</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>ind</subTypeRight>
-        </type>
-        <type code="identifier" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>identifier</typename>
-              <typename_reverse>identified object</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>ind</subTypeRight>
-        </type>
-        <type code="previousOwner" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is the previous owner</typename>
-              <typename_reverse>was owned by</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-        <type code="plantSiteOwner" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is owner</typename>
-              <typename_reverse>is owned by</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>forestTreePopulation</subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-        <type code="manager" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is managed by</typename>
-              <typename_reverse>manages</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>forestTreePopulation</subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-        <type code="knowsMost" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is contactperson for</typename>
-              <typename_reverse>is known best by</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>ind</subTypeRight>
-        </type>
-        <type code="georeferencer" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>has executed the georeferencing</typename>
-              <typename_reverse>was georeferenced by</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-    <relationshipTable name="ca_objects_x_collections">
-      <types>
-        <type code="partOf" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is part of</typename>
-              <typename_reverse>contains</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-    <relationshipTable name="ca_objects_x_occurrences">
-      <types>
-		    <type code="resultingObjectsFieldwork" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>resulted in</typename>
-              <typename_reverse>result of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>fieldwork</subTypeRight>
-        </type>
-		    <type code="resultingObjectsProject" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>resulted in</typename>
-              <typename_reverse>result of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>internalProject</subTypeRight>
-        </type>
-        <type code="execObjValuation" default="0" typeRestrictionRight="valuation" includeSubtypesRight="0">
-          <labels>
-            <label locale="en_US">
-              <typename>value(s) linked to the specimen</typename>
-              <typename_reverse>is specimen subjected to the valuation event</typename_reverse>
-            </label>
-          </labels>
-        </type>
-		    <type code="subjectedDisposal" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>executed on</typename>
-              <typename_reverse>subject of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>disposal</subTypeRight>
-        </type>
-		    <type code="subjectedRenewal" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>renewal event</typename>
-              <typename_reverse>subject of renewal</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>renewal</subTypeRight>
-        </type>
-		    <type code="subjectedTransfer" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>executed on</typename>
-              <typename_reverse>subject of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>transfer</subTypeRight>
-        </type>
-		    <type code="subjectedTreatment" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>executed on</typename>
-              <typename_reverse>subject of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>treatment</subTypeRight>
-        </type>
-		    <type code="reuseObjectsProject" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>(re)used in project</typename>
-              <typename_reverse>has reused</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>project</subTypeRight>
-        </type>
-		    <type code="identificationEvent" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>identification event of</typename>
-              <typename_reverse>identified in</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>identification</subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-	  <relationshipTable name="ca_objects_x_storage_locations">
-      <types>
-        <type code="storedObject" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is stored at</typename>
-              <typename_reverse>stores</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-	  <relationshipTable name="ca_objects_x_loans">
-      <types>
-        <type code="objectLoans" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>contains</typename>
-              <typename_reverse>is reused in</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-	  <relationshipTable name="ca_objects_x_places">
-      <types>
-        <type code="objectPlace" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is placed at</typename>
-              <typename_reverse>is place of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-	  <relationshipTable name="ca_object_lots_x_occurrences">
-      <types>
-		    <type code="resultingLotFieldwork" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>resulted in</typename>
-              <typename_reverse>result of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>fieldwork</subTypeRight>
-        </type>
-		    <type code="resultingLotProject" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>resulted in</typename>
-              <typename_reverse>result of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>internalProject</subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-	  <relationshipTable name="ca_object_lots_x_places">
-      <types>
-        <type code="locationObjectLot" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is located at</typename>
-              <typename_reverse>location of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-	  <relationshipTable name="ca_collections_x_collections">
-      <types>
-        <type code="subcollection" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is a subcollection of</typename>
-              <typename_reverse>contains subcollection(s)</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-	  <relationshipTable name="ca_collections_x_storage_locations">
-      <types>
-        <type code="storedCollection" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is stored at</typename>
-              <typename_reverse>stores</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-	  <relationshipTable name="ca_collections_x_occurrences">
-      <types>
-        <type code="collectionFieldwork" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is collected during</typename>
-              <typename_reverse>resulted in</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>fieldwork</subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-    <relationshipTable name="ca_entities_x_entities">
-      <types>
-        <type code="currentAffilition" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>affiliated with</typename>
-              <typename_reverse>employs</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>ind</subTypeLeft>
-          <subTypeRight>org</subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-	  <relationshipTable name="ca_entities_x_collections"><!--http://schema.org/roleName-->
-      <types>
-        <type code="curator" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>manages</typename>
-              <typename_reverse>collection manager of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>ind</subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-        <type code="assistantCurator" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>co-manages</typename>
-              <typename_reverse>assistant collection manager of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>ind</subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-        <type code="archivist" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>co-manages</typename>
-              <typename_reverse>archivist of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>ind</subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-        <type code="assistantArchivist" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>co-manages</typename>
-              <typename_reverse>assistant archivist of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>ind</subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-        <type code="collectionSteward" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>co-manages</typename>
-              <typename_reverse>collection steward of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>ind</subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-        <type code="collectionOwner" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>owns</typename>
-              <typename_reverse>is owned by</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>org</subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-    <relationshipTable name="ca_entities_x_occurrences">
-      <types>
-        <type code="executor" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>executed</typename>
-              <typename_reverse>executed by</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>ind</subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-        <type code="identifier" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>identified</typename>
-              <typename_reverse>identified by</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>ind</subTypeLeft>
-          <subTypeRight>identification</subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-	  <relationshipTable name="ca_entities_x_places">
-      <types>
-        <type code="locationOrg" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is located at</typename>
-              <typename_reverse>location of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>org</subTypeLeft>
-          <subTypeRight/>
-        </type>
-      </types>
-    </relationshipTable>
-	  <relationshipTable name="ca_entities_x_storage_locations">
-      <types>
-        <type code="ownerForestTreePopulationSite" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>owns</typename>
-              <typename_reverse>is owned by</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>forestTreePopulationSite</subTypeRight>
-        </type>
-        <type code="maintainsStorageLocation" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>maintains</typename>
-              <typename_reverse>is maintained by</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-    <relationshipTable name="ca_occurrences_x_occurrences">
-      <types>
-		    <type code="subproject" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>was a subproject of</typename>
-              <typename_reverse>was the overarching project of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>project</subTypeLeft>
-          <subTypeRight>project</subTypeRight>
-        </type>
-		    <type code="resultingFieldworkProject" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>was result of</typename>
-              <typename_reverse>resulted in</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>fieldwork</subTypeLeft>
-          <subTypeRight>project</subTypeRight>
-        </type>
-		    <type code="subfieldwork" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>subfieldwork</typename>
-              <typename_reverse>overarching fieldwork</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>fieldwork</subTypeLeft>
-          <subTypeRight>fieldwork</subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-    <relationshipTable name="ca_places_x_occurrences">
-      <types>
-        <type code="locationOccurrence" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>was place of</typename>
-              <typename_reverse>occurred at</typename_reverse>
-            </label>
-         </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-        <type code="focusProject" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>was focal location of</typename>
-              <typename_reverse>focused on location</typename_reverse>
-            </label>
-         </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>project</subTypeRight>
-        </type>
-        <type code="focusFieldwork" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>was focal location of</typename>
-              <typename_reverse>focused on location</typename_reverse>
-            </label>
-         </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>fieldwork</subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-    <relationshipTable name="ca_places_x_collections">
-      <types>
-        <type code="collectionPlace" default="01">
-          <labels>
-            <label locale="en_US">
-              <typename>is geographic scope of collection</typename>
-              <typename_reverse>has specimens of geographic scope</typename_reverse>
-            </label>
-         </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-	  <relationshipTable name="ca_places_x_places">
-      <types>
-        <type code="nested" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is nested in</typename>
-              <typename_reverse>contains</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight/>
-        </type>
-      </types>
-    </relationshipTable>
-	  <relationshipTable name="ca_places_x_storage_locations">
-      <types>
-        <type code="inLivingCollectionAt" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>is place of</typename>
-              <typename_reverse>is located at</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>forestTreePopulationSite</subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-	  <relationshipTable name="ca_loans_x_entities">
-      <types>
-        <type code="requester" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>requester</typename>
-              <typename_reverse>requested reuse</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>ind</subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-        <type code="backupRequester" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>back-up of requester of</typename>
-              <typename_reverse>requested reuse</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>ind</subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-        <type code="requestingInstitute" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>requesting institute</typename>
-              <typename_reverse>requested reuse</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>org</subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-	  <relationshipTable name="ca_loans_x_occurrences">
-      <types>
-        <type code="projectReuse" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>reuses</typename>
-              <typename_reverse>is reused in</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>project</subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
+ <relationshipTypes>
   </relationshipTypes>
   <roles>
     <role code="admin">
