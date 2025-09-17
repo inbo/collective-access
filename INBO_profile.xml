@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.96h</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.96i</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in v0.85-->
   <!--https://github.com/inbo/collective-access/issues/347-->
@@ -15845,7 +15845,7 @@
         </type>
       </types>
     </relationshipTable>
-	  <relationshipTable name="ca_objects_x_object_lots">
+	  <!--<relationshipTable name="ca_objects_x_object_lots">
       <types>
         <type code="objectsGrouping" default="1">
           <labels>
@@ -15858,7 +15858,7 @@
           <subTypeRight></subTypeRight>
         </type>
       </types>
-    </relationshipTable>
+    </relationshipTable>-->
     <!--<relationshipTable name="ca_storage_locations_x_entities">
       <types>
         <type code="maintenanceBy" default="1">
@@ -15979,8 +15979,35 @@
         </type>
       </types>
     </relationshipTable>-->
+	  <!--<relationshipTable name="ca_objects_x_storage_locations">
+      <types>
+        <type code="storedObject" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is stored at</typename>
+              <typename_reverse>stores</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight></subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>-->
+	  <!--<relationshipTable name="ca_objects_x_loans">
+      <types>
+        <type code="objectLoans" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>contains</typename>
+              <typename_reverse>is reused in</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight></subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>-->
     <!--ca_loans_x_objects-->
-    <!--ca_objects_x_storage_locations-->
     <!--ca_object_lots_x_storage_locations-->
     <!--ca_storage_locations_x_storage_locations-->
     <!--ca_occurrences_x_storage_locations-->
