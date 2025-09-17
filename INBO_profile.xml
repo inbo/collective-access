@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.95c</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.95e</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in v0.85-->
   <!--https://github.com/inbo/collective-access/issues/347-->
@@ -12131,6 +12131,7 @@
                 <setting name="description" locale="en_US">Direct relationships means that the two objects related in this hierarchy represent the same organism. It is to track subsamples (e.g. cadaver -> tissue -> dna) or replicates (e.g. tissue -> dna replicate 1 and tissue -> dna replicate 2).</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="expand_collapse_value">collapse</setting>
+				        <setting name="restrict_to_types">object</setting>
                 <setting name="restrict_to_relationship_types">directRelationship</setting>
               </settings>
             </placement>
@@ -12142,6 +12143,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="expand_collapse_value">collapse</setting>
 				        <setting name="restrict_to_types">object</setting>
+                <setting name="restrict_to_relationship_types">association</setting>
               </settings>
             </placement>
 			      <placement code="seedlotRelationSeeds" typeRestrictions="seedlot">
@@ -15524,6 +15526,16 @@
   <relationshipTypes>
     <relationshipTable name="ca_objects_x_objects">
       <types>
+        <type code="association" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is associated with</typename>
+              <typename_reverse>is associated with</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight></subTypeRight>
+        </type>
         <type code="directRelationship" default="0">
           <labels>
             <label locale="en_US">
@@ -15531,8 +15543,8 @@
               <typename_reverse>child/parent/sibling relation</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>object</subTypeLeft>
-          <subTypeRight>object</subTypeRight>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight></subTypeRight>
         </type>
 	   </types>
     </relationshipTable>
