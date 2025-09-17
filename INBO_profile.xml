@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.86</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.87</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in v0.85-->
   <!--https://github.com/inbo/collective-access/issues/347-->
@@ -745,22 +745,22 @@
                   </label>
                 </labels>
                 <items>
-                      <item idno="internalProject" rank="1" enabled="1" default="0">
+                  <item idno="internalProject" rank="1" enabled="1" default="0">
                         <labels>
                           <label locale="en_US" preferred="1">
                             <name_singular>INBO project</name_singular>
                             <name_plural>INBO projects</name_plural>
                           </label>
                         </labels>
-                      </item>
-                      <item idno="externalProject" rank="2" enabled="1" default="0">
+                  </item>
+                  <item idno="externalProject" rank="2" enabled="1" default="0">
                         <labels>
                           <label locale="en_US" preferred="1">
                             <name_singular>External project</name_singular>
                             <name_plural>External projects</name_plural>
                           </label>
                         </labels>
-                      </item>
+                  </item>
                 </items>    
               </item>
               <item idno="curation" rank="4" enabled="1" default="1">
@@ -980,7 +980,7 @@
           </label>
         </labels>
         <items>
-          <item idno="internal_reuse" enabled="1" default="0">
+          <item idno="internalReuse" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>Internal reuse</name_singular>
@@ -988,7 +988,7 @@
               </label>
             </labels>
           </item>
-          <item idno="external_reuse" enabled="1" default="0">
+          <item idno="externalReuse" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>Outgoing INBO specimen(s)</name_singular>
@@ -13173,24 +13173,24 @@
                 <setting name="expand_collapse_no_value">collapse</setting>               
               </settings>
             </placement>
-            <placement code="internal_reuse">
+            <placement code="internalReuse">
               <bundle>ca_loans</bundle>
               <settings>
                 <setting name="label" locale="en_US">Internal reuse</setting>
                 <setting name="add_label" locale="en_US">Add new internal reuse</setting>
                 <setting name="list_format">list</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-				        <setting name="restrict_to_types">internal_reuse</setting>
+				        <setting name="restrict_to_types">internalReuse</setting>
               </settings>
             </placement>
-            <placement code="external_reuse">
+            <placement code="externalReuse">
               <bundle>ca_loans</bundle>
               <settings>
                 <setting name="label" locale="en_US">External reuse</setting>
                 <setting name="add_label" locale="en_US">Add new external reuse</setting>
                 <setting name="list_format">list</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-				        <setting name="restrict_to_types">external_reuse</setting>
+				        <setting name="restrict_to_types">externalReuse</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -15018,7 +15018,7 @@
 				        <setting name="add_label" locale="en_US">Add other non preferred identifier</setting>
               </settings>
             </placement>
-			      <placement code="internal_project" typeRestrictions="internal_reuse">
+			      <placement code="internalProject" typeRestrictions="internalReuse">
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">INBO project that reuses INBO specimens</setting>
@@ -15026,20 +15026,20 @@
 				        <setting name="restrict_to_types">internalProject</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">20</setting>
-                <setting name="restrict_to_relationship_types">internalprojectReuse</setting>
+                <setting name="restrict_to_relationship_types">projectReuse</setting>
                 <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 				        <setting name="add_label" locale="en_US">Add project</setting>
               </settings>
 			      </placement>
-			      <placement code="external_project" typeRestrictions="external_reuse">
+			      <placement code="externalProject" typeRestrictions="externalReuse">
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">External project that reuses INBO specimens</setting>
 				        <setting name="restrict_to_types">externalProject</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">20</setting>
-                <setting name="restrict_to_relationship_types">externalprojectReuse</setting>
+                <setting name="restrict_to_relationship_types">projectReuse</setting>
                 <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 				        <setting name="add_label" locale="en_US">Add project</setting>
@@ -15697,7 +15697,7 @@
     </relationshipTable>
 	  <relationshipTable name="ca_objects_x_object_lots">
       <types>
-        <type code="objectsGrouping" default="1">
+        <type code="objectsGrouping" default="0">
           <labels>
             <label locale="en_US">
               <typename>is grouped in</typename>
@@ -15795,7 +15795,7 @@
     </relationshipTable>
     <relationshipTable name="ca_objects_x_collections">
       <types>
-        <type code="partOf" default="1">
+        <type code="partOf" default="0">
           <labels>
             <label locale="en_US">
               <typename>is part of</typename>
@@ -15901,7 +15901,7 @@
     </relationshipTable>
 	  <relationshipTable name="ca_objects_x_storage_locations">
       <types>
-        <type code="storedObject" default="1">
+        <type code="storedObject" default="0">
           <labels>
             <label locale="en_US">
               <typename>is stored at</typename>
@@ -15915,7 +15915,7 @@
     </relationshipTable>
 	  <relationshipTable name="ca_objects_x_loans">
       <types>
-        <type code="objectLoans" default="1">
+        <type code="objectLoans" default="0">
           <labels>
             <label locale="en_US">
               <typename>contains</typename>
@@ -15929,7 +15929,7 @@
     </relationshipTable>
 	  <relationshipTable name="ca_objects_x_places">
       <types>
-        <type code="objectPlace" default="1">
+        <type code="objectPlace" default="0">
           <labels>
             <label locale="en_US">
               <typename>is placed at</typename>
@@ -15943,41 +15943,31 @@
     </relationshipTable>
 	  <relationshipTable name="ca_object_lots_x_occurrences">
       <types>
-		    <type code="fieldworkFocus" default="0">
+		    <type code="resultingLotFieldwork" default="0">
           <labels>
             <label locale="en_US">
-              <typename>was focus of</typename>
-              <typename_reverse>was focussed on</typename_reverse>
+              <typename>resulted in</typename>
+              <typename_reverse>result of</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
           <subTypeRight>fieldwork</subTypeRight>
         </type>
-		    <type code="projectFocusInternal" default="0">
+		    <type code="resultingLotProject" default="0">
           <labels>
             <label locale="en_US">
-              <typename>was focus of</typename>
-              <typename_reverse>was focussed on</typename_reverse>
+              <typename>resulted in</typename>
+              <typename_reverse>result of</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
           <subTypeRight>internalProject</subTypeRight>
         </type>
-		    <type code="projectFocusExternal" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>was focus of</typename>
-              <typename_reverse>was focussed on</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>externalProject</subTypeRight>
-        </type>
       </types>
     </relationshipTable>
 	  <relationshipTable name="ca_object_lots_x_places">
       <types>
-        <type code="locationObjectLot" default="1">
+        <type code="locationObjectLot" default="0">
           <labels>
             <label locale="en_US">
               <typename>is located at</typename>
@@ -15991,7 +15981,7 @@
     </relationshipTable>
 	  <relationshipTable name="ca_collections_x_collections">
       <types>
-        <type code="subcollection" default="1">
+        <type code="subcollection" default="0">
           <labels>
             <label locale="en_US">
               <typename>is a subcollection of</typename>
@@ -16005,7 +15995,7 @@
     </relationshipTable>
 	  <relationshipTable name="ca_collections_x_storage_locations">
       <types>
-        <type code="storedCollection" default="1">
+        <type code="storedCollection" default="0">
           <labels>
             <label locale="en_US">
               <typename>is stored at</typename>
@@ -16019,7 +16009,7 @@
     </relationshipTable>
 	  <relationshipTable name="ca_collections_x_occurrences">
       <types>
-        <type code="collectionFieldwork" default="1">
+        <type code="collectionFieldwork" default="0">
           <labels>
             <label locale="en_US">
               <typename>is collected during</typename>
@@ -16047,7 +16037,7 @@
     </relationshipTable>
 	  <relationshipTable name="ca_entities_x_collections"><!--http://schema.org/roleName-->
       <types>
-        <type code="curator" default="1">
+        <type code="curator" default="0">
           <labels>
             <label locale="en_US">
               <typename>manages</typename>
@@ -16057,7 +16047,7 @@
           <subTypeLeft>ind</subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
-        <type code="assistantCurator" default="1">
+        <type code="assistantCurator" default="0">
           <labels>
             <label locale="en_US">
               <typename>co-manages</typename>
@@ -16067,7 +16057,7 @@
           <subTypeLeft>ind</subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
-        <type code="archivist" default="1">
+        <type code="archivist" default="0">
           <labels>
             <label locale="en_US">
               <typename>co-manages</typename>
@@ -16077,7 +16067,7 @@
           <subTypeLeft>ind</subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
-        <type code="assistantArchivist" default="1">
+        <type code="assistantArchivist" default="0">
           <labels>
             <label locale="en_US">
               <typename>co-manages</typename>
@@ -16087,7 +16077,7 @@
           <subTypeLeft>ind</subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
-        <type code="collectionSteward" default="1">
+        <type code="collectionSteward" default="0">
           <labels>
             <label locale="en_US">
               <typename>co-manages</typename>
@@ -16097,7 +16087,7 @@
           <subTypeLeft>ind</subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
-        <type code="collectionOwner" default="1">
+        <type code="collectionOwner" default="0">
           <labels>
             <label locale="en_US">
               <typename>owns</typename>
@@ -16111,7 +16101,7 @@
     </relationshipTable>
     <relationshipTable name="ca_entities_x_occurrences">
       <types>
-        <type code="executor" default="1">
+        <type code="executor" default="0">
           <labels>
             <label locale="en_US">
               <typename>executed</typename>
@@ -16121,7 +16111,7 @@
           <subTypeLeft>ind</subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
-        <type code="identifier" default="1">
+        <type code="identifier" default="0">
           <labels>
             <label locale="en_US">
               <typename>identified</typename>
@@ -16135,7 +16125,7 @@
     </relationshipTable>
 	  <relationshipTable name="ca_entities_x_places">
       <types>
-        <type code="locationOrg" default="1">
+        <type code="locationOrg" default="0">
           <labels>
             <label locale="en_US">
               <typename>is located at</typename>
@@ -16149,7 +16139,7 @@
     </relationshipTable>
 	  <relationshipTable name="ca_entities_x_storage_locations">
       <types>
-        <type code="ownerForestTreePopulationSite" default="1">
+        <type code="ownerForestTreePopulationSite" default="0">
           <labels>
             <label locale="en_US">
               <typename>owns</typename>
@@ -16159,7 +16149,7 @@
           <subTypeLeft></subTypeLeft>
           <subTypeRight>forestTreePopulationSite</subTypeRight>
         </type>
-        <type code="maintainsStorageLocation" default="1">
+        <type code="maintainsStorageLocation" default="0">
           <labels>
             <label locale="en_US">
               <typename>maintains</typename>
@@ -16207,7 +16197,7 @@
     </relationshipTable>
     <relationshipTable name="ca_places_x_occurrences">
       <types>
-        <type code="locationOccurrence" default="1">
+        <type code="locationOccurrence" default="0">
           <labels>
             <label locale="en_US">
               <typename>was place of</typename>
@@ -16217,7 +16207,7 @@
           <subTypeLeft></subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
-        <type code="focusProject" default="1">
+        <type code="focusProject" default="0">
           <labels>
             <label locale="en_US">
               <typename>was focal location of</typename>
@@ -16227,7 +16217,7 @@
           <subTypeLeft></subTypeLeft>
           <subTypeRight>project</subTypeRight>
         </type>
-        <type code="focusFieldwork" default="1">
+        <type code="focusFieldwork" default="0">
           <labels>
             <label locale="en_US">
               <typename>was focal location of</typename>
@@ -16241,7 +16231,7 @@
     </relationshipTable>
     <relationshipTable name="ca_places_x_collections">
       <types>
-        <type code="collectionPlace" default="1">
+        <type code="collectionPlace" default="01">
           <labels>
             <label locale="en_US">
               <typename>is geographic scope of collection</typename>
@@ -16255,7 +16245,7 @@
     </relationshipTable>
 	  <relationshipTable name="ca_places_x_places">
       <types>
-        <type code="nested" default="1">
+        <type code="nested" default="0">
           <labels>
             <label locale="en_US">
               <typename>is nested in</typename>
@@ -16269,7 +16259,7 @@
     </relationshipTable>
 	  <relationshipTable name="ca_places_x_storage_locations">
       <types>
-        <type code="inLivingCollectionAt" default="1">
+        <type code="inLivingCollectionAt" default="0">
           <labels>
             <label locale="en_US">
               <typename>is place of</typename>
@@ -16283,7 +16273,7 @@
     </relationshipTable>
 	  <relationshipTable name="ca_loans_x_entities">
       <types>
-        <type code="requester" default="1">
+        <type code="requester" default="0">
           <labels>
             <label locale="en_US">
               <typename>requester</typename>
@@ -16293,7 +16283,7 @@
           <subTypeLeft>ind</subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
-        <type code="backupRequester" default="1">
+        <type code="backupRequester" default="0">
           <labels>
             <label locale="en_US">
               <typename>back-up of requester of</typename>
@@ -16303,7 +16293,7 @@
           <subTypeLeft>ind</subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
-        <type code="requestingInstitute" default="1">
+        <type code="requestingInstitute" default="0">
           <labels>
             <label locale="en_US">
               <typename>requesting institute</typename>
@@ -16317,25 +16307,15 @@
     </relationshipTable>
 	  <relationshipTable name="ca_loans_x_occurrences">
       <types>
-        <type code="internalprojectReuse" default="1">
+        <type code="projectReuse" default="0">
           <labels>
             <label locale="en_US">
-              <typename>internal project that reuses</typename>
-              <typename_reverse>reused in internal project</typename_reverse>
+              <typename>reuses</typename>
+              <typename_reverse>reused in</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>internal_reuse</subTypeLeft>
-          <subTypeRight>internalProject</subTypeRight>
-        </type>
-        <type code="externalprojectReuse" default="1">
-          <labels>
-            <label locale="en_US">
-              <typename>external project that reuses</typename>
-              <typename_reverse>reused in external project</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>external_reuse</subTypeLeft>
-          <subTypeRight>externalProject</subTypeRight>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
