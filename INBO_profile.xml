@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.96u</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.96v</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in v0.85-->
   <!--https://github.com/inbo/collective-access/issues/347-->
@@ -744,6 +744,30 @@
                     <name_plural>Projects</name_plural>
                   </label>
                 </labels>
+                <items>
+                  <item idno="internalProject" enabled="1" default="0">
+                    <labels>
+                      <label locale="en_US" preferred="1">
+                        <name_singular>Internal project</name_singular>
+                        <name_plural>Internal projects</name_plural>
+                      </label>
+                    </labels>
+                    <settings>
+                      <setting name="render_in_new_menu">1</setting>
+                    </settings>
+                  </item>
+                  <item idno="externalProject" enabled="1" default="0">
+                    <labels>
+                      <label locale="en_US" preferred="1">
+                        <name_singular>External project</name_singular>
+                        <name_plural>External project</name_plural>
+                      </label>
+                    </labels>
+                    <settings>
+                      <setting name="render_in_new_menu">1</setting>
+                    </settings>
+                  </item>
+                </items>
               </item>
               <item idno="curation" rank="4" enabled="1" default="1">
                 <labels>
@@ -12179,7 +12203,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Original INBO project that generated the record</setting>
                 <setting name="description" locale="en_US">This can be a project as defined in JIRA, a project as defined in LIMS, ..</setting>
-				        <setting name="restrict_to_types">project</setting>
+				        <setting name="restrict_to_types">internalProject</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">5</setting>
                 <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
@@ -13737,7 +13761,7 @@
                 <setting name="description" locale="en_US">The field campaign name used in notes, datasets, publications, ... if there are multiple names or identifiers for the field campaign, all other identifiers are put in the "non-preferred labels" below.</setting>
               </settings>
             </placement>
-			      <placement code="preferred_labels_project" typeRestrictions="project">
+			      <placement code="preferred_labels_project" typeRestrictions="project" includeSubtypes="1">
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Project (short) name</setting>
@@ -13766,7 +13790,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="publishedRecord_project" typeRestrictions="project">
+            <placement code="publishedRecord_project" typeRestrictions="project" includeSubtypes="1">
               <bundle>ca_attribute_publishedRecord</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Project-URL</setting>
@@ -13775,7 +13799,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="eventDescription" typeRestrictions="fieldwork,internalProject,externalProject,">
+            <placement code="eventDescription" typeRestrictions="fieldwork,internalProject,externalProject," includeSubtypes="1">
               <bundle>ca_attribute_descriptionContainer</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -13805,7 +13829,7 @@
                 <setting name="restrict_to_relationship_types">focusFieldwork</setting>
               </settings>
 			      </placement>
-			      <placement code="status" typeRestrictions="fieldwork,internalProject,externalProject,valuation,disposal,treatment,renewal,transfer">
+			      <placement code="status" typeRestrictions="fieldwork,internalProject,externalProject,valuation,disposal,treatment,renewal,transfer" includeSubtypes="1">
               <bundle>status</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Cataloguing status</setting>
@@ -13957,7 +13981,8 @@
             </label>
           </labels>
           <typeRestrictions>
-            <restriction code="r_project" type="project"/>
+            <restriction code="r_internalProject" type="internalProject"/>
+            <restriction code="r_externalProject" type="externalProject"/>
             <restriction code="r_fieldwork" type="fieldwork"/>		
           </typeRestrictions>
           <bundlePlacements>
@@ -13996,7 +14021,7 @@
                 <setting name="restrict_to_relationship_types">resObjFieldwork</setting>
 			        </settings>
             </placement>
-            <placement code="resultingObjectsP" typeRestrictions="project">
+            <placement code="resultingObjectsP" typeRestrictions="project" includeSubtypes="1">
               <bundle>ca_objects</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Resulting objects</setting>
@@ -14019,7 +14044,8 @@
                 <setting name="restrict_to_types">livingPlant</setting>
                 <setting name="restrict_to_types">dnaSample</setting>
                 <setting name="restrict_to_types">soilObject</setting>
-                <setting name="restrict_to_relationship_types">resObjProject</setting>
+                <setting name="restrict_to_relationship_types">resObjProjectI</setting>
+                <setting name="restrict_to_relationship_types">resObjProjectE</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -14090,7 +14116,8 @@
           </labels>
           <typeRestrictions>
             <restriction code="r_fieldwork" type="fieldwork"/>
-            <restriction code="r_project" type="project"/>
+            <restriction code="r_internalProject" type="internalProject"/>
+            <restriction code="r_externalProject" type="externalProject"/>
           </typeRestrictions>
           <bundlePlacements>
 			      <placement code="eventAdminFile">
@@ -14832,7 +14859,7 @@
 			        <settings>
                 <setting name="label" locale="en_US">Original INBO project that generated the object lot</setting>
                 <setting name="description" locale="en_US">This can be a project as defined in JIRA, a project as defined in LIMS, ..</setting>
-				        <setting name="restrict_to_types">project</setting>
+				        <setting name="restrict_to_types">internalProject</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">5</setting>
                 <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
@@ -14989,6 +15016,7 @@
                 <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 				        <setting name="add_label" locale="en_US">Add project</setting>
+                <setting name="restrict_to_types" locale="en_US">internalProject</setting>
               </settings>
 			      </placement>
 			      <placement code="externalProject" typeRestrictions="externalReuse">
@@ -15000,6 +15028,7 @@
                 <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 				        <setting name="add_label" locale="en_US">Add project</setting>
+                <setting name="restrict_to_types" locale="en_US">externalProject</setting>
               </settings>
 			      </placement>
 			      <placement code="loanStatus">
@@ -15906,7 +15935,7 @@
     </relationshipTable>
     <relationshipTable name="ca_objects_x_occurrences">
       <types>
-		    <type code="resObjProject" default="0">
+		    <type code="resObjProjectI" default="0">
           <labels>
             <label locale="en_US">
               <typename>resulted in</typename>
@@ -15914,7 +15943,17 @@
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
-          <subTypeRight>project</subTypeRight>
+          <subTypeRight>internalProject</subTypeRight>
+        </type>
+		    <type code="resObjProjectE" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>resulted in</typename>
+              <typename_reverse>result of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>externalProject</subTypeRight>
         </type>
 		    <type code="resObjFieldwork" default="0">
           <labels>
@@ -15975,16 +16014,6 @@
           </labels>
           <subTypeLeft></subTypeLeft>
           <subTypeRight>treatment</subTypeRight>
-        </type>
-		    <type code="reuseObjectsProject" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>(re)used in project</typename>
-              <typename_reverse>has reused</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>project</subTypeRight>
         </type>
 		    <type code="identificationEvent" default="0">
           <labels>
@@ -16126,35 +16155,15 @@
     </relationshipTable>
     <relationshipTable name="ca_occurrences_x_occurrences">
       <types>
-		    <type code="subproject" default="0">
+		    <type code="related" default="0">
           <labels>
             <label locale="en_US">
-              <typename>was a subproject of</typename>
-              <typename_reverse>was the overarching project of</typename_reverse>
+              <typename>is related to</typename>
+              <typename_reverse>is related to</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>project</subTypeLeft>
-          <subTypeRight>project</subTypeRight>
-        </type>
-		    <type code="resultingFieldworkProject" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>was result of</typename>
-              <typename_reverse>resulted in</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>fieldwork</subTypeLeft>
-          <subTypeRight>project</subTypeRight>
-        </type>
-		    <type code="subfieldwork" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>subfieldwork</typename>
-              <typename_reverse>overarching fieldwork</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>fieldwork</subTypeLeft>
-          <subTypeRight>fieldwork</subTypeRight>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
@@ -16169,16 +16178,6 @@
          </labels>
           <subTypeLeft></subTypeLeft>
           <subTypeRight></subTypeRight>
-        </type>
-        <type code="focusProject" default="1">
-          <labels>
-            <label locale="en_US">
-              <typename>was focal location of</typename>
-              <typename_reverse>focused on location</typename_reverse>
-            </label>
-         </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>project</subTypeRight>
         </type>
         <type code="focusFieldwork" default="1">
           <labels>
@@ -16243,8 +16242,8 @@
               <typename_reverse>reused in internal project</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>internal_reuse</subTypeLeft>
-          <subTypeRight>project</subTypeRight>
+          <subTypeLeft>internalReuse</subTypeLeft>
+          <subTypeRight>internalProject</subTypeRight>
         </type>
         <type code="externalprojectReuse" default="1">
           <labels>
@@ -16253,8 +16252,8 @@
               <typename_reverse>reused in external project</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>external_reuse</subTypeLeft>
-          <subTypeRight>project</subTypeRight>
+          <subTypeLeft>externalReuse</subTypeLeft>
+          <subTypeRight>externalProject</subTypeRight>
         </type>
       </types>
     </relationshipTable>
