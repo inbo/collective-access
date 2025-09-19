@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.96s</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.96t</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in v0.85-->
   <!--https://github.com/inbo/collective-access/issues/347-->
@@ -11783,7 +11783,7 @@
     <userInterface code="object_ui" type="ca_objects">
       <labels>
         <label locale="en_US">
-          <name>Object editor 1</name>
+          <name>Object editor</name>
         </label>
       </labels>
       <typeRestrictions>
@@ -12131,7 +12131,6 @@
                 <setting name="description" locale="en_US">Direct relationships means that the two objects related in this hierarchy represent the same organism. It is to track subsamples (e.g. cadaver -> tissue -> dna) or replicates (e.g. tissue -> dna replicate 1 and tissue -> dna replicate 2).</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 				        <setting name="restrict_to_types">object</setting>
-                <!--hierarchy_location: here you cannot restrict_to_relationship_types => fatal error in installation-->
               </settings>
             </placement>
             <placement code="ca_objects">
@@ -12186,7 +12185,7 @@
                 <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 				        <setting name="add_label" locale="en_US">Add project</setting>
-                <!--<setting name="restrict_to_relationship_types">resultingObjectsProject</setting>-->
+                <setting name="restrict_to_relationship_types">resObjProject</setting>
               </settings>
 			      </placement>
             <placement code="ca_occurrence_fieldwork">
@@ -12199,7 +12198,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="display_template">^ca_occurrences.preferred_labels.name (^ca_occurrences.idno)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-                <!--<setting name="restrict_to_relationship_types">resultingObjectsFieldwork</setting>-->
+                <setting name="restrict_to_relationship_types">resObjFieldwork</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -12409,7 +12408,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="ca_places_lookup"><!--This one is to be deleted for the users if a standardized lists of place names (land and water) are added. New names can be added on request. However also possible to let users regulate this themselves.-->
+            <placement code="ca_places_lookup">
               <bundle>ca_places</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Toponym (Lookup view)</setting>
@@ -12609,6 +12608,7 @@
 				        <setting name="maxRelationshipsPerRow">20</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="restrict_to_types">identification</setting>
+                <setting name="restrict_to_relationship_types">identificationEvent</setting>
                 <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences">^ca_occurrences.verbatimTaxon, ^ca_occurrences.standTaxon<br/> (^ca_occurrences.taxonDate)</unit>]]></setting>
               </settings>
 			      </placement>
@@ -12678,7 +12678,7 @@
                 <setting name="restrict_to_types">genotype</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 				        <setting name="add_label" locale="en_US">Add genotype</setting>
-                <!--<setting name="restrict_to_relationship_types">genotype</setting>-->
+                <setting name="restrict_to_relationship_types">genotype</setting>
               </settings>
 			      </placement>
             <placement code="inbodemdb" typeRestrictions="soilObject" includeSubtypes="1">
@@ -12760,7 +12760,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="object_age" typeRestrictions="seedlot">
+            <placement code="objectAge" typeRestrictions="seedlot">
               <bundle>ca_attribute_ageContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Age</setting>
@@ -12768,7 +12768,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="seedlot_germination" typeRestrictions="seedlot">
+            <placement code="seedlotGermination" typeRestrictions="seedlot">
               <bundle>ca_attribute_germinationContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Germination measurement</setting>
@@ -12777,7 +12777,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="seedlot_purity" typeRestrictions="seedlot">
+            <placement code="seedlotPurity" typeRestrictions="seedlot">
               <bundle>ca_attribute_purityContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Purity measurement</setting>
@@ -12786,7 +12786,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="object_count" typeRestrictions="seedlot,stemdisc,mammal,forestTreePopulation,fish" includeSubtypes="1">
+            <placement code="objectCount" typeRestrictions="seedlot,stemdisc,mammal,forestTreePopulation,fish" includeSubtypes="1">
               <bundle>ca_attribute_countContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Count related to object</setting>
@@ -13042,6 +13042,7 @@
                 <setting name="restrict_to_types">valuation</setting>
                 <setting name="list_format">list</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_relationship_types">execObjValuation</setting>
                 <setting name="display_template">^ca_occurrences.valuationArgument%delimiter=_;_ (^ca_occurrences.eventDate)</setting>
 			        </settings>
             </placement>
@@ -13120,7 +13121,7 @@
     <userInterface code="object_noType_ui" type="ca_objects">
       <labels>
         <label locale="en_US">
-          <name>Object editor 2</name>
+          <name>Object editor blank</name>
         </label>
       </labels>
       <typeRestrictions>
@@ -13141,7 +13142,7 @@
     <userInterface code="object_genotype_ui" type="ca_objects">
       <labels>
         <label locale="en_US">
-          <name>Object edito 3</name>
+          <name>Genotype editor</name>
         </label>
       </labels>
       <typeRestrictions>
@@ -13179,7 +13180,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="objectDescription">
+            <placement code="genotypeDescription">
               <bundle>ca_attribute_description</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Decription of the genotype</setting>
@@ -13218,6 +13219,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="expand_collapse_value">collapse</setting>
 				        <setting name="restrict_to_types">object</setting>
+                <setting name="restrict_to_relationship_types">genotype</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -13227,7 +13229,7 @@
     <userInterface code="object_geneticEntity_ui" type="ca_objects">
       <labels>
         <label locale="en_US">
-          <name>Object edito 3</name>
+          <name>Genetic entity editor</name>
         </label>
       </labels>
       <typeRestrictions>
@@ -13434,8 +13436,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="ca_places_lookup"><!--This one is to be deleted for the users if a standardized lists of place names (land and water) are added. New names can be added on request. However also possible to let users regulate this themselves.-->
-              <bundle>ca_places</bundle>
+            <placement code="ca_places_lookup">
 			        <settings>
                 <setting name="label" locale="en_US">Toponym (Lookup view)</setting>
                 <setting name="description" locale="en_US">The place or toponym, chosen from the standardized list. TIP: Always interpret the place name in the historical context! For example municipalities can fuse or split. Each place attribution has a reference and time stamp.</setting>
@@ -13562,6 +13563,7 @@
 				        <setting name="maxRelationshipsPerRow">20</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="restrict_to_types">identification</setting>
+                <setting name="restrict_to_relationship_types">identificationEvent</setting>
                 <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences">^ca_occurrences.verbatimTaxon, ^ca_occurrences.standTaxon<br/> (^ca_occurrences.taxonDate)</unit>]]></setting>
               </settings>
 			      </placement>
@@ -13588,6 +13590,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="expand_collapse_value">collapse</setting>
 				        <setting name="restrict_to_types">object</setting>
+                <setting name="restrict_to_relationship_types">geneticEntity</setting>
               </settings>
             </placement>
             <placement code="externalSpecimen">
@@ -13642,7 +13645,7 @@
 				        <setting name="add_label" locale="en_US">Add genotype</setting>
               </settings>
 			      </placement>
-			      <placement code="lifeStagePlant" typeRestrictions="plantObject,dnaSample" includeSubtypes="1">
+			      <placement code="lifeStagePlant">
               <bundle>ca_attribute_lifeStagePlant</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
@@ -13650,7 +13653,7 @@
                 <setting name="description" locale="en_US">Due to sampling, the life stage of the plant at time object(s) were collected becomes a fixed value.</setting>
               </settings>
             </placement>
-			      <placement code="reprCondPlant" typeRestrictions="plantObject" includeSubtypes="1">
+			      <placement code="reprCondPlant">
               <bundle>ca_attribute_reprCondPlant</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Reproductive condition (dwc:reproductiveCondition)</setting>
@@ -13786,7 +13789,7 @@
                 <setting name="description" locale="en_US">The original description of a locality, a place, the geographic coverage, ...</setting>
               </settings>
             </placement>
-            <placement code="ca_places_fieldworkProject" typeRestrictions="fieldwork">
+            <placement code="ca_places_fieldwork" typeRestrictions="fieldwork">
               <bundle>ca_places</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Field campaign focal place(s)</setting>
@@ -13794,6 +13797,7 @@
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">20</setting>
 				        <setting name="add_label" locale="en_US">Add place</setting>
+                <setting name="restrict_to_relationship_types">focusFieldwork</setting>
               </settings>
 			      </placement>
 			      <placement code="status" typeRestrictions="fieldwork,internalProject,externalProject,valuation,disposal,treatment,renewal,transfer">
@@ -13958,6 +13962,7 @@
                 <setting name="label" locale="en_US">Resulting object lots</setting>
 				        <setting name="add_label" locale="en_US">Add object lot</setting>
                 <setting name="list_format">list</setting>
+                <setting name="restrict_to_relationship_types">resObjLot</setting>
 			        </settings>
             </placement>
             <placement code="resultingObjects">
@@ -13983,6 +13988,7 @@
                 <setting name="restrict_to_types">livingPlant</setting>
                 <setting name="restrict_to_types">dnaSample</setting>
                 <setting name="restrict_to_types">soilObject</setting>
+                <setting name="restrict_to_relationship_types">resObj</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -15533,7 +15539,7 @@
           <subTypeLeft></subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
-        <type code="subsample" default="0">
+        <type code="subsample" default="1">
           <labels>
             <label locale="en_US">
               <typename>subsample</typename>
@@ -15869,7 +15875,7 @@
     </relationshipTable>
     <relationshipTable name="ca_objects_x_occurrences">
       <types>
-		    <type code="resObjFieldwork" default="0">
+		    <type code="resObj" default="0">
           <labels>
             <label locale="en_US">
               <typename>resulted in</typename>
@@ -15877,17 +15883,7 @@
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
-          <subTypeRight>fieldwork</subTypeRight>
-        </type>
-		    <type code="resObjProject" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>resulted in</typename>
-              <typename_reverse>result of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>project</subTypeRight>
+          <subTypeRight></subTypeRight>
         </type>
         <type code="execObjValuation" default="0">
           <labels>
@@ -16005,25 +16001,15 @@
     </relationshipTable>
 	 <relationshipTable name="ca_object_lots_x_occurrences">
       <types>
-		    <type code="fieldworkFocus" default="0">
+		    <type code="resObjLot" default="0">
           <labels>
             <label locale="en_US">
-              <typename>was focus of</typename>
-              <typename_reverse>was focussed on</typename_reverse>
+              <typename>result of</typename>
+              <typename_reverse>resulted in</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
-          <subTypeRight>fieldwork</subTypeRight>
-        </type>
-		    <type code="projectFocus" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>was focus of</typename>
-              <typename_reverse>was focussed on</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>project</subTypeRight>
+          <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
