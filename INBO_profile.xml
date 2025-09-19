@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.96t</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.96u</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in v0.85-->
   <!--https://github.com/inbo/collective-access/issues/347-->
@@ -13591,7 +13591,11 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="expand_collapse_value">collapse</setting>
 				        <setting name="restrict_to_types">object</setting>
-                <setting name="restrict_to_relationship_types">geneticEntity</setting>
+                <setting name="restrict_to_relationship_types">cloneOf</setting>
+                <setting name="restrict_to_relationship_types">childOfCloneOf</setting>
+                <setting name="restrict_to_relationship_types">grandchildOf</setting>
+                <setting name="restrict_to_relationship_types">grandchildOfCloneOf</setting>
+                <setting name="restrict_to_relationship_types">childOf</setting>
               </settings>
             </placement>
             <placement code="externalSpecimen">
@@ -13966,7 +13970,7 @@
                 <setting name="restrict_to_relationship_types">resObjLot</setting>
 			        </settings>
             </placement>
-            <placement code="resultingObjects">
+            <placement code="resultingObjectsF" typeRestrictions="fieldwork">
               <bundle>ca_objects</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Resulting objects</setting>
@@ -13989,7 +13993,33 @@
                 <setting name="restrict_to_types">livingPlant</setting>
                 <setting name="restrict_to_types">dnaSample</setting>
                 <setting name="restrict_to_types">soilObject</setting>
-                <setting name="restrict_to_relationship_types">resObj</setting>
+                <setting name="restrict_to_relationship_types">resObjFieldwork</setting>
+			        </settings>
+            </placement>
+            <placement code="resultingObjectsP" typeRestrictions="project">
+              <bundle>ca_objects</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Resulting objects</setting>
+				        <setting name="add_label" locale="en_US">Add object</setting>
+                <setting name="list_format">list</setting>
+                <setting name="restrict_to_types">mammalEntireCadaver</setting>
+                <setting name="restrict_to_types">fishEntireEthanol</setting>
+                <setting name="restrict_to_types">fishSample</setting>
+                <setting name="restrict_to_types">mammalBones</setting>
+                <setting name="restrict_to_types">mammalSample</setting>
+                <setting name="restrict_to_types">mammalHead</setting>
+                <setting name="restrict_to_types">mammalSkinComplete</setting>
+                <setting name="restrict_to_types">mammalStomachContent</setting>
+                <setting name="restrict_to_types">mammalEntireZoological</setting>
+                <setting name="restrict_to_types">leafSampleAnalytic</setting>
+                <setting name="restrict_to_types">moss</setting>
+                <setting name="restrict_to_types">seedlot</setting>
+                <setting name="restrict_to_types">stemdisc</setting>
+                <setting name="restrict_to_types">forestTreePopulation</setting>
+                <setting name="restrict_to_types">livingPlant</setting>
+                <setting name="restrict_to_types">dnaSample</setting>
+                <setting name="restrict_to_types">soilObject</setting>
+                <setting name="restrict_to_relationship_types">resObjProject</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -15876,7 +15906,7 @@
     </relationshipTable>
     <relationshipTable name="ca_objects_x_occurrences">
       <types>
-		    <type code="resObj" default="0">
+		    <type code="resObjProject" default="0">
           <labels>
             <label locale="en_US">
               <typename>resulted in</typename>
@@ -15884,7 +15914,17 @@
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
-          <subTypeRight></subTypeRight>
+          <subTypeRight>project</subTypeRight>
+        </type>
+		    <type code="resObjFieldwork" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>resulted in</typename>
+              <typename_reverse>result of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>fieldwork</subTypeRight>
         </type>
         <type code="execObjValuation" default="0">
           <labels>
