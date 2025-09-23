@@ -6,6 +6,7 @@
   <!--https://github.com/inbo/collective-access/issues/347-->
   <!--https://github.com/inbo/collective-access/issues/349-->
   <!--https://github.com/inbo/collective-access/issues/350-->
+  <!--https://github.com/inbo/collective-access/issues/351-->
   <!--More difficult issues / issues for later-->
   <!--https://github.com/inbo/collective-access/issues/77--><!--bug-->
   <!--https://github.com/inbo/collective-access/issues/89--><!--import check later-->
@@ -11998,11 +11999,12 @@
             <placement code="ca_collection" typeRestrictions="soilObject,animalObject,plantObject,dnaSample" includeSubtypes="1">
               <bundle>ca_collections</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Object belongs to collection(s) *</setting>
+                <setting name="label" locale="en_US">Specimen belongs to collection(s) *</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">20</setting>
 				        <setting name="add_label" locale="en_US">Add collection</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_relationship_types">partOf</setting>
               </settings>
             </placement>
 			      <placement code="verbatimTaxon" typeRestrictions="animalObject,plantObject,dnaSample" includeSubtypes="1"><!--This should prepopulate with the parent value, if empty-->
@@ -12054,7 +12056,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="ca_storage_location_plantlot" typeRestrictions="livingPlant,forestTreePopulation">
+            <placement code="ca_storage_location_plantlot" typeRestrictions="forestTreePopulation,livingPlant" includeSubtypes="1">
               <bundle>ca_storage_locations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at *</setting>
@@ -12065,61 +12067,61 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="verbatimLongitudeX" typeRestrictions="livingPlant,forestTreePopulation">
+            <placement code="verbatimLongitudeX" typeRestrictions="forestTreePopulation,livingPlant" includeSubtypes="1">
               <bundle>ca_attribute_verbatimLongitudeX</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim longitude (X) of the storage location</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="verbatimLatitudeY" typeRestrictions="livingPlant,forestTreePopulation">
+            <placement code="verbatimLatitudeY" typeRestrictions="forestTreePopulation,livingPlant" includeSubtypes="1">
               <bundle>ca_attribute_verbatimLatitudeY</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim latitude (Y) of the storage location</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="verbatimGeodeticDatum" typeRestrictions="livingPlant,forestTreePopulation">
+            <placement code="verbatimGeodeticDatum" typeRestrictions="forestTreePopulation,livingPlant" includeSubtypes="1">
               <bundle>ca_attribute_verbatimGeodeticDatum</bundle>
               <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-			      <placement code="verbatimCoordinatesRemarks" typeRestrictions="livingPlant,forestTreePopulation">  
+			      <placement code="verbatimCoordinatesRemarks" typeRestrictions="forestTreePopulation,livingPlant" includeSubtypes="1">  
               <bundle>ca_attribute_verbatimCoordinatesRemarks</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Remarks on the verbatim locality data of the storage location</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="decimalLatitudeY" typeRestrictions="livingPlant,forestTreePopulation">
+            <placement code="decimalLatitudeY" typeRestrictions="forestTreePopulation,livingPlant" includeSubtypes="1">
               <bundle>ca_attribute_decimalLatitudeY</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Decimal latitude of the storage location (Y)*</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="decimalLongitudeX" typeRestrictions="livingPlant,forestTreePopulation">
+            <placement code="decimalLongitudeX" typeRestrictions="forestTreePopulation,livingPlant" includeSubtypes="1">
               <bundle>ca_attribute_decimalLongitudeX</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Decimal longitude of the storage location (X)*</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="geodeticDatum" typeRestrictions="livingPlant,forestTreePopulation">
+            <placement code="geodeticDatum" typeRestrictions="forestTreePopulation,livingPlant" includeSubtypes="1">
               <bundle>ca_attribute_geodeticDatum</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="coordinateUncertaintyInMetersC" typeRestrictions="livingPlant,forestTreePopulation">
+            <placement code="coordinateUncertaintyInMetersC" typeRestrictions="forestTreePopulation,livingPlant" includeSubtypes="1">
               <bundle>ca_attribute_coordinateUncertaintyInMetersC</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Coordinate uncertainty in meters *</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-			      <placement code="map" typeRestrictions="livingPlant,forestTreePopulation">
+			      <placement code="map" typeRestrictions="forestTreePopulation,livingPlant" includeSubtypes="1">
               <bundle>ca_attribute_georeference</bundle>
               <settings>
                 <setting name="label" locale="en_US">Map representation (WGS84)</setting>
@@ -12127,7 +12129,7 @@
                 <setting name="description" locale="en_US">Please enter [decimalLatitidueX,decimalLongitudeY] in WGS84 format. This will allow to execute map searches within the INBO-CMS.</setting>
               </settings>
 			      </placement>
-			      <placement code="georefVerif" typeRestrictions="livingPlant,forestTreePopulation">
+			      <placement code="georefVerif" typeRestrictions="forestTreePopulation,livingPlant" includeSubtypes="1">
               <bundle>ca_attribute_georefVerif</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Verification status of georeference</setting>
@@ -12135,7 +12137,7 @@
                 <setting name="description" locale="en_US">The map above is checked: do the decimal coordinates deliver the correct locality as described? If location is descriptive, use: https://geopick.gbif.org/ to link coordinates and a coordinate uncertainty to the locality.</setting>
               </settings>
 			      </placement>
-            <placement code="georeferenceRemarks" typeRestrictions="livingPlant,forestTreePopulation">
+            <placement code="georeferenceRemarks" typeRestrictions="forestTreePopulation,livingPlant" includeSubtypes="1">
               <bundle>ca_attribute_georeferenceRemarks</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
