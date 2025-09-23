@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.101</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.102</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
-  <!--Issues to check if succesful in v0.101-->
+  <!--Issues to check if succesful in v0.102-->
   <!--https://github.com/inbo/collective-access/issues/351-->
   <!--More difficult issues / issues for later-->
   <!--https://github.com/inbo/collective-access/issues/77--><!--bug-->
@@ -11883,6 +11883,30 @@
             <placement code="description">
               <bundle>ca_attribute_description</bundle>
 			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="samplingDateSoil" typeRestrictions="soilObject">
+              <bundle>ca_attribute_samplingDate</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Sampling date soil *</setting>
+                <setting name="description" locale="en_US">This is the date/time that becomes fixed due to sampling the sampling point to its first object. The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="samplingDateFish" typeRestrictions="fish" includeSubtypes="1">
+              <bundle>ca_attribute_samplingDate</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Sampling date fish *</setting>
+                <setting name="description" locale="en_US">This is the date/time that becomes fixed due to sampling the sampling point to its first object. The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="samplingDateDNA" typeRestriction="dnaSample">
+              <bundle>ca_attribute_samplingDate</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Sampling date DNA *</setting>
+                <setting name="description" locale="en_US">This is the date/time that becomes fixed due to sampling the sampling point to its first object. The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
