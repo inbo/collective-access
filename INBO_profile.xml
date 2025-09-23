@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.102</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.103</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
-  <!--Issues to check if succesful in v0.102-->
+  <!--Issues to check if succesful in v0.103-->
   <!--https://github.com/inbo/collective-access/issues/351-->
   <!--More difficult issues / issues for later-->
   <!--https://github.com/inbo/collective-access/issues/77--><!--bug-->
@@ -5396,8 +5396,65 @@
           <setting name="canBeUsedInDisplay">1</setting>
         </settings>
         <typeRestrictions>
-          <restriction code="r_objects">
+          <restriction code="r_objects_animal">
             <table>ca_objects</table>
+            <type>animalObject</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_objects_dna">
+            <table>ca_objects</table>
+            <type>dnaSample</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_objects_dna">
+            <table>ca_objects</table>
+            <type>soilObject</type>
+            <settings>
+              <setting name="minAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_objects_stemdisc">
+            <table>ca_objects</table>
+            <type>stemdisc</type>
+            <settings>
+              <setting name="minAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_objects_seedlot">
+            <table>ca_objects</table>
+            <type>seedlot</type>
+            <settings>
+              <setting name="minAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_objects_leafSampleAnalytic">
+            <table>ca_objects</table>
+            <type>leafSampleAnalytic</type>
+            <settings>
+              <setting name="minAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_objects_moss">
+            <table>ca_objects</table>
+            <type>moss</type>
             <settings>
               <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -5553,19 +5610,9 @@
           <setting name="doesNotTakeLocale">1</setting>
         </settings>
 	      <typeRestrictions>
-          <restriction code="r_animalObject">
+          <restriction code="r_mammal">
             <table>ca_objects</table>
-            <type>animalObject</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_plantObject">
-            <table>ca_objects</table>
-            <type>plantObject</type>
+            <type>mammal</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -6133,7 +6180,6 @@
           <restriction code="r_dnaSample">
             <table>ca_objects</table>
             <type>dnaSample</type>
-            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -6154,10 +6200,32 @@
           <setting name="doesNotTakeLocale">1</setting>
         </settings>
 	      <typeRestrictions>
-          <restriction code="r_mammal">
+          <restriction code="r_mammalSample">
             <table>ca_objects</table>
-            <type>mammal</type>
-            <includeSubtypes>1</includeSubtypes>
+            <type>mammalSample</type>
+            <settings>
+              <setting name="minAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="mammalBones" datatype="List" list="mammal_bones">
+        <labels>
+          <label locale="en_US">
+            <name>Mammal bones specification</name>
+		        <description>Here it is specified what bone was sampled of the mammal.</description>
+          </label>
+        </labels>
+	      <settings>
+          <setting name="fieldWidth">40</setting>
+          <setting name="doesNotTakeLocale">1</setting>
+        </settings>
+	      <typeRestrictions>
+          <restriction code="r_mammalBones">
+            <table>ca_objects</table>
+            <type>mammalBones</type>
             <settings>
               <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -6178,10 +6246,9 @@
           <setting name="doesNotTakeLocale">1</setting>
         </settings>
 	      <typeRestrictions>
-          <restriction code="r_fish">
+          <restriction code="r_fishSample">
             <table>ca_objects</table>
-            <type>fish</type>
-            <includeSubtypes>1</includeSubtypes>
+            <type>fishSample</type>
             <settings>
               <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -6526,7 +6593,6 @@
           <restriction code="r_dnaSample">
             <table>ca_objects</table>
             <type>dnaSample</type>
-            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">20</setting>
@@ -6646,7 +6712,6 @@
           <restriction code="r_dnaSample">
             <table>ca_objects</table>
             <type>dnaSample</type>
-            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">20</setting>
@@ -6783,7 +6848,6 @@
           <restriction code="r_dnaSample">
             <table>ca_objects</table>
             <type>dnaSample</type>
-            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">20</setting>
@@ -6902,9 +6966,36 @@
           </metadataElement>
 	      </elements>
         <typeRestrictions>
-          <restriction code="r_object">
+          <restriction code="r_object_dna">
             <table>ca_objects</table>
-            <includeSubtypes>1</includeSubtypes>
+            <type>dnaSample</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_fishEntireEthanol">
+            <table>ca_objects</table>
+            <type>fishEntireEthanol</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_fishSample">
+            <table>ca_objects</table>
+            <type>fishSample</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_mammalSample">
+            <table>ca_objects</table>
+            <type>mammalSample</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">20</setting>
@@ -7043,7 +7134,7 @@
         <typeRestrictions>
           <restriction code="r_object">
             <table>ca_objects</table>
-            <includeSubtypes>1</includeSubtypes>
+            <type>dnaSample</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">20</setting>
@@ -7182,7 +7273,7 @@
         <typeRestrictions>
           <restriction code="r_object">
             <table>ca_objects</table>
-            <includeSubtypes>1</includeSubtypes>
+            <type>dnaSample</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">20</setting>
@@ -7301,8 +7392,37 @@
           </metadataElement>
 	      </elements>
         <typeRestrictions>
-          <restriction code="r_objects">
+          <restriction code="r_seedlot">
             <table>ca_objects</table>
+            <type>seedlot</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">50</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_soilObject">
+            <table>ca_objects</table>
+            <type>soilObject</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">50</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_leafSampleAnalytic">
+            <table>ca_objects</table>
+            <type>leafSampleAnalytic</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">50</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_mammal">
+            <table>ca_objects</table>
+            <type>mammal</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">50</setting>
@@ -7428,9 +7548,38 @@
           </metadataElement>
 	      </elements>
         <typeRestrictions>
-          <restriction code="r_objects">
+          <restriction code="r_fish">
             <table>ca_objects</table>
+            <type>fish</type>
             <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">50</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_mammalEntire">
+            <table>ca_objects</table>
+            <type>mammalEntire</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">50</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_seedlot">
+            <table>ca_objects</table>
+            <type>seedlot</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">50</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_stemdisc">
+            <table>ca_objects</table>
+            <type>stemdisc</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">50</setting>
@@ -7909,8 +8058,47 @@
           </metadataElement>
 	      </elements>
         <typeRestrictions>
-          <restriction code="r_objects">
+          <restriction code="r_seedlot">
             <table>ca_objects</table>
+            <type>seedlot</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">10</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_stemdisc">
+            <table>ca_objects</table>
+            <type>stemdisc</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">10</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_forestTreePopulation">
+            <table>ca_objects</table>
+            <type>forestTreePopulation</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">10</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_mammal">
+            <table>ca_objects</table>
+            <type>mammal</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">10</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_fish">
+            <table>ca_objects</table>
+            <type>fish</type>
+            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">10</setting>
@@ -7940,9 +8128,9 @@
           <setting name="hideIfSelected_other">object_ui/obj_measurements/reprCondMammal</setting>
 			  </settings>
 			  <typeRestrictions>
-          <restriction code="r_animalObjects">
+          <restriction code="r_mammal">
             <table>ca_objects</table>
-            <type>animalObject</type>
+            <type>mammal</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -7980,10 +8168,9 @@
           <setting name="hideIfSelected_other">object_ui/obj_measurements/reprCondPlant</setting>
 			  </settings>
 			  <typeRestrictions>
-          <restriction code="r_objects">
+          <restriction code="r_livingPlant">
             <table>ca_objects</table>
-            <type>plantObject</type>
-            <includeSubtypes>1</includeSubtypes>
+            <type>livingPlant</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -8018,7 +8205,7 @@
           <setting name="hideIfSelected_notRecorded">object_ui/obj_measurements/reprCondMammal</setting>
 			  </settings>
 			  <typeRestrictions>
-          <restriction code="r_objects">
+          <restriction code="r_animalObject">
             <table>ca_objects</table>
             <type>animalObject</type>
             <includeSubtypes>1</includeSubtypes>
@@ -8054,16 +8241,6 @@
           <setting name="maxChars">65535</setting>
 			  </settings>
 			  <typeRestrictions>
-          <restriction code="r_objects">
-            <table>ca_objects</table>
-            <type>animalObject</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
           <restriction code="r_dnaSample">
             <table>ca_objects</table>
             <type>dnaSample</type>
@@ -8090,9 +8267,9 @@
           <setting name="maxChars">65535</setting>
 			  </settings>
 			  <typeRestrictions>
-          <restriction code="r_objects">
+          <restriction code="r_fish">
             <table>ca_objects</table>
-            <type>animalObject</type>
+            <type>fish</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -8126,16 +8303,6 @@
           <setting name="maxChars">65535</setting>
 			  </settings>
 			  <typeRestrictions>
-          <restriction code="r_objects">
-            <table>ca_objects</table>
-            <type>animalObject</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
           <restriction code="r_dnaSample">
             <table>ca_objects</table>
             <type>dnaSample</type>
@@ -8162,16 +8329,6 @@
           <setting name="maxChars">65535</setting>
 			  </settings>
 			  <typeRestrictions>
-          <restriction code="r_objects">
-            <table>ca_objects</table>
-            <type>animalObject</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
           <restriction code="r_dnaSample">
             <table>ca_objects</table>
             <type>dnaSample</type>
@@ -8202,10 +8359,27 @@
           <setting name="hideIfSelected_other">object_ui/obj_measurements/reprCondPlant</setting>
 			  </settings>
 			  <typeRestrictions>
-          <restriction code="r_objects">
+          <restriction code="r_livingPlant">
             <table>ca_objects</table>
-            <type>plantObject</type>
-            <includeSubtypes>1</includeSubtypes>
+            <type>livingPlant</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_stemdisc">
+            <table>ca_objects</table>
+            <type>stemdisc</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_leafSampleAnalytical">
+            <table>ca_objects</table>
+            <type>leafSampleAnalytical</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -8238,10 +8412,27 @@
           <setting name="maxChars">65535</setting>
 			  </settings>
 			  <typeRestrictions>
-          <restriction code="r_objects">
+          <restriction code="r_livingPlant">
             <table>ca_objects</table>
-            <type>plantObject</type>
-            <includeSubtypes>1</includeSubtypes>
+            <type>livingPlant</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_stemdisc">
+            <table>ca_objects</table>
+            <type>stemdisc</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_leafSampleAnalytical">
+            <table>ca_objects</table>
+            <type>leafSampleAnalytical</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -8274,9 +8465,9 @@
           <setting name="maxChars">65535</setting>
 			  </settings>
 			  <typeRestrictions>
-          <restriction code="r_objects">
+          <restriction code="r_mammal">
             <table>ca_objects</table>
-            <type>animalObject</type>
+            <type>mammal</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -9714,10 +9905,9 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_waterObject">
+          <restriction code="r_dnaSample">
             <table>ca_objects</table>
-            <type>waterObject</type>
-            <includeSubtypes>1</includeSubtypes>
+            <type>dnaSample</type>
             <settings>
               <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -9745,17 +9935,16 @@
             <table>ca_objects</table>
             <type>soilObject</type>
             <settings>
-              <setting name="minAttributesPerRow">0</setting>
+              <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_waterObject">
+          <restriction code="r_dnaSample">
             <table>ca_objects</table>
-            <type>waterObject</type>
-            <includeSubtypes>1</includeSubtypes>
+            <type>dnaSample</type>
             <settings>
-              <setting name="minAttributesPerRow">0</setting>
+              <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
@@ -9781,17 +9970,16 @@
             <table>ca_objects</table>
             <type>soilObject</type>
             <settings>
-              <setting name="minAttributesPerRow">0</setting>
+              <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_waterObject">
+          <restriction code="r_dnaSample">
             <table>ca_objects</table>
-            <type>waterObject</type>
-            <includeSubtypes>1</includeSubtypes>
+            <type>dnaSample</type>
             <settings>
-              <setting name="minAttributesPerRow">0</setting>
+              <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
@@ -9814,8 +10002,7 @@
         <typeRestrictions>
           <restriction code="r_plantObject">
             <table>ca_objects</table>
-            <type>plantObject</type>
-            <includeSubtypes>1</includeSubtypes>
+            <type>stemdisc</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -9840,8 +10027,7 @@
         <typeRestrictions>
           <restriction code="r_plantObject">
             <table>ca_objects</table>
-            <type>plantObject</type>
-            <includeSubtypes>1</includeSubtypes>
+            <type>stemdisc</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -9866,8 +10052,7 @@
         <typeRestrictions>
           <restriction code="r_plantObject">
             <table>ca_objects</table>
-            <type>plantObject</type>
-            <includeSubtypes>1</includeSubtypes>
+            <type>stemdisc</type>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -11831,7 +12016,7 @@
                 <restriction code="r_soilObject" type="soilObject"/>
       </typeRestrictions>
       <screens>
-        <screen idno="record" default="1">
+        <screen idno="record1" default="1">
           <labels>
             <label locale="en_US">
               <name>Record</name>
@@ -11844,6 +12029,23 @@
             <permission role="tester" access="edit"/>
             <permission role="moderator" access="edit"/>
           </roleAccess>
+          <typeRestrictions>
+                <restriction code="r_mammalEntireCadaver" type="mammalEntireCadaver"/>
+                <restriction code="r_mammalEntireZoological" type="mammalEntireZoological"/>       
+                <restriction code="r_fishEntireEthanol" type="fishEntireEthanol"/>
+                <restriction code="r_fishSample" type="fishSample"/>
+                <restriction code="r_mammalSample" type="mammalSample"/>
+                <restriction code="r_mammalBones" type="mammalBones"/>
+                <restriction code="r_mammalStomachContent" type="mammalStomachContent"/>
+                <restriction code="r_mammalSkinComplete" type="mammalSkinComplete"/>
+                <restriction code="r_mammalHead" type="mammalHead"/>
+                <restriction code="r_leafSampleAnalytic" type="leafSampleAnalytic"/>
+                <restriction code="r_moss" type="moss"/>
+                <restriction code="r_seedlot" type="seedlot"/>
+                <restriction code="r_stemdisc" type="stemdisc"/>
+                <restriction code="r_dnaSample" type="dnaSample"/>
+                <restriction code="r_soilObject" type="soilObject"/>
+          </typeRestrictions>
           <bundlePlacements>
             <placement code="idno">
               <bundle>idno</bundle>
@@ -11886,32 +12088,11 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="samplingDateSoil" typeRestrictions="soilObject">
+            <placement code="samplingDate" >
               <bundle>ca_attribute_samplingDate</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Sampling date soil *</setting>
-                <setting name="description" locale="en_US">This is the date/time that becomes fixed due to sampling the sampling point to its first object. The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-            <placement code="samplingDateFish" typeRestrictions="fish" includeSubtypes="1">
-              <bundle>ca_attribute_samplingDate</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Sampling date fish *</setting>
-                <setting name="description" locale="en_US">This is the date/time that becomes fixed due to sampling the sampling point to its first object. The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-            <placement code="samplingDateDNA" typeRestriction="dnaSample">
-              <bundle>ca_attribute_samplingDate</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Sampling date DNA *</setting>
-                <setting name="description" locale="en_US">This is the date/time that becomes fixed due to sampling the sampling point to its first object. The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-            <placement code="samplingDate" typeRestrictions="soilObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,fishEntireEthanol,fishSample,mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent">
-              <bundle>ca_attribute_samplingDate</bundle>
+              <typeRestrictions>
+                <restriction code="r_soilObject" type="soilObject"/>       
+              </typeRestrictions>
 			        <settings>
                 <setting name="label" locale="en_US">Sampling date *</setting>
                 <setting name="description" locale="en_US">This is the date/time that becomes fixed due to sampling the sampling point to its first object. The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
@@ -11942,25 +12123,15 @@
                 <setting name="expand_collapse_no_value">expand</setting>
               </settings>
             </placement>
-            <placement code="preparationDate" typeRestrictions="soilObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,fishEntireEthanol,fishSample,mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent">
+            <placement code="preparationDate">
               <bundle>ca_attribute_preparationDate</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Preparation date *</setting>
-                <setting name="description" locale="en_US">This is the date/time that the specimen/object was created. When this is the first object in the hierarchy, this date equals the sampling date. When this a second or third object in the sequence, it will differ (e.g. a DNA sample is created on a later date than the sampling of the tissue sample). The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
+                <setting name="description" locale="en_US">This is the date/time that the specimen/object was created. Example: a DNA sample is created on a later date than the sampling of the tissue sample. Example: a forest tree population was planted in year 2005. The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="ca_storage_location_plantlot" typeRestrictions="livingPlant,forestTreePopulation">
-              <bundle>ca_storage_locations</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Object is stored at *</setting>
-                <setting name="restrict_to_types">forestTreePopulationSite</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="useHierarchicalBrowser">1</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-            <placement code="ca_storage_location" typeRestrictions="soilObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,fishEntireEthanol,fishSample,mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent">
+            <placement code="ca_storage_location">
               <bundle>ca_storage_locations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at *</setting>
@@ -11970,34 +12141,34 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="verbatimLocality" typeRestrictions="soilObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,fishEntireEthanol,fishSample,mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent">
+            <placement code="verbatimLocality">
               <bundle>ca_attribute_verbatimLocality</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Verbatim locality of sampling point *</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="decimalLatitudeY" typeRestrictions="soilObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,fishEntireEthanol,fishSample,mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent">
+            <placement code="decimalLatitudeY">
               <bundle>ca_attribute_decimalLatitudeY</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Decimal latitude of sampling point (Y)*</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="decimalLongitudeX" typeRestrictions="soilObject,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,fishEntireEthanol,fishSample,mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent">
+            <placement code="decimalLongitudeX">
               <bundle>ca_attribute_decimalLongitudeX</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Decimal longitude of sampling point (X)*</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="geodeticDatum" typeRestrictions="soilObject,mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc">
+            <placement code="geodeticDatum">
               <bundle>ca_attribute_geodeticDatum</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="coordinateUncertaintyInMetersC" typeRestrictions="soilObject,mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc">
+            <placement code="coordinateUncertaintyInMetersC">
               <bundle>ca_attribute_coordinateUncertaintyInMetersC</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Coordinate uncertainty in meters *</setting>
@@ -12025,7 +12196,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="ca_collection" typeRestrictions="soilObject,mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent,leafSampleAnalytic,seedlot,stemdisc,moss,livingPlant,forestTreePopulation,dnaSample">
+            <placement code="ca_collection">
               <bundle>ca_collections</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Specimen belongs to collection(s) *</setting>
@@ -12042,7 +12213,114 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
-            <placement code="deaccession" typeRestrictions="soilObject,mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent,leafSampleAnalytic,seedlot,stemdisc,moss,livingPlant,forestTreePopulation,dnaSample">
+            <placement code="deaccession">
+              <bundle>ca_objects_deaccession</bundle>
+            </placement>
+			      <placement code="status">
+              <bundle>status</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Cataloguing status</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="documentation_url">https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0</setting>
+              </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
+        <screen idno="record2" default="1">
+          <labels>
+            <label locale="en_US">
+              <name>Record</name>
+            </label>
+          </labels>
+          <roleAccess>
+            <permission role="admin" access="edit"/>
+            <permission role="cataloguer" access="edit"/>
+            <permission role="researcher" access="edit"/>
+            <permission role="tester" access="edit"/>
+            <permission role="moderator" access="edit"/>
+          </roleAccess>
+          <typeRestrictions>
+                <restriction code="r_livingPlants" type="livingPlant"/>
+                <restriction code="r_forestTreePopulation" type="forestTreePopulation"/>       
+          </typeRestrictions>
+          <bundlePlacements>
+            <placement code="idno">
+              <bundle>idno</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">CMS ID</setting>
+                <setting name="description" locale="en_US">This is a unique identifier for the record, automatically assigned by the system.</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
+              </settings>
+            </placement>
+            <placement code="preferred_labels">
+              <bundle>preferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Specimen ID *</setting>
+                <setting name="description" locale="en_US">This is the preferred identifier. This identifier should be physically present on/with the object. For example on the object label. The naming conventions are documented in the linked document (push the black "i"). Example for DNA-samples: 19-009625 (LIMS-ID). Example for mammal tissue samples: da1488tong2. Example for seedlots: seedlot_ALNUS_GLU-000-156. For soil samples this is the Specimen ID (SID).</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
+                <setting name="documentation_url">https://docs.google.com/document/d/1RZ5-zN5YBkrcTg4Omq-bb-UsRUT4a_DXuy-N2V3SnOU/edit?tab=t.0</setting>
+              </settings>
+            </placement>
+			      <placement code="nonpreferred_labels">
+              <bundle>nonpreferred_labels</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Other identifier</setting>
+				        <setting name="add_label" locale="en_US">Add other, non-preferred, identifier</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="documentation_url">https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0</setting>
+              </settings>
+            </placement>
+            <placement code="publishedRecord">
+              <bundle>ca_attribute_publishedRecord</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Published record (URL)</setting>
+                <setting name="description" locale="en_US">The object published on DiSSCo, occurrence data of the sampling point published on GBIF,.. This is a sister-record of the current digital record of the specimen or sampling point.</setting>
+				        <setting name="add_label" locale="en_US">Add published record</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="description">
+              <bundle>ca_attribute_description</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="preparationDate">
+              <bundle>ca_attribute_preparationDate</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Preparation date *</setting>
+                <setting name="description" locale="en_US">This is the date/time that the specimen/object was created. Example: a DNA sample is created on a later date than the sampling of the tissue sample. Example: a forest tree population was planted in year 2005. The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="ca_storage_location_plantlot">
+              <bundle>ca_storage_locations</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Object is stored at *</setting>
+                <setting name="restrict_to_types">forestTreePopulationSite</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="useHierarchicalBrowser">1</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="ca_collection">
+              <bundle>ca_collections</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Specimen belongs to collection(s) *</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">20</setting>
+				        <setting name="add_label" locale="en_US">Add collection</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_relationship_types">partOf</setting>
+              </settings>
+            </placement>
+			      <placement code="verbatimTaxon"><!--This should prepopulate with the parent value, if empty-->
+              <bundle>ca_attribute_verbatimTaxon</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+			        </settings>
+            </placement>
+            <placement code="deaccession">
               <bundle>ca_objects_deaccession</bundle>
             </placement>
 			      <placement code="status">
@@ -12331,7 +12609,7 @@
             </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="obj_preparation" default="0">
+		    <screen idno="obj_preparation1" default="0">
           <labels>
             <label locale="en_US">
               <name>Creation specimen</name>
@@ -12344,6 +12622,23 @@
             <permission role="tester" access="edit"/>
             <permission role="moderator" access="edit"/>
           </roleAccess>
+          <typeRestrictions>
+                <restriction code="r_mammalEntireCadaver" type="mammalEntireCadaver"/>
+                <restriction code="r_mammalEntireZoological" type="mammalEntireZoological"/>       
+                <restriction code="r_fishEntireEthanol" type="fishEntireEthanol"/>
+                <restriction code="r_fishSample" type="fishSample"/>
+                <restriction code="r_mammalSample" type="mammalSample"/>
+                <restriction code="r_mammalBones" type="mammalBones"/>
+                <restriction code="r_mammalStomachContent" type="mammalStomachContent"/>
+                <restriction code="r_mammalSkinComplete" type="mammalSkinComplete"/>
+                <restriction code="r_mammalHead" type="mammalHead"/>
+                <restriction code="r_leafSampleAnalytic" type="leafSampleAnalytic"/>
+                <restriction code="r_moss" type="moss"/>
+                <restriction code="r_seedlot" type="seedlot"/>
+                <restriction code="r_stemdisc" type="stemdisc"/>
+                <restriction code="r_dnaSample" type="dnaSample"/>
+                <restriction code="r_soilObject" type="soilObject"/>
+          </typeRestrictions>
           <bundlePlacements>
             <placement code="matrixType" typeRestrictions="dnaSample">
               <bundle>ca_attribute_matrixType</bundle>
@@ -12351,7 +12646,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="samplingDate" typeRestrictions="soilObject,mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc">
+            <placement code="samplingDate">
               <bundle>ca_attribute_samplingDate</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Sampling date</setting>
@@ -12359,7 +12654,7 @@
                 <setting name="description" locale="en_US">This is the date/time that becomes fixed due to sampling. The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
               </settings>
             </placement>
-            <placement code="ca_entities_sampledBy" typeRestrictions="soilObject,mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc">
+            <placement code="ca_entities_sampledBy">
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Sampled by</setting>
@@ -12370,19 +12665,19 @@
                 <setting name="restrict_to_relationship_types">sampledBy</setting>
               </settings>
             </placement>
-			      <placement code="samplingProtocol" typeRestrictions="soilObject,mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc">
+			      <placement code="samplingProtocol">
               <bundle>ca_attribute_samplingProtocol</bundle>
               <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="samplingEffort" typeRestrictions="soilObject,mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc">
+			      <placement code="samplingEffort">
               <bundle>ca_attribute_samplingEffort</bundle>
               <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="preparationDate" typeRestrictions="soilObject,mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent,dnaSample,leafSampleAnalytic,moss,seedlot,livingPlant,forestTreePopulation">
+            <placement code="preparationDate">
               <bundle>ca_attribute_preparationDate</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Preparation date</setting>
@@ -12401,7 +12696,7 @@
                 <setting name="restrict_to_relationship_types">preparedBy</setting>
               </settings>
             </placement>
-			      <placement code="preparationProtocol" typeRestrictions="soilObject,mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,livingPlant,forestTreePopulation">
+			      <placement code="preparationProtocol">
               <bundle>ca_attribute_preparationProtocol</bundle>
               <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -12422,6 +12717,59 @@
                 <setting name="description" locale="en_US">For example weight of soil used for DNA extraction. This can be relevant for quantification analysis on the specimen.</setting>
 				        <setting name="add_label" locale="en_US">Add preparation weight measurement</setting>
                 <setting name="list_format">list</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+			      <placement code="notes">
+              <bundle>ca_attribute_notes</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Notes</setting>
+                <setting name="description" locale="en_US">Any relevant information on the creation of the specimen not yet recorded. Tip: under the screen "Files/Refs/Photos/Dbs" you can link any relevant documents related to the sampling. For example (photos of) a field form.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
+		    <screen idno="obj_preparation2" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Creation specimen</name>
+            </label>
+          </labels>
+          <roleAccess>
+            <permission role="admin" access="edit"/>
+            <permission role="cataloguer" access="edit"/>
+            <permission role="researcher" access="edit"/>
+            <permission role="tester" access="edit"/>
+            <permission role="moderator" access="edit"/>
+          </roleAccess>
+          <typeRestrictions>
+                <restriction code="r_livingPlants" type="livingPlant"/>
+                <restriction code="r_forestTreePopulation" type="forestTreePopulation"/>       
+          </typeRestrictions>
+          <bundlePlacements>
+            <placement code="preparationDate">
+              <bundle>ca_attribute_preparationDate</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Preparation date</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="description" locale="en_US">This is the date/time that the specimen was created/extracted/prepared. When this is the first object in the hierarchy, this date equals the sampling date. When this a second or third object in the sequence (e.g. a DNA sample is created on a later date than the sampling of the tissue sample), this date will differ from the sampling date. The format can be a date (2023-08-03), a month (2023-08), a year (2023); a range (2020-2023). Mandatory field.</setting>
+              </settings>
+            </placement>
+            <placement code="ca_entities_preparedBy">
+              <bundle>ca_entities</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Prepared by</setting>
+                <setting name="description" locale="en_US">A person that created/extracted/prepared the object/specimen. When this is the first object in the hierarchy, this person(s) equal(s) the collectors. When this a second or third object in the hierarchy of objects (e.g. a DNA sample is created on a later date than the sampling of the tissue sample), this person(s) can differ from the collector(s).</setting>
+				        <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">5</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_relationship_types">preparedBy</setting>
+              </settings>
+            </placement>
+			      <placement code="preparationProtocol">
+              <bundle>ca_attribute_preparationProtocol</bundle>
+              <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -12695,7 +13043,7 @@
 			      </placement>
           </bundlePlacements>
 		    </screen>
-		    <screen idno="taxonomy" default="0">
+		    <screen idno="taxonomy1" default="0">
           <labels>
             <label locale="en_US">
               <name>taxonomy</name>
@@ -12708,6 +13056,24 @@
             <permission role="tester" access="edit"/>
             <permission role="moderator" access="edit"/>
           </roleAccess>
+          <typeRestrictions>
+                <restriction code="r_mammalEntireCadaver" type="mammalEntireCadaver"/>
+                <restriction code="r_mammalEntireZoological" type="mammalEntireZoological"/>       
+                <restriction code="r_fishEntireEthanol" type="fishEntireEthanol"/>
+                <restriction code="r_fishSample" type="fishSample"/>
+                <restriction code="r_mammalSample" type="mammalSample"/>
+                <restriction code="r_mammalBones" type="mammalBones"/>
+                <restriction code="r_mammalStomachContent" type="mammalStomachContent"/>
+                <restriction code="r_mammalSkinComplete" type="mammalSkinComplete"/>
+                <restriction code="r_mammalHead" type="mammalHead"/>
+                <restriction code="r_leafSampleAnalytic" type="leafSampleAnalytic"/>
+                <restriction code="r_moss" type="moss"/>
+                <restriction code="r_seedlot" type="seedlot"/>
+                <restriction code="r_stemdisc" type="stemdisc"/>
+                <restriction code="r_dnaSample" type="dnaSample"/>
+                <restriction code="r_livingPlants" type="livingPlant"/>
+                <restriction code="r_forestTreePopulation" type="forestTreePopulation"/>       
+          </typeRestrictions>
           <bundlePlacements>
             <placement code="matrixType" typeRestrictions="dnaSample">
               <bundle>ca_attribute_matrixType</bundle>
@@ -12715,7 +13081,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="verbatimTaxon" typeRestrictions="dnaSample,leafSampleAnalytic,seedlot,stemdisc,forestTreePopulation,livingPlant,moss,fishEntireEthanol,fishSample,mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent">
+			      <placement code="verbatimTaxon">
               <bundle>ca_attribute_verbatimTaxon</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">MAIN TAXON: verbatim taxon</setting>
@@ -12723,7 +13089,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
-			      <placement code="GBIF" typeRestrictions="mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,livingPlant,forestTreePopulation">
+			      <placement code="GBIF">
               <bundle>ca_attribute_GBIF</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">MAIN TAXON: GBIF taxon lookup</setting>
@@ -12731,14 +13097,14 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
-			      <placement code="taxonDate" typeRestrictions="mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,livingPlant,forestTreePopulation">
+			      <placement code="taxonDate">
               <bundle>ca_attribute_taxonDate</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">MAIN TAXON: Date of taxonomic identification</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
-            <placement code="ca_entities_identifier" typeRestrictions="mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,livingPlant,forestTreePopulation">
+            <placement code="ca_entities_identifier">
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">MAIN TAXON: Identified by</setting>
@@ -12748,14 +13114,14 @@
                 <setting name="restrict_to_relationship_types">identifiedBy</setting>
               </settings>
 			      </placement>
-			      <placement code="voucher" typeRestrictions="mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,livingPlant,forestTreePopulation">
+			      <placement code="voucher">
               <bundle>ca_attribute_voucher</bundle>
               <settings>
                 <setting name="label" locale="en_US">MAIN TAXON: Voucher</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="ca_occurrences_identification" typeRestrictions="mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,livingPlant,forestTreePopulation">
+            <placement code="ca_occurrences_identification">
               <bundle>ca_occurrences</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">MAIN TAXON: Nonpreferred taxonomic identifications</setting>
@@ -12793,7 +13159,49 @@
             </placement>
           </bundlePlacements>
         </screen>
-		    <screen idno="obj_measurements" default="0">
+		    <screen idno="taxonomy2" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>taxonomy</name>
+            </label>
+          </labels>
+          <roleAccess>
+            <permission role="admin" access="edit"/>
+            <permission role="cataloguer" access="edit"/>
+            <permission role="researcher" access="edit"/>
+            <permission role="tester" access="edit"/>
+            <permission role="moderator" access="edit"/>
+          </roleAccess>
+          <typeRestrictions>
+                <restriction code="r_soilObject" type="soilObject"/>
+          </typeRestrictions>
+          <bundlePlacements>
+			      <placement code="taxonReference">
+              <bundle>ca_attribute_taxonReference</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">eDNA: Publication on biodiversity in specimen</setting>
+                <setting name="description" locale="en_US">Publication (dataset, article) that outlines the results of biodiversity present in the specimen, other than the main taxon. In water, soil or air samples, this is the only way biodiversity can be recorded. For all other types of specimen, this is "secondary" biodiversity, other the main taxon. For example: stomach of a bee (main taxon), tested for presence of which plant pollen. For example tissue of a wolf (main taxon) tested for bacteria. This information is relevant to know (what has been tested on this specimen and how) but not relevant for querying the specimen themselves. Preferably this is a(n open) publication in a repository, but also internal result files (e.g. INBO Google drive) can be linked here.</setting>                
+                <setting name="expand_collapse_no_value">collapse</setting>
+				        <setting name="add_label" locale="en_US">Add eDNA publication</setting>
+              </settings>
+            </placement>
+			      <placement code="GBIFedna">
+              <bundle>ca_attribute_GBIFedna</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">eDNA: GBIF taxon lookup</setting>
+                <setting name="description" locale="en_US">If other than the linked publication, specific taxa are relevant (for example for INBO research) to explicitly link to the specimen, they can be added here.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+			        </settings>
+            </placement>
+			      <placement code="taxonNote">
+              <bundle>ca_attribute_taxonNote</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+			        </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
+		    <screen idno="obj_measurements1" default="0">
           <labels>
             <label locale="en_US">
               <name>Measurements/Facts</name>
@@ -12806,25 +13214,27 @@
             <permission role="tester" access="edit"/>
             <permission role="moderator" access="edit"/>
           </roleAccess>
+          <typeRestrictions>
+                <restriction code="r_mammalEntireCadaver" type="mammalEntireCadaver"/>
+                <restriction code="r_mammalEntireZoological" type="mammalEntireZoological"/>       
+                <restriction code="r_fishEntireEthanol" type="fishEntireEthanol"/>
+                <restriction code="r_fishSample" type="fishSample"/>
+                <restriction code="r_mammalSample" type="mammalSample"/>
+                <restriction code="r_mammalBones" type="mammalBones"/>
+                <restriction code="r_mammalStomachContent" type="mammalStomachContent"/>
+                <restriction code="r_mammalSkinComplete" type="mammalSkinComplete"/>
+                <restriction code="r_mammalHead" type="mammalHead"/>
+                <restriction code="r_leafSampleAnalytic" type="leafSampleAnalytic"/>
+                <restriction code="r_moss" type="moss"/>
+                <restriction code="r_seedlot" type="seedlot"/>
+                <restriction code="r_stemdisc" type="stemdisc"/>
+                <restriction code="r_dnaSample" type="dnaSample"/>
+          </typeRestrictions>
           <bundlePlacements>
-			      <placement code="seedlot_relation_samplingPoint" typeRestrictions="seedlot">
+			      <placement code="seedlotRelationSamplingPoint" typeRestrictions="seedlot">
               <bundle>ca_attribute_seedlotRelationSamplingPoint</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-            <placement code="geneticEntity" typeRestrictions="forestTreePopulation,livingPlant">
-              <bundle>ca_objects</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The genetic entity of living plant specimen</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="expand_collapse_value">collapse</setting>
-				        <setting name="restrict_to_types">geneticEntity</setting>
-                <setting name="restrict_to_relationship_types">cloneOf</setting>
-                <setting name="restrict_to_relationship_types">childOfCloneOf</setting>
-                <setting name="restrict_to_relationship_types">grandchildOf</setting>
-                <setting name="restrict_to_relationship_types">grandchildOfCloneOf</setting>
-                <setting name="restrict_to_relationship_types">childOf</setting>
               </settings>
             </placement>
             <placement code="taxonGroup" typeRestrictions="dnaSample">
@@ -12833,7 +13243,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="genotype" typeRestrictions="mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent,leafSampleAnalytic,seedlot,stemdisc,moss,livingPlant,forestTreePopulation,dnaSample" includeSubtypes="1">
+			      <placement code="genotype">
               <bundle>ca_objects</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Related genotype(s) (1:n)</setting>
@@ -12844,27 +13254,6 @@
                 <setting name="restrict_to_relationship_types">genotype</setting>
               </settings>
 			      </placement>
-            <placement code="inbodemdb" typeRestrictions="soilObject">
-              <bundle>ca_attribute_inbodem</bundle>
-            </placement>
-            <placement code="VISdb" typeRestrictions="fishEntireEthanol,fishSample">
-              <bundle>ca_attribute_VIS</bundle>
-            </placement>
-            <placement code="polluentendb" typeRestrictions="fishEntireEthanol,fishSample">
-              <bundle>ca_attribute_polluenten</bundle>
-            </placement>
-            <placement code="groenbosdb" typeRestrictions="leafSampleAnalytic">
-              <bundle>ca_attribute_groenbos</bundle>
-            </placement>
-            <placement code="genbosdb" typeRestrictions="forestTreePopulation,livingPlant">
-              <bundle>ca_attribute_genbos</bundle>
-            </placement>
-            <placement code="marternetwerkdb" typeRestrictions="mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent">
-              <bundle>ca_attribute_marternetwerk</bundle>
-            </placement>
-            <placement code="wildbeheerdb" typeRestrictions="mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent">
-              <bundle>ca_attribute_wild</bundle>
-            </placement>
             <placement code="dna_conc" typeRestrictions="dnaSample">
               <bundle>ca_attribute_dnaConcContainer</bundle>
 			        <settings>
@@ -12974,7 +13363,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-			      <placement code="sexPlant" typeRestrictions="livingPlant,leafSampleAnalytic,stemDisc,dnaSample">
+			      <placement code="sexPlant" typeRestrictions="livingPlant,leafSampleAnalytic,stemdisc,dnaSample">
               <bundle>ca_attribute_sexPlant</bundle>
 			        <settings>
                 <setting name="description" locale="en_US">Explanation to list options: https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0. If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
@@ -13022,7 +13411,7 @@
                 <setting name="description" locale="en_US">Due to sampling, the life stage of the animal at time object(s) were collected becomes a fixed value.</setting>
               </settings>
             </placement>
-			      <placement code="lifeStagePlant" typeRestrictions="livingPlant,leafSampleAnalytic,stemDisc,dnaSample">
+			      <placement code="lifeStagePlant" typeRestrictions="livingPlant,leafSampleAnalytic,stemdisc,dnaSample">
               <bundle>ca_attribute_lifeStagePlant</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
@@ -13039,7 +13428,7 @@
                 <setting name="expand_collapse_value">collapse</setting>
 			        </settings>
             </placement>
-			      <placement code="reprCondPlant" typeRestrictions="livingPlant,leafSampleAnalytic,stemDisc,dnaSample">
+			      <placement code="reprCondPlant" typeRestrictions="livingPlant,leafSampleAnalytic,stemdisc,dnaSample">
               <bundle>ca_attribute_reprCondPlant</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Reproductive condition (dwc:reproductiveCondition)</setting>
@@ -13050,10 +13439,118 @@
             </placement>		 		 		 		 		 		 		 		 
           </bundlePlacements>
         </screen>
+		    <screen idno="obj_measurements2" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Measurements/Facts</name>
+            </label>
+          </labels>
+          <roleAccess>
+            <permission role="admin" access="edit"/>
+            <permission role="cataloguer" access="edit"/>
+            <permission role="researcher" access="edit"/>
+            <permission role="tester" access="edit"/>
+            <permission role="moderator" access="edit"/>
+          </roleAccess>
+          <typeRestrictions>
+                <restriction code="r_livingPlants" type="livingPlant"/>
+                <restriction code="r_forestTreePopulation" type="forestTreePopulation"/>       
+          </typeRestrictions>
+          <bundlePlacements>
+            <placement code="geneticEntity">
+              <bundle>ca_objects</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The genetic entity of living plant specimen</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
+				        <setting name="restrict_to_types">geneticEntity</setting>
+                <setting name="restrict_to_relationship_types">cloneOf</setting>
+                <setting name="restrict_to_relationship_types">childOfCloneOf</setting>
+                <setting name="restrict_to_relationship_types">grandchildOf</setting>
+                <setting name="restrict_to_relationship_types">grandchildOfCloneOf</setting>
+                <setting name="restrict_to_relationship_types">childOf</setting>
+              </settings>
+            </placement>
+			      <placement code="genotype">
+              <bundle>ca_objects</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Related genotype(s) (1:n)</setting>
+                <setting name="description" locale="en_US">A specific code given to describe a genotype that occurs in more than one individual. For example: a specific haplotype. For example: a specific genotype for which there are multiple clones (plant breeding). If there is an individual genotype or sequence data that you would like to log with this specific sample, this can be done under FILE/REFS/PHOTOS, because this is only relevant to add together with the link to the data.</setting>
+                <setting name="restrict_to_types">genotype</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+				        <setting name="add_label" locale="en_US">Add genotype</setting>
+                <setting name="restrict_to_relationship_types">genotype</setting>
+              </settings>
+			      </placement>
+            <placement code="objectCount">
+              <bundle>ca_attribute_countContainer</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Count related to object</setting>
+				        <setting name="add_label" locale="en_US">Add count</setting>
+                <setting name="description" locale="en_US">Count related to the object / specimen (nothing else!).</setting>
+                <setting name="list_format">list</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+			      <placement code="sexPlant">
+              <bundle>ca_attribute_sexPlant</bundle>
+			        <settings>
+                <setting name="description" locale="en_US">Explanation to list options: https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0. If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="documentation_url">https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0</setting>
+              </settings>
+			      </placement>
+			      <placement code="lifeStagePlant">
+              <bundle>ca_attribute_lifeStagePlant</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="description" locale="en_US">Due to sampling, the life stage of the plant at time object(s) were collected becomes a fixed value.</setting>
+              </settings>
+            </placement>
+			      <placement code="reprCondPlant">
+              <bundle>ca_attribute_reprCondPlant</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Reproductive condition (dwc:reproductiveCondition)</setting>
+                <setting name="description" locale="en_US">Reproductive condition of the organism at time object(s) were collected</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="expand_collapse_value">collapse</setting>
+			        </settings>
+            </placement>		 		 		 		 		 		 		 		 
+          </bundlePlacements>
+        </screen>
+		    <screen idno="obj_measurements3" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Measurements/Facts</name>
+            </label>
+          </labels>
+          <roleAccess>
+            <permission role="admin" access="edit"/>
+            <permission role="cataloguer" access="edit"/>
+            <permission role="researcher" access="edit"/>
+            <permission role="tester" access="edit"/>
+            <permission role="moderator" access="edit"/>
+          </roleAccess>
+          <typeRestrictions>
+                <restriction code="r_soilObject" type="soilObject"/>
+          </typeRestrictions>
+          <bundlePlacements>
+            <placement code="weight">
+              <bundle>ca_attribute_weightContainer</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Weight measurement</setting>
+                <setting name="description" locale="en_US">This is to log the weight of the specimen. Preparation weight can be logged under the "creation" tab. Other weights can be logged here, but only if relevant for collection management. Ideally measurements on the sampling point are logged in other INBO databases (inbodem, VIS, marternetwerkdatabank, ...).</setting>
+				        <setting name="add_label" locale="en_US">Add weight measurement</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
 		    <screen idno="reference" default="0">
           <labels>
             <label locale="en_US">
-              <name>Files/Refs/Photos/Dbs</name>
+              <name>Files/Refs/Photos</name>
             </label>
           </labels>
           <roleAccess>
@@ -13071,27 +13568,6 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="description" locale="en_US">Add URL (e.g. to a file on the Google drive) and describe what the (multimedia) file represents. For example: it represents the living animal from which a toe clip was sampled. For example: it represents the toe clip sample in a cryotube. For example: it is a scan of the experimental plot outline. For example: this is the msat genotype data of 2018. For example: this is the sequence data of 2020. Preferably this data is on the INBO archive drive or similar (less chance of broken links).</setting>
 			        </settings>
-            </placement>
-            <placement code="inbodemdb" typeRestrictions="soilObject" includeSubtypes="1">
-              <bundle>ca_attribute_inbodem</bundle>
-            </placement>
-            <placement code="VISdb" typeRestrictions="fish" includeSubtypes="1">
-              <bundle>ca_attribute_VIS</bundle>
-            </placement>
-            <placement code="polluentendb" typeRestrictions="fish" includeSubtypes="1">
-              <bundle>ca_attribute_polluenten</bundle>
-            </placement>
-            <placement code="groenbosdb" typeRestrictions="leafSampleAnalytic" includeSubtypes="1">
-              <bundle>ca_attribute_groenbos</bundle>
-            </placement>
-            <placement code="genbosdb" typeRestrictions="forestTreePopulation,livingPlant" includeSubtypes="1">
-              <bundle>ca_attribute_genbos</bundle>
-            </placement>
-            <placement code="marternetwerkdb" typeRestrictions="mammal" includeSubtypes="1">
-              <bundle>ca_attribute_marternetwerk</bundle>
-            </placement>
-            <placement code="wildbeheerdb" typeRestrictions="mammal" includeSubtypes="1">
-              <bundle>ca_attribute_wild</bundle>
             </placement>
             <placement code="reference">
               <bundle>ca_attribute_reference</bundle>
@@ -13121,7 +13597,7 @@
             </placement>
           </bundlePlacements>
         </screen>
-        <screen idno="obj_management" default="0">
+        <screen idno="obj_management1" default="0">
           <labels>
             <label locale="en_US">
               <name>Curation/Management</name>
@@ -13134,6 +13610,119 @@
             <permission role="tester" access="edit"/>
             <permission role="moderator" access="edit"/>
           </roleAccess>
+          <typeRestrictions>
+                <restriction code="r_mammalEntireCadaver" type="mammalEntireCadaver"/>
+                <restriction code="r_mammalEntireZoological" type="mammalEntireZoological"/>       
+                <restriction code="r_fishEntireEthanol" type="fishEntireEthanol"/>
+                <restriction code="r_fishSample" type="fishSample"/>
+                <restriction code="r_mammalSample" type="mammalSample"/>
+                <restriction code="r_mammalBones" type="mammalBones"/>
+                <restriction code="r_mammalStomachContent" type="mammalStomachContent"/>
+                <restriction code="r_mammalSkinComplete" type="mammalSkinComplete"/>
+                <restriction code="r_mammalHead" type="mammalHead"/>
+                <restriction code="r_leafSampleAnalytic" type="leafSampleAnalytic"/>
+                <restriction code="r_moss" type="moss"/>
+                <restriction code="r_seedlot" type="seedlot"/>
+                <restriction code="r_stemdisc" type="stemdisc"/>
+                <restriction code="r_dnaSample" type="dnaSample"/>
+                <restriction code="r_soilObject" type="soilObject"/>
+                <restriction code="r_livingPlants" type="livingPlant"/>
+          </typeRestrictions>
+          <bundlePlacements>
+			      <placement code="status">
+              <bundle>status</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Cataloguing status</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+			      <!--<placement code="qualityFlag">
+              <bundle>ca_attribute_qualityFlag</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Indication of the quality of the object record</setting>
+				        <setting name="add_label" locale="en_US">Add another quality indication</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>-->
+            <placement code="deaccession">
+              <bundle>ca_objects_deaccession</bundle>
+            </placement>
+            <placement code="ca_collection">
+              <bundle>ca_collections</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Object belongs to collection</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+              </settings>
+            </placement>
+			      <placement code="ca_entities_previousOwner">
+              <bundle>ca_entities</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Previous owner</setting>
+                <setting name="description" locale="en_US">This can be both an individual (i.e. personal collection that was donated) or organization.</setting>
+				        <setting name="add_label" locale="en_US">Add previous owner</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_relationship_types">wasOwnedBy</setting>
+              </settings>
+            </placement>
+            <placement code="ca_entities_contact">
+              <bundle>ca_entities</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Contact</setting>
+                <setting name="description" locale="en_US">A person (preferably working at INBO) that can be contacted in case more information on the occurrence is asked, or needed. Better would be that all information is recorded in the database, so a contact person becomes unnecessary.</setting>
+				        <setting name="add_label" locale="en_US">Add contact</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_types">ind</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">2</setting>
+                <setting name="restrict_to_relationship_types">knowsMost</setting>
+              </settings>
+            </placement>
+            <placement code="ca_occurrences_valuation">
+              <bundle>ca_occurrences</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Valuation event</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="description" locale="en_US">The event of someone evaluating the object resulting in a measure of value for that object. The value can differ through time and through the eye of the beholder. The valuation event in this context exists of a standardized list of value types, and the possibility to add more information to why this value was chosen.</setting>
+                <setting name="add_label" locale="en_US">Add valuation event</setting>
+                <setting name="restrict_to_types">valuation</setting>
+                <setting name="list_format">list</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_relationship_types">execObjValuation</setting>
+                <setting name="display_template">^ca_occurrences.valuationArgument%delimiter=_;_ (^ca_occurrences.eventDate)</setting>
+			        </settings>
+            </placement>
+			      <placement code="ca_occurrences_curation">
+              <bundle>ca_occurrences</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Curation event</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="description" locale="en_US">Curation = the action or process of selecting, organizing, and looking after the items in a collection or exhibition. Examples: repacking the object, adding a new label, adding new buffer, a cold/heat treatment,...</setting>
+                <setting name="add_label" locale="en_US">Add curation event</setting>
+                <setting name="restrict_to_types">curation</setting>
+                <setting name="list_format">list</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
+        <screen idno="obj_management2" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Curation/Management</name>
+            </label>
+          </labels>
+          <roleAccess>
+            <permission role="admin" access="edit"/>
+            <permission role="cataloguer" access="edit"/>
+            <permission role="researcher" access="edit"/>
+            <permission role="tester" access="edit"/>
+            <permission role="moderator" access="edit"/>
+          </roleAccess>
+          <typeRestrictions>
+                <restriction code="r_forestTreePopulation" type="forestTreePopulation"/>       
+          </typeRestrictions>
           <bundlePlacements>
 			      <placement code="status">
               <bundle>status</bundle>
@@ -13887,12 +14476,15 @@
         </screen>
 	    </screens>
     </userInterface>
-    <userInterface code="event_ui" type="ca_occurrences">
+    <userInterface code="fieldwork_ui" type="ca_occurrences">
       <labels>
         <label locale="en_US">
-          <name>Event editor</name>
+          <name>Fieldwork editor</name>
         </label>
       </labels>
+      <typeRestrictions>
+        <restriction code="r_fieldwork" type="fieldwork"/>
+      </typeRestrictions>
       <screens>
         <screen idno="event_record" default="1">
           <labels>
@@ -13901,48 +14493,20 @@
             </label>
           </labels>
           <bundlePlacements>
-            <placement code="idno" typeRestrictions="fieldwork,internalProject,externalProject,valuation,disposal,treatment,renewal,transfer,identification">
+            <placement code="idno">
               <bundle>idno</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">CMS-ID</setting>
               </settings>
             </placement>
-			      <placement code="preferred_labels_identification" typeRestrictions="identification">
-              <bundle>preferred_labels</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Identification event ID</setting>
-                <setting name="description" locale="en_US">Suggested format: year-initials-taxon. For example 2025-EV-wasbeer</setting>
-              </settings>
-            </placement>
-			      <placement code="preferred_labels_fieldwork" typeRestrictions="fieldwork">
+			      <placement code="preferred_labels_fieldwork">
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Field campaign name (preferred)</setting>
                 <setting name="description" locale="en_US">The field campaign name used in notes, datasets, publications, ... if there are multiple names or identifiers for the field campaign, all other identifiers are put in the "non-preferred labels" below.</setting>
               </settings>
             </placement>
-			      <placement code="preferred_labels_project" typeRestrictions="project" includeSubtypes="1">
-              <bundle>preferred_labels</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Project (short) name</setting>
-                <setting name="description" locale="en_US">The project name used in notes, datasets, publications, ... if there are multiple names or identifiers for the project, all other identifiers (e.g. JIRA URL) are put in the "non-preferred labels" below.</setting>
-              </settings>
-            </placement>
-			      <placement code="preferred_labels_valuation" typeRestrictions="valuation">
-              <bundle>preferred_labels</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Valuation event identifier (preferred)</setting>
-                <setting name="description" locale="en_US">The valuation identifier</setting>
-              </settings>
-            </placement>
-			      <placement code="preferred_labels_curation" typeRestrictions="disposal,treatment,renewal,transfer">
-              <bundle>preferred_labels</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Curation event identifier (preferred)</setting>
-                <setting name="description" locale="en_US">The identifier for the curation event used in notes. This can be a descriptive title: for example: Renewal of seedlot bags 2023.</setting>
-              </settings>
-            </placement>
-            <placement code="nonpreferred_labels" typeRestrictions="fieldwork,internalProject,externalProject,valuation,disposal,treatment,renewal,transfer">
+            <placement code="nonpreferred_labels">
               <bundle>nonpreferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Other identifier (nonpreferred)</setting>
@@ -13950,35 +14514,26 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="publishedRecord_project" typeRestrictions="project" includeSubtypes="1">
-              <bundle>ca_attribute_publishedRecord</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Project-URL</setting>
-                <setting name="description" locale="en_US">Enter project URLs, for example published on the Pureportal (https://pureportal.inbo.be/nl/projects/), the JIRA link, a project website, ...</setting>
-				        <setting name="add_label" locale="en_US">Add URL</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-            <placement code="eventDescription" typeRestrictions="fieldwork,internalProject,externalProject," includeSubtypes="1">
+            <placement code="eventDescription">
               <bundle>ca_attribute_descriptionContainer</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="eventDate" typeRestrictions="fieldwork,valuation,disposal,treatment,renewal,transfer">
+			      <placement code="eventDate">
               <bundle>ca_attribute_eventDate</bundle>
               <settings>
                 <setting name="label" locale="en_US">Date (range) and time (range), standardised.</setting>
               </settings>
             </placement>
-			      <placement code="verbatimLocality" typeRestrictions="fieldwork">
+			      <placement code="verbatimLocality">
               <bundle>ca_attribute_verbatimLocality</bundle>
               <settings>
                 <setting name="label" locale="en_US">Verbatim locality</setting>
                 <setting name="description" locale="en_US">The original description of a locality, a place, the geographic coverage, ...</setting>
               </settings>
             </placement>
-            <placement code="ca_places_fieldwork" typeRestrictions="fieldwork">
+            <placement code="ca_places_fieldwork">
               <bundle>ca_places</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Field campaign focal place(s)</setting>
@@ -13989,62 +14544,12 @@
                 <setting name="restrict_to_relationship_types">focusFieldwork</setting>
               </settings>
 			      </placement>
-			      <placement code="status" typeRestrictions="fieldwork,internalProject,externalProject,valuation,disposal,treatment,renewal,transfer" includeSubtypes="1">
+			      <placement code="status">
               <bundle>status</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Cataloguing status</setting>
               </settings>
             </placement>
-            <placement code="valuationArgument" typeRestrictions="valuation">
-              <bundle>ca_attribute_valuationArgument</bundle>
-			        <settings>
-				        <setting name="add_label" locale="en_US">Add argument</setting>
-			        </settings>
-            </placement>
-            <placement code="valuationSpecification" typeRestrictions="valuation">
-              <bundle>ca_attribute_valuationSpecification</bundle>
-            </placement>
-            <placement code="curationResult" typeRestrictions="disposal,treatment,renewal,transfer">
-              <bundle>ca_attribute_curationResult</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Result of curation event</setting>
-                <setting name="description" locale="en_US">Here you can specify further on the curation action. For example: disposal because of depletion of DNA/soil, disease (plant), rot (seedlot), ...; treatment: cold treatment -80°C for parasites; renewal: of containers, of labels, of buffer + in the file you can specify the manufacturers information on the new material.; reason why this particular group of samples was transferred.</setting>
-			        </settings>
-            </placement>
-            <placement code="curationURL" typeRestrictions="treatment,renewal">
-              <bundle>ca_attribute_curationURL</bundle>
-            </placement>
-			      <placement code="verbatimTaxon" typeRestrictions="identification">
-              <bundle>ca_attribute_verbatimTaxon</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">The verbatim taxonomic identification</setting>
-				        <setting name="add_label" locale="en_US">Add a new taxon</setting>
-                <setting name="expand_collapse_no_value">expand</setting>
-			        </settings>
-            </placement>
-			      <placement code="taxonDate" typeRestrictions="identification">
-              <bundle>ca_attribute_taxonDate</bundle>
-			        <settings>
-                <setting name="expand_collapse_no_value">expand</setting>
-			        </settings>
-            </placement>
-			      <placement code="taxonNote" typeRestrictions="identification">
-              <bundle>ca_attribute_taxonNote</bundle>
-			        <settings>
-                <setting name="expand_collapse_no_value">expand</setting>
-			        </settings>
-            </placement>
-            <placement code="ca_entities_identifier" typeRestrictions="identification">
-              <bundle>ca_entities</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Identified by</setting>
-                <setting name="description" locale="en_US">Person(s) (individual(s)) that executed the taxonomic identification.</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-				        <setting name="maxRelationshipsPerRow">20</setting>
-                <setting name="expand_collapse_no_value">expand</setting>
-                <setting name="restrict_to_relationship_types">executedBy</setting>
-              </settings>
-			      </placement>
           </bundlePlacements>
         </screen>
         <screen idno="event_context" default="0">
@@ -14053,10 +14558,6 @@
               <name>Context</name>
             </label>
           </labels>
-          <typeRestrictions>
-            <restriction code="r_project" type="project"/>
-            <restriction code="r_fieldwork" type="fieldwork"/>
-          </typeRestrictions>
           <bundlePlacements>
             <placement code="hierarchy_location">
               <bundle>hierarchy_location</bundle>
@@ -14082,17 +14583,8 @@
               <name>Execution</name>
             </label>
           </labels>
-          <typeRestrictions>
-            <restriction code="r_valuation" type="valuation"/>
-            <restriction code="r_disposal" type="disposal"/>
-            <restriction code="r_treatment" type="treatment"/>
-            <restriction code="r_renewal" type="renewal"/>
-            <restriction code="r_transfer" type="transfer"/>
-            <restriction code="r_fieldwork" type="fieldwork"/>
-            <restriction code="r_identification" type="identification"/>
-          </typeRestrictions>
           <bundlePlacements>
-            <placement code="ca_entities_executor" typeRestrictions="valuation,disposal,treatment,renewal,transfer,fieldwork,identification">
+            <placement code="ca_entities_executor">
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="label" locale="en_US">Executor</setting>
@@ -14101,28 +14593,6 @@
 				        <setting name="add_label" locale="en_US">Add individual</setting>
                 <setting name="restrict_to_relationship_types">executedBy</setting>
               </settings>
-            </placement>
-            <placement code="ca_object" typeRestrictions="valuation,disposal,treatment,renewal,transfer,identification">
-              <bundle>ca_objects</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Object(s) subjected to event</setting>
-                <setting name="description" locale="en_US">Object that was subjected to the event (identification, valuation or curation)</setting>
-                <setting name="list_format" locale="en_US">list</setting>
-              </settings>
-            </placement>
-			      <placement code="eventProcedure" typeRestrictions="valuation,curation,disposal,treatment,renewal,transfer">
-              <bundle>ca_attribute_eventProcedure</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Description of event procedure</setting>
-                <setting name="description" locale="en_US">Text field to (concisely) describe the procedure (if relevant). Can be if: no doi-reference for procedure description or to add notes/addenda on the given published procedure.</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-            <placement code="fileURL" typeRestrictions="curation,disposal,treatment,renewal,transfer,identification">
-              <bundle>ca_attribute_fileURL</bundle>
-			        <settings>
-				        <setting name="add_label" locale="en_US">Add multimedia</setting>
-			        </settings>
             </placement>
 			      <placement code="samplingEffort" typeRestrictions="fieldwork">
               <bundle>ca_attribute_samplingEffort</bundle>
@@ -14134,17 +14604,12 @@
 			      </placement>
           </bundlePlacements>
         </screen>
-        <screen idno="projectfieldworkEvent_result" default="0">
+        <screen idno="Event_result" default="0">
           <labels>
             <label locale="en_US">
               <name>Result(s)</name>
             </label>
           </labels>
-          <typeRestrictions>
-            <restriction code="r_internalProject" type="internalProject"/>
-            <restriction code="r_externalProject" type="externalProject"/>
-            <restriction code="r_fieldwork" type="fieldwork"/>		
-          </typeRestrictions>
           <bundlePlacements>
             <placement code="resultingObjectLots">
               <bundle>ca_object_lots</bundle>
@@ -14155,7 +14620,7 @@
                 <setting name="restrict_to_relationship_types">resObjLot</setting>
 			        </settings>
             </placement>
-            <placement code="resultingObjectsF" typeRestrictions="fieldwork">
+            <placement code="resultingObjectsF">
               <bundle>ca_objects</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Resulting objects</setting>
@@ -14179,6 +14644,130 @@
                 <setting name="restrict_to_types">dnaSample</setting>
                 <setting name="restrict_to_types">soilObject</setting>
                 <setting name="restrict_to_relationship_types">resObjFieldwork</setting>
+			        </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
+		    <screen idno="event_administration" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Administration</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+			      <placement code="eventAdminFile">
+              <bundle>ca_attribute_fileURL</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">File</setting>
+                <setting name="description" locale="en_US">File associated with field campaign or project that specifies conditions for usage of objects or associated data. For example: a scan of a permit.</setting>				       
+                <setting name="add_label" locale="en_US">Add file</setting>
+			        </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
+	    </screens>
+    </userInterface>
+    <userInterface code="project_ui" type="ca_occurrences">
+      <labels>
+        <label locale="en_US">
+          <name>Project editor</name>
+        </label>
+      </labels>
+      <typeRestrictions>
+        <restriction code="r_internalProject" type="internalProject"/>
+        <restriction code="r_externalProject" type="externalProject"/>
+      </typeRestrictions>
+      <screens>
+        <screen idno="event_record" default="1">
+          <labels>
+            <label locale="en_US">
+              <name>Record</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="idno">
+              <bundle>idno</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">CMS-ID</setting>
+              </settings>
+            </placement>
+			      <placement code="preferred_labels_project">
+              <bundle>preferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Project (short) name</setting>
+                <setting name="description" locale="en_US">The project name used in notes, datasets, publications, ... if there are multiple names or identifiers for the project, all other identifiers (e.g. JIRA URL) are put in the "non-preferred labels" below.</setting>
+              </settings>
+            </placement>
+            <placement code="nonpreferred_labels">
+              <bundle>nonpreferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Other identifier (nonpreferred)</setting>
+				        <setting name="add_label" locale="en_US">Add other non-preferred identifier</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="publishedRecord_project">
+              <bundle>ca_attribute_publishedRecord</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Project-URL</setting>
+                <setting name="description" locale="en_US">Enter project URLs, for example published on the Pureportal (https://pureportal.inbo.be/nl/projects/), the JIRA link, a project website, ...</setting>
+				        <setting name="add_label" locale="en_US">Add URL</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="eventDescription">
+              <bundle>ca_attribute_descriptionContainer</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+			      <placement code="status">
+              <bundle>status</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Cataloguing status</setting>
+              </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
+        <screen idno="event_context" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Context</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="hierarchy_location">
+              <bundle>hierarchy_location</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Hierarchy</setting>
+                <setting name="description" locale="en_US">The project or field campaign can be put into the context.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+		        <placement code="descriptionContainer">
+              <bundle>ca_attribute_descriptionContainer</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Description</setting>
+                <setting name="description" locale="en_US">Description of the project or field campaign.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+          </bundlePlacements>
+        </screen>
+        <screen idno="event_result" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Result(s)</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="resultingObjectLots">
+              <bundle>ca_object_lots</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Resulting object lots</setting>
+				        <setting name="add_label" locale="en_US">Add object lot</setting>
+                <setting name="list_format">list</setting>
+                <setting name="restrict_to_relationship_types">resObjLot</setting>
 			        </settings>
             </placement>
             <placement code="resultingObjectsP" typeRestrictions="project" includeSubtypes="1">
@@ -14210,15 +14799,127 @@
             </placement>
           </bundlePlacements>
         </screen>
+		    <screen idno="event_administration" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Administration</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+			      <placement code="eventAdminFile">
+              <bundle>ca_attribute_fileURL</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">File</setting>
+                <setting name="description" locale="en_US">File associated with field campaign or project that specifies conditions for usage of objects or associated data. For example: a scan of a permit.</setting>				       
+                <setting name="add_label" locale="en_US">Add file</setting>
+			        </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
+	    </screens>
+    </userInterface>
+    <userInterface code="valuation_ui" type="ca_occurrences">
+      <labels>
+        <label locale="en_US">
+          <name>Valuation editor</name>
+        </label>
+      </labels>
+      <typeRestrictions>
+        <restriction code="r_valuation" type="valuation"/>
+      </typeRestrictions>
+      <screens>
+        <screen idno="event_record" default="1">
+          <labels>
+            <label locale="en_US">
+              <name>Record</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="idno">
+              <bundle>idno</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">CMS-ID</setting>
+              </settings>
+            </placement>
+			      <placement code="preferred_labels_valuation">
+              <bundle>preferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Valuation event identifier (preferred)</setting>
+                <setting name="description" locale="en_US">The valuation identifier</setting>
+              </settings>
+            </placement>
+            <placement code="nonpreferred_labels">
+              <bundle>nonpreferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Other identifier (nonpreferred)</setting>
+				        <setting name="add_label" locale="en_US">Add other non-preferred identifier</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+			      <placement code="eventDate">
+              <bundle>ca_attribute_eventDate</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Date (range) and time (range), standardised.</setting>
+              </settings>
+            </placement>
+			      <placement code="status">
+              <bundle>status</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Cataloguing status</setting>
+              </settings>
+            </placement>
+            <placement code="valuationArgument" typeRestrictions="valuation">
+              <bundle>ca_attribute_valuationArgument</bundle>
+			        <settings>
+				        <setting name="add_label" locale="en_US">Add argument</setting>
+			        </settings>
+            </placement>
+            <placement code="valuationSpecification" typeRestrictions="valuation">
+              <bundle>ca_attribute_valuationSpecification</bundle>
+            </placement>
+          </bundlePlacements>
+        </screen>
+        <screen idno="event_execution" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Execution</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="ca_entities_executor">
+              <bundle>ca_entities</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Executor</setting>
+                <setting name="restrict_to_type">ind</setting>
+                <setting name="label" locale="en_US">Executed by</setting>
+				        <setting name="add_label" locale="en_US">Add individual</setting>
+                <setting name="restrict_to_relationship_types">executedBy</setting>
+              </settings>
+            </placement>
+            <placement code="ca_object">
+              <bundle>ca_objects</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Object(s) subjected to event</setting>
+                <setting name="description" locale="en_US">Object that was subjected to the event (identification, valuation or curation)</setting>
+                <setting name="list_format" locale="en_US">list</setting>
+              </settings>
+            </placement>
+			      <placement code="eventProcedure">
+              <bundle>ca_attribute_eventProcedure</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Description of event procedure</setting>
+                <setting name="description" locale="en_US">Text field to (concisely) describe the procedure (if relevant). Can be if: no doi-reference for procedure description or to add notes/addenda on the given published procedure.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
         <screen idno="valuationEvent_result" default="0">
           <labels>
             <label locale="en_US">
               <name>Result(s)</name>
             </label>
           </labels>
-          <typeRestrictions>
-            <restriction code="r_valuation" type="valuation"/>	
-          </typeRestrictions>
           <bundlePlacements>
             <placement code="valuationArgument">
               <bundle>ca_attribute_valuationArgument</bundle>
@@ -14230,62 +14931,389 @@
             </placement>
           </bundlePlacements>
         </screen>
+	    </screens>
+    </userInterface>
+    <userInterface code="identification_ui" type="ca_occurrences">
+      <labels>
+        <label locale="en_US">
+          <name>Identification editor</name>
+        </label>
+      </labels>
+      <typeRestrictions>
+        <restriction code="r_identification" type="identification"/>
+      </typeRestrictions>
+      <screens>
+        <screen idno="event_record" default="1">
+          <labels>
+            <label locale="en_US">
+              <name>Record</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="idno">
+              <bundle>idno</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">CMS-ID</setting>
+              </settings>
+            </placement>
+			      <placement code="preferred_labels_identification">
+              <bundle>preferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Identification event ID</setting>
+                <setting name="description" locale="en_US">Suggested format: year-initials-taxon. For example 2025-EV-wasbeer</setting>
+              </settings>
+            </placement>
+            <placement code="nonpreferred_labels">
+              <bundle>nonpreferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Other identifier (nonpreferred)</setting>
+				        <setting name="add_label" locale="en_US">Add other non-preferred identifier</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+			      <placement code="eventDate">
+              <bundle>ca_attribute_eventDate</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Date (range) and time (range), standardised.</setting>
+              </settings>
+            </placement>
+			      <placement code="verbatimTaxon">
+              <bundle>ca_attribute_verbatimTaxon</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The verbatim taxonomic identification</setting>
+				        <setting name="add_label" locale="en_US">Add a new taxon</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
+			        </settings>
+            </placement>
+			      <placement code="taxonDate">
+              <bundle>ca_attribute_taxonDate</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">expand</setting>
+			        </settings>
+            </placement>
+			      <placement code="taxonNote">
+              <bundle>ca_attribute_taxonNote</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">expand</setting>
+			        </settings>
+            </placement>
+            <placement code="ca_entities_identifier">
+              <bundle>ca_entities</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Identified by</setting>
+                <setting name="description" locale="en_US">Person(s) (individual(s)) that executed the taxonomic identification.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">20</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
+                <setting name="restrict_to_relationship_types">executedBy</setting>
+              </settings>
+			      </placement>
+          </bundlePlacements>
+        </screen>
+        <screen idno="event_execution" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Execution</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="ca_entities_identifier">
+              <bundle>ca_entities</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Identified by</setting>
+                <setting name="description" locale="en_US">Person(s) (individual(s)) that executed the taxonomic identification.</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+				        <setting name="maxRelationshipsPerRow">20</setting>
+                <setting name="expand_collapse_no_value">expand</setting>
+                <setting name="restrict_to_relationship_types">executedBy</setting>
+              </settings>
+			      </placement>
+            <placement code="ca_object">
+              <bundle>ca_objects</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Object(s) subjected to event</setting>
+                <setting name="description" locale="en_US">Object that was subjected to the event (identification, valuation or curation)</setting>
+                <setting name="list_format" locale="en_US">list</setting>
+              </settings>
+            </placement>
+			      <placement code="eventProcedure">
+              <bundle>ca_attribute_eventProcedure</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Description of event procedure</setting>
+                <setting name="description" locale="en_US">Text field to (concisely) describe the procedure (if relevant). Can be if: no doi-reference for procedure description or to add notes/addenda on the given published procedure.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="fileURL">
+              <bundle>ca_attribute_fileURL</bundle>
+			        <settings>
+				        <setting name="add_label" locale="en_US">Add multimedia</setting>
+			        </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
+	    </screens>
+    </userInterface>
+    <userInterface code="curation_ui" type="ca_occurrences">
+      <labels>
+        <label locale="en_US">
+          <name>Event editor</name>
+        </label>
+      </labels>
+      <typeRestrictions>
+        <restriction code="r_disposal" type="disposal"/>
+        <restriction code="r_renewal" type="renewal"/>
+        <restriction code="r_treatment" type="treatment"/>
+      </typeRestrictions>
+      <screens>
+        <screen idno="event_record" default="1">
+          <labels>
+            <label locale="en_US">
+              <name>Record</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="idno">
+              <bundle>idno</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">CMS-ID</setting>
+              </settings>
+            </placement>
+			      <placement code="preferred_labels_curation">
+              <bundle>preferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Curation event identifier (preferred)</setting>
+                <setting name="description" locale="en_US">The identifier for the curation event used in notes. This can be a descriptive title: for example: Renewal of seedlot bags 2023.</setting>
+              </settings>
+            </placement>
+            <placement code="nonpreferred_labels">
+              <bundle>nonpreferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Other identifier (nonpreferred)</setting>
+				        <setting name="add_label" locale="en_US">Add other non-preferred identifier</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+			      <placement code="eventDate">
+              <bundle>ca_attribute_eventDate</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Date (range) and time (range), standardised.</setting>
+              </settings>
+            </placement>
+			      <placement code="status">
+              <bundle>status</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Cataloguing status</setting>
+              </settings>
+            </placement>
+            <placement code="curationResult">
+              <bundle>ca_attribute_curationResult</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Result of curation event</setting>
+                <setting name="description" locale="en_US">Here you can specify further on the curation action. For example: disposal because of depletion of DNA/soil, disease (plant), rot (seedlot), ...; treatment: cold treatment -80°C for parasites; renewal: of containers, of labels, of buffer + in the file you can specify the manufacturers information on the new material.; reason why this particular group of samples was transferred.</setting>
+			        </settings>
+            </placement>
+            <placement code="curationURL">
+              <bundle>ca_attribute_curationURL</bundle>
+            </placement>
+          </bundlePlacements>
+        </screen>
+        <screen idno="event_execution" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Execution</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="ca_entities_executor">
+              <bundle>ca_entities</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Executor</setting>
+                <setting name="restrict_to_type">ind</setting>
+                <setting name="label" locale="en_US">Executed by</setting>
+				        <setting name="add_label" locale="en_US">Add individual</setting>
+                <setting name="restrict_to_relationship_types">executedBy</setting>
+              </settings>
+            </placement>
+            <placement code="ca_object">
+              <bundle>ca_objects</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Object(s) subjected to event</setting>
+                <setting name="description" locale="en_US">Object that was subjected to the event (identification, valuation or curation)</setting>
+                <setting name="list_format" locale="en_US">list</setting>
+              </settings>
+            </placement>
+			      <placement code="eventProcedure">
+              <bundle>ca_attribute_eventProcedure</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Description of event procedure</setting>
+                <setting name="description" locale="en_US">Text field to (concisely) describe the procedure (if relevant). Can be if: no doi-reference for procedure description or to add notes/addenda on the given published procedure.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="fileURL">
+              <bundle>ca_attribute_fileURL</bundle>
+			        <settings>
+				        <setting name="add_label" locale="en_US">Add multimedia</setting>
+			        </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
         <screen idno="curationEvent_result" default="0">
           <labels>
             <label locale="en_US">
               <name>Result(s)</name>
             </label>
           </labels>
-          <typeRestrictions>
-            <restriction code="r_curation" type="curation"/>	
-            <restriction code="r_disposal" type="disposal"/>
-            <restriction code="r_treatment" type="treatment"/>
-            <restriction code="r_renewal" type="renewal"/>
-            <restriction code="r_transfer" type="transfer"/>																																																																																																																													
-          </typeRestrictions>
           <bundlePlacements>
-            <placement code="curationResult" typeRestrictions="disposal,treatment,renewal,transfer">
+            <placement code="curationResult">
               <bundle>ca_attribute_curationResult</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Result of curation event</setting>
                 <setting name="description" locale="en_US">Here you can specify further on the curation action. For example: disposal because of depletion of DNA/soil, disease (plant), rot (seedlot), ...; treatment: cold treatment -80°C for parasites; renewal: of containers, of labels, of buffer + in the file you can specify the manufacturers information on the new mateiral.; reason why this particular group of samples was transferred.</setting>
 			        </settings>
             </placement>
-            <placement code="reference" typeRestrictions="disposal,treatment,renewal,transfer">
+            <placement code="reference">
               <bundle>ca_attribute_fileURL</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Relevant curation notes, documents, ... (internal)</setting>
 				        <setting name="add_label" locale="en_US">Add file</setting>
 			        </settings>
             </placement>
-            <placement code="ca_entities" typeRestrictions="transfer">
+          </bundlePlacements>
+        </screen>
+	    </screens>
+    </userInterface>
+    <userInterface code="transfer_ui" type="ca_occurrences">
+      <labels>
+        <label locale="en_US">
+          <name>Event editor</name>
+        </label>
+      </labels>
+      <typeRestrictions>
+        <restriction code="r_transfer" type="transfer"/>
+      </typeRestrictions>
+      <screens>
+        <screen idno="event_record" default="1">
+          <labels>
+            <label locale="en_US">
+              <name>Record</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="idno">
+              <bundle>idno</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">CMS-ID</setting>
+              </settings>
+            </placement>
+			      <placement code="preferred_labels_curation">
+              <bundle>preferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Curation event identifier (preferred)</setting>
+                <setting name="description" locale="en_US">The identifier for the curation event used in notes. This can be a descriptive title: for example: Renewal of seedlot bags 2023.</setting>
+              </settings>
+            </placement>
+            <placement code="nonpreferred_labels">
+              <bundle>nonpreferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Other identifier (nonpreferred)</setting>
+				        <setting name="add_label" locale="en_US">Add other non-preferred identifier</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+			      <placement code="eventDate">
+              <bundle>ca_attribute_eventDate</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Date (range) and time (range), standardised.</setting>
+              </settings>
+            </placement>
+			      <placement code="status">
+              <bundle>status</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Cataloguing status</setting>
+              </settings>
+            </placement>
+            <placement code="curationResult">
+              <bundle>ca_attribute_curationResult</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Result of curation event</setting>
+                <setting name="description" locale="en_US">Here you can specify further on the curation action. For example: disposal because of depletion of DNA/soil, disease (plant), rot (seedlot), ...; treatment: cold treatment -80°C for parasites; renewal: of containers, of labels, of buffer + in the file you can specify the manufacturers information on the new material.; reason why this particular group of samples was transferred.</setting>
+			        </settings>
+            </placement>
+            <placement code="curationURL">
+              <bundle>ca_attribute_curationURL</bundle>
+            </placement>
+          </bundlePlacements>
+        </screen>
+        <screen idno="event_execution" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Execution</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="ca_entities_executor">
+              <bundle>ca_entities</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Executor</setting>
+                <setting name="restrict_to_type">ind</setting>
+                <setting name="label" locale="en_US">Executed by</setting>
+				        <setting name="add_label" locale="en_US">Add individual</setting>
+                <setting name="restrict_to_relationship_types">executedBy</setting>
+              </settings>
+            </placement>
+            <placement code="ca_object">
+              <bundle>ca_objects</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Object(s) subjected to event</setting>
+                <setting name="description" locale="en_US">Object that was subjected to the event (identification, valuation or curation)</setting>
+                <setting name="list_format" locale="en_US">list</setting>
+              </settings>
+            </placement>
+			      <placement code="eventProcedure">
+              <bundle>ca_attribute_eventProcedure</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Description of event procedure</setting>
+                <setting name="description" locale="en_US">Text field to (concisely) describe the procedure (if relevant). Can be if: no doi-reference for procedure description or to add notes/addenda on the given published procedure.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="fileURL">
+              <bundle>ca_attribute_fileURL</bundle>
+			        <settings>
+				        <setting name="add_label" locale="en_US">Add multimedia</setting>
+			        </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
+        <screen idno="curationEvent_result" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Result(s)</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="curationResult">
+              <bundle>ca_attribute_curationResult</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Result of curation event</setting>
+                <setting name="description" locale="en_US">Here you can specify further on the curation action. For example: disposal because of depletion of DNA/soil, disease (plant), rot (seedlot), ...; treatment: cold treatment -80°C for parasites; renewal: of containers, of labels, of buffer + in the file you can specify the manufacturers information on the new mateiral.; reason why this particular group of samples was transferred.</setting>
+			        </settings>
+            </placement>
+            <placement code="reference">
+              <bundle>ca_attribute_fileURL</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Relevant curation notes, documents, ... (internal)</setting>
+				        <setting name="add_label" locale="en_US">Add file</setting>
+			        </settings>
+            </placement>
+            <placement code="ca_entities">
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Organization to which the samples were transferred</setting>
                 <setting name="restrict_to_type">org</setting>
                 <setting name="restrict_to_relationship_types">transferredTo</setting>
-			        </settings>
-            </placement>
-          </bundlePlacements>
-        </screen>
-		    <screen idno="event_administration" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>Administration</name>
-            </label>
-          </labels>
-          <typeRestrictions>
-            <restriction code="r_fieldwork" type="fieldwork"/>
-            <restriction code="r_internalProject" type="internalProject"/>
-            <restriction code="r_externalProject" type="externalProject"/>
-          </typeRestrictions>
-          <bundlePlacements>
-			      <placement code="eventAdminFile">
-              <bundle>ca_attribute_fileURL</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">File</setting>
-                <setting name="description" locale="en_US">File associated with field campaign or project that specifies conditions for usage of objects or associated data. For example: a scan of a permit.</setting>				       
-                <setting name="add_label" locale="en_US">Add file</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
