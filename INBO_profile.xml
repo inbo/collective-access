@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.98</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.101</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
-  <!--Issues to check if succesful in v0.97-->
+  <!--Issues to check if succesful in v0.101-->
   <!--https://github.com/inbo/collective-access/issues/351-->
   <!--More difficult issues / issues for later-->
   <!--https://github.com/inbo/collective-access/issues/77--><!--bug-->
@@ -12686,13 +12686,13 @@
           </roleAccess>
           <bundlePlacements>
             <placement code="matrixType" typeRestrictions="dnaSample">
-              <bundle>ca_attribute.matrixType</bundle>
+              <bundle>ca_attribute_matrixType</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
 			      <placement code="verbatimTaxon" typeRestrictions="dnaSample,leafSampleAnalytic,seedlot,stemdisc,forestTreePopulation,livingPlant,moss,fishEntireEthanol,fishSample,mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent">
-              <bundle>ca_attribute.verbatimTaxon</bundle>
+              <bundle>ca_attribute_verbatimTaxon</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">MAIN TAXON: verbatim taxon</setting>
 				        <setting name="add_label" locale="en_US">Add a new taxon</setting>
@@ -12700,7 +12700,7 @@
 			        </settings>
             </placement>
 			      <placement code="GBIF" typeRestrictions="mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,livingPlant,forestTreePopulation">
-              <bundle>ca_attribute.GBIF</bundle>
+              <bundle>ca_attribute_GBIF</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">MAIN TAXON: GBIF taxon lookup</setting>
                 <setting name="description" locale="en_US">This is the taxon as far as can be identified of the MAIN biodiversity the sample represents. For example a tongue tissue sample of a wolf (which can be tested for bacteria): enter Canis lupus. </setting>
@@ -12708,7 +12708,7 @@
 			        </settings>
             </placement>
 			      <placement code="taxonDate" typeRestrictions="mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,livingPlant,forestTreePopulation">
-              <bundle>ca_attribute.taxonDate</bundle>
+              <bundle>ca_attribute_taxonDate</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">MAIN TAXON: Date of taxonomic identification</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -12725,7 +12725,7 @@
               </settings>
 			      </placement>
 			      <placement code="voucher" typeRestrictions="mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent,dnaSample,leafSampleAnalytic,moss,seedlot,stemdisc,livingPlant,forestTreePopulation">
-              <bundle>ca_attribute.voucher</bundle>
+              <bundle>ca_attribute_voucher</bundle>
               <settings>
                 <setting name="label" locale="en_US">MAIN TAXON: Voucher</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -12745,7 +12745,7 @@
               </settings>
 			      </placement>
 			      <placement code="taxonReference">
-              <bundle>ca_attribute.taxonReference</bundle>
+              <bundle>ca_attribute_taxonReference</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">eDNA: Publication on biodiversity in specimen</setting>
                 <setting name="description" locale="en_US">Publication (dataset, article) that outlines the results of biodiversity present in the specimen, other than the main taxon. In water, soil or air samples, this is the only way biodiversity can be recorded. For all other types of specimen, this is "secondary" biodiversity, other the main taxon. For example: stomach of a bee (main taxon), tested for presence of which plant pollen. For example tissue of a wolf (main taxon) tested for bacteria. This information is relevant to know (what has been tested on this specimen and how) but not relevant for querying the specimen themselves. Preferably this is a(n open) publication in a repository, but also internal result files (e.g. INBO Google drive) can be linked here.</setting>                
@@ -12754,7 +12754,7 @@
               </settings>
             </placement>
 			      <placement code="GBIFedna">
-              <bundle>ca_attribute.GBIFedna</bundle>
+              <bundle>ca_attribute_GBIFedna</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">eDNA: GBIF taxon lookup</setting>
                 <setting name="description" locale="en_US">If other than the linked publication, specific taxa are relevant (for example for INBO research) to explicitly link to the specimen, they can be added here.</setting>
@@ -12762,7 +12762,7 @@
 			        </settings>
             </placement>
 			      <placement code="taxonNote">
-              <bundle>ca_attribute.taxonNote</bundle>
+              <bundle>ca_attribute_taxonNote</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
