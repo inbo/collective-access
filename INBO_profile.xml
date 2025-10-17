@@ -8,6 +8,7 @@
   <!--https://github.com/inbo/collective-access/issues/361-->
   <!--https://github.com/inbo/collective-access/issues/360-->
   <!--https://github.com/inbo/collective-access/issues/363-->
+  <!--https://github.com/inbo/collective-access/issues/365-->
   <!--More difficult issues / issues for later-->
   <!--https://github.com/inbo/collective-access/issues/77--><!--bug-->
   <!--https://github.com/inbo/collective-access/issues/89--><!--import check later-->
@@ -70,8 +71,8 @@
           <item idno="transferred" rank="1" enabled="1" default="1" value="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>transferred</name_singular>
-                <name_plural>transferred</name_plural>
+                <name_singular>transferred (i.e. with change in ownership)</name_singular>
+                <name_plural>transferred (i.e. with change in ownership)</name_plural>
               </label>
             </labels>
           </item>
@@ -83,11 +84,43 @@
               </label>
             </labels>
           </item>
-          <item idno="depleted" rank="2" enabled="1" default="0" value="1">
+          <item idno="depleted" rank="3" enabled="1" default="0" value="1">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>depleted</name_singular>
                 <name_plural>depleted</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="converted" rank="4" enabled="1" default="0" value="1">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>converted to another specimen type</name_singular>
+                <name_plural>converted to another specimen type</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="loaned" rank="6" enabled="1" default="0" value="1">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>loaned (in its totality - i.e. not subsampled)</name_singular>
+                <name_plural>loaned (in its totality - i.e. not subsampled)</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="missing" rank="7" enabled="1" default="0" value="1">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>missing</name_singular>
+                <name_plural>missing</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="dead" rank="8" enabled="1" default="0" value="1">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>dead (only possible for living plants)</name_singular>
+                <name_plural>dead (only possible for living plants)</name_plural>
               </label>
             </labels>
           </item>
@@ -163,232 +196,230 @@
             </settings>
             <items>
               <item idno="animalObject" rank="4" enabled="0" default="0">
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>Animal</name_singular>
+                    <name_plural>Animal</name_plural>
+                  </label>
+                </labels>
+                <settings>
+                  <setting name="render_in_new_menu">1</setting>
+                </settings>
+                <items>
+                  <item idno="fish" enabled="0" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
-                        <name_singular>Animal</name_singular>
-                        <name_plural>Animal</name_plural>
+                        <name_singular>Fish</name_singular>
+                        <name_plural>Fishes</name_plural>
                       </label>
                     </labels>
                     <settings>
-                    <setting name="render_in_new_menu">1</setting>
+                      <setting name="render_in_new_menu">1</setting>
                     </settings>
-                    <items>
-                      <item idno="fish" enabled="0" default="0">
-                        <labels>
-                          <label locale="en_US" preferred="1">
-                            <name_singular>Fish</name_singular>
-                            <name_plural>Fishes</name_plural>
-                          </label>
-                        </labels>
-                        <settings>
-                          <setting name="render_in_new_menu">1</setting>
-                        </settings>
-                        <items>
-                          <item idno="fishEntireEthanol" enabled="1" default="0">
-                            <labels>
-                              <label locale="en_US" preferred="1">
-                                <name_singular>Entire fish on ethanol</name_singular>
-                                <name_plural>Entire fishes on ethanol</name_plural>
-                              </label>
-                            </labels>
-                            <settings>
-                              <setting name="render_in_new_menu">1</setting>
-                            </settings>
-                          </item>
-                          <item idno="fishSample" enabled="1" default="0">
-                            <labels>
-                              <label locale="en_US" preferred="1">
-                                <name_singular>Fish sample</name_singular>
-                                <name_plural>Fish samples</name_plural>
-                              </label>
-                            </labels>
-                            <settings>
-                              <setting name="render_in_new_menu">1</setting>
-                            </settings>
-                          </item>
-                        </items>
-                      </item>
-                      <item idno="mammal" enabled="0" default="0">
-                        <labels>
-                          <label locale="en_US" preferred="1">
-                            <name_singular>Mammal</name_singular>
-                            <name_plural>Mammals</name_plural>
-                          </label>
-                        </labels>
-                        <settings>
-                          <setting name="render_in_new_menu">1</setting>
-                        </settings>
-                        <items>
-                          <item idno="mammalEntire" enabled="1" default="0">
-                            <labels>
-                              <label locale="en_US" preferred="1">
-                                <name_singular>Entire mammal</name_singular>
-                                <name_plural>Entire mammals</name_plural>
-                              </label>
-                            </labels>
-                            <settings>
-                              <setting name="render_in_new_menu">1</setting>
-                            </settings>
-                            <items>
-                              <item idno="mammalEntireCadaver" enabled="1" default="0"><!--unprocessed, frozen-->
-                                <labels>
-                                  <label locale="en_US" preferred="1">
-                                    <name_singular>Mammal cadaver</name_singular>
-                                    <name_plural>Mammal cadavers</name_plural>
-                                  </label>
-                                </labels>
-                                <settings>
-                                  <setting name="render_in_new_menu">1</setting>
-                                </settings>
-                              </item>
-                              <item idno="mammalEntireZoological" enabled="1" default="0"><!--Taxidermy-->
-                                <labels>
-                                  <label locale="en_US" preferred="1">
-                                    <name_singular>Zoological specimen</name_singular>
-                                    <name_plural>Zoological specimens</name_plural>
-                                  </label>
-                                </labels>
-                                <settings>
-                                  <setting name="render_in_new_menu">1</setting>
-                                </settings>
-                              </item>
-                            </items>
-                          </item>
-                          <item idno="mammalSample" enabled="1" default="0">
-                            <labels>
-                              <label locale="en_US" preferred="1">
-                                <name_singular>Mammal sample</name_singular>
-                                <name_plural>Mammal samples</name_plural>
-                              </label>
-                            </labels>
-                            <settings>
-                              <setting name="render_in_new_menu">1</setting>
-                            </settings>
-                          </item>
-                          <item idno="mammalBones" enabled="1" default="0">
-                            <labels>
-                              <label locale="en_US" preferred="1">
-                                <name_singular>Mammal bone</name_singular>
-                                <name_plural>Mammal bones</name_plural>
-                              </label>
-                            </labels>
-                            <settings>
-                              <setting name="render_in_new_menu">1</setting>
-                            </settings>
-                          </item>
-                          <item idno="mammalSkinComplete" enabled="1" default="0">
-                            <labels>
-                              <label locale="en_US" preferred="1">
-                                <name_singular>Mammal skin (complete)</name_singular>
-                                <name_plural>Mammal skins (complete)</name_plural>
-                              </label>
-                            </labels>
-                          </item>
-                          <item idno="mammalHead" enabled="1" default="0">
-                            <labels>
-                              <label locale="en_US" preferred="1">
-                                <name_singular>Head</name_singular>
-                                <name_plural>Heads</name_plural>
-                              </label>
-                            </labels>
-                          </item>
-                          <item idno="mammalStomachContent" enabled="1" default="0">
-                            <labels>
-                              <label locale="en_US" preferred="1">
-                                <name_singular>Stomach content</name_singular>
-                                <name_plural>Stomach contents</name_plural>
-                              </label>
-                            </labels>
-                          </item>
-                        </items>
-                      </item>
-                    </items>
-                  </item>
-                  <item idno="plantObject" rank="3" enabled="0" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Plant</name_singular>
-                        <name_plural>Plant</name_plural>
-                      </label>
-                    </labels>
-                    <settings>
-                    <setting name="render_in_new_menu">1</setting>
-                    </settings>
-                    <items>
-                      <item idno="leafSampleAnalytic" rank="2" enabled="1" default="0">
-                        <labels>
-                          <label locale="en_US" preferred="1">
-                            <name_singular>Plant sample, analytic</name_singular>
-                            <name_plural>Plant sample, analytic</name_plural>
-                          </label>
-                        </labels>
-                      </item>
-                      <item idno="livingPlant" rank="7" enabled="1" default="0">
-                        <labels>
-                          <label locale="en_US" preferred="1">
-                            <name_singular>Individual living plant</name_singular>
-                            <name_plural>Individual living plants</name_plural>
-                          </label>
-                        </labels>
-                      </item>
-                      <item idno="seedlot" rank="3" enabled="1" default="0">
+                      <items>
+                        <item idno="fishEntireEthanol" enabled="1" default="0">
                           <labels>
                             <label locale="en_US" preferred="1">
-                              <name_singular>Seed(lot)</name_singular>
-                              <name_plural>Seed(lot)s</name_plural>
+                              <name_singular>Entire fish on ethanol</name_singular>
+                              <name_plural>Entire fishes on ethanol</name_plural>
                             </label>
                           </labels>
-                      </item>
-                      <item idno="stemdisc" rank="5" enabled="1" default="0">
+                          <settings>
+                            <setting name="render_in_new_menu">1</setting>
+                          </settings>
+                        </item>
+                        <item idno="fishSample" enabled="1" default="0">
                           <labels>
                             <label locale="en_US" preferred="1">
-                              <name_singular>Stem disc</name_singular>
-                              <name_plural>Stem discs</name_plural>
+                              <name_singular>Fish sample</name_singular>
+                              <name_plural>Fish samples</name_plural>
                             </label>
                           </labels>
-                      </item>
-                      <item idno="forestTreePopulation" rank="6" enabled="1" default="0">
+                          <settings>
+                            <setting name="render_in_new_menu">1</setting>
+                          </settings>
+                        </item>
+                      </items>
+                    </item>
+                    <item idno="mammal" enabled="0" default="0">
+                      <labels>
+                        <label locale="en_US" preferred="1">
+                          <name_singular>Mammal</name_singular>
+                          <name_plural>Mammals</name_plural>
+                        </label>
+                      </labels>
+                      <settings>
+                        <setting name="render_in_new_menu">1</setting>
+                      </settings>
+                      <items>
+                        <item idno="mammalEntire" enabled="1" default="0">
                           <labels>
                             <label locale="en_US" preferred="1">
-                              <name_singular>Forest tree population</name_singular>
-                              <name_plural>Forest tree populations</name_plural>
+                              <name_singular>Entire mammal</name_singular>
+                              <name_plural>Entire mammals</name_plural>
                             </label>
                           </labels>
-                      </item>
-                      <item idno="moss" rank="8" enabled="1" default="0">
-                        <labels>
-                          <label locale="en_US" preferred="1">
-                            <name_singular>Moss</name_singular>
-                            <name_plural>Mosses</name_plural>
-                          </label>
-                        </labels>
-                      </item>
-                    </items>
-                  </item>
-                  <item idno="dnaSample" rank="1" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>DNA sample</name_singular>
-                        <name_plural>DNA samples</name_plural>
-                      </label>
-                    </labels>
-                    <settings>
+                          <settings>
+                            <setting name="render_in_new_menu">1</setting>
+                          </settings>
+                          <items>
+                            <item idno="mammalEntireCadaver" enabled="1" default="0">
+                              <labels>
+                                <label locale="en_US" preferred="1">
+                                  <name_singular>Mammal cadaver</name_singular>
+                                  <name_plural>Mammal cadavers</name_plural>
+                                </label>
+                              </labels>
+                              <settings>
+                                <setting name="render_in_new_menu">1</setting>
+                              </settings>
+                            </item>
+                            <item idno="mammalEntireZoological" enabled="1" default="0">
+                              <labels>
+                                <label locale="en_US" preferred="1">
+                                  <name_singular>Zoological specimen</name_singular>
+                                  <name_plural>Zoological specimens</name_plural>
+                                </label>
+                              </labels>
+                              <settings>
+                                <setting name="render_in_new_menu">1</setting>
+                              </settings>
+                            </item>
+                          </items>
+                        </item>
+                        <item idno="mammalSample" enabled="1" default="0">
+                          <labels>
+                            <label locale="en_US" preferred="1">
+                              <name_singular>Mammal sample</name_singular>
+                              <name_plural>Mammal samples</name_plural>
+                            </label>
+                          </labels>
+                          <settings>
+                            <setting name="render_in_new_menu">1</setting>
+                          </settings>
+                        </item>
+                        <item idno="mammalBones" enabled="1" default="0">
+                          <labels>
+                            <label locale="en_US" preferred="1">
+                              <name_singular>Mammal bone</name_singular>
+                              <name_plural>Mammal bones</name_plural>
+                            </label>
+                          </labels>
+                          <settings>
+                            <setting name="render_in_new_menu">1</setting>
+                          </settings>
+                        </item>
+                        <item idno="mammalSkinComplete" enabled="1" default="0">
+                          <labels>
+                            <label locale="en_US" preferred="1">
+                              <name_singular>Mammal skin (complete)</name_singular>
+                              <name_plural>Mammal skins (complete)</name_plural>
+                            </label>
+                          </labels>
+                        </item>
+                        <item idno="mammalHead" enabled="1" default="0">
+                          <labels>
+                            <label locale="en_US" preferred="1">
+                              <name_singular>Head</name_singular>
+                              <name_plural>Heads</name_plural>
+                            </label>
+                          </labels>
+                        </item>
+                        <item idno="mammalStomachContent" enabled="1" default="0">
+                          <labels>
+                            <label locale="en_US" preferred="1">
+                              <name_singular>Stomach content</name_singular>
+                              <name_plural>Stomach contents</name_plural>
+                            </label>
+                          </labels>
+                        </item>
+                      </items>
+                    </item>
+                  </items>
+              </item>
+              <item idno="plantObject" rank="3" enabled="0" default="0">
+                  <labels>
+                    <label locale="en_US" preferred="1">
+                      <name_singular>Plant</name_singular>
+                      <name_plural>Plant</name_plural>
+                    </label>
+                  </labels>
+                  <settings>
                     <setting name="render_in_new_menu">1</setting>
-                    </settings>
-                  </item>
-                  <item idno="soilObject" rank="2" enabled="1" default="0">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Soil sample</name_singular>
-                        <name_plural>Soil samples</name_plural>
-                      </label>
-                    </labels>
-                    <settings>
+                  </settings>
+                  <items>
+                    <item idno="leafSampleAnalytic" rank="2" enabled="1" default="0">
+                      <labels>
+                        <label locale="en_US" preferred="1">
+                          <name_singular>Plant sample, analytic</name_singular>
+                          <name_plural>Plant sample, analytic</name_plural>
+                        </label>
+                      </labels>
+                    </item>
+                    <item idno="livingPlant" rank="7" enabled="1" default="0">
+                      <labels>
+                        <label locale="en_US" preferred="1">
+                          <name_singular>Individual living plant</name_singular>
+                          <name_plural>Individual living plants</name_plural>
+                        </label>
+                      </labels>
+                    </item>
+                    <item idno="seedlot" rank="3" enabled="1" default="0">
+                      <labels>
+                        <label locale="en_US" preferred="1">
+                          <name_singular>Seed(lot)</name_singular>
+                          <name_plural>Seed(lot)s</name_plural>
+                        </label>
+                      </labels>
+                    </item>
+                    <item idno="stemdisc" rank="5" enabled="1" default="0">
+                      <labels>
+                        <label locale="en_US" preferred="1">
+                          <name_singular>Stem disc</name_singular>
+                          <name_plural>Stem discs</name_plural>
+                        </label>
+                      </labels>
+                    </item>
+                    <item idno="forestTreePopulation" rank="6" enabled="1" default="0">
+                      <labels>
+                        <label locale="en_US" preferred="1">
+                          <name_singular>Forest tree population</name_singular>
+                          <name_plural>Forest tree populations</name_plural>
+                        </label>
+                      </labels>
+                    </item>
+                    <item idno="moss" rank="8" enabled="1" default="0">
+                      <labels>
+                        <label locale="en_US" preferred="1">
+                          <name_singular>Moss</name_singular>
+                          <name_plural>Mosses</name_plural>
+                        </label>
+                      </labels>
+                    </item>
+                  </items>
+              </item>
+              <item idno="dnaSample" rank="1" enabled="1" default="0">
+                  <labels>
+                    <label locale="en_US" preferred="1">
+                      <name_singular>DNA sample</name_singular>
+                      <name_plural>DNA samples</name_plural>
+                    </label>
+                  </labels>
+                  <settings>
                     <setting name="render_in_new_menu">1</setting>
-                    </settings>
-                    <items>
-                    </items>
-                  </item>
+                  </settings>
+              </item>
+              <item idno="soilObject" rank="2" enabled="1" default="0">
+                  <labels>
+                    <label locale="en_US" preferred="1">
+                      <name_singular>Soil sample</name_singular>
+                      <name_plural>Soil samples</name_plural>
+                    </label>
+                  </labels>
+                  <settings>
+                    <setting name="render_in_new_menu">1</setting>
+                  </settings>
+              </item>
             </items>
           </item>
 			    <item idno="genotype" rank="2" enabled="1" default="0">
@@ -1065,7 +1096,23 @@
                 </label>
               </labels>
             </item>
-            <item idno="fishTissueID" rank="3" enabled="1" default="0">
+            <item idno="marternetwerkdbID" rank="3" enabled="1" default="0">
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>marternetwerkdatabank ID</name_singular>
+                  <name_plural>marternetwerkdatabank IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="wildbeheerdbID" rank="3" enabled="1" default="0">
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>wildbeheerdatabank ID</name_singular>
+                  <name_plural>wildbeheerdatabank IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="fishTissueID" rank="4" enabled="1" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Fish tissue ID</name_singular>
@@ -1073,7 +1120,15 @@
                 </label>
               </labels>
             </item>
-            <item idno="GenbosINBOID" rank="4" enabled="1" default="0">
+            <item idno="VISdbID" rank="4" enabled="1" default="0">
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>V.I.S. db ID</name_singular>
+                  <name_plural>V.I.S. db IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="GenbosINBOID" rank="5" enabled="1" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Genbos INBO ID</name_singular>
@@ -1081,7 +1136,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="GenbosRegNr" rank="4" enabled="1" default="0">
+            <item idno="GenbosRegNr" rank="5" enabled="1" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Genbos registernummer</name_singular>
@@ -1089,7 +1144,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="plantID" rank="4" enabled="1" default="0">
+            <item idno="plantID" rank="5" enabled="1" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Plant ID</name_singular>
@@ -1097,7 +1152,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="GenbosGeneticEntityID" rank="4" enabled="1" default="0">
+            <item idno="GenbosGeneticEntityID" rank="5" enabled="1" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Genbos genetic entity ID</name_singular>
@@ -1105,7 +1160,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="seedlotID" enabled="1" rank="5" default="0">
+            <item idno="seedlotID" enabled="1" rank="6" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Seedlot ID</name_singular>
@@ -1113,7 +1168,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="Twnumber" rank="6" enabled="1" default="0">
+            <item idno="Twnumber" rank="7" enabled="1" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Tw number</name_singular>
@@ -1121,7 +1176,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="projectID" enabled="1" rank="7" default="0">
+            <item idno="projectID" enabled="1" rank="8" default="0">
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Project ID</name_singular>
@@ -2136,6 +2191,14 @@
               </label>
             </labels>
           </item>
+          <item idno="subadult" enabled="1" default="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>subadult</name_singular>
+                <name_plural>subadults</name_plural>
+              </label>
+            </labels>
+          </item>
           <item idno="adult" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
@@ -2476,31 +2539,6 @@
               <label locale="en_US" preferred="1">
                 <name_singular>mg/ml</name_singular>
                 <name_plural>mg/ml</name_plural>
-              </label>
-            </labels>
-          </item>
-        </items>
-      </list>
-	    <list code="dna_volume_unit" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
-        <labels>
-          <label locale="en_US">
-            <name>Unit used for volume measurement (dna)</name>
-          </label>
-        </labels>
-        <items>
-          <item idno="µl" rank="1" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>µl</name_singular>
-                <name_plural>µl</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="ml" rank="2" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>ml</name_singular>
-                <name_plural>ml</name_plural>
               </label>
             </labels>
           </item>
@@ -3751,87 +3789,6 @@
           </item>
         </items>
       </list>
-      <list code="disposition_list" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
-        <labels>
-          <label locale="en_US">
-            <name>Disposition</name>
-          </label>
-        </labels>
-        <items>
-          <item idno="inCollection" rank="1" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>in collection</name_singular>
-                <name_plural>in collection</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="onLoan" rank="2" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>on loan</name_singular>
-                <name_plural>on loan</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="onPermanentLoan" rank="3" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>on permanent loan</name_singular>
-                <name_plural>on permanent loan</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="converted" rank="4" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>converted</name_singular>
-                <name_plural>converted</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="missing" rank="5" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>missing</name_singular>
-                <name_plural>missing</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="dead" rank="6" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>dead</name_singular>
-                <name_plural>dead</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="consumed" rank="7" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>consumed</name_singular>
-                <name_plural>consumed</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="disposed" rank="8" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>disposed</name_singular>
-                <name_plural>disposed</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="transferred" rank="9" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>transferred</name_singular>
-                <name_plural>transferred</name_plural>
-              </label>
-            </labels>
-          </item>
-        </items>
-      </list>
       <list code="data_export" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
         <labels>
           <label locale="en_US">
@@ -3989,7 +3946,7 @@
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>ear(punch) tissue</name_singular>
-                <name_plural>ear(punch) tissues</name_plural>
+                <name_plural>ear(punch) tissue</name_plural>
               </label>
             </labels>
           </item>
@@ -12247,8 +12204,13 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
-            <placement code="deaccession">
+            <placement code="deaccession"><--to be mapped to https://dwc.tdwg.org/list/#dwc_disposition-->
               <bundle>ca_objects_deaccession</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Disposition</setting>
+                <setting name="description" locale="en_US">If checked: this means that INBO doesn't have the physical object anymore in its storage location. The object can be transferred to another Natural Science collection (i.e. ownership has changed), it can be disposed of (=thrown away), it can be depleted (it was reused completely - and now only digital data exists of the physical specimen), it can be converted (i.e. it was completed reused to make another specimen type, for example a tissue sample is converted into a DNA sample, or a cadaver is converted to a zoological specimen / taxidermy specimen), it can be missing (i.e. the object should be there, but cannot be found), or it can be on loan (transferred without change in ownership).</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
             </placement>
 			      <placement code="status">
               <bundle>status</bundle>
@@ -13265,7 +13227,13 @@
                 <restriction code="r_dnaSample" type="dnaSample"/>
           </typeRestrictions>
           <bundlePlacements>
-			      <placement code="seedlotRelationSamplingPoint" typeRestrictions="seedlot">
+			      <placement code="seedlotRelationSeeds" typeRestrictions="seedlot">
+              <bundle>ca_attribute_seedlotRelationSeeds</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>			      
+            <placement code="seedlotRelationSamplingPoint" typeRestrictions="seedlot">
               <bundle>ca_attribute_seedlotRelationSamplingPoint</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -13503,6 +13471,7 @@
                 <setting name="restrict_to_relationship_types">grandchildOf</setting>
                 <setting name="restrict_to_relationship_types">grandchildOfCloneOf</setting>
                 <setting name="restrict_to_relationship_types">childOf</setting>
+                <setting name="restrict_to_relationship_types">related</setting>
               </settings>
             </placement>
 			      <placement code="genotype">
@@ -13514,6 +13483,14 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
 				        <setting name="add_label" locale="en_US">Add genotype</setting>
                 <setting name="restrict_to_relationship_types">genotype</setting>
+              </settings>
+			      </placement>
+            <placement code="provenance" typeRestrictions="leafSampleAnalytic,seedlot,stemdisc,moss,livingPlant,forestTreePopulation" includeSubtypes="1">
+              <bundle>ca_attribute_provenance</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">The provenance</setting>
+                <setting name="description" locale="en_US">The plant sampling point has the provenance. As provenance concepts are dependent on the taxon, these are logged separately.</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
             <placement code="objectCount">
@@ -13788,7 +13765,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
               </settings>
             </placement>
-            <placement code="ownedBy" typeRestrictions="forestTreePopulation">
+            <placement code="ca_entities_ownedBy" typeRestrictions="forestTreePopulation">
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Land of the forest tree population is owned by</setting>
@@ -13800,7 +13777,7 @@
                 <setting name="restrict_to_relationship_types">isOwnedBy</setting>
               </settings>
             </placement>
-            <placement code="managedBy" typeRestrictions="forestTreePopulation">
+            <placement code="ca_entities_managedBy" typeRestrictions="forestTreePopulation">
               <bundle>ca_entities</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Forest tree population is managed by</setting>
@@ -16887,11 +16864,11 @@
           <subTypeLeft>livingPlant</subTypeLeft>
           <subTypeRight>geneticEntity</subTypeRight>
         </type>
-        <type code="association" default="0">
+        <type code="related" default="0">
           <labels>
             <label locale="en_US">
-              <typename>is associated with</typename>
-              <typename_reverse>is associated with</typename_reverse>
+              <typename>is related to</typename>
+              <typename_reverse>is related to</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
