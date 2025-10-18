@@ -9,6 +9,8 @@
   <!--https://github.com/inbo/collective-access/issues/360-->
   <!--https://github.com/inbo/collective-access/issues/363-->
   <!--https://github.com/inbo/collective-access/issues/365-->
+  <!--https://github.com/inbo/collective-access/issues/368-->
+  <!--https://github.com/inbo/collective-access/issues/369-->
   <!--More difficult issues / issues for later-->
   <!--https://github.com/inbo/collective-access/issues/77--><!--bug-->
   <!--https://github.com/inbo/collective-access/issues/89--><!--import check later-->
@@ -7419,6 +7421,16 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
+          <restriction code="r_fishSample">
+            <table>ca_objects</table>
+            <type>fishSample</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">50</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
         </typeRestrictions>
       </metadataElement>
 	    <metadataElement code="lengthContainer" datatype="Container">
@@ -8199,9 +8211,9 @@
           <setting name="hideIfSelected_notRecorded">object_ui/obj_measurements1/reprCondMammal</setting>
 			  </settings>
 			  <typeRestrictions>
-          <restriction code="r_animalObject">
+          <restriction code="r_mammal">
             <table>ca_objects</table>
-            <type>animalObject</type>
+            <type>mammal</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -13296,7 +13308,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="weight" typeRestrictions="seedlot,soilObject,leafSampleAnalytic,mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent" includeSubtypes="1">
+            <placement code="weight" typeRestrictions="seedlot,soilObject,leafSampleAnalytic,mammalEntireCadaver,mammalEntireZoological,mammalSample,mammalBones,mammalSkinComplete,mammalHead,mammalStomachContent,fishSample" includeSubtypes="1">
               <bundle>ca_attribute_weightContainer</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Weight measurement</setting>
