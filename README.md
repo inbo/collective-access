@@ -1,11 +1,16 @@
 CollectiveAccess is free, open-source software for cataloguing and publishing museum and archival collections. We are currently evaluating and configuring the application for the INBO collections (https://www.gbif.org/grscicoll/institution/df2f787b-e54a-4902-8212-390bb2bc7b21), in the context of the DiSSCo Flanders project (https://dissco-flanders.be/).
 
 The INBO collections that will make use of this application
-- the DNA collection (45k DNA samples)
-- the soil archive (35k soil samples)
-- the Genbos living plant collection (400 plots = ? woody plants)
-- the Genbos seed collection (500 seed lots)
-- the autopsy collection (??k tissue samples of mammal autopsies)
+- The INBO soil archive (33k soil samples)
+- The INBO plant analytical collection (2k dried plant samples)
+- The INBO DNA collection (43k DNA samples)
+- The INBO living plant collection (411 plots)
+- The INBO seedbank (844 seedlots)
+- The INBO stem discs (289 wood specimens)
+- The INBO fish tissue collection (approx. 55 fish tissue samples)
+- The INBO mammal tissue collection (approx. 19k mammal tissue samples)
+- The INBO fish collection (151 specimens)
+- The INBO mounted animal collection (12 specimens)
 
 More information
 - manual	https://manual.collectiveaccess.org/providence/user/dataModelling/profiles/XMLSchema.html
