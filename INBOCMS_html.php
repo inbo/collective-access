@@ -33,6 +33,7 @@
 	<ul>
 		<li><a href="https://sites.google.com/inbo.be/intranet-sep2021/ondersteuning/inzamelingen-en-collecties?authuser=0" target="_blank" rel="noopener noreferrer"><?php print _t("INBO-intranet page on collections"); ?></a></li>
 		<li><a href="https://docs.google.com/document/d/1yv603lGSjKlOGxLrVpMP1ovnkRuM5DwV8u-m8kgRzcw/edit#heading=h.boezipx4hu2w" target="_blank" rel="noopener noreferrer"><?php print _t("INBO-CMS documentation"); ?></a></li>
+		<li><a href="https://docs.google.com/document/d/1ZaQvFenOBYlxZ-9F9FQKMaiPW3-WgxxCuVOdkWHsHR4/edit?usp=sharing" target="_blank" rel="noopener noreferrer"><?php print _t("INBO-CMS manual"); ?></a></li>
 		<li><a href="https://github.com/inbo/collective-access" target="_blank" rel="noopener noreferrer"><?php print _t("INBO-CMS Github page"); ?></a></li>
 		<li><?php print _t("Contact: collectiebeheer@inbo.be"); ?></li>
 	</ul>
