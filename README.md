@@ -1,7 +1,7 @@
 CollectiveAccess is free, open-source software for cataloguing and publishing museum and archival collections. We are currently evaluating and configuring the application for the INBO collections (https://www.gbif.org/grscicoll/institution/df2f787b-e54a-4902-8212-390bb2bc7b21), in the context of the DiSSCo Flanders project (https://dissco-flanders.be/).
 
 This project includes code from "Collective Access (providence)" -- https://github.com/collectiveaccess/providence
-Licensed under the GPL-3.0 license.
+which is licensed under the GPL-3.0. Providence is developed by Whirl-i-Gig, Inc. and the CollectiveAccess community.
 
 The INBO collections that will make use of this application
 - The INBO soil archive (33k soil samples)
