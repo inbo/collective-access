@@ -11,6 +11,8 @@
   <!--https://github.com/inbo/collective-access/issues/365-->
   <!--https://github.com/inbo/collective-access/issues/368-->
   <!--https://github.com/inbo/collective-access/issues/369-->
+  <!--https://github.com/inbo/collective-access/issues/398-->
+  <!--https://github.com/inbo/collective-access/issues/424-->
   <!--More difficult issues / issues for later-->
   <!--https://github.com/inbo/collective-access/issues/77--><!--bug-->
   <!--https://github.com/inbo/collective-access/issues/89--><!--import check later-->
@@ -11708,7 +11710,6 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	  <!--SetItem-->
       <metadataElement code="set_item_description" datatype="Text">
           <labels>
             <label locale="en_US">
@@ -11732,6 +11733,72 @@
               </settings>
             </restriction>
           </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="set_presentation_type" datatype="List" list="set_presentation_types">
+        <labels>
+          <label locale="en_US">
+            <name>Presentation type</name>
+            <description>Determines how set is rendered when displayed to the public in the Pawtucket/Pawtucket2 front-end.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="set_intro">
+            <table>ca_sets</table>
+            <type>public_presentation</type>
+            <settings>
+              <setting name="minAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="set_item_is_primary" datatype="List" list="set_item_is_primary">
+        <labels>
+          <label locale="en_US">
+            <name>Is primary item for set?</name>
+            <description>The item marked as primary will be used to represent the set as a whole when included in a list of sets.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="set_intro">
+            <table>ca_set_items</table>
+            <type>public_presentation</type>
+            <settings>
+              <setting name="minAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="set_chron_date_element_code" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Chronology element code</name>
+            <description>Element code of date range element to be used when placing set items into chronological order.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="set_intro">
+            <table>ca_sets</table>
+            <type>public_presentation</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
       </metadataElement>
     <!--Relationships-->
 		  <metadataElement code="relationshipExplanation" datatype="Text">
@@ -12097,6 +12164,195 @@
                 <setting name="minimumAttributeBundlesToDisplay">1</setting>
               </settings>
             </restriction>
+        </typeRestrictions>
+      </metadataElement>
+    <!--Movement-->
+      <metadataElement code="movement_method" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Movement method</name>
+            <description>The method used in the movement of an object.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="ca_movements">
+            <table>ca_movements</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="movement_note" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Movement note</name>
+            <description>Additional information about the movement of an object or group of objects.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="ca_movements">
+            <table>ca_movements</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="planned_removal_date" datatype="DateRange">
+        <labels>
+          <label locale="en_US">
+            <name>Planned removal date</name>
+            <description>The date an object is to be removed from its current location.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">40</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">255</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="ca_movements">
+            <table>ca_movements</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="removal_date" datatype="DateRange">
+        <labels>
+          <label locale="en_US">
+            <name>Planned removal date</name>
+            <description>The date an object was actually removed from its current location.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">40</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">255</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="ca_movements">
+            <table>ca_movements</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="movement_reason" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Reason for move</name>
+            <description>The purpose or reason for the movement of the object or group of objects.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="ca_movements">
+            <table>ca_movements</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+    <!--Tours-->
+      <metadataElement code="tour_description" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Introduction</name>
+            <description>Narrative description for tour. This is the primary text used when publicly presenting the tour.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">6</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="tour_desc">
+            <table>ca_tours</table>
+            <settings>
+              <setting name="minAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">3</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="tour_stop_description" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Introduction</name>
+            <description>Narrative description for tour stop. This is the primary text used when publicly presenting the stop.</description>
+          </label>
+        </labels>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">6</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="tour_stop_desc">
+            <table>ca_tour_stops</table>
+            <settings>
+              <setting name="minAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">3</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+      <metadataElement code="tour_stop_georeference" datatype="Geocode">
+        <labels>
+          <label locale="en_US">
+            <name>Georeference</name>
+            <description>Location of this stop.</description>
+          </label>
+        </labels>
+        <settings> </settings>
+        <typeRestrictions>
+          <restriction code="georef">
+            <table>ca_tour_stops</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">100</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
         </typeRestrictions>
       </metadataElement>
   </elementSets>
@@ -16298,7 +16554,7 @@
 	  <userInterface code="loan_cataloguers_ui" type="ca_loans">
       <labels>
         <label locale="en_US">
-          <name>Utilisation editor</name>
+          <name>Reuse editor</name>
         </label>
       </labels>
       <screens>
@@ -16509,7 +16765,7 @@
         </screen>
       </screens>
     </userInterface>
-    <userInterface code="list_ui" type="ca_lists">
+    <userInterface code="list_cataloguers_ui" type="ca_lists">
       <labels>
         <label locale="en_US">
           <name>List editor</name>
@@ -16560,7 +16816,7 @@
         </screen>
       </screens>
     </userInterface>
-    <userInterface code="list_item_ui" type="ca_list_items">
+    <userInterface code="list_item_cataloguers_ui" type="ca_list_items">
       <labels>
         <label locale="en_US">
           <name>List item editor</name>
@@ -16626,7 +16882,7 @@
         </screen>
       </screens>
     </userInterface>
-    <userInterface code="set_ui" type="ca_sets">
+    <userInterface code="set_cataloguers_ui" type="ca_sets">
       <labels>
         <label locale="en_US">
           <name>Set editor</name>
@@ -16674,7 +16930,7 @@
         </screen>
       </screens>
     </userInterface>
-    <userInterface code="set_item_ui" type="ca_set_items">
+    <userInterface code="set_item_cataloguers_ui" type="ca_set_items">
       <labels>
         <label locale="en_US">
           <name>Set item editor</name>
@@ -16749,7 +17005,7 @@
         </screen>
       </screens>
     </userInterface>
-    <userInterface code="search_forms_ui" type="ca_search_forms">
+    <userInterface code="search_forms_config_ui" type="ca_search_forms">
       <labels>
         <label locale="en_US">
           <name>Search forms editor</name>
@@ -16794,7 +17050,7 @@
         </screen>
       </screens>
     </userInterface>
-    <userInterface code="bundle_display_ui" type="ca_bundle_displays">
+    <userInterface code="bundle_display_config_ui" type="ca_bundle_displays">
       <labels>
         <label locale="en_US">
           <name>Display list editor</name>
@@ -16836,7 +17092,7 @@
         </screen>
       </screens>
     </userInterface>
-    <userInterface code="metadata_alert_rule_ui" type="ca_metadata_alert_rules">
+    <userInterface code="metadata_alert_rule_config_ui" type="ca_metadata_alert_rules">
       <labels>
         <label locale="en_US">
           <name>Metadata alert rule editor</name>
@@ -16902,6 +17158,348 @@
               <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
+      </screens>
+    </userInterface>
+    <userInterface code="movement_cataloguers_ui" type="ca_movements">
+      <labels>
+        <label locale="en_US">
+          <name>Movement editor</name>
+        </label>
+      </labels>
+      <screens>
+        <screen idno="basic" default="1">
+          <labels>
+            <label locale="en_US">
+              <name>Basic info</name>
+            </label></labels>
+          <bundlePlacements>
+            <placement code="preferred_labels">
+              <bundle>preferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Short description of movement</setting>
+                <setting name="add_label" locale="en_US">Add short description</setting>
+              </settings>
+            </placement>
+            <placement code="idno">
+              <bundle>idno</bundle>
+            </placement>
+            <placement code="ca_entities">
+              <bundle>ca_entities</bundle>
+            </placement>
+            <placement code="ca_attribute_planned_removal_date">
+              <bundle>ca_attribute_planned_removal_date</bundle>
+            </placement>
+            <placement code="ca_attribute_removal_date">
+              <bundle>ca_attribute_removal_date</bundle>
+            </placement>
+            <placement code="ca_attribute_movement_method">
+              <bundle>ca_attribute_movement_method</bundle>
+            </placement>
+            <placement code="ca_attribute_movement_reason">
+              <bundle>ca_attribute_movement_reason</bundle>
+            </placement>
+            <placement code="ca_attribute_movement_note">
+              <bundle>ca_attribute_movement_note</bundle>
+            </placement>
+          </bundlePlacements>
+        </screen>
+        <screen idno="relationships" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Relationships</name>
+            </label></labels>
+          <bundlePlacements>
+            <placement code="ca_objects">
+              <bundle>ca_objects</bundle>
+            </placement>
+            <placement code="ca_object_lots">
+              <bundle>ca_object_lots</bundle>
+            </placement>
+            <placement code="ca_entities">
+              <bundle>ca_entities</bundle>
+            </placement>
+          </bundlePlacements>
+        </screen>
+      </screens>
+    </userInterface>
+    <userInterface code="relationship_types_config_ui" type="ca_relationship_types">
+      <labels>
+        <label locale="en_US">
+          <name>Relationship types configuration editor</name>
+        </label>
+      </labels>
+      <screens>
+        <screen idno="basic" default="1">
+          <labels>
+            <label locale="en_US">
+              <name>Basic info</name>
+            </label></labels>
+          <bundlePlacements>
+            <placement code="preferred_labels">
+              <bundle>preferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Relationship names</setting>
+                <setting name="add_label" locale="en_US">Add relationship name</setting>
+              </settings>
+            </placement>
+            <placement code="type_code">
+              <bundle>type_code</bundle>
+            </placement>
+            <placement code="is_default">
+              <bundle>is_default</bundle>
+            </placement>
+            <placement code="sub_type_left_id">
+              <bundle>sub_type_left_id</bundle>
+            </placement>
+            <placement code="include_subtypes_left">
+              <bundle>include_subtypes_left</bundle>
+            </placement>
+            <placement code="sub_type_right_id">
+              <bundle>sub_type_right_id</bundle>
+            </placement>
+            <placement code="include_subtypes_right">
+              <bundle>include_subtypes_right</bundle>
+            </placement>
+            <placement code="rank">
+              <bundle>rank</bundle>
+            </placement>
+            <placement code="hierarchy_location">
+              <bundle>hierarchy_location</bundle>
+            </placement>
+          </bundlePlacements>
+        </screen>
+      </screens>
+    </userInterface>
+    <userInterface code="tour_editor_ui" type="ca_tours">
+      <labels>
+        <label locale="en_US">
+          <name>Tour editor</name>
+        </label>
+      </labels>
+      <screens>
+        <screen idno="basic" default="1">
+          <labels>
+            <label locale="en_US">
+              <name>Basic info</name>
+            </label></labels>
+          <bundlePlacements>
+            <placement code="preferred_labels">
+              <bundle>preferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Tour title</setting>
+                <setting name="add_label" locale="en_US">Add title</setting>
+              </settings>
+            </placement>
+            <placement code="tour_code">
+              <bundle>tour_code</bundle>
+            </placement>
+            <placement code="ca_attribute_tour_description">
+              <bundle>ca_attribute_tour_description</bundle>
+            </placement>
+            <placement code="icon">
+              <bundle>icon</bundle>
+            </placement>
+            <placement code="color">
+              <bundle>color</bundle>
+            </placement>
+            <placement code="access">
+              <bundle>access</bundle>
+            </placement>
+            <placement code="status">
+              <bundle>status</bundle>
+            </placement>
+          </bundlePlacements>
+        </screen>
+      </screens>
+    </userInterface>
+    <userInterface code="tour_stop_editor_ui" type="ca_tour_stops">
+      <labels>
+        <label locale="en_US">
+          <name>Tour stop editor</name>
+        </label>
+      </labels>
+      <screens>
+        <screen idno="basic" default="1">
+          <labels>
+            <label locale="en_US">
+              <name>Basic info</name>
+            </label></labels>
+          <bundlePlacements>
+            <placement code="preferred_labels">
+              <bundle>preferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Tour stop title</setting>
+                <setting name="add_label" locale="en_US">Add title</setting>
+              </settings>
+            </placement>
+            <placement code="idno">
+              <bundle>idno</bundle>
+            </placement>
+            <placement code="ca_attribute_tour_stop_description">
+              <bundle>ca_attribute_tour_stop_description</bundle>
+            </placement>
+            <placement code="ca_attribute_tour_stop_georeference">
+              <bundle>ca_attribute_tour_stop_georeference</bundle>
+            </placement>
+            <placement code="icon">
+              <bundle>icon</bundle>
+            </placement>
+            <placement code="color">
+              <bundle>color</bundle>
+            </placement>
+            <placement code="access">
+              <bundle>access</bundle>
+            </placement>
+            <placement code="status">
+              <bundle>status</bundle>
+            </placement>
+          </bundlePlacements>
+        </screen>
+        <screen idno="relationships" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Relationships</name>
+            </label></labels>
+          <bundlePlacements>
+            <placement code="ca_objects">
+              <bundle>ca_objects</bundle>
+            </placement>
+            <placement code="ca_entities">
+              <bundle>ca_entities</bundle>
+            </placement>
+            <placement code="ca_places">
+              <bundle>ca_places</bundle>
+            </placement>
+            <placement code="ca_occurrences">
+              <bundle>ca_occurrences</bundle>
+            </placement>
+            <placement code="ca_collections">
+              <bundle>ca_collections</bundle>
+            </placement>
+            <placement code="ca_tour_stops">
+              <bundle>ca_tour_stops</bundle>
+            </placement>
+          </bundlePlacements>
+        </screen>
+        <screen idno="keywords" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Keywords</name>
+            </label></labels>
+          <bundlePlacements>
+            <placement code="ca_list_items">
+              <bundle>ca_list_items</bundle>
+            </placement>
+          </bundlePlacements>
+        </screen>
+      </screens>
+    </userInterface>
+    <userInterface code="site_page_editor_ui" type="ca_site_pages">
+      <labels>
+        <label locale="en_US">
+          <name>Site page editor</name>
+        </label>
+      </labels>
+      <screens>
+        <screen idno="basic" default="1">
+          <labels>
+            <label locale="en_US">
+              <name>Basic info</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="title">
+              <bundle>title</bundle>
+            </placement>
+            <placement code="path">
+              <bundle>path</bundle>
+            </placement>
+            <placement code="description">
+              <bundle>description</bundle>
+            </placement>
+            <placement code="ca_site_pages_content">
+              <bundle>ca_site_pages_content</bundle>
+            </placement>
+            <placement code="access">
+              <bundle>access</bundle>
+            </placement>
+            <placement code="keywords">
+              <bundle>keywords</bundle>
+            </placement>
+          </bundlePlacements>
+        </screen>
+      </screens>
+    </userInterface>
+    <userInterface code="standard_representation_ui" type="ca_object_representations">
+      <labels>
+        <label locale="en_US">
+          <name>Object representation editor</name>
+        </label>
+      </labels>
+      <screens>
+        <screen idno="screen_23_0" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Basic info</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="preferred_labels1">
+              <bundle>preferred_labels</bundle>
+            </placement>
+            <placement code="idno2">
+              <bundle>idno</bundle>
+            </placement>
+            <placement code="media_display">
+              <bundle>ca_object_representations_media_display</bundle>
+            </placement>
+            <placement code="media_captions">
+              <bundle>ca_object_representation_captions</bundle>
+            </placement>
+            <placement code="media_sidecars">
+              <bundle>ca_object_representation_sidecars</bundle>
+            </placement>
+            <placement code="access4">
+              <bundle>access</bundle>
+            </placement>
+            <placement code="status5">
+              <bundle>status</bundle>
+            </placement>
+          </bundlePlacements>
+        </screen>
+      </screens>
+    </userInterface>
+    <userInterface code="data_dictionary" type="ca_metadata_dictionary_entries">
+      <labels>
+        <label locale="en_US">
+          <name>Data dictionary editor</name>
+        </label>
+      </labels>
+      <screens>
+        <screen idno="basic" default="0" color="000000">
+          <labels>
+            <label locale="en_US">
+              <name>Basic info</name>
+            </label>
+          </labels>
+          <bundlePlacements>
+            <placement code="preferred_labels1">
+              <bundle>preferred_labels</bundle>
+            </placement>
+            <placement code="bundle_name4">
+              <bundle>bundle_name</bundle>
+            </placement>
+            <placement code="table_num4">
+              <bundle>table_num</bundle>
+            </placement>
+            <placement code="ca_metadata_dictionary_rules6">
+              <bundle>ca_metadata_dictionary_rules</bundle>
+            </placement>
+            <placement code="settings6">
+              <bundle>settings</bundle>
             </placement>
           </bundlePlacements>
         </screen>
@@ -17077,170 +17675,6 @@
         </type>
       </types>
     </relationshipTable>
-    <relationshipTable name="ca_entities_x_occurrences">
-      <types>
-        <type code="executedBy" default="1">
-          <labels>
-            <label locale="en_US">
-              <typename>executed</typename>
-              <typename_reverse>was executed by</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>ind</subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-        <type code="transferredTo" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>was transferred to</typename>
-              <typename_reverse>was transferred to</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>org</subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-    <relationshipTable name="ca_entities_x_entities">
-      <types>
-        <type code="affiliation" default="1">
-          <labels>
-            <label locale="en_US">
-              <typename>affiliation of</typename>
-              <typename_reverse>affiliated to</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>ind</subTypeLeft>
-          <subTypeRight>org</subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-    <relationshipTable name="ca_entities_x_collections"><!--http://schema.org/roleName-->
-      <types>
-        <type code="manager" default="1">
-          <labels>
-            <label locale="en_US">
-              <typename>manages</typename>
-              <typename_reverse>managed by</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>ind</subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-        <type code="coManager" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>co-manages</typename>
-              <typename_reverse>co-managed by</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>ind</subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-        <type code="archivist" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>supervises</typename>
-              <typename_reverse>supervised by</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>ind</subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-        <type code="coArchivist" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>co-supervises</typename>
-              <typename_reverse>co-supervised by</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>ind</subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-        <type code="steward" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>stewards</typename>
-              <typename_reverse>steward of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>ind</subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-        <type code="colOwner" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>owns</typename>
-              <typename_reverse>owned by</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>org</subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-    <relationshipTable name="ca_object_lots_x_entities">
-      <types>
-        <type code="knowsMost2" default="1">
-          <labels>
-            <label locale="en_US">
-              <typename>knows most</typename>
-              <typename_reverse>knows most</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>ind</subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-    <relationshipTable name="ca_loans_x_entities">
-      <types>
-        <type code="requester" default="1">
-          <labels>
-            <label locale="en_US">
-              <typename>requested by</typename>
-              <typename_reverse>requested</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>ind</subTypeRight>
-        </type>
-        <type code="requesterBackup" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>co-requested by</typename>
-              <typename_reverse>co-requested</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>ind</subTypeRight>
-        </type>
-        <type code="requestingInstitute" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>requested by</typename>
-              <typename_reverse>requested</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight>org</subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-    <relationshipTable name="ca_entities_x_storage_locations">
-      <types>
-        <type code="maintenanceBy" default="1">
-          <labels>
-            <label locale="en_US">
-              <typename>executes maintenance</typename>
-              <typename_reverse>maintenance is executed by</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>ind</subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
     <relationshipTable name="ca_objects_x_collections">
       <types>
         <type code="partOf" default="1">
@@ -17363,20 +17797,6 @@
         </type>
       </types>
     </relationshipTable>
-	  <relationshipTable name="ca_loans_x_objects">
-      <types>
-        <type code="objectLoans" default="1">
-          <labels>
-            <label locale="en_US">
-              <typename>contains</typename>
-              <typename_reverse>is reused in</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
 	  <relationshipTable name="ca_objects_x_places">
       <types>
         <type code="objectPlace" default="1">
@@ -17391,19 +17811,19 @@
         </type>
       </types>
     </relationshipTable>
-	 <relationshipTable name="ca_object_lots_x_occurrences">
-      <types>
-		    <type code="resObjLot" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>result of</typename>
-              <typename_reverse>resulted in</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft></subTypeLeft>
-          <subTypeRight></subTypeRight>
-        </type>
-      </types>
+    <relationshipTable name="ca_object_lots_x_occurrences">
+        <types>
+          <type code="resObjLot" default="0">
+            <labels>
+              <label locale="en_US">
+                <typename>result of</typename>
+                <typename_reverse>resulted in</typename_reverse>
+              </label>
+            </labels>
+            <subTypeLeft></subTypeLeft>
+            <subTypeRight></subTypeRight>
+          </type>
+        </types>
     </relationshipTable>
 	  <relationshipTable name="ca_object_lots_x_places">
       <types>
@@ -17416,6 +17836,248 @@
           </labels>
           <subTypeLeft></subTypeLeft>
           <subTypeRight></subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_object_lots_x_entities">
+      <types>
+        <type code="knowsMost2" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>knows most</typename>
+              <typename_reverse>knows most</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>ind</subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_object_lots_x_occurrences">
+        <types>
+          <type code="resObjLot" default="0">
+            <labels>
+              <label locale="en_US">
+                <typename>result of</typename>
+                <typename_reverse>resulted in</typename_reverse>
+              </label>
+            </labels>
+            <subTypeLeft></subTypeLeft>
+            <subTypeRight></subTypeRight>
+          </type>
+        </types>
+    </relationshipTable>
+    <relationshipTable name="ca_object_lots_x_storage_locations">
+      <types>
+        <type code="related" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is located at</typename>
+              <typename_reverse>is location of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_object_lots_x_object_representations">
+      <types>
+        <type code="part" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>has as part of</typename>
+              <typename_reverse>is part of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_object_lots_x_object_lots">
+      <types>
+        <type code="related" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is related to</typename>
+              <typename_reverse>is related to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_object_lots_x_vocabulary_terms">
+      <types>
+        <type code="subject" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>has subject</typename>
+              <typename_reverse>is subject</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft/>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_storage_locations_x_storage_locations">
+      <types>
+        <type code="related" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is related to</typename>
+              <typename_reverse>is related to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_storage_locations_x_vocabulary_terms">
+      <types>
+        <type code="related" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is related to</typename>
+              <typename_reverse>is related to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_entities_x_occurrences">
+      <types>
+        <type code="executedBy" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>executed</typename>
+              <typename_reverse>was executed by</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>ind</subTypeLeft>
+          <subTypeRight></subTypeRight>
+        </type>
+        <type code="transferredTo" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>was transferred to</typename>
+              <typename_reverse>was transferred to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>org</subTypeLeft>
+          <subTypeRight></subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_entities_x_entities">
+      <types>
+        <type code="affiliation" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>affiliation of</typename>
+              <typename_reverse>affiliated to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>ind</subTypeLeft>
+          <subTypeRight>org</subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_entities_x_collections"><!--http://schema.org/roleName-->
+      <types>
+        <type code="manager" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>manages</typename>
+              <typename_reverse>managed by</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>ind</subTypeLeft>
+          <subTypeRight></subTypeRight>
+        </type>
+        <type code="coManager" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>co-manages</typename>
+              <typename_reverse>co-managed by</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>ind</subTypeLeft>
+          <subTypeRight></subTypeRight>
+        </type>
+        <type code="archivist" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>supervises</typename>
+              <typename_reverse>supervised by</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>ind</subTypeLeft>
+          <subTypeRight></subTypeRight>
+        </type>
+        <type code="coArchivist" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>co-supervises</typename>
+              <typename_reverse>co-supervised by</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>ind</subTypeLeft>
+          <subTypeRight></subTypeRight>
+        </type>
+        <type code="steward" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>stewards</typename>
+              <typename_reverse>steward of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>ind</subTypeLeft>
+          <subTypeRight></subTypeRight>
+        </type>
+        <type code="colOwner" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>owns</typename>
+              <typename_reverse>owned by</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>org</subTypeLeft>
+          <subTypeRight></subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_entities_x_storage_locations">
+      <types>
+        <type code="maintenanceBy" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>executes maintenance</typename>
+              <typename_reverse>maintenance is executed by</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>ind</subTypeLeft>
+          <subTypeRight></subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>
+	  <relationshipTable name="ca_entities_x_places">
+      <types>
+        <type code="locationOrg" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is located at</typename>
+              <typename_reverse>location of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>org</subTypeLeft>
+          <subTypeRight/>
         </type>
       </types>
     </relationshipTable>
@@ -17461,20 +18123,6 @@
         </type>
       </types>
     </relationshipTable>
-	  <relationshipTable name="ca_entities_x_places">
-      <types>
-        <type code="locationOrg" default="1">
-          <labels>
-            <label locale="en_US">
-              <typename>is located at</typename>
-              <typename_reverse>location of</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>org</subTypeLeft>
-          <subTypeRight/>
-        </type>
-      </types>
-    </relationshipTable>
     <relationshipTable name="ca_occurrences_x_occurrences">
       <types>
 		    <type code="related" default="0">
@@ -17486,6 +18134,20 @@
           </labels>
           <subTypeLeft></subTypeLeft>
           <subTypeRight></subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_occurrences_x_storage_locations">
+      <types>
+        <type code="related" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is related to</typename>
+              <typename_reverse>is related to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
         </type>
       </types>
     </relationshipTable>
@@ -17555,32 +18217,679 @@
         </type>
       </types>
     </relationshipTable>
-	 <relationshipTable name="ca_loans_x_occurrences">
+    <relationshipTable name="ca_loans_x_entities">
       <types>
-        <type code="internalprojectReuse" default="1">
+        <type code="requester" default="1">
           <labels>
             <label locale="en_US">
-              <typename>internal project that reuses</typename>
-              <typename_reverse>reused in internal project</typename_reverse>
+              <typename>requested by</typename>
+              <typename_reverse>requested</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>internalReuse</subTypeLeft>
-          <subTypeRight>internalProject</subTypeRight>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>ind</subTypeRight>
         </type>
-        <type code="externalprojectReuse" default="1">
+        <type code="requesterBackup" default="0">
           <labels>
             <label locale="en_US">
-              <typename>external project that reuses</typename>
-              <typename_reverse>reused in external project</typename_reverse>
+              <typename>co-requested by</typename>
+              <typename_reverse>co-requested</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>externalReuse</subTypeLeft>
-          <subTypeRight>externalProject</subTypeRight>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>ind</subTypeRight>
+        </type>
+        <type code="requestingInstitute" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>requested by</typename>
+              <typename_reverse>requested</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight>org</subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>
+	  <relationshipTable name="ca_loans_x_objects">
+      <types>
+        <type code="objectLoans" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>contains</typename>
+              <typename_reverse>is reused in</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft></subTypeLeft>
+          <subTypeRight></subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_loans_x_object_lots">
+      <types>
+        <type code="related" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is related to</typename>
+              <typename_reverse>is related to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_loans_x_occurrences">
+        <types>
+          <type code="internalprojectReuse" default="1">
+            <labels>
+              <label locale="en_US">
+                <typename>internal project that reuses</typename>
+                <typename_reverse>reused in internal project</typename_reverse>
+              </label>
+            </labels>
+            <subTypeLeft>internalReuse</subTypeLeft>
+            <subTypeRight>internalProject</subTypeRight>
+          </type>
+          <type code="externalprojectReuse" default="1">
+            <labels>
+              <label locale="en_US">
+                <typename>external project that reuses</typename>
+                <typename_reverse>reused in external project</typename_reverse>
+              </label>
+            </labels>
+            <subTypeLeft>externalReuse</subTypeLeft>
+            <subTypeRight>externalProject</subTypeRight>
+          </type>
+        </types>
+    </relationshipTable>
+    <relationshipTable name="ca_loans_x_movements">
+      <types>
+        <type code="location" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is located at</typename>
+              <typename_reverse>is location of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_loans_x_places">
+      <types>
+        <type code="related" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is related to</typename>
+              <typename_reverse>is related to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_loans_x_collections">
+      <types>
+        <type code="related" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is related to</typename>
+              <typename_reverse>is related to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_loans_x_storage_locations">
+      <types>
+        <type code="related" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is related to</typename>
+              <typename_reverse>is related to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_loans_x_vocabulary_terms">
+      <types>
+        <type code="related" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is related to</typename>
+              <typename_reverse>is related to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_loans_x_loans">
+      <types>
+        <type code="related" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is related to</typename>
+              <typename_reverse>is related to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_loans_x_object_representations">
+      <types>
+        <type code="part_of" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>contains</typename>
+              <typename_reverse>part of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_list_items_x_list_items">
+      <types>
+        <type code="related" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is related to</typename>
+              <typename_reverse>is related to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_object_representations_x_entities">
+      <types>
+        <type code="creator" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>was created by</typename>
+              <typename_reverse>is creator</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+        <type code="rights_holder" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>rights held by</typename>
+              <typename_reverse>is rights holder</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_object_representations_x_places">
+      <types>
+        <type code="depicts" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>depicts</typename>
+              <typename_reverse>depicts</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_object_representations_x_occurrences">
+      <types>
+        <type code="depicts" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>depicts</typename>
+              <typename_reverse>depicts</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_object_representations_x_vocabulary_terms">
+      <types>
+        <type code="subject" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>has subject</typename>
+              <typename_reverse>is subject</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_object_representations_x_collections">
+      <types>
+        <type code="depicts" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>part of</typename>
+              <typename_reverse>part of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_object_representations_x_storage_locations">
+      <types>
+        <type code="depicts" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>current location</typename>
+              <typename_reverse>current location</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_object_representations_x_object_representations">
+      <types>
+        <type code="depicts" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>related</typename>
+              <typename_reverse>related</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_tour_stops_x_objects">
+      <types>
+        <type code="related" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is related to</typename>
+              <typename_reverse>is related to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_tour_stops_x_entities">
+      <types>
+        <type code="subject" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>has subject</typename>
+              <typename_reverse>is subject</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_tour_stops_x_places">
+      <types>
+        <type code="related" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is located at</typename>
+              <typename_reverse>is location of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_tour_stops_x_vocabulary_terms">
+      <types>
+        <type code="subject" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>has subject</typename>
+              <typename_reverse>is subject</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_tour_stops_x_occurrences">
+      <types>
+        <type code="related" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is related to</typename>
+              <typename_reverse>is related to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_tour_stops_x_collections">
+      <types>
+        <type code="part" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>has as part of</typename>
+              <typename_reverse>is part of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_tour_stops_x_tour_stops">
+      <types>
+        <type code="related" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is related to</typename>
+              <typename_reverse>is related to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_movements_x_places">
+      <types>
+        <type code="related" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is related to</typename>
+              <typename_reverse>is related to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_movements_x_occurrences">
+      <types>
+        <type code="related" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is related to</typename>
+              <typename_reverse>is related to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_movements_x_collections">
+      <types>
+        <type code="related" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is related to</typename>
+              <typename_reverse>is related to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_movements_x_storage_locations">
+      <types>
+        <type code="related" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is related to</typename>
+              <typename_reverse>is related to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_movements_x_object_representations">
+      <types>
+        <type code="part" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>has as part of</typename>
+              <typename_reverse>is part of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_movements_x_vocabulary_terms">
+      <types>
+        <type code="related" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is related to</typename>
+              <typename_reverse>is related to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_movements_x_movements">
+      <types>
+        <type code="related" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>is related to</typename>
+              <typename_reverse>is related to</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_movements_x_entities">
+      <types>
+        <type code="authorizer" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>was authorized by</typename>
+              <typename_reverse>was authorizer</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+        <type code="mover" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>was moved by</typename>
+              <typename_reverse>was mover</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_movements_x_object_lots">
+      <types>
+        <type code="part" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>has as part of</typename>
+              <typename_reverse>is part of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_movements_x_objects">
+      <types>
+        <type code="part" default="1">
+          <labels>
+            <label locale="en_US">
+              <typename>has as part of</typename>
+              <typename_reverse>is part of</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft> </subTypeLeft>
+          <subTypeRight/>
         </type>
       </types>
     </relationshipTable>
   </relationshipTypes>
   <roles>
+    <role code="admin">
+      <name>Administrators</name>
+      <description>Confers actions needed by those administering the system</description>
+      <actions>
+        <action>is_administrator</action>
+        <action>can_set_access_control</action>
+        <action>can_view_logs</action>
+        <action>can_set_access_control</action>
+        <action>can_configure_user_interfaces</action>
+        <action>can_configure_metadata_elements</action>
+        <action>can_configure_relationship_types</action>
+        <action>can_configure_locales</action>
+        <action>can_view_configuration_check</action>
+        <action>can_manage_system_search_forms</action>
+        <action>can_manage_system_bundle_displays</action>
+      </actions>
+    </role>
+    <role code="cataloguer">
+      <name>Cataloguers</name>
+      <description>Confers actions needed by those editing catalogue entries</description>
+      <actions>
+        <action>can_search</action>
+        <action>can_quicksearch</action>
+        <action>can_browse</action>
+        <action>can_set_preferences</action>
+        <action>can_create_adv_search_forms</action>
+        <action>can_edit_adv_search_forms</action>
+        <action>can_delete_adv_search_forms</action>
+        <action>can_use_adv_search_forms</action>
+        <action>can_use_adv_search_forms</action>
+        <action>can_create_ca_bundle_displays</action>
+        <action>can_edit_ca_bundle_displays</action>
+        <action>can_delete_ca_bundle_displays</action>
+        <action>can_use_ca_bundle_displays</action>
+        <action>can_create_user_groups</action>
+        <action>can_create_sets</action>
+        <action>can_edit_sets</action>
+        <action>can_delete_sets</action>
+        <action>can_view_sets</action>
+        <action>can_create_ca_objects</action>
+        <action>can_edit_ca_objects</action>
+        <action>can_delete_ca_objects</action>
+        <action>can_search_ca_objects</action>
+        <action>can_browse_ca_objects</action>
+        <action>can_create_ca_object_lots</action>
+        <action>can_edit_ca_object_lots</action>
+        <action>can_delete_ca_object_lots</action>
+        <action>can_search_ca_object_lots</action>
+        <action>can_browse_ca_object_lots</action>
+        <action>can_create_ca_entities</action>
+        <action>can_edit_ca_entities</action>
+        <action>can_delete_ca_entities</action>
+        <action>can_search_ca_entities</action>
+        <action>can_browse_ca_entities</action>
+        <action>can_create_ca_places</action>
+        <action>can_edit_ca_places</action>
+        <action>can_delete_ca_places</action>
+        <action>can_search_ca_places</action>
+        <action>can_browse_ca_places</action>
+        <action>can_create_ca_occurrences</action>
+        <action>can_edit_ca_occurrences</action>
+        <action>can_delete_ca_occurrences</action>
+        <action>can_search_ca_occurrences</action>
+        <action>can_browse_ca_occurrences</action>
+        <action>can_create_ca_collections</action>
+        <action>can_edit_ca_collections</action>
+        <action>can_delete_ca_collections</action>
+        <action>can_search_ca_collections</action>
+        <action>can_browse_ca_collections</action>
+        <action>can_create_ca_storage_locations</action>
+        <action>can_edit_ca_storage_locations</action>
+        <action>can_delete_ca_storage_locations</action>
+        <action>can_search_ca_storage_locations</action>
+        <action>can_browse_ca_storage_locations</action>
+        <action>can_create_ca_lists</action>
+        <action>can_edit_ca_lists</action>
+        <action>can_delete_ca_lists</action>
+      </actions>
+    </role>
+    <role code="researcher">
+      <name>Researcher</name>
+      <description>Allows users to only search and view - but not edit - catalogue entries</description>
+      <actions>
+        <action>can_search</action>
+        <action>can_quicksearch</action>
+        <action>can_browse</action>
+        <action>can_set_preferences</action>
+        <action>can_use_adv_search_forms</action>
+        <action>can_create_user_groups</action>
+        <action>can_create_sets</action>
+        <action>can_edit_sets</action>
+        <action>can_delete_sets</action>
+        <action>can_view_sets</action>
+        <action>can_search_ca_object_lots</action>
+        <action>can_browse_ca_object_lots</action>
+        <action>can_search_ca_objects</action>
+        <action>can_browse_ca_objects</action>
+        <action>can_search_ca_entities</action>
+        <action>can_browse_ca_entities</action>
+        <action>can_search_ca_places</action>
+        <action>can_browse_ca_places</action>
+        <action>can_search_ca_occurrences</action>
+        <action>can_browse_ca_occurrences</action>
+        <action>can_search_ca_collections</action>
+        <action>can_browse_ca_collections</action>
+        <action>can_search_ca_storage_locations</action>
+        <action>can_browse_ca_storage_locations</action>
+      </actions>
+    </role>
+    <role code="moderator">
+      <name>User content moderator</name>
+      <description>Allows users to moderate user generated tags and comments</description>
+      <actions>
+        <action>can_manage_user_comments</action>
+        <action>can_manage_user_tags</action>
+      </actions>
+    </role>
     <role code="tester">
       <name>Tester</name>
       <description>Testers can do almost everything in the system, as to explore its capabilities. They can create, edit and delete their own specimen types and others (as opposed to collectionmanagers who can only interact with the objects of the collection they are responsible for). They cannot set access control - which only the administrator can do. This type of access will only exist in the UAT environment.</description>
@@ -18586,7 +19895,7 @@
       </typeLevelAccessControl>
     </role>
   </roles>
-  <!--<groups>
+  <groups>
     <group code="admin">
       <name>Administrators</name>
       <description>System administrators</description>
@@ -18597,25 +19906,11 @@
         <role>moderator</role>
       </roles>
     </group>
-    <group code="soilcataloguer">
-      <name>soilcataloguers</name>
+    <group code="cataloguer">
+      <name>Cataloguers</name>
       <description>Users who can add and edit catalogue entries</description>
       <roles>
-        <role>soilcataloguer</role>
-      </roles>
-    </group>
-    <group code="soilmanager">
-      <name>soilmanagers</name>
-      <description>Users who can add, edit and delete catalogue entries</description>
-      <roles>
-        <role>soilmanager</role>
-      </roles>
-    </group>
-    <group code="collectionsteward">
-      <name>collectionstewards</name>
-      <description>Users who can add, edit and delete loans and edit catalogue entries</description>
-      <roles>
-        <role>collectionsteward</role>
+        <role>cataloguer</role>
       </roles>
     </group>
   </groups>-->
@@ -18827,7 +20122,7 @@
       </bundlePlacements>
     </display>
   </displays>-->
-  <!--<searchForms>
+  <searchForms>
     <searchForm code="ca_objects_adv_search" type="ca_objects" system="1">
       <labels>
         <label locale="en_US">
@@ -18850,14 +20145,20 @@
         <placement code="type_id">
           <bundle>ca_objects.type_id</bundle>
         </placement>
+        <placement code="ca_entities">
+          <bundle>ca_entity_labels.displayname</bundle>
+        </placement>
+        <placement code="access">
+          <bundle>ca_objects.access</bundle>
+        </placement>
+        <placement code="status">
+          <bundle>ca_objects.status</bundle>
+        </placement>
       </bundlePlacements>
     </searchForm>
     <searchForm code="ca_entities_adv_search" type="ca_entities" system="1">
       <labels>
         <label locale="en_US">
-          <name>Extended search</name>
-        </label>
-        <label locale="en_CA">
           <name>Extended search</name>
         </label>
       </labels>
@@ -18918,9 +20219,6 @@
     <searchForm code="ca_occurrences_adv_search" type="ca_occurrences" system="1">
       <labels>
         <label locale="en_US">
-          <name>Extended search</name>
-        </label>
-        <label locale="en_CA">
           <name>Extended search</name>
         </label>
       </labels>
@@ -18990,7 +20288,49 @@
         </placement>
       </bundlePlacements>
     </searchForm>
-  </searchForms> -->
+    <searchForm code="ca_loans_adv_search" type="ca_loans" system="1">
+      <labels>
+        <label locale="en_US">
+          <name>Extended search</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="form_width">3</setting>
+      </settings>
+      <bundlePlacements>
+        <placement code="name">
+          <bundle>ca_loan_labels.name</bundle>
+        </placement>
+        <placement code="type_id">
+          <bundle>ca_loans.type_id</bundle>
+        </placement>
+        <placement code="idno">
+          <bundle>ca_loans.idno</bundle>
+        </placement>
+      </bundlePlacements>
+    </searchForm>
+    <searchForm code="ca_movements_adv_search" type="ca_movements" system="1">
+      <labels>
+        <label locale="en_US">
+          <name>Extended search</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="form_width">3</setting>
+      </settings>
+      <bundlePlacements>
+        <placement code="name">
+          <bundle>ca_movement_labels.name</bundle>
+        </placement>
+        <placement code="type_id">
+          <bundle>ca-movements.type_id</bundle>
+        </placement>
+        <placement code="idno">
+          <bundle>ca_movements.idno</bundle>
+        </placement>
+      </bundlePlacements>
+    </searchForm>
+  </searchForms>
   <!-- <logins> -->
   <!-- <metadataAlerts> -->
 </profile>
