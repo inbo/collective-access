@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="INBO_profile_0_108v2" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.108v2</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.108v3</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in v0.108-->
   <!--https://github.com/inbo/collective-access/issues/77-->
@@ -18437,9 +18437,9 @@
         <action>can_manage_system_bundle_displays</action>
       </actions>
     </role>
-    <role code="soilarchivecollectionmanager"><!--Once this works, you can make CMs for the other 9 collections-->
+    <role code="soilmanager"><!--Once this works, you can make CMs for the other 9 collections-->
       <name>Soil archive collection manager</name>
-      <description/>
+      <description>Can change almost everything and can see storage locations</description>
       <actions>
         <action>can_quicksearch</action>
         <action>can_batch_import_metadata</action>
@@ -18545,9 +18545,9 @@
         <permission table="ca_objects" type="mammalStomachContent" access="read"/>
       </typeLevelAccessControl>
     </role>
-    <role code="soilarchivecataloguer"><!--Once this works, you can make cataloguers for the other 9 collections-->
-      <name>Soil archive collection manager</name>
-      <description/>
+    <role code="soilcataloguer"><!--Once this works, you can make cataloguers for the other 9 collections-->
+      <name>Soil archive cataloguer</name>
+      <description>Can change certain fields and cannot see storage locations</description>
       <actions>
         <action>can_quicksearch</action>
         <action>can_batch_import_metadata</action>
@@ -18898,7 +18898,7 @@
     </role>
     <role code="viewer">
       <name>Viewer</name>
-      <description/>
+      <description>CCan only view most information, not the storage locations.</description>
       <actions>
         <action>can_quicksearch</action>
         <action>can_batch_export_metadata</action>
@@ -18945,37 +18945,34 @@
       <description>System administrators</description>
       <roles>
         <role>admin</role>
-        <role>cataloguer</role>
-        <role>researcher</role>
-        <role>moderator</role>
       </roles>
     </group>
     <group code="collectionmanagers">
       <name>Collection managers</name>
       <description>Collection managers</description>
       <roles>
-        <role>soilarchivecollectionmanager</role>
+        <role>soilmanager</role>
       </roles>
     </group>
     <group code="cataloguers">
       <name>Cataloguers</name>
       <description>Cataloguers</description>
       <roles>
-        <role>soilarchivecataloguer</role>
+        <role>soilcataloguer</role>
       </roles>
     </group>
     <group code="archivists">
       <name>Archivists</name>
       <description>Archivists</description>
       <roles>
-        <role>soilArchivist</role>
+        <role>soilarchivist</role>
       </roles>
     </group>
     <group code="viewers">
       <name>Viewers</name>
       <description>Users who can search and view the INBO speicmens</description>
       <roles>
-        <role>tester</role>
+        <role>viewer</role>
       </roles>
     </group>
   </groups>
