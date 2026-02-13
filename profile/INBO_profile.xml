@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
-<profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="INBO_profile_0_109v2" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.109v2</profileName>
+<profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="INBO_profile_0_109v3" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
+  <profileName>[INBO-CMS] INBO natural science collection v0.109v3</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in v0.109-->
   <!--https://github.com/inbo/collective-access/issues/411-->
@@ -18564,7 +18564,6 @@
         <permission table="ca_objects" type="Root node for object_types" access="none"/>
         <permission table="ca_objects" type="fishEntireEthanol" access="read"/>
         <permission table="ca_objects" type="fishTissueSample" access="read"/>
-        <permission table="ca_objects" type="mammalEntire" access="read"/>
         <permission table="ca_objects" type="taxidermySpecimen" access="read"/>
         <permission table="ca_objects" type="mammalTissueSample" access="read"/>
         <permission table="ca_objects" type="mammalBloodSample" access="read"/>
@@ -18755,7 +18754,6 @@
         <permission table="ca_objects" bundle="ca_attribute_fileURL" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_reference" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_taxonReference" access="read"/>
-        <permission table="ca_objects" bundle="ca_attribute_publishedRecord" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_dataExport" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_dataExportSpecification" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_dataExport" access="read"/>
@@ -19707,20 +19705,24 @@
       </bundlePlacements>
     </searchForm>
   </searchForms>
-  <logins>
-    <login user_name="viewer" password="viewer" email="emily.veltjen@inbo.be" fname="Viewer" lname="Viewer">
+  <logins><!--Change passwords immediately after installation, for testing purposes only-->
+    <login user_name="administrator" password="administrator" email="collectiebeheer@inbo.be" fname="administrator" lname="administrator">
+        <role code="admin"/>
+        <group code="admin"/>
+    </login>
+    <login user_name="viewer" password="viewer" email="collectiebeheer@inbo.be" fname="Viewer" lname="Viewer">
         <role code="viewer"/>
         <group code="viewers"/>
     </login>
-    <login user_name="soilmanager" password="soilmanager" email="emily.veltjen@inbo.be" fname="soilmanager" lname="soilmanager">
+    <login user_name="soilmanager" password="soilmanager" email="collectiebeheer@inbo.be" fname="soilmanager" lname="soilmanager">
         <role code="soilmanager"/>
         <group code="soilmanagers"/>
     </login>
-    <login user_name="soilcataloguer" password="soilcataloguer" email="emily.veltjen@inbo.be" fname="soilcataloguer" lname="soilcataloguer">
+    <login user_name="soilcataloguer" password="soilcataloguer" email="collectiebeheer@inbo.be" fname="soilcataloguer" lname="soilcataloguer">
         <role code="soilcataloguer"/>
         <group code="soilcataloguer"/>
     </login>
-    <login user_name="soilarchivist" password="soilarchivist" email="emily.veltjen@inbo.be" fname="soilarchivist" lname="soilarchivist">
+    <login user_name="soilarchivist" password="soilarchivist" email="collectiebeheer@inbo.be" fname="soilarchivist" lname="soilarchivist">
         <role code="soilarchivist"/>
         <group code="soilarchivist"/>
     </login>
