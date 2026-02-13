@@ -19370,7 +19370,6 @@
         <permission group="collectionmanagers" access="read"/>
         <permission group="cataloguers" access="read"/>
         <permission group="archivists" access="read"/>
-        <permission group="viewers" access="none"/>
       </groupAccess>
       <bundlePlacements>
         <placement code="ca_objects_idno">
@@ -19470,7 +19469,6 @@
         <permission group="collectionmanagers" access="read"/>
         <permission group="cataloguers" access="read"/>
         <permission group="archivists" access="read"/>
-        <permission group="viewers" access="none"/>
       </groupAccess>
       <bundlePlacements>
         <placement code="ca_objects_idno">
@@ -19709,50 +19707,22 @@
       </bundlePlacements>
     </searchForm>
   </searchForms>
-  <users>
-    <user user_name="viewer" password="viewer" email="emily.veltjen@inbo.be" fname="Viewer" lname="Viewer" source="internal">
-      <roles>
+  <logins>
+    <login user_name="viewer" password="viewer" email="emily.veltjen@inbo.be" fname="Viewer" lname="Viewer">
         <role code="viewer"/>
-      </roles>
-      <groups>
         <group code="viewers"/>
-      </groups>
-      <vars>
-        <var name="locale">en_US</var>
-      </vars>
-    </user>
-    <user user_name="soilmanager" password="soilmanager" email="emily.veltjen@inbo.be" fname="soilmanager" lname="soilmanager" source="internal">
-      <roles>
+    </login>
+    <login user_name="soilmanager" password="soilmanager" email="emily.veltjen@inbo.be" fname="soilmanager" lname="soilmanager">
         <role code="soilmanager"/>
-      </roles>
-      <groups>
         <group code="soilmanagers"/>
-      </groups>
-      <vars>
-        <var name="locale">en_US</var>
-      </vars>
-    </user>
-    <user user_name="soilcataloguer" password="soilcataloguer" email="emily.veltjen@inbo.be" fname="soilcataloguer" lname="soilcataloguer" source="internal">
-      <roles>
+    </login>
+    <login user_name="soilcataloguer" password="soilcataloguer" email="emily.veltjen@inbo.be" fname="soilcataloguer" lname="soilcataloguer">
         <role code="soilcataloguer"/>
-      </roles>
-      <groups>
         <group code="soilcataloguer"/>
-      </groups>
-      <vars>
-        <var name="locale">en_US</var>
-      </vars>
-    </user>
-    <user user_name="soilarchivist" password="soilarchivist" email="emily.veltjen@inbo.be" fname="soilarchivist" lname="soilarchivist" source="internal">
-      <roles>
+    </login>
+    <login user_name="soilarchivist" password="soilarchivist" email="emily.veltjen@inbo.be" fname="soilarchivist" lname="soilarchivist">
         <role code="soilarchivist"/>
-      </roles>
-      <groups>
         <group code="soilarchivist"/>
-      </groups>
-      <vars>
-        <var name="locale">en_US</var>
-      </vars>
-    </user>
-  </users>
+    </login>
+  </logins>
 </profile>
