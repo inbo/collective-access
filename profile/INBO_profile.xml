@@ -2,9 +2,9 @@
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="INBO_profile_0_109" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
   <profileName>[INBO-CMS] INBO natural science collection v0.109</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
-  <!--Issues to check if succesful in v0.1089-->
+  <!--Issues to check if succesful in v0.109-->
   <!--https://github.com/inbo/collective-access/issues/411-->
-  <!--https://github.com/inbo/collective-access/issues/420-->
+  <!--https://github.com/inbo/collective-access/issues/420 check the 4 different roles and see if the permissions are correct-->
   <!--https://github.com/inbo/collective-access/issues/425-->
   <!--https://github.com/inbo/collective-access/issues/426-->
   <locales>
@@ -4213,7 +4213,7 @@
 		      <metadataElement code="description_text" datatype="Text">
             <labels>
             <label locale="en_US">
-              <name>Description</name>
+              <name>Dc Description</name>
               <description>dc:description</description>
             </label>
             </labels>
@@ -4228,7 +4228,7 @@
 		      <metadataElement code="description_source" datatype="Url">
             <labels>
               <label locale="en_US">
-                <name>Source of description</name>
+                <name>Dc Source of description</name>
                 <description>Source of description. Preferable refer to a DOI. </description>
               </label>
             </labels>
@@ -10056,7 +10056,7 @@
           <metadataElement code="IDc_refDb" datatype="Url">
             <labels>
               <label locale="en_US">
-                <name>Reference database</name>
+                <name>IDc Reference database</name>
                 <description>An URL that leads to a snapshot of the reference database used at the time of taxonomic identification.</description>
               </label>
             </labels>
@@ -10070,7 +10070,7 @@
           <metadataElement code="IDc_taxonDate" datatype="DateRange">
                 <labels>
                   <label locale="en_US">
-                    <name>Date of taxonomic identification</name>
+                    <name>IDc Date of taxonomic identification</name>
                     <description>It is generally assumed that the most recent identification, is the correct identification.</description>
                   </label>
                 </labels>
@@ -10078,7 +10078,7 @@
           <metadataElement code="IDc_verbatimTaxon" datatype="Text">
             <labels>
               <label locale="en_US">
-                <name>verbatimIdentification</name>
+                <name>IDc verbatimIdentification</name>
                 <description>Taxonomic identification of the specimen, to the lowest level possible. This can be species name in any language, genus, family, ... This is the main taxonomic unit you can appoint to the specimen. For soil, water and air samples, this should be blank. For all others, there normally is a notion of the main associated taxon. For example: tissue or a swab of species or genus X. Feces or pawprint of a carnivore.</description>
               </label>
             </labels>
@@ -10092,7 +10092,7 @@
           <metadataElement code="IDc_standTaxon" datatype="Url">
             <labels>
               <label locale="en_US">
-                <name>Standardized identification</name>
+                <name>IDc Standardized identification</name>
                 <description>Link to an URL of the (closest match) taxon in a central repository such as Catalogue of Life (CoL). CoL records have the format: https://www.catalogueoflife.org/data/taxon/595F4.</description>
               </label>
             </labels>
@@ -10106,7 +10106,7 @@
           <metadataElement code="IDc_GBIF" datatype="InformationService">
             <labels>
               <label locale="en_US">
-                <name>GBIF taxonomy lookup</name>
+                <name>IDc GBIF taxonomy lookup</name>
              </label>
            </labels>
             <settings>
@@ -10116,7 +10116,7 @@
           <metadataElement code="IDc_taxonNote" datatype="Text">
             <labels>
               <label locale="en_US">
-                <name>Notes on the ID</name>
+                <name>IDc Notes on the ID</name>
                 <description>Any notes such as expressions of uncertainty (or certainty), methods (did you use an ID key), mismatch or match with Catalogue of life, ..</description>
               </label>
             </labels>
@@ -10159,7 +10159,7 @@
 		  <metadataElement code="GBIF" datatype="InformationService">
         <labels>
           <label locale="en_US">
-            <name>GBIF taxonomy lookup</name>
+            <name>GBIF taxonomy lookup (main taxon)</name>
           </label>
         </labels>
         <settings>
@@ -10199,7 +10199,7 @@
 		  <metadataElement code="GBIFedna" datatype="InformationService">
         <labels>
           <label locale="en_US">
-            <name>GBIF taxonomy lookup</name>
+            <name>GBIF taxonomy lookup (eDNA)</name>
           </label>
         </labels>
         <settings>
@@ -11947,10 +11947,10 @@
           </labels>
           <roleAccess>
             <permission role="admin" access="edit"/>
-            <permission role="cataloguer" access="edit"/>
-            <permission role="researcher" access="edit"/>
-            <permission role="tester" access="edit"/>
-            <permission role="moderator" access="edit"/>
+            <permission role="soilmanager" access="edit"/>
+            <permission role="soilcataloguer" access="edit"/>
+            <permission role="soilarchivist" access="edit"/>
+            <permission role="viewer" access="none"/>
           </roleAccess>
           <typeRestrictions>
                 <restriction code="r_taxidermySpecimen" type="taxidermySpecimen"/>       
@@ -12151,10 +12151,10 @@
           </labels>
           <roleAccess>
             <permission role="admin" access="edit"/>
-            <permission role="cataloguer" access="edit"/>
-            <permission role="researcher" access="edit"/>
-            <permission role="tester" access="edit"/>
-            <permission role="moderator" access="edit"/>
+            <permission role="soilmanager" access="edit"/>
+            <permission role="soilcataloguer" access="edit"/>
+            <permission role="soilarchivist" access="edit"/>
+            <permission role="viewer" access="read"/>
           </roleAccess>
           <typeRestrictions>
                 <restriction code="r_livingPlants" type="livingPlant"/>
@@ -12258,10 +12258,10 @@
           </labels>
           <roleAccess>
             <permission role="admin" access="edit"/>
-            <permission role="cataloguer" access="edit"/>
-            <permission role="researcher" access="edit"/>
-            <permission role="tester" access="edit"/>
-            <permission role="moderator" access="edit"/>
+            <permission role="soilmanager" access="edit"/>
+            <permission role="soilcataloguer" access="edit"/>
+            <permission role="soilarchivist" access="edit"/>
+            <permission role="none" access="read"/>
           </roleAccess>
           <typeRestrictions>
                 <restriction code="r_taxidermySpecimen" type="taxidermySpecimen"/>       
@@ -12312,10 +12312,10 @@
           </labels>
           <roleAccess>
             <permission role="admin" access="edit"/>
-            <permission role="cataloguer" access="edit"/>
-            <permission role="researcher" access="edit"/>
-            <permission role="tester" access="edit"/>
-            <permission role="moderator" access="edit"/>
+            <permission role="soilmanager" access="edit"/>
+            <permission role="soilcataloguer" access="edit"/>
+            <permission role="soilarchivist" access="edit"/>
+            <permission role="viewer" access="none"/>
           </roleAccess>
           <typeRestrictions>
                 <restriction code="r_livingPlants" type="livingPlant"/>
@@ -12432,10 +12432,10 @@
           </labels>
           <roleAccess>
             <permission role="admin" access="edit"/>
-            <permission role="cataloguer" access="edit"/>
-            <permission role="researcher" access="edit"/>
-            <permission role="tester" access="edit"/>
-            <permission role="moderator" access="edit"/>
+            <permission role="soilmanager" access="edit"/>
+            <permission role="soilcataloguer" access="edit"/>
+            <permission role="soilarchivist" access="edit"/>
+            <permission role="viewer" access="read"/>
           </roleAccess>
           <bundlePlacements>
             <placement code="hierarchy">
@@ -12489,10 +12489,10 @@
           </labels>
           <roleAccess>
             <permission role="admin" access="edit"/>
-            <permission role="cataloguer" access="edit"/>
-            <permission role="researcher" access="edit"/>
-            <permission role="tester" access="edit"/>
-            <permission role="moderator" access="edit"/>
+            <permission role="soilmanager" access="edit"/>
+            <permission role="soilcataloguer" access="edit"/>
+            <permission role="soilarchivist" access="edit"/>
+            <permission role="viewer" access="read"/>
           </roleAccess>
           <bundlePlacements>
 			      <placement code="ca_occurrence_project">
@@ -12532,10 +12532,10 @@
           </labels>
           <roleAccess>
             <permission role="admin" access="edit"/>
-            <permission role="cataloguer" access="edit"/>
-            <permission role="researcher" access="edit"/>
-            <permission role="tester" access="edit"/>
-            <permission role="moderator" access="edit"/>
+            <permission role="soilmanager" access="edit"/>
+            <permission role="soilcataloguer" access="edit"/>
+            <permission role="soilarchivist" access="edit"/>
+            <permission role="viewer" access="read"/>
           </roleAccess>
           <typeRestrictions>
                 <restriction code="r_taxidermySpecimen" type="taxidermySpecimen"/>       
@@ -12651,10 +12651,10 @@
           </labels>
           <roleAccess>
             <permission role="admin" access="edit"/>
-            <permission role="cataloguer" access="edit"/>
-            <permission role="researcher" access="edit"/>
-            <permission role="tester" access="edit"/>
-            <permission role="moderator" access="edit"/>
+            <permission role="soilmanager" access="edit"/>
+            <permission role="soilcataloguer" access="edit"/>
+            <permission role="soilarchivist" access="edit"/>
+            <permission role="viewer" access="read"/>
           </roleAccess>
           <typeRestrictions>
                 <restriction code="r_livingPlants" type="livingPlant"/>
@@ -12704,10 +12704,10 @@
           </labels>
           <roleAccess>
             <permission role="admin" access="edit"/>
-            <permission role="cataloguer" access="edit"/>
-            <permission role="researcher" access="edit"/>
-            <permission role="tester" access="edit"/>
-            <permission role="moderator" access="edit"/>
+            <permission role="soilmanager" access="edit"/>
+            <permission role="soilcataloguer" access="edit"/>
+            <permission role="soilarchivist" access="edit"/>
+            <permission role="viewer" access="read"/>
           </roleAccess>
           <typeRestrictions>
                 <restriction code="r_taxidermySpecimen" type="taxidermySpecimen"/>       
@@ -12855,10 +12855,10 @@
           </labels>
           <roleAccess>
             <permission role="admin" access="edit"/>
-            <permission role="cataloguer" access="edit"/>
-            <permission role="researcher" access="edit"/>
-            <permission role="tester" access="edit"/>
-            <permission role="moderator" access="edit"/>
+            <permission role="soilmanager" access="edit"/>
+            <permission role="soilcataloguer" access="edit"/>
+            <permission role="soilarchivist" access="edit"/>
+            <permission role="viewer" access="read"/>
           </roleAccess>
           <typeRestrictions>
                 <restriction code="r_taxidermySpecimen" type="taxidermySpecimen"/>       
@@ -12960,10 +12960,10 @@
           </labels>
           <roleAccess>
             <permission role="admin" access="edit"/>
-            <permission role="cataloguer" access="edit"/>
-            <permission role="researcher" access="edit"/>
-            <permission role="tester" access="edit"/>
-            <permission role="moderator" access="edit"/>
+            <permission role="soilmanager" access="edit"/>
+            <permission role="soilcataloguer" access="edit"/>
+            <permission role="soilarchivist" access="edit"/>
+            <permission role="viewer" access="read"/>
           </roleAccess>
           <typeRestrictions>
                 <restriction code="r_taxidermySpecimen" type="taxidermySpecimen"/>       
@@ -13074,10 +13074,10 @@
           </labels>
           <roleAccess>
             <permission role="admin" access="edit"/>
-            <permission role="cataloguer" access="edit"/>
-            <permission role="researcher" access="edit"/>
-            <permission role="tester" access="edit"/>
-            <permission role="moderator" access="edit"/>
+            <permission role="soilmanager" access="edit"/>
+            <permission role="soilcataloguer" access="edit"/>
+            <permission role="soilarchivist" access="edit"/>
+            <permission role="viewer" access="read"/>
           </roleAccess>
           <typeRestrictions>
                 <restriction code="r_soilObject" type="soilObject"/>
@@ -13116,10 +13116,10 @@
           </labels>
           <roleAccess>
             <permission role="admin" access="edit"/>
-            <permission role="cataloguer" access="edit"/>
-            <permission role="researcher" access="edit"/>
-            <permission role="tester" access="edit"/>
-            <permission role="moderator" access="edit"/>
+            <permission role="soilmanager" access="edit"/>
+            <permission role="soilcataloguer" access="edit"/>
+            <permission role="soilarchivist" access="edit"/>
+            <permission role="viewer" access="read"/>
           </roleAccess>
           <typeRestrictions>
                 <restriction code="r_taxidermySpecimen" type="taxidermySpecimen"/>       
@@ -13144,12 +13144,6 @@
             </placement>			      
             <placement code="seedlotRelationSamplingPoint" typeRestrictions="seedlot">
               <bundle>ca_attribute_seedlotRelationSamplingPoint</bundle>
-			        <settings>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-            <placement code="taxonGroup" typeRestrictions="dnaSample">
-              <bundle>ca_attribute_taxonGroup</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
@@ -13283,7 +13277,7 @@
               </settings>
             </placement>
 			      <placement code="reprCond" typeRestrictions="livingPlant,plantSampleDried,stemdisc,taxidermySpecimen,mammalTissueSample,mammalBloodSample,mammalHairSample,mammalParasiteSample,dnaSample">
-              <bundle>ca_attribute_reprCondMammal</bundle>
+              <bundle>ca_attribute_reprCond</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Reproductive condition (dwc:reproductiveCondition)</setting>
                 <setting name="description" locale="en_US">Reproductive condition of the mammal at time object(s) were collected</setting>
@@ -13301,10 +13295,10 @@
           </labels>
           <roleAccess>
             <permission role="admin" access="edit"/>
-            <permission role="cataloguer" access="edit"/>
-            <permission role="researcher" access="edit"/>
-            <permission role="tester" access="edit"/>
-            <permission role="moderator" access="edit"/>
+            <permission role="soilmanager" access="edit"/>
+            <permission role="soilcataloguer" access="edit"/>
+            <permission role="soilarchivist" access="edit"/>
+            <permission role="viewer" access="read"/>
           </roleAccess>
           <typeRestrictions>
                 <restriction code="r_livingPlants" type="livingPlant"/>
@@ -13390,10 +13384,10 @@
           </labels>
           <roleAccess>
             <permission role="admin" access="edit"/>
-            <permission role="cataloguer" access="edit"/>
-            <permission role="researcher" access="edit"/>
-            <permission role="tester" access="edit"/>
-            <permission role="moderator" access="edit"/>
+            <permission role="soilmanager" access="edit"/>
+            <permission role="soilcataloguer" access="edit"/>
+            <permission role="soilarchivist" access="edit"/>
+            <permission role="viewer" access="read"/>
           </roleAccess>
           <typeRestrictions>
                 <restriction code="r_soilObject" type="soilObject"/>
@@ -13418,10 +13412,10 @@
           </labels>
           <roleAccess>
             <permission role="admin" access="edit"/>
-            <permission role="cataloguer" access="edit"/>
-            <permission role="researcher" access="edit"/>
-            <permission role="tester" access="edit"/>
-            <permission role="moderator" access="edit"/>
+            <permission role="soilmanager" access="edit"/>
+            <permission role="soilcataloguer" access="edit"/>
+            <permission role="soilarchivist" access="edit"/>
+            <permission role="viewer" access="read"/>
           </roleAccess>
           <bundlePlacements>
             <placement code="fileURL">
@@ -13468,10 +13462,10 @@
           </labels>
           <roleAccess>
             <permission role="admin" access="edit"/>
-            <permission role="cataloguer" access="edit"/>
-            <permission role="researcher" access="edit"/>
-            <permission role="tester" access="edit"/>
-            <permission role="moderator" access="edit"/>
+            <permission role="soilmanager" access="edit"/>
+            <permission role="soilcataloguer" access="edit"/>
+            <permission role="soilarchivist" access="edit"/>
+            <permission role="none" access="read"/>
           </roleAccess>
           <typeRestrictions>
                 <restriction code="r_taxidermySpecimen" type="taxidermySpecimen"/>       
@@ -13579,10 +13573,10 @@
           </labels>
           <roleAccess>
             <permission role="admin" access="edit"/>
-            <permission role="cataloguer" access="edit"/>
-            <permission role="researcher" access="edit"/>
-            <permission role="tester" access="edit"/>
-            <permission role="moderator" access="edit"/>
+            <permission role="soilmanager" access="edit"/>
+            <permission role="soilcataloguer" access="edit"/>
+            <permission role="soilarchivist" access="edit"/>
+            <permission role="viewer" access="none"/>
           </roleAccess>
           <typeRestrictions>
                 <restriction code="r_forestTreePopulation" type="forestTreePopulation"/>       
@@ -13701,10 +13695,10 @@
           </labels>
           <roleAccess>
             <permission role="admin" access="edit"/>
-            <permission role="cataloguer" access="edit"/>
-            <permission role="researcher" access="edit"/>
-            <permission role="tester" access="edit"/>
-            <permission role="moderator" access="edit"/>
+            <permission role="soilmanager" access="edit"/>
+            <permission role="soilcataloguer" access="edit"/>
+            <permission role="soilarchivist" access="edit"/>
+            <permission role="viewer" access="none"/>
           </roleAccess>
           <bundlePlacements>
             <placement code="dataExport">
@@ -18450,6 +18444,109 @@
         <action>can_export_ca_storage_locations</action>
         <action>can_view_change_log_ca_storage_locations</action>
       </actions>
+      <bundleLevelAccessControl>
+        <permission table="ca_objects" bundle="access" access="read"/>
+        <permission table="ca_objects" bundle="acl_inherit_from_ca_collections" access="read"/>
+        <permission table="ca_objects" bundle="acl_inherit_from_parent" access="read"/>
+        <permission table="ca_objects" bundle="acquisition_type_id" access="read"/>
+        <permission table="ca_objects" bundle="authority_references_list" access="read"/>
+        <permission table="ca_objects" bundle="ca_collections" access="read"/>
+        <permission table="ca_objects" bundle="ca_collections_related_list" access="read"/>
+        <permission table="ca_objects" bundle="ca_entities" access="read"/>
+        <permission table="ca_objects" bundle="ca_entities_related_list" access="read"/>
+        <permission table="ca_objects" bundle="ca_item_comments" access="read"/>
+        <permission table="ca_objects" bundle="ca_item_tags" access="read"/>
+        <permission table="ca_objects" bundle="ca_list_items" access="read"/>
+        <permission table="ca_objects" bundle="ca_list_items_related_list" access="read"/>
+        <permission table="ca_objects" bundle="ca_loans" access="read"/>
+        <permission table="ca_objects" bundle="ca_loans_related_list" access="read"/>
+        <permission table="ca_objects" bundle="ca_movements" access="read"/>
+        <permission table="ca_objects" bundle="ca_movements_related_list" access="read"/>
+        <permission table="ca_objects" bundle="ca_object_checkouts" access="read"/>
+        <permission table="ca_objects" bundle="ca_object_circulation_status" access="read"/>
+        <permission table="ca_objects" bundle="ca_object_lots" access="read"/>
+        <permission table="ca_objects" bundle="ca_object_lots_related_list" access="read"/>
+        <permission table="ca_objects" bundle="ca_object_representations" access="read"/>
+        <permission table="ca_objects" bundle="ca_object_representations_access_status" access="read"/>
+        <permission table="ca_objects" bundle="ca_object_representations_related_list" access="read"/>
+        <permission table="ca_objects" bundle="ca_objects" access="read"/>
+        <permission table="ca_objects" bundle="ca_objects_components_list" access="read"/>
+        <permission table="ca_objects" bundle="ca_objects_deaccession" access="read"/>
+        <permission table="ca_objects" bundle="ca_objects_history" access="read"/>
+        <permission table="ca_objects" bundle="ca_objects_location" access="read"/>
+        <permission table="ca_objects" bundle="ca_objects_location_date" access="read"/>
+        <permission table="ca_objects" bundle="ca_objects_related_list" access="read"/>
+        <permission table="ca_objects" bundle="ca_objects_table" access="read"/>
+        <permission table="ca_objects" bundle="ca_occurrences" access="read"/>
+        <permission table="ca_objects" bundle="ca_occurrences_related_list" access="read"/>
+        <permission table="ca_objects" bundle="ca_places" access="read"/>
+        <permission table="ca_objects" bundle="ca_places_related_list" access="read"/>
+        <permission table="ca_objects" bundle="ca_sets" access="read"/>
+        <permission table="ca_objects" bundle="ca_sets_checklist" access="read"/>
+        <permission table="ca_objects" bundle="ca_storage_locations" access="read"/>
+        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="read"/>
+        <permission table="ca_objects" bundle="ca_tour_stops" access="read"/>
+        <permission table="ca_objects" bundle="circulation_status_id" access="read"/>
+        <permission table="ca_objects" bundle="extent" access="read"/>
+        <permission table="ca_objects" bundle="extent_units" access="read"/>
+        <permission table="ca_objects" bundle="generic" access="read"/>
+        <permission table="ca_objects" bundle="hierarchy_location" access="read"/>
+        <permission table="ca_objects" bundle="hierarchy_navigation" access="read"/>
+        <permission table="ca_objects" bundle="hierarchy_tools" access="read"/>
+        <permission table="ca_objects" bundle="history_tracking_chronology" access="read"/>
+        <permission table="ca_objects" bundle="history_tracking_current_contents" access="read"/>
+        <permission table="ca_objects" bundle="home_location_id" access="read"/>
+        <permission table="ca_objects" bundle="idno" access="read"/>
+        <permission table="ca_objects" bundle="item_status_id" access="read"/>
+        <permission table="ca_objects" bundle="locale_id" access="read"/>
+        <permission table="ca_objects" bundle="nonpreferred_labels" access="read"/>
+        <permission table="ca_objects" bundle="object_id" access="read"/>
+        <permission table="ca_objects" bundle="preferred_labels" access="read"/>
+        <permission table="ca_objects" bundle="rank" access="read"/>
+        <permission table="ca_objects" bundle="source_id" access="read"/>
+        <permission table="ca_objects" bundle="status" access="read"/>
+        <permission table="ca_objects" bundle="submission_session_id" access="read"/>
+        <permission table="ca_objects" bundle="submission_status_id" access="read"/>
+        <permission table="ca_loans" bundle="access" access="none"/>
+        <permission table="ca_loans" bundle="authority_references_list" access="none"/>
+        <permission table="ca_loans" bundle="ca_collections" access="none"/>
+        <permission table="ca_loans" bundle="ca_collections_related_list" access="none"/>
+        <permission table="ca_loans" bundle="ca_entities" access="none"/>
+        <permission table="ca_loans" bundle="ca_entities_related_list" access="none"/>
+        <permission table="ca_loans" bundle="ca_item_comments" access="none"/>
+        <permission table="ca_loans" bundle="ca_item_tags" access="none"/>
+        <permission table="ca_loans" bundle="ca_list_items" access="none"/>
+        <permission table="ca_loans" bundle="ca_list_items_related_list" access="none"/>
+        <permission table="ca_loans" bundle="ca_loans" access="none"/>
+        <permission table="ca_loans" bundle="ca_loans_related_list" access="none"/>
+        <permission table="ca_loans" bundle="ca_movements" access="none"/>
+        <permission table="ca_loans" bundle="ca_movements_related_list" access="none"/>
+        <permission table="ca_loans" bundle="ca_object_lots" access="none"/>
+        <permission table="ca_loans" bundle="ca_object_lots_related_list" access="none"/>
+        <permission table="ca_loans" bundle="ca_object_representations" access="none"/>
+        <permission table="ca_loans" bundle="ca_object_representations_related_list" access="none"/>
+        <permission table="ca_loans" bundle="ca_objects" access="none"/>
+        <permission table="ca_loans" bundle="ca_objects_related_list" access="none"/>
+        <permission table="ca_loans" bundle="ca_objects_table" access="none"/>
+        <permission table="ca_loans" bundle="ca_occurrences" access="none"/>
+        <permission table="ca_loans" bundle="ca_occurrences_related_list" access="none"/>
+        <permission table="ca_loans" bundle="ca_places" access="none"/>
+        <permission table="ca_loans" bundle="ca_places_related_list" access="none"/>
+        <permission table="ca_loans" bundle="ca_storage_locations" access="none"/>
+        <permission table="ca_loans" bundle="ca_storage_locations_related_list" access="none"/>
+        <permission table="ca_loans" bundle="generic" access="none"/>
+        <permission table="ca_loans" bundle="history_tracking_chronology" access="none"/>
+        <permission table="ca_loans" bundle="history_tracking_current_contents" access="none"/>
+        <permission table="ca_loans" bundle="idno" access="none"/>
+        <permission table="ca_loans" bundle="loan_id" access="none"/>
+        <permission table="ca_loans" bundle="nonpreferred_labels" access="none"/>
+        <permission table="ca_loans" bundle="preferred_labels" access="none"/>
+        <permission table="ca_loans" bundle="rank" access="none"/>
+        <permission table="ca_loans" bundle="source_id" access="none"/>
+        <permission table="ca_loans" bundle="status" access="none"/>
+        <permission table="ca_loans" bundle="submission_session_id" access="none"/>
+        <permission table="ca_loans" bundle="submission_status_id" access="none"/>
+      </bundleLevelAccessControl>
       <typeLevelAccessControl>
         <permission table="ca_objects" type="object" access="edit"/>
         <permission table="ca_objects" type="dnaSample" access="read"/>
@@ -18724,10 +18821,86 @@
         <permission table="ca_loans" type="externalReuse" access="none"/>
         <permission table="ca_loans" type="Root node for loan_types" access="none"/>
       </typeLevelAccessControl>
+      <metadataLevelAccessControl>
+        <permission element="publishedRecord" access="read"/>
+        <permission element="description" access="read"/>
+        <permission element="samplingDate" access="read"/>
+        <permission element="matrixType" access="read"/>
+        <permission element="mammalTissueSampleType" access="read"/>
+        <permission element="fishSample" access="read"/>
+        <permission element="preparationDate" access="read"/>
+        <permission element="verbatimLocality" access="read"/>
+        <permission element="decimalLatitudeY" access="read"/>
+        <permission element="decimalLongitudeX" access="read"/>
+        <permission element="geodeticDatum" access="read"/>
+        <permission element="coordinateUncertaintyInMetersC" access="read"/>
+        <permission element="verbatimDepth" access="read"/>
+        <permission element="minimumDepthInMeters" access="read"/>
+        <permission element="maximumDepthInMeters" access="read"/>
+        <permission element="verbatimTaxon" access="read"/>
+        <permission element="verbatimLongitudeX" access="read"/>
+        <permission element="verbatimLatitudeY" access="read"/>
+        <permission element="verbatimGeodeticDatum" access="read"/>
+        <permission element="verbatimCoordinatesRemarks" access="read"/>
+        <permission element="map" access="read"/>
+        <permission element="georefVerif" access="read"/>
+        <permission element="georeferenceRemarks" access="read"/>
+        <permission element="seedlotRelationSeeds" access="read"/>
+        <permission element="externalSpecimen" access="read"/>
+        <permission element="samplingProtocol" access="read"/>
+        <permission element="samplingEffort" access="read"/>
+        <permission element="preparationProtocol" access="read"/>
+        <permission element="preparationVolumeC" access="read"/>
+        <permission element="preparationWeightC" access="read"/>
+        <permission element="notes" access="read"/>
+        <permission element="provenance" access="read"/>
+        <permission element="habitat" access="read"/>
+        <permission element="verbatimElevation" access="read"/>
+        <permission element="minimumElevationInMeters" access="read"/>
+        <permission element="maximumElevationInMeters" access="read"/>
+        <permission element="verticalDatum" access="read"/>
+        <permission element="verbatimHeight" access="read"/>
+        <permission element="minimumHeightInMeters" access="read"/>
+        <permission element="maximumHeightInMeters" access="read"/>
+        <permission element="GBIF" access="read"/>
+        <permission element="taxonDate" access="read"/>
+        <permission element="voucher" access="read"/>
+        <permission element="taxonReference" access="read"/>
+        <permission element="GBIFedna" access="read"/>
+        <permission element="taxonNote" access="read"/>
+        <permission element="seedlotRelationSamplingPoint" access="read"/>
+        <permission element="genotype" access="read"/>
+        <permission element="dna_conc" access="read"/>
+        <permission element="dna_spectro" access="read"/>
+        <permission element="dna_gel" access="read"/>
+        <permission element="volume" access="read"/>
+        <permission element="weight" access="read"/>
+        <permission element="length" access="read"/>
+        <permission element="objectAge" access="read"/>
+        <permission element="seedlotGermination" access="read"/>
+        <permission element="seedlotPurity" access="read"/>
+        <permission element="objectCount" access="read"/>
+        <permission element="decompositionCategory" access="read"/>
+        <permission element="sex" access="read"/>
+        <permission element="lifeStage" access="read"/>
+        <permission element="reprCond" access="read"/>
+        <permission element="fileURL" access="read"/>
+        <permission element="reference" access="read"/>
+        <permission element="taxonReference" access="read"/>
+        <permission element="publishedRecord" access="read"/>
+        <permission element="dataExport" access="read"/>
+        <permission element="dataExportSpecification" access="read"/>
+        <permission element="blocked_until" access="read"/>
+        <permission element="restriction_use" access="read"/>
+        <permission element="blocked_until" access="read"/>
+        <permission element="blocked_until" access="read"/>
+        <permission element="blocked_until" access="read"/>
+
+      </metadataLevelAccessControl>
     </role>
     <role code="viewer">
       <name>Viewer</name>
-      <description>CCan only view most information, not the storage locations.</description>
+      <description>Can only view most information, not the storage locations.</description>
       <actions>
         <action>can_quicksearch</action>
         <action>can_batch_export_metadata</action>
@@ -18743,6 +18916,7 @@
         <action>can_view_sets</action>
         <action>can_duplicate_ca_sets</action>
         <action>can_quickadd_ca_sets</action>
+        <action>can_edit_ca_objects</action>
         <action>can_search_ca_objects</action>
         <action>can_browse_ca_objects</action>
         <action>can_export_ca_objects</action>
@@ -19134,7 +19308,7 @@
         </placement>
       </bundlePlacements>
     </display>
-    <display code="specimens_search_viewers_cataloguers" type="ca_objects" system="1" typeRestrictions="object,dnaSample,soilObject,plantSampleDried,seedlot,plantObject,animalObject,stemdisc,forestTreePopulation,livingPlant,moss,fish,fishEntireEthanol,fishTissueSample,taxidermySpecimen,mammalTissueSample,mammalBloodSample,mammalHairSample,mammalParasiteSample" includeSubtypes="1">
+    <display code="specimens_search_viewers_cataloguers" type="ca_objects" system="1" typeRestrictions="object,dnaSample,soilObject,plantSampleDried,seedlot,plantObject,animalObject,stemdisc,forestTreePopulation,livingPlant,moss,fishEntireEthanol,fishTissueSample,taxidermySpecimen,mammalTissueSample,mammalBloodSample,mammalHairSample,mammalParasiteSample" includeSubtypes="1">
       <labels>
         <label locale="en_US">
           <name>Specimen search for viewers</name>
@@ -19179,7 +19353,7 @@
         </placement>
       </bundlePlacements>
     </display>
-    <display code="specimens_search_managers_archivists" type="ca_objects" system="1" typeRestrictions="object,dnaSample,soilObject,plantSampleDried,seedlot,plantObject,animalObject,stemdisc,forestTreePopulation,livingPlant,moss,fish,fishEntireEthanol,fishTissueSample,taxidermySpecimen,mammalTissueSample,mammalBloodSample,mammalHairSample,mammalParasiteSample" includeSubtypes="1">
+    <display code="specimens_search_managers_archivists" type="ca_objects" system="0" typeRestrictions="object,dnaSample,soilObject,plantSampleDried,seedlot,plantObject,animalObject,stemdisc,forestTreePopulation,livingPlant,moss,fishEntireEthanol,fishTissueSample,taxidermySpecimen,mammalTissueSample,mammalBloodSample,mammalHairSample,mammalParasiteSample" includeSubtypes="1">
       <labels>
         <label locale="en_US">
           <name>Specimen search for managers</name>
@@ -19201,6 +19375,7 @@
         <permission group="collectionmanagers" access="read"/>
         <permission group="cataloguers" access="read"/>
         <permission group="archivists" access="read"/>
+        <permission group="viewers" access="none"/>
       </groupAccess>
       <bundlePlacements>
         <placement code="ca_objects_idno">
@@ -19276,7 +19451,7 @@
         </placement>
       </bundlePlacements>
     </display>
-    <display code="soil_search_managers_archivists" type="ca_objects" system="1" typeRestrictions="soilObject" includeSubtypes="1">
+    <display code="soil_search_managers_archivists" type="ca_objects" system="0" typeRestrictions="soilObject" includeSubtypes="1">
       <labels>
         <label locale="en_US">
           <name>Soil specimen search for managers</name>
@@ -19300,6 +19475,7 @@
         <permission group="collectionmanagers" access="read"/>
         <permission group="cataloguers" access="read"/>
         <permission group="archivists" access="read"/>
+        <permission group="viewers" access="none"/>
       </groupAccess>
       <bundlePlacements>
         <placement code="ca_objects_idno">
