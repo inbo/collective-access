@@ -741,22 +741,11 @@
                   <setting name="render_in_new_menu">1</setting>
                 </settings>
                 <items>
-                  <item idno="disposal" enabled="1" default="1">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Disposal</name_singular>
-                        <name_plural>Disposal</name_plural>
-                      </label>
-                    </labels>
-                    <settings>
-                      <setting name="render_in_new_menu">1</setting>
-                    </settings>
-                  </item>
                   <item idno="treatment" enabled="1" default="1">
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>Treatment</name_singular>
-                        <name_plural>Treatment</name_plural>
+                        <name_plural>Treatments</name_plural>
                       </label>
                     </labels>
                     <settings>
@@ -767,18 +756,7 @@
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>Renewal</name_singular>
-                        <name_plural>Renewal</name_plural>
-                      </label>
-                    </labels>
-                    <settings>
-                      <setting name="render_in_new_menu">1</setting>
-                    </settings>
-                  </item>
-                  <item idno="transfer" enabled="1" default="1">
-                    <labels>
-                      <label locale="en_US" preferred="1">
-                        <name_singular>Transfer</name_singular>
-                        <name_plural>Transfer</name_plural>
+                        <name_plural>Renewals</name_plural>
                       </label>
                     </labels>
                     <settings>
@@ -18626,52 +18604,52 @@
         <permission table="ca_objects" bundle="ca_attribute_dataExport" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_blocked_until" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_restriction_use" access="read"/>
-        <permission table="ca_occurrences" bundle="access" access="none"/>
-        <permission table="ca_occurrences" bundle="authority_references_list" access="none"/>
-        <permission table="ca_occurrences" bundle="ca_collections" access="none"/>
-        <permission table="ca_occurrences" bundle="ca_collections_related_list" access="none"/>
-        <permission table="ca_occurrences" bundle="ca_entities" access="none"/>
-        <permission table="ca_occurrences" bundle="ca_entities_related_list" access="none"/>
-        <permission table="ca_occurrences" bundle="ca_item_comments" access="none"/>
-        <permission table="ca_occurrences" bundle="ca_item_tags" access="none"/>
-        <permission table="ca_occurrences" bundle="ca_list_items" access="none"/>
-        <permission table="ca_occurrences" bundle="ca_list_items_related_list" access="none"/>
-        <permission table="ca_occurrences" bundle="ca_loans" access="none"/>
-        <permission table="ca_occurrences" bundle="ca_loans_related_list" access="none"/>
-        <permission table="ca_occurrences" bundle="ca_movements" access="none"/>
-        <permission table="ca_occurrences" bundle="ca_movements_related_list" access="none"/>
-        <permission table="ca_occurrences" bundle="ca_object_lots" access="none"/>
-        <permission table="ca_occurrences" bundle="ca_object_lots_related_list" access="none"/>
-        <permission table="ca_occurrences" bundle="ca_object_representations" access="none"/>
-        <permission table="ca_occurrences" bundle="ca_object_representations_related_list" access="none"/>
-        <permission table="ca_occurrences" bundle="ca_objects" access="none"/>
-        <permission table="ca_occurrences" bundle="ca_objects_related_list" access="none"/>
-        <permission table="ca_occurrences" bundle="ca_objects_table" access="none"/>
-        <permission table="ca_occurrences" bundle="ca_occurrences" access="none"/>
-        <permission table="ca_occurrences" bundle="ca_occurrences_related_list" access="none"/>
-        <permission table="ca_occurrences" bundle="ca_places" access="none"/>
-        <permission table="ca_occurrences" bundle="ca_places_related_list" access="none"/>
-        <permission table="ca_occurrences" bundle="ca_sets" access="none"/>
-        <permission table="ca_occurrences" bundle="ca_sets_checklist" access="none"/>
-        <permission table="ca_occurrences" bundle="ca_storage_locations" access="none"/>
-        <permission table="ca_occurrences" bundle="ca_storage_locations_related_list" access="none"/>
-        <permission table="ca_occurrences" bundle="ca_tour_stops" access="none"/>
-        <permission table="ca_occurrences" bundle="generic" access="none"/>
-        <permission table="ca_occurrences" bundle="hierarchy_location" access="none"/>
-        <permission table="ca_occurrences" bundle="hierarchy_navigation" access="none"/>
-        <permission table="ca_occurrences" bundle="history_tracking_chronology" access="none"/>
-        <permission table="ca_occurrences" bundle="history_tracking_current_contents" access="none"/>
-        <permission table="ca_occurrences" bundle="idno" access="none"/>
-        <permission table="ca_occurrences" bundle="locale_id" access="none"/>
+        <permission table="ca_occurrences" bundle="access" access="read"/>
+        <permission table="ca_occurrences" bundle="authority_references_list" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_collections" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_collections_related_list" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_entities" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_entities_related_list" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_item_comments" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_item_tags" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_list_items" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_list_items_related_list" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_loans" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_loans_related_list" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_movements" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_movements_related_list" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_object_lots" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_object_lots_related_list" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_object_representations" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_object_representations_related_list" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_objects" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_objects_related_list" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_objects_table" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_occurrences" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_occurrences_related_list" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_places" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_places_related_list" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_sets" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_sets_checklist" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_storage_locations" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_storage_locations_related_list" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_tour_stops" access="read"/>
+        <permission table="ca_occurrences" bundle="generic" access="read"/>
+        <permission table="ca_occurrences" bundle="hierarchy_location" access="read"/>
+        <permission table="ca_occurrences" bundle="hierarchy_navigation" access="read"/>
+        <permission table="ca_occurrences" bundle="history_tracking_chronology" access="read"/>
+        <permission table="ca_occurrences" bundle="history_tracking_current_contents" access="read"/>
+        <permission table="ca_occurrences" bundle="idno" access="read"/>
+        <permission table="ca_occurrences" bundle="locale_id" access="read"/>
         <permission table="ca_occurrences" bundle="nonpreferred_labels" access="edit"/>
-        <permission table="ca_occurrences" bundle="occurrence_id" access="none"/>
-        <permission table="ca_occurrences" bundle="parent_id" access="none"/>
+        <permission table="ca_occurrences" bundle="occurrence_id" access="noneread"/>
+        <permission table="ca_occurrences" bundle="parent_id" access="read"/>
         <permission table="ca_occurrences" bundle="preferred_labels" access="edit"/>
-        <permission table="ca_occurrences" bundle="rank" access="none"/>
-        <permission table="ca_occurrences" bundle="source_id" access="none"/>
-        <permission table="ca_occurrences" bundle="status" access="none"/>
-        <permission table="ca_occurrences" bundle="submission_session_id" access="none"/>
-        <permission table="ca_occurrences" bundle="submission_status_id" access="none"/>
+        <permission table="ca_occurrences" bundle="rank" access="read"/>
+        <permission table="ca_occurrences" bundle="source_id" access="read"/>
+        <permission table="ca_occurrences" bundle="status" access="read"/>
+        <permission table="ca_occurrences" bundle="submission_session_id" access="read"/>
+        <permission table="ca_occurrences" bundle="submission_status_id" access="read"/>
         <permission table="ca_loans" bundle="access" access="none"/>
         <permission table="ca_loans" bundle="authority_references_list" access="none"/>
         <permission table="ca_loans" bundle="ca_collections" access="none"/>
@@ -19167,7 +19145,7 @@
         </placement>
       </bundlePlacements>
     </display>
-    <display code="specimens_search_viewers_cataloguers" type="ca_objects" system="1" typeRestrictions="object,dnaSample,soilObject,plantSampleDried,seedlot,plantObject,animalObject,stemdisc,forestTreePopulation,livingPlant,moss,fishEntireEthanol,fishTissueSample,taxidermySpecimen,mammalTissueSample,mammalBloodSample,mammalHairSample,mammalParasiteSample" includeSubtypes="1">
+    <display code="specimens_search_viewers_cataloguers" type="ca_objects" system="0" typeRestrictions="object,dnaSample,soilObject,plantSampleDried,seedlot,plantObject,animalObject,stemdisc,forestTreePopulation,livingPlant,moss,fishEntireEthanol,fishTissueSample,taxidermySpecimen,mammalTissueSample,mammalBloodSample,mammalHairSample,mammalParasiteSample" includeSubtypes="1">
       <labels>
         <label locale="en_US">
           <name>Specimen search for viewers</name>
@@ -19259,7 +19237,7 @@
         </placement>
       </bundlePlacements>
     </display>
-    <display code="soil_search_viewers_cataloguers" type="ca_objects" system="1" typeRestrictions="soilObject" includeSubtypes="1">
+    <display code="soil_search_viewers_cataloguers" type="ca_objects" system="0" typeRestrictions="soilObject" includeSubtypes="1">
       <labels>
         <label locale="en_US">
           <name>Soil specimen search for viewers</name>
