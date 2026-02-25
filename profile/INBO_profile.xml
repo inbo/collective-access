@@ -4,6 +4,7 @@
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--Issues to check if succesful in v0.110-->
   <!--https://github.com/inbo/collective-access/issues/420 check the 4 different roles and see if the permissions are correct-->
+  <!--check if roles are working https://docs.google.com/document/d/1ZwS80YLPfGhuU1kfv3eFFKajtNzD72QOagTooGX8mU0/edit?tab=t.0-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -12256,6 +12257,16 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
+            <placement code="ca_storage_location">
+              <bundle>ca_storage_locations</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">TEMPORARY Object is stored at *</setting><!--to be deleted after testing-->
+                <setting name="restrict_to_types">spot</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="useHierarchicalBrowser">0</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
           </bundlePlacements>
         </screen>
         <screen idno="obj_storage2" default="0">
@@ -18308,68 +18319,68 @@
         <action>can_view_change_log_ca_storage_locations</action>
       </actions>
       <bundleLevelAccessControl>
-        <permission table="ca_objects" bundle="access" access="read"/>
-        <permission table="ca_objects" bundle="acl_inherit_from_ca_collections" access="read"/>
-        <permission table="ca_objects" bundle="acl_inherit_from_parent" access="read"/>
-        <permission table="ca_objects" bundle="acquisition_type_id" access="read"/>
-        <permission table="ca_objects" bundle="authority_references_list" access="read"/>
+        <permission table="ca_objects" bundle="access" access="edit"/>
+        <permission table="ca_objects" bundle="acl_inherit_from_ca_collections" access="edit"/>
+        <permission table="ca_objects" bundle="acl_inherit_from_parent" access="edit"/>
+        <permission table="ca_objects" bundle="acquisition_type_id" access="edit"/>
+        <permission table="ca_objects" bundle="authority_references_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_collections" access="read"/>
         <permission table="ca_objects" bundle="ca_collections_related_list" access="read"/>
-        <permission table="ca_objects" bundle="ca_entities" access="read"/>
-        <permission table="ca_objects" bundle="ca_entities_related_list" access="read"/>
-        <permission table="ca_objects" bundle="ca_item_comments" access="read"/>
-        <permission table="ca_objects" bundle="ca_item_tags" access="read"/>
-        <permission table="ca_objects" bundle="ca_list_items" access="read"/>
-        <permission table="ca_objects" bundle="ca_list_items_related_list" access="read"/>
+        <permission table="ca_objects" bundle="ca_entities" access="edit"/>
+        <permission table="ca_objects" bundle="ca_entities_related_list" access="edit"/>
+        <permission table="ca_objects" bundle="ca_item_comments" access="edit"/>
+        <permission table="ca_objects" bundle="ca_item_tags" access="edit"/>
+        <permission table="ca_objects" bundle="ca_list_items" access="edit"/>
+        <permission table="ca_objects" bundle="ca_list_items_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_loans" access="read"/>
         <permission table="ca_objects" bundle="ca_loans_related_list" access="read"/>
-        <permission table="ca_objects" bundle="ca_movements" access="read"/>
-        <permission table="ca_objects" bundle="ca_movements_related_list" access="read"/>
-        <permission table="ca_objects" bundle="ca_object_checkouts" access="read"/>
-        <permission table="ca_objects" bundle="ca_object_circulation_status" access="read"/>
-        <permission table="ca_objects" bundle="ca_object_lots" access="read"/>
-        <permission table="ca_objects" bundle="ca_object_lots_related_list" access="read"/>
-        <permission table="ca_objects" bundle="ca_object_representations" access="read"/>
-        <permission table="ca_objects" bundle="ca_object_representations_access_status" access="read"/>
-        <permission table="ca_objects" bundle="ca_object_representations_related_list" access="read"/>
-        <permission table="ca_objects" bundle="ca_objects" access="read"/>
-        <permission table="ca_objects" bundle="ca_objects_components_list" access="read"/>
+        <permission table="ca_objects" bundle="ca_movements" access="edit"/>
+        <permission table="ca_objects" bundle="ca_movements_related_list" access="edit"/>
+        <permission table="ca_objects" bundle="ca_object_checkouts" access="edit"/>
+        <permission table="ca_objects" bundle="ca_object_circulation_status" access="edit"/>
+        <permission table="ca_objects" bundle="ca_object_lots" access="edit"/>
+        <permission table="ca_objects" bundle="ca_object_lots_related_list" access="edit"/>
+        <permission table="ca_objects" bundle="ca_object_representations" access="edit"/>
+        <permission table="ca_objects" bundle="ca_object_representations_access_status" access="edit"/>
+        <permission table="ca_objects" bundle="ca_object_representations_related_list" access="edit"/>
+        <permission table="ca_objects" bundle="ca_objects" access="edit"/>
+        <permission table="ca_objects" bundle="ca_objects_components_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects_deaccession" access="read"/>
-        <permission table="ca_objects" bundle="ca_objects_history" access="read"/>
-        <permission table="ca_objects" bundle="ca_objects_location" access="read"/>
-        <permission table="ca_objects" bundle="ca_objects_location_date" access="read"/>
-        <permission table="ca_objects" bundle="ca_objects_related_list" access="read"/>
-        <permission table="ca_objects" bundle="ca_objects_table" access="read"/>
-        <permission table="ca_objects" bundle="ca_occurrences" access="read"/>
-        <permission table="ca_objects" bundle="ca_occurrences_related_list" access="read"/>
-        <permission table="ca_objects" bundle="ca_places" access="read"/>
-        <permission table="ca_objects" bundle="ca_places_related_list" access="read"/>
-        <permission table="ca_objects" bundle="ca_sets" access="read"/>
-        <permission table="ca_objects" bundle="ca_sets_checklist" access="read"/>
+        <permission table="ca_objects" bundle="ca_objects_history" access="edit"/>
+        <permission table="ca_objects" bundle="ca_objects_location" access="edit"/>
+        <permission table="ca_objects" bundle="ca_objects_location_date" access="edit"/>
+        <permission table="ca_objects" bundle="ca_objects_related_list" access="edit"/>
+        <permission table="ca_objects" bundle="ca_objects_table" access="edit"/>
+        <permission table="ca_objects" bundle="ca_occurrences" access="edit"/>
+        <permission table="ca_objects" bundle="ca_occurrences_related_list" access="edit"/>
+        <permission table="ca_objects" bundle="ca_places" access="edit"/>
+        <permission table="ca_objects" bundle="ca_places_related_list" access="edit"/>
+        <permission table="ca_objects" bundle="ca_sets" access="edit"/>
+        <permission table="ca_objects" bundle="ca_sets_checklist" access="edit"/>
         <permission table="ca_objects" bundle="ca_storage_locations" access="read"/>
         <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="read"/>
-        <permission table="ca_objects" bundle="ca_tour_stops" access="read"/>
-        <permission table="ca_objects" bundle="circulation_status_id" access="read"/>
-        <permission table="ca_objects" bundle="extent" access="read"/>
-        <permission table="ca_objects" bundle="extent_units" access="read"/>
-        <permission table="ca_objects" bundle="generic" access="read"/>
-        <permission table="ca_objects" bundle="hierarchy_location" access="read"/>
-        <permission table="ca_objects" bundle="hierarchy_navigation" access="read"/>
-        <permission table="ca_objects" bundle="hierarchy_tools" access="read"/>
-        <permission table="ca_objects" bundle="history_tracking_chronology" access="read"/>
-        <permission table="ca_objects" bundle="history_tracking_current_contents" access="read"/>
-        <permission table="ca_objects" bundle="home_location_id" access="read"/>
-        <permission table="ca_objects" bundle="idno" access="read"/>
-        <permission table="ca_objects" bundle="item_status_id" access="read"/>
-        <permission table="ca_objects" bundle="locale_id" access="read"/>
-        <permission table="ca_objects" bundle="nonpreferred_labels" access="read"/>
-        <permission table="ca_objects" bundle="object_id" access="read"/>
+        <permission table="ca_objects" bundle="ca_tour_stops" access="edit"/>
+        <permission table="ca_objects" bundle="circulation_status_id" access="edit"/>
+        <permission table="ca_objects" bundle="extent" access="edit"/>
+        <permission table="ca_objects" bundle="extent_units" access="edit"/>
+        <permission table="ca_objects" bundle="generic" access="edit"/>
+        <permission table="ca_objects" bundle="hierarchy_location" access="edit"/>
+        <permission table="ca_objects" bundle="hierarchy_navigation" access="edit"/>
+        <permission table="ca_objects" bundle="hierarchy_tools" access="edit"/>
+        <permission table="ca_objects" bundle="history_tracking_chronology" access="edit"/>
+        <permission table="ca_objects" bundle="history_tracking_current_contents" access="edit"/>
+        <permission table="ca_objects" bundle="home_location_id" access="edit"/>
+        <permission table="ca_objects" bundle="idno" access="edit"/>
+        <permission table="ca_objects" bundle="item_status_id" access="edit"/>
+        <permission table="ca_objects" bundle="locale_id" access="edit"/>
+        <permission table="ca_objects" bundle="nonpreferred_labels" access="edit"/>
+        <permission table="ca_objects" bundle="object_id" access="edit"/>
         <permission table="ca_objects" bundle="preferred_labels" access="read"/>
-        <permission table="ca_objects" bundle="rank" access="read"/>
-        <permission table="ca_objects" bundle="source_id" access="read"/>
-        <permission table="ca_objects" bundle="status" access="read"/>
-        <permission table="ca_objects" bundle="submission_session_id" access="read"/>
-        <permission table="ca_objects" bundle="submission_status_id" access="read"/>
+        <permission table="ca_objects" bundle="rank" access="edit"/>
+        <permission table="ca_objects" bundle="source_id" access="edit"/>
+        <permission table="ca_objects" bundle="status" access="edit"/>
+        <permission table="ca_objects" bundle="submission_session_id" access="edit"/>
+        <permission table="ca_objects" bundle="submission_status_id" access="edit"/>
         <permission table="ca_loans" bundle="access" access="none"/>
         <permission table="ca_loans" bundle="authority_references_list" access="none"/>
         <permission table="ca_loans" bundle="ca_collections" access="none"/>
@@ -18432,6 +18443,18 @@
         <permission table="ca_objects" type="mammalBloodSample" access="read"/>
         <permission table="ca_objects" type="mammalHairSample" access="read"/>
         <permission table="ca_objects" type="mammalParasiteSample" access="read"/>
+        <permission table="ca_occurrences" type="project" access="edit"/>
+        <permission table="ca_occurrences" type="fieldwork" access="edit"/>
+        <permission table="ca_occurrences" type="curation" access="read"/>
+        <permission table="ca_occurrences" type="valuation" access="edit"/>
+        <permission table="ca_occurrences" type="identification" access="edit"/>
+        <permission table="ca_occurrences" type="Root node for occurrence_types" access="none"/>
+        <permission table="ca_occurrences" type="internalProject" access="edit"/>
+        <permission table="ca_occurrences" type="externalProject" access="edit"/>
+        <permission table="ca_occurrences" type="disposal" access="read"/>
+        <permission table="ca_occurrences" type="treatment" access="read"/>
+        <permission table="ca_occurrences" type="renewal" access="read"/>
+        <permission table="ca_occurrences" type="transfer" access="read"/>
       </typeLevelAccessControl>
     </role>
     <role code="soilarchivist"><!--Once this works, you can make archivists for the other 9 collections-->
@@ -18552,8 +18575,8 @@
         <permission table="ca_objects" bundle="status" access="read"/>
         <permission table="ca_objects" bundle="submission_session_id" access="read"/>
         <permission table="ca_objects" bundle="submission_status_id" access="read"/>
-        <!--Below is currently not working see https://github.com/inbo/collective-access/issues/429-->
-        <!--<permission table="ca_objects" bundle="ca_attribute_publishedRecord" access="read"/>
+        <!--Below is currently not working see https://github.com/inbo/collective-access/issues/429 - to be set manually for now!
+        <permission table="ca_objects" bundle="ca_attribute_publishedRecord" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_description" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_samplingDate" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_matrixType" access="read"/>
@@ -19320,6 +19343,394 @@
     </group>
   </groups>
   <displays>
+    <display code="soil_summary" type="ca_objects" system="1" typeRestrictions="soilObject" includeSubtypes="1">
+      <labels>
+        <label locale="en_US">
+          <name>soil_summary</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="show_empty_values"><![CDATA[1]]></setting>
+        <setting name="bottom_line"><![CDATA[]]></setting>
+        <setting name="show_only_in"><![CDATA[editor_summary]]></setting>
+        <setting name="show_representations"><![CDATA[all]]></setting>
+      </settings>
+      <userAccess>
+        <permission user="administrator" access="edit"/>
+      </userAccess>
+      <groupAccess>
+        <permission group="admin" access="edit"/>
+        <permission group="collectionmanagers" access="read"/>
+        <permission group="cataloguers" access="read"/>
+        <permission group="archivists" access="read"/>
+        <permission group="viewers" access="read"/>
+      </groupAccess>
+      <bundlePlacements>
+        <placement code="ca_objects_idno">
+          <bundle>ca_objects.idno</bundle>
+          <settings>
+            <setting name="label" locale="en_US">CMS ID</setting>
+          </settings>
+        </placement>
+        <placement code="ca_objects_is_deaccessioned">
+          <bundle>ca_objects.is_deaccessioned</bundle>
+        </placement>
+        <placement code="ca_objects_status">
+          <bundle>ca_objects.status</bundle>
+          <settings>
+            <setting name="label" locale="en_US">Cataloguing status</setting>
+            <setting name="maximum_length"><![CDATA[100]]></setting>
+            <setting name="format"><![CDATA[]]></setting>
+          </settings>
+        </placement>
+        <placement code="ca_objects_type_id">
+          <bundle>ca_objects.type_id</bundle>
+        </placement>
+        <placement code="ca_objects_preferred_labels">
+          <bundle>ca_objects.preferred_labels</bundle>
+          <settings>
+            <setting name="label" locale="en_US">Specimen ID</setting>
+          </settings>
+        </placement>
+        <placement code="ca_objects_nonpreferred_labels">
+          <bundle>ca_objects.nonpreferred_labels</bundle>
+          <settings>
+            <setting name="label" locale="en_US">Other identifier</setting>
+          </settings>
+        </placement>
+        <placement code="ca_objects_publishedRecord">
+          <bundle>ca_objects.publishedRecord</bundle>
+        </placement>
+        <placement code="ca_collections">
+          <bundle>ca_collections</bundle>
+          <settings>
+            <setting name="label" locale="en_US">Collection</setting>
+          </settings>
+        </placement>
+        <placement code="ca_objects_descriptionContainer">
+          <bundle>ca_objects.descriptionContainer</bundle>
+        </placement>
+        <placement code="ca_objects_samplingDate">
+          <bundle>ca_objects.samplingDate</bundle>
+          <settings>
+            <setting name="label" locale="en_US">Sampling date</setting>
+          </settings>
+        </placement>
+        <placement code="ca_objects_samplingProtocol">
+          <bundle>ca_objects.samplingProtocol</bundle>
+        </placement>
+        <placement code="ca_entities_sampledBy">
+          <bundle>ca_entities</bundle>
+			      <settings>
+              <setting name="label" locale="en_US">Sampled by</setting>
+              <setting name="restrict_to_relationship_types">sampledBy</setting>
+              </settings>
+        </placement>
+        <placement code="ca_objects_preparationDate">
+          <bundle>ca_objects.preparationDate</bundle>
+        </placement>
+        <placement code="ca_objects_preparationProtocol">
+          <bundle>ca_objects.preparationProtocol</bundle>
+        </placement>
+        <placement code="ca_entities_preparedBy">
+          <bundle>ca_entities</bundle>
+			      <settings>
+              <setting name="label" locale="en_US">Prepared by</setting>
+              <setting name="restrict_to_relationship_types">preparedBy</setting>
+              </settings>
+        </placement>
+        <placement code="ca_objects_verbatimLocality">
+          <bundle>ca_objects.verbatimLocality</bundle>
+          <settings>
+            <setting name="label" locale="en_US">Verbatim locality of sampling point</setting>
+          </settings>
+        </placement>
+        <placement code="ca_places">
+          <bundle>ca_places</bundle>
+          <settings>
+            <setting name="label" locale="en_US">Toponym</setting>
+          </settings>
+        </placement>
+        <placement code="ca_objects_verbatimLatitudeY">
+          <bundle>ca_objects.verbatimLatitudeY</bundle>
+        </placement>
+        <placement code="ca_objects_verbatimLongitudeX">
+          <bundle>ca_objects.verbatimLongitudeX</bundle>
+        </placement>
+        <placement code="ca_objects_verbatimGeodeticDatum">
+          <bundle>ca_objects.verbatimGeodeticDatum</bundle>
+        </placement>
+        <placement code="ca_objects_verbatimCoordinatesRemarks">
+          <bundle>ca_objects.verbatimCoordinatesRemarks</bundle>
+        </placement>
+        <placement code="ca_objects_decimalLatitudeY">
+          <bundle>ca_objects.decimalLatitudeY</bundle>
+        </placement>
+        <placement code="ca_objects_decimalLongitudeX">
+          <bundle>ca_objects.decimalLongitudeX</bundle>
+        </placement>
+        <placement code="ca_objects_geodeticDatum">
+          <bundle>ca_objects.geodeticDatum</bundle>
+        </placement>
+        <placement code="ca_objects_coordinateUncertaintyInMetersC">
+          <bundle>ca_objects.coordinateUncertaintyInMetersC</bundle>
+        </placement>
+        <placement code="ca_objects_georeference">
+          <bundle>ca_objects.georeference</bundle>
+        </placement>
+        <placement code="ca_objects_habitat">
+          <bundle>ca_objects.habitat</bundle>
+        </placement>
+        <placement code="ca_objects_verbatimDepth">
+          <bundle>ca_objects.verbatimDepth</bundle>
+        </placement>
+        <placement code="ca_objects_minimumDepthInMeters">
+          <bundle>ca_objects.minimumDepthInMeters</bundle>
+        </placement>
+        <placement code="ca_objects_maximumDepthInMeters">
+          <bundle>ca_objects.maximumDepthInMeters</bundle>
+        </placement>
+        <placement code="ca_objects_verbatimElevation">
+          <bundle>ca_objects.verbatimElevation</bundle>
+        </placement>
+        <placement code="ca_objects_minimumElevationInMeters">
+          <bundle>ca_objects.minimumElevationInMeters</bundle>
+        </placement>
+        <placement code="ca_objects_maximumElevationInMeters">
+          <bundle>ca_objects.maximumElevationInMeters</bundle>
+        </placement>
+        <placement code="ca_objects_verticalDatum">
+          <bundle>ca_objects.verticalDatum</bundle>
+        </placement>
+        <placement code="ca_objects_related">
+          <bundle>ca_objects.related</bundle>
+        </placement>
+        <placement code="ca_objects_externalSpecimen">
+          <bundle>ca_objects.externalSpecimen</bundle>
+        </placement>
+        <placement code="ca_objects_notes">
+          <bundle>ca_objects.notes</bundle>
+        </placement>
+        <placement code="ca_objects_fileURL">
+          <bundle>ca_objects.fileURL</bundle>
+        </placement>
+        <placement code="ca_objects_reference">
+          <bundle>ca_objects.reference</bundle>
+        </placement>
+        <placement code="ca_occurrences_related_projects">
+          <bundle>ca_occurrences.related</bundle>
+          <setting name="label" locale="en_US">Related projects</setting>
+          <setting name="restrict_to_types">project</setting>
+        </placement>
+        <placement code="ca_occurrences_related_fieldwork">
+          <bundle>ca_occurrences.related</bundle>
+          <setting name="label" locale="en_US">Related field campagin</setting>
+          <setting name="restrict_to_types">fieldwork</setting>
+        </placement>
+        <placement code="ca_occurrences_related_value">
+          <bundle>ca_occurrences.related</bundle>
+          <setting name="label" locale="en_US">Related value</setting>
+          <setting name="restrict_to_types">valuation</setting>
+          <setting name="display_template">^ca_occurrences.valuationArgument%delimiter=_;_ (^ca_occurrences.eventDate)</setting>
+        </placement>
+      </bundlePlacements>
+    </display>
+    <display code="plantSampleDried_moss_summary" type="ca_objects" system="1" typeRestrictions="plantSampleDried,moss" includeSubtypes="1">
+      <labels>
+        <label locale="en_US">
+          <name>plantSampleDried_moss_summary</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="show_empty_values"><![CDATA[1]]></setting>
+        <setting name="bottom_line"><![CDATA[]]></setting>
+        <setting name="show_only_in"><![CDATA[editor_summary]]></setting>
+        <setting name="show_representations"><![CDATA[all]]></setting>
+      </settings>
+      <userAccess>
+        <permission user="administrator" access="edit"/>
+      </userAccess>
+      <groupAccess>
+        <permission group="admin" access="edit"/>
+        <permission group="collectionmanagers" access="read"/>
+        <permission group="cataloguers" access="read"/>
+        <permission group="archivists" access="read"/>
+        <permission group="viewers" access="read"/>
+      </groupAccess>
+      <bundlePlacements>
+        <placement code="ca_objects_idno">
+          <bundle>ca_objects.idno</bundle>
+          <settings>
+            <setting name="label">CMS ID</setting>
+          </settings>
+        </placement>
+        <placement code="ca_objects_is_deaccessioned">
+          <bundle>ca_objects.is_deaccessioned</bundle>
+        </placement>
+        <placement code="ca_objects_status">
+          <bundle>ca_objects.status</bundle>
+          <settings>
+            <setting name="label">Cataloguing status</setting>
+          </settings>
+        </placement>
+        <placement code="ca_objects_type_id">
+          <bundle>ca_objects.type_id</bundle>
+        </placement>
+        <placement code="ca_objects_preferred_labels">
+          <bundle>ca_objects.preferred_labels</bundle>
+          <settings>
+            <setting name="label">Specimen ID</setting>
+          </settings>
+        </placement>
+        <placement code="ca_objects_nonpreferred_labels">
+          <bundle>ca_objects.nonpreferred_labels</bundle>
+          <settings>
+            <setting name="label">Other identifier</setting>
+          </settings>
+        </placement>
+        <placement code="ca_objects_publishedRecord">
+          <bundle>ca_objects.publishedRecord</bundle>
+        </placement>
+        <placement code="ca_collections">
+          <bundle>ca_collections</bundle>
+          <settings>
+            <setting name="label">Collection</setting>
+          </settings>
+        </placement>
+        <placement code="ca_objects_descriptionContainer">
+          <bundle>ca_objects.descriptionContainer</bundle>
+        </placement>
+        <placement code="ca_objects_samplingDate">
+          <bundle>ca_objects.samplingDate</bundle>
+          <settings>
+            <setting name="label">Sampling date</setting>
+          </settings>
+        </placement>
+        <placement code="ca_objects_samplingProtocol">
+          <bundle>ca_objects.samplingProtocol</bundle>
+        </placement>
+        <placement code="ca_entities_sampledBy">
+          <bundle>ca_entities</bundle>
+			      <settings>
+              <setting name="label" locale="en_US">Sampled by</setting>
+              <setting name="restrict_to_relationship_types">sampledBy</setting>
+              </settings>
+        </placement>
+        <placement code="ca_objects_preparationDate">
+          <bundle>ca_objects.preparationDate</bundle>
+        </placement>
+        <placement code="ca_objects_preparationProtocol">
+          <bundle>ca_objects.preparationProtocol</bundle>
+        </placement>
+        <placement code="ca_entities_preparedBy">
+          <bundle>ca_entities</bundle>
+			      <settings>
+              <setting name="label" locale="en_US">Prepared by</setting>
+              <setting name="restrict_to_relationship_types">preparedBy</setting>
+              </settings>
+        </placement>
+        <placement code="ca_objects_verbatimLocality">
+          <bundle>ca_objects.verbatimLocality</bundle>
+          <settings>
+            <setting name="label">Verbatim locality</setting>
+          </settings>
+        </placement>
+        <placement code="ca_places">
+          <bundle>ca_places</bundle>
+          <settings>
+            <setting name="label">Toponym</setting>
+          </settings>
+        </placement>
+        <placement code="ca_objects_verbatimLatitudeY">
+          <bundle>ca_objects.verbatimLatitudeY</bundle>
+        </placement>
+        <placement code="ca_objects_verbatimLongitudeX">
+          <bundle>ca_objects.verbatimLongitudeX</bundle>
+        </placement>
+        <placement code="ca_objects_verbatimGeodeticDatum">
+          <bundle>ca_objects.verbatimGeodeticDatum</bundle>
+        </placement>
+        <placement code="ca_objects_verbatimCoordinatesRemarks">
+          <bundle>ca_objects.verbatimCoordinatesRemarks</bundle>
+        </placement>
+        <placement code="ca_objects_decimalLatitudeY">
+          <bundle>ca_objects.decimalLatitudeY</bundle>
+        </placement>
+        <placement code="ca_objects_decimalLongitudeX">
+          <bundle>ca_objects.decimalLongitudeX</bundle>
+        </placement>
+        <placement code="ca_objects_geodeticDatum">
+          <bundle>ca_objects.geodeticDatum</bundle>
+        </placement>
+        <placement code="ca_objects_coordinateUncertaintyInMetersC">
+          <bundle>ca_objects.coordinateUncertaintyInMetersC</bundle>
+        </placement>
+        <placement code="ca_objects_georeference">
+          <bundle>ca_objects.georeference</bundle>
+        </placement>
+        <placement code="ca_objects_habitat">
+          <bundle>ca_objects.habitat</bundle>
+        </placement>
+        <placement code="ca_objects_verbatimElevation">
+          <bundle>ca_objects.verbatimElevation</bundle>
+        </placement>
+        <placement code="ca_objects_minimumElevationInMeters">
+          <bundle>ca_objects.minimumElevationInMeters</bundle>
+        </placement>
+        <placement code="ca_objects_maximumElevationInMeters">
+          <bundle>ca_objects.maximumElevationInMeters</bundle>
+        </placement>
+        <placement code="ca_objects_verticalDatum">
+          <bundle>ca_objects.verticalDatum</bundle>
+        </placement>
+        <placement code="ca_objects_verbatimTaxon">
+          <bundle>ca_objects.verbatimTaxon</bundle>
+        </placement>
+        <placement code="ca_objects_taxonDate">
+          <bundle>ca_objects.taxonDate</bundle>
+        </placement>
+        <placement code="ca_objects_GBIF">
+          <bundle>ca_objects.GBIF</bundle>
+        </placement>
+        <placement code="ca_occurrences_related_identifications">
+          <bundle>ca_occurrences.related</bundle>
+          <setting name="label" locale="en_US">Previous taxonomic identificaitons</setting>
+          <setting name="restrict_to_types">identification</setting>
+          <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences">^ca_occurrences.verbatimTaxon, ^ca_occurrences.standTaxon<br/> (^ca_occurrences.taxonDate)</unit>]]></setting>
+        </placement>
+        <placement code="ca_objects_related">
+          <bundle>ca_objects.related</bundle>
+        </placement>
+        <placement code="ca_objects_externalSpecimen">
+          <bundle>ca_objects.externalSpecimen</bundle>
+        </placement>
+        <placement code="ca_objects_notes">
+          <bundle>ca_objects.notes</bundle>
+        </placement>
+        <placement code="ca_objects_fileURL">
+          <bundle>ca_objects.fileURL</bundle>
+        </placement>
+        <placement code="ca_objects_reference">
+          <bundle>ca_objects.reference</bundle>
+        </placement>
+        <placement code="ca_occurrences_related_projects">
+          <bundle>ca_occurrences.related</bundle>
+          <setting name="label" locale="en_US">Related projects</setting>
+          <setting name="restrict_to_types">project</setting>
+        </placement>
+        <placement code="ca_occurrences_related_fieldwork">
+          <bundle>ca_occurrences.related</bundle>
+          <setting name="label" locale="en_US">Related field campagin</setting>
+          <setting name="restrict_to_types">fieldwork</setting>
+        </placement>
+        <placement code="ca_occurrences_related_value">
+          <bundle>ca_occurrences.related</bundle>
+          <setting name="label" locale="en_US">Related value</setting>
+          <setting name="restrict_to_types">valuation</setting>
+          <setting name="display_template">^ca_occurrences.valuationArgument%delimiter=_;_ (^ca_occurrences.eventDate)</setting>
+        </placement>
+      </bundlePlacements>
+    </display>
     <display code="DNA_summary" type="ca_objects" system="1" typeRestrictions="dnaSample" includeSubtypes="1">
       <labels>
         <label locale="en_US">
@@ -19400,11 +19811,25 @@
         <placement code="ca_objects_samplingProtocol">
           <bundle>ca_objects.samplingProtocol</bundle>
         </placement>
+        <placement code="ca_entities_sampledBy">
+          <bundle>ca_entities</bundle>
+			      <settings>
+              <setting name="label" locale="en_US">Sampled by</setting>
+              <setting name="restrict_to_relationship_types">sampledBy</setting>
+              </settings>
+        </placement>
         <placement code="ca_objects_preparationDate">
           <bundle>ca_objects.preparationDate</bundle>
         </placement>
         <placement code="ca_objects_preparationProtocol">
           <bundle>ca_objects.preparationProtocol</bundle>
+        </placement>
+        <placement code="ca_entities_preparedBy">
+          <bundle>ca_entities</bundle>
+			      <settings>
+              <setting name="label" locale="en_US">Prepared by</setting>
+              <setting name="restrict_to_relationship_types">preparedBy</setting>
+              </settings>
         </placement>
         <placement code="ca_objects_verbatimLocality">
           <bundle>ca_objects.verbatimLocality</bundle>
@@ -19469,6 +19894,12 @@
         <placement code="ca_objects_GBIF">
           <bundle>ca_objects.GBIF</bundle>
         </placement>
+        <placement code="ca_occurrences_related_identifications">
+          <bundle>ca_occurrences.related</bundle>
+          <setting name="label" locale="en_US">Previous taxonomic identificaitons</setting>
+          <setting name="restrict_to_types">identification</setting>
+          <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences">^ca_occurrences.verbatimTaxon, ^ca_occurrences.standTaxon<br/> (^ca_occurrences.taxonDate)</unit>]]></setting>
+        </placement>
         <placement code="ca_objects_related">
           <bundle>ca_objects.related</bundle>
         </placement>
@@ -19484,12 +19915,28 @@
         <placement code="ca_objects_reference">
           <bundle>ca_objects.reference</bundle>
         </placement>
+        <placement code="ca_occurrences_related_projects">
+          <bundle>ca_occurrences.related</bundle>
+          <setting name="label" locale="en_US">Related projects</setting>
+          <setting name="restrict_to_types">project</setting>
+        </placement>
+        <placement code="ca_occurrences_related_fieldwork">
+          <bundle>ca_occurrences.related</bundle>
+          <setting name="label" locale="en_US">Related field campagin</setting>
+          <setting name="restrict_to_types">fieldwork</setting>
+        </placement>
+        <placement code="ca_occurrences_related_value">
+          <bundle>ca_occurrences.related</bundle>
+          <setting name="label" locale="en_US">Related value</setting>
+          <setting name="restrict_to_types">valuation</setting>
+          <setting name="display_template">^ca_occurrences.valuationArgument%delimiter=_;_ (^ca_occurrences.eventDate)</setting>
+        </placement>
       </bundlePlacements>
     </display>
-    <display code="soil_summary" type="ca_objects" system="1" typeRestrictions="soilObject" includeSubtypes="1">
+    <display code="livingPlant_forestTreePopulation_summary" type="ca_objects" system="1" typeRestrictions="livingPlant,forestTreePopulation" includeSubtypes="1">
       <labels>
         <label locale="en_US">
-          <name>soil_summary</name>
+          <name>livingPlant_forestTreePopulation_summary</name>
         </label>
       </labels>
       <settings>
@@ -19512,7 +19959,7 @@
         <placement code="ca_objects_idno">
           <bundle>ca_objects.idno</bundle>
           <settings>
-            <setting name="label" locale="en_US">CMS ID</setting>
+            <setting name="label">CMS ID</setting>
           </settings>
         </placement>
         <placement code="ca_objects_is_deaccessioned">
@@ -19521,9 +19968,7 @@
         <placement code="ca_objects_status">
           <bundle>ca_objects.status</bundle>
           <settings>
-            <setting name="label" locale="en_US">Cataloguing status</setting>
-            <setting name="maximum_length"><![CDATA[100]]></setting>
-            <setting name="format"><![CDATA[]]></setting>
+            <setting name="label">Cataloguing status</setting>
           </settings>
         </placement>
         <placement code="ca_objects_type_id">
@@ -19532,13 +19977,13 @@
         <placement code="ca_objects_preferred_labels">
           <bundle>ca_objects.preferred_labels</bundle>
           <settings>
-            <setting name="label" locale="en_US">Specimen ID</setting>
+            <setting name="label">Specimen ID</setting>
           </settings>
         </placement>
         <placement code="ca_objects_nonpreferred_labels">
           <bundle>ca_objects.nonpreferred_labels</bundle>
           <settings>
-            <setting name="label" locale="en_US">Other identifier</setting>
+            <setting name="label">Other identifier</setting>
           </settings>
         </placement>
         <placement code="ca_objects_publishedRecord">
@@ -19547,20 +19992,11 @@
         <placement code="ca_collections">
           <bundle>ca_collections</bundle>
           <settings>
-            <setting name="label" locale="en_US">Collection</setting>
+            <setting name="label">Collection</setting>
           </settings>
         </placement>
         <placement code="ca_objects_descriptionContainer">
           <bundle>ca_objects.descriptionContainer</bundle>
-        </placement>
-        <placement code="ca_objects_samplingDate">
-          <bundle>ca_objects.samplingDate</bundle>
-          <settings>
-            <setting name="label" locale="en_US">Sampling date</setting>
-          </settings>
-        </placement>
-        <placement code="ca_objects_samplingProtocol">
-          <bundle>ca_objects.samplingProtocol</bundle>
         </placement>
         <placement code="ca_objects_preparationDate">
           <bundle>ca_objects.preparationDate</bundle>
@@ -19568,68 +20004,30 @@
         <placement code="ca_objects_preparationProtocol">
           <bundle>ca_objects.preparationProtocol</bundle>
         </placement>
-        <placement code="ca_objects_verbatimLocality">
-          <bundle>ca_objects.verbatimLocality</bundle>
-          <settings>
-            <setting name="label" locale="en_US">Verbatim locality of sampling point</setting>
-          </settings>
+        <placement code="ca_entities_preparedBy">
+          <bundle>ca_entities</bundle>
+			      <settings>
+              <setting name="label" locale="en_US">Prepared by</setting>
+              <setting name="restrict_to_relationship_types">preparedBy</setting>
+              </settings>
         </placement>
-        <placement code="ca_places">
-          <bundle>ca_places</bundle>
-          <settings>
-            <setting name="label" locale="en_US">Toponym</setting>
-          </settings>
+        <placement code="ca_objects_verbatimTaxon">
+          <bundle>ca_objects.verbatimTaxon</bundle>
         </placement>
-        <placement code="ca_objects_verbatimLatitudeY">
-          <bundle>ca_objects.verbatimLatitudeY</bundle>
+        <placement code="ca_objects_taxonDate">
+          <bundle>ca_objects.taxonDate</bundle>
         </placement>
-        <placement code="ca_objects_verbatimLongitudeX">
-          <bundle>ca_objects.verbatimLongitudeX</bundle>
+        <placement code="ca_objects_GBIF">
+          <bundle>ca_objects.GBIF</bundle>
         </placement>
-        <placement code="ca_objects_verbatimGeodeticDatum">
-          <bundle>ca_objects.verbatimGeodeticDatum</bundle>
+        <placement code="ca_occurrences_related_identifications">
+          <bundle>ca_occurrences.related</bundle>
+          <setting name="label" locale="en_US">Previous taxonomic identificaitons</setting>
+          <setting name="restrict_to_types">identification</setting>
+          <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences">^ca_occurrences.verbatimTaxon, ^ca_occurrences.standTaxon<br/> (^ca_occurrences.taxonDate)</unit>]]></setting>
         </placement>
-        <placement code="ca_objects_verbatimCoordinatesRemarks">
-          <bundle>ca_objects.verbatimCoordinatesRemarks</bundle>
-        </placement>
-        <placement code="ca_objects_decimalLatitudeY">
-          <bundle>ca_objects.decimalLatitudeY</bundle>
-        </placement>
-        <placement code="ca_objects_decimalLongitudeX">
-          <bundle>ca_objects.decimalLongitudeX</bundle>
-        </placement>
-        <placement code="ca_objects_geodeticDatum">
-          <bundle>ca_objects.geodeticDatum</bundle>
-        </placement>
-        <placement code="ca_objects_coordinateUncertaintyInMetersC">
-          <bundle>ca_objects.coordinateUncertaintyInMetersC</bundle>
-        </placement>
-        <placement code="ca_objects_georeference">
-          <bundle>ca_objects.georeference</bundle>
-        </placement>
-        <placement code="ca_objects_habitat">
-          <bundle>ca_objects.habitat</bundle>
-        </placement>
-        <placement code="ca_objects_verbatimDepth">
-          <bundle>ca_objects.verbatimDepth</bundle>
-        </placement>
-        <placement code="ca_objects_minimumDepthInMeters">
-          <bundle>ca_objects.minimumDepthInMeters</bundle>
-        </placement>
-        <placement code="ca_objects_maximumDepthInMeters">
-          <bundle>ca_objects.maximumDepthInMeters</bundle>
-        </placement>
-        <placement code="ca_objects_verbatimElevation">
-          <bundle>ca_objects.verbatimElevation</bundle>
-        </placement>
-        <placement code="ca_objects_minimumElevationInMeters">
-          <bundle>ca_objects.minimumElevationInMeters</bundle>
-        </placement>
-        <placement code="ca_objects_maximumElevationInMeters">
-          <bundle>ca_objects.maximumElevationInMeters</bundle>
-        </placement>
-        <placement code="ca_objects_verticalDatum">
-          <bundle>ca_objects.verticalDatum</bundle>
+        <placement code="ca_objects_provenance">
+          <bundle>ca_objects.provenance</bundle>
         </placement>
         <placement code="ca_objects_related">
           <bundle>ca_objects.related</bundle>
@@ -19645,6 +20043,22 @@
         </placement>
         <placement code="ca_objects_reference">
           <bundle>ca_objects.reference</bundle>
+        </placement>
+        <placement code="ca_occurrences_related_projects">
+          <bundle>ca_occurrences.related</bundle>
+          <setting name="label" locale="en_US">Related projects</setting>
+          <setting name="restrict_to_types">project</setting>
+        </placement>
+        <placement code="ca_occurrences_related_fieldwork">
+          <bundle>ca_occurrences.related</bundle>
+          <setting name="label" locale="en_US">Related field campagin</setting>
+          <setting name="restrict_to_types">fieldwork</setting>
+        </placement>
+        <placement code="ca_occurrences_related_value">
+          <bundle>ca_occurrences.related</bundle>
+          <setting name="label" locale="en_US">Related value</setting>
+          <setting name="restrict_to_types">valuation</setting>
+          <setting name="display_template">^ca_occurrences.valuationArgument%delimiter=_;_ (^ca_occurrences.eventDate)</setting>
         </placement>
       </bundlePlacements>
     </display>
@@ -19667,9 +20081,7 @@
       </userAccess>
       <groupAccess>
         <permission group="admin" access="edit"/>
-        <permission group="collectionmanagers" access="read"/>
         <permission group="cataloguers" access="read"/>
-        <permission group="archivists" access="read"/>
         <permission group="viewers" access="read"/>
       </groupAccess>
       <bundlePlacements>
@@ -19713,7 +20125,6 @@
       <groupAccess>
         <permission group="admin" access="edit"/>
         <permission group="collectionmanagers" access="read"/>
-        <permission group="cataloguers" access="read"/>
         <permission group="archivists" access="read"/>
       </groupAccess>
       <bundlePlacements>
@@ -19761,9 +20172,7 @@
       </userAccess>
       <groupAccess>
         <permission group="admin" access="edit"/>
-        <permission group="collectionmanagers" access="read"/>
         <permission group="cataloguers" access="read"/>
-        <permission group="archivists" access="read"/>
         <permission group="viewers" access="read"/>
       </groupAccess>
       <bundlePlacements>
@@ -19812,7 +20221,6 @@
       <groupAccess>
         <permission group="admin" access="edit"/>
         <permission group="collectionmanagers" access="read"/>
-        <permission group="cataloguers" access="read"/>
         <permission group="archivists" access="read"/>
       </groupAccess>
       <bundlePlacements>
@@ -20063,15 +20471,15 @@
     </login>
     <login user_name="soilmanager" password="soilmanager" email="collectiebeheer@inbo.be" fname="soilmanager" lname="soilmanager">
         <role code="soilmanager"/>
-        <group code="soilmanagers"/>
+        <group code="collectionmanagers"/>
     </login>
     <login user_name="soilcataloguer" password="soilcataloguer" email="collectiebeheer@inbo.be" fname="soilcataloguer" lname="soilcataloguer">
         <role code="soilcataloguer"/>
-        <group code="soilcataloguer"/>
+        <group code="cataloguers"/>
     </login>
     <login user_name="soilarchivist" password="soilarchivist" email="collectiebeheer@inbo.be" fname="soilarchivist" lname="soilarchivist">
         <role code="soilarchivist"/>
-        <group code="soilarchivist"/>
+        <group code="archivists"/>
     </login>
   </logins>
 </profile>
