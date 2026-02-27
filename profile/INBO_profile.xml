@@ -13,6 +13,7 @@
   <!--https://github.com/inbo/collective-access/issues/430-->
   <!--https://github.com/inbo/collective-access/issues/412-->
   <!--https://github.com/inbo/collective-access/issues/411-->
+  <!--https://github.com/inbo/collective-access/issues/431-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -15656,7 +15657,7 @@
 			      <placement code="storage_location_hierarchy_location">
               <bundle>hierarchy_location</bundle>
             </placement>
-			      <placement code="ca_objects">
+			      <placement code="ca_objects" typeRestrictions="forestTreePopulationSite,building,floor,room,cabinet,freezer,fridge,compartment,shelf,crate,rack,rackSpot,drawer,box">
               <bundle>ca_objects</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Objects stored</setting>
@@ -15665,6 +15666,20 @@
                 <setting name="restrict_to_types">plantObject</setting>
                 <setting name="restrict_to_types">dnaSample</setting>
                 <setting name="restrict_to_types">soilObject</setting>
+                <setting name="dont_include_subtypes_in_type_restriction">0</setting>
+              </settings>
+            </placement>
+			      <placement code="ca_objects" typeRestrictions="spot">
+              <bundle>ca_objects</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Objects stored</setting>
+                <setting name="list_format">list</setting>
+                <setting name="restrict_to_types">animalObject</setting>
+                <setting name="restrict_to_types">plantObject</setting>
+                <setting name="restrict_to_types">dnaSample</setting>
+                <setting name="restrict_to_types">soilObject</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="maxRequirementMessage" locale="en_US">This storage spot is already occupied by another object.</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
               </settings>
             </placement>
