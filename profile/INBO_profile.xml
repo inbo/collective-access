@@ -7,6 +7,10 @@
   <!--check if roles are working https://docs.google.com/document/d/1ZwS80YLPfGhuU1kfv3eFFKajtNzD72QOagTooGX8mU0/edit?tab=t.0-->
   <!--check if the summary displays are working-->
   <!--https://github.com/inbo/collective-access/issues/419-->
+  <!--https://github.com/inbo/collective-access/issues/418-->
+  <!--https://github.com/inbo/collective-access/issues/415-->
+  <!--https://github.com/inbo/collective-access/issues/414-->
+  <!--https://github.com/inbo/collective-access/issues/430-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -12021,6 +12025,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="useHierarchicalBrowser">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="display_template">&lt;a href="index.php/editor/storage_locations/StorageLocationEditor/Edit/location_id/^ca_storage_locations.location_id" target="_blank"&gt;^ca_storage_locations.preferred_labels&lt;/a&gt;</setting>
               </settings>
             </placement>
             <placement code="verbatimLocality">
@@ -12251,18 +12256,19 @@
             <placement code="ca_storage_location">
               <bundle>ca_storage_locations</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Object is stored at *</setting>
+                <setting name="label" locale="en_US">Object is stored at * (hierarchy)</setting>
                 <setting name="restrict_to_types">spot</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="useHierarchicalBrowser">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="missingRequirementMessage">You must select a storage location of type 'Spot'. Other types (like Boxes, Freezers, ..) are not allowed.</setting>
               </settings>
             </placement>
-            <placement code="ca_storage_location">
+            <placement code="ca_storage_location"><!--this is mainly added for dev purposes, could be deleted in UAT/PROD-->
               <bundle>ca_storage_locations</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">TEMPORARY Object is stored at *</setting><!--to be deleted after testing-->
-                <setting name="restrict_to_types">spot</setting>
+                <setting name="label" locale="en_US">Object is stored at * (lookup)</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="useHierarchicalBrowser">0</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -12747,7 +12753,7 @@
             <placement code="ca_places_hierarchyBrowser">
               <bundle>ca_places</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Toponym (hiërarchial view)</setting>
+                <setting name="label" locale="en_US">Toponym (hierarchial view)</setting>
                 <setting name="description" locale="en_US">The place or toponym, chosen from the standardized list. This view allows you to browse through the available options already available. To add an option, use the "lookup" above.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">5</setting>
@@ -13938,7 +13944,7 @@
             <placement code="ca_places_hierarchyBrowser">
               <bundle>ca_places</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Toponym (hiërarchial view)</setting>
+                <setting name="label" locale="en_US">Toponym (hierarchial view)</setting>
                 <setting name="description" locale="en_US">The place or toponym, chosen from the standardized list. This view allows you to browse through the available options already available. To add an option, use the "lookup" above.</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
 				        <setting name="maxRelationshipsPerRow">5</setting>
@@ -15134,7 +15140,7 @@
               <bundle>ca_places</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Place of address</setting>
-                <setting name="description" locale="en_US">Hiërarchial classification of organizations' address.</setting>
+                <setting name="description" locale="en_US">Hierarchial classification of organizations' address.</setting>
               </settings>
             </placement>
             <placement code="telephone">
