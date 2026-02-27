@@ -6,7 +6,7 @@
   <!--https://github.com/inbo/collective-access/issues/420 check the 4 different roles and see if the permissions are correct-->
   <!--check if roles are working https://docs.google.com/document/d/1ZwS80YLPfGhuU1kfv3eFFKajtNzD72QOagTooGX8mU0/edit?tab=t.0-->
   <!--check if the summary displays are working-->
-  <!--next: make the display for search of organismSamples cfr. the summary: id, place, date, taxon, optional: storage location-->
+  <!--https://github.com/inbo/collective-access/issues/419-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -5454,7 +5454,6 @@
           <setting name="renderInSearchBuilder">select</setting>
           <setting name="useSingular">1</setting>
           <setting name="restrictToTypes">concept</setting>
-          <!--<setting name="implicitNullOption">1</setting>-->
           <setting name="hideIfSelected_soilSample">object_ui/record1/verbatimTaxon</setting>
           <setting name="hideIfSelected_waterSample">object_ui/record1/ca_attributes_verbatimTaxon</setting>
           <setting name="hideIfSelected_bud">object_ui/record1/verbatimDepth</setting>
@@ -5672,23 +5671,23 @@
           <setting name="hideIfSelected_waterSample">object_ui/taxonomy1/ca_occurrences_identification</setting>
           <setting name="hideIfSelected_soilSample">object_ui/taxonomy1/taxonNote</setting>
           <setting name="hideIfSelected_waterSample">object_ui/taxonomy1/taxonNote</setting>
-          <setting name="hideIfSelected___null__">object_ui/record1/verbatimDepth</setting><!--not working, issue 308-->  
-          <setting name="hideIfSelected___null__">object_ui/record1/minimumDepthInMeters</setting><!--not working, issue 308-->
-          <setting name="hideIfSelected___null__">object_ui/record1/maximumDepthInMeters</setting><!--not working, issue 308-->
-          <setting name="hideIfSelected___null__">object_ui/record1/verbatimTaxon</setting><!--not working, issue 308-->
-          <setting name="hideIfSelected___null__">object_ui/obj_preparation1/preparationVolumeC</setting><!--not working, issue 308-->
-          <setting name="hideIfSelected___null__">object_ui/obj_preparation1/preparationWeightC</setting><!--not working, issue 308-->
-          <setting name="hideIfSelected___null__">object_ui/samplingpointZ/verbatimDepth</setting><!--not working, issue 308-->
-          <setting name="hideIfSelected___null__">object_ui/samplingpointZ/minimumDepthInMeters</setting><!--not working, issue 308-->
-          <setting name="hideIfSelected___null__">object_ui/samplingpointZ/maximumDepthInMeters</setting><!--not working, issue 308-->
-          <setting name="hideIfSelected___null__">object_ui/taxonomy1/verbatimTaxon</setting><!--not working, issue 308-->
-          <setting name="hideIfSelected___null__">object_ui/taxonomy1/GBIF</setting><!--not working, issue 308-->
-          <setting name="hideIfSelected___null__">object_ui/taxonomy1/taxonDate</setting><!--not working, issue 308-->
-          <setting name="hideIfSelected___null__">object_ui/taxonomy1/ca_entities_identifier</setting><!--not working, issue 308-->
-          <setting name="hideIfSelected___null__">object_ui/taxonomy1/voucher</setting><!--not working, issue 308-->
-          <setting name="hideIfSelected___null__">object_ui/taxonomy1/ca_occurrences_identification</setting><!--not working, issue 308-->
-          <setting name="hideIfSelected___null__">object_ui/taxonomy1/taxonReference</setting><!--not working, issue 308-->
-          <setting name="hideIfSelected___null__">object_ui/taxonomy1/GBIFedna</setting><!--not working, issue 308-->
+          <setting name="hideIfSelected___null__">object_ui/record1/verbatimDepth</setting> 
+          <setting name="hideIfSelected___null__">object_ui/record1/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected___null__">object_ui/record1/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected___null__">object_ui/record1/verbatimTaxon</setting>
+          <setting name="hideIfSelected___null__">object_ui/obj_preparation1/preparationVolumeC</setting>
+          <setting name="hideIfSelected___null__">object_ui/obj_preparation1/preparationWeightC</setting>
+          <setting name="hideIfSelected___null__">object_ui/samplingpointZ/verbatimDepth</setting>
+          <setting name="hideIfSelected___null__">object_ui/samplingpointZ/minimumDepthInMeters</setting>
+          <setting name="hideIfSelected___null__">object_ui/samplingpointZ/maximumDepthInMeters</setting>
+          <setting name="hideIfSelected___null__">object_ui/taxonomy1/verbatimTaxon</setting>
+          <setting name="hideIfSelected___null__">object_ui/taxonomy1/GBIF</setting>
+          <setting name="hideIfSelected___null__">object_ui/taxonomy1/taxonDate</setting>
+          <setting name="hideIfSelected___null__">object_ui/taxonomy1/ca_entities_identifier</setting>
+          <setting name="hideIfSelected___null__">object_ui/taxonomy1/voucher</setting>
+          <setting name="hideIfSelected___null__">object_ui/taxonomy1/ca_occurrences_identification</setting>
+          <setting name="hideIfSelected___null__">object_ui/taxonomy1/taxonReference</setting>
+          <setting name="hideIfSelected___null__">object_ui/taxonomy1/GBIFedna</setting>
           <setting name="hideIfSelected___null__">object_ui/record1/verbatimDepth</setting>
           <setting name="hideIfSelected___null__">object_ui/record1/minimumDepthInMeters</setting>
           <setting name="hideIfSelected___null__">object_ui/record1/maximumDepthInMeters</setting>
@@ -5750,7 +5749,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="fishSample" datatype="List" list="fish_sample">
+	    <metadataElement code="fishTissueSampleType" datatype="List" list="fish_sample">
         <labels>
           <label locale="en_US">
             <name>Fish sample specification</name>
@@ -12000,8 +11999,8 @@
                 <setting name="expand_collapse_no_value">expand</setting>
               </settings>
             </placement>
-            <placement code="fishSample" typeRestrictions="fishSample">
-              <bundle>ca_attribute_fishSample</bundle>
+            <placement code="fishTissueSampleType" typeRestrictions="fishTissueSample">
+              <bundle>ca_attribute_fishTissueSampleType</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">expand</setting>
               </settings>
@@ -18583,7 +18582,7 @@
         <permission table="ca_objects" bundle="ca_attribute_samplingDate" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_matrixType" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_mammalTissueSampleType" access="read"/>
-        <permission table="ca_objects" bundle="ca_attribute_fishSample" access="read"/>
+        <permission table="ca_objects" bundle="ca_attribute_fishTissueSampleType" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_preparationDate" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_verbatimLocality" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_decimalLatitudeY" access="read"/>
@@ -19375,7 +19374,7 @@
         <permission table="ca_objects" bundle="ca_attribute_samplingDate" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_matrixType" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_mammalTissueSampleType" access="read"/>
-        <permission table="ca_objects" bundle="ca_attribute_fishSample" access="read"/>
+        <permission table="ca_objects" bundle="ca_attribute_fishTissueSampleType" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_preparationDate" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_verbatimLocality" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_decimalLatitudeY" access="read"/>
@@ -19639,8 +19638,8 @@
         <placement code="mammalTissueSampleType" typeRestrictions="mammalTissueSample">
           <bundle>ca_attribute_mammalTissueSampleType</bundle>
         </placement>
-        <placement code="fishSample" typeRestrictions="fishSample">
-          <bundle>ca_attribute_fishSample</bundle>
+        <placement code="fishTissueSampleType" typeRestrictions="fishTissueSample">
+          <bundle>ca_attribute_fishTissueSampleType</bundle>
         </placement>
         <placement code="ca_objects_preferred_labels">
           <bundle>ca_objects.preferred_labels</bundle>
@@ -19848,7 +19847,7 @@
         </placement>
       </bundlePlacements>
     </display>
-    <display code="specimens_search_viewers_cataloguers" type="ca_objects" system="0" typeRestrictions="object,dnaSample,soilObject,plantSampleDried,seedlot,plantObject,animalObject,stemdisc,forestTreePopulation,livingPlant,moss,fishEntireEthanol,fishTissueSample,taxidermySpecimen,mammalTissueSample,mammalBloodSample,mammalHairSample,mammalParasiteSample" includeSubtypes="1">
+    <display code="specimens_search_viewers_cataloguers" type="ca_objects" system="0" typeRestrictions="object,plantSampleDried,seedlot,stemdisc,moss,fishEntireEthanol,taxidermySpecimen,mammalBloodSample,mammalHairSample,mammalParasiteSample" includeSubtypes="1">
       <labels>
         <label locale="en_US">
           <name>Specimen search for viewers</name>
@@ -19880,18 +19879,18 @@
         <placement code="ca_objects_samplingDate">
           <bundle>ca_objects.samplingDate</bundle>
         </placement>
-        <placement code="ca_objects_preparationDate">
-          <bundle>ca_objects.preparationDate</bundle>
-        </placement>
         <placement code="ca_places">
           <bundle>ca_places</bundle>
         </placement>
-        <placement code="ca_objects_georeference">
-          <bundle>ca_objects.georeference</bundle>
+        <placement code="ca_objects_verbatimLocality">
+          <bundle>ca_objects.verbatimLocality</bundle>
+        </placement>
+        <placement code="ca_objects_verbatimTaxon">
+          <bundle>ca_objects.verbatimTaxon</bundle>
         </placement>
       </bundlePlacements>
     </display>
-    <display code="specimens_search_managers_archivists" type="ca_objects" system="0" typeRestrictions="object,dnaSample,soilObject,plantSampleDried,seedlot,plantObject,animalObject,stemdisc,forestTreePopulation,livingPlant,moss,fishEntireEthanol,fishTissueSample,taxidermySpecimen,mammalTissueSample,mammalBloodSample,mammalHairSample,mammalParasiteSample" includeSubtypes="1">
+    <display code="specimens_search_managers_archivists" type="ca_objects" system="0" typeRestrictions="object,plantSampleDried,seedlot,stemdisc,moss,fishEntireEthanol,taxidermySpecimen,mammalBloodSample,mammalHairSample,mammalParasiteSample" includeSubtypes="1">
       <labels>
         <label locale="en_US">
           <name>Specimen search for managers</name>
@@ -19926,14 +19925,14 @@
         <placement code="ca_objects_samplingDate">
           <bundle>ca_objects.samplingDate</bundle>
         </placement>
-        <placement code="ca_objects_preparationDate">
-          <bundle>ca_objects.preparationDate</bundle>
-        </placement>
         <placement code="ca_places">
           <bundle>ca_places</bundle>
         </placement>
-        <placement code="ca_objects_georeference">
-          <bundle>ca_objects.georeference</bundle>
+        <placement code="ca_objects_verbatimLocality">
+          <bundle>ca_objects.verbatimLocality</bundle>
+        </placement>
+        <placement code="ca_objects_verbatimTaxon">
+          <bundle>ca_objects.verbatimTaxon</bundle>
         </placement>
       </bundlePlacements>
     </display>
@@ -20033,6 +20032,322 @@
         </placement>
         <placement code="ca_objects_maximumDepthInMeters">
           <bundle>ca_objects.maximumDepthInMeters</bundle>
+        </placement>
+      </bundlePlacements>
+    </display>
+    <display code="dnaSample_search_viewers_cataloguers" type="ca_objects" system="0" typeRestrictions="dnaSample" includeSubtypes="1">
+      <labels>
+        <label locale="en_US">
+          <name>DNA specimen search for viewers</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="show_empty_values"><![CDATA[1]]></setting>
+        <setting name="bottom_line"><![CDATA[]]></setting>
+        <setting name="show_only_in"><![CDATA[search_browse_thumbnail]]></setting>
+        <setting name="show_only_in"><![CDATA[search_browse_full]]></setting>
+        <setting name="show_only_in"><![CDATA[search_browse_list]]></setting>
+        <setting name="show_representations"><![CDATA[all]]></setting>
+      </settings>
+      <userAccess>
+        <permission user="administrator" access="edit"/>
+      </userAccess>
+      <groupAccess>
+        <permission group="admin" access="edit"/>
+        <permission group="cataloguers" access="read"/>
+        <permission group="viewers" access="read"/>
+      </groupAccess>
+      <bundlePlacements>
+        <placement code="ca_objects_idno">
+          <bundle>ca_objects.idno</bundle>
+        </placement>
+        <placement code="ca_objects_preferred_labels">
+          <bundle>ca_objects.preferred_labels</bundle>
+        </placement>
+        <placement code="ca_objects_verbatimTaxon">
+          <bundle>ca_objects.verbatimTaxon</bundle>
+        </placement>
+        <placement code="ca_objects_samplingDate">
+          <bundle>ca_objects.samplingDate</bundle>
+        </placement>
+        <placement code="ca_places">
+          <bundle>ca_places</bundle>
+        </placement>
+        <placement code="ca_objects_verbatimLocality">
+          <bundle>ca_objects.verbatimLocality</bundle>
+        </placement>
+        <placement code="ca_objects_matrixType">
+          <bundle>ca_objects.matrixType</bundle>
+        </placement>
+      </bundlePlacements>
+    </display>
+    <display code="dnaSample_search_managers_archivists" type="ca_objects" system="0" typeRestrictions="dnaSample" includeSubtypes="1">
+      <labels>
+        <label locale="en_US">
+          <name>DNA specimen search for managers</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="show_empty_values"><![CDATA[1]]></setting>
+        <setting name="bottom_line"><![CDATA[]]></setting>
+        <setting name="show_only_in"><![CDATA[search_browse_thumbnail]]></setting>
+        <setting name="show_only_in"><![CDATA[search_browse_full]]></setting>
+        <setting name="show_only_in"><![CDATA[search_browse_list]]></setting>
+        <setting name="show_representations"><![CDATA[all]]></setting>
+      </settings>
+      <userAccess>
+        <permission user="administrator" access="edit"/>
+      </userAccess>
+      <groupAccess>
+        <permission group="admin" access="edit"/>
+        <permission group="collectionmanagers" access="read"/>
+        <permission group="archivists" access="read"/>
+      </groupAccess>
+      <bundlePlacements>
+        <placement code="ca_objects_idno">
+          <bundle>ca_objects.idno</bundle>
+        </placement>
+        <placement code="ca_objects_preferred_labels">
+          <bundle>ca_objects.preferred_labels</bundle>
+        </placement>
+        <placement code="ca_storage_locations">
+          <bundle>ca_storage_locations</bundle>
+        </placement>
+        <placement code="ca_objects_verbatimTaxon">
+          <bundle>ca_objects.verbatimTaxon</bundle>
+        </placement>
+        <placement code="ca_objects_samplingDate">
+          <bundle>ca_objects.samplingDate</bundle>
+        </placement>
+        <placement code="ca_places">
+          <bundle>ca_places</bundle>
+        </placement>
+        <placement code="ca_objects_verbatimLocality">
+          <bundle>ca_objects.verbatimLocality</bundle>
+        </placement>
+        <placement code="ca_objects_matrixType">
+          <bundle>ca_objects.matrixType</bundle>
+        </placement>
+      </bundlePlacements>
+    </display>
+    <display code="livingPlants_search_viewers_cataloguers" type="ca_objects" system="0" typeRestrictions="forestTreePopulation,livingPlant" includeSubtypes="1">
+      <labels>
+        <label locale="en_US">
+          <name>Living plants search for viewers</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="show_empty_values"><![CDATA[1]]></setting>
+        <setting name="bottom_line"><![CDATA[]]></setting>
+        <setting name="show_only_in"><![CDATA[search_browse_thumbnail]]></setting>
+        <setting name="show_only_in"><![CDATA[search_browse_full]]></setting>
+        <setting name="show_only_in"><![CDATA[search_browse_list]]></setting>
+        <setting name="show_representations"><![CDATA[all]]></setting>
+      </settings>
+      <userAccess>
+        <permission user="administrator" access="edit"/>
+      </userAccess>
+      <groupAccess>
+        <permission group="admin" access="edit"/>
+        <permission group="cataloguers" access="read"/>
+        <permission group="viewers" access="read"/>
+      </groupAccess>
+      <bundlePlacements>
+        <placement code="ca_objects_idno">
+          <bundle>ca_objects.idno</bundle>
+        </placement>
+        <placement code="ca_objects_preferred_labels">
+          <bundle>ca_objects.preferred_labels</bundle>
+        </placement>
+        <placement code="ca_objects_preparationDate">
+          <bundle>ca_objects.preparationDate</bundle>
+        </placement>
+        <placement code="ca_objects_verbatimTaxon">
+          <bundle>ca_objects.verbatimTaxon</bundle>
+        </placement>
+      </bundlePlacements>
+    </display>
+    <display code="livingPlants_search_managers_archivists" type="ca_objects" system="0" typeRestrictions="forestTreePopulation,livingPlant" includeSubtypes="1">
+      <labels>
+        <label locale="en_US">
+          <name>Living plants search for managers</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="show_empty_values"><![CDATA[1]]></setting>
+        <setting name="bottom_line"><![CDATA[]]></setting>
+        <setting name="show_only_in"><![CDATA[search_browse_thumbnail]]></setting>
+        <setting name="show_only_in"><![CDATA[search_browse_full]]></setting>
+        <setting name="show_only_in"><![CDATA[search_browse_list]]></setting>
+        <setting name="show_representations"><![CDATA[all]]></setting>
+      </settings>
+      <userAccess>
+        <permission user="administrator" access="edit"/>
+      </userAccess>
+      <groupAccess>
+        <permission group="admin" access="edit"/>
+        <permission group="collectionmanagers" access="read"/>
+        <permission group="archivists" access="read"/>
+      </groupAccess>
+      <bundlePlacements>
+        <placement code="ca_objects_idno">
+          <bundle>ca_objects.idno</bundle>
+        </placement>
+        <placement code="ca_objects_preferred_labels">
+          <bundle>ca_objects.preferred_labels</bundle>
+        </placement>
+        <placement code="ca_objects_preparationDate">
+          <bundle>ca_objects.preparationDate</bundle>
+        </placement>
+        <placement code="ca_objects_verbatimTaxon">
+          <bundle>ca_objects.verbatimTaxon</bundle>
+        </placement>
+        <placement code="ca_storage_locations">
+          <bundle>ca_storage_locations</bundle>
+        </placement>
+      </bundlePlacements>
+    </display>
+    <display code="mammalTissueSample_search_viewers_cataloguers" type="ca_objects" system="0" typeRestrictions="mammalTissueSample" includeSubtypes="1">
+      <labels>
+        <label locale="en_US">
+          <name>Mammal tissue search for viewers</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="show_empty_values"><![CDATA[1]]></setting>
+        <setting name="bottom_line"><![CDATA[]]></setting>
+        <setting name="show_only_in"><![CDATA[search_browse_thumbnail]]></setting>
+        <setting name="show_only_in"><![CDATA[search_browse_full]]></setting>
+        <setting name="show_only_in"><![CDATA[search_browse_list]]></setting>
+        <setting name="show_representations"><![CDATA[all]]></setting>
+      </settings>
+      <userAccess>
+        <permission user="administrator" access="edit"/>
+      </userAccess>
+      <groupAccess>
+        <permission group="admin" access="edit"/>
+        <permission group="cataloguers" access="read"/>
+        <permission group="viewers" access="read"/>
+      </groupAccess>
+      <bundlePlacements>
+        <placement code="ca_objects_idno">
+          <bundle>ca_objects.idno</bundle>
+        </placement>
+        <placement code="ca_objects_preferred_labels">
+          <bundle>ca_objects.preferred_labels</bundle>
+        </placement>
+        <placement code="ca_objects_verbatimTaxon">
+          <bundle>ca_objects.verbatimTaxon</bundle>
+        </placement>
+        <placement code="ca_objects_samplingDate">
+          <bundle>ca_objects.samplingDate</bundle>
+        </placement>
+        <placement code="ca_places">
+          <bundle>ca_places</bundle>
+        </placement>
+        <placement code="ca_objects_verbatimLocality">
+          <bundle>ca_objects.verbatimLocality</bundle>
+        </placement>
+        <placement code="ca_objects_mammalTissueSampleType">
+          <bundle>ca_objects.mammalTissueSampleType</bundle>
+        </placement>
+      </bundlePlacements>
+    </display>
+    <display code="fishTissueSample_search_managers_archivists" type="ca_objects" system="0" typeRestrictions="fishTissueSample" includeSubtypes="1">
+      <labels>
+        <label locale="en_US">
+          <name>Mammal tissue search for managers</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="show_empty_values"><![CDATA[1]]></setting>
+        <setting name="bottom_line"><![CDATA[]]></setting>
+        <setting name="show_only_in"><![CDATA[search_browse_thumbnail]]></setting>
+        <setting name="show_only_in"><![CDATA[search_browse_full]]></setting>
+        <setting name="show_only_in"><![CDATA[search_browse_list]]></setting>
+        <setting name="show_representations"><![CDATA[all]]></setting>
+      </settings>
+      <userAccess>
+        <permission user="administrator" access="edit"/>
+      </userAccess>
+      <groupAccess>
+        <permission group="admin" access="edit"/>
+        <permission group="collectionmanagers" access="read"/>
+        <permission group="archivists" access="read"/>
+      </groupAccess>
+      <bundlePlacements>
+        <placement code="ca_objects_idno">
+          <bundle>ca_objects.idno</bundle>
+        </placement>
+        <placement code="ca_objects_preferred_labels">
+          <bundle>ca_objects.preferred_labels</bundle>
+        </placement>
+        <placement code="ca_storage_locations">
+          <bundle>ca_storage_locations</bundle>
+        </placement>
+        <placement code="ca_objects_verbatimTaxon">
+          <bundle>ca_objects.verbatimTaxon</bundle>
+        </placement>
+        <placement code="ca_objects_samplingDate">
+          <bundle>ca_objects.samplingDate</bundle>
+        </placement>
+        <placement code="ca_places">
+          <bundle>ca_places</bundle>
+        </placement>
+        <placement code="ca_objects_verbatimLocality">
+          <bundle>ca_objects.verbatimLocality</bundle>
+        </placement>
+        <placement code="ca_objects_fishTissueSampleType">
+          <bundle>ca_objects.fishTissueSampleType</bundle>
+        </placement>
+      </bundlePlacements>
+    </display>
+    <display code="fishTissueSample_search_managers_archivists" type="ca_objects" system="0" typeRestrictions="fishTissueSample" includeSubtypes="1">
+      <labels>
+        <label locale="en_US">
+          <name>Mammal tissue search for managers</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="show_empty_values"><![CDATA[1]]></setting>
+        <setting name="bottom_line"><![CDATA[]]></setting>
+        <setting name="show_only_in"><![CDATA[search_browse_thumbnail]]></setting>
+        <setting name="show_only_in"><![CDATA[search_browse_full]]></setting>
+        <setting name="show_only_in"><![CDATA[search_browse_list]]></setting>
+        <setting name="show_representations"><![CDATA[all]]></setting>
+      </settings>
+      <userAccess>
+        <permission user="administrator" access="edit"/>
+      </userAccess>
+      <groupAccess>
+        <permission group="admin" access="edit"/>
+        <permission group="collectionmanagers" access="read"/>
+        <permission group="archivists" access="read"/>
+      </groupAccess>
+      <bundlePlacements>
+        <placement code="ca_objects_idno">
+          <bundle>ca_objects.idno</bundle>
+        </placement>
+        <placement code="ca_objects_preferred_labels">
+          <bundle>ca_objects.preferred_labels</bundle>
+        </placement>
+        <placement code="ca_storage_locations">
+          <bundle>ca_storage_locations</bundle>
+        </placement>
+        <placement code="ca_objects_verbatimTaxon">
+          <bundle>ca_objects.verbatimTaxon</bundle>
+        </placement>
+        <placement code="ca_objects_samplingDate">
+          <bundle>ca_objects.samplingDate</bundle>
+        </placement>
+        <placement code="ca_places">
+          <bundle>ca_places</bundle>
+        </placement>
+        <placement code="ca_objects_verbatimLocality">
+          <bundle>ca_objects.verbatimLocality</bundle>
+        </placement>
+        <placement code="ca_objects_fishTissueSampleType">
+          <bundle>ca_objects.fishTissueSampleType</bundle>
         </placement>
       </bundlePlacements>
     </display>
