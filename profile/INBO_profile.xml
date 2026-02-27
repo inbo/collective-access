@@ -11,6 +11,8 @@
   <!--https://github.com/inbo/collective-access/issues/415-->
   <!--https://github.com/inbo/collective-access/issues/414-->
   <!--https://github.com/inbo/collective-access/issues/430-->
+  <!--https://github.com/inbo/collective-access/issues/412-->
+  <!--https://github.com/inbo/collective-access/issues/411-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -9593,6 +9595,8 @@
               <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              <setting name="regex">/^-?[0-9]*\.?[0-9]+$/</setting> 
+              <setting name="validationErrorMessage">Please use a point (.) as a decimal separator, not a comma (,).</setting>
             </settings>
           </restriction>
           <restriction code="r_dnaSample">
@@ -11941,6 +11945,9 @@
                 <restriction code="r_dnaSample" type="dnaSample"/>
                 <restriction code="r_soilObject" type="soilObject"/>
           </typeRestrictions>
+          <layout>
+            <column num="1" width="100%"/>
+          </layout>
           <bundlePlacements>
             <placement code="idno">
               <bundle>idno</bundle>
