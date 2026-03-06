@@ -9,7 +9,6 @@
   <!--check if roles are working https://docs.google.com/document/d/1ZwS80YLPfGhuU1kfv3eFFKajtNzD72QOagTooGX8mU0/edit?tab=t.0-->
   <!--check if the summary displays are working-->
   <!--https://github.com/inbo/collective-access/issues/419-->
-  <!--https://github.com/inbo/collective-access/issues/418-->
   <!--https://github.com/inbo/collective-access/issues/415-->
   <!--https://github.com/inbo/collective-access/issues/414-->
   <!--https://github.com/inbo/collective-access/issues/430-->
@@ -26,6 +25,8 @@
   <!--https://github.com/inbo/collective-access/issues/399-->
   <!--https://github.com/inbo/collective-access/issues/432-->
   <!--https://github.com/inbo/collective-access/issues/392-->
+  <!--https://github.com/inbo/collective-access/issues/386-->
+  <!--https://github.com/inbo/collective-access/issues/385-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -4753,57 +4754,6 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-		  <metadataElement code="notes" datatype="Text">
-        <labels>
-          <label locale="en_US">
-            <name>Notes</name>
-		        <description>Any unstructured information (e.g. notes, comments).</description>
-          </label>
-        </labels>
-        <settings>
-          <setting name="fieldWidth">115</setting>
-          <setting name="fieldHeight">8</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_objects">
-            <table>ca_objects</table>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_fieldwork">
-            <table>ca_objects</table>
-            <type>fieldwork</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_curation">
-            <table>ca_objects</table>
-            <type>curation</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_valuation">
-            <table>ca_objects</table>
-            <type>valuation</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
 	    <metadataElement code="dateRange" datatype="DateRange">
         <labels>
           <label locale="en_US">
@@ -5159,6 +5109,88 @@
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+		  <metadataElement code="creationNotes" datatype="Container">
+        <labels>
+          <label locale="en_US">
+            <name>Notes</name>
+		        <description>Any unstructured information (e.g. notes, comments).</description>
+          </label>
+        </labels>
+        <elements>
+          <metadataElement code="noteDate" datatype="dateRange">
+            <labels>
+              <label locale="en_US">
+                <name>Date of note</name>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">40</setting>
+              <setting name="dateRangeBoundaries">January 1 1900 to tomorrow</setting>
+              <setting name="useDatePicker">1</setting>
+              <setting name="canBeUsedInSort">1</setting>
+              <setting name="canBeUsedInSearchForm">1</setting>
+              <setting name="canBeUsedInDisplay">1</setting>
+              <setting name="mustNotBeBlank">1</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="noteText" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Note text</name>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+		    </elements>
+        <settings>
+          <setting name="fieldWidth">115</setting>
+          <setting name="fieldHeight">8</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+        <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_fieldwork">
+            <table>ca_objects</table>
+            <type>fieldwork</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_curation">
+            <table>ca_objects</table>
+            <type>curation</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_valuation">
+            <table>ca_objects</table>
+            <type>valuation</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
@@ -6556,11 +6588,27 @@
             </labels>
             <documentationUrl>http://rs.tdwg.org/abcd/terms/appliesTo</documentationUrl>
           </metadataElement>
-          <metadataElement code="volumeValue" datatype="Numeric">
+          <metadataElement code="volumeLowerValue" datatype="Numeric">
             <labels>
               <label locale="en_US">
-                <name>Volume</name>
-                <description>Volume of sample. Enter a numeric value (for decimals use a dot: [.] not a comma [,]).</description>
+                <name>(Lower) value</name>
+                <description>(Lower) value of the volume. For example: Enter 100 here if we have a range "100-200 ml" or enter 100 if the measurement is a single value "100 ml". Enter a numeric value (for decimals use a dot: [.] not a comma [,]).</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementValue</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">30</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+              <setting name="mustNotBeBlank">0</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="volumeUpperValue" datatype="Numeric">
+            <labels>
+              <label locale="en_US">
+                <name>Upper value</name>
+                <description>Upper value of the volume. For example: Enter 200 here if a range is recorded "100-200 ml", leave empty if a single value "100 ml". Enter a numeric value (for decimals use a dot: [.] not a comma [,]).</description>
               </label>
             </labels>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementValue</documentationUrl>
@@ -6727,11 +6775,27 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="pvolumeValue" datatype="Numeric">
+          <metadataElement code="pvolumeLowerValue" datatype="Numeric">
             <labels>
               <label locale="en_US">
-                <name>Volume</name>
-                <description>Volume of sample. Enter a numeric value (for decimals use a dot: [.] not a comma [,]).</description>
+                <name>(Lower) value</name>
+                <description>(Lower) value of the preparation volume. For example: Enter 100 here if we have a range "100-200 ml" or enter 100 if the measurement is a single value "100 ml". Enter a numeric value (for decimals use a dot: [.] not a comma [,]).</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementValue</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">30</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+              <setting name="mustNotBeBlank">0</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="pvolumeUpperValue" datatype="Numeric">
+            <labels>
+              <label locale="en_US">
+                <name>Upper value</name>
+                <description>Upper value of the preparation volume. For example: Enter 200 here if a range is recorded "100-200 ml", leave empty if a single value "100 ml". Enter a numeric value (for decimals use a dot: [.] not a comma [,]).</description>
               </label>
             </labels>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementValue</documentationUrl>
@@ -6865,11 +6929,27 @@
               <setting name="maxChars">65535</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="pweightValue" datatype="Numeric">
+          <metadataElement code="pweightLowerValue" datatype="Numeric">
             <labels>
               <label locale="en_US">
-                <name>Value</name>
-                <description>Weight value. Enter a numeric value (for decimals use a dot: [.] not a comma [,]).</description>
+                <name>(Lower) value</name>
+                <description>(Lower) value of the preparation weight. For example: Enter 100 here if we have a range "100-200 gr" or enter 100 if the measurement is a single value "100 gr". Enter a numeric value (for decimals use a dot: [.] not a comma [,]).</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementValue</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">30</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+              <setting name="mustNotBeBlank">0</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="pweightUpperValue" datatype="Numeric">
+            <labels>
+              <label locale="en_US">
+                <name>Upper value</name>
+                <description>Upper value of the preparation weight. For example: Enter 200 here if a range is recorded "100-200 gr", leave empty if a single value "100 gr". Enter a numeric value (for decimals use a dot: [.] not a comma [,]).</description>
               </label>
             </labels>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementValue</documentationUrl>
@@ -6997,11 +7077,27 @@
             </labels>
             <documentationUrl>http://rs.tdwg.org/abcd/terms/appliesTo</documentationUrl>
           </metadataElement>
-          <metadataElement code="weightValue" datatype="Numeric">
+          <metadataElement code="weightLowerValue" datatype="Numeric">
             <labels>
               <label locale="en_US">
-                <name>Value</name>
-                <description>Weight value. Enter a numeric value (for decimals use a dot: [.] not a comma [,]).</description>
+                <name>(Lower) value</name>
+                <description>(Lower) value of the weight. For example: Enter 100 here if we have a range "100-200 gr" or enter 100 if the measurement is a single value "100 gr". Enter a numeric value (for decimals use a dot: [.] not a comma [,]).</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementValue</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">30</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+              <setting name="mustNotBeBlank">0</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="weightUpperValue" datatype="Numeric">
+            <labels>
+              <label locale="en_US">
+                <name>Upper value</name>
+                <description>Upper value of the weight. For example: Enter 200 here if a range is recorded "100-200 gr", leave empty if a single value "100 gr". Enter a numeric value (for decimals use a dot: [.] not a comma [,]).</description>
               </label>
             </labels>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementValue</documentationUrl>
@@ -7201,11 +7297,27 @@
             </labels>
             <documentationUrl>http://rs.tdwg.org/abcd/terms/appliesTo</documentationUrl>
           </metadataElement>
-          <metadataElement code="lengthValue" datatype="Numeric">
+          <metadataElement code="lengthLowerValue" datatype="Numeric">
             <labels>
               <label locale="en_US">
-                <name>Length value</name>
-                <description>Length value. Enter a numeric value (for decimals use a dot: [.] not a comma [,]).</description>
+                <name>(Lower) value</name>
+                <description>(Lower) value of the length. For example: Enter 100 here if we have a range "100-200 cm" or enter 100 if the measurement is a single value "100 cm". Enter a numeric value (for decimals use a dot: [.] not a comma [,]).</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementValue</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">30</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+              <setting name="mustNotBeBlank">0</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="lengthUpperValue" datatype="Numeric">
+            <labels>
+              <label locale="en_US">
+                <name>Upper value</name>
+                <description>Upper value of the length. For example: Enter 200 here if a range is recorded "100-200 cm", leave empty if a single value "100 cm". Enter a numeric value (for decimals use a dot: [.] not a comma [,]).</description>
               </label>
             </labels>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementValue</documentationUrl>
@@ -7395,11 +7507,27 @@
             </labels>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementAccuracy</documentationUrl>
           </metadataElement>
-          <metadataElement code="ageValue" datatype="Numeric">
+          <metadataElement code="ageLowerValue" datatype="Numeric">
             <labels>
               <label locale="en_US">
-                <name>Age value</name>
-                <description>Age value. Enter a numeric value (for decimals use a dot: [.] not a comma [,]).</description>
+                <name>(Lower) value</name>
+                <description>(Lower) value of the age. For example: Enter 10 here if we have a range "10-20 years" or enter 10 if the measurement is a single value "10 years". Enter a numeric value (for decimals use a dot: [.] not a comma [,]).</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementValue</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">30</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+              <setting name="mustNotBeBlank">0</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="ageUpperValue" datatype="Numeric">
+            <labels>
+              <label locale="en_US">
+                <name>Upper value</name>
+                <description>Upper value of the age. For example: Enter 20 here if a range is recorded "10-20 years", leave empty if a single value "10 years". Enter a numeric value (for decimals use a dot: [.] not a comma [,]).</description>
               </label>
             </labels>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementValue</documentationUrl>
@@ -7746,11 +7874,27 @@
             </labels>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementAccuracy</documentationUrl>
           </metadataElement>
-          <metadataElement code="countValue" datatype="Integer">
+          <metadataElement code="countLowerValue" datatype="Numeric">
             <labels>
               <label locale="en_US">
-                <name>Value</name>
-                <description>Lower or only value</description>
+                <name>(Lower) value</name>
+                <description>(Lower) value of the count. For example: Enter 10 here if we have a range "10-20 seeds" or enter 10 if the measurement is a single value "10 seeds". Enter a numeric value (for decimals use a dot: [.] not a comma [,]).</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementValue</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">30</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+              <setting name="mustNotBeBlank">0</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="countUpperValue" datatype="Numeric">
+            <labels>
+              <label locale="en_US">
+                <name>Upper value</name>
+                <description>Upper value of the count. For example: Enter 20 here if a range is recorded "10-20 seeds", leave empty if a single value "10 seeds". Enter a numeric value (for decimals use a dot: [.] not a comma [,]).</description>
               </label>
             </labels>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementValue</documentationUrl>
@@ -12708,10 +12852,10 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="notes">
-              <bundle>ca_attribute_notes</bundle>
+			      <placement code="creationNotes">
+              <bundle>ca_attribute_creationNotes</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Notes</setting>
+                <setting name="label" locale="en_US">Notes on creation</setting>
                 <setting name="description" locale="en_US">Any relevant information on the creation of the specimen not yet recorded. Tip: under the screen "Files/Refs/Photos/Dbs" you can link any relevant documents related to the sampling. For example (photos of) a field form.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
@@ -12754,7 +12898,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-			      <placement code="notes">
+			      <placement code="creationNotes">
               <bundle>ca_attribute_notes</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Notes</setting>
