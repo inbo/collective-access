@@ -36,6 +36,7 @@
   <!--https://github.com/inbo/collective-access/issues/371-->
   <!--https://github.com/inbo/collective-access/issues/370-->
   <!--https://github.com/inbo/collective-access/issues/364-->
+  <!--https://github.com/inbo/collective-access/issues/356-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -5539,101 +5540,6 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="forestTreePopCatContainer" datatype="Container">
-        <labels>
-          <label locale="en_US">
-            <name>Forest tree population category (container)</name>
-          </label>
-        </labels>
-			  <settings>
-          <setting name="lineBreakAfterNumberOfElements">1</setting>
-        </settings>
-	      <elements>
-		      <metadataElement code="forestTreePopCat" datatype="List" list="type_forestTreePopulation">
-            <labels>
-            <label locale="en_US">
-              <name>Forest tree population category</name>
-            </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">35</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
-		      <metadataElement code="forestTreePopStartDate" datatype="DateRange">
-            <labels>
-            <label locale="en_US">
-              <name>Start date of the forest tree population type label (YYYY-MM-DD)</name>
-		          <description>Start date of the forest tree population type label. Tip: enter date in ISO format: YYYY-MM-DD (e.g., 2026-03-04).</description>
-            </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">40</setting>
-              <setting name="dateRangeBoundaries">January 1 1900 to tomorrow</setting>
-              <setting name="useDatePicker">1</setting>
-              <setting name="canBeUsedInSort">1</setting>
-              <setting name="canBeUsedInSearchForm">1</setting>
-              <setting name="canBeUsedInDisplay">1</setting>
-            </settings>
-          </metadataElement>
-		      <metadataElement code="forestTreePopEndDate" datatype="DateRange">
-            <labels>
-              <label locale="en_US">
-              <name>End date of the forest tree population type label (YYYY-MM-DD)</name>
-		          <description>End date of the forest tree population type label. Tip: enter date in ISO format: YYYY-MM-DD (e.g., 2026-03-04).</description>
-              </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">40</setting>
-              <setting name="dateRangeBoundaries">January 1 1900 to tomorrow</setting>
-              <setting name="useDatePicker">1</setting>
-              <setting name="canBeUsedInSort">1</setting>
-              <setting name="canBeUsedInSearchForm">1</setting>
-              <setting name="canBeUsedInDisplay">1</setting>
-            </settings>
-		      </metadataElement>
-		      <metadataElement code="forestTreePopRef" datatype="Text">
-            <labels>
-            <label locale="en_US">
-              <name>Reference number of the forest tree population (e.g. PAV-KL-01-01)</name>
-            </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">35</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
-		      <metadataElement code="forestTreePopRemarks" datatype="Text">
-            <labels>
-            <label locale="en_US">
-              <name>Any remaining relevant information on the Forest tree population category</name>
-            </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">70</setting>
-              <setting name="fieldHeight">5</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
-        </elements>
-        <typeRestrictions>
-          <restriction code="r_objects">
-            <table>ca_objects</table>
-            <type>forestTreePopulation</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">10</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
 	    <metadataElement code="matrixType" datatype="List" list="matrix_type">
         <labels>
           <label locale="en_US">
@@ -8350,6 +8256,7 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="restrict_to_expression">(^ca_objects.sex != 'male') &amp;&amp; (^ca_objects.lifestage != 'juvenile')</setting><!--this will most likely not work-->
 			  </settings>
 			  <typeRestrictions>
           <restriction code="r_livingPlant">
