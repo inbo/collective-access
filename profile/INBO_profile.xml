@@ -32,6 +32,7 @@
   <!--https://github.com/inbo/collective-access/issues/377-->
   <!--https://github.com/inbo/collective-access/issues/375-->
   <!--https://github.com/inbo/collective-access/issues/374-->
+  <!--https://github.com/inbo/collective-access/issues/373-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -4270,6 +4271,63 @@
           </item>
         </items>
       </list>
+      <list code="forestTreePopulation_type" hierarchical="0" system="0" vocabulary="1">
+        <labels>
+          <label locale="en_US">
+            <name>Fish samples</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="seedSource" enabled="1" default="0"><!--Zaadbron: bomen in een gebied waar zaad wordt verzameld-->
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Basic material: seed source (uitgangsmateriaal: zaadbron)</name_singular>
+                <name_plural>Basic material: seed source (uitgangsmateriaal: zaadbron)</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="stand" enabled="1" default="0"><!--Bestand: een afgebakende, wat samenstelling betreft voldoende uniforme populatie bomen-->
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Basic material: stand (uitgangsmateriaal: bestand)</name_singular>
+                <name_plural>Basic material: stand (uitgangsmateriaal: bestand)</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="seedOrchard" enabled="1" default="0"><!--Zaadtuin: een aanplanting van geselecteerde klonen of families die wordt afgeschermd of beheerd om bestuiving door externe stuifmeelbronnen te voorkomen of te beperken en die wordt beheerd om veelvuldige, overvloedige en gemakkelijke zaadoogsten te verkrijgen-->
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Basic Material: Indigenous seed orchard (uitgangsmateriaal: zaadtuin)</name_singular>
+                <name_plural>Basic Material: Indigenous seed orchard (uitgangsmateriaal: zaadtuin)</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="clonalMixture" enabled="1" default="0"><!--Mengsel van klonen: een mengsel van geïdentificeerde klonen in welbepaalde verhoudingen-->
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Basic material: clonal mixture (uitgangsmateriaal: mengsel van klonen)</name_singular>
+                <name_plural>Basic material: clonal mixture (uitgangsmateriaal: mengsel van klonen)</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="genebank" enabled="1" default="0"><!--Basiscollectie: behoud en beheer van waardevolle ex situ collecties-->
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>base population / gene bank (basiscollectie)</name_singular>
+                <name_plural>base population / gene bank (basiscollectie)</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="trialPlot" enabled="1" default="0"><!--Proefperceel: herkomstproeven / afstammingstesten / klonale testen-->
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>Trial plot / progeny test (proefperceel)</name_singular>
+                <name_plural>Trial plot / progeny test (proefperceel)</name_plural>
+              </label>
+            </labels>
+          </item>
+        </items>
+      </list>
   </lists>
   <elementSets>
     <!--General-->
@@ -5889,6 +5947,29 @@
           <restriction code="r_fishTissueSample">
             <table>ca_objects</table>
             <type>fishTissueSample</type>
+            <settings>
+              <setting name="minAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="forestTreePopulationType" datatype="List" list="forestTreePopulation_type">
+        <labels>
+          <label locale="en_US">
+            <name>Forest tree population specification</name>
+		        <description>Here it is specified what type of forest tree population is at hand.</description>
+          </label>
+        </labels>
+	      <settings>
+          <setting name="fieldWidth">40</setting>
+          <setting name="doesNotTakeLocale">1</setting>
+        </settings>
+	      <typeRestrictions>
+          <restriction code="r_forestTreePopulation">
+            <table>ca_objects</table>
+            <type>forestTreePopulation</type>
             <settings>
               <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -13095,6 +13176,12 @@
               <bundle>ca_attribute_description</bundle>
 			        <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+            </placement>
+            <placement code="forestTreePopulationType" typeRestrictions="forestTreePopulation">
+              <bundle>ca_attribute_forestTreePopulationType</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">expand</setting>
               </settings>
             </placement>
             <placement code="preparationDate">
