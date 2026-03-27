@@ -1263,6 +1263,7 @@
               </labels>
             </item>
         </items>
+      </list>
       <list code="object_lot_label_types" hierarchical="0" system="0" vocabulary="0">
         <labels>
           <label locale="en_US">
@@ -4310,7 +4311,7 @@
       <list code="forestTreePopulation_type" hierarchical="0" system="0" vocabulary="1">
         <labels>
           <label locale="en_US">
-            <name>Fish samples</name>
+            <name>Forest Tree Population types</name>
           </label>
         </labels>
         <items>
@@ -5230,7 +5231,7 @@
           </label>
         </labels>
         <elements>
-          <metadataElement code="noteDate" datatype="dateRange">
+          <metadataElement code="noteDate" datatype="DateRange">
             <labels>
               <label locale="en_US">
                 <name>Date of note</name>
@@ -5260,12 +5261,6 @@
             </settings>
           </metadataElement>
 		    </elements>
-        <settings>
-          <setting name="fieldWidth">115</setting>
-          <setting name="fieldHeight">8</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
         <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
@@ -11393,7 +11388,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="livingPlantverbatimGeodeticDatum" datatype="List" list="geodetic_datum2">
+	    <metadataElement code="livingPlantverbatimGeodDatum" datatype="List" list="geodetic_datum2">
         <labels>
           <label locale="en_US">
             <name>Verbatim geodetic datum</name>
@@ -11606,7 +11601,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="storageLocationDecimalLatitudeY" datatype="Numeric">
+	    <metadataElement code="storageLocationDecimalLatY" datatype="Numeric">
         <labels>
           <label locale="en_US">
             <name>Decimal latitude (Y)</name>
@@ -11643,7 +11638,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="storageLocationdecimalLongitudeX" datatype="Numeric">
+	    <metadataElement code="storageLocationdecimalLongX" datatype="Numeric">
         <labels>
           <label locale="en_US">
             <name>Decimal longitude (X)</name>
@@ -11730,7 +11725,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="livingPlantMinimumElevationInMeters" datatype="Numeric">
+	    <metadataElement code="livingPlantMinElevInMeters" datatype="Numeric">
         <labels>
           <label locale="en_US">
             <name>Living plant: Minimum elevation in meters</name>
@@ -11795,7 +11790,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="livingPlantMaximumElevationInMeters" datatype="Numeric">
+	    <metadataElement code="livingPlantMaxElevInMeters" datatype="Numeric">
         <labels>
           <label locale="en_US">
             <name>Living plant: Maximum elevation in meters</name>
@@ -12606,6 +12601,7 @@
                 <description>Start date of the time range of the collection. Tip: enter date in ISO format: YYYY-MM-DD (e.g., 2026-03-04).</description>
               </label>
             </labels>
+            <documentationUrl>http://rs.tdwg.org/ltc/terms/temporalCoverageStartDateTime</documentationUrl>
             <settings>
               <setting name="fieldWidth">40</setting>
               <setting name="dateRangeBoundaries">January 1 1900 to tomorrow</setting>
@@ -12614,8 +12610,6 @@
               <setting name="canBeUsedInSearchForm">1</setting>
               <setting name="canBeUsedInDisplay">1</setting>
             </settings>
-            <documentationUrl>http://rs.tdwg.org/ltc/terms/temporalCoverageStartDateTime</documentationUrl>
-            <settings/>
           </metadataElement>
           <metadataElement code="temporalCoverageEndDate" datatype="DateRange">
             <labels>
@@ -12624,6 +12618,7 @@
                 <description>End date of the time range of the collection. Tip: enter date in ISO format: YYYY-MM-DD (e.g., 2026-03-04).</description>
               </label>
             </labels>
+            <documentationUrl>http://rs.tdwg.org/ltc/terms/temporalCoverageEndDateTime</documentationUrl>
             <settings>
               <setting name="fieldWidth">40</setting>
               <setting name="dateRangeBoundaries">January 1 1900 to tomorrow</setting>
@@ -12632,8 +12627,6 @@
               <setting name="canBeUsedInSearchForm">1</setting>
               <setting name="canBeUsedInDisplay">1</setting>
             </settings>
-            <documentationUrl>http://rs.tdwg.org/ltc/terms/temporalCoverageEndDateTime</documentationUrl>
-            <settings/>
           </metadataElement>
 		    </elements>
         <typeRestrictions>
@@ -12887,9 +12880,6 @@
                 <restriction code="r_dnaSample" type="dnaSample"/>
                 <restriction code="r_soilObject" type="soilObject"/>
           </typeRestrictions>
-          <layout>
-            <column num="1" width="100%"/>
-          </layout>
           <bundlePlacements>
             <placement code="idno">
               <bundle>idno</bundle>
@@ -13220,7 +13210,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="ca_storage_location">
+            <placement code="ca_storage_location_hierarchy">
               <bundle>ca_storage_locations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at * (hierarchy)</setting>
@@ -13232,7 +13222,7 @@
                 <setting name="missingRequirementMessage">You must select a storage location of type 'Spot'. Other types (like Boxes, Freezers, ..) are not allowed.</setting>
               </settings>
             </placement>
-            <placement code="ca_storage_location"><!--this is mainly added for dev purposes, could be deleted in UAT/PROD-->
+            <placement code="ca_storage_location_lookup"><!--this is mainly added for dev purposes, could be deleted in UAT/PROD-->
               <bundle>ca_storage_locations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at * (lookup)</setting>
@@ -16625,7 +16615,7 @@
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
               </settings>
             </placement>
-			      <placement code="ca_objects" typeRestrictions="spot">
+			      <placement code="ca_objects_spot" typeRestrictions="spot">
               <bundle>ca_objects</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Objects stored</setting>
@@ -20761,7 +20751,7 @@
 			      <settings>
               <setting name="label" locale="en_US">Prepared by</setting>
               <setting name="restrict_to_relationship_types">preparedBy</setting>
-              </settings>
+            </settings>
         </placement>
         <placement code="ca_objects_verbatimTaxon">
           <bundle>ca_objects.verbatimTaxon</bundle>
@@ -20774,9 +20764,11 @@
         </placement>
         <placement code="ca_occurrences_related_identifications">
           <bundle>ca_occurrences.related</bundle>
-          <setting name="label" locale="en_US">Previous taxonomic identificaitons</setting>
-          <setting name="restrict_to_types">identification</setting>
-          <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences">^ca_occurrences.verbatimTaxon, ^ca_occurrences.standTaxon<br/> (^ca_occurrences.taxonDate)</unit>]]></setting>
+          <settings>
+            <setting name="label" locale="en_US">Previous taxonomic identificaitons</setting>
+            <setting name="restrict_to_types">identification</setting>
+            <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences">^ca_occurrences.verbatimTaxon, ^ca_occurrences.standTaxon<br/> (^ca_occurrences.taxonDate)</unit>]]></setting>
+          </settings>
         </placement>
         <placement code="ca_objects_provenance">
           <bundle>ca_objects.provenance</bundle>
@@ -20798,19 +20790,25 @@
         </placement>
         <placement code="ca_occurrences_related_projects">
           <bundle>ca_occurrences.related</bundle>
-          <setting name="label" locale="en_US">Related projects</setting>
-          <setting name="restrict_to_types">project</setting>
+          <settings>
+            <setting name="label" locale="en_US">Related projects</setting>
+            <setting name="restrict_to_types">project</setting>
+          </settings>
         </placement>
         <placement code="ca_occurrences_related_fieldwork">
           <bundle>ca_occurrences.related</bundle>
-          <setting name="label" locale="en_US">Related field campagin</setting>
-          <setting name="restrict_to_types">fieldwork</setting>
+          <settings>
+            <setting name="label" locale="en_US">Related field campagin</setting>
+            <setting name="restrict_to_types">fieldwork</setting>
+          </settings>
         </placement>
         <placement code="ca_occurrences_related_value">
           <bundle>ca_occurrences.related</bundle>
-          <setting name="label" locale="en_US">Related value</setting>
-          <setting name="restrict_to_types">valuation</setting>
-          <setting name="display_template">^ca_occurrences.valuationArgument%delimiter=_;_ (^ca_occurrences.eventDate)</setting>
+          <settings>
+            <setting name="label" locale="en_US">Related value</setting>
+            <setting name="restrict_to_types">valuation</setting>
+            <setting name="display_template">^ca_occurrences.valuationArgument%delimiter=_;_ (^ca_occurrences.eventDate)</setting>
+          </settings>
         </placement>
       </bundlePlacements>
     </display>
