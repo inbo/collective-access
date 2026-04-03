@@ -19,6 +19,7 @@
   <!--https://github.com/inbo/collective-access/issues/445-->
   <!--https://github.com/inbo/collective-access/issues/446-->
   <!--https://github.com/inbo/collective-access/issues/447-->
+  <!--https://github.com/inbo/collective-access/issues/448-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -20919,7 +20920,7 @@
     <display code="specimens_search_viewers_cataloguers" type="ca_objects" system="0" typeRestrictions="object,plant,animal,plantSampleDried,seedlot,stemdisc,moss,fishEntireEthanol,taxidermySpecimen,mammalBloodSample,mammalHairSample,mammalParasiteSample" includeSubtypes="1">
       <labels>
         <label locale="en_US">
-          <name>Specimen search for viewers</name>
+          <name>Specimen search</name>
         </label>
       </labels>
       <settings>
@@ -20935,6 +20936,8 @@
       </userAccess>
       <groupAccess>
         <permission group="admin" access="edit"/>
+        <permission group="collectionmanagers" access="read"/>
+        <permission group="archivists" access="read"/>
         <permission group="cataloguers" access="read"/>
         <permission group="viewers" access="read"/>
       </groupAccess>
@@ -20965,10 +20968,10 @@
         </placement>
       </bundlePlacements>
     </display>
-    <display code="specimens_search_managers_archivists" type="ca_objects" system="0" typeRestrictions="object,plant,animal,plantSampleDried,seedlot,stemdisc,moss,fishEntireEthanol,taxidermySpecimen,mammalBloodSample,mammalHairSample,mammalParasiteSample" includeSubtypes="1">
+    <display code="specimens_search_admin" type="ca_objects" system="0" typeRestrictions="object,plant,animal,plantSampleDried,seedlot,stemdisc,moss,fishEntireEthanol,taxidermySpecimen,mammalBloodSample,mammalHairSample,mammalParasiteSample" includeSubtypes="1">
       <labels>
         <label locale="en_US">
-          <name>Specimen search for managers</name>
+          <name>Specimen search for administrator</name>
         </label>
       </labels>
       <settings>
@@ -20984,8 +20987,6 @@
       </userAccess>
       <groupAccess>
         <permission group="admin" access="edit"/>
-        <permission group="collectionmanagers" access="read"/>
-        <permission group="archivists" access="read"/>
       </groupAccess>
       <bundlePlacements>
         <placement code="ca_objects_idno">
