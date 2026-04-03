@@ -1,43 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="INBO_profile_0_110" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.110</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.111</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
-  <!--https://docs.collectiveaccess.org/-->
-  <!--https://providence.readthedocs.io/en/latest/-->
-  <!--Issues to check if succesful in v0.110-->
-  <!--https://github.com/inbo/collective-access/issues/420 check the 4 different roles and see if the permissions are correct-->
-  <!--check if roles are working https://docs.google.com/document/d/1ZwS80YLPfGhuU1kfv3eFFKajtNzD72QOagTooGX8mU0/edit?tab=t.0-->
-  <!--check if the summary displays are working-->
-  <!--https://github.com/inbo/collective-access/issues/419-->
-  <!--https://github.com/inbo/collective-access/issues/415-->
-  <!--https://github.com/inbo/collective-access/issues/414-->
-  <!--https://github.com/inbo/collective-access/issues/430-->
-  <!--https://github.com/inbo/collective-access/issues/412-->
-  <!--https://github.com/inbo/collective-access/issues/411-->
-  <!--https://github.com/inbo/collective-access/issues/431-->
-  <!--https://github.com/inbo/collective-access/issues/409-->
-  <!--https://github.com/inbo/collective-access/issues/407-->
-  <!--https://github.com/inbo/collective-access/issues/405-->
-  <!--https://github.com/inbo/collective-access/issues/404-->
-  <!--https://github.com/inbo/collective-access/issues/403-->
-  <!--https://github.com/inbo/collective-access/issues/402-->
-  <!--https://github.com/inbo/collective-access/issues/400-->
-  <!--https://github.com/inbo/collective-access/issues/399-->
-  <!--https://github.com/inbo/collective-access/issues/432-->
-  <!--https://github.com/inbo/collective-access/issues/392-->
-  <!--https://github.com/inbo/collective-access/issues/386-->
-  <!--https://github.com/inbo/collective-access/issues/385-->
-  <!--https://github.com/inbo/collective-access/issues/382-->
-  <!--https://github.com/inbo/collective-access/issues/378-->
-  <!--https://github.com/inbo/collective-access/issues/377-->
-  <!--https://github.com/inbo/collective-access/issues/375-->
-  <!--https://github.com/inbo/collective-access/issues/374-->
-  <!--https://github.com/inbo/collective-access/issues/373-->
-  <!--https://github.com/inbo/collective-access/issues/371-->
-  <!--https://github.com/inbo/collective-access/issues/370-->
-  <!--https://github.com/inbo/collective-access/issues/364-->
-  <!--https://github.com/inbo/collective-access/issues/356-->
+  <!--https://docs.collectiveaccess.org/--><!--https://providence.readthedocs.io/en/latest/-->
+  <!--Issues to check if succesful in v0.111-->
   <!--https://github.com/inbo/collective-access/issues/353-->
+  <!--https://github.com/inbo/collective-access/issues/374-->
+  <!--https://github.com/inbo/collective-access/issues/386-->
+  <!--https://github.com/inbo/collective-access/issues/415-->
+  <!--https://github.com/inbo/collective-access/issues/436-->
+  <!--https://github.com/inbo/collective-access/issues/440-->
+  <!--https://github.com/inbo/collective-access/issues/441-->
+  <!--https://github.com/inbo/collective-access/issues/442-->
+  <!--https://github.com/inbo/collective-access/issues/443-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -71,7 +46,7 @@
       <list code="object_deaccession_types" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
         <labels>
           <label locale="en_US">
-            <name>CMS workflow statuses</name>
+            <name>Object deaccession types</name>
           </label>
         </labels>
         <items>
@@ -107,15 +82,32 @@
               </label>
             </labels>
           </item>
-          <item idno="loaned" rank="6" enabled="1" default="0" value="1">
+          <item idno="dead" rank="8" enabled="1" default="0" value="1">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>loaned (in its totality - i.e. not subsampled)</name_singular>
-                <name_plural>loaned (in its totality - i.e. not subsampled)</name_plural>
+                <name_singular>dead (only possible for living plants)</name_singular>
+                <name_plural>dead (only possible for living plants)</name_plural>
               </label>
             </labels>
           </item>
-          <item idno="missing" rank="7" enabled="1" default="0" value="1">
+        </items>
+      </list>
+      <list code="disposition_list" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
+        <labels>
+          <label locale="en_US">
+            <name>Disposition list</name>
+          </label>
+        </labels>
+        <items>
+          <item idno="inCollection" rank="1" enabled="1" default="1" value="0">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>in collection</name_singular>
+                <name_plural>in collection</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="missing" rank="2" enabled="1" default="0" value="1">
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>missing</name_singular>
@@ -123,11 +115,19 @@
               </label>
             </labels>
           </item>
-          <item idno="dead" rank="8" enabled="1" default="0" value="1">
+          <item idno="onLoan" rank="3" enabled="1" default="0" value="1">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>dead (only possible for living plants)</name_singular>
-                <name_plural>dead (only possible for living plants)</name_plural>
+                <name_singular>on (permanent) loan</name_singular>
+                <name_plural>on (permanent) loan</name_plural>
+              </label>
+            </labels>
+          </item>
+          <item idno="deaccessioned" rank="4" enabled="1" default="0" value="1">
+            <labels>
+              <label locale="en_US" preferred="1">
+                <name_singular>deaccessioned</name_singular>
+                <name_plural>deaccessioned</name_plural>
               </label>
             </labels>
           </item>
@@ -213,7 +213,7 @@
                   <setting name="render_in_new_menu">1</setting>
                 </settings>
                 <items>
-                  <item idno="fishTissueSample" enabled="0" default="0">
+                  <item idno="fishTissueSample" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>Fish tissue sample</name_singular>
@@ -1338,7 +1338,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="unregisteredID" enabled="1" default="0"><!--This can be given by the researcher or curator, to either the project, fieldwork, valuation event or curation event. Not respecting convention/agreements made with a larger group / made by a system. This type of ID can also be applied if there seems to be a logic applied by something/someone but it is not known to which system it refers at the time of logging the ID.-->
+            <item idno="unregisteredID" rank="2" enabled="1" default="0"><!--This can be given by the researcher or curator, to either the project, fieldwork, valuation event or curation event. Not respecting convention/agreements made with a larger group / made by a system. This type of ID can also be applied if there seems to be a logic applied by something/someone but it is not known to which system it refers at the time of logging the ID.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>unregistered ID</name_singular>
@@ -1346,7 +1346,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="LabwareLIMSID" enabled="1" default="0"><!--E.g. V-19V049-01. An identifier for the project as given by INBO-Labware-LIMS.-->
+            <item idno="LabwareLIMSID" rank="3" enabled="1" default="0"><!--E.g. V-19V049-01. An identifier for the project as given by INBO-Labware-LIMS.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Labware-LIMS-generated ID</name_singular>
@@ -1354,7 +1354,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="preLIMSlabID" enabled="1" default="0"><!--An identifier for the project given by the INBO genetic or analytical labs prior usage of the INBO-LIMS. This is any lab numbering, not constituing the LIMS-ID. Examples: BF, INBO11.0004B.-->
+            <item idno="preLIMSlabID" rank="4" enabled="1" default="0"><!--An identifier for the project given by the INBO genetic or analytical labs prior usage of the INBO-LIMS. This is any lab numbering, not constituing the LIMS-ID. Examples: BF, INBO11.0004B.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>pre-LIMS lab ID</name_singular>
@@ -1362,7 +1362,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="JIRAID" enabled="1" default="0"><!--The ID for a project as defined in JIRA.-->
+            <item idno="JIRAID" rank="5" enabled="1" default="0"><!--The ID for a project as defined in JIRA.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>JIRA ID</name_singular>
@@ -1370,7 +1370,7 @@
                 </label>
               </labels>
             </item>
-            <item idno="GenbosID" enabled="1" default="0"><!--The ID as defined in the Genbos database.-->
+            <item idno="GenbosID" rank="6" enabled="1" default="0"><!--The ID as defined in the Genbos database.-->
               <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>Genbos ID</name_singular>
@@ -2010,7 +2010,7 @@
             <labels>
                 <label locale="en_US" preferred="1">
                   <name_singular>female</name_singular>
-                  <name_plural>females</name_plural>
+                  <name_plural>female</name_plural>
                 </label>
             </labels>
           </item>
@@ -2091,7 +2091,7 @@
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>egg</name_singular>
-                <name_plural>eggs</name_plural>
+                <name_plural>egg</name_plural>
               </label>
             </labels>
           </item>
@@ -2099,7 +2099,7 @@
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>larva</name_singular>
-                <name_plural>larvae</name_plural>
+                <name_plural>larva</name_plural>
               </label>
             </labels>
           </item>
@@ -2107,7 +2107,7 @@
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>nymph</name_singular>
-                <name_plural>nymphs</name_plural>
+                <name_plural>nymph</name_plural>
               </label>
             </labels>
           </item>
@@ -2123,7 +2123,7 @@
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>juvenile</name_singular>
-                <name_plural>juveniles</name_plural>
+                <name_plural>juvenile</name_plural>
               </label>
             </labels>
           </item>
@@ -2131,7 +2131,7 @@
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>seedling (plants)</name_singular>
-                <name_plural>seedlings (plants)</name_plural>
+                <name_plural>seedling (plants)</name_plural>
               </label>
             </labels>
           </item>
@@ -2139,7 +2139,7 @@
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>subadult</name_singular>
-                <name_plural>subadults</name_plural>
+                <name_plural>subadult</name_plural>
               </label>
             </labels>
           </item>
@@ -2147,7 +2147,7 @@
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>adult</name_singular>
-                <name_plural>adults</name_plural>
+                <name_plural>adult</name_plural>
               </label>
             </labels>
           </item>
@@ -4181,7 +4181,7 @@
             <labels>
               <label locale="en_US" preferred="1">
                 <name_singular>fetus tissue</name_singular>
-                <name_plural>fetus tissues</name_plural>
+                <name_plural>fetus tissue</name_plural>
               </label>
             </labels>
           </item>
@@ -4334,8 +4334,8 @@
           <item idno="seedOrchard" enabled="1" default="0"><!--Zaadtuin: een aanplanting van geselecteerde klonen of families die wordt afgeschermd of beheerd om bestuiving door externe stuifmeelbronnen te voorkomen of te beperken en die wordt beheerd om veelvuldige, overvloedige en gemakkelijke zaadoogsten te verkrijgen-->
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>Basic Material: Indigenous seed orchard (uitgangsmateriaal: zaadtuin)</name_singular>
-                <name_plural>Basic Material: Indigenous seed orchard (uitgangsmateriaal: zaadtuin)</name_plural>
+                <name_singular>Basic material: indigenous seed orchard (uitgangsmateriaal: zaadtuin)</name_singular>
+                <name_plural>Basic material: indigenous seed orchard (uitgangsmateriaal: zaadtuin)</name_plural>
               </label>
             </labels>
           </item>
@@ -4350,16 +4350,16 @@
           <item idno="genebank" enabled="1" default="0"><!--Basiscollectie: behoud en beheer van waardevolle ex situ collecties-->
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>base population / gene bank (basiscollectie)</name_singular>
-                <name_plural>base population / gene bank (basiscollectie)</name_plural>
+                <name_singular>Base population / Gene bank (basiscollectie)</name_singular>
+                <name_plural>Base population / Gene bank (basiscollectie)</name_plural>
               </label>
             </labels>
           </item>
           <item idno="trialPlot" enabled="1" default="0"><!--Proefperceel: herkomstproeven / afstammingstesten / klonale testen-->
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>Trial plot / progeny test (proefperceel)</name_singular>
-                <name_plural>Trial plot / progeny test (proefperceel)</name_plural>
+                <name_singular>Trial plot / Progeny test (proefperceel)</name_singular>
+                <name_plural>Trial plot / Progeny test (proefperceel)</name_plural>
               </label>
             </labels>
           </item>
@@ -5074,20 +5074,62 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <!--<metadataElement code="disposition" datatype="List" list="disposition_list">
+	    <metadataElement code="dispositionC" datatype="Container">
         <labels>
           <label locale="en_US">
-            <name>Disposition</name>
+            <name>Disposition container</name>
             <description>The current state of a specimen with respect to a collection.</description>
           </label>
         </labels>
         <documentationUrl>https://dwc.tdwg.org/list/#dwc_disposition</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-        </settings>
+        <elements>
+              <metadataElement code="disposition" datatype="List" list="disposition_list">
+                <labels>
+                  <label locale="en_US">
+                    <name>Disposition</name>
+                  </label>
+                </labels>
+                <settings>
+                  <setting name="hideIfsSelected_inCollection">object_ui/record1/dispositionC.deaccessionDate</setting>
+                  <setting name="hideIfsSelected_inCollection">object_ui/record1/dispositionC.deaccessionType</setting>
+                  <setting name="hideIfsSelected_inCollection">object_ui/record1/dispositionC.deaccessionNotes</setting>
+                  <setting name="hideIfsSelected_missing">object_ui/record1/dispositionC.deaccessionDate</setting>
+                  <setting name="hideIfsSelected_missing">object_ui/record1/dispositionC.deaccessionType</setting>
+                  <setting name="hideIfsSelected_missing">object_ui/record1/dispositionC.deaccessionNotes</setting>
+                  <setting name="hideIfsSelected_onLoan">object_ui/record1/dispositionC.deaccessionDate</setting>
+                  <setting name="hideIfsSelected_onLoan">object_ui/record1/dispositionC.deaccessionType</setting>
+                  <setting name="hideIfsSelected_onLoan">object_ui/record1/dispositionC.deaccessionNotes</setting>
+                </settings>
+              </metadataElement>
+              <metadataElement code="deaccessionDate" datatype="DateRange">
+                <labels>
+                  <label locale="en_US">
+                    <name>Date of deaccession</name>
+                    <description>Enter the date the object was deaccessioned</description>
+                  </label>
+                </labels>
+                <settings>
+                </settings>
+              </metadataElement>
+              <metadataElement code="deaccessionType" datatype="List" list="object_deaccession_types">
+                <labels>
+                  <label locale="en_US">
+                    <name>Type of deaccession</name>
+                  </label>
+                </labels>
+                <settings>
+                </settings>
+              </metadataElement>
+              <metadataElement code="deaccessionNotes" datatype="Text">
+                <labels>
+                  <label locale="en_US">
+                    <name>Type of deaccession</name>
+                  </label>
+                </labels>
+                <settings>
+                </settings>
+              </metadataElement>
+        </elements>
         <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
@@ -5098,7 +5140,7 @@
             </settings>
           </restriction>
         </typeRestrictions>
-      </metadataElement>-->
+      </metadataElement>
     <!--Object-->
 	    <metadataElement code="samplingDate" datatype="DateRange">
         <labels>
@@ -5405,6 +5447,7 @@
 	      <settings>
           <setting name="fieldWidth">40</setting>
           <setting name="doesNotTakeLocale">1</setting>
+          <setting name="useSingular">1</setting>
         </settings>
 	      <typeRestrictions>
           <restriction code="r_object_mammalTissueSample">
@@ -5573,6 +5616,7 @@
           <setting name="renderInSearchBuilder">select</setting>
           <setting name="useSingular">1</setting>
           <setting name="restrictToTypes">concept</setting>
+          <setting name="useSingular">1</setting>
           <setting name="hideIfSelected_soilSample">object_ui/record1/verbatimTaxon</setting>
           <setting name="hideIfSelected_waterSample">object_ui/record1/ca_attributes_verbatimTaxon</setting>
           <setting name="hideIfSelected_bud">object_ui/record1/verbatimDepth</setting>
@@ -5855,6 +5899,7 @@
 	      <settings>
           <setting name="fieldWidth">40</setting>
           <setting name="doesNotTakeLocale">1</setting>
+          <setting name="useSingular">1</setting>
         </settings>
 	      <typeRestrictions>
           <restriction code="r_mammalTissueSample">
@@ -5878,6 +5923,7 @@
 	      <settings>
           <setting name="fieldWidth">40</setting>
           <setting name="doesNotTakeLocale">1</setting>
+          <setting name="useSingular">1</setting>
         </settings>
 	      <typeRestrictions>
           <restriction code="r_fishTissueSample">
@@ -5901,6 +5947,7 @@
 	      <settings>
           <setting name="fieldWidth">40</setting>
           <setting name="doesNotTakeLocale">1</setting>
+          <setting name="useSingular">1</setting>
         </settings>
 	      <typeRestrictions>
           <restriction code="r_forestTreePopulation">
@@ -6257,6 +6304,7 @@
               <setting name="minValue">-1</setting>
               <setting name="maxValue">1000</setting>
               <setting name="mustNotBeBlank">0</setting>
+              <setting name="useSingular">1</setting>
             </settings>
           </metadataElement>
           <metadataElement code="dnaConcPublishedProcedure" datatype="Url">
@@ -6657,6 +6705,9 @@
               <description>Unit used for measurement.</description>
             </label>
             </labels>
+            <settings>
+              <setting name="useSingular">1</setting>
+            </settings>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
           </metadataElement>
           <metadataElement code="volumePublishedProcedure" datatype="Url">
@@ -6844,6 +6895,9 @@
               <description>Unit used for measurement.</description>
             </label>
             </labels>
+            <settings>
+              <setting name="useSingular">1</setting>
+            </settings>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
           </metadataElement>
           <metadataElement code="pvolumePublishedProcedure" datatype="Url">
@@ -6998,6 +7052,9 @@
               <description>Unit used for measurement.</description>
             </label>
             </labels>
+            <settings>
+              <setting name="useSingular">1</setting>
+            </settings>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
           </metadataElement>
           <metadataElement code="pweightPublishedProcedure" datatype="Url">
@@ -7146,6 +7203,9 @@
               <description>Unit used for the weight measurement.</description>
             </label>
             </labels>
+            <settings>
+              <setting name="useSingular">1</setting>
+            </settings>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
           </metadataElement>
           <metadataElement code="weightAccuracy" datatype="Text">
@@ -7365,6 +7425,9 @@
               <name>Length unit</name>
             </label>
             </labels>
+            <settings>
+              <setting name="useSingular">1</setting>
+            </settings>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
           </metadataElement>
           <metadataElement code="lengthAccuracy" datatype="Text">
@@ -7415,9 +7478,9 @@
           </metadataElement>
 	      </elements>
         <typeRestrictions>
-          <restriction code="r_fish">
+          <restriction code="r_fishTissueSample">
             <table>ca_objects</table>
-            <type>fish</type>
+            <type>fishTissueSample</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -7575,6 +7638,9 @@
               <name>Age unit</name>
             </label>
             </labels>
+            <settings>
+              <setting name="useSingular">1</setting>
+            </settings>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
           </metadataElement>
           <metadataElement code="agePublishedProcedure" datatype="Url">
@@ -7706,6 +7772,9 @@
               <name>Unit</name>
             </label>
             </labels>
+            <settings>
+              <setting name="useSingular">1</setting>
+            </settings>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
           </metadataElement>
           <metadataElement code="germinationPublishedProcedure" datatype="Url">
@@ -7816,6 +7885,9 @@
               <name>Unit</name>
             </label>
             </labels>
+            <settings>
+              <setting name="useSingular">1</setting>
+            </settings>
             <documentationUrl>	http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
           </metadataElement>
           <metadataElement code="purityPublishedProcedure" datatype="Url">
@@ -7943,6 +8015,9 @@
               <description>Unit used for the measurement.</description>
             </label>
             </labels>
+            <settings>
+              <setting name="useSingular">1</setting>
+            </settings>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/measurementUnit</documentationUrl>
           </metadataElement>
           <metadataElement code="countAppliesTo" datatype="Text">
@@ -8058,9 +8133,9 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_fish">
+          <restriction code="r_fishTissueSample">
             <table>ca_objects</table>
-            <type>fish</type>
+            <type>fishTissueSample</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -8083,6 +8158,7 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="useSingular">1</setting>
 			  </settings>
 			  <typeRestrictions>
           <restriction code="r_object_mammalTissueSample">
@@ -8165,6 +8241,7 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="useSingular">1</setting>
 			  </settings>
 			  <typeRestrictions>
           <restriction code="r_object_mammalTissueSample">
@@ -8223,9 +8300,9 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_fish">
+          <restriction code="r_fishTissueSample">
             <table>ca_objects</table>
-            <type>fish</type>
+            <type>fishTissueSample</type>
             <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
@@ -8275,6 +8352,7 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="useSingular">1</setting>
           <setting name="restrict_to_expression">(^ca_objects.sex != 'male') &amp;&amp; (^ca_objects.lifestage != 'juvenile')</setting><!--this will most likely not work-->
 			  </settings>
 			  <typeRestrictions>
@@ -8590,6 +8668,7 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="useSingular">1</setting>
         </settings>
 	      <typeRestrictions>
           <restriction code="r_objects">
@@ -9143,6 +9222,7 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="useSingular">1</setting>
         </settings>
 	      <typeRestrictions>
           <restriction code="r_objects">
@@ -9716,6 +9796,7 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="useSingular">1</setting>
         </settings>
         <typeRestrictions>
           <restriction code="r_objects">
@@ -10237,6 +10318,7 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="useSingular">1</setting>
         </settings>
         <typeRestrictions>
             <restriction code="r_object">
@@ -10567,22 +10649,22 @@
                 <setting name="minChars">0</setting>
                 <setting name="maxChars">65535</setting>
               </settings>
-      </metadataElement>
-      <metadataElement code="protocolDetails" datatype="Text">
-              <labels>
-                <label locale="en_US">
-                  <name>Sampling procedure details</name>
-                  <description>A short description or code that allows validation of the used sampling procedure. If there is a DOI in "Sampling procedure URI" this field can be used to log relevant extra information e.g. deviation of the standard procedure.</description>
-                </label>
-              </labels>
-              <documentationUrl>http://rs.tdwg.org/abcd/terms/referenceDetails</documentationUrl>
-              <settings>
-                <setting name="fieldWidth">85</setting>
-                <setting name="fieldHeight">1</setting>
-                <setting name="minChars">0</setting>
-                <setting name="maxChars">65535</setting>
-              </settings>
             </metadataElement>
+            <metadataElement code="protocolDetails" datatype="Text">
+                    <labels>
+                      <label locale="en_US">
+                        <name>Sampling procedure details</name>
+                        <description>A short description or code that allows validation of the used sampling procedure. If there is a DOI in "Sampling procedure URI" this field can be used to log relevant extra information e.g. deviation of the standard procedure.</description>
+                      </label>
+                    </labels>
+                    <documentationUrl>http://rs.tdwg.org/abcd/terms/referenceDetails</documentationUrl>
+                    <settings>
+                      <setting name="fieldWidth">85</setting>
+                      <setting name="fieldHeight">1</setting>
+                      <setting name="minChars">0</setting>
+                      <setting name="maxChars">65535</setting>
+                    </settings>
+                  </metadataElement>
           </elements>
           <typeRestrictions>
             <restriction code="r_object">
@@ -10757,6 +10839,7 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="useSingular">1</setting>
         </settings>
         <typeRestrictions>
           <restriction code="r_valuation">
@@ -10935,6 +11018,7 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="useSingular">1</setting>
         </settings>
         <typeRestrictions>
           <restriction code="r_objects">
@@ -11218,6 +11302,7 @@
           <setting name="fieldHeight">5</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="useSingular">1</setting>
         </settings>
 	      <typeRestrictions>
           <restriction code="r_storage_location">
@@ -11265,7 +11350,7 @@
 	    <metadataElement code="livingPlantverbatimLatitudeY" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>Living plant verbatim Latitude (Y)</name>
+            <name>FTP/LP: verbatim Latitude (Y)</name>
             <description>A free text format for the latitude component of the coordinates, as they were originally recorded / noted down. Careful: latitude is N to S. For example for Belgium: 50.5039° N.</description>
           </label>
         </labels>
@@ -11328,7 +11413,7 @@
 	    <metadataElement code="livingPlantverbatimLongitudeX" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>Living plant verbatim Longitude (X)</name>
+            <name>FTP/LP: verbatim Longitude (X)</name>
             <description>A free text format for the longitude component of the coordinates, as they were originally recorded / noted down. Careful longitude is E to W. For example: Belgium 4.4699° E.</description>
           </label>
         </labels>
@@ -11391,7 +11476,7 @@
 	    <metadataElement code="livingPlantverbatimGeodDatum" datatype="List" list="geodetic_datum2">
         <labels>
           <label locale="en_US">
-            <name>Verbatim geodetic datum</name>
+            <name>FTP/LP: verbatim geodetic datum</name>
             <description>The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which the geographic coordinates given in verbatimLatitude and verbatimLongitude are based.</description>
           </label>
         </labels>
@@ -11400,6 +11485,7 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="useSingular">1</setting>
         </settings>
 	      <typeRestrictions>
           <restriction code="r_objects">
@@ -11453,7 +11539,7 @@
 	    <metadataElement code="livingPlantDecimalLatitudeY" datatype="Numeric">
         <labels>
           <label locale="en_US">
-            <name>Living plant: Decimal latitude (Y)</name>
+            <name>FTP/LP: decimal latitude (Y)</name>
             <description>The geographic latitude (in decimal degrees, using the WGS84 spatial reference system given in dwc:geodeticDatum) of the geographic center of a dcterms:Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive. Careful: latitude is N to S. For example the Herman Teirlinck building: 50.86638999067575. Enter a numeric value (for decimals use a dot: [.] not a comma [,]).</description>
           </label>
         </labels>
@@ -11517,7 +11603,7 @@
 	    <metadataElement code="livingPlantDecimalLongitudeX" datatype="Numeric">
         <labels>
           <label locale="en_US">
-            <name>Living plant: Decimal longitude (X)</name>
+            <name>FTP/LP: decimal longitude (X)</name>
             <description>The geographic longitude (in decimal degrees, using the WGS84 spatial reference system given in dwc:geodeticDatum) of the geographic center of a dcterms:Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive. Careful longitude is E to W. For example: For example the Herman Teirlinck building: 4.350147058474895. Enter a numeric value (for decimals use a dot: [.] not a comma [,])</description>
           </label>
         </labels>
@@ -11581,7 +11667,7 @@
 	    <metadataElement code="livingPlantGeoreference" datatype="Geocode">
         <labels>
           <label locale="en_US">
-            <name>Living Plant: WGS84 Standardised coordinates</name>
+            <name>FTP/LP: WGS84 Standardised coordinates</name>
           </label>
         </labels>
         <settings>
@@ -11728,7 +11814,7 @@
 	    <metadataElement code="livingPlantMinElevInMeters" datatype="Numeric">
         <labels>
           <label locale="en_US">
-            <name>Living plant: Minimum elevation in meters</name>
+            <name>FTP/LP: minimum elevation in meters</name>
             <description>The lower limit of the range of elevation (altitude, usually above sea level), in meters. Enter a numeric value (for decimals use a dot: [.] not a comma [,])</description>
           </label>
         </labels>
@@ -11793,7 +11879,7 @@
 	    <metadataElement code="livingPlantMaxElevInMeters" datatype="Numeric">
         <labels>
           <label locale="en_US">
-            <name>Living plant: Maximum elevation in meters</name>
+            <name>FTP/LP: maximum elevation in meters</name>
             <description>The upper limit of the range of elevation (altitude, usually above sea level), in meters. Enter a numeric value (for decimals use a dot: [.] not a comma [,])</description>
           </label>
         </labels>
@@ -11858,7 +11944,7 @@
 	    <metadataElement code="livingPlantVerticalDatum" datatype="List" list="vertical_datum">
         <labels>
           <label locale="en_US">
-            <name>Living plant: Vertical datum</name>
+            <name>FTP/LP: vertical datum</name>
             <description>The vertical datum used as the reference upon which the values in the elevation terms are based.</description>
           </label>
         </labels>
@@ -11868,6 +11954,7 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="useSingular">1</setting>
         </settings>
         <typeRestrictions>
           <restriction code="r_objects">
@@ -11931,6 +12018,7 @@
           <setting name="fieldHeight">5</setting>
           <setting name="minChars">1</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="useSingular">1</setting>
         </settings>
 	      <typeRestrictions>
           <restriction code="r_loans">
@@ -12205,6 +12293,7 @@
         </labels>
         <settings>
           <setting name="fieldWidth">70</setting>
+          <setting name="useSingular">1</setting>
         </settings>
         <typeRestrictions>
           <restriction code="set_intro">
@@ -12292,6 +12381,7 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="useSingular">1</setting>
         </settings>
         <typeRestrictions>
             <restriction code="r_collection">
@@ -12342,6 +12432,7 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="useSingular">1</setting>
         </settings>
         <typeRestrictions>
             <restriction code="r_collection">
@@ -12461,6 +12552,7 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="useSingular">1</setting>
         </settings>
         <typeRestrictions>
             <restriction code="r_collection">
@@ -12487,6 +12579,7 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="useSingular">1</setting>
         </settings>
         <typeRestrictions>
             <restriction code="r_collection">
@@ -12513,6 +12606,7 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="useSingular">1</setting>
         </settings>
         <typeRestrictions>
             <restriction code="r_collection">
@@ -12539,6 +12633,7 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="useSingular">1</setting>
         </settings>
         <typeRestrictions>
             <restriction code="r_collection">
@@ -12564,6 +12659,7 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="useSingular">1</setting>
         </settings>
         <typeRestrictions>
             <restriction code="r_collection">
@@ -12592,7 +12688,9 @@
               </label>
             </labels>
             <documentationUrl>http://rs.tdwg.org/ltc/terms/temporalCoverageType</documentationUrl>
-            <settings/>
+            <settings>
+              <setting name="useSingular">1</setting>
+            </settings>
           </metadataElement>
           <metadataElement code="temporalCoverageStartDate" datatype="DateRange">
             <labels>
@@ -12889,6 +12987,11 @@
                 <setting name="expand_collapse_no_value">expand</setting>
               </settings>
             </placement>
+            <placement code="dispositionC">
+              <bundle>ca_objects_dispositionC</bundle>
+			        <settings>
+              </settings>
+            </placement>
             <placement code="preferred_labels">
               <bundle>preferred_labels</bundle>
               <settings>
@@ -12964,7 +13067,7 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="useHierarchicalBrowser">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="display_template">&lt;a href="index.php/editor/storage_locations/StorageLocationEditor/Edit/location_id/^ca_storage_locations.location_id" target="_blank"&gt;^ca_storage_locations.preferred_labels&lt;/a&gt;</setting>
+                <setting name="display_template"><l target="_blank">^ca_storage_locations.preferred_labels</l></setting>
               </settings>
             </placement>
             <placement code="verbatimLocality">
@@ -13039,11 +13142,11 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
 			        </settings>
             </placement>
-            <placement code="deaccession"><!--to be mapped to https://dwc.tdwg.org/list/#dwc_disposition-->
+            <placement code="deaccession">
               <bundle>ca_objects_deaccession</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Disposition</setting>
-                <setting name="description" locale="en_US">If checked: this means that INBO doesn't have the physical object anymore in its storage location. The object can be transferred to another Natural Science collection (i.e. ownership has changed), it can be disposed of (=thrown away), it can be depleted (it was reused completely - and now only digital data exists of the physical specimen), it can be converted (i.e. it was completed reused to make another specimen type, for example a tissue sample is converted into a DNA sample, or a cadaver is converted to a zoological specimen / taxidermy specimen), it can be missing (i.e. the object should be there, but cannot be found), or it can be on loan (transferred without change in ownership).</setting>
+                <setting name="label" locale="en_US">Deaccessioned?</setting>
+                <setting name="description" locale="en_US">If checked: this means that INBO doesn't have the physical object anymore in its storage location. The object can be transferred to another Natural Science collection (i.e. ownership has changed), it can be disposed of (=thrown away), it can be depleted (it was reused completely - and now only digital data exists of the physical specimen), it can be converted (i.e. it was completed reused to make another specimen type, for example a tissue sample is converted into a DNA sample, or a cadaver is converted to a zoological specimen / taxidermy specimen).</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -13053,7 +13156,6 @@
                 <setting name="label" locale="en_US">Cataloguing status</setting>
                 <setting name="description" locale="en_US">This is the status of filling in the record in the INBO-CMS. Is all known information entered? Then choose complete. Did you quickly enter some information, or do you know there is more information to be added? Then choose incomplete.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="documentation_url">https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -13165,7 +13267,6 @@
                 <setting name="label" locale="en_US">Cataloguing status</setting>
                 <setting name="description" locale="en_US">This is the status of filling in the record in the INBO-CMS. Is all known information entered? Then choose complete. Did you quickly enter some information, or do you know there is more information to be added? Then choose incomplete.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="documentation_url">https://docs.google.com/spreadsheets/d/1jprv5wpYa5kXPDQDO_qvCb2YtCHTjOgFkpbWXQGwLgg/edit#gid=0</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -13275,21 +13376,39 @@
             </placement>
             <placement code="livingPlantverbatimLatitudeY">
               <bundle>ca_attribute_livingPlantverbatimLatitudeY</bundle>
+              <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
 			      </placement>
             <placement code="livingPlantverbatimLongitudeX">
               <bundle>ca_attribute_livingPlantverbatimLongitudeX</bundle>
+              <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
 			      </placement>
-            <placement code="livingPlantverbatimGeodeticDatum">
-              <bundle>ca_attribute_livingPlantverbatimGeodeticDatum</bundle>
+            <placement code="livingPlantverbatimGeodDatum">
+              <bundle>ca_attribute_livingPlantverbatimGeodDatum</bundle>
+              <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
 			      </placement>
             <placement code="livingPlantDecimalLatitudeY">
               <bundle>ca_attribute_livingPlantDecimalLatitudeY</bundle>
+              <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
 			      </placement>
             <placement code="livingPlantDecimalLongitudeX">
               <bundle>ca_attribute_livingPlantDecimalLongitudeX</bundle>
+              <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
 			      </placement>
             <placement code="livingPlantGeoreference">
               <bundle>ca_attribute_livingPlantGeoreference</bundle>
+              <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
 			      </placement>
             <placement code="ca_places_objectStoragePlace_lookup">
               <bundle>ca_places</bundle>
@@ -13315,14 +13434,23 @@
                 <setting name="restrict_to_relationship_types">objectStoragePlace</setting>
               </settings>
 			      </placement>
-            <placement code="livingPlantMinimumElevationInMeters">
-              <bundle>ca_attribute_livingPlantMinimumElevationInMeters</bundle>
+            <placement code="livingPlantMinElevInMeters">
+              <bundle>ca_attribute_livingPlantMinElevInMeters</bundle>
+              <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
 			      </placement>
-            <placement code="livingPlantMaximumElevationInMeters">
-              <bundle>ca_attribute_livingPlantMaximumElevationInMeters</bundle>
+            <placement code="livingPlantMaxElevInMeters">
+              <bundle>ca_attribute_livingPlantMaxElevInMeters</bundle>
+              <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
 			      </placement>
             <placement code="livingPlantVerticalDatum">
               <bundle>ca_attribute_livingPlantVerticalDatum</bundle>
+              <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
 			      </placement>
           </bundlePlacements>
         </screen>
@@ -13521,6 +13649,7 @@
                 <setting name="label" locale="en_US">Notes on creation</setting>
                 <setting name="description" locale="en_US">Any relevant information on the creation of the specimen not yet recorded. Tip: under the screen "Files/Refs/Photos/Dbs" you can link any relevant documents related to the sampling. For example (photos of) a field form.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+				        <setting name="add_label" locale="en_US">Add a new creation note</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -19083,7 +19212,7 @@
       </types>
     </relationshipTable>
   </relationshipTypes>
-  <roles>
+  <roles><!--Run checklist after installation: https://docs.google.com/document/d/1ZwS80YLPfGhuU1kfv3eFFKajtNzD72QOagTooGX8mU0/edit?tab=t.0-->
     <role code="admin">
       <name>Administrators</name>
       <description>Confers actions needed by those administering the system</description>
@@ -19091,14 +19220,25 @@
         <action>is_administrator</action>
         <action>can_set_access_control</action>
         <action>can_view_logs</action>
-        <action>can_set_access_control</action>
+        <action>can_view_search_log</action>
+        <action>can_view_my_change_logs</action>
+        <action>can_view_change_logs</action>
         <action>can_configure_user_interfaces</action>
         <action>can_configure_metadata_elements</action>
         <action>can_configure_relationship_types</action>
+        <action>can_configure_bundle_mappings</action>
         <action>can_configure_locales</action>
         <action>can_view_configuration_check</action>
         <action>can_manage_system_search_forms</action>
         <action>can_manage_system_bundle_displays</action>
+        <action>can_administrate_sets</action>
+        <action>can_configure_data_dictionary</action>
+        <action>can_do_search_reindex</action>
+        <action>can_export_configuration</action>
+        <action>can_manage_user_sorts</action>
+        <action>can_use_plugin_tools</action>
+        <action>can_view_system_statistics</action>
+        <action>can_view_non_local_system_statistics</action>
       </actions>
     </role>
     <role code="soilmanager"><!--Once this works, you can make CMs for the other 9 collections-->
@@ -19106,7 +19246,9 @@
       <description>Can change almost everything and can see storage locations</description>
       <actions>
         <action>can_quicksearch</action>
+        <action>can_batch_import_media</action>
         <action>can_batch_import_metadata</action>
+        <action>allow_delete_media_after_import</action>
         <action>can_batch_export_metadata</action>
         <action>can_create_adv_search_forms</action>
         <action>can_edit_adv_search_forms</action>
@@ -19209,7 +19351,9 @@
       <description>Can change certain fields and cannot see storage locations</description>
       <actions>
         <action>can_quicksearch</action>
+        <action>can_batch_import_media</action>
         <action>can_batch_import_metadata</action>
+        <action>allow_delete_media_after_import</action>
         <action>can_batch_export_metadata</action>
         <action>can_create_adv_search_forms</action>
         <action>can_edit_adv_search_forms</action>
@@ -19285,8 +19429,8 @@
         <permission table="ca_objects" bundle="ca_item_tags" access="edit"/>
         <permission table="ca_objects" bundle="ca_list_items" access="edit"/>
         <permission table="ca_objects" bundle="ca_list_items_related_list" access="edit"/>
-        <permission table="ca_objects" bundle="ca_loans" access="read"/>
-        <permission table="ca_objects" bundle="ca_loans_related_list" access="read"/>
+        <permission table="ca_objects" bundle="ca_loans" access="read"/><!--IMPORTANT-->
+        <permission table="ca_objects" bundle="ca_loans_related_list" access="read"/><!--IMPORTANT-->
         <permission table="ca_objects" bundle="ca_movements" access="edit"/>
         <permission table="ca_objects" bundle="ca_movements_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_object_checkouts" access="edit"/>
@@ -19298,7 +19442,7 @@
         <permission table="ca_objects" bundle="ca_object_representations_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects_components_list" access="edit"/>
-        <permission table="ca_objects" bundle="ca_objects_deaccession" access="read"/>
+        <permission table="ca_objects" bundle="ca_objects_deaccession" access="read"/><!--IMPORTANT-->
         <permission table="ca_objects" bundle="ca_objects_history" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects_location" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects_location_date" access="edit"/>
@@ -19310,8 +19454,8 @@
         <permission table="ca_objects" bundle="ca_places_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_sets" access="edit"/>
         <permission table="ca_objects" bundle="ca_sets_checklist" access="edit"/>
-        <permission table="ca_objects" bundle="ca_storage_locations" access="read"/>
-        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="read"/>
+        <permission table="ca_objects" bundle="ca_storage_locations" access="read"/><!--IMPORTANT-->
+        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="read"/><!--IMPORTANT-->
         <permission table="ca_objects" bundle="ca_tour_stops" access="edit"/>
         <permission table="ca_objects" bundle="circulation_status_id" access="edit"/>
         <permission table="ca_objects" bundle="extent" access="edit"/>
@@ -19335,6 +19479,7 @@
         <permission table="ca_objects" bundle="submission_session_id" access="edit"/>
         <permission table="ca_objects" bundle="submission_status_id" access="edit"/>
         <permission table="ca_loans" bundle="access" access="none"/>
+        <!--IMPORTANT: no permission from here onwards-->
         <permission table="ca_loans" bundle="authority_references_list" access="none"/>
         <permission table="ca_loans" bundle="ca_collections" access="none"/>
         <permission table="ca_loans" bundle="ca_collections_related_list" access="none"/>
@@ -19398,14 +19543,14 @@
         <permission table="ca_objects" type="mammalParasiteSample" access="read"/>
         <permission table="ca_occurrences" type="project" access="edit"/>
         <permission table="ca_occurrences" type="fieldwork" access="edit"/>
-        <permission table="ca_occurrences" type="curation" access="read"/>
+        <permission table="ca_occurrences" type="curation" access="read"/><!--IMPORTANT-->
         <permission table="ca_occurrences" type="valuation" access="edit"/>
         <permission table="ca_occurrences" type="identification" access="edit"/>
         <permission table="ca_occurrences" type="Root node for occurrence_types" access="none"/>
         <permission table="ca_occurrences" type="internalProject" access="edit"/>
         <permission table="ca_occurrences" type="externalProject" access="edit"/>
-        <permission table="ca_occurrences" type="treatment" access="read"/>
-        <permission table="ca_occurrences" type="renewal" access="read"/>
+        <permission table="ca_occurrences" type="treatment" access="read"/><!--IMPORTANT-->
+        <permission table="ca_occurrences" type="renewal" access="read"/><!--IMPORTANT-->
       </typeLevelAccessControl>
     </role>
     <role code="soilarchivist"><!--Once this works, you can make archivists for the other 9 collections-->
@@ -19413,7 +19558,9 @@
       <description>This role is viewer + editor of storage location, curation events and measurements (volume, weight) for his/her collection.</description>
       <actions>
         <action>can_quicksearch</action>
+        <action>can_batch_import_media</action>
         <action>can_batch_import_metadata</action>
+        <action>allow_delete_media_after_import</action>
         <action>can_batch_export_metadata</action>
         <action>can_create_adv_search_forms</action>
         <action>can_edit_adv_search_forms</action>
@@ -19496,14 +19643,14 @@
         <permission table="ca_objects" bundle="ca_objects_location_date" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_related_list" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_table" access="read"/>
-        <permission table="ca_objects" bundle="ca_occurrences" access="edit"/>
-        <permission table="ca_objects" bundle="ca_occurrences_related_list" access="edit"/>
+        <permission table="ca_objects" bundle="ca_occurrences" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_occurrences_related_list" access="edit"/><!--the only non "read"-->
         <permission table="ca_objects" bundle="ca_places" access="read"/>
         <permission table="ca_objects" bundle="ca_places_related_list" access="read"/>
         <permission table="ca_objects" bundle="ca_sets" access="read"/>
         <permission table="ca_objects" bundle="ca_sets_checklist" access="read"/>
-        <permission table="ca_objects" bundle="ca_storage_locations" access="edit"/>
-        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="edit"/>
+        <permission table="ca_objects" bundle="ca_storage_locations" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="edit"/><!--the only non "read"-->
         <permission table="ca_objects" bundle="ca_tour_stops" access="read"/>
         <permission table="ca_objects" bundle="circulation_status_id" access="read"/>
         <permission table="ca_objects" bundle="extent" access="read"/>
@@ -19526,7 +19673,7 @@
         <permission table="ca_objects" bundle="status" access="read"/>
         <permission table="ca_objects" bundle="submission_session_id" access="read"/>
         <permission table="ca_objects" bundle="submission_status_id" access="read"/>
-        <!--Below is currently not working see https://github.com/inbo/collective-access/issues/429 - to be set manually for now!
+        <!--Below is currently not working see https://github.com/inbo/collective-access/issues/429 - to be set manually for now!-->
         <permission table="ca_objects" bundle="ca_attribute_publishedRecord" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_description" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_samplingDate" access="read"/>
@@ -19596,7 +19743,8 @@
         <permission table="ca_objects" bundle="ca_attribute_dataExportSpecification" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_dataExport" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_blocked_until" access="read"/>
-        <permission table="ca_objects" bundle="ca_attribute_restriction_use" access="read"/>-->
+        <permission table="ca_objects" bundle="ca_attribute_restriction_use" access="read"/>
+        <!--Above is currently not working see https://github.com/inbo/collective-access/issues/429 - to be set manually for now!-->
         <permission table="ca_object_lots" bundle="access" access="read"/>
         <permission table="ca_object_lots" bundle="authority_references_list" access="read"/>
         <permission table="ca_object_lots" bundle="ca_collections" access="read"/>
@@ -20292,8 +20440,8 @@
         <permission table="ca_objects" bundle="ca_places_related_list" access="read"/>
         <permission table="ca_objects" bundle="ca_sets" access="read"/>
         <permission table="ca_objects" bundle="ca_sets_checklist" access="read"/>
-        <permission table="ca_objects" bundle="ca_storage_locations" access="none"/>
-        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="none"/>
+        <permission table="ca_objects" bundle="ca_storage_locations" access="none"/><!--IMPORTANT-->
+        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="none"/><!--IMPORTANT-->
         <permission table="ca_objects" bundle="ca_tour_stops" access="read"/>
         <permission table="ca_objects" bundle="circulation_status_id" access="read"/>
         <permission table="ca_objects" bundle="extent" access="read"/>
@@ -20316,7 +20464,7 @@
         <permission table="ca_objects" bundle="status" access="read"/>
         <permission table="ca_objects" bundle="submission_session_id" access="read"/>
         <permission table="ca_objects" bundle="submission_status_id" access="read"/>
-        <!--Below is currently not working see https://github.com/inbo/collective-access/issues/429 - to be set manually for now!
+        <!--Below is currently not working see https://github.com/inbo/collective-access/issues/429 - to be set manually for now!-->
         <permission table="ca_objects" bundle="ca_attribute_publishedRecord" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_description" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_samplingDate" access="read"/>
@@ -20386,7 +20534,341 @@
         <permission table="ca_objects" bundle="ca_attribute_dataExportSpecification" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_dataExport" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_blocked_until" access="read"/>
-        <permission table="ca_objects" bundle="ca_attribute_restriction_use" access="read"/>-->
+        <permission table="ca_objects" bundle="ca_attribute_restriction_use" access="read"/>
+        <!--Above is currently not working see https://github.com/inbo/collective-access/issues/429 - to be set manually for now!-->
+        <permission table="ca_object_lots" bundle="access" access="read"/>
+        <permission table="ca_object_lots" bundle="authority_references_list" access="read"/>
+        <permission table="ca_object_lots" bundle="ca_collections" access="read"/>
+        <permission table="ca_object_lots" bundle="ca_collections_related_list" access="read"/>
+        <permission table="ca_object_lots" bundle="ca_entities" access="read"/>
+        <permission table="ca_object_lots" bundle="ca_entities_related_list" access="read"/>
+        <permission table="ca_object_lots" bundle="ca_item_comments" access="read"/>
+        <permission table="ca_object_lots" bundle="ca_item_tags" access="read"/>
+        <permission table="ca_object_lots" bundle="ca_list_items" access="read"/>
+        <permission table="ca_object_lots" bundle="ca_list_items_related_list" access="read"/>
+        <permission table="ca_object_lots" bundle="ca_loans" access="read"/>
+        <permission table="ca_object_lots" bundle="ca_loans_related_list" access="read"/>
+        <permission table="ca_object_lots" bundle="ca_movements" access="read"/>
+        <permission table="ca_object_lots" bundle="ca_movements_related_list" access="read"/>
+        <permission table="ca_object_lots" bundle="ca_object_lots" access="read"/>
+        <permission table="ca_object_lots" bundle="ca_object_lots_related_list" access="read"/>
+        <permission table="ca_object_lots" bundle="ca_object_representations" access="read"/>
+        <permission table="ca_object_lots" bundle="ca_object_representations_related_list" access="read"/>
+        <permission table="ca_object_lots" bundle="ca_objects" access="read"/>
+        <permission table="ca_object_lots" bundle="ca_objects_deaccession" access="read"/>
+        <permission table="ca_object_lots" bundle="ca_objects_related_list" access="read"/>
+        <permission table="ca_object_lots" bundle="ca_objects_table" access="read"/>
+        <permission table="ca_object_lots" bundle="ca_occurrences" access="read"/>
+        <permission table="ca_object_lots" bundle="ca_occurrences_related_list" access="read"/>
+        <permission table="ca_object_lots" bundle="ca_places" access="read"/>
+        <permission table="ca_object_lots" bundle="ca_places_related_list" access="read"/>
+        <permission table="ca_object_lots" bundle="ca_sets" access="read"/>
+        <permission table="ca_object_lots" bundle="ca_sets_checklist" access="read"/>
+        <permission table="ca_object_lots" bundle="ca_storage_locations" access="read"/>
+        <permission table="ca_object_lots" bundle="ca_storage_locations_related_list" access="read"/>
+        <permission table="ca_object_lots" bundle="extent" access="read"/>
+        <permission table="ca_object_lots" bundle="extent_units" access="read"/>
+        <permission table="ca_object_lots" bundle="generic" access="read"/>
+        <permission table="ca_object_lots" bundle="history_tracking_chronology" access="read"/>
+        <permission table="ca_object_lots" bundle="history_tracking_current_contents" access="read"/>
+        <permission table="ca_object_lots" bundle="home_location_id" access="read"/>
+        <permission table="ca_object_lots" bundle="idno_stub" access="read"/>
+        <permission table="ca_object_lots" bundle="lot_id" access="read"/>
+        <permission table="ca_object_lots" bundle="lot_status_id" access="read"/>
+        <permission table="ca_object_lots" bundle="nonpreferred_labels" access="read"/>
+        <permission table="ca_object_lots" bundle="preferred_labels" access="read"/>
+        <permission table="ca_object_lots" bundle="rank" access="read"/>
+        <permission table="ca_object_lots" bundle="source_id" access="read"/>
+        <permission table="ca_object_lots" bundle="status" access="read"/>
+        <permission table="ca_object_lots" bundle="submission_session_id" access="read"/>
+        <permission table="ca_object_lots" bundle="submission_status_id" access="read"/>
+        <permission table="ca_entities" bundle="access" access="read"/>
+        <permission table="ca_entities" bundle="authority_references_list" access="read"/>
+        <permission table="ca_entities" bundle="ca_collections" access="read"/>
+        <permission table="ca_entities" bundle="ca_collections_related_list" access="read"/>
+        <permission table="ca_entities" bundle="ca_entities" access="read"/>
+        <permission table="ca_entities" bundle="ca_entities_related_list" access="read"/>
+        <permission table="ca_entities" bundle="ca_item_comments" access="read"/>
+        <permission table="ca_entities" bundle="ca_item_tags" access="read"/>
+        <permission table="ca_entities" bundle="ca_list_items" access="read"/>
+        <permission table="ca_entities" bundle="ca_list_items_related_list" access="read"/>
+        <permission table="ca_entities" bundle="ca_loans" access="read"/>
+        <permission table="ca_entities" bundle="ca_loans_related_list" access="read"/>
+        <permission table="ca_entities" bundle="ca_movements" access="read"/>
+        <permission table="ca_entities" bundle="ca_movements_related_list" access="read"/>
+        <permission table="ca_entities" bundle="ca_object_lots" access="read"/>
+        <permission table="ca_entities" bundle="ca_object_lots_related_list" access="read"/>
+        <permission table="ca_entities" bundle="ca_object_representations" access="read"/>
+        <permission table="ca_entities" bundle="ca_object_representations_related_list" access="read"/>
+        <permission table="ca_entities" bundle="ca_objects" access="read"/>
+        <permission table="ca_entities" bundle="ca_objects_related_list" access="read"/>
+        <permission table="ca_entities" bundle="ca_objects_table" access="read"/>
+        <permission table="ca_entities" bundle="ca_occurrences" access="read"/>
+        <permission table="ca_entities" bundle="ca_occurrences_related_list" access="read"/>
+        <permission table="ca_entities" bundle="ca_places" access="read"/>
+        <permission table="ca_entities" bundle="ca_places_related_list" access="read"/>
+        <permission table="ca_entities" bundle="ca_sets" access="read"/>
+        <permission table="ca_entities" bundle="ca_sets_checklist" access="read"/>
+        <permission table="ca_entities" bundle="ca_storage_locations" access="read"/>
+        <permission table="ca_entities" bundle="ca_storage_locations_related_list" access="read"/>
+        <permission table="ca_entities" bundle="ca_tour_stops" access="read"/>
+        <permission table="ca_entities" bundle="entity_id" access="read"/>
+        <permission table="ca_entities" bundle="generic" access="read"/>
+        <permission table="ca_entities" bundle="hierarchy_location" access="read"/>
+        <permission table="ca_entities" bundle="hierarchy_navigation" access="read"/>
+        <permission table="ca_entities" bundle="history_tracking_chronology" access="read"/>
+        <permission table="ca_entities" bundle="history_tracking_current_contents" access="read"/>
+        <permission table="ca_entities" bundle="idno" access="read"/>
+        <permission table="ca_entities" bundle="lifespan" access="read"/>
+        <permission table="ca_entities" bundle="locale_id" access="read"/>
+        <permission table="ca_entities" bundle="nonpreferred_labels" access="read"/>
+        <permission table="ca_entities" bundle="preferred_labels" access="read"/>
+        <permission table="ca_entities" bundle="rank" access="read"/>
+        <permission table="ca_entities" bundle="source_id" access="read"/>
+        <permission table="ca_entities" bundle="status" access="read"/>
+        <permission table="ca_entities" bundle="submission_session_id" access="read"/>
+        <permission table="ca_entities" bundle="submission_status_id" access="read"/>
+        <permission table="ca_places" bundle="access" access="read"/>
+        <permission table="ca_places" bundle="authority_references_list" access="read"/>
+        <permission table="ca_places" bundle="ca_collections" access="read"/>
+        <permission table="ca_places" bundle="ca_collections_related_list" access="read"/>
+        <permission table="ca_places" bundle="ca_entities" access="read"/>
+        <permission table="ca_places" bundle="ca_entities_related_list" access="read"/>
+        <permission table="ca_places" bundle="ca_item_comments" access="read"/>
+        <permission table="ca_places" bundle="ca_item_tags" access="read"/>
+        <permission table="ca_places" bundle="ca_list_items" access="read"/>
+        <permission table="ca_places" bundle="ca_list_items_related_list" access="read"/>
+        <permission table="ca_places" bundle="ca_loans" access="read"/>
+        <permission table="ca_places" bundle="ca_loans_related_list" access="read"/>
+        <permission table="ca_places" bundle="ca_movements" access="read"/>
+        <permission table="ca_places" bundle="ca_movements_related_list" access="read"/>
+        <permission table="ca_places" bundle="ca_object_lots" access="read"/>
+        <permission table="ca_places" bundle="ca_object_lots_related_list" access="read"/>
+        <permission table="ca_places" bundle="ca_object_representations" access="read"/>
+        <permission table="ca_places" bundle="ca_object_representations_related_list" access="read"/>
+        <permission table="ca_places" bundle="ca_objects" access="read"/>
+        <permission table="ca_places" bundle="ca_objects_related_list" access="read"/>
+        <permission table="ca_places" bundle="ca_objects_table" access="read"/>
+        <permission table="ca_places" bundle="ca_occurrences" access="read"/>
+        <permission table="ca_places" bundle="ca_occurrences_related_list" access="read"/>
+        <permission table="ca_places" bundle="ca_places" access="read"/>
+        <permission table="ca_places" bundle="ca_places_related_list" access="read"/>
+        <permission table="ca_places" bundle="ca_sets" access="read"/>
+        <permission table="ca_places" bundle="ca_sets_checklist" access="read"/>
+        <permission table="ca_places" bundle="ca_storage_locations" access="read"/>
+        <permission table="ca_places" bundle="ca_storage_locations_related_list" access="read"/>
+        <permission table="ca_places" bundle="ca_tour_stops" access="read"/>
+        <permission table="ca_places" bundle="floorplan" access="read"/>
+        <permission table="ca_places" bundle="generic" access="read"/>
+        <permission table="ca_places" bundle="hierarchy_location" access="read"/>
+        <permission table="ca_places" bundle="hierarchy_navigation" access="read"/>
+        <permission table="ca_places" bundle="idno" access="read"/>
+        <permission table="ca_places" bundle="lifespan" access="read"/>
+        <permission table="ca_places" bundle="locale_id" access="read"/>
+        <permission table="ca_places" bundle="nonpreferred_labels" access="read"/>
+        <permission table="ca_places" bundle="parent_id" access="read"/>
+        <permission table="ca_places" bundle="place_id" access="read"/>
+        <permission table="ca_places" bundle="preferred_labels" access="read"/>
+        <permission table="ca_places" bundle="rank" access="read"/>
+        <permission table="ca_places" bundle="source_id" access="read"/>
+        <permission table="ca_places" bundle="status" access="read"/>
+        <permission table="ca_places" bundle="submission_session_id" access="read"/>
+        <permission table="ca_places" bundle="submission_status_id" access="read"/>
+        <permission table="ca_occurrences" bundle="access" access="read"/>
+        <permission table="ca_occurrences" bundle="authority_references_list" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_collections" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_collections_related_list" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_entities" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_entities_related_list" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_item_comments" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_item_tags" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_list_items" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_list_items_related_list" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_loans" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_loans_related_list" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_movements" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_movements_related_list" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_object_lots" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_object_lots_related_list" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_object_representations" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_object_representations_related_list" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_objects" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_objects_related_list" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_objects_table" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_occurrences" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_occurrences_related_list" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_places" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_places_related_list" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_sets" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_sets_checklist" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_storage_locations" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_storage_locations_related_list" access="read"/>
+        <permission table="ca_occurrences" bundle="ca_tour_stops" access="read"/>
+        <permission table="ca_occurrences" bundle="generic" access="read"/>
+        <permission table="ca_occurrences" bundle="hierarchy_location" access="read"/>
+        <permission table="ca_occurrences" bundle="hierarchy_navigation" access="read"/>
+        <permission table="ca_occurrences" bundle="history_tracking_chronology" access="read"/>
+        <permission table="ca_occurrences" bundle="history_tracking_current_contents" access="read"/>
+        <permission table="ca_occurrences" bundle="idno" access="read"/>
+        <permission table="ca_occurrences" bundle="locale_id" access="read"/>
+        <permission table="ca_occurrences" bundle="nonpreferred_labels" access="read"/>
+        <permission table="ca_occurrences" bundle="occurrence_id" access="read"/>
+        <permission table="ca_occurrences" bundle="parent_id" access="read"/>
+        <permission table="ca_occurrences" bundle="preferred_labels" access="read"/>
+        <permission table="ca_occurrences" bundle="rank" access="read"/>
+        <permission table="ca_occurrences" bundle="source_id" access="read"/>
+        <permission table="ca_occurrences" bundle="status" access="read"/>
+        <permission table="ca_occurrences" bundle="submission_session_id" access="read"/>
+        <permission table="ca_occurrences" bundle="submission_status_id" access="read"/>
+        <permission table="ca_collections" bundle="access" access="read"/>
+        <permission table="ca_collections" bundle="acl_inherit_from_parent" access="read"/>
+        <permission table="ca_collections" bundle="authority_references_list" access="read"/>
+        <permission table="ca_collections" bundle="ca_collections" access="read"/>
+        <permission table="ca_collections" bundle="ca_collections_related_list" access="read"/>
+        <permission table="ca_collections" bundle="ca_entities" access="read"/>
+        <permission table="ca_collections" bundle="ca_entities_related_list" access="read"/>
+        <permission table="ca_collections" bundle="ca_item_comments" access="read"/>
+        <permission table="ca_collections" bundle="ca_item_tags" access="read"/>
+        <permission table="ca_collections" bundle="ca_list_items" access="read"/>
+        <permission table="ca_collections" bundle="ca_list_items_related_list" access="read"/>
+        <permission table="ca_collections" bundle="ca_loans" access="read"/>
+        <permission table="ca_collections" bundle="ca_loans_related_list" access="read"/>
+        <permission table="ca_collections" bundle="ca_movements" access="read"/>
+        <permission table="ca_collections" bundle="ca_movements_related_list" access="read"/>
+        <permission table="ca_collections" bundle="ca_object_lots" access="read"/>
+        <permission table="ca_collections" bundle="ca_object_lots_related_list" access="read"/>
+        <permission table="ca_collections" bundle="ca_object_representations" access="read"/>
+        <permission table="ca_collections" bundle="ca_object_representations_related_list" access="read"/>
+        <permission table="ca_collections" bundle="ca_objects" access="read"/>
+        <permission table="ca_collections" bundle="ca_objects_deaccession" access="read"/>
+        <permission table="ca_collections" bundle="ca_objects_related_list" access="read"/>
+        <permission table="ca_collections" bundle="ca_objects_table" access="read"/>
+        <permission table="ca_collections" bundle="ca_occurrences" access="read"/>
+        <permission table="ca_collections" bundle="ca_occurrences_related_list" access="read"/>
+        <permission table="ca_collections" bundle="ca_places" access="read"/>
+        <permission table="ca_collections" bundle="ca_places_related_list" access="read"/>
+        <permission table="ca_collections" bundle="ca_sets" access="read"/>
+        <permission table="ca_collections" bundle="ca_sets_checklist" access="read"/>
+        <permission table="ca_collections" bundle="ca_storage_locations" access="read"/>
+        <permission table="ca_collections" bundle="ca_storage_locations_related_list" access="read"/>
+        <permission table="ca_collections" bundle="ca_tour_stops" access="read"/>
+        <permission table="ca_collections" bundle="collection_id" access="read"/>
+        <permission table="ca_collections" bundle="generic" access="read"/>
+        <permission table="ca_collections" bundle="hierarchy_location" access="read"/>
+        <permission table="ca_collections" bundle="hierarchy_navigation" access="read"/>
+        <permission table="ca_collections" bundle="history_tracking_chronology" access="read"/>
+        <permission table="ca_collections" bundle="history_tracking_current_contents" access="read"/>
+        <permission table="ca_collections" bundle="home_location_id" access="read"/>
+        <permission table="ca_collections" bundle="idno" access="read"/>
+        <permission table="ca_collections" bundle="locale_id" access="read"/>
+        <permission table="ca_collections" bundle="nonpreferred_labels" access="read"/>
+        <permission table="ca_collections" bundle="preferred_labels" access="read"/>
+        <permission table="ca_collections" bundle="rank" access="read"/>
+        <permission table="ca_collections" bundle="source_id" access="read"/>
+        <permission table="ca_collections" bundle="status" access="read"/>
+        <permission table="ca_collections" bundle="submission_session_id" access="read"/>
+        <permission table="ca_collections" bundle="submission_status_id" access="read"/>
+        <permission table="ca_storage_locations" bundle="access" access="read"/>
+        <permission table="ca_storage_locations" bundle="authority_references_list" access="read"/>
+        <permission table="ca_storage_locations" bundle="ca_collections" access="read"/>
+        <permission table="ca_storage_locations" bundle="ca_collections_related_list" access="read"/>
+        <permission table="ca_storage_locations" bundle="ca_entities" access="read"/>
+        <permission table="ca_storage_locations" bundle="ca_entities_related_list" access="read"/>
+        <permission table="ca_storage_locations" bundle="ca_list_items" access="read"/>
+        <permission table="ca_storage_locations" bundle="ca_list_items_related_list" access="read"/>
+        <permission table="ca_storage_locations" bundle="ca_loans" access="read"/>
+        <permission table="ca_storage_locations" bundle="ca_loans_related_list" access="read"/>
+        <permission table="ca_storage_locations" bundle="ca_movements" access="read"/>
+        <permission table="ca_storage_locations" bundle="ca_movements_related_list" access="read"/>
+        <permission table="ca_storage_locations" bundle="ca_object_lots" access="read"/>
+        <permission table="ca_storage_locations" bundle="ca_object_lots_related_list" access="read"/>
+        <permission table="ca_storage_locations" bundle="ca_object_representations" access="read"/>
+        <permission table="ca_storage_locations" bundle="ca_object_representations_related_list" access="read"/>
+        <permission table="ca_storage_locations" bundle="ca_objects" access="read"/>
+        <permission table="ca_storage_locations" bundle="ca_objects_related_list" access="read"/>
+        <permission table="ca_storage_locations" bundle="ca_objects_table" access="read"/>
+        <permission table="ca_storage_locations" bundle="ca_occurrences" access="read"/>
+        <permission table="ca_storage_locations" bundle="ca_occurrences_related_list" access="read"/>
+        <permission table="ca_storage_locations" bundle="ca_places" access="read"/>
+        <permission table="ca_storage_locations" bundle="ca_places_related_list" access="read"/>
+        <permission table="ca_storage_locations" bundle="ca_sets" access="read"/>
+        <permission table="ca_storage_locations" bundle="ca_sets_checklist" access="read"/>
+        <permission table="ca_storage_locations" bundle="ca_storage_locations" access="read"/>
+        <permission table="ca_storage_locations" bundle="ca_storage_locations_contents" access="read"/>
+        <permission table="ca_storage_locations" bundle="ca_storage_locations_related_list" access="read"/>
+        <permission table="ca_storage_locations" bundle="color" access="read"/>
+        <permission table="ca_storage_locations" bundle="generic" access="read"/>
+        <permission table="ca_storage_locations" bundle="hierarchy_location" access="read"/>
+        <permission table="ca_storage_locations" bundle="hierarchy_navigation" access="read"/>
+        <permission table="ca_storage_locations" bundle="history_tracking_chronology" access="read"/>
+        <permission table="ca_storage_locations" bundle="history_tracking_current_contents" access="read"/>
+        <permission table="ca_storage_locations" bundle="home_location_id" access="read"/>
+        <permission table="ca_storage_locations" bundle="icon" access="read"/>
+        <permission table="ca_storage_locations" bundle="idno" access="read"/>
+        <permission table="ca_storage_locations" bundle="is_enabled" access="read"/>
+        <permission table="ca_storage_locations" bundle="location_id" access="read"/>
+        <permission table="ca_storage_locations" bundle="nonpreferred_labels" access="read"/>
+        <permission table="ca_storage_locations" bundle="preferred_labels" access="read"/>
+        <permission table="ca_storage_locations" bundle="rank" access="read"/>
+        <permission table="ca_storage_locations" bundle="source_id" access="read"/>
+        <permission table="ca_storage_locations" bundle="status" access="read"/>
+        <permission table="ca_storage_locations" bundle="submission_session_id" access="read"/>
+        <permission table="ca_storage_locations" bundle="submission_status_id" access="read"/>
+        <permission table="ca_loans" bundle="access" access="read"/>
+        <permission table="ca_loans" bundle="authority_references_list" access="read"/>
+        <permission table="ca_loans" bundle="ca_collections" access="read"/>
+        <permission table="ca_loans" bundle="ca_collections_related_list" access="read"/>
+        <permission table="ca_loans" bundle="ca_entities" access="read"/>
+        <permission table="ca_loans" bundle="ca_entities_related_list" access="read"/>
+        <permission table="ca_loans" bundle="ca_item_comments" access="read"/>
+        <permission table="ca_loans" bundle="ca_item_tags" access="read"/>
+        <permission table="ca_loans" bundle="ca_list_items" access="read"/>
+        <permission table="ca_loans" bundle="ca_list_items_related_list" access="read"/>
+        <permission table="ca_loans" bundle="ca_loans" access="read"/>
+        <permission table="ca_loans" bundle="ca_loans_related_list" access="read"/>
+        <permission table="ca_loans" bundle="ca_movements" access="read"/>
+        <permission table="ca_loans" bundle="ca_movements_related_list" access="read"/>
+        <permission table="ca_loans" bundle="ca_object_lots" access="read"/>
+        <permission table="ca_loans" bundle="ca_object_lots_related_list" access="read"/>
+        <permission table="ca_loans" bundle="ca_object_representations" access="read"/>
+        <permission table="ca_loans" bundle="ca_object_representations_related_list" access="read"/>
+        <permission table="ca_loans" bundle="ca_objects" access="read"/>
+        <permission table="ca_loans" bundle="ca_objects_related_list" access="read"/>
+        <permission table="ca_loans" bundle="ca_objects_table" access="read"/>
+        <permission table="ca_loans" bundle="ca_occurrences" access="read"/>
+        <permission table="ca_loans" bundle="ca_occurrences_related_list" access="read"/>
+        <permission table="ca_loans" bundle="ca_places" access="read"/>
+        <permission table="ca_loans" bundle="ca_places_related_list" access="read"/>
+        <permission table="ca_loans" bundle="ca_storage_locations" access="read"/>
+        <permission table="ca_loans" bundle="ca_storage_locations_related_list" access="read"/>
+        <permission table="ca_loans" bundle="generic" access="read"/>
+        <permission table="ca_loans" bundle="history_tracking_chronology" access="read"/>
+        <permission table="ca_loans" bundle="history_tracking_current_contents" access="read"/>
+        <permission table="ca_loans" bundle="idno" access="read"/>
+        <permission table="ca_loans" bundle="loan_id" access="read"/>
+        <permission table="ca_loans" bundle="nonpreferred_labels" access="read"/>
+        <permission table="ca_loans" bundle="preferred_labels" access="read"/>
+        <permission table="ca_loans" bundle="rank" access="read"/>
+        <permission table="ca_loans" bundle="source_id" access="read"/>
+        <permission table="ca_loans" bundle="status" access="read"/>
+        <permission table="ca_loans" bundle="submission_session_id" access="read"/>
+        <permission table="ca_loans" bundle="submission_status_id" access="read"/>
+        <permission table="ca_sets" bundle="_itemCount" access="read"/>
+        <permission table="ca_sets" bundle="access" access="edit"/><!--the only non "read"-->
+        <permission table="ca_sets" bundle="anonymous_access" access="read"/>
+        <permission table="ca_sets" bundle="ca_set_items" access="read"/>
+        <permission table="ca_sets" bundle="ca_user_groups" access="read"/>
+        <permission table="ca_sets" bundle="ca_users" access="read"/>
+        <permission table="ca_sets" bundle="hierarchy_location" access="read"/>
+        <permission table="ca_sets" bundle="hierarchy_navigation" access="read"/>
+        <permission table="ca_sets" bundle="preferred_labels" access="edit"/><!--the only non "read"-->
+        <permission table="ca_sets" bundle="rank" access="read"/>
+        <permission table="ca_sets" bundle="set_code" access="edit"/><!--the only non "read"-->
+        <permission table="ca_sets" bundle="set_code_sort" access="read"/>
+        <permission table="ca_sets" bundle="set_id" access="read"/>
+        <permission table="ca_sets" bundle="source_id" access="read"/>
+        <permission table="ca_sets" bundle="status" access="edit"/><!--the only non "read"-->
+        <permission table="ca_sets" bundle="ca_attribute_set_description" access="edit"/><!--the only non "read", probably this one won't work-->
       </bundleLevelAccessControl>
     </role>
   </roles>
@@ -20428,382 +20910,7 @@
     </group>
   </groups>
   <displays>
-    <display code="soil_summary" type="ca_objects" system="1" typeRestrictions="soilObject" includeSubtypes="1">
-      <labels>
-        <label locale="en_US">
-          <name>soil_summary</name>
-        </label>
-      </labels>
-      <settings>
-        <setting name="show_empty_values"><![CDATA[1]]></setting>
-        <setting name="bottom_line"><![CDATA[]]></setting>
-        <setting name="show_only_in"><![CDATA[editor_summary]]></setting>
-        <setting name="show_representations"><![CDATA[all]]></setting>
-      </settings>
-      <userAccess>
-        <permission user="administrator" access="edit"/>
-      </userAccess>
-      <groupAccess>
-        <permission group="admin" access="edit"/>
-        <permission group="collectionmanagers" access="read"/>
-        <permission group="cataloguers" access="read"/>
-        <permission group="archivists" access="read"/>
-        <permission group="viewers" access="read"/>
-      </groupAccess>
-      <bundlePlacements>
-        <placement code="ca_objects_idno">
-          <bundle>ca_objects.idno</bundle>
-          <settings>
-            <setting name="label" locale="en_US">CMS ID</setting>
-          </settings>
-        </placement>
-        <placement code="ca_objects_is_deaccessioned">
-          <bundle>ca_objects.is_deaccessioned</bundle>
-        </placement>
-        <placement code="ca_objects_status">
-          <bundle>ca_objects.status</bundle>
-          <settings>
-            <setting name="label" locale="en_US">Cataloguing status</setting>
-            <setting name="maximum_length"><![CDATA[100]]></setting>
-            <setting name="format"><![CDATA[]]></setting>
-          </settings>
-        </placement>
-        <placement code="ca_objects_type_id">
-          <bundle>ca_objects.type_id</bundle>
-        </placement>
-        <placement code="ca_objects_preferred_labels">
-          <bundle>ca_objects.preferred_labels</bundle>
-          <settings>
-            <setting name="label" locale="en_US">Specimen ID</setting>
-          </settings>
-        </placement>
-        <placement code="ca_objects_nonpreferred_labels">
-          <bundle>ca_objects.nonpreferred_labels</bundle>
-          <settings>
-            <setting name="label" locale="en_US">Other identifier</setting>
-          </settings>
-        </placement>
-        <placement code="ca_objects_publishedRecord">
-          <bundle>ca_objects.publishedRecord</bundle>
-        </placement>
-        <placement code="ca_collections">
-          <bundle>ca_collections</bundle>
-          <settings>
-            <setting name="label" locale="en_US">Collection</setting>
-          </settings>
-        </placement>
-        <placement code="ca_objects_descriptionContainer">
-          <bundle>ca_objects.descriptionContainer</bundle>
-        </placement>
-        <placement code="ca_objects_samplingDate">
-          <bundle>ca_objects.samplingDate</bundle>
-          <settings>
-            <setting name="label" locale="en_US">Sampling date</setting>
-          </settings>
-        </placement>
-        <placement code="ca_objects_verbatimLocality">
-          <bundle>ca_objects.verbatimLocality</bundle>
-          <settings>
-            <setting name="label" locale="en_US">Verbatim locality of sampling point</setting>
-          </settings>
-        </placement>
-        <placement code="ca_places">
-          <bundle>ca_places</bundle>
-          <settings>
-            <setting name="label" locale="en_US">Toponym</setting>
-          </settings>
-        </placement>
-        <placement code="ca_objects_decimalLatitudeY">
-          <bundle>ca_objects.decimalLatitudeY</bundle>
-        </placement>
-        <placement code="ca_objects_decimalLongitudeX">
-          <bundle>ca_objects.decimalLongitudeX</bundle>
-        </placement>
-        <placement code="ca_objects_geodeticDatum">
-          <bundle>ca_objects.geodeticDatum</bundle>
-        </placement>
-        <placement code="ca_objects_coordinateUncertaintyInMetersC">
-          <bundle>ca_objects.coordinateUncertaintyInMetersC</bundle>
-        </placement>
-        <placement code="ca_objects_georeference">
-          <bundle>ca_objects.georeference</bundle>
-        </placement>
-        <placement code="ca_objects_verbatimDepth">
-          <bundle>ca_objects.verbatimDepth</bundle>
-        </placement>
-        <placement code="ca_objects_minimumDepthInMeters">
-          <bundle>ca_objects.minimumDepthInMeters</bundle>
-        </placement>
-        <placement code="ca_objects_maximumDepthInMeters">
-          <bundle>ca_objects.maximumDepthInMeters</bundle>
-        </placement>
-      </bundlePlacements>
-    </display>
-    <display code="organismSample_summary" type="ca_objects" system="1" typeRestrictions="dnaSample,plantSampleDried,moss,taxidermySpecimen,fishEntireEthanol,fishTissueSample,mammalTissueSample,mammalBloodSample,mammalHairSample,mammalParasiteSample,seedlot,stemdisc" includeSubtypes="1">
-      <labels>
-        <label locale="en_US">
-          <name>plantSampleDried_moss_summary</name>
-        </label>
-      </labels>
-      <settings>
-        <setting name="show_empty_values"><![CDATA[1]]></setting>
-        <setting name="bottom_line"><![CDATA[]]></setting>
-        <setting name="show_only_in"><![CDATA[editor_summary]]></setting>
-        <setting name="show_representations"><![CDATA[all]]></setting>
-      </settings>
-      <userAccess>
-        <permission user="administrator" access="edit"/>
-      </userAccess>
-      <groupAccess>
-        <permission group="admin" access="edit"/>
-        <permission group="collectionmanagers" access="read"/>
-        <permission group="cataloguers" access="read"/>
-        <permission group="archivists" access="read"/>
-        <permission group="viewers" access="read"/>
-      </groupAccess>
-      <bundlePlacements>
-        <placement code="ca_objects_idno">
-          <bundle>ca_objects.idno</bundle>
-          <settings>
-            <setting name="label">CMS ID</setting>
-          </settings>
-        </placement>
-        <placement code="ca_objects_is_deaccessioned">
-          <bundle>ca_objects.is_deaccessioned</bundle>
-        </placement>
-        <placement code="ca_objects_status">
-          <bundle>ca_objects.status</bundle>
-          <settings>
-            <setting name="label">Cataloguing status</setting>
-          </settings>
-        </placement>
-        <placement code="ca_objects_type_id">
-          <bundle>ca_objects.type_id</bundle>
-        </placement>
-        <placement code="matrixType" typeRestrictions="dnaSample">
-          <bundle>ca_attribute_matrixType</bundle>
-        </placement>
-        <placement code="mammalTissueSampleType" typeRestrictions="mammalTissueSample">
-          <bundle>ca_attribute_mammalTissueSampleType</bundle>
-        </placement>
-        <placement code="fishTissueSampleType" typeRestrictions="fishTissueSample">
-          <bundle>ca_attribute_fishTissueSampleType</bundle>
-        </placement>
-        <placement code="ca_objects_preferred_labels">
-          <bundle>ca_objects.preferred_labels</bundle>
-          <settings>
-            <setting name="label">Specimen ID</setting>
-          </settings>
-        </placement>
-        <placement code="ca_objects_nonpreferred_labels">
-          <bundle>ca_objects.nonpreferred_labels</bundle>
-          <settings>
-            <setting name="label">Other identifier</setting>
-          </settings>
-        </placement>
-        <placement code="ca_objects_publishedRecord">
-          <bundle>ca_objects.publishedRecord</bundle>
-        </placement>
-        <placement code="ca_collections">
-          <bundle>ca_collections</bundle>
-          <settings>
-            <setting name="label">Collection</setting>
-          </settings>
-        </placement>
-        <placement code="ca_objects_descriptionContainer">
-          <bundle>ca_objects.descriptionContainer</bundle>
-        </placement>
-        <placement code="ca_objects_samplingDate">
-          <bundle>ca_objects.samplingDate</bundle>
-          <settings>
-            <setting name="label">Sampling date</setting>
-          </settings>
-        </placement>
-        <placement code="ca_objects_verbatimLocality">
-          <bundle>ca_objects.verbatimLocality</bundle>
-          <settings>
-            <setting name="label">Verbatim locality</setting>
-          </settings>
-        </placement>
-        <placement code="ca_places">
-          <bundle>ca_places</bundle>
-          <settings>
-            <setting name="label">Toponym</setting>
-          </settings>
-        </placement>
-        <placement code="ca_objects_decimalLatitudeY">
-          <bundle>ca_objects.decimalLatitudeY</bundle>
-        </placement>
-        <placement code="ca_objects_decimalLongitudeX">
-          <bundle>ca_objects.decimalLongitudeX</bundle>
-        </placement>
-        <placement code="ca_objects_geodeticDatum">
-          <bundle>ca_objects.geodeticDatum</bundle>
-        </placement>
-        <placement code="ca_objects_coordinateUncertaintyInMetersC">
-          <bundle>ca_objects.coordinateUncertaintyInMetersC</bundle>
-        </placement>
-        <placement code="ca_objects_georeference">
-          <bundle>ca_objects.georeference</bundle>
-        </placement>
-        <placement code="ca_objects_verbatimTaxon">
-          <bundle>ca_objects.verbatimTaxon</bundle>
-        </placement>
-        <placement code="ca_objects_GBIF">
-          <bundle>ca_objects.GBIF</bundle>
-        </placement>
-			  <placement code="taxonReference">
-          <bundle>ca_attribute_taxonReference</bundle>
-			    <settings>
-            <setting name="label" locale="en_US">eDNA: Publication on biodiversity in specimen</setting>
-          </settings>
-        </placement>
-			  <placement code="GBIFedna">
-          <bundle>ca_attribute_GBIFedna</bundle>
-			    <settings>
-            <setting name="label" locale="en_US">eDNA: GBIF taxon lookup</setting>
-			    </settings>
-        </placement>
-      </bundlePlacements>
-    </display>
-    <display code="livingPlant_forestTreePopulation_summary" type="ca_objects" system="1" typeRestrictions="livingPlant,forestTreePopulation" includeSubtypes="1">
-      <labels>
-        <label locale="en_US">
-          <name>livingPlant_forestTreePopulation_summary</name>
-        </label>
-      </labels>
-      <settings>
-        <setting name="show_empty_values"><![CDATA[1]]></setting>
-        <setting name="bottom_line"><![CDATA[]]></setting>
-        <setting name="show_only_in"><![CDATA[editor_summary]]></setting>
-        <setting name="show_representations"><![CDATA[all]]></setting>
-      </settings>
-      <userAccess>
-        <permission user="administrator" access="edit"/>
-      </userAccess>
-      <groupAccess>
-        <permission group="admin" access="edit"/>
-        <permission group="collectionmanagers" access="read"/>
-        <permission group="cataloguers" access="read"/>
-        <permission group="archivists" access="read"/>
-        <permission group="viewers" access="read"/>
-      </groupAccess>
-      <bundlePlacements>
-        <placement code="ca_objects_idno">
-          <bundle>ca_objects.idno</bundle>
-          <settings>
-            <setting name="label">CMS ID</setting>
-          </settings>
-        </placement>
-        <placement code="ca_objects_is_deaccessioned">
-          <bundle>ca_objects.is_deaccessioned</bundle>
-        </placement>
-        <placement code="ca_objects_status">
-          <bundle>ca_objects.status</bundle>
-          <settings>
-            <setting name="label">Cataloguing status</setting>
-          </settings>
-        </placement>
-        <placement code="ca_objects_type_id">
-          <bundle>ca_objects.type_id</bundle>
-        </placement>
-        <placement code="ca_objects_preferred_labels">
-          <bundle>ca_objects.preferred_labels</bundle>
-          <settings>
-            <setting name="label">Specimen ID</setting>
-          </settings>
-        </placement>
-        <placement code="ca_objects_nonpreferred_labels">
-          <bundle>ca_objects.nonpreferred_labels</bundle>
-          <settings>
-            <setting name="label">Other identifier</setting>
-          </settings>
-        </placement>
-        <placement code="ca_objects_publishedRecord">
-          <bundle>ca_objects.publishedRecord</bundle>
-        </placement>
-        <placement code="ca_collections">
-          <bundle>ca_collections</bundle>
-          <settings>
-            <setting name="label">Collection</setting>
-          </settings>
-        </placement>
-        <placement code="ca_objects_descriptionContainer">
-          <bundle>ca_objects.descriptionContainer</bundle>
-        </placement>
-        <placement code="ca_objects_preparationDate">
-          <bundle>ca_objects.preparationDate</bundle>
-        </placement>
-        <placement code="ca_objects_preparationProtocol">
-          <bundle>ca_objects.preparationProtocol</bundle>
-        </placement>
-        <placement code="ca_entities_preparedBy">
-          <bundle>ca_entities</bundle>
-			      <settings>
-              <setting name="label" locale="en_US">Prepared by</setting>
-              <setting name="restrict_to_relationship_types">preparedBy</setting>
-            </settings>
-        </placement>
-        <placement code="ca_objects_verbatimTaxon">
-          <bundle>ca_objects.verbatimTaxon</bundle>
-        </placement>
-        <placement code="ca_objects_taxonDate">
-          <bundle>ca_objects.taxonDate</bundle>
-        </placement>
-        <placement code="ca_objects_GBIF">
-          <bundle>ca_objects.GBIF</bundle>
-        </placement>
-        <placement code="ca_occurrences_related_identifications">
-          <bundle>ca_occurrences.related</bundle>
-          <settings>
-            <setting name="label" locale="en_US">Previous taxonomic identificaitons</setting>
-            <setting name="restrict_to_types">identification</setting>
-            <setting name="display_template"><![CDATA[<unit relativeTo="ca_occurrences">^ca_occurrences.verbatimTaxon, ^ca_occurrences.standTaxon<br/> (^ca_occurrences.taxonDate)</unit>]]></setting>
-          </settings>
-        </placement>
-        <placement code="ca_objects_provenance">
-          <bundle>ca_objects.provenance</bundle>
-        </placement>
-        <placement code="ca_objects_related">
-          <bundle>ca_objects.related</bundle>
-        </placement>
-        <placement code="ca_objects_externalSpecimen">
-          <bundle>ca_objects.externalSpecimen</bundle>
-        </placement>
-        <placement code="ca_objects_notes">
-          <bundle>ca_objects.notes</bundle>
-        </placement>
-        <placement code="ca_objects_fileURL">
-          <bundle>ca_objects.fileURL</bundle>
-        </placement>
-        <placement code="ca_objects_reference">
-          <bundle>ca_objects.reference</bundle>
-        </placement>
-        <placement code="ca_occurrences_related_projects">
-          <bundle>ca_occurrences.related</bundle>
-          <settings>
-            <setting name="label" locale="en_US">Related projects</setting>
-            <setting name="restrict_to_types">project</setting>
-          </settings>
-        </placement>
-        <placement code="ca_occurrences_related_fieldwork">
-          <bundle>ca_occurrences.related</bundle>
-          <settings>
-            <setting name="label" locale="en_US">Related field campagin</setting>
-            <setting name="restrict_to_types">fieldwork</setting>
-          </settings>
-        </placement>
-        <placement code="ca_occurrences_related_value">
-          <bundle>ca_occurrences.related</bundle>
-          <settings>
-            <setting name="label" locale="en_US">Related value</setting>
-            <setting name="restrict_to_types">valuation</setting>
-            <setting name="display_template">^ca_occurrences.valuationArgument%delimiter=_;_ (^ca_occurrences.eventDate)</setting>
-          </settings>
-        </placement>
-      </bundlePlacements>
-    </display>
-    <display code="specimens_search_viewers_cataloguers" type="ca_objects" system="0" typeRestrictions="object,plantSampleDried,seedlot,stemdisc,moss,fishEntireEthanol,taxidermySpecimen,mammalBloodSample,mammalHairSample,mammalParasiteSample" includeSubtypes="1">
+    <display code="specimens_search_viewers_cataloguers" type="ca_objects" system="0" typeRestrictions="object,plant,animal,plantSampleDried,seedlot,stemdisc,moss,fishEntireEthanol,taxidermySpecimen,mammalBloodSample,mammalHairSample,mammalParasiteSample" includeSubtypes="1">
       <labels>
         <label locale="en_US">
           <name>Specimen search for viewers</name>
@@ -20846,7 +20953,7 @@
         </placement>
       </bundlePlacements>
     </display>
-    <display code="specimens_search_managers_archivists" type="ca_objects" system="0" typeRestrictions="object,plantSampleDried,seedlot,stemdisc,moss,fishEntireEthanol,taxidermySpecimen,mammalBloodSample,mammalHairSample,mammalParasiteSample" includeSubtypes="1">
+    <display code="specimens_search_managers_archivists" type="ca_objects" system="0" typeRestrictions="object,plant,animal,plantSampleDried,seedlot,stemdisc,moss,fishEntireEthanol,taxidermySpecimen,mammalBloodSample,mammalHairSample,mammalParasiteSample" includeSubtypes="1">
       <labels>
         <label locale="en_US">
           <name>Specimen search for managers</name>
@@ -21209,6 +21316,55 @@
         </placement>
       </bundlePlacements>
     </display>
+    <display code="mammalTissueSample_search_managers_archivists" type="ca_objects" system="0" typeRestrictions="mammalTissueSample" includeSubtypes="1">
+      <labels>
+        <label locale="en_US">
+          <name>Mammal tissue search for managers</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="show_empty_values"><![CDATA[1]]></setting>
+        <setting name="bottom_line"><![CDATA[]]></setting>
+        <setting name="show_only_in"><![CDATA[search_browse_thumbnail]]></setting>
+        <setting name="show_only_in"><![CDATA[search_browse_full]]></setting>
+        <setting name="show_only_in"><![CDATA[search_browse_list]]></setting>
+        <setting name="show_representations"><![CDATA[all]]></setting>
+      </settings>
+      <userAccess>
+        <permission user="administrator" access="edit"/>
+      </userAccess>
+      <groupAccess>
+        <permission group="admin" access="edit"/>
+        <permission group="collectionmanagers" access="read"/>
+        <permission group="archivists" access="read"/>
+      </groupAccess>
+      <bundlePlacements>
+        <placement code="ca_objects_idno">
+          <bundle>ca_objects.idno</bundle>
+        </placement>
+        <placement code="ca_objects_preferred_labels">
+          <bundle>ca_objects.preferred_labels</bundle>
+        </placement>
+        <placement code="ca_storage_locations">
+          <bundle>ca_storage_locations</bundle>
+        </placement>
+        <placement code="ca_objects_verbatimTaxon">
+          <bundle>ca_objects.verbatimTaxon</bundle>
+        </placement>
+        <placement code="ca_objects_samplingDate">
+          <bundle>ca_objects.samplingDate</bundle>
+        </placement>
+        <placement code="ca_places">
+          <bundle>ca_places</bundle>
+        </placement>
+        <placement code="ca_objects_verbatimLocality">
+          <bundle>ca_objects.verbatimLocality</bundle>
+        </placement>
+        <placement code="ca_objects_mammalTissueSampleType">
+          <bundle>ca_objects.mammalTissueSampleType</bundle>
+        </placement>
+      </bundlePlacements>
+    </display>
     <display code="fishTissueSample_search_managers_archivists" type="ca_objects" system="0" typeRestrictions="fishTissueSample" includeSubtypes="1">
       <labels>
         <label locale="en_US">
@@ -21261,7 +21417,7 @@
     <display code="fishTissueSample_search_managers_archivists" type="ca_objects" system="0" typeRestrictions="fishTissueSample" includeSubtypes="1">
       <labels>
         <label locale="en_US">
-          <name>Mammal tissue search for managers</name>
+          <name>Fish tissue search for managers</name>
         </label>
       </labels>
       <settings>
