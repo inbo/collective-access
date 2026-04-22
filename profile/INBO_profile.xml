@@ -8,6 +8,8 @@
   <!--https://github.com/inbo/collective-access/issues/374-->
   <!--https://github.com/inbo/collective-access/issues/386-->
   <!--https://github.com/inbo/collective-access/issues/415-->
+  <!--https://github.com/inbo/collective-access/issues/431-->
+  <!--https://github.com/inbo/collective-access/issues/433-->
   <!--https://github.com/inbo/collective-access/issues/435-->
   <!--https://github.com/inbo/collective-access/issues/436-->
   <!--https://github.com/inbo/collective-access/issues/437-->
@@ -13379,6 +13381,7 @@
               <bundle>ca_storage_locations</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Object is stored at * (lookup)</setting>
+                <setting name="restrict_to_search">ca_objects.object_id:IS_EMPTY</setting><!--expected that this wont work, if it does work, check where else to add-->
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="useHierarchicalBrowser">0</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -18040,51 +18043,61 @@
           <subTypeLeft></subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
-        <type code="cloneOf" default="0">
+        <type code="cloneOf" default="0"><!--the geneticEntity should always be the clone origin of the livingPlant-->
           <labels>
             <label locale="en_US">
-              <typename>is clone origin</typename>
-              <typename_reverse>is cloned result</typename_reverse>
+              <!--<typename>is clone origin</typename>-->
+              <!--<typename_reverse>is cloned result</typename_reverse>-->
+              <typename>the plant is a clone of the genetic entity / wild relative</typename>
+              <typename_reverse>the plant is a clone of the genetic entity / wild relative</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>livingPlant</subTypeLeft>
           <subTypeRight>geneticEntity</subTypeRight>
         </type>
-        <type code="childOfCloneOf" default="0">
+        <type code="childOfCloneOf" default="0"><!--the geneticEntity should always be the parent of the clone of the livingPlant-->
           <labels>
             <label locale="en_US">
-              <typename>is parent of clone of</typename>
-              <typename_reverse>is child of clone</typename_reverse>
+              <!--<typename>is parent of clone of</typename>-->
+              <!--<typename_reverse>is child of clone</typename_reverse>-->
+              <typename>the plant is a child of a clone of the genetic entity / wild relative</typename>
+              <typename_reverse>the plant is a child of a clone of the genetic entity / wild relative</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>livingPlant</subTypeLeft>
           <subTypeRight>geneticEntity</subTypeRight>
         </type>
-        <type code="grandchildOf" default="0">
+        <type code="grandchildOf" default="0"><!--the geneticEntity should always be the grandparent of the livingPlant-->
           <labels>
             <label locale="en_US">
-              <typename>is grandparent of</typename>
-              <typename_reverse>is grandchild of</typename_reverse>
+              <!--<typename>is grandparent of</typename>-->
+              <!--<typename_reverse>is grandchild of</typename_reverse>-->
+              <typename>the plant is a grandchild of the genetic entity / wild relative</typename>
+              <typename_reverse>the plant is a grandchild of the genetic entity / wild relative</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>livingPlant</subTypeLeft>
           <subTypeRight>geneticEntity</subTypeRight>
         </type>
-        <type code="grandchildOfCloneOf" default="0">
+        <type code="grandchildOfCloneOf" default="0"><!--the geneticEntity should always be the grandparent of the clone of the livingPlant-->
           <labels>
             <label locale="en_US">
-              <typename>is grandparent of clone of</typename>
-              <typename_reverse>is grandchild of clone of</typename_reverse>
+              <!--<typename>is grandparent of clone of</typename>-->
+              <!--<typename_reverse>is grandchild of clone of</typename_reverse>-->
+              <typename>the plant is a grandchild of a clone of the genetic entity / wild relative</typename>
+              <typename_reverse>the plant is a grandchild of a clone of the genetic entity / wild relative</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>livingPlant</subTypeLeft>
           <subTypeRight>geneticEntity</subTypeRight>
         </type>
-        <type code="childOf" default="0">
+        <type code="childOf" default="0"><!--the geneticEntity should always be a parent of the livingPlant-->
           <labels>
             <label locale="en_US">
-              <typename>is parent of</typename>
-              <typename_reverse>is child of</typename_reverse>
+              <!--<typename>is parent of</typename>-->
+              <!--<typename_reverse>is child of</typename_reverse>-->
+              <typename>the plant is a child of the genetic entity / wild relative</typename>
+              <typename_reverse>the plant is a child of the genetic entity / wild relative</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>livingPlant</subTypeLeft>
@@ -18093,8 +18106,8 @@
         <type code="related" default="0">
           <labels>
             <label locale="en_US">
-              <typename>is related to</typename>
-              <typename_reverse>is related to</typename_reverse>
+              <typename>is related to (exact relationship unknown)</typename>
+              <typename_reverse>is related to (exact relationship unknown)</typename_reverse>
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
