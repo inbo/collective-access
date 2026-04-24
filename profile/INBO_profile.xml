@@ -5,6 +5,7 @@
   <!--https://docs.collectiveaccess.org/--><!--https://providence.readthedocs.io/en/latest/-->
   <!--Issues to check if succesful in v0.111-->
   <!--https://github.com/inbo/collective-access/issues/353-->
+  <!--https://github.com/inbo/collective-access/issues/356-->
   <!--https://github.com/inbo/collective-access/issues/374-->
   <!--https://github.com/inbo/collective-access/issues/386-->
   <!--https://github.com/inbo/collective-access/issues/415-->
@@ -367,15 +368,15 @@
                 </items>
               </item>
               <item idno="dnaSample" rank="1" enabled="1" default="0">
-                  <labels>
-                    <label locale="en_US" preferred="1">
-                      <name_singular>DNA sample</name_singular>
-                      <name_plural>DNA samples</name_plural>
-                    </label>
-                  </labels>
-                  <settings>
-                    <setting name="render_in_new_menu">1</setting>
-                  </settings>
+                <labels>
+                  <label locale="en_US" preferred="1">
+                    <name_singular>DNA sample</name_singular>
+                    <name_plural>DNA samples</name_plural>
+                  </label>
+                </labels>
+                <settings>
+                  <setting name="render_in_new_menu">1</setting>
+                </settings>
               </item>
               <item idno="soilObject" rank="2" enabled="1" default="0">
                   <labels>
@@ -2012,7 +2013,7 @@
           </item>
         </items>
       </list>
-      <list code="sex" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
+      <list code="sex_animal" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
         <labels>
           <label locale="en_US">
             <name>Sex controlled voc</name>
@@ -2032,38 +2033,6 @@
                 <label locale="en_US" preferred="1">
                   <name_singular>male</name_singular>
                   <name_plural>male</name_plural>
-                </label>
-            </labels>
-          </item>
-          <item idno="hermaphrodite" enabled="1" default="0">
-            <labels>
-                <label locale="en_US" preferred="1">
-                  <name_singular>hermaphrodite</name_singular>
-                  <name_plural>hermaphrodite</name_plural>
-                </label>
-            </labels>
-          </item>
-          <item idno="dioeciousFemale" enabled="1" default="0">
-            <labels>
-                <label locale="en_US" preferred="1">
-                  <name_singular>dioecious: female</name_singular>
-                  <name_plural>dioecious: female</name_plural>
-                </label>
-            </labels>
-          </item>
-          <item idno="dioeciousMale" enabled="1" default="0">
-            <labels>
-                <label locale="en_US" preferred="1">
-                  <name_singular>dioecious: male</name_singular>
-                  <name_plural>dioecious: male</name_plural>
-                </label>
-            </labels>
-          </item>
-          <item idno="monoecious" enabled="1" default="0">
-            <labels>
-                <label locale="en_US" preferred="1">
-                  <name_singular>monoecious: hermaphrodite</name_singular>
-                  <name_plural>monoecious: hermaphrodite</name_plural>
                 </label>
             </labels>
           </item>
@@ -2096,71 +2065,31 @@
       <list code="life_stage" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
         <labels>
           <label locale="en_US">
-            <name>Life stage (animal)</name>
+            <name>Life stage</name>
           </label>
         </labels>
         <items>
-          <item idno="egg" enabled="1" default="0">
+          <item idno="prenatal" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>egg</name_singular>
-                <name_plural>egg</name_plural>
+                <name_singular>prenatal (e.g. seed, egg, fetus)</name_singular>
+                <name_plural>prenatal (e.g. seed, egg, fetus)</name_plural>
               </label>
             </labels>
           </item>
-          <item idno="larva" enabled="1" default="0">
+          <item idno="immature" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>larva</name_singular>
-                <name_plural>larva</name_plural>
+                <name_singular>immature (e.g. juvenile, subadult, larva, seedling)</name_singular>
+                <name_plural>immature (e.g. juvenile, subadult, larva, seedling)</name_plural>
               </label>
             </labels>
           </item>
-          <item idno="nymph" enabled="1" default="0">
+          <item idno="mature" enabled="1" default="0">
             <labels>
               <label locale="en_US" preferred="1">
-                <name_singular>nymph</name_singular>
-                <name_plural>nymph</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="pupa" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>pupa</name_singular>
-                <name_plural>pupa</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="juvenile" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>juvenile</name_singular>
-                <name_plural>juvenile</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="seedling" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>seedling (plants)</name_singular>
-                <name_plural>seedling (plants)</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="subadult" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>subadult</name_singular>
-                <name_plural>subadult</name_plural>
-              </label>
-            </labels>
-          </item>
-          <item idno="adult" enabled="1" default="0">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>adult</name_singular>
-                <name_plural>adult</name_plural>
+                <name_singular>mature (e.g. adult, flowering, senescent)</name_singular>
+                <name_plural>mature (e.g. adult, flowering, senescent)</name_plural>
               </label>
             </labels>
           </item>
@@ -8199,7 +8128,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="sex" datatype="List" list="sex">
+	    <metadataElement code="sexAnimal" datatype="List" list="sex_animal">
 			  <labels>
           <label locale="en_US">
             <name>sex (dwc:sex)</name>
@@ -8262,15 +8191,6 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
-          <restriction code="r_livingPlant">
-            <table>ca_objects</table>
-            <type>livingPlant</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
           <restriction code="r_dnaSample">
             <table>ca_objects</table>
             <type>dnaSample</type>
@@ -8286,10 +8206,27 @@
 			  <labels>
           <label locale="en_US">
             <name>lifeStage</name>
-            <description>The age class or life stage of the biological individual(s) at the time the specimen was taken.</description>
           </label>
 			  </labels>
 			  <documentationUrl>http://rs.tdwg.org/dwc/terms/lifeStage</documentationUrl>
+	      <elements>
+          <metadataElement code="lifeStageList" datatype="List" list="life_stage">
+            <labels>
+              <label locale="en_US">
+                <name>lifeStage</name>
+                <description>The age class or life stage of the biological individual(s) at the time the specimen was taken.</description>
+              </label>
+            </labels>
+          </metadataElement>
+          <metadataElement code="lifeStageSpecification" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>lifeStage specification</name>
+                <description>You can further specify (according to your own voc), the lifeStage here for your type or organism (if relevant). For example when chosen the category: "immature" you can specify here: "subadult".</description>
+              </label>
+            </labels>
+          </metadataElement>
+        </elements>
 			  <settings>
           <setting name="fieldWidth">70</setting>
           <setting name="fieldHeight">1</setting>
@@ -8407,7 +8344,6 @@
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
           <setting name="useSingular">1</setting>
-          <setting name="restrict_to_expression">(^ca_objects.sex != 'male') &amp;&amp; (^ca_objects.lifestage != 'juvenile')</setting><!--this will most likely not work-->
 			  </settings>
 			  <typeRestrictions>
           <restriction code="r_livingPlant">
@@ -14289,14 +14225,14 @@
 		            <setting name="description" locale="en_US">DCC1: extremely fresh (e.g. animal was still alive at collection, or the animal was euthanized and collection occurred immediately after). DCC2: fresh (i.e. animal that has only recently died, no signs of decomposition). DCC3: moderate decomposition (for example: mammal its belly is swollen, hair detaches, fly eggs, ..). DCC4: advanced decomposition (for example: mammal its belly is swollen, hair detaches, maggots, ...). DCC5: mummified (animal is (partly) decomposed).</setting>
               </settings>
             </placement>
-			      <placement code="sex" typeRestrictions="taxidermySpecimen,mammalTissueSample,mammalBloodSample,mammalHairSample,mammalParasiteSample,dnaSample,livingPlant,plantSampleDried,stemdisc">
+			      <placement code="sexAnimal" typeRestrictions="taxidermySpecimen,mammalTissueSample,mammalBloodSample,mammalHairSample,mammalParasiteSample,dnaSample">
               <bundle>ca_attribute_sex</bundle>
 			        <settings>
                 <setting name="description" locale="en_US">If more options in the list are needed, please select "other" and contact the CMS manager.</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-			      <placement code="lifeStage" typeRestrictions="livingPlant,plantSampleDried,stemdisc,fishEntireEthanol,fishTissueSample,taxidermySpecimen,mammalTissueSample,mammalBloodSample,mammalHairSample,mammalParasiteSample,dnaSample">
+			      <placement code="lifeStage" typeRestrictions="livingPlant,plantSampleDried,fishEntireEthanol,fishTissueSample,taxidermySpecimen,mammalTissueSample,mammalBloodSample,mammalHairSample,mammalParasiteSample,dnaSample">
               <bundle>ca_attribute_lifeStage</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Life stage (dwc:lifeStage)</setting>
@@ -14304,7 +14240,7 @@
                 <setting name="description" locale="en_US">Due to sampling, the life stage of the organism at time object(s) was/were collected becomes a fixed value.</setting>
               </settings>
             </placement>
-			      <placement code="reprCond" typeRestrictions="livingPlant,plantSampleDried,stemdisc,taxidermySpecimen,mammalTissueSample,mammalBloodSample,mammalHairSample,mammalParasiteSample,dnaSample">
+			      <!--<placement code="reprCond" typeRestrictions="livingPlant,plantSampleDried,stemdisc,taxidermySpecimen,mammalTissueSample,mammalBloodSample,mammalHairSample,mammalParasiteSample,dnaSample">
               <bundle>ca_attribute_reprCond</bundle>
 			        <settings>
                 <setting name="label" locale="en_US">Reproductive condition (dwc:reproductiveCondition)</setting>
@@ -14312,7 +14248,7 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="expand_collapse_value">collapse</setting>
 			        </settings>
-            </placement>
+            </placement>-->
           </bundlePlacements>
         </screen>
 		    <screen idno="obj_measurements2" default="0">
@@ -18287,7 +18223,7 @@
             </label>
           </labels>
           <subTypeLeft></subTypeLeft>
-          <subTypeRight></subTypeRight>
+          <subTypeRight>spot</subTypeRight>
         </type>
       </types>
     </relationshipTable>
