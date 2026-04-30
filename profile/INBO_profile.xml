@@ -98,7 +98,7 @@
           </item>
         </items>
       </list>
-      <!--<list code="disposition_list" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
+      <list code="disposition_list" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
         <labels>
           <label locale="en_US">
             <name>Disposition list</name>
@@ -129,16 +129,8 @@
               </label>
             </labels>
           </item>
-          <item idno="deaccessioned" rank="4" enabled="1" default="0" value="1">
-            <labels>
-              <label locale="en_US" preferred="1">
-                <name_singular>deaccessioned</name_singular>
-                <name_plural>deaccessioned</name_plural>
-              </label>
-            </labels>
-          </item>
         </items>
-      </list>-->
+      </list>
       <list code="place_hierarchies" hierarchical="1" system="0" vocabulary="1">
         <labels>
           <label locale="en_US">
@@ -5049,62 +5041,16 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <!--<metadataElement code="dispositionC" datatype="Container">
+	    <metadataElement code="disposition" datatype="List" list="disposition_list">
         <labels>
           <label locale="en_US">
-            <name>Disposition container</name>
+            <name>Disposition status</name>
             <description>The current state of a specimen with respect to a collection.</description>
           </label>
         </labels>
+        <settings>
+        </settings>
         <documentationUrl>https://dwc.tdwg.org/list/#dwc_disposition</documentationUrl>
-        <elements>
-              <metadataElement code="disposition" datatype="List" list="disposition_list">
-                <labels>
-                  <label locale="en_US">
-                    <name>Disposition</name>
-                  </label>
-                </labels>
-                <settings>
-                  <setting name="hideIfsSelected_inCollection">object_ui/record1/dispositionC.deaccessionDate</setting>
-                  <setting name="hideIfsSelected_inCollection">object_ui/record1/dispositionC.deaccessionType</setting>
-                  <setting name="hideIfsSelected_inCollection">object_ui/record1/dispositionC.deaccessionNotes</setting>
-                  <setting name="hideIfsSelected_missing">object_ui/record1/dispositionC.deaccessionDate</setting>
-                  <setting name="hideIfsSelected_missing">object_ui/record1/dispositionC.deaccessionType</setting>
-                  <setting name="hideIfsSelected_missing">object_ui/record1/dispositionC.deaccessionNotes</setting>
-                  <setting name="hideIfsSelected_onLoan">object_ui/record1/dispositionC.deaccessionDate</setting>
-                  <setting name="hideIfsSelected_onLoan">object_ui/record1/dispositionC.deaccessionType</setting>
-                  <setting name="hideIfsSelected_onLoan">object_ui/record1/dispositionC.deaccessionNotes</setting>
-                </settings>
-              </metadataElement>
-              <metadataElement code="deaccessionDate" datatype="DateRange">
-                <labels>
-                  <label locale="en_US">
-                    <name>Date of deaccession</name>
-                    <description>Enter the date the object was deaccessioned</description>
-                  </label>
-                </labels>
-                <settings>
-                </settings>
-              </metadataElement>
-              <metadataElement code="deaccessionType" datatype="List" list="object_deaccession_types">
-                <labels>
-                  <label locale="en_US">
-                    <name>Type of deaccession</name>
-                  </label>
-                </labels>
-                <settings>
-                </settings>
-              </metadataElement>
-              <metadataElement code="deaccessionNotes" datatype="Text">
-                <labels>
-                  <label locale="en_US">
-                    <name>Type of deaccession</name>
-                  </label>
-                </labels>
-                <settings>
-                </settings>
-              </metadataElement>
-        </elements>
         <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
@@ -5115,7 +5061,7 @@
             </settings>
           </restriction>
         </typeRestrictions>
-      </metadataElement>-->
+      </metadataElement>
     <!--Object-->
 	    <metadataElement code="samplingDate" datatype="DateRange">
         <labels>
@@ -13109,6 +13055,12 @@
                 <setting name="description" locale="en_US">If checked: this means that INBO doesn't have the physical object anymore in its storage location. The object can be transferred to another Natural Science collection (i.e. ownership has changed), it can be disposed of (=thrown away), it can be depleted (it was reused completely - and now only digital data exists of the physical specimen), it can be converted (i.e. it was completed reused to make another specimen type, for example a tissue sample is converted into a DNA sample, or a cadaver is converted to a zoological specimen / taxidermy specimen).</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="display_template">^ca_objects.deaccession_type_id ^ca_objects.deaccession_notes ^ca_objects.deaccession_date</setting>
+              </settings>
+            </placement>
+            <placement code="disposition">
+              <bundle>ca_attribute_disposition</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">expand</setting>
               </settings>
             </placement>
 			      <placement code="status">
