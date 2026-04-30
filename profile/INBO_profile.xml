@@ -3,23 +3,21 @@
   <profileName>[INBO-CMS] INBO natural science collection v0.112</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--https://docs.collectiveaccess.org/--><!--https://providence.readthedocs.io/en/latest/-->
-  <!--Issues to check if succesful in v0.111-->
-  <!--https://github.com/inbo/collective-access/issues/447-->
-  <!--https://github.com/inbo/collective-access/issues/448-->
-  <!--https://github.com/inbo/collective-access/issues/449-->
-  <!--https://github.com/inbo/collective-access/issues/450-->
-  <!--https://github.com/inbo/collective-access/issues/451-->
   <!--Issues to check if succesful in v0.112-->
   <!--https://github.com/inbo/collective-access/issues/353-->
   <!--https://github.com/inbo/collective-access/issues/356-->
   <!--https://github.com/inbo/collective-access/issues/386-->
+  <!--https://github.com/inbo/collective-access/issues/430-->
   <!--https://github.com/inbo/collective-access/issues/440-->
   <!--https://github.com/inbo/collective-access/issues/441-->
   <!--https://github.com/inbo/collective-access/issues/442-->
+  <!--https://github.com/inbo/collective-access/issues/449-->
+  <!--https://github.com/inbo/collective-access/issues/450-->
   <!--https://github.com/inbo/collective-access/issues/452-->
   <!--https://github.com/inbo/collective-access/issues/453-->
   <!--https://github.com/inbo/collective-access/issues/457-->
   <!--https://github.com/inbo/collective-access/issues/458-->
+  <!--https://github.com/inbo/collective-access/issues/459-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -18157,7 +18155,7 @@
     </relationshipTable>
 	  <relationshipTable name="ca_objects_x_storage_locations">
       <types>
-        <type code="storedObject" default="1">
+        <type code="storedObject" default="1" typeRestrictionRight="spot" includeSubtypesRight="0">
           <labels>
             <label locale="en_US">
               <typename>is stored at</typename>
@@ -30255,7 +30253,7 @@
         <role>collectionSteward</role>
       </roles>
     </group>
-    <group code="soilCollectionStaff">
+    <group code="SOILstaff">
       <name>Soil collection staff</name>
       <description>Soil collection staff</description>
       <roles>
@@ -30263,7 +30261,7 @@
         <role>soilarchivist</role>
       </roles>
     </group>
-    <group code="dnaCollectionStaff">
+    <group code="DNAstaff">
       <name>DNA collection staff</name>
       <description>DNA collection staff</description>
       <roles>
@@ -30271,7 +30269,7 @@
         <role>dnaarchivist</role>
       </roles>
     </group>
-    <group code="plantAnalyticalStaff">
+    <group code="PACstaff">
       <name>Plant Analytical collection staff</name>
       <description>Plant Analytical collection staff</description>
       <roles>
@@ -30279,7 +30277,7 @@
         <role>plantAnalyticalarchivist</role>
       </roles>
     </group>
-    <group code="seedlotCollectionStaff">
+    <group code="SEEDstaff">
       <name>Seedlot collection staff</name>
       <description>Seedlot collection staff</description>
       <roles>
@@ -30287,7 +30285,7 @@
         <role>seedlotarchivist</role>
       </roles>
     </group>
-    <group code="fishCollectionStaff">
+    <group code="FISHstaff">
       <name>Fish collection staff</name>
       <description>Fish collection staff</description>
       <roles>
@@ -30295,7 +30293,7 @@
         <role>fisharchivist</role>
       </roles>
     </group>
-    <group code="taxidermyStaff">
+    <group code="MACstaff">
       <name>Taxidermy collection staff</name>
       <description>Taxidermy collection staff</description>
       <roles>
@@ -30303,7 +30301,7 @@
         <role>taxidermyarchivist</role>
       </roles>
     </group>
-    <group code="mammalStaff">
+    <group code="MTCstaff">
       <name>Mammal collection staff</name>
       <description>Mammal collection staff</description>
       <roles>
@@ -30311,7 +30309,7 @@
         <role>mammalarchivist</role>
       </roles>
     </group>
-    <group code="livingPlantStaff">
+    <group code="LPCstaff">
       <name>Living Plants collection staff</name>
       <description>Living Plants collection staff</description>
       <roles>
@@ -30319,7 +30317,7 @@
         <role>livingplantarchivist</role>
       </roles>
     </group>
-    <group code="fishTissueStaff">
+    <group code="FTCstaff">
       <name>Fish tissue collection staff</name>
       <description>Fish tissue collection staff</description>
       <roles>
@@ -30653,9 +30651,7 @@
         <setting name="show_only_in"><![CDATA[search_browse_thumbnail]]></setting>
         <setting name="show_only_in"><![CDATA[search_browse_full]]></setting>
         <setting name="show_only_in"><![CDATA[search_browse_list]]></setting>
-        <setting name="show_only_in"><![CDATA[editor_summary]]></setting>
-        <setting name="show_only_in"><![CDATA[editor_relationship_bundle]]></setting>
-        <setting name="show_only_in"><![CDATA[set_item_bundle]]></setting>
+        <setting name="show_representations"><![CDATA[all]]></setting>
       </settings>
       <userAccess>
         <permission user="administrator" access="edit"/>
@@ -30703,9 +30699,7 @@
         <setting name="show_only_in"><![CDATA[search_browse_thumbnail]]></setting>
         <setting name="show_only_in"><![CDATA[search_browse_full]]></setting>
         <setting name="show_only_in"><![CDATA[search_browse_list]]></setting>
-        <setting name="show_only_in"><![CDATA[editor_summary]]></setting>
-        <setting name="show_only_in"><![CDATA[editor_relationship_bundle]]></setting>
-        <setting name="show_only_in"><![CDATA[set_item_bundle]]></setting>
+        <setting name="show_representations"><![CDATA[all]]></setting>
       </settings>
       <userAccess>
         <permission user="administrator" access="edit"/>
