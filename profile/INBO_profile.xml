@@ -4,14 +4,6 @@
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--https://docs.collectiveaccess.org/--><!--https://providence.readthedocs.io/en/latest/-->
   <!--Issues to check if succesful in v0.111-->
-  <!--https://github.com/inbo/collective-access/issues/436-->
-  <!--https://github.com/inbo/collective-access/issues/437-->
-  <!--https://github.com/inbo/collective-access/issues/438-->
-  <!--https://github.com/inbo/collective-access/issues/440-->
-  <!--https://github.com/inbo/collective-access/issues/441-->
-  <!--https://github.com/inbo/collective-access/issues/442-->
-  <!--https://github.com/inbo/collective-access/issues/443-->
-  <!--https://github.com/inbo/collective-access/issues/444-->
   <!--https://github.com/inbo/collective-access/issues/445-->
   <!--https://github.com/inbo/collective-access/issues/446-->
   <!--https://github.com/inbo/collective-access/issues/447-->
@@ -23,8 +15,13 @@
   <!--https://github.com/inbo/collective-access/issues/353-->
   <!--https://github.com/inbo/collective-access/issues/356-->
   <!--https://github.com/inbo/collective-access/issues/386-->
+  <!--https://github.com/inbo/collective-access/issues/440-->
+  <!--https://github.com/inbo/collective-access/issues/441-->
+  <!--https://github.com/inbo/collective-access/issues/442-->
   <!--https://github.com/inbo/collective-access/issues/452-->
   <!--https://github.com/inbo/collective-access/issues/453-->
+  <!--https://github.com/inbo/collective-access/issues/457-->
+  <!--https://github.com/inbo/collective-access/issues/458-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -104,7 +101,7 @@
           </item>
         </items>
       </list>
-      <list code="disposition_list" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
+      <!--<list code="disposition_list" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
         <labels>
           <label locale="en_US">
             <name>Disposition list</name>
@@ -144,7 +141,7 @@
             </labels>
           </item>
         </items>
-      </list>
+      </list>-->
       <list code="place_hierarchies" hierarchical="1" system="0" vocabulary="1">
         <labels>
           <label locale="en_US">
@@ -12959,11 +12956,6 @@
                 <setting name="expand_collapse_no_value">expand</setting>
               </settings>
             </placement>
-            <placement code="dispositionC">
-              <bundle>ca_objects_dispositionC</bundle>
-			        <settings>
-              </settings>
-            </placement>
             <placement code="preferred_labels">
               <bundle>preferred_labels</bundle>
               <settings>
@@ -13267,8 +13259,7 @@
             <placement code="deaccession">
               <bundle>ca_objects_deaccession</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Disposition</setting>
-                <setting name="description" locale="en_US">If checked: this means that INBO doesn't have the physical object anymore in its storage location. The object can be transferred to another Natural Science collection (i.e. ownership has changed), it can be disposed of (=thrown away), it can be depleted (it was reused completely - and now only digital data exists of the physical specimen), it can be converted (i.e. it was completed reused to make another specimen type, for example a tissue sample is converted into a DNA sample, or a cadaver is converted to a zoological specimen / taxidermy specimen), it can be missing (i.e. the object should be there, but cannot be found), or it can be on loan (transferred without change in ownership).</setting>
+                <setting name="description" locale="en_US">If checked: this means that INBO doesn't have the physical object anymore in its storage location. The object can be transferred to another Natural Science collection (i.e. ownership has changed), it can be disposed of (=thrown away), it can be depleted (it was reused completely - and now only digital data exists of the physical specimen), it can be converted (i.e. it was completed reused to make another specimen type, for example a tissue sample is converted into a DNA sample, or a cadaver is converted to a zoological specimen / taxidermy specimen).</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -19374,8 +19365,8 @@
         <permission table="ca_objects" bundle="acl_inherit_from_parent" access="edit"/>
         <permission table="ca_objects" bundle="acquisition_type_id" access="edit"/>
         <permission table="ca_objects" bundle="authority_references_list" access="edit"/>
-        <permission table="ca_objects" bundle="ca_collections" access="read"/>
-        <permission table="ca_objects" bundle="ca_collections_related_list" access="read"/>
+        <permission table="ca_objects" bundle="ca_collections" access="edit"/>
+        <permission table="ca_objects" bundle="ca_collections_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_entities" access="edit"/>
         <permission table="ca_objects" bundle="ca_entities_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_item_comments" access="edit"/>
@@ -30373,9 +30364,6 @@
         </placement>
         <placement code="ca_objects_type_id">
           <bundle>ca_objects.type_id</bundle>
-        </placement>
-        <placement code="ca_objects_dispositionC_disposition">
-          <bundle>ca_objects.dispositionC.disposition</bundle>
         </placement>
         <placement code="ca_objects_samplingDate">
           <bundle>ca_objects.samplingDate</bundle>
