@@ -20,6 +20,7 @@
   <!--https://github.com/inbo/collective-access/issues/459-->
   <!--https://github.com/inbo/collective-access/issues/455-->
   <!--https://github.com/inbo/collective-access/issues/460-->
+  <!--https://github.com/inbo/collective-access/issues/461-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -5527,7 +5528,7 @@
 	    <metadataElement code="matrixType" datatype="List" list="matrix_type">
         <labels>
           <label locale="en_US">
-            <name>Matrix type (!!)</name>
+            <name>Matrix type (!!) *</name>
 		        <description>This equals the sampling point field in Labware-LIMS. (!!) This is a trigger field, push save after choosing a value to enable the triggers.</description>
           </label>
         </labels>
@@ -5537,8 +5538,8 @@
           <setting name="render">select</setting>
           <setting name="renderInSearchBuilder">select</setting>
           <setting name="useSingular">1</setting>
+          <setting name="mustNotBeBlank">1</setting>
           <setting name="restrictToTypes">concept</setting>
-          <setting name="useSingular">1</setting>
           <setting name="hideIfSelected_soilSample">object_ui/record1/verbatimTaxon</setting>
           <setting name="hideIfSelected_waterSample">object_ui/record1/ca_attributes_verbatimTaxon</setting>
           <setting name="hideIfSelected_bud">object_ui/record1/verbatimDepth</setting>
@@ -5815,7 +5816,7 @@
 	    <metadataElement code="mammalTissueSampleType" datatype="List" list="mammal_sample">
         <labels>
           <label locale="en_US">
-            <name>Mammal sample specification</name>
+            <name>Mammal sample specification *</name>
 		        <description>Here it is specified what tissue was sampled of the mammal.</description>
           </label>
         </labels>
@@ -5823,6 +5824,7 @@
           <setting name="fieldWidth">40</setting>
           <setting name="doesNotTakeLocale">1</setting>
           <setting name="useSingular">1</setting>
+          <setting name="mustNotBeBlank">1</setting>
         </settings>
 	      <typeRestrictions>
           <restriction code="r_mammalTissueSample">
@@ -5839,7 +5841,7 @@
 	    <metadataElement code="fishTissueSampleType" datatype="List" list="fish_sample">
         <labels>
           <label locale="en_US">
-            <name>Fish sample specification</name>
+            <name>Fish sample specification *</name>
 		        <description>Here it is specified what was sampled of the fish (e.g. tissue).</description>
           </label>
         </labels>
@@ -5847,6 +5849,7 @@
           <setting name="fieldWidth">40</setting>
           <setting name="doesNotTakeLocale">1</setting>
           <setting name="useSingular">1</setting>
+          <setting name="mustNotBeBlank">1</setting>
         </settings>
 	      <typeRestrictions>
           <restriction code="r_fishTissueSample">
@@ -5863,7 +5866,7 @@
 	    <metadataElement code="forestTreePopulationType" datatype="List" list="forestTreePopulation_type">
         <labels>
           <label locale="en_US">
-            <name>Forest tree population specification</name>
+            <name>Forest tree population specification *</name>
 		        <description>Here it is specified what type of forest tree population is at hand.</description>
           </label>
         </labels>
@@ -5871,6 +5874,7 @@
           <setting name="fieldWidth">40</setting>
           <setting name="doesNotTakeLocale">1</setting>
           <setting name="useSingular">1</setting>
+          <setting name="mustNotBeBlank">1</setting>
         </settings>
 	      <typeRestrictions>
           <restriction code="r_forestTreePopulation">
@@ -8369,6 +8373,7 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
+          <setting name="mustNotBeBlank">1</setting>
         </settings>
         <typeRestrictions>
           <restriction code="r_objects">
@@ -8897,7 +8902,7 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
-          <setting name="mustNotBeBlank">0</setting>
+          <setting name="mustNotBeBlank">1</setting>
         </settings>
 	      <typeRestrictions>
           <restriction code="r_objects">
@@ -8961,7 +8966,7 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
-          <setting name="mustNotBeBlank">0</setting>
+          <setting name="mustNotBeBlank">1</setting>
         </settings>
 	      <typeRestrictions>
           <restriction code="r_objects">
@@ -9057,7 +9062,7 @@
               <setting name="minChars">0</setting>
               <setting name="maxChars">100</setting>
               <setting name="minValue">1</setting>
-              <setting name="mustNotBeBlank">0</setting>
+              <setting name="mustNotBeBlank">1</setting>
             </settings>
           </metadataElement>
           <metadataElement code="CUIMCertainty" datatype="List" list="coord_uncertainty">
@@ -10007,6 +10012,7 @@
               <setting name="fieldHeight">1</setting>
               <setting name="minChars">0</setting>
               <setting name="maxChars">65535</setting>
+              <setting name="mustNotBeBlank">1</setting>
             </settings>
         <typeRestrictions>
           <restriction code="r_animalObject">
@@ -13053,12 +13059,12 @@
             <placement code="ca_collection">
               <bundle>ca_collections</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Specimen belongs to collection(s) *</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">20</setting>
-				        <setting name="add_label" locale="en_US">Add collection</setting>
+                <setting name="label" locale="en_US">Specimen belongs to INBO collection *</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="restrict_to_relationship_types">partOf</setting>
+                <setting name="restrict_to_types">INBOcollection</setting>
               </settings>
             </placement>
 			      <placement code="verbatimTaxon" typeRestrictions="taxidermySpecimen,mammalTissueSample,mammalBloodSample,mammalHairSample,mammalParasiteSample,plantSampleDried,seedlot,stemdisc,moss,livingPlant,forestTreePopulation,dnaSample"><!--This should prepopulate with the parent value, if empty-->
@@ -13171,12 +13177,12 @@
             <placement code="ca_collection">
               <bundle>ca_collections</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Specimen belongs to collection(s) *</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">20</setting>
-				        <setting name="add_label" locale="en_US">Add collection</setting>
+                <setting name="label" locale="en_US">Specimen belongs to INBO collection *</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="restrict_to_relationship_types">partOf</setting>
+                <setting name="restrict_to_types">INBOcollection</setting>
               </settings>
             </placement>
 			      <placement code="verbatimTaxon"><!--This should prepopulate with the parent value, if empty-->
@@ -13235,11 +13241,12 @@
             <placement code="ca_collection">
               <bundle>ca_collections</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Object belongs to collection(s) *</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">20</setting>
-				        <setting name="add_label" locale="en_US">Add collection</setting>
+                <setting name="label" locale="en_US">Specimen belongs to INBO collection *</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_relationship_types">partOf</setting>
+                <setting name="restrict_to_types">INBOcollection</setting>
               </settings>
             </placement>
             <placement code="ca_storage_location_hierarchy">
@@ -13287,11 +13294,12 @@
             <placement code="ca_collection">
               <bundle>ca_collections</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Object belongs to collection(s) *</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="maxRelationshipsPerRow">20</setting>
-				        <setting name="add_label" locale="en_US">Add collection</setting>
+                <setting name="label" locale="en_US">Specimen belongs to INBO collection *</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_relationship_types">partOf</setting>
+                <setting name="restrict_to_types">INBOcollection</setting>
               </settings>
             </placement>
             <placement code="ca_storage_location_plantlot">
@@ -14362,10 +14370,24 @@
             <placement code="ca_collection">
               <bundle>ca_collections</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Object belongs to collection</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="label" locale="en_US">Specimen belongs to INBO collection *</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_relationship_types">partOf</setting>
+                <setting name="restrict_to_types">INBOcollection</setting>
+              </settings>
+            </placement>
+            <placement code="ca_collection_other">
+              <bundle>ca_collections</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Specimen belongs to other collections (assessment, reference)</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">20</setting>
+				        <setting name="add_label" locale="en_US">Add collection</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_relationship_types">partOf</setting>
+                <setting name="restrict_to_types">referenceCollection, assessmentCollection</setting>
               </settings>
             </placement>
 			      <placement code="ca_entities_previousOwner">
@@ -14457,10 +14479,24 @@
             <placement code="ca_collection">
               <bundle>ca_collections</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Object belongs to collection</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="label" locale="en_US">Specimen belongs to INBO collection *</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_relationship_types">partOf</setting>
+                <setting name="restrict_to_types">INBOcollection</setting>
+              </settings>
+            </placement>
+            <placement code="ca_collection_other">
+              <bundle>ca_collections</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Specimen belongs to other collections (assessment, reference)</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">20</setting>
+				        <setting name="add_label" locale="en_US">Add collection</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
+                <setting name="restrict_to_relationship_types">partOf</setting>
+                <setting name="restrict_to_types">referenceCollection, assessmentCollection</setting>
               </settings>
             </placement>
             <placement code="ca_entities_ownedBy" typeRestrictions="forestTreePopulation">
