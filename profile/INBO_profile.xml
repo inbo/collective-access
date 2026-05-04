@@ -5050,9 +5050,9 @@
             <description>The current state of a specimen with respect to a collection.</description>
           </label>
         </labels>
+        <documentationUrl>https://dwc.tdwg.org/list/#dwc_disposition</documentationUrl>
         <settings>
         </settings>
-        <documentationUrl>https://dwc.tdwg.org/list/#dwc_disposition</documentationUrl>
         <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
@@ -21426,7 +21426,7 @@
         <permission table="ca_loans" type="Root node for loan_types" access="none"/>
       </typeLevelAccessControl>
     </role>
-    <role code="PACmanager">
+    <!--<role code="PACmanager">
       <name>Plant Analytical collection manager</name>
       <description>Can change almost everything and can see storage locations</description>
       <actions>
@@ -21530,8 +21530,8 @@
         <permission table="ca_objects" type="mammalHairSample" access="read"/>
         <permission table="ca_objects" type="mammalParasiteSample" access="read"/>
       </typeLevelAccessControl>
-    </role>
-    <role code="PACcataloguer">
+    </role>-->
+    <!--<role code="PACcataloguer">
       <name>Plant Analytical collection cataloguer</name>
       <description>Can change certain fields and cannot see storage locations</description>
       <actions>
@@ -21614,8 +21614,8 @@
         <permission table="ca_objects" bundle="ca_item_tags" access="edit"/>
         <permission table="ca_objects" bundle="ca_list_items" access="edit"/>
         <permission table="ca_objects" bundle="ca_list_items_related_list" access="edit"/>
-        <permission table="ca_objects" bundle="ca_loans" access="none"/><!--IMPORTANT-->
-        <permission table="ca_objects" bundle="ca_loans_related_list" access="none"/><!--IMPORTANT-->
+        <permission table="ca_objects" bundle="ca_loans" access="none"/>
+        <permission table="ca_objects" bundle="ca_loans_related_list" access="none"/>
         <permission table="ca_objects" bundle="ca_movements" access="edit"/>
         <permission table="ca_objects" bundle="ca_movements_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_object_checkouts" access="edit"/>
@@ -21627,7 +21627,7 @@
         <permission table="ca_objects" bundle="ca_object_representations_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects_components_list" access="edit"/>
-        <permission table="ca_objects" bundle="ca_objects_deaccession" access="read"/><!--IMPORTANT-->
+        <permission table="ca_objects" bundle="ca_objects_deaccession" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_history" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects_location" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects_location_date" access="edit"/>
@@ -21639,8 +21639,8 @@
         <permission table="ca_objects" bundle="ca_places_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_sets" access="edit"/>
         <permission table="ca_objects" bundle="ca_sets_checklist" access="edit"/>
-        <permission table="ca_objects" bundle="ca_storage_locations" access="none"/><!--IMPORTANT-->
-        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="none"/><!--IMPORTANT-->
+        <permission table="ca_objects" bundle="ca_storage_locations" access="none"/>
+        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="none"/>
         <permission table="ca_objects" bundle="ca_tour_stops" access="edit"/>
         <permission table="ca_objects" bundle="circulation_status_id" access="edit"/>
         <permission table="ca_objects" bundle="extent" access="edit"/>
@@ -21664,7 +21664,6 @@
         <permission table="ca_objects" bundle="submission_session_id" access="edit"/>
         <permission table="ca_objects" bundle="submission_status_id" access="edit"/>
         <permission table="ca_loans" bundle="access" access="none"/>
-        <!--IMPORTANT: no permission from here onwards-->
         <permission table="ca_loans" bundle="authority_references_list" access="none"/>
         <permission table="ca_loans" bundle="ca_collections" access="none"/>
         <permission table="ca_loans" bundle="ca_collections_related_list" access="none"/>
@@ -21728,17 +21727,17 @@
         <permission table="ca_objects" type="mammalParasiteSample" access="read"/>
         <permission table="ca_occurrences" type="project" access="edit"/>
         <permission table="ca_occurrences" type="fieldwork" access="edit"/>
-        <permission table="ca_occurrences" type="curation" access="none"/><!--IMPORTANT-->
+        <permission table="ca_occurrences" type="curation" access="none"/>
         <permission table="ca_occurrences" type="valuation" access="edit"/>
         <permission table="ca_occurrences" type="identification" access="edit"/>
         <permission table="ca_occurrences" type="Root node for occurrence_types" access="none"/>
         <permission table="ca_occurrences" type="internalProject" access="edit"/>
         <permission table="ca_occurrences" type="externalProject" access="edit"/>
-        <permission table="ca_occurrences" type="treatment" access="none"/><!--IMPORTANT-->
-        <permission table="ca_occurrences" type="renewal" access="none"/><!--IMPORTANT-->
+        <permission table="ca_occurrences" type="treatment" access="none"/>
+        <permission table="ca_occurrences" type="renewal" access="none"/>
       </typeLevelAccessControl>
-    </role>
-    <role code="PACarchivist">
+    </role>-->
+    <!--<role code="PACarchivist">
       <name>Plant Analytical collection archivist</name>
       <description>This role is viewer + editor of storage location, curation events and measurements (volume, weight) for his/her collection.</description>
       <actions>
@@ -21822,20 +21821,20 @@
         <permission table="ca_objects" bundle="ca_object_representations_related_list" access="read"/>
         <permission table="ca_objects" bundle="ca_objects" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_components_list" access="read"/>
-        <permission table="ca_objects" bundle="ca_objects_deaccession" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_objects_deaccession" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects_history" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_location" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_location_date" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_related_list" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_table" access="read"/>
-        <permission table="ca_objects" bundle="ca_occurrences" access="edit"/><!--the only non "read"-->
-        <permission table="ca_objects" bundle="ca_occurrences_related_list" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_occurrences" access="edit"/>
+        <permission table="ca_objects" bundle="ca_occurrences_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_places" access="read"/>
         <permission table="ca_objects" bundle="ca_places_related_list" access="read"/>
         <permission table="ca_objects" bundle="ca_sets" access="read"/>
         <permission table="ca_objects" bundle="ca_sets_checklist" access="read"/>
-        <permission table="ca_objects" bundle="ca_storage_locations" access="edit"/><!--the only non "read"-->
-        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_storage_locations" access="edit"/>
+        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="edit"/
         <permission table="ca_objects" bundle="ca_tour_stops" access="read"/>
         <permission table="ca_objects" bundle="circulation_status_id" access="read"/>
         <permission table="ca_objects" bundle="extent" access="read"/>
@@ -21858,7 +21857,6 @@
         <permission table="ca_objects" bundle="status" access="read"/>
         <permission table="ca_objects" bundle="submission_session_id" access="read"/>
         <permission table="ca_objects" bundle="submission_status_id" access="read"/>
-        <!--Below is currently not working see https://github.com/inbo/collective-access/issues/429 - to be set manually for now!-->
         <permission table="ca_objects" bundle="ca_attribute_publishedRecord" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_description" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_samplingDate" access="read"/>
@@ -21911,7 +21909,7 @@
         <permission table="ca_objects" bundle="ca_attribute_dna_conc" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_dna_gel" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_volume" access="read"/>
-        <permission table="ca_objects" bundle="ca_attribute_weight" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_attribute_weight" access="edit"/>
         <permission table="ca_objects" bundle="ca_attribute_length" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_objectAge" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_seedlotGermination" access="read"/>
@@ -21929,7 +21927,6 @@
         <permission table="ca_objects" bundle="ca_attribute_dataExport" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_blocked_until" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_restriction_use" access="read"/>
-        <!--Above is currently not working see https://github.com/inbo/collective-access/issues/429 - to be set manually for now!-->
         <permission table="ca_object_lots" bundle="access" access="read"/>
         <permission table="ca_object_lots" bundle="authority_references_list" access="read"/>
         <permission table="ca_object_lots" bundle="ca_collections" access="read"/>
@@ -22543,8 +22540,8 @@
         <permission table="ca_loans" type="externalReuse" access="none"/>
         <permission table="ca_loans" type="Root node for loan_types" access="none"/>
       </typeLevelAccessControl>
-    </role>
-    <role code="SEEDmanager">
+    </role>-->
+    <!--<role code="SEEDmanager">
       <name>Seedbank manager</name>
       <description>Can change almost everything and can see storage locations</description>
       <actions>
@@ -22648,8 +22645,8 @@
         <permission table="ca_objects" type="mammalHairSample" access="read"/>
         <permission table="ca_objects" type="mammalParasiteSample" access="read"/>
       </typeLevelAccessControl>
-    </role>
-    <role code="SEEDcataloguer">
+    </role>-->
+    <!--<role code="SEEDcataloguer">
       <name>Seedbank cataloguer</name>
       <description>Can change certain fields and cannot see storage locations</description>
       <actions>
@@ -22732,8 +22729,8 @@
         <permission table="ca_objects" bundle="ca_item_tags" access="edit"/>
         <permission table="ca_objects" bundle="ca_list_items" access="edit"/>
         <permission table="ca_objects" bundle="ca_list_items_related_list" access="edit"/>
-        <permission table="ca_objects" bundle="ca_loans" access="none"/><!--IMPORTANT-->
-        <permission table="ca_objects" bundle="ca_loans_related_list" access="none"/><!--IMPORTANT-->
+        <permission table="ca_objects" bundle="ca_loans" access="none"/>
+        <permission table="ca_objects" bundle="ca_loans_related_list" access="none"/>
         <permission table="ca_objects" bundle="ca_movements" access="edit"/>
         <permission table="ca_objects" bundle="ca_movements_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_object_checkouts" access="edit"/>
@@ -22745,7 +22742,7 @@
         <permission table="ca_objects" bundle="ca_object_representations_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects_components_list" access="edit"/>
-        <permission table="ca_objects" bundle="ca_objects_deaccession" access="read"/><!--IMPORTANT-->
+        <permission table="ca_objects" bundle="ca_objects_deaccession" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_history" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects_location" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects_location_date" access="edit"/>
@@ -22757,8 +22754,8 @@
         <permission table="ca_objects" bundle="ca_places_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_sets" access="edit"/>
         <permission table="ca_objects" bundle="ca_sets_checklist" access="edit"/>
-        <permission table="ca_objects" bundle="ca_storage_locations" access="none"/><!--IMPORTANT-->
-        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="none"/><!--IMPORTANT-->
+        <permission table="ca_objects" bundle="ca_storage_locations" access="none"/>
+        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="none"/>
         <permission table="ca_objects" bundle="ca_tour_stops" access="edit"/>
         <permission table="ca_objects" bundle="circulation_status_id" access="edit"/>
         <permission table="ca_objects" bundle="extent" access="edit"/>
@@ -22782,7 +22779,6 @@
         <permission table="ca_objects" bundle="submission_session_id" access="edit"/>
         <permission table="ca_objects" bundle="submission_status_id" access="edit"/>
         <permission table="ca_loans" bundle="access" access="none"/>
-        <!--IMPORTANT: no permission from here onwards-->
         <permission table="ca_loans" bundle="authority_references_list" access="none"/>
         <permission table="ca_loans" bundle="ca_collections" access="none"/>
         <permission table="ca_loans" bundle="ca_collections_related_list" access="none"/>
@@ -22846,17 +22842,17 @@
         <permission table="ca_objects" type="mammalParasiteSample" access="read"/>
         <permission table="ca_occurrences" type="project" access="edit"/>
         <permission table="ca_occurrences" type="fieldwork" access="edit"/>
-        <permission table="ca_occurrences" type="curation" access="none"/><!--IMPORTANT-->
+        <permission table="ca_occurrences" type="curation" access="none"/>
         <permission table="ca_occurrences" type="valuation" access="edit"/>
         <permission table="ca_occurrences" type="identification" access="edit"/>
         <permission table="ca_occurrences" type="Root node for occurrence_types" access="none"/>
         <permission table="ca_occurrences" type="internalProject" access="edit"/>
         <permission table="ca_occurrences" type="externalProject" access="edit"/>
-        <permission table="ca_occurrences" type="treatment" access="none"/><!--IMPORTANT-->
-        <permission table="ca_occurrences" type="renewal" access="none"/><!--IMPORTANT-->
+        <permission table="ca_occurrences" type="treatment" access="none"/>
+        <permission table="ca_occurrences" type="renewal" access="none"/>
       </typeLevelAccessControl>
-    </role>
-    <role code="SEEDarchivist">
+    </role>-->
+    <!--<role code="SEEDarchivist">
       <name>Seedbank archivist</name>
       <description>This role is viewer + editor of storage location, curation events and measurements (volume, weight) for his/her collection.</description>
       <actions>
@@ -22940,20 +22936,20 @@
         <permission table="ca_objects" bundle="ca_object_representations_related_list" access="read"/>
         <permission table="ca_objects" bundle="ca_objects" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_components_list" access="read"/>
-        <permission table="ca_objects" bundle="ca_objects_deaccession" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_objects_deaccession" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects_history" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_location" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_location_date" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_related_list" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_table" access="read"/>
-        <permission table="ca_objects" bundle="ca_occurrences" access="edit"/><!--the only non "read"-->
-        <permission table="ca_objects" bundle="ca_occurrences_related_list" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_occurrences" access="edit"/>
+        <permission table="ca_objects" bundle="ca_occurrences_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_places" access="read"/>
         <permission table="ca_objects" bundle="ca_places_related_list" access="read"/>
         <permission table="ca_objects" bundle="ca_sets" access="read"/>
         <permission table="ca_objects" bundle="ca_sets_checklist" access="read"/>
-        <permission table="ca_objects" bundle="ca_storage_locations" access="edit"/><!--the only non "read"-->
-        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_storage_locations" access="edit"/>
+        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_tour_stops" access="read"/>
         <permission table="ca_objects" bundle="circulation_status_id" access="read"/>
         <permission table="ca_objects" bundle="extent" access="read"/>
@@ -22976,7 +22972,6 @@
         <permission table="ca_objects" bundle="status" access="read"/>
         <permission table="ca_objects" bundle="submission_session_id" access="read"/>
         <permission table="ca_objects" bundle="submission_status_id" access="read"/>
-        <!--Below is currently not working see https://github.com/inbo/collective-access/issues/429 - to be set manually for now!-->
         <permission table="ca_objects" bundle="ca_attribute_publishedRecord" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_description" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_samplingDate" access="read"/>
@@ -23029,7 +23024,7 @@
         <permission table="ca_objects" bundle="ca_attribute_dna_conc" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_dna_gel" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_volume" access="read"/>
-        <permission table="ca_objects" bundle="ca_attribute_weight" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_attribute_weight" access="edit"/>
         <permission table="ca_objects" bundle="ca_attribute_length" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_objectAge" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_seedlotGermination" access="read"/>
@@ -23047,7 +23042,6 @@
         <permission table="ca_objects" bundle="ca_attribute_dataExport" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_blocked_until" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_restriction_use" access="read"/>
-        <!--Above is currently not working see https://github.com/inbo/collective-access/issues/429 - to be set manually for now!-->
         <permission table="ca_object_lots" bundle="access" access="read"/>
         <permission table="ca_object_lots" bundle="authority_references_list" access="read"/>
         <permission table="ca_object_lots" bundle="ca_collections" access="read"/>
@@ -23661,8 +23655,8 @@
         <permission table="ca_loans" type="externalReuse" access="none"/>
         <permission table="ca_loans" type="Root node for loan_types" access="none"/>
       </typeLevelAccessControl>
-    </role>
-    <role code="FISHmanager">
+    </role>-->
+    <!--<role code="FISHmanager">
       <name>Fish collection manager</name>
       <description>Can change almost everything and can see storage locations</description>
       <actions>
@@ -23766,8 +23760,8 @@
         <permission table="ca_objects" type="mammalHairSample" access="read"/>
         <permission table="ca_objects" type="mammalParasiteSample" access="read"/>
       </typeLevelAccessControl>
-    </role>
-    <role code="FISHarchivist">
+    </role>-->
+    <!--<role code="FISHarchivist">
       <name>Fish collection archivist</name>
       <description>This role is viewer + editor of storage location, curation events and measurements (volume, weight) for his/her collection.</description>
       <actions>
@@ -23851,20 +23845,20 @@
         <permission table="ca_objects" bundle="ca_object_representations_related_list" access="read"/>
         <permission table="ca_objects" bundle="ca_objects" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_components_list" access="read"/>
-        <permission table="ca_objects" bundle="ca_objects_deaccession" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_objects_deaccession" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects_history" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_location" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_location_date" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_related_list" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_table" access="read"/>
-        <permission table="ca_objects" bundle="ca_occurrences" access="edit"/><!--the only non "read"-->
-        <permission table="ca_objects" bundle="ca_occurrences_related_list" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_occurrences" access="edit"/>
+        <permission table="ca_objects" bundle="ca_occurrences_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_places" access="read"/>
         <permission table="ca_objects" bundle="ca_places_related_list" access="read"/>
         <permission table="ca_objects" bundle="ca_sets" access="read"/>
         <permission table="ca_objects" bundle="ca_sets_checklist" access="read"/>
-        <permission table="ca_objects" bundle="ca_storage_locations" access="edit"/><!--the only non "read"-->
-        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_storage_locations" access="edit"/>
+        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_tour_stops" access="read"/>
         <permission table="ca_objects" bundle="circulation_status_id" access="read"/>
         <permission table="ca_objects" bundle="extent" access="read"/>
@@ -23887,7 +23881,6 @@
         <permission table="ca_objects" bundle="status" access="read"/>
         <permission table="ca_objects" bundle="submission_session_id" access="read"/>
         <permission table="ca_objects" bundle="submission_status_id" access="read"/>
-        <!--Below is currently not working see https://github.com/inbo/collective-access/issues/429 - to be set manually for now!-->
         <permission table="ca_objects" bundle="ca_attribute_publishedRecord" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_description" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_samplingDate" access="read"/>
@@ -23940,7 +23933,7 @@
         <permission table="ca_objects" bundle="ca_attribute_dna_conc" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_dna_gel" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_volume" access="read"/>
-        <permission table="ca_objects" bundle="ca_attribute_weight" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_attribute_weight" access="edit"/>
         <permission table="ca_objects" bundle="ca_attribute_length" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_objectAge" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_seedlotGermination" access="read"/>
@@ -23958,7 +23951,6 @@
         <permission table="ca_objects" bundle="ca_attribute_dataExport" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_blocked_until" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_restriction_use" access="read"/>
-        <!--Above is currently not working see https://github.com/inbo/collective-access/issues/429 - to be set manually for now!-->
         <permission table="ca_object_lots" bundle="access" access="read"/>
         <permission table="ca_object_lots" bundle="authority_references_list" access="read"/>
         <permission table="ca_object_lots" bundle="ca_collections" access="read"/>
@@ -24572,8 +24564,8 @@
         <permission table="ca_loans" type="externalReuse" access="none"/>
         <permission table="ca_loans" type="Root node for loan_types" access="none"/>
       </typeLevelAccessControl>
-    </role>
-    <role code="MACmanager">
+    </role>-->
+    <!--<role code="MACmanager">
       <name>Fish collection manager</name>
       <description>Can change almost everything and can see storage locations</description>
       <actions>
@@ -24677,8 +24669,8 @@
         <permission table="ca_objects" type="mammalHairSample" access="read"/>
         <permission table="ca_objects" type="mammalParasiteSample" access="read"/>
       </typeLevelAccessControl>
-    </role>
-    <role code="MACarchivist">
+    </role>-->
+    <!--<role code="MACarchivist">
       <name>Fish collection archivist</name>
       <description>This role is viewer + editor of storage location, curation events and measurements (volume, weight) for his/her collection.</description>
       <actions>
@@ -24762,20 +24754,20 @@
         <permission table="ca_objects" bundle="ca_object_representations_related_list" access="read"/>
         <permission table="ca_objects" bundle="ca_objects" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_components_list" access="read"/>
-        <permission table="ca_objects" bundle="ca_objects_deaccession" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_objects_deaccession" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects_history" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_location" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_location_date" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_related_list" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_table" access="read"/>
-        <permission table="ca_objects" bundle="ca_occurrences" access="edit"/><!--the only non "read"-->
-        <permission table="ca_objects" bundle="ca_occurrences_related_list" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_occurrences" access="edit"/>
+        <permission table="ca_objects" bundle="ca_occurrences_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_places" access="read"/>
         <permission table="ca_objects" bundle="ca_places_related_list" access="read"/>
         <permission table="ca_objects" bundle="ca_sets" access="read"/>
         <permission table="ca_objects" bundle="ca_sets_checklist" access="read"/>
-        <permission table="ca_objects" bundle="ca_storage_locations" access="edit"/><!--the only non "read"-->
-        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_storage_locations" access="edit"/>
+        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_tour_stops" access="read"/>
         <permission table="ca_objects" bundle="circulation_status_id" access="read"/>
         <permission table="ca_objects" bundle="extent" access="read"/>
@@ -24798,7 +24790,6 @@
         <permission table="ca_objects" bundle="status" access="read"/>
         <permission table="ca_objects" bundle="submission_session_id" access="read"/>
         <permission table="ca_objects" bundle="submission_status_id" access="read"/>
-        <!--Below is currently not working see https://github.com/inbo/collective-access/issues/429 - to be set manually for now!-->
         <permission table="ca_objects" bundle="ca_attribute_publishedRecord" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_description" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_samplingDate" access="read"/>
@@ -24851,7 +24842,7 @@
         <permission table="ca_objects" bundle="ca_attribute_dna_conc" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_dna_gel" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_volume" access="read"/>
-        <permission table="ca_objects" bundle="ca_attribute_weight" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_attribute_weight" access="edit"/>
         <permission table="ca_objects" bundle="ca_attribute_length" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_objectAge" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_seedlotGermination" access="read"/>
@@ -24869,7 +24860,6 @@
         <permission table="ca_objects" bundle="ca_attribute_dataExport" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_blocked_until" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_restriction_use" access="read"/>
-        <!--Above is currently not working see https://github.com/inbo/collective-access/issues/429 - to be set manually for now!-->
         <permission table="ca_object_lots" bundle="access" access="read"/>
         <permission table="ca_object_lots" bundle="authority_references_list" access="read"/>
         <permission table="ca_object_lots" bundle="ca_collections" access="read"/>
@@ -25483,8 +25473,8 @@
         <permission table="ca_loans" type="externalReuse" access="none"/>
         <permission table="ca_loans" type="Root node for loan_types" access="none"/>
       </typeLevelAccessControl>
-    </role>
-    <role code="MTCmanager">
+    </role>-->
+    <!--<role code="MTCmanager">
       <name>Mammal collection manager</name>
       <description>Can change almost everything and can see storage locations</description>
       <actions>
@@ -25588,8 +25578,8 @@
         <permission table="ca_objects" type="mammalHairSample" access="edit"/>
         <permission table="ca_objects" type="mammalParasiteSample" access="edit"/>
       </typeLevelAccessControl>
-    </role>
-    <role code="MTCcataloguer">
+    </role>-->
+    <!--<role code="MTCcataloguer">
       <name>Mammal collection cataloguer</name>
       <description>Can change certain fields and cannot see storage locations</description>
       <actions>
@@ -25672,8 +25662,8 @@
         <permission table="ca_objects" bundle="ca_item_tags" access="edit"/>
         <permission table="ca_objects" bundle="ca_list_items" access="edit"/>
         <permission table="ca_objects" bundle="ca_list_items_related_list" access="edit"/>
-        <permission table="ca_objects" bundle="ca_loans" access="none"/><!--IMPORTANT-->
-        <permission table="ca_objects" bundle="ca_loans_related_list" access="none"/><!--IMPORTANT-->
+        <permission table="ca_objects" bundle="ca_loans" access="none"/>
+        <permission table="ca_objects" bundle="ca_loans_related_list" access="none"/>
         <permission table="ca_objects" bundle="ca_movements" access="edit"/>
         <permission table="ca_objects" bundle="ca_movements_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_object_checkouts" access="edit"/>
@@ -25685,7 +25675,7 @@
         <permission table="ca_objects" bundle="ca_object_representations_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects_components_list" access="edit"/>
-        <permission table="ca_objects" bundle="ca_objects_deaccession" access="read"/><!--IMPORTANT-->
+        <permission table="ca_objects" bundle="ca_objects_deaccession" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_history" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects_location" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects_location_date" access="edit"/>
@@ -25697,8 +25687,8 @@
         <permission table="ca_objects" bundle="ca_places_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_sets" access="edit"/>
         <permission table="ca_objects" bundle="ca_sets_checklist" access="edit"/>
-        <permission table="ca_objects" bundle="ca_storage_locations" access="none"/><!--IMPORTANT-->
-        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="none"/><!--IMPORTANT-->
+        <permission table="ca_objects" bundle="ca_storage_locations" access="none"/>
+        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="none"/>
         <permission table="ca_objects" bundle="ca_tour_stops" access="edit"/>
         <permission table="ca_objects" bundle="circulation_status_id" access="edit"/>
         <permission table="ca_objects" bundle="extent" access="edit"/>
@@ -25722,7 +25712,6 @@
         <permission table="ca_objects" bundle="submission_session_id" access="edit"/>
         <permission table="ca_objects" bundle="submission_status_id" access="edit"/>
         <permission table="ca_loans" bundle="access" access="none"/>
-        <!--IMPORTANT: no permission from here onwards-->
         <permission table="ca_loans" bundle="authority_references_list" access="none"/>
         <permission table="ca_loans" bundle="ca_collections" access="none"/>
         <permission table="ca_loans" bundle="ca_collections_related_list" access="none"/>
@@ -25786,17 +25775,17 @@
         <permission table="ca_objects" type="mammalParasiteSample" access="edit"/>
         <permission table="ca_occurrences" type="project" access="edit"/>
         <permission table="ca_occurrences" type="fieldwork" access="edit"/>
-        <permission table="ca_occurrences" type="curation" access="none"/><!--IMPORTANT-->
+        <permission table="ca_occurrences" type="curation" access="none"/>
         <permission table="ca_occurrences" type="valuation" access="edit"/>
         <permission table="ca_occurrences" type="identification" access="edit"/>
         <permission table="ca_occurrences" type="Root node for occurrence_types" access="none"/>
         <permission table="ca_occurrences" type="internalProject" access="edit"/>
         <permission table="ca_occurrences" type="externalProject" access="edit"/>
-        <permission table="ca_occurrences" type="treatment" access="none"/><!--IMPORTANT-->
-        <permission table="ca_occurrences" type="renewal" access="none"/><!--IMPORTANT-->
+        <permission table="ca_occurrences" type="treatment" access="none"/>
+        <permission table="ca_occurrences" type="renewal" access="none"/>
       </typeLevelAccessControl>
-    </role>
-    <role code="MTCarchivist">
+    </role>-->
+    <!--<role code="MTCarchivist">
       <name>Mammal collection archivist</name>
       <description>This role is viewer + editor of storage location, curation events and measurements (volume, weight) for his/her collection.</description>
       <actions>
@@ -25880,20 +25869,20 @@
         <permission table="ca_objects" bundle="ca_object_representations_related_list" access="read"/>
         <permission table="ca_objects" bundle="ca_objects" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_components_list" access="read"/>
-        <permission table="ca_objects" bundle="ca_objects_deaccession" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_objects_deaccession" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects_history" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_location" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_location_date" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_related_list" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_table" access="read"/>
-        <permission table="ca_objects" bundle="ca_occurrences" access="edit"/><!--the only non "read"-->
-        <permission table="ca_objects" bundle="ca_occurrences_related_list" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_occurrences" access="edit"/>
+        <permission table="ca_objects" bundle="ca_occurrences_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_places" access="read"/>
         <permission table="ca_objects" bundle="ca_places_related_list" access="read"/>
         <permission table="ca_objects" bundle="ca_sets" access="read"/>
         <permission table="ca_objects" bundle="ca_sets_checklist" access="read"/>
-        <permission table="ca_objects" bundle="ca_storage_locations" access="edit"/><!--the only non "read"-->
-        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_storage_locations" access="edit"/>
+        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_tour_stops" access="read"/>
         <permission table="ca_objects" bundle="circulation_status_id" access="read"/>
         <permission table="ca_objects" bundle="extent" access="read"/>
@@ -25916,7 +25905,6 @@
         <permission table="ca_objects" bundle="status" access="read"/>
         <permission table="ca_objects" bundle="submission_session_id" access="read"/>
         <permission table="ca_objects" bundle="submission_status_id" access="read"/>
-        <!--Below is currently not working see https://github.com/inbo/collective-access/issues/429 - to be set manually for now!-->
         <permission table="ca_objects" bundle="ca_attribute_publishedRecord" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_description" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_samplingDate" access="read"/>
@@ -25969,7 +25957,7 @@
         <permission table="ca_objects" bundle="ca_attribute_dna_conc" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_dna_gel" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_volume" access="read"/>
-        <permission table="ca_objects" bundle="ca_attribute_weight" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_attribute_weight" access="edit"/>
         <permission table="ca_objects" bundle="ca_attribute_length" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_objectAge" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_seedlotGermination" access="read"/>
@@ -25987,7 +25975,6 @@
         <permission table="ca_objects" bundle="ca_attribute_dataExport" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_blocked_until" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_restriction_use" access="read"/>
-        <!--Above is currently not working see https://github.com/inbo/collective-access/issues/429 - to be set manually for now!-->
         <permission table="ca_object_lots" bundle="access" access="read"/>
         <permission table="ca_object_lots" bundle="authority_references_list" access="read"/>
         <permission table="ca_object_lots" bundle="ca_collections" access="read"/>
@@ -26601,8 +26588,8 @@
         <permission table="ca_loans" type="externalReuse" access="none"/>
         <permission table="ca_loans" type="Root node for loan_types" access="none"/>
       </typeLevelAccessControl>
-    </role>
-    <role code="LPCmanager">
+    </role>-->
+    <!--<role code="LPCmanager">
       <name>Living Plant collection manager</name>
       <description>Can change almost everything and can see storage locations</description>
       <actions>
@@ -26706,8 +26693,8 @@
         <permission table="ca_objects" type="mammalHairSample" access="read"/>
         <permission table="ca_objects" type="mammalParasiteSample" access="read"/>
       </typeLevelAccessControl>
-    </role>
-    <role code="LPCcataloguer">
+    </role>-->
+    <!--<role code="LPCcataloguer">
       <name>Living Plant collection cataloguer</name>
       <description>Can change certain fields and cannot see storage locations</description>
       <actions>
@@ -26790,8 +26777,8 @@
         <permission table="ca_objects" bundle="ca_item_tags" access="edit"/>
         <permission table="ca_objects" bundle="ca_list_items" access="edit"/>
         <permission table="ca_objects" bundle="ca_list_items_related_list" access="edit"/>
-        <permission table="ca_objects" bundle="ca_loans" access="none"/><!--IMPORTANT-->
-        <permission table="ca_objects" bundle="ca_loans_related_list" access="none"/><!--IMPORTANT-->
+        <permission table="ca_objects" bundle="ca_loans" access="none"/>
+        <permission table="ca_objects" bundle="ca_loans_related_list" access="none"/>
         <permission table="ca_objects" bundle="ca_movements" access="edit"/>
         <permission table="ca_objects" bundle="ca_movements_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_object_checkouts" access="edit"/>
@@ -26803,7 +26790,7 @@
         <permission table="ca_objects" bundle="ca_object_representations_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects_components_list" access="edit"/>
-        <permission table="ca_objects" bundle="ca_objects_deaccession" access="read"/><!--IMPORTANT-->
+        <permission table="ca_objects" bundle="ca_objects_deaccession" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_history" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects_location" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects_location_date" access="edit"/>
@@ -26815,8 +26802,8 @@
         <permission table="ca_objects" bundle="ca_places_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_sets" access="edit"/>
         <permission table="ca_objects" bundle="ca_sets_checklist" access="edit"/>
-        <permission table="ca_objects" bundle="ca_storage_locations" access="none"/><!--IMPORTANT-->
-        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="none"/><!--IMPORTANT-->
+        <permission table="ca_objects" bundle="ca_storage_locations" access="none"/>
+        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="none"/>
         <permission table="ca_objects" bundle="ca_tour_stops" access="edit"/>
         <permission table="ca_objects" bundle="circulation_status_id" access="edit"/>
         <permission table="ca_objects" bundle="extent" access="edit"/>
@@ -26840,7 +26827,6 @@
         <permission table="ca_objects" bundle="submission_session_id" access="edit"/>
         <permission table="ca_objects" bundle="submission_status_id" access="edit"/>
         <permission table="ca_loans" bundle="access" access="none"/>
-        <!--IMPORTANT: no permission from here onwards-->
         <permission table="ca_loans" bundle="authority_references_list" access="none"/>
         <permission table="ca_loans" bundle="ca_collections" access="none"/>
         <permission table="ca_loans" bundle="ca_collections_related_list" access="none"/>
@@ -26904,17 +26890,17 @@
         <permission table="ca_objects" type="mammalParasiteSample" access="read"/>
         <permission table="ca_occurrences" type="project" access="edit"/>
         <permission table="ca_occurrences" type="fieldwork" access="edit"/>
-        <permission table="ca_occurrences" type="curation" access="none"/><!--IMPORTANT-->
+        <permission table="ca_occurrences" type="curation" access="none"/>
         <permission table="ca_occurrences" type="valuation" access="edit"/>
         <permission table="ca_occurrences" type="identification" access="edit"/>
         <permission table="ca_occurrences" type="Root node for occurrence_types" access="none"/>
         <permission table="ca_occurrences" type="internalProject" access="edit"/>
         <permission table="ca_occurrences" type="externalProject" access="edit"/>
-        <permission table="ca_occurrences" type="treatment" access="none"/><!--IMPORTANT-->
-        <permission table="ca_occurrences" type="renewal" access="none"/><!--IMPORTANT-->
+        <permission table="ca_occurrences" type="treatment" access="none"/>
+        <permission table="ca_occurrences" type="renewal" access="none"/>
       </typeLevelAccessControl>
-    </role>
-    <role code="LPCarchivist">
+    </role>-->
+    <!--<role code="LPCarchivist">
       <name>Living Plant collection archivist</name>
       <description>This role is viewer + editor of storage location, curation events and measurements (volume, weight) for his/her collection.</description>
       <actions>
@@ -26998,20 +26984,20 @@
         <permission table="ca_objects" bundle="ca_object_representations_related_list" access="read"/>
         <permission table="ca_objects" bundle="ca_objects" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_components_list" access="read"/>
-        <permission table="ca_objects" bundle="ca_objects_deaccession" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_objects_deaccession" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects_history" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_location" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_location_date" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_related_list" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_table" access="read"/>
-        <permission table="ca_objects" bundle="ca_occurrences" access="edit"/><!--the only non "read"-->
-        <permission table="ca_objects" bundle="ca_occurrences_related_list" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_occurrences" access="edit"/>
+        <permission table="ca_objects" bundle="ca_occurrences_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_places" access="read"/>
         <permission table="ca_objects" bundle="ca_places_related_list" access="read"/>
         <permission table="ca_objects" bundle="ca_sets" access="read"/>
         <permission table="ca_objects" bundle="ca_sets_checklist" access="read"/>
-        <permission table="ca_objects" bundle="ca_storage_locations" access="edit"/><!--the only non "read"-->
-        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_storage_locations" access="edit"/>
+        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_tour_stops" access="read"/>
         <permission table="ca_objects" bundle="circulation_status_id" access="read"/>
         <permission table="ca_objects" bundle="extent" access="read"/>
@@ -27034,7 +27020,6 @@
         <permission table="ca_objects" bundle="status" access="read"/>
         <permission table="ca_objects" bundle="submission_session_id" access="read"/>
         <permission table="ca_objects" bundle="submission_status_id" access="read"/>
-        <!--Below is currently not working see https://github.com/inbo/collective-access/issues/429 - to be set manually for now!-->
         <permission table="ca_objects" bundle="ca_attribute_publishedRecord" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_description" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_samplingDate" access="read"/>
@@ -27087,7 +27072,7 @@
         <permission table="ca_objects" bundle="ca_attribute_dna_conc" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_dna_gel" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_volume" access="read"/>
-        <permission table="ca_objects" bundle="ca_attribute_weight" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_attribute_weight" access="edit"/>
         <permission table="ca_objects" bundle="ca_attribute_length" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_objectAge" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_seedlotGermination" access="read"/>
@@ -27105,7 +27090,6 @@
         <permission table="ca_objects" bundle="ca_attribute_dataExport" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_blocked_until" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_restriction_use" access="read"/>
-        <!--Above is currently not working see https://github.com/inbo/collective-access/issues/429 - to be set manually for now!-->
         <permission table="ca_object_lots" bundle="access" access="read"/>
         <permission table="ca_object_lots" bundle="authority_references_list" access="read"/>
         <permission table="ca_object_lots" bundle="ca_collections" access="read"/>
@@ -27719,8 +27703,8 @@
         <permission table="ca_loans" type="externalReuse" access="none"/>
         <permission table="ca_loans" type="Root node for loan_types" access="none"/>
       </typeLevelAccessControl>
-    </role>
-    <role code="FTCmanager">
+    </role>-->
+    <!--<role code="FTCmanager">
       <name>Fish tissue collection manager</name>
       <description>Can change almost everything and can see storage locations</description>
       <actions>
@@ -27824,8 +27808,8 @@
         <permission table="ca_objects" type="mammalHairSample" access="read"/>
         <permission table="ca_objects" type="mammalParasiteSample" access="read"/>
       </typeLevelAccessControl>
-    </role>
-    <role code="FTCcataloguer">
+    </role>-->
+    <!--<role code="FTCcataloguer">
       <name>Fish tissue collection cataloguer</name>
       <description>Can change certain fields and cannot see storage locations</description>
       <actions>
@@ -27908,8 +27892,8 @@
         <permission table="ca_objects" bundle="ca_item_tags" access="edit"/>
         <permission table="ca_objects" bundle="ca_list_items" access="edit"/>
         <permission table="ca_objects" bundle="ca_list_items_related_list" access="edit"/>
-        <permission table="ca_objects" bundle="ca_loans" access="none"/><!--IMPORTANT-->
-        <permission table="ca_objects" bundle="ca_loans_related_list" access="none"/><!--IMPORTANT-->
+        <permission table="ca_objects" bundle="ca_loans" access="none"/>
+        <permission table="ca_objects" bundle="ca_loans_related_list" access="none"/>
         <permission table="ca_objects" bundle="ca_movements" access="edit"/>
         <permission table="ca_objects" bundle="ca_movements_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_object_checkouts" access="edit"/>
@@ -27921,7 +27905,7 @@
         <permission table="ca_objects" bundle="ca_object_representations_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects_components_list" access="edit"/>
-        <permission table="ca_objects" bundle="ca_objects_deaccession" access="read"/><!--IMPORTANT-->
+        <permission table="ca_objects" bundle="ca_objects_deaccession" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_history" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects_location" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects_location_date" access="edit"/>
@@ -27933,8 +27917,8 @@
         <permission table="ca_objects" bundle="ca_places_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_sets" access="edit"/>
         <permission table="ca_objects" bundle="ca_sets_checklist" access="edit"/>
-        <permission table="ca_objects" bundle="ca_storage_locations" access="none"/><!--IMPORTANT-->
-        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="none"/><!--IMPORTANT-->
+        <permission table="ca_objects" bundle="ca_storage_locations" access="none"/>
+        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="none"/>
         <permission table="ca_objects" bundle="ca_tour_stops" access="edit"/>
         <permission table="ca_objects" bundle="circulation_status_id" access="edit"/>
         <permission table="ca_objects" bundle="extent" access="edit"/>
@@ -27958,7 +27942,6 @@
         <permission table="ca_objects" bundle="submission_session_id" access="edit"/>
         <permission table="ca_objects" bundle="submission_status_id" access="edit"/>
         <permission table="ca_loans" bundle="access" access="none"/>
-        <!--IMPORTANT: no permission from here onwards-->
         <permission table="ca_loans" bundle="authority_references_list" access="none"/>
         <permission table="ca_loans" bundle="ca_collections" access="none"/>
         <permission table="ca_loans" bundle="ca_collections_related_list" access="none"/>
@@ -28022,17 +28005,17 @@
         <permission table="ca_objects" type="mammalParasiteSample" access="read"/>
         <permission table="ca_occurrences" type="project" access="edit"/>
         <permission table="ca_occurrences" type="fieldwork" access="edit"/>
-        <permission table="ca_occurrences" type="curation" access="none"/><!--IMPORTANT-->
+        <permission table="ca_occurrences" type="curation" access="none"/>
         <permission table="ca_occurrences" type="valuation" access="edit"/>
         <permission table="ca_occurrences" type="identification" access="edit"/>
         <permission table="ca_occurrences" type="Root node for occurrence_types" access="none"/>
         <permission table="ca_occurrences" type="internalProject" access="edit"/>
         <permission table="ca_occurrences" type="externalProject" access="edit"/>
-        <permission table="ca_occurrences" type="treatment" access="none"/><!--IMPORTANT-->
-        <permission table="ca_occurrences" type="renewal" access="none"/><!--IMPORTANT-->
+        <permission table="ca_occurrences" type="treatment" access="none"/>
+        <permission table="ca_occurrences" type="renewal" access="none"/>
       </typeLevelAccessControl>
-    </role>
-    <role code="FTCarchivist">
+    </role>-->
+    <!--<role code="FTCarchivist">
       <name>Fish tissue collection archivist</name>
       <description>This role is viewer + editor of storage location, curation events and measurements (volume, weight) for his/her collection.</description>
       <actions>
@@ -28116,20 +28099,20 @@
         <permission table="ca_objects" bundle="ca_object_representations_related_list" access="read"/>
         <permission table="ca_objects" bundle="ca_objects" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_components_list" access="read"/>
-        <permission table="ca_objects" bundle="ca_objects_deaccession" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_objects_deaccession" access="edit"/>
         <permission table="ca_objects" bundle="ca_objects_history" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_location" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_location_date" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_related_list" access="read"/>
         <permission table="ca_objects" bundle="ca_objects_table" access="read"/>
-        <permission table="ca_objects" bundle="ca_occurrences" access="edit"/><!--the only non "read"-->
-        <permission table="ca_objects" bundle="ca_occurrences_related_list" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_occurrences" access="edit"/>
+        <permission table="ca_objects" bundle="ca_occurrences_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_places" access="read"/>
         <permission table="ca_objects" bundle="ca_places_related_list" access="read"/>
         <permission table="ca_objects" bundle="ca_sets" access="read"/>
         <permission table="ca_objects" bundle="ca_sets_checklist" access="read"/>
-        <permission table="ca_objects" bundle="ca_storage_locations" access="edit"/><!--the only non "read"-->
-        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_storage_locations" access="edit"/>
+        <permission table="ca_objects" bundle="ca_storage_locations_related_list" access="edit"/>
         <permission table="ca_objects" bundle="ca_tour_stops" access="read"/>
         <permission table="ca_objects" bundle="circulation_status_id" access="read"/>
         <permission table="ca_objects" bundle="extent" access="read"/>
@@ -28152,7 +28135,6 @@
         <permission table="ca_objects" bundle="status" access="read"/>
         <permission table="ca_objects" bundle="submission_session_id" access="read"/>
         <permission table="ca_objects" bundle="submission_status_id" access="read"/>
-        <!--Below is currently not working see https://github.com/inbo/collective-access/issues/429 - to be set manually for now!-->
         <permission table="ca_objects" bundle="ca_attribute_publishedRecord" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_description" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_samplingDate" access="read"/>
@@ -28205,7 +28187,7 @@
         <permission table="ca_objects" bundle="ca_attribute_dna_conc" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_dna_gel" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_volume" access="read"/>
-        <permission table="ca_objects" bundle="ca_attribute_weight" access="edit"/><!--the only non "read"-->
+        <permission table="ca_objects" bundle="ca_attribute_weight" access="edit"/>
         <permission table="ca_objects" bundle="ca_attribute_length" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_objectAge" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_seedlotGermination" access="read"/>
@@ -28223,7 +28205,6 @@
         <permission table="ca_objects" bundle="ca_attribute_dataExport" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_blocked_until" access="read"/>
         <permission table="ca_objects" bundle="ca_attribute_restriction_use" access="read"/>
-        <!--Above is currently not working see https://github.com/inbo/collective-access/issues/429 - to be set manually for now!-->
         <permission table="ca_object_lots" bundle="access" access="read"/>
         <permission table="ca_object_lots" bundle="authority_references_list" access="read"/>
         <permission table="ca_object_lots" bundle="ca_collections" access="read"/>
@@ -28837,8 +28818,8 @@
         <permission table="ca_loans" type="externalReuse" access="none"/>
         <permission table="ca_loans" type="Root node for loan_types" access="none"/>
       </typeLevelAccessControl>
-    </role>
-    <role code="STEMmanager">
+    </role>-->
+    <!--<role code="STEMmanager">
       <name>Stem disc collection manager</name>
       <description>Can change almost everything and can see storage locations</description>
       <actions>
@@ -28942,7 +28923,7 @@
         <permission table="ca_objects" type="mammalHairSample" access="read"/>
         <permission table="ca_objects" type="mammalParasiteSample" access="read"/>
       </typeLevelAccessControl>
-    </role>
+    </role>-->
     <role code="collectionSteward">
       <name>Collection steward</name>
       <description>Can view most information, not the storage locations, and can help with editing loans and loan outputs.</description>
