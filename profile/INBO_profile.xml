@@ -27,6 +27,7 @@
   <!--https://github.com/inbo/collective-access/issues/471-->
   <!--https://github.com/inbo/collective-access/issues/473-->
   <!--https://github.com/inbo/collective-access/issues/474-->
+  <!--https://github.com/inbo/collective-access/issues/475-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -9876,7 +9877,6 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
-          <setting name="mustNotBeBlank">1</setting>
         </settings>
         <typeRestrictions>
           <restriction code="r_soilObject">
@@ -9886,8 +9886,7 @@
               <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
-              <setting name="regex">/^-?[0-9]*\.?[0-9]+$/</setting> 
-              <setting name="validationErrorMessage">Please use a point (.) as a decimal separator, not a comma (,).</setting>
+              <setting name="mustNotBeBlank">1</setting>
             </settings>
           </restriction>
           <restriction code="r_dnaSample">
@@ -9897,6 +9896,7 @@
               <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              <setting name="mustNotBeBlank">1</setting>
             </settings>
           </restriction>
         </typeRestrictions>
@@ -31379,17 +31379,17 @@
         <role code="viewer"/>
         <group code="viewers"/>
     </login>
-    <login user_name="soilmanager" password="soilmanager" email="collectiebeheer@inbo.be" fname="soil" lname="manager">
-        <role code="soilmanager"/>
+    <login user_name="SOILmanager" password="SOILmanager" email="collectiebeheer@inbo.be" fname="SOIL" lname="manager">
+        <role code="SOILmanager"/>
         <group code="collectionmanagers"/>
         <group code="SOILstaff"/>
     </login>
-    <login user_name="soilcataloguer" password="soilcataloguer" email="collectiebeheer@inbo.be" fname="soil" lname="cataloguer">
-        <role code="soilcataloguer"/>
+    <login user_name="SOILcataloguer" password="SOILcataloguer" email="collectiebeheer@inbo.be" fname="SOIL" lname="cataloguer">
+        <role code="SOILcataloguer"/>
         <group code="cataloguers"/>
     </login>
-    <login user_name="soilarchivist" password="soilarchivist" email="collectiebeheer@inbo.be" fname="soil" lname="archivist">
-        <role code="soilarchivist"/>
+    <login user_name="SOILarchivist" password="SOILarchivist" email="collectiebeheer@inbo.be" fname="SOIL" lname="archivist">
+        <role code="SOILarchivist"/>
         <group code="archivists"/>
         <group code="SOILstaff"/>
     </login>
@@ -31402,6 +31402,20 @@
         <role code="PACarchivist"/>
         <group code="archivists"/>
         <group code="PACstaff"/>
+    </login>
+    <login user_name="DNAmanager" password="DNAmanager" email="collectiebeheer@inbo.be" fname="DNA" lname="manager">
+        <role code="DNAmanager"/>
+        <group code="collectionmanagers"/>
+        <group code="DNAstaff"/>
+    </login>
+    <login user_name="DNAarchivist" password="DNAarchivist" email="collectiebeheer@inbo.be" fname="DNA" lname="archivist">
+        <role code="DNAarchivist"/>
+        <group code="archivists"/>
+        <group code="DNAstaff"/>
+    </login>
+    <login user_name="DNAcataloguer" password="DNAcataloguer" email="collectiebeheer@inbo.be" fname="DNA" lname="cataloguer">
+        <role code="DNAcataloguer"/>
+        <group code="cataloguers"/>
     </login>
     <login user_name="collectionsteward" password="collectionsteward" email="collectiebeheer@inbo.be" fname="collectionsteward" lname="collectionsteward">
         <role code="collectionSteward"/>
