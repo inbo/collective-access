@@ -23,6 +23,8 @@
   <!--https://github.com/inbo/collective-access/issues/461-->
   <!--https://github.com/inbo/collective-access/issues/466-->
   <!--https://github.com/inbo/collective-access/issues/469-->
+  <!--https://github.com/inbo/collective-access/issues/470-->
+  <!--https://github.com/inbo/collective-access/issues/471-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -5227,7 +5229,7 @@
               <setting name="canBeUsedInSort">1</setting>
               <setting name="canBeUsedInSearchForm">1</setting>
               <setting name="canBeUsedInDisplay">1</setting>
-              <setting name="mustNotBeBlank">1</setting>
+              <setting name="mustNotBeBlank">0</setting>
             </settings>
           </metadataElement>
           <metadataElement code="noteText" datatype="Text">
@@ -19458,7 +19460,7 @@
         <action>can_view_non_local_system_statistics</action>
       </actions>
     </role>
-    <role code="SOILmanager"><!--Once this works, you can make CMs for the other 9 collections-->
+    <role code="SOILmanager"><!--Once this works, copy for the other collections, but change the type-->
       <name>Soil archive collection manager</name>
       <description>Can change almost everything and can see storage locations</description>
       <actions>
@@ -19563,7 +19565,7 @@
         <permission table="ca_objects" type="mammalParasiteSample" access="read"/>
       </typeLevelAccessControl>
     </role>
-    <role code="SOILcataloguer"><!--Once this works, you can make cataloguers for the other 9 collections-->
+    <role code="SOILcataloguer"><!--Once this works, copy for the other collections, but change the type-->
       <name>Soil archive cataloguer</name>
       <description>Can change certain fields and cannot see storage locations</description>
       <actions>
@@ -19770,7 +19772,7 @@
         <permission table="ca_occurrences" type="renewal" access="none"/><!--IMPORTANT-->
       </typeLevelAccessControl>
     </role>
-    <role code="SOILarchivist"><!--Once this works, you can make archivists for the other 9 collections-->
+    <role code="SOILarchivist"><!--Once this works, copy for the other collections, but change the type-->
       <name>Soil archive archivist</name>
       <description>This role is viewer + editor of storage location, curation events and measurements (volume, weight) for his/her collection.</description>
       <actions>
