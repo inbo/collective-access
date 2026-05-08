@@ -22,6 +22,7 @@
   <!--https://github.com/inbo/collective-access/issues/460-->
   <!--https://github.com/inbo/collective-access/issues/461-->
   <!--https://github.com/inbo/collective-access/issues/466-->
+  <!--https://github.com/inbo/collective-access/issues/469-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -9198,6 +9199,7 @@
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
           <setting name="useSingular">1</setting>
+          <setting name="requireValue">1</setting>
         </settings>
 	      <typeRestrictions>
           <restriction code="r_objects">
@@ -9870,7 +9872,7 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
-          <setting name="mustNotBeBlank">0</setting>
+          <setting name="mustNotBeBlank">1</setting>
         </settings>
         <typeRestrictions>
           <restriction code="r_soilObject">
@@ -9908,7 +9910,7 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
-          <setting name="mustNotBeBlank">0</setting>
+          <setting name="mustNotBeBlank">1</setting>
         </settings>
         <typeRestrictions>
           <restriction code="r_soilObject">
@@ -13081,7 +13083,7 @@
             <placement code="verbatimLocality">
               <bundle>ca_attribute_verbatimLocality</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Verbatim locality of sampling point *</setting>
+                <setting name="label" locale="en_US">Verbatim locality of sampling point</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
@@ -13115,21 +13117,21 @@
 			      <placement code="verbatimDepth" typeRestrictions="dnaSample,soilObject">
               <bundle>ca_attribute_verbatimDepth</bundle>
               <settings>
-                <setting name="label" locale="en_US">Verbatim depth *</setting>
+                <setting name="label" locale="en_US">Verbatim depth</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
 			      <placement code="minimumDepthInMeters" typeRestrictions="dnaSample,soilObject">
               <bundle>ca_attribute_minimumDepthInMeters</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The minimum depth in meters *</setting>
+                <setting name="label" locale="en_US">The minimum depth in meters*</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
 			      <placement code="maximumDepthInMeters" typeRestrictions="dnaSample,soilObject">
               <bundle>ca_attribute_maximumDepthInMeters</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">The maximum depth in meters *</setting>
+                <setting name="label" locale="en_US">The maximum depth in meters*</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
