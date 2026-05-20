@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.113C</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.113D</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--https://docs.collectiveaccess.org/--><!--https://providence.readthedocs.io/en/latest/-->
   <!--Issues to check if succesful in v0.113-->
@@ -14685,7 +14685,8 @@
 				        <setting name="add_label" locale="en_US">Add collection</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="restrict_to_relationship_types">partOf</setting>
-                <setting name="restrict_to_types">referenceCollection, assessmentCollection</setting>
+                <setting name="restrict_to_types">referenceCollection</setting>
+                <setting name="restrict_to_types">assessmentCollection</setting>
               </settings>
             </placement>
 			      <placement code="ca_entities_previousOwner">
@@ -14805,7 +14806,8 @@
 				        <setting name="add_label" locale="en_US">Add collection</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="restrict_to_relationship_types">partOf</setting>
-                <setting name="restrict_to_types">referenceCollection, assessmentCollection</setting>
+                <setting name="restrict_to_types">referenceCollection</setting>
+                <setting name="restrict_to_types">assessmentCollection</setting>
               </settings>
             </placement>
             <placement code="ca_entities_ownedBy" typeRestrictions="forestTreePopulation">
@@ -15535,27 +15537,6 @@
         </screen>
 	    </screens>
     </userInterface>
-    <userInterface code="occurrences_noType_ui" type="ca_occurrences">
-      <labels>
-        <label locale="en_US">
-          <name>Occurrence editor blank</name>
-        </label>
-      </labels>
-      <typeRestrictions>
-        <restriction code="r_occurrences" type="occurrences"/>
-      </typeRestrictions>
-      <screens>
-        <screen idno="record" default="1">
-          <labels>
-            <label locale="en_US">
-              <name>Record</name>
-            </label>
-          </labels>
-          <bundlePlacements>
-          </bundlePlacements>
-        </screen>
-	    </screens>
-    </userInterface>
     <userInterface code="fieldwork_ui" type="ca_occurrences">
       <labels>
         <label locale="en_US">
@@ -16253,142 +16234,6 @@
 			        <settings>
                 <setting name="label" locale="en_US">Relevant curation notes, documents, ... (internal)</setting>
 				        <setting name="add_label" locale="en_US">Add file</setting>
-			        </settings>
-            </placement>
-          </bundlePlacements>
-        </screen>
-	    </screens>
-    </userInterface>
-    <userInterface code="transfer_ui" type="ca_occurrences">
-      <labels>
-        <label locale="en_US">
-          <name>Event editor</name>
-        </label>
-      </labels>
-      <typeRestrictions>
-        <restriction code="r_transfer" type="transfer"/>
-      </typeRestrictions>
-      <screens>
-        <screen idno="event_record" default="1">
-          <labels>
-            <label locale="en_US">
-              <name>Record</name>
-            </label>
-          </labels>
-          <bundlePlacements>
-            <placement code="idno">
-              <bundle>idno</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">CMS-ID</setting>
-              </settings>
-            </placement>
-			      <placement code="preferred_labels_curation">
-              <bundle>preferred_labels</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Curation event identifier (preferred)</setting>
-                <setting name="description" locale="en_US">The identifier for the curation event used in notes. This can be a descriptive title: for example: Renewal of seedlot bags 2023.</setting>
-              </settings>
-            </placement>
-            <placement code="nonpreferred_labels">
-              <bundle>nonpreferred_labels</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Other identifier (nonpreferred)</setting>
-				        <setting name="add_label" locale="en_US">Add other non-preferred identifier</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-			      <placement code="eventDate">
-              <bundle>ca_attribute_eventDate</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Date (range) and time (range), standardised.</setting>
-              </settings>
-            </placement>
-			      <placement code="status">
-              <bundle>status</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Cataloguing status</setting>
-              </settings>
-            </placement>
-            <placement code="curationResult">
-              <bundle>ca_attribute_curationResult</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Result of curation event</setting>
-                <setting name="description" locale="en_US">Here you can specify further on the curation action. Treatment: cold treatment -80°C for parasites; Renewal: of containers, of labels, of buffer + in the file you can specify the manufacturers information on the new material.</setting>
-			        </settings>
-            </placement>
-            <placement code="curationURL">
-              <bundle>ca_attribute_curationURL</bundle>
-            </placement>
-          </bundlePlacements>
-        </screen>
-        <screen idno="event_execution" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>Execution</name>
-            </label>
-          </labels>
-          <bundlePlacements>
-            <placement code="ca_entities_executor">
-              <bundle>ca_entities</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Executor</setting>
-                <setting name="restrict_to_type">ind</setting>
-                <setting name="label" locale="en_US">Executed by</setting>
-				        <setting name="add_label" locale="en_US">Add individual</setting>
-                <setting name="restrict_to_relationship_types">executedBy</setting>
-              </settings>
-            </placement>
-            <placement code="ca_object">
-              <bundle>ca_objects</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Object(s) subjected to event</setting>
-                <setting name="description" locale="en_US">Object that was subjected to the event (identification, valuation or curation)</setting>
-                <setting name="list_format" locale="en_US">list</setting>
-              </settings>
-            </placement>
-			      <placement code="eventProcedure">
-              <bundle>ca_attribute_eventProcedure</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Description of event procedure</setting>
-                <setting name="description" locale="en_US">Text field to (concisely) describe the procedure (if relevant). Can be if: no doi-reference for procedure description or to add notes/addenda on the given published procedure.</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
-            <placement code="fileURL">
-              <bundle>ca_attribute_fileURL</bundle>
-			        <settings>
-				        <setting name="add_label" locale="en_US">Add multimedia</setting>
-			        </settings>
-            </placement>
-          </bundlePlacements>
-        </screen>
-        <screen idno="curationEvent_result" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>Result(s)</name>
-            </label>
-          </labels>
-          <bundlePlacements>
-            <placement code="curationResult">
-              <bundle>ca_attribute_curationResult</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Result of curation event</setting>
-                <setting name="description" locale="en_US">Here you can specify further on the curation action. For example: disposal because of depletion of DNA/soil, disease (plant), rot (seedlot), ...; treatment: cold treatment -80°C for parasites; renewal: of containers, of labels, of buffer + in the file you can specify the manufacturers information on the new mateiral.; reason why this particular group of samples was transferred.</setting>
-			        </settings>
-            </placement>
-            <placement code="reference">
-              <bundle>ca_attribute_fileURL</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Relevant curation notes, documents, ... (internal)</setting>
-				        <setting name="add_label" locale="en_US">Add file</setting>
-			        </settings>
-            </placement>
-            <placement code="ca_entities">
-              <bundle>ca_entities</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Organization to which the samples were transferred</setting>
-                <setting name="restrict_to_type">org</setting>
-                <setting name="restrict_to_relationship_types">transferredTo</setting>
 			        </settings>
             </placement>
           </bundlePlacements>
@@ -29700,7 +29545,6 @@
         <permission table="ca_sets" bundle="set_id" access="read"/>
         <permission table="ca_sets" bundle="source_id" access="read"/>
         <permission table="ca_sets" bundle="status" access="edit"/><!--the only non "read"-->
-        <permission table="ca_sets" bundle="ca_attribute_set_description" access="edit"/><!--the only non "read", probably this one won't work-->
       </bundleLevelAccessControl>
     </role>
   </roles>
