@@ -30,6 +30,8 @@
   <!--https://github.com/inbo/collective-access/issues/475-->
   <!--https://github.com/inbo/collective-access/issues/476-->
   <!--https://github.com/inbo/collective-access/issues/477-->
+  <!--https://github.com/inbo/collective-access/issues/478-->
+  <!--https://github.com/inbo/collective-access/issues/479-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -9102,7 +9104,7 @@
         <labels>
           <label locale="en_US">
             <name>Coordinate uncertainty in meters</name>
-            <description>The horizontal distance (in meters) from the given dwc:decimalLatitude and dwc:decimalLongitude describing the smallest circle containing the whole of the dcterms:Location. Leave the value empty if the uncertainty is unknown, cannot be estimated, or is not applicable (because there are no coordinates). Zero is not a valid value for this term.</description>
+            <description>The horizontal distance (in meters) from the given dwc:decimalLatitude and dwc:decimalLongitude describing the smallest circle containing the whole of the dcterms:Location.</description>
           </label>
         </labels>
         <settings>
@@ -9114,7 +9116,7 @@
             <labels>
               <label locale="en_US">
                 <name>Coordinate uncertainty in meters: value</name>
-                <description>Coordinate uncertainty in meters: value. Enter a numeric value (for decimals use a dot: [.] not a comma [,])</description>
+                <description>nter a numeric value (for decimals use a dot: [.] not a comma [,]). Use Geopick: https://geopick.gbif.org/ to get a correct value based on the locality uncertainty. It is impossible that this value is 0 (usually a GPS device has some uncertainty, e.g. 5 meters). The value cannot be left blank as this is often also interpreted as a precise location.</description>
               </label>
             </labels>
             <documentationUrl>http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters</documentationUrl>
@@ -10674,8 +10676,8 @@
             <metadataElement code="pProtocolURI" datatype="Url">
               <labels>
                 <label locale="en_US">
-                  <name>Preparation procedure DOI</name>
-                  <description>A DOI to a publication of the procedure, for example via the INBO protocol website to Zenodo or a journal publication.</description>
+                  <name>Preparation procedure URI</name>
+                  <description>A preferably resolvable URI to uniquely identify the sampling procedure. For example a DOI-url. Alternatives: URL to the INBO protocol website (https://protocols.inbo.be/) or an URL to an (internal) INBO google document.</description>
                 </label>
               </labels>
               <settings>
