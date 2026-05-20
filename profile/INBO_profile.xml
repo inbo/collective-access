@@ -21,7 +21,10 @@
   <!--https://github.com/inbo/collective-access/issues/455-->
   <!--https://github.com/inbo/collective-access/issues/460-->
   <!--https://github.com/inbo/collective-access/issues/461-->
+  <!--https://github.com/inbo/collective-access/issues/462-->
+  <!--https://github.com/inbo/collective-access/issues/463-->
   <!--https://github.com/inbo/collective-access/issues/466-->
+  <!--https://github.com/inbo/collective-access/issues/468-->
   <!--https://github.com/inbo/collective-access/issues/469-->
   <!--https://github.com/inbo/collective-access/issues/470-->
   <!--https://github.com/inbo/collective-access/issues/471-->
@@ -1329,6 +1332,63 @@
                 <label locale="en_US" preferred="1">
                   <name_singular>place ID</name_singular>
                   <name_plural>place collection IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+        </items>
+      </list>
+      <list code="occurrence_label_types_preferred" hierarchical="0" system="0" vocabulary="0" defaultSort="1">
+        <labels>
+          <label locale="en_US">
+            <name>Occurrence label types</name>
+          </label>
+        </labels>
+        <items>
+            <item idno="notSpecified" rank="1" enabled="1" default="1">
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>Not specified</name_singular>
+                  <name_plural>Not specified</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="unregisteredID" rank="2" enabled="1" default="0"><!--This can be given by the researcher or curator, to either the project, fieldwork, valuation event or curation event. Not respecting convention/agreements made with a larger group / made by a system. This type of ID can also be applied if there seems to be a logic applied by something/someone but it is not known to which system it refers at the time of logging the ID.-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>unregistered ID</name_singular>
+                  <name_plural>unregistered IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="LabwareLIMSID" rank="3" enabled="1" default="0"><!--E.g. V-19V049-01. An identifier for the project as given by INBO-Labware-LIMS.-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>Labware-LIMS-generated ID</name_singular>
+                  <name_plural>Labware-LIMS-generated IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="preLIMSlabID" rank="4" enabled="1" default="0"><!--An identifier for the project given by the INBO genetic or analytical labs prior usage of the INBO-LIMS. This is any lab numbering, not constituing the LIMS-ID. Examples: BF, INBO11.0004B.-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>pre-LIMS lab ID</name_singular>
+                  <name_plural>pre-LIMS lab IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="JIRAID" rank="5" enabled="1" default="0"><!--The ID for a project as defined in JIRA.-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>JIRA ID</name_singular>
+                  <name_plural>JIRA IDs</name_plural>
+                </label>
+              </labels>
+            </item>
+            <item idno="GenbosID" rank="6" enabled="1" default="0"><!--The ID as defined in the Genbos database.-->
+              <labels>
+                <label locale="en_US" preferred="1">
+                  <name_singular>Genbos ID</name_singular>
+                  <name_plural>Genbos IDs</name_plural>
                 </label>
               </labels>
             </item>
@@ -9107,10 +9167,6 @@
             <description>The horizontal distance (in meters) from the given dwc:decimalLatitude and dwc:decimalLongitude describing the smallest circle containing the whole of the dcterms:Location.</description>
           </label>
         </labels>
-        <settings>
-          <setting name="minAttributesPerRow">1</setting>
-          <setting name="maxAttributesPerRow">1</setting>
-        </settings>
 	      <elements>
           <metadataElement code="coordinateUncertaintyInMeters" datatype="Numeric">
             <labels>
@@ -9149,7 +9205,7 @@
             <table>ca_objects</table>
             <includeSubtypes>1</includeSubtypes>
             <settings>
-              <setting name="minAttributesPerRow">0</setting>
+              <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
