@@ -1,26 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.113F</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.114</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--https://docs.collectiveaccess.org/--><!--https://providence.readthedocs.io/en/latest/-->
   <!--Issues to check if succesful in v0.113-->
-  <!--https://github.com/inbo/collective-access/issues/353-->
-  <!--https://github.com/inbo/collective-access/issues/356-->
-  <!--https://github.com/inbo/collective-access/issues/386-->
-  <!--https://github.com/inbo/collective-access/issues/430-->
-  <!--https://github.com/inbo/collective-access/issues/440-->
-  <!--https://github.com/inbo/collective-access/issues/441-->
-  <!--https://github.com/inbo/collective-access/issues/442-->
-  <!--https://github.com/inbo/collective-access/issues/449-->
-  <!--https://github.com/inbo/collective-access/issues/450-->
-  <!--https://github.com/inbo/collective-access/issues/452-->
-  <!--https://github.com/inbo/collective-access/issues/453-->
-  <!--https://github.com/inbo/collective-access/issues/457-->
-  <!--https://github.com/inbo/collective-access/issues/458-->
-  <!--https://github.com/inbo/collective-access/issues/459-->
-  <!--https://github.com/inbo/collective-access/issues/455-->
-  <!--https://github.com/inbo/collective-access/issues/460-->
-  <!--https://github.com/inbo/collective-access/issues/461-->
   <!--https://github.com/inbo/collective-access/issues/462-->
   <!--https://github.com/inbo/collective-access/issues/463-->
   <!--https://github.com/inbo/collective-access/issues/466-->
@@ -35,6 +18,9 @@
   <!--https://github.com/inbo/collective-access/issues/477-->
   <!--https://github.com/inbo/collective-access/issues/478-->
   <!--https://github.com/inbo/collective-access/issues/479-->
+  <!--Issues to check if succesful in v0.114-->
+  <!--https://github.com/inbo/collective-access/issues/441-->
+  <!--https://github.com/inbo/collective-access/issues/482-->  
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -9773,7 +9759,6 @@
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
           <setting name="minValue">0</setting>
-          <setting name="mustNotBeBlank">0</setting>
         </settings>
         <typeRestrictions>
           <restriction code="r_objects">
@@ -9973,7 +9958,6 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
-          <setting name="mustNotBeBlank">1</setting>
         </settings>
         <typeRestrictions>
           <restriction code="r_soilObject">
@@ -13117,7 +13101,6 @@
                 <setting name="list_format">list</setting>
                 <setting name="dontShowAddButton">0</setting>
                 <setting name="dontShowDeleteButton">0</setting>
-                <setting name="mandatory">1</setting><!--this probably wont work-->
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="disableQuickadd">0</setting>
@@ -29238,7 +29221,7 @@
     </group>-->
   </groups>
   <displays>
-    <display code="specimens_search_viewers_cataloguers" type="ca_objects" system="0" typeRestrictions="object,plant,animal,plantSampleDried,seedlot,stemdisc,moss,fishEntireEthanol,taxidermySpecimen,mammalBloodSample,mammalHairSample,mammalParasiteSample" includeSubtypes="1">
+    <display code="specimens_search_viewers_cataloguers" type="ca_objects" system="0" typeRestrictions="object,plantObject,animalObject,plantSampleDried,seedlot,stemdisc,moss,fishEntireEthanol,taxidermySpecimen,mammalBloodSample,mammalHairSample,mammalParasiteSample" includeSubtypes="1">
       <labels>
         <label locale="en_US">
           <name>Specimen search</name>
@@ -29286,7 +29269,7 @@
         </placement>
       </bundlePlacements>
     </display>
-    <display code="specimens_search_admin" type="ca_objects" system="0" typeRestrictions="object,plant,animal" includeSubtypes="1">
+    <display code="specimens_search_admin" type="ca_objects" system="0" typeRestrictions="object,plantObject,animalObject" includeSubtypes="1">
       <labels>
         <label locale="en_US">
           <name>Specimen search admin</name>
