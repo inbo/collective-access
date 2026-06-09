@@ -356,8 +356,11 @@
                     <name_plural>DNA samples</name_plural>
                   </label>
                 </labels>
+                <settings>
+                  <setting name="render_in_new_menu">1</setting>
+                </settings>
                 <items>
-                  <item idno="dnaTissue" enabled="1" default="0">
+                  <item idno="dnaTissue" rank="1" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>DNA from tissue</name_singular>
@@ -368,7 +371,7 @@
                       <setting name="render_in_new_menu">1</setting>
                     </settings>
                   </item>
-                  <item idno="dnaWater" enabled="1" default="0">
+                  <item idno="dnaWater" rank="2" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>DNA from water</name_singular>
@@ -379,7 +382,7 @@
                       <setting name="render_in_new_menu">1</setting>
                     </settings>
                   </item>
-                  <item idno="dnaSoil" enabled="1" default="0">
+                  <item idno="dnaSoil" rank="3" enabled="1" default="0">
                     <labels>
                       <label locale="en_US" preferred="1">
                         <name_singular>DNA from soil</name_singular>
@@ -390,10 +393,7 @@
                       <setting name="render_in_new_menu">1</setting>
                     </settings>
                   </item>
-                <\items>
-                <settings>
-                  <setting name="render_in_new_menu">1</setting>
-                </settings>
+                </items>
               </item>
               <item idno="soilObject" rank="2" enabled="1" default="0">
                   <labels>
@@ -20173,7 +20173,6 @@
       <!--<permission table="ca_objects" bundle="ca_storage_locations" access="none"/>-->
       <!--<permission table="ca_objects" bundle="ca_storage_locations_related_list" access="none"/>-->
       <!--Everything from the ca_loans table has to be on "none"-->
-      </bundleLevelAccessControl>
       <typeLevelAccessControl>
         <permission table="ca_objects" type="object" access="edit"/>
         <permission table="ca_objects" type="dnaTissue" access="read"/>
