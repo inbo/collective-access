@@ -6948,7 +6948,7 @@
           <metadataElement code="weightAppliesTo" datatype="Text">
             <labels>
               <label locale="en_US">
-                <name>measurementAppliesTo</name>
+                <name>Measurement applies to</name>
                 <description>Further specification of what exactly was measured. For example: bruto or netto weight.</description>
               </label>
             </labels>
@@ -14103,7 +14103,7 @@
             <placement code="fileURL">
               <bundle>ca_attribute_fileURL</bundle>
 			        <settings>
-				        <setting name="add_label" locale="en_US">Add INBO file URL</setting>
+				        <setting name="add_label" locale="en_US">Add file URL</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="description" locale="en_US">Add URL (e.g. to a file on the Google drive) and describe what the (multimedia) file represents. For example: it represents the living animal from which a toe clip was sampled. For example: it represents the toe clip sample in a cryotube. For example: it is a scan of the experimental plot outline. For example: this is the msat genotype data of 2018. For example: this is the sequence data of 2020. Preferably this data is on the INBO archive drive or similar (less chance of broken links).</setting>
 			        </settings>
@@ -21389,6 +21389,30 @@
       </bundlePlacements>
     </searchForm>
   </searchForms>
+  <metadataDictionary>
+    <entry bundle="DD_deaccession_storage" table="ca_objects">
+      <labels>
+        <label locale="en_US">
+          <name>DD_deaccession_storage</name>
+          <description>Ensures active records have a storage location, and deaccessioned records are stripped of locations.</description>
+        </label>
+      </labels>
+      <settings>
+        <setting name="entry_type">Validation Rule</setting>
+        <setting name="rule_code">enforce_location_by_deaccession_status</setting>
+        <setting name="rule_level">Error</setting>
+        <setting name="expression">
+          <![CDATA[(ca_objects.is_deaccessioned == 1 && empty(ca_storage_locations.location_id)) || (ca_objects.is_deaccessioned == 0 && !empty(ca_storage_locations.location_id))]]>
+        </setting>
+        <setting name="show_as_prompt">1</setting>
+        <setting name="rule_violation_message" locale="en_US">Data conflict: If an item is deaccessioned, its storage location must be blank. If active, it must have a storage location assigned.</setting>
+        <setting name="mandatory">0</setting>
+        <setting name="definition"></setting>
+        <setting name="restrict_to_types"></setting>
+        <setting name="restrict_to_relationship_types"></setting>
+      </settings>
+    </entry>
+  </metadataDictionary>
   <logins><!--Change passwords immediately after installation, for testing purposes only-->
     <login user_name="administrator" password="administrator" email="collectiebeheer@inbo.be" fname="Admin" lname="Istrator">
         <role code="admin"/>
