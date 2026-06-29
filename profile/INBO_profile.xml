@@ -19125,6 +19125,7 @@
       <!--<permission table="ca_objects" bundle="ca_loans" access="read"/>-->
       <!--<permission table="ca_objects" bundle="ca_loans_related_list" access="read"/>-->
       <!--<permission table="ca_objects" bundle="ca_objects_deaccession" access="read"/>-->
+      <!--<permission table="ca_objects" bundle="ca_objects_disposition" access="read"/>-->
       <!--<permission table="ca_objects" bundle="ca_storage_locations" access="none"/>-->
       <!--<permission table="ca_objects" bundle="ca_storage_locations_related_list" access="none"/>-->
       <!--Everything from the ca_loans table has to be on "none"-->
@@ -19226,6 +19227,7 @@
       <!--For ca_sets everything is on "edit"-->
       <!--EDIT-->
       <!--<permission table="ca_objects" bundle="ca_objects_deaccession" access="edit"/>-->
+      <!--<permission table="ca_objects" bundle="ca_objects_disposition" access="edit"/>-->
       <!--<permission table="ca_objects" bundle="ca_occurrences" access="edit"/>-->
       <!--<permission table="ca_objects" bundle="ca_occurrences_related_list" access="edit"/>-->
       <!--<permission table="ca_objects" bundle="ca_storage_locations" access="edit"/>-->
@@ -19275,6 +19277,1184 @@
         <permission table="ca_loans" type="incoming_external" access="none"/>
         <permission table="ca_loans" type="internalReuse" access="none"/>
         <permission table="ca_loans" type="externalReuse" access="none"/>
+      </typeLevelAccessControl>
+    </role>
+    <role code="FISHmanager">
+      <name>FISH manager</name>
+      <description>Can change almost everything and can see storage locations</description>
+      <actions>
+        <action>can_quicksearch</action>
+        <action>can_batch_import_media</action>
+        <action>can_batch_import_metadata</action>
+        <action>allow_delete_media_after_import</action>
+        <action>can_batch_export_metadata</action>
+        <action>can_create_adv_search_forms</action>
+        <action>can_edit_adv_search_forms</action>
+        <action>can_use_adv_search_forms</action>
+        <action>can_use_searchbuilder</action>
+        <action>can_use_ca_bundle_displays</action>
+        <action>can_use_metadata_alerts</action>
+        <action>can_create_sets</action>
+        <action>can_edit_sets</action>
+        <action>can_delete_own_sets</action>
+        <action>can_view_sets</action>
+        <action>can_duplicate_ca_sets</action>
+        <action>can_quickadd_ca_sets</action>
+        <action>can_create_ca_objects</action>
+        <action>can_edit_ca_objects</action>
+        <action>can_search_ca_objects</action>
+        <action>can_browse_ca_objects</action>
+        <action>can_duplicate_ca_objects</action>
+        <action>can_quickadd_ca_objects</action>
+        <action>can_export_ca_objects</action>
+        <action>can_change_type_ca_objects</action>
+        <action>can_batch_edit_ca_objects</action>
+        <action>can_see_current_location_in_inspector_ca_objects</action>
+        <action>can_access_deaccessioned_ca_objects</action>
+        <action>can_view_change_log_ca_objects</action>
+        <action>can_create_ca_object_lots</action>
+        <action>can_edit_ca_object_lots</action>
+        <action>can_search_ca_object_lots</action>
+        <action>can_browse_ca_object_lots</action>
+        <action>can_duplicate_ca_object_lots</action>
+        <action>can_export_ca_object_lots</action>
+        <action>can_quickadd_ca_object_lots</action>
+        <action>can_change_type_ca_object_lots</action>
+        <action>can_access_deaccessioned_ca_object_lots</action>
+        <action>can_view_change_log_ca_object_lots</action>
+        <action>can_create_ca_entities</action>
+        <action>can_edit_ca_entities</action>
+        <action>can_search_ca_entities</action>
+        <action>can_browse_ca_entities</action>
+        <action>can_quickadd_ca_entities</action>
+        <action>can_view_change_log_ca_entities</action>
+        <action>can_create_ca_places</action>
+        <action>can_edit_ca_places</action>
+        <action>can_search_ca_places</action>
+        <action>can_browse_ca_places</action>
+        <action>can_export_ca_places</action>
+        <action>can_quickadd_ca_places</action>
+        <action>can_change_type_ca_places</action>
+        <action>can_view_change_log_ca_places</action>
+        <action>can_create_ca_occurrences</action>
+        <action>can_edit_ca_occurrences</action>
+        <action>can_delete_ca_occurrences</action>
+        <action>can_search_ca_occurrences</action>
+        <action>can_browse_ca_occurrences</action>
+        <action>can_duplicate_ca_occurrences</action>
+        <action>can_export_ca_occurrences</action>
+        <action>can_quickadd_ca_occurrences</action>
+        <action>can_change_type_ca_occurrences</action>
+        <action>can_batch_edit_ca_occurrences</action>
+        <action>can_batch_delete_ca_occurrences</action>
+        <action>can_view_change_log_ca_occurrences</action>
+        <action>can_search_ca_collections</action>
+        <action>can_browse_ca_collections</action>
+        <action>can_export_ca_collections</action>
+        <action>can_view_change_log_ca_collections</action>
+        <action>can_search_ca_storage_locations</action>
+        <action>can_browse_ca_storage_locations</action>
+        <action>can_export_ca_storage_locations</action>
+        <action>can_view_change_log_ca_storage_locations</action>
+        <action>can_create_ca_loans</action>
+        <action>can_edit_ca_loans</action>
+        <action>can_search_ca_loans</action>
+        <action>can_browse_ca_loans</action>
+        <action>can_duplicate_ca_loans</action>
+        <action>can_export_ca_loans</action>
+        <action>can_quickadd_ca_loans</action>
+        <action>can_change_type_ca_loans</action>
+      </actions>
+      <!--tab Metadata has to be done manually in the UI-->
+      <!--Everything here is on "Read/edit"-->
+      <typeLevelAccessControl>
+        <permission table="ca_objects" type="object" access="edit"/>
+        <permission table="ca_objects" type="dnaSample" access="read"/>
+        <permission table="ca_objects" type="dnaTissue" access="read"/>
+        <permission table="ca_objects" type="dnaSoil" access="read"/>
+        <permission table="ca_objects" type="dnaWater" access="read"/>
+        <permission table="ca_objects" type="genotype" access="read"/>
+        <permission table="ca_objects" type="soilObject" access="read"/>
+        <permission table="ca_objects" type="plantSampleDried" access="read"/>
+        <permission table="ca_objects" type="geneticEntity" access="read"/>
+        <permission table="ca_objects" type="seedlot" access="read"/>
+        <permission table="ca_objects" type="plantObject" access="read"/>
+        <permission table="ca_objects" type="animalObject" access="edit"/>
+        <permission table="ca_objects" type="stemdisc" access="read"/>
+        <permission table="ca_objects" type="forestTreePopulation" access="read"/>
+        <permission table="ca_objects" type="livingPlant" access="read"/>
+        <permission table="ca_objects" type="moss" access="read"/>
+        <permission table="ca_objects" type="fishEntireEthanol" access="edit"/>
+        <permission table="ca_objects" type="fishTissueSample" access="read"/>
+        <permission table="ca_objects" type="taxidermySpecimen" access="read"/>
+        <permission table="ca_objects" type="mammalTissueSample" access="read"/>
+        <permission table="ca_objects" type="mammalBloodSample" access="read"/>
+        <permission table="ca_objects" type="mammalHairSample" access="read"/>
+        <permission table="ca_objects" type="mammalParasiteSample" access="read"/>
+      </typeLevelAccessControl>
+    </role>
+    <role code="FTCmanager">
+      <name>FTC manager</name>
+      <description>Can change almost everything and can see storage locations</description>
+      <actions>
+        <action>can_quicksearch</action>
+        <action>can_batch_import_media</action>
+        <action>can_batch_import_metadata</action>
+        <action>allow_delete_media_after_import</action>
+        <action>can_batch_export_metadata</action>
+        <action>can_create_adv_search_forms</action>
+        <action>can_edit_adv_search_forms</action>
+        <action>can_use_adv_search_forms</action>
+        <action>can_use_searchbuilder</action>
+        <action>can_use_ca_bundle_displays</action>
+        <action>can_use_metadata_alerts</action>
+        <action>can_create_sets</action>
+        <action>can_edit_sets</action>
+        <action>can_delete_own_sets</action>
+        <action>can_view_sets</action>
+        <action>can_duplicate_ca_sets</action>
+        <action>can_quickadd_ca_sets</action>
+        <action>can_create_ca_objects</action>
+        <action>can_edit_ca_objects</action>
+        <action>can_search_ca_objects</action>
+        <action>can_browse_ca_objects</action>
+        <action>can_duplicate_ca_objects</action>
+        <action>can_quickadd_ca_objects</action>
+        <action>can_export_ca_objects</action>
+        <action>can_change_type_ca_objects</action>
+        <action>can_batch_edit_ca_objects</action>
+        <action>can_see_current_location_in_inspector_ca_objects</action>
+        <action>can_access_deaccessioned_ca_objects</action>
+        <action>can_view_change_log_ca_objects</action>
+        <action>can_create_ca_object_lots</action>
+        <action>can_edit_ca_object_lots</action>
+        <action>can_search_ca_object_lots</action>
+        <action>can_browse_ca_object_lots</action>
+        <action>can_duplicate_ca_object_lots</action>
+        <action>can_export_ca_object_lots</action>
+        <action>can_quickadd_ca_object_lots</action>
+        <action>can_change_type_ca_object_lots</action>
+        <action>can_access_deaccessioned_ca_object_lots</action>
+        <action>can_view_change_log_ca_object_lots</action>
+        <action>can_create_ca_entities</action>
+        <action>can_edit_ca_entities</action>
+        <action>can_search_ca_entities</action>
+        <action>can_browse_ca_entities</action>
+        <action>can_quickadd_ca_entities</action>
+        <action>can_view_change_log_ca_entities</action>
+        <action>can_create_ca_places</action>
+        <action>can_edit_ca_places</action>
+        <action>can_search_ca_places</action>
+        <action>can_browse_ca_places</action>
+        <action>can_export_ca_places</action>
+        <action>can_quickadd_ca_places</action>
+        <action>can_change_type_ca_places</action>
+        <action>can_view_change_log_ca_places</action>
+        <action>can_create_ca_occurrences</action>
+        <action>can_edit_ca_occurrences</action>
+        <action>can_delete_ca_occurrences</action>
+        <action>can_search_ca_occurrences</action>
+        <action>can_browse_ca_occurrences</action>
+        <action>can_duplicate_ca_occurrences</action>
+        <action>can_export_ca_occurrences</action>
+        <action>can_quickadd_ca_occurrences</action>
+        <action>can_change_type_ca_occurrences</action>
+        <action>can_batch_edit_ca_occurrences</action>
+        <action>can_batch_delete_ca_occurrences</action>
+        <action>can_view_change_log_ca_occurrences</action>
+        <action>can_search_ca_collections</action>
+        <action>can_browse_ca_collections</action>
+        <action>can_export_ca_collections</action>
+        <action>can_view_change_log_ca_collections</action>
+        <action>can_search_ca_storage_locations</action>
+        <action>can_browse_ca_storage_locations</action>
+        <action>can_export_ca_storage_locations</action>
+        <action>can_view_change_log_ca_storage_locations</action>
+        <action>can_create_ca_loans</action>
+        <action>can_edit_ca_loans</action>
+        <action>can_search_ca_loans</action>
+        <action>can_browse_ca_loans</action>
+        <action>can_duplicate_ca_loans</action>
+        <action>can_export_ca_loans</action>
+        <action>can_quickadd_ca_loans</action>
+        <action>can_change_type_ca_loans</action>
+      </actions>
+      <!--tab Metadata has to be done manually in the UI-->
+      <!--Everything here is on "Read/edit"-->
+      <typeLevelAccessControl>
+        <permission table="ca_objects" type="object" access="edit"/>
+        <permission table="ca_objects" type="dnaSample" access="read"/>
+        <permission table="ca_objects" type="dnaTissue" access="read"/>
+        <permission table="ca_objects" type="dnaSoil" access="read"/>
+        <permission table="ca_objects" type="dnaWater" access="read"/>
+        <permission table="ca_objects" type="genotype" access="read"/>
+        <permission table="ca_objects" type="soilObject" access="read"/>
+        <permission table="ca_objects" type="plantSampleDried" access="read"/>
+        <permission table="ca_objects" type="geneticEntity" access="read"/>
+        <permission table="ca_objects" type="seedlot" access="read"/>
+        <permission table="ca_objects" type="plantObject" access="read"/>
+        <permission table="ca_objects" type="animalObject" access="edit"/>
+        <permission table="ca_objects" type="stemdisc" access="read"/>
+        <permission table="ca_objects" type="forestTreePopulation" access="read"/>
+        <permission table="ca_objects" type="livingPlant" access="read"/>
+        <permission table="ca_objects" type="moss" access="read"/>
+        <permission table="ca_objects" type="fishEntireEthanol" access="read"/>
+        <permission table="ca_objects" type="fishTissueSample" access="edit"/>
+        <permission table="ca_objects" type="taxidermySpecimen" access="read"/>
+        <permission table="ca_objects" type="mammalTissueSample" access="read"/>
+        <permission table="ca_objects" type="mammalBloodSample" access="read"/>
+        <permission table="ca_objects" type="mammalHairSample" access="read"/>
+        <permission table="ca_objects" type="mammalParasiteSample" access="read"/>
+      </typeLevelAccessControl>
+    </role>
+    <role code="FTCcataloguer">
+      <name>FTC cataloguer</name>
+      <description>Can change certain fields and cannot see storage locations</description>
+      <actions>
+        <action>can_quicksearch</action>
+        <action>can_batch_import_media</action>
+        <action>can_batch_import_metadata</action>
+        <action>allow_delete_media_after_import</action>
+        <action>can_batch_export_metadata</action>
+        <action>can_create_adv_search_forms</action>
+        <action>can_edit_adv_search_forms</action>
+        <action>can_use_adv_search_forms</action>
+        <action>can_use_searchbuilder</action>
+        <action>can_use_ca_bundle_displays</action>
+        <action>can_use_metadata_alerts</action>
+        <action>can_create_sets</action>
+        <action>can_edit_sets</action>
+        <action>can_delete_own_sets</action>
+        <action>can_view_sets</action>
+        <action>can_duplicate_ca_sets</action>
+        <action>can_quickadd_ca_sets</action>
+        <action>can_create_ca_objects</action>
+        <action>can_edit_ca_objects</action>
+        <action>can_search_ca_objects</action>
+        <action>can_browse_ca_objects</action>
+        <action>can_duplicate_ca_objects</action>
+        <action>can_quickadd_ca_objects</action>
+        <action>can_export_ca_objects</action>
+        <action>can_see_current_location_in_inspector_ca_objects</action>
+        <action>can_access_deaccessioned_ca_objects</action>
+        <action>can_view_change_log_ca_objects</action>
+        <action>can_create_ca_object_lots</action>
+        <action>can_edit_ca_object_lots</action>
+        <action>can_search_ca_object_lots</action>
+        <action>can_browse_ca_object_lots</action>
+        <action>can_duplicate_ca_object_lots</action>
+        <action>can_export_ca_object_lots</action>
+        <action>can_quickadd_ca_object_lots</action>
+        <action>can_access_deaccessioned_ca_object_lots</action>
+        <action>can_view_change_log_ca_object_lots</action>
+        <action>can_create_ca_entities</action>
+        <action>can_edit_ca_entities</action>
+        <action>can_search_ca_entities</action>
+        <action>can_browse_ca_entities</action>
+        <action>can_quickadd_ca_entities</action>
+        <action>can_view_change_log_ca_entities</action>
+        <action>can_create_ca_places</action>
+        <action>can_edit_ca_places</action>
+        <action>can_search_ca_places</action>
+        <action>can_browse_ca_places</action>
+        <action>can_export_ca_places</action>
+        <action>can_quickadd_ca_places</action>
+        <action>can_change_type_ca_places</action>
+        <action>can_view_change_log_ca_places</action>
+        <action>can_create_ca_occurrences</action>
+        <action>can_edit_ca_occurrences</action>
+        <action>can_search_ca_occurrences</action>
+        <action>can_browse_ca_occurrences</action>
+        <action>can_quickadd_ca_occurrences</action>
+        <action>can_view_change_log_ca_occurrences</action>
+        <action>can_search_ca_collections</action>
+        <action>can_browse_ca_collections</action>
+        <action>can_export_ca_collections</action>
+        <action>can_view_change_log_ca_collections</action>
+        <action>can_search_ca_storage_locations</action>
+        <action>can_browse_ca_storage_locations</action>
+        <action>can_export_ca_storage_locations</action>
+        <action>can_view_change_log_ca_storage_locations</action>
+      </actions>
+      <!--tab Metadata has to be done manually in the UI-->
+      <!--Everything here is on "Read/edit" except de ones below-->
+      <!--<permission table="ca_objects" bundle="ca_loans" access="read"/>-->
+      <!--<permission table="ca_objects" bundle="ca_loans_related_list" access="read"/>-->
+      <!--<permission table="ca_objects" bundle="ca_objects_deaccession" access="read"/>-->
+      <!--<permission table="ca_objects" bundle="ca_objects_disposition" access="read"/>-->
+      <!--<permission table="ca_objects" bundle="ca_storage_locations" access="none"/>-->
+      <!--<permission table="ca_objects" bundle="ca_storage_locations_related_list" access="none"/>-->
+      <!--Everything from the ca_loans table has to be on "none"-->
+      <typeLevelAccessControl>
+        <permission table="ca_objects" type="object" access="edit"/>
+        <permission table="ca_objects" type="dnaSample" access="read"/>
+        <permission table="ca_objects" type="dnaTissue" access="read"/>
+        <permission table="ca_objects" type="dnaSoil" access="read"/>
+        <permission table="ca_objects" type="dnaWater" access="read"/>
+        <permission table="ca_objects" type="genotype" access="read"/>
+        <permission table="ca_objects" type="soilObject" access="read"/>
+        <permission table="ca_objects" type="plantSampleDried" access="read"/>
+        <permission table="ca_objects" type="geneticEntity" access="read"/>
+        <permission table="ca_objects" type="seedlot" access="read"/>
+        <permission table="ca_objects" type="plantObject" access="read"/>
+        <permission table="ca_objects" type="animalObject" access="edit"/>
+        <permission table="ca_objects" type="stemdisc" access="read"/>
+        <permission table="ca_objects" type="forestTreePopulation" access="read"/>
+        <permission table="ca_objects" type="livingPlant" access="read"/>
+        <permission table="ca_objects" type="moss" access="read"/>
+        <permission table="ca_objects" type="fishEntireEthanol" access="read"/>
+        <permission table="ca_objects" type="fishTissueSample" access="edit"/>
+        <permission table="ca_objects" type="taxidermySpecimen" access="read"/>
+        <permission table="ca_objects" type="mammalTissueSample" access="read"/>
+        <permission table="ca_objects" type="mammalBloodSample" access="read"/>
+        <permission table="ca_objects" type="mammalHairSample" access="read"/>
+        <permission table="ca_objects" type="mammalParasiteSample" access="read"/>
+      </typeLevelAccessControl>
+    </role>
+    <role code="FTCarchivist">
+      <name>FTC collection archivist</name>
+      <description>This role is viewer + editor of storage location, curation events and measurements (volume, weight) for his/her collection.</description>
+      <actions>
+        <action>can_quicksearch</action>
+        <action>can_batch_import_media</action>
+        <action>can_batch_import_metadata</action>
+        <action>allow_delete_media_after_import</action>
+        <action>can_batch_export_metadata</action>
+        <action>can_create_adv_search_forms</action>
+        <action>can_edit_adv_search_forms</action>
+        <action>can_use_adv_search_forms</action>
+        <action>can_use_searchbuilder</action>
+        <action>can_use_ca_bundle_displays</action>
+        <action>can_use_metadata_alerts</action>
+        <action>can_create_sets</action>
+        <action>can_edit_sets</action>
+        <action>can_delete_own_sets</action>
+        <action>can_view_sets</action>
+        <action>can_duplicate_ca_sets</action>
+        <action>can_quickadd_ca_sets</action>
+        <action>can_edit_ca_objects</action>
+        <action>can_search_ca_objects</action>
+        <action>can_browse_ca_objects</action>
+        <action>can_export_ca_objects</action>
+        <action>can_batch_edit_ca_objects</action>
+        <action>can_see_current_location_in_inspector_ca_objects</action>
+        <action>can_search_ca_object_lots</action>
+        <action>can_browse_ca_object_lots</action>
+        <action>can_export_ca_object_lots</action>
+        <action>can_view_change_log_ca_object_lots</action>
+        <action>can_search_ca_places</action>
+        <action>can_browse_ca_places</action>
+        <action>can_export_ca_places</action>
+        <action>can_view_change_log_ca_places</action>
+        <action>can_create_ca_occurrences</action>
+        <action>can_edit_ca_occurrences</action>
+        <action>can_search_ca_occurrences</action>
+        <action>can_browse_ca_occurrences</action>
+        <action>can_duplicate_ca_occurrences</action>
+        <action>can_export_ca_occurrences</action>
+        <action>can_quickadd_ca_occurrences</action>
+        <action>can_change_type_ca_occurrences</action>
+        <action>can_view_change_log_ca_occurrences</action>
+        <action>can_search_ca_collections</action>
+        <action>can_browse_ca_collections</action>
+        <action>can_export_ca_collections</action>
+        <action>can_view_change_log_ca_collections</action>
+        <action>can_search_ca_storage_locations</action>
+        <action>can_browse_ca_storage_locations</action>
+        <action>can_export_ca_storage_locations</action>
+        <action>can_view_change_log_ca_storage_locations</action>
+        <action>can_edit_ca_loans</action>
+        <action>can_search_ca_loans</action>
+        <action>can_browse_ca_loans</action>
+        <action>can_view_change_log_ca_loans</action>
+      </actions>
+      <!--tab Metadata has to be done manually in the UI-->
+      <!--Everything here is on "Read" except de ones below-->
+      <!--For ca_occurrences everything is on "edit"-->
+      <!--For ca_sets everything is on "edit"-->
+      <!--EDIT-->
+      <!--<permission table="ca_objects" bundle="ca_objects_deaccession" access="edit"/>-->
+      <!--<permission table="ca_objects" bundle="ca_objects_disposition" access="edit"/>-->
+      <!--<permission table="ca_objects" bundle="ca_occurrences" access="edit"/>-->
+      <!--<permission table="ca_objects" bundle="ca_occurrences_related_list" access="edit"/>-->
+      <!--<permission table="ca_objects" bundle="ca_storage_locations" access="edit"/>-->
+      <!--<permission table="ca_objects" bundle="ca_storage_locations_related_list" access="edit"/>-->
+      <!--<permission table="ca_objects" bundle="ca_attribute_weight" access="edit"/>-->
+      <!--<permission table="ca_object_lots" bundle="ca_occurrences" access="edit"/>-->
+      <!--<permission table="ca_object_lots" bundle="ca_occurrences_related_list" access="edit"/>-->
+      <!--<permission table="ca_object_lots" bundle="ca_storage_locations" access="edit"/>-->
+      <!--<permission table="ca_object_lots" bundle="ca_storage_locations_related_list" access="edit"/>-->
+      <typeLevelAccessControl>
+        <permission table="ca_objects" type="object" access="edit"/>
+        <permission table="ca_objects" type="dnaSample" access="read"/>
+        <permission table="ca_objects" type="dnaTissue" access="read"/>
+        <permission table="ca_objects" type="dnaSoil" access="read"/>
+        <permission table="ca_objects" type="dnaWater" access="read"/>
+        <permission table="ca_objects" type="genotype" access="read"/>
+        <permission table="ca_objects" type="soilObject" access="read"/>
+        <permission table="ca_objects" type="plantSampleDried" access="read"/>
+        <permission table="ca_objects" type="geneticEntity" access="read"/>
+        <permission table="ca_objects" type="seedlot" access="read"/>
+        <permission table="ca_objects" type="plantObject" access="read"/>
+        <permission table="ca_objects" type="animalObject" access="edit"/>
+        <permission table="ca_objects" type="stemdisc" access="read"/>
+        <permission table="ca_objects" type="forestTreePopulation" access="read"/>
+        <permission table="ca_objects" type="livingPlant" access="read"/>
+        <permission table="ca_objects" type="moss" access="read"/>
+        <permission table="ca_objects" type="fishEntireEthanol" access="read"/>
+        <permission table="ca_objects" type="fishTissueSample" access="edit"/>
+        <permission table="ca_objects" type="taxidermySpecimen" access="read"/>
+        <permission table="ca_objects" type="mammalTissueSample" access="read"/>
+        <permission table="ca_objects" type="mammalBloodSample" access="read"/>
+        <permission table="ca_objects" type="mammalHairSample" access="read"/>
+        <permission table="ca_objects" type="mammalParasiteSample" access="read"/>
+      </typeLevelAccessControl>
+    </role>
+    <role code="LPCmanager">
+      <name>LPC manager</name>
+      <description>Can change almost everything and can see storage locations</description>
+      <actions>
+        <action>can_quicksearch</action>
+        <action>can_batch_import_media</action>
+        <action>can_batch_import_metadata</action>
+        <action>allow_delete_media_after_import</action>
+        <action>can_batch_export_metadata</action>
+        <action>can_create_adv_search_forms</action>
+        <action>can_edit_adv_search_forms</action>
+        <action>can_use_adv_search_forms</action>
+        <action>can_use_searchbuilder</action>
+        <action>can_use_ca_bundle_displays</action>
+        <action>can_use_metadata_alerts</action>
+        <action>can_create_sets</action>
+        <action>can_edit_sets</action>
+        <action>can_delete_own_sets</action>
+        <action>can_view_sets</action>
+        <action>can_duplicate_ca_sets</action>
+        <action>can_quickadd_ca_sets</action>
+        <action>can_create_ca_objects</action>
+        <action>can_edit_ca_objects</action>
+        <action>can_search_ca_objects</action>
+        <action>can_browse_ca_objects</action>
+        <action>can_duplicate_ca_objects</action>
+        <action>can_quickadd_ca_objects</action>
+        <action>can_export_ca_objects</action>
+        <action>can_change_type_ca_objects</action>
+        <action>can_batch_edit_ca_objects</action>
+        <action>can_see_current_location_in_inspector_ca_objects</action>
+        <action>can_access_deaccessioned_ca_objects</action>
+        <action>can_view_change_log_ca_objects</action>
+        <action>can_create_ca_object_lots</action>
+        <action>can_edit_ca_object_lots</action>
+        <action>can_search_ca_object_lots</action>
+        <action>can_browse_ca_object_lots</action>
+        <action>can_duplicate_ca_object_lots</action>
+        <action>can_export_ca_object_lots</action>
+        <action>can_quickadd_ca_object_lots</action>
+        <action>can_change_type_ca_object_lots</action>
+        <action>can_access_deaccessioned_ca_object_lots</action>
+        <action>can_view_change_log_ca_object_lots</action>
+        <action>can_create_ca_entities</action>
+        <action>can_edit_ca_entities</action>
+        <action>can_search_ca_entities</action>
+        <action>can_browse_ca_entities</action>
+        <action>can_quickadd_ca_entities</action>
+        <action>can_view_change_log_ca_entities</action>
+        <action>can_create_ca_places</action>
+        <action>can_edit_ca_places</action>
+        <action>can_search_ca_places</action>
+        <action>can_browse_ca_places</action>
+        <action>can_export_ca_places</action>
+        <action>can_quickadd_ca_places</action>
+        <action>can_change_type_ca_places</action>
+        <action>can_view_change_log_ca_places</action>
+        <action>can_create_ca_occurrences</action>
+        <action>can_edit_ca_occurrences</action>
+        <action>can_delete_ca_occurrences</action>
+        <action>can_search_ca_occurrences</action>
+        <action>can_browse_ca_occurrences</action>
+        <action>can_duplicate_ca_occurrences</action>
+        <action>can_export_ca_occurrences</action>
+        <action>can_quickadd_ca_occurrences</action>
+        <action>can_change_type_ca_occurrences</action>
+        <action>can_batch_edit_ca_occurrences</action>
+        <action>can_batch_delete_ca_occurrences</action>
+        <action>can_view_change_log_ca_occurrences</action>
+        <action>can_search_ca_collections</action>
+        <action>can_browse_ca_collections</action>
+        <action>can_export_ca_collections</action>
+        <action>can_view_change_log_ca_collections</action>
+        <action>can_search_ca_storage_locations</action>
+        <action>can_browse_ca_storage_locations</action>
+        <action>can_export_ca_storage_locations</action>
+        <action>can_view_change_log_ca_storage_locations</action>
+        <action>can_create_ca_loans</action>
+        <action>can_edit_ca_loans</action>
+        <action>can_search_ca_loans</action>
+        <action>can_browse_ca_loans</action>
+        <action>can_duplicate_ca_loans</action>
+        <action>can_export_ca_loans</action>
+        <action>can_quickadd_ca_loans</action>
+        <action>can_change_type_ca_loans</action>
+      </actions>
+      <!--tab Metadata has to be done manually in the UI-->
+      <!--Everything here is on "Read/edit"-->
+      <typeLevelAccessControl>
+        <permission table="ca_objects" type="object" access="edit"/>
+        <permission table="ca_objects" type="dnaSample" access="read"/>
+        <permission table="ca_objects" type="dnaTissue" access="read"/>
+        <permission table="ca_objects" type="dnaSoil" access="read"/>
+        <permission table="ca_objects" type="dnaWater" access="read"/>
+        <permission table="ca_objects" type="genotype" access="read"/>
+        <permission table="ca_objects" type="soilObject" access="read"/>
+        <permission table="ca_objects" type="plantSampleDried" access="read"/>
+        <permission table="ca_objects" type="geneticEntity" access="read"/>
+        <permission table="ca_objects" type="seedlot" access="read"/>
+        <permission table="ca_objects" type="plantObject" access="edit"/>
+        <permission table="ca_objects" type="animalObject" access="read"/>
+        <permission table="ca_objects" type="stemdisc" access="read"/>
+        <permission table="ca_objects" type="forestTreePopulation" access="edit"/>
+        <permission table="ca_objects" type="livingPlant" access="edit"/>
+        <permission table="ca_objects" type="moss" access="read"/>
+        <permission table="ca_objects" type="fishEntireEthanol" access="read"/>
+        <permission table="ca_objects" type="fishTissueSample" access="read"/>
+        <permission table="ca_objects" type="taxidermySpecimen" access="read"/>
+        <permission table="ca_objects" type="mammalTissueSample" access="read"/>
+        <permission table="ca_objects" type="mammalBloodSample" access="read"/>
+        <permission table="ca_objects" type="mammalHairSample" access="read"/>
+        <permission table="ca_objects" type="mammalParasiteSample" access="read"/>
+      </typeLevelAccessControl>
+    </role>
+    <role code="LPCcataloguer">
+      <name>LPC cataloguer</name>
+      <description>Can change certain fields and cannot see storage locations</description>
+      <actions>
+        <action>can_quicksearch</action>
+        <action>can_batch_import_media</action>
+        <action>can_batch_import_metadata</action>
+        <action>allow_delete_media_after_import</action>
+        <action>can_batch_export_metadata</action>
+        <action>can_create_adv_search_forms</action>
+        <action>can_edit_adv_search_forms</action>
+        <action>can_use_adv_search_forms</action>
+        <action>can_use_searchbuilder</action>
+        <action>can_use_ca_bundle_displays</action>
+        <action>can_use_metadata_alerts</action>
+        <action>can_create_sets</action>
+        <action>can_edit_sets</action>
+        <action>can_delete_own_sets</action>
+        <action>can_view_sets</action>
+        <action>can_duplicate_ca_sets</action>
+        <action>can_quickadd_ca_sets</action>
+        <action>can_create_ca_objects</action>
+        <action>can_edit_ca_objects</action>
+        <action>can_search_ca_objects</action>
+        <action>can_browse_ca_objects</action>
+        <action>can_duplicate_ca_objects</action>
+        <action>can_quickadd_ca_objects</action>
+        <action>can_export_ca_objects</action>
+        <action>can_see_current_location_in_inspector_ca_objects</action>
+        <action>can_access_deaccessioned_ca_objects</action>
+        <action>can_view_change_log_ca_objects</action>
+        <action>can_create_ca_object_lots</action>
+        <action>can_edit_ca_object_lots</action>
+        <action>can_search_ca_object_lots</action>
+        <action>can_browse_ca_object_lots</action>
+        <action>can_duplicate_ca_object_lots</action>
+        <action>can_export_ca_object_lots</action>
+        <action>can_quickadd_ca_object_lots</action>
+        <action>can_access_deaccessioned_ca_object_lots</action>
+        <action>can_view_change_log_ca_object_lots</action>
+        <action>can_create_ca_entities</action>
+        <action>can_edit_ca_entities</action>
+        <action>can_search_ca_entities</action>
+        <action>can_browse_ca_entities</action>
+        <action>can_quickadd_ca_entities</action>
+        <action>can_view_change_log_ca_entities</action>
+        <action>can_create_ca_places</action>
+        <action>can_edit_ca_places</action>
+        <action>can_search_ca_places</action>
+        <action>can_browse_ca_places</action>
+        <action>can_export_ca_places</action>
+        <action>can_quickadd_ca_places</action>
+        <action>can_change_type_ca_places</action>
+        <action>can_view_change_log_ca_places</action>
+        <action>can_create_ca_occurrences</action>
+        <action>can_edit_ca_occurrences</action>
+        <action>can_search_ca_occurrences</action>
+        <action>can_browse_ca_occurrences</action>
+        <action>can_quickadd_ca_occurrences</action>
+        <action>can_view_change_log_ca_occurrences</action>
+        <action>can_search_ca_collections</action>
+        <action>can_browse_ca_collections</action>
+        <action>can_export_ca_collections</action>
+        <action>can_view_change_log_ca_collections</action>
+        <action>can_search_ca_storage_locations</action>
+        <action>can_browse_ca_storage_locations</action>
+        <action>can_export_ca_storage_locations</action>
+        <action>can_view_change_log_ca_storage_locations</action>
+      </actions>
+      <!--tab Metadata has to be done manually in the UI-->
+      <!--Everything here is on "Read/edit" except de ones below-->
+      <!--<permission table="ca_objects" bundle="ca_loans" access="read"/>-->
+      <!--<permission table="ca_objects" bundle="ca_loans_related_list" access="read"/>-->
+      <!--<permission table="ca_objects" bundle="ca_objects_deaccession" access="read"/>-->
+      <!--<permission table="ca_objects" bundle="ca_objects_disposition" access="read"/>-->
+      <!--<permission table="ca_objects" bundle="ca_storage_locations" access="none"/>-->
+      <!--<permission table="ca_objects" bundle="ca_storage_locations_related_list" access="none"/>-->
+      <!--Everything from the ca_loans table has to be on "none"-->
+      <typeLevelAccessControl>
+        <permission table="ca_objects" type="object" access="edit"/>
+        <permission table="ca_objects" type="dnaSample" access="read"/>
+        <permission table="ca_objects" type="dnaTissue" access="read"/>
+        <permission table="ca_objects" type="dnaSoil" access="read"/>
+        <permission table="ca_objects" type="dnaWater" access="read"/>
+        <permission table="ca_objects" type="genotype" access="read"/>
+        <permission table="ca_objects" type="soilObject" access="read"/>
+        <permission table="ca_objects" type="plantSampleDried" access="read"/>
+        <permission table="ca_objects" type="geneticEntity" access="read"/>
+        <permission table="ca_objects" type="seedlot" access="read"/>
+        <permission table="ca_objects" type="plantObject" access="edit"/>
+        <permission table="ca_objects" type="animalObject" access="read"/>
+        <permission table="ca_objects" type="stemdisc" access="read"/>
+        <permission table="ca_objects" type="forestTreePopulation" access="edit"/>
+        <permission table="ca_objects" type="livingPlant" access="edit"/>
+        <permission table="ca_objects" type="moss" access="read"/>
+        <permission table="ca_objects" type="fishEntireEthanol" access="read"/>
+        <permission table="ca_objects" type="fishTissueSample" access="read"/>
+        <permission table="ca_objects" type="taxidermySpecimen" access="read"/>
+        <permission table="ca_objects" type="mammalTissueSample" access="read"/>
+        <permission table="ca_objects" type="mammalBloodSample" access="read"/>
+        <permission table="ca_objects" type="mammalHairSample" access="read"/>
+        <permission table="ca_objects" type="mammalParasiteSample" access="read"/>
+      </typeLevelAccessControl>
+    </role>
+    <role code="LPCarchivist">
+      <name>LPC archivist</name>
+      <description>This role is viewer + editor of storage location, curation events and measurements (count) for his/her collection.</description>
+      <actions>
+        <action>can_quicksearch</action>
+        <action>can_batch_import_media</action>
+        <action>can_batch_import_metadata</action>
+        <action>allow_delete_media_after_import</action>
+        <action>can_batch_export_metadata</action>
+        <action>can_create_adv_search_forms</action>
+        <action>can_edit_adv_search_forms</action>
+        <action>can_use_adv_search_forms</action>
+        <action>can_use_searchbuilder</action>
+        <action>can_use_ca_bundle_displays</action>
+        <action>can_use_metadata_alerts</action>
+        <action>can_create_sets</action>
+        <action>can_edit_sets</action>
+        <action>can_delete_own_sets</action>
+        <action>can_view_sets</action>
+        <action>can_duplicate_ca_sets</action>
+        <action>can_quickadd_ca_sets</action>
+        <action>can_edit_ca_objects</action>
+        <action>can_search_ca_objects</action>
+        <action>can_browse_ca_objects</action>
+        <action>can_export_ca_objects</action>
+        <action>can_batch_edit_ca_objects</action>
+        <action>can_see_current_location_in_inspector_ca_objects</action>
+        <action>can_search_ca_object_lots</action>
+        <action>can_browse_ca_object_lots</action>
+        <action>can_export_ca_object_lots</action>
+        <action>can_view_change_log_ca_object_lots</action>
+        <action>can_search_ca_places</action>
+        <action>can_browse_ca_places</action>
+        <action>can_export_ca_places</action>
+        <action>can_view_change_log_ca_places</action>
+        <action>can_create_ca_occurrences</action>
+        <action>can_edit_ca_occurrences</action>
+        <action>can_search_ca_occurrences</action>
+        <action>can_browse_ca_occurrences</action>
+        <action>can_duplicate_ca_occurrences</action>
+        <action>can_export_ca_occurrences</action>
+        <action>can_quickadd_ca_occurrences</action>
+        <action>can_change_type_ca_occurrences</action>
+        <action>can_view_change_log_ca_occurrences</action>
+        <action>can_search_ca_collections</action>
+        <action>can_browse_ca_collections</action>
+        <action>can_export_ca_collections</action>
+        <action>can_view_change_log_ca_collections</action>
+        <action>can_search_ca_storage_locations</action>
+        <action>can_browse_ca_storage_locations</action>
+        <action>can_export_ca_storage_locations</action>
+        <action>can_view_change_log_ca_storage_locations</action>
+        <action>can_edit_ca_loans</action>
+        <action>can_search_ca_loans</action>
+        <action>can_browse_ca_loans</action>
+        <action>can_view_change_log_ca_loans</action>
+      </actions>
+      <!--tab Metadata has to be done manually in the UI-->
+      <!--Everything here is on "Read" except de ones below-->
+      <!--For ca_occurrences everything is on "edit"-->
+      <!--For ca_sets everything is on "edit"-->
+      <!--EDIT-->
+      <!--<permission table="ca_objects" bundle="ca_objects_deaccession" access="edit"/>-->
+      <!--<permission table="ca_objects" bundle="ca_objects_disposition" access="edit"/>-->
+      <!--<permission table="ca_objects" bundle="ca_occurrences" access="edit"/>-->
+      <!--<permission table="ca_objects" bundle="ca_occurrences_related_list" access="edit"/>-->
+      <!--<permission table="ca_objects" bundle="ca_storage_locations" access="edit"/>-->
+      <!--<permission table="ca_objects" bundle="ca_storage_locations_related_list" access="edit"/>-->
+      <!--<permission table="ca_objects" bundle="ca_objects_count" access="edit"/>-->
+      <!--<permission table="ca_object_lots" bundle="ca_occurrences" access="edit"/>-->
+      <!--<permission table="ca_object_lots" bundle="ca_occurrences_related_list" access="edit"/>-->
+      <!--<permission table="ca_object_lots" bundle="ca_storage_locations" access="edit"/>-->
+      <!--<permission table="ca_object_lots" bundle="ca_storage_locations_related_list" access="edit"/>-->
+      <typeLevelAccessControl>
+        <permission table="ca_objects" type="object" access="edit"/>
+        <permission table="ca_objects" type="dnaSample" access="read"/>
+        <permission table="ca_objects" type="dnaTissue" access="read"/>
+        <permission table="ca_objects" type="dnaSoil" access="read"/>
+        <permission table="ca_objects" type="dnaWater" access="read"/>
+        <permission table="ca_objects" type="genotype" access="read"/>
+        <permission table="ca_objects" type="soilObject" access="read"/>
+        <permission table="ca_objects" type="plantSampleDried" access="read"/>
+        <permission table="ca_objects" type="geneticEntity" access="read"/>
+        <permission table="ca_objects" type="seedlot" access="read"/>
+        <permission table="ca_objects" type="plantObject" access="edit"/>
+        <permission table="ca_objects" type="animalObject" access="read"/>
+        <permission table="ca_objects" type="stemdisc" access="read"/>
+        <permission table="ca_objects" type="forestTreePopulation" access="edit"/>
+        <permission table="ca_objects" type="livingPlant" access="edit"/>
+        <permission table="ca_objects" type="moss" access="read"/>
+        <permission table="ca_objects" type="fishEntireEthanol" access="read"/>
+        <permission table="ca_objects" type="fishTissueSample" access="read"/>
+        <permission table="ca_objects" type="taxidermySpecimen" access="read"/>
+        <permission table="ca_objects" type="mammalTissueSample" access="read"/>
+        <permission table="ca_objects" type="mammalBloodSample" access="read"/>
+        <permission table="ca_objects" type="mammalHairSample" access="read"/>
+        <permission table="ca_objects" type="mammalParasiteSample" access="read"/>
+      </typeLevelAccessControl>
+    </role>
+    <role code="MACmanager">
+      <name>MAC manager</name>
+      <description>Can change almost everything and can see storage locations</description>
+      <actions>
+        <action>can_quicksearch</action>
+        <action>can_batch_import_media</action>
+        <action>can_batch_import_metadata</action>
+        <action>allow_delete_media_after_import</action>
+        <action>can_batch_export_metadata</action>
+        <action>can_create_adv_search_forms</action>
+        <action>can_edit_adv_search_forms</action>
+        <action>can_use_adv_search_forms</action>
+        <action>can_use_searchbuilder</action>
+        <action>can_use_ca_bundle_displays</action>
+        <action>can_use_metadata_alerts</action>
+        <action>can_create_sets</action>
+        <action>can_edit_sets</action>
+        <action>can_delete_own_sets</action>
+        <action>can_view_sets</action>
+        <action>can_duplicate_ca_sets</action>
+        <action>can_quickadd_ca_sets</action>
+        <action>can_create_ca_objects</action>
+        <action>can_edit_ca_objects</action>
+        <action>can_search_ca_objects</action>
+        <action>can_browse_ca_objects</action>
+        <action>can_duplicate_ca_objects</action>
+        <action>can_quickadd_ca_objects</action>
+        <action>can_export_ca_objects</action>
+        <action>can_change_type_ca_objects</action>
+        <action>can_batch_edit_ca_objects</action>
+        <action>can_see_current_location_in_inspector_ca_objects</action>
+        <action>can_access_deaccessioned_ca_objects</action>
+        <action>can_view_change_log_ca_objects</action>
+        <action>can_create_ca_object_lots</action>
+        <action>can_edit_ca_object_lots</action>
+        <action>can_search_ca_object_lots</action>
+        <action>can_browse_ca_object_lots</action>
+        <action>can_duplicate_ca_object_lots</action>
+        <action>can_export_ca_object_lots</action>
+        <action>can_quickadd_ca_object_lots</action>
+        <action>can_change_type_ca_object_lots</action>
+        <action>can_access_deaccessioned_ca_object_lots</action>
+        <action>can_view_change_log_ca_object_lots</action>
+        <action>can_create_ca_entities</action>
+        <action>can_edit_ca_entities</action>
+        <action>can_search_ca_entities</action>
+        <action>can_browse_ca_entities</action>
+        <action>can_quickadd_ca_entities</action>
+        <action>can_view_change_log_ca_entities</action>
+        <action>can_create_ca_places</action>
+        <action>can_edit_ca_places</action>
+        <action>can_search_ca_places</action>
+        <action>can_browse_ca_places</action>
+        <action>can_export_ca_places</action>
+        <action>can_quickadd_ca_places</action>
+        <action>can_change_type_ca_places</action>
+        <action>can_view_change_log_ca_places</action>
+        <action>can_create_ca_occurrences</action>
+        <action>can_edit_ca_occurrences</action>
+        <action>can_delete_ca_occurrences</action>
+        <action>can_search_ca_occurrences</action>
+        <action>can_browse_ca_occurrences</action>
+        <action>can_duplicate_ca_occurrences</action>
+        <action>can_export_ca_occurrences</action>
+        <action>can_quickadd_ca_occurrences</action>
+        <action>can_change_type_ca_occurrences</action>
+        <action>can_batch_edit_ca_occurrences</action>
+        <action>can_batch_delete_ca_occurrences</action>
+        <action>can_view_change_log_ca_occurrences</action>
+        <action>can_search_ca_collections</action>
+        <action>can_browse_ca_collections</action>
+        <action>can_export_ca_collections</action>
+        <action>can_view_change_log_ca_collections</action>
+        <action>can_search_ca_storage_locations</action>
+        <action>can_browse_ca_storage_locations</action>
+        <action>can_export_ca_storage_locations</action>
+        <action>can_view_change_log_ca_storage_locations</action>
+        <action>can_create_ca_loans</action>
+        <action>can_edit_ca_loans</action>
+        <action>can_search_ca_loans</action>
+        <action>can_browse_ca_loans</action>
+        <action>can_duplicate_ca_loans</action>
+        <action>can_export_ca_loans</action>
+        <action>can_quickadd_ca_loans</action>
+        <action>can_change_type_ca_loans</action>
+      </actions>
+      <!--tab Metadata has to be done manually in the UI-->
+      <!--Everything here is on "Read/edit"-->
+      <typeLevelAccessControl>
+        <permission table="ca_objects" type="object" access="edit"/>
+        <permission table="ca_objects" type="dnaSample" access="read"/>
+        <permission table="ca_objects" type="dnaTissue" access="read"/>
+        <permission table="ca_objects" type="dnaSoil" access="read"/>
+        <permission table="ca_objects" type="dnaWater" access="read"/>
+        <permission table="ca_objects" type="genotype" access="read"/>
+        <permission table="ca_objects" type="soilObject" access="read"/>
+        <permission table="ca_objects" type="plantSampleDried" access="read"/>
+        <permission table="ca_objects" type="geneticEntity" access="read"/>
+        <permission table="ca_objects" type="seedlot" access="read"/>
+        <permission table="ca_objects" type="plantObject" access="read"/>
+        <permission table="ca_objects" type="animalObject" access="edit"/>
+        <permission table="ca_objects" type="stemdisc" access="read"/>
+        <permission table="ca_objects" type="forestTreePopulation" access="read"/>
+        <permission table="ca_objects" type="livingPlant" access="read"/>
+        <permission table="ca_objects" type="moss" access="read"/>
+        <permission table="ca_objects" type="fishEntireEthanol" access="read"/>
+        <permission table="ca_objects" type="fishTissueSample" access="read"/>
+        <permission table="ca_objects" type="taxidermySpecimen" access="edit"/>
+        <permission table="ca_objects" type="mammalTissueSample" access="read"/>
+        <permission table="ca_objects" type="mammalBloodSample" access="read"/>
+        <permission table="ca_objects" type="mammalHairSample" access="read"/>
+        <permission table="ca_objects" type="mammalParasiteSample" access="read"/>
+      </typeLevelAccessControl>
+    </role>
+    <role code="MTCmanager">
+      <name>MTC manager</name>
+      <description>Can change almost everything and can see storage locations</description>
+      <actions>
+        <action>can_quicksearch</action>
+        <action>can_batch_import_media</action>
+        <action>can_batch_import_metadata</action>
+        <action>allow_delete_media_after_import</action>
+        <action>can_batch_export_metadata</action>
+        <action>can_create_adv_search_forms</action>
+        <action>can_edit_adv_search_forms</action>
+        <action>can_use_adv_search_forms</action>
+        <action>can_use_searchbuilder</action>
+        <action>can_use_ca_bundle_displays</action>
+        <action>can_use_metadata_alerts</action>
+        <action>can_create_sets</action>
+        <action>can_edit_sets</action>
+        <action>can_delete_own_sets</action>
+        <action>can_view_sets</action>
+        <action>can_duplicate_ca_sets</action>
+        <action>can_quickadd_ca_sets</action>
+        <action>can_create_ca_objects</action>
+        <action>can_edit_ca_objects</action>
+        <action>can_search_ca_objects</action>
+        <action>can_browse_ca_objects</action>
+        <action>can_duplicate_ca_objects</action>
+        <action>can_quickadd_ca_objects</action>
+        <action>can_export_ca_objects</action>
+        <action>can_change_type_ca_objects</action>
+        <action>can_batch_edit_ca_objects</action>
+        <action>can_see_current_location_in_inspector_ca_objects</action>
+        <action>can_access_deaccessioned_ca_objects</action>
+        <action>can_view_change_log_ca_objects</action>
+        <action>can_create_ca_object_lots</action>
+        <action>can_edit_ca_object_lots</action>
+        <action>can_search_ca_object_lots</action>
+        <action>can_browse_ca_object_lots</action>
+        <action>can_duplicate_ca_object_lots</action>
+        <action>can_export_ca_object_lots</action>
+        <action>can_quickadd_ca_object_lots</action>
+        <action>can_change_type_ca_object_lots</action>
+        <action>can_access_deaccessioned_ca_object_lots</action>
+        <action>can_view_change_log_ca_object_lots</action>
+        <action>can_create_ca_entities</action>
+        <action>can_edit_ca_entities</action>
+        <action>can_search_ca_entities</action>
+        <action>can_browse_ca_entities</action>
+        <action>can_quickadd_ca_entities</action>
+        <action>can_view_change_log_ca_entities</action>
+        <action>can_create_ca_places</action>
+        <action>can_edit_ca_places</action>
+        <action>can_search_ca_places</action>
+        <action>can_browse_ca_places</action>
+        <action>can_export_ca_places</action>
+        <action>can_quickadd_ca_places</action>
+        <action>can_change_type_ca_places</action>
+        <action>can_view_change_log_ca_places</action>
+        <action>can_create_ca_occurrences</action>
+        <action>can_edit_ca_occurrences</action>
+        <action>can_delete_ca_occurrences</action>
+        <action>can_search_ca_occurrences</action>
+        <action>can_browse_ca_occurrences</action>
+        <action>can_duplicate_ca_occurrences</action>
+        <action>can_export_ca_occurrences</action>
+        <action>can_quickadd_ca_occurrences</action>
+        <action>can_change_type_ca_occurrences</action>
+        <action>can_batch_edit_ca_occurrences</action>
+        <action>can_batch_delete_ca_occurrences</action>
+        <action>can_view_change_log_ca_occurrences</action>
+        <action>can_search_ca_collections</action>
+        <action>can_browse_ca_collections</action>
+        <action>can_export_ca_collections</action>
+        <action>can_view_change_log_ca_collections</action>
+        <action>can_search_ca_storage_locations</action>
+        <action>can_browse_ca_storage_locations</action>
+        <action>can_export_ca_storage_locations</action>
+        <action>can_view_change_log_ca_storage_locations</action>
+        <action>can_create_ca_loans</action>
+        <action>can_edit_ca_loans</action>
+        <action>can_search_ca_loans</action>
+        <action>can_browse_ca_loans</action>
+        <action>can_duplicate_ca_loans</action>
+        <action>can_export_ca_loans</action>
+        <action>can_quickadd_ca_loans</action>
+        <action>can_change_type_ca_loans</action>
+      </actions>
+      <!--tab Metadata has to be done manually in the UI-->
+      <!--Everything here is on "Read/edit"-->
+      <typeLevelAccessControl>
+        <permission table="ca_objects" type="object" access="edit"/>
+        <permission table="ca_objects" type="dnaSample" access="read"/>
+        <permission table="ca_objects" type="dnaTissue" access="read"/>
+        <permission table="ca_objects" type="dnaSoil" access="read"/>
+        <permission table="ca_objects" type="dnaWater" access="read"/>
+        <permission table="ca_objects" type="genotype" access="read"/>
+        <permission table="ca_objects" type="soilObject" access="read"/>
+        <permission table="ca_objects" type="plantSampleDried" access="read"/>
+        <permission table="ca_objects" type="geneticEntity" access="read"/>
+        <permission table="ca_objects" type="seedlot" access="read"/>
+        <permission table="ca_objects" type="plantObject" access="read"/>
+        <permission table="ca_objects" type="animalObject" access="edit"/>
+        <permission table="ca_objects" type="stemdisc" access="read"/>
+        <permission table="ca_objects" type="forestTreePopulation" access="read"/>
+        <permission table="ca_objects" type="livingPlant" access="read"/>
+        <permission table="ca_objects" type="moss" access="read"/>
+        <permission table="ca_objects" type="fishEntireEthanol" access="read"/>
+        <permission table="ca_objects" type="fishTissueSample" access="read"/>
+        <permission table="ca_objects" type="taxidermySpecimen" access="read"/>
+        <permission table="ca_objects" type="mammalTissueSample" access="edit"/>
+        <permission table="ca_objects" type="mammalBloodSample" access="edit"/>
+        <permission table="ca_objects" type="mammalHairSample" access="edit"/>
+        <permission table="ca_objects" type="mammalParasiteSample" access="edit"/>
+      </typeLevelAccessControl>
+    </role>
+    <role code="MTCcataloguer">
+      <name>MTC cataloguer</name>
+      <description>Can change certain fields and cannot see storage locations</description>
+      <actions>
+        <action>can_quicksearch</action>
+        <action>can_batch_import_media</action>
+        <action>can_batch_import_metadata</action>
+        <action>allow_delete_media_after_import</action>
+        <action>can_batch_export_metadata</action>
+        <action>can_create_adv_search_forms</action>
+        <action>can_edit_adv_search_forms</action>
+        <action>can_use_adv_search_forms</action>
+        <action>can_use_searchbuilder</action>
+        <action>can_use_ca_bundle_displays</action>
+        <action>can_use_metadata_alerts</action>
+        <action>can_create_sets</action>
+        <action>can_edit_sets</action>
+        <action>can_delete_own_sets</action>
+        <action>can_view_sets</action>
+        <action>can_duplicate_ca_sets</action>
+        <action>can_quickadd_ca_sets</action>
+        <action>can_create_ca_objects</action>
+        <action>can_edit_ca_objects</action>
+        <action>can_search_ca_objects</action>
+        <action>can_browse_ca_objects</action>
+        <action>can_duplicate_ca_objects</action>
+        <action>can_quickadd_ca_objects</action>
+        <action>can_export_ca_objects</action>
+        <action>can_see_current_location_in_inspector_ca_objects</action>
+        <action>can_access_deaccessioned_ca_objects</action>
+        <action>can_view_change_log_ca_objects</action>
+        <action>can_create_ca_object_lots</action>
+        <action>can_edit_ca_object_lots</action>
+        <action>can_search_ca_object_lots</action>
+        <action>can_browse_ca_object_lots</action>
+        <action>can_duplicate_ca_object_lots</action>
+        <action>can_export_ca_object_lots</action>
+        <action>can_quickadd_ca_object_lots</action>
+        <action>can_access_deaccessioned_ca_object_lots</action>
+        <action>can_view_change_log_ca_object_lots</action>
+        <action>can_create_ca_entities</action>
+        <action>can_edit_ca_entities</action>
+        <action>can_search_ca_entities</action>
+        <action>can_browse_ca_entities</action>
+        <action>can_quickadd_ca_entities</action>
+        <action>can_view_change_log_ca_entities</action>
+        <action>can_create_ca_places</action>
+        <action>can_edit_ca_places</action>
+        <action>can_search_ca_places</action>
+        <action>can_browse_ca_places</action>
+        <action>can_export_ca_places</action>
+        <action>can_quickadd_ca_places</action>
+        <action>can_change_type_ca_places</action>
+        <action>can_view_change_log_ca_places</action>
+        <action>can_create_ca_occurrences</action>
+        <action>can_edit_ca_occurrences</action>
+        <action>can_search_ca_occurrences</action>
+        <action>can_browse_ca_occurrences</action>
+        <action>can_quickadd_ca_occurrences</action>
+        <action>can_view_change_log_ca_occurrences</action>
+        <action>can_search_ca_collections</action>
+        <action>can_browse_ca_collections</action>
+        <action>can_export_ca_collections</action>
+        <action>can_view_change_log_ca_collections</action>
+        <action>can_search_ca_storage_locations</action>
+        <action>can_browse_ca_storage_locations</action>
+        <action>can_export_ca_storage_locations</action>
+        <action>can_view_change_log_ca_storage_locations</action>
+      </actions>
+      <!--tab Metadata has to be done manually in the UI-->
+      <!--Everything here is on "Read/edit" except de ones below-->
+      <!--<permission table="ca_objects" bundle="ca_loans" access="read"/>-->
+      <!--<permission table="ca_objects" bundle="ca_loans_related_list" access="read"/>-->
+      <!--<permission table="ca_objects" bundle="ca_objects_deaccession" access="read"/>-->
+      <!--<permission table="ca_objects" bundle="ca_objects_disposition" access="read"/>-->
+      <!--<permission table="ca_objects" bundle="ca_storage_locations" access="none"/>-->
+      <!--<permission table="ca_objects" bundle="ca_storage_locations_related_list" access="none"/>-->
+      <!--Everything from the ca_loans table has to be on "none"-->
+      <typeLevelAccessControl>
+        <permission table="ca_objects" type="object" access="edit"/>
+        <permission table="ca_objects" type="dnaSample" access="read"/>
+        <permission table="ca_objects" type="dnaTissue" access="read"/>
+        <permission table="ca_objects" type="dnaSoil" access="read"/>
+        <permission table="ca_objects" type="dnaWater" access="read"/>
+        <permission table="ca_objects" type="genotype" access="read"/>
+        <permission table="ca_objects" type="soilObject" access="read"/>
+        <permission table="ca_objects" type="plantSampleDried" access="read"/>
+        <permission table="ca_objects" type="geneticEntity" access="read"/>
+        <permission table="ca_objects" type="seedlot" access="read"/>
+        <permission table="ca_objects" type="plantObject" access="read"/>
+        <permission table="ca_objects" type="animalObject" access="edit"/>
+        <permission table="ca_objects" type="stemdisc" access="read"/>
+        <permission table="ca_objects" type="forestTreePopulation" access="read"/>
+        <permission table="ca_objects" type="livingPlant" access="read"/>
+        <permission table="ca_objects" type="moss" access="read"/>
+        <permission table="ca_objects" type="fishEntireEthanol" access="read"/>
+        <permission table="ca_objects" type="fishTissueSample" access="read"/>
+        <permission table="ca_objects" type="taxidermySpecimen" access="read"/>
+        <permission table="ca_objects" type="mammalTissueSample" access="edit"/>
+        <permission table="ca_objects" type="mammalBloodSample" access="edit"/>
+        <permission table="ca_objects" type="mammalHairSample" access="edit"/>
+        <permission table="ca_objects" type="mammalParasiteSample" access="edit"/>
+      </typeLevelAccessControl>
+    </role>
+    <role code="MTCarchivist">
+      <name>MTC archivist</name>
+      <description>This role is viewer + editor of storage location, curation events and measurements (count) for his/her collection.</description>
+      <actions>
+        <action>can_quicksearch</action>
+        <action>can_batch_import_media</action>
+        <action>can_batch_import_metadata</action>
+        <action>allow_delete_media_after_import</action>
+        <action>can_batch_export_metadata</action>
+        <action>can_create_adv_search_forms</action>
+        <action>can_edit_adv_search_forms</action>
+        <action>can_use_adv_search_forms</action>
+        <action>can_use_searchbuilder</action>
+        <action>can_use_ca_bundle_displays</action>
+        <action>can_use_metadata_alerts</action>
+        <action>can_create_sets</action>
+        <action>can_edit_sets</action>
+        <action>can_delete_own_sets</action>
+        <action>can_view_sets</action>
+        <action>can_duplicate_ca_sets</action>
+        <action>can_quickadd_ca_sets</action>
+        <action>can_edit_ca_objects</action>
+        <action>can_search_ca_objects</action>
+        <action>can_browse_ca_objects</action>
+        <action>can_export_ca_objects</action>
+        <action>can_batch_edit_ca_objects</action>
+        <action>can_see_current_location_in_inspector_ca_objects</action>
+        <action>can_search_ca_object_lots</action>
+        <action>can_browse_ca_object_lots</action>
+        <action>can_export_ca_object_lots</action>
+        <action>can_view_change_log_ca_object_lots</action>
+        <action>can_search_ca_places</action>
+        <action>can_browse_ca_places</action>
+        <action>can_export_ca_places</action>
+        <action>can_view_change_log_ca_places</action>
+        <action>can_create_ca_occurrences</action>
+        <action>can_edit_ca_occurrences</action>
+        <action>can_search_ca_occurrences</action>
+        <action>can_browse_ca_occurrences</action>
+        <action>can_duplicate_ca_occurrences</action>
+        <action>can_export_ca_occurrences</action>
+        <action>can_quickadd_ca_occurrences</action>
+        <action>can_change_type_ca_occurrences</action>
+        <action>can_view_change_log_ca_occurrences</action>
+        <action>can_search_ca_collections</action>
+        <action>can_browse_ca_collections</action>
+        <action>can_export_ca_collections</action>
+        <action>can_view_change_log_ca_collections</action>
+        <action>can_search_ca_storage_locations</action>
+        <action>can_browse_ca_storage_locations</action>
+        <action>can_export_ca_storage_locations</action>
+        <action>can_view_change_log_ca_storage_locations</action>
+        <action>can_edit_ca_loans</action>
+        <action>can_search_ca_loans</action>
+        <action>can_browse_ca_loans</action>
+        <action>can_view_change_log_ca_loans</action>
+      </actions>
+      <!--tab Metadata has to be done manually in the UI-->
+      <!--Everything here is on "Read" except de ones below-->
+      <!--For ca_occurrences everything is on "edit"-->
+      <!--For ca_sets everything is on "edit"-->
+      <!--EDIT-->
+      <!--<permission table="ca_objects" bundle="ca_objects_deaccession" access="edit"/>-->
+      <!--<permission table="ca_objects" bundle="ca_objects_disposition" access="edit"/>-->
+      <!--<permission table="ca_objects" bundle="ca_occurrences" access="edit"/>-->
+      <!--<permission table="ca_objects" bundle="ca_occurrences_related_list" access="edit"/>-->
+      <!--<permission table="ca_objects" bundle="ca_storage_locations" access="edit"/>-->
+      <!--<permission table="ca_objects" bundle="ca_storage_locations_related_list" access="edit"/>-->
+      <!--<permission table="ca_object_lots" bundle="ca_occurrences" access="edit"/>-->
+      <!--<permission table="ca_object_lots" bundle="ca_occurrences_related_list" access="edit"/>-->
+      <!--<permission table="ca_object_lots" bundle="ca_storage_locations" access="edit"/>-->
+      <!--<permission table="ca_object_lots" bundle="ca_storage_locations_related_list" access="edit"/>-->
+      <typeLevelAccessControl>
+        <permission table="ca_objects" type="object" access="edit"/>
+        <permission table="ca_objects" type="dnaSample" access="read"/>
+        <permission table="ca_objects" type="dnaTissue" access="read"/>
+        <permission table="ca_objects" type="dnaSoil" access="read"/>
+        <permission table="ca_objects" type="dnaWater" access="read"/>
+        <permission table="ca_objects" type="genotype" access="read"/>
+        <permission table="ca_objects" type="soilObject" access="read"/>
+        <permission table="ca_objects" type="plantSampleDried" access="read"/>
+        <permission table="ca_objects" type="geneticEntity" access="read"/>
+        <permission table="ca_objects" type="seedlot" access="read"/>
+        <permission table="ca_objects" type="plantObject" access="read"/>
+        <permission table="ca_objects" type="animalObject" access="edit"/>
+        <permission table="ca_objects" type="stemdisc" access="read"/>
+        <permission table="ca_objects" type="forestTreePopulation" access="read"/>
+        <permission table="ca_objects" type="livingPlant" access="read"/>
+        <permission table="ca_objects" type="moss" access="read"/>
+        <permission table="ca_objects" type="fishEntireEthanol" access="read"/>
+        <permission table="ca_objects" type="fishTissueSample" access="read"/>
+        <permission table="ca_objects" type="taxidermySpecimen" access="read"/>
+        <permission table="ca_objects" type="mammalTissueSample" access="edit"/>
+        <permission table="ca_objects" type="mammalBloodSample" access="edit"/>
+        <permission table="ca_objects" type="mammalHairSample" access="edit"/>
+        <permission table="ca_objects" type="mammalParasiteSample" access="edit"/>
       </typeLevelAccessControl>
     </role>
     <role code="PACmanager">
@@ -19465,6 +20645,7 @@
       <!--<permission table="ca_objects" bundle="ca_loans" access="none"/>-->
       <!--<permission table="ca_objects" bundle="ca_loans_related_list" access="none"/>-->
       <!--<permission table="ca_objects" bundle="ca_objects_deaccession" access="read"/>-->
+      <!--<permission table="ca_objects" bundle="ca_objects_disposition" access="read"/>-->
       <!--<permission table="ca_objects" bundle="ca_storage_locations" access="none"/>-->
       <!--<permission table="ca_objects" bundle="ca_storage_locations_related_list" access="none"/>-->
       <!--Everything from the ca_loans table has to be on "none"-->
@@ -19563,6 +20744,7 @@
       <!--tab Metadata has to be done manually in the UI-->
       <!--Everything here is on "Read" except de ones below-->
       <!--<permission table="ca_objects" bundle="ca_objects_deaccession" access="edit"/>-->
+      <!--<permission table="ca_objects" bundle="ca_objects_disposition" access="edit"/>-->
       <!--<permission table="ca_objects" bundle="ca_occurrences" access="edit"/>-->
       <!--<permission table="ca_objects" bundle="ca_occurrences_related_list" access="edit"/>-->
       <!--<permission table="ca_objects" bundle="ca_storage_locations" access="edit"/>-->
@@ -19804,6 +20986,7 @@
       <!--<permission table="ca_objects" bundle="ca_loans" access="none"/>-->
       <!--<permission table="ca_objects" bundle="ca_loans_related_list" access="none"/>-->
       <!--<permission table="ca_objects" bundle="ca_objects_deaccession" access="read"/>-->
+      <!--<permission table="ca_objects" bundle="ca_objects_disposition" access="read"/>-->
       <!--<permission table="ca_objects" bundle="ca_storage_locations" access="none"/>-->
       <!--<permission table="ca_objects" bundle="ca_storage_locations_related_list" access="none"/>-->
       <!--Everything from the ca_loans table has to be on "none"-->
@@ -19902,6 +21085,7 @@
       <!--tab Metadata has to be done manually in the UI-->
       <!--Everything here is on "Read" except de ones below-->
       <!--<permission table="ca_objects" bundle="ca_objects_deaccession" access="edit"/>-->
+      <!--<permission table="ca_objects" bundle="ca_objects_disposition" access="edit"/>-->
       <!--<permission table="ca_objects" bundle="ca_occurrences" access="edit"/>-->
       <!--<permission table="ca_objects" bundle="ca_occurrences_related_list" access="edit"/>-->
       <!--<permission table="ca_objects" bundle="ca_storage_locations" access="edit"/>-->
@@ -20143,6 +21327,7 @@
       <!--<permission table="ca_objects" bundle="ca_loans" access="none"/>-->
       <!--<permission table="ca_objects" bundle="ca_loans_related_list" access="none"/>-->
       <!--<permission table="ca_objects" bundle="ca_objects_deaccession" access="read"/>-->
+      <!--<permission table="ca_objects" bundle="ca_objects_disposition" access="read"/>-->
       <!--<permission table="ca_objects" bundle="ca_storage_locations" access="none"/>-->
       <!--<permission table="ca_objects" bundle="ca_storage_locations_related_list" access="none"/>-->
       <!--Everything from the ca_loans table has to be on "none"-->
@@ -20241,6 +21426,7 @@
       <!--tab Metadata has to be done manually in the UI-->
       <!--Everything here is on "Read" except de ones below-->
       <!--<permission table="ca_objects" bundle="ca_objects_deaccession" access="edit"/>-->
+      <!--<permission table="ca_objects" bundle="ca_objects_disposition" access="edit"/>-->
       <!--<permission table="ca_objects" bundle="ca_occurrences" access="edit"/>-->
       <!--<permission table="ca_objects" bundle="ca_occurrences_related_list" access="edit"/>-->
       <!--<permission table="ca_objects" bundle="ca_storage_locations" access="edit"/>-->
@@ -20292,6 +21478,322 @@
         <permission table="ca_loans" type="incoming_external" access="none"/>
         <permission table="ca_loans" type="internalReuse" access="none"/>
         <permission table="ca_loans" type="externalReuse" access="none"/>
+      </typeLevelAccessControl>
+    </role>
+    <role code="STEMmanager">
+      <name>STEM manager</name>
+      <description>Can change almost everything and can see storage locations</description>
+      <actions>
+        <action>can_quicksearch</action>
+        <action>can_batch_import_media</action>
+        <action>can_batch_import_metadata</action>
+        <action>allow_delete_media_after_import</action>
+        <action>can_batch_export_metadata</action>
+        <action>can_create_adv_search_forms</action>
+        <action>can_edit_adv_search_forms</action>
+        <action>can_use_adv_search_forms</action>
+        <action>can_use_searchbuilder</action>
+        <action>can_use_ca_bundle_displays</action>
+        <action>can_use_metadata_alerts</action>
+        <action>can_create_sets</action>
+        <action>can_edit_sets</action>
+        <action>can_delete_own_sets</action>
+        <action>can_view_sets</action>
+        <action>can_duplicate_ca_sets</action>
+        <action>can_quickadd_ca_sets</action>
+        <action>can_create_ca_objects</action>
+        <action>can_edit_ca_objects</action>
+        <action>can_search_ca_objects</action>
+        <action>can_browse_ca_objects</action>
+        <action>can_duplicate_ca_objects</action>
+        <action>can_quickadd_ca_objects</action>
+        <action>can_export_ca_objects</action>
+        <action>can_change_type_ca_objects</action>
+        <action>can_batch_edit_ca_objects</action>
+        <action>can_see_current_location_in_inspector_ca_objects</action>
+        <action>can_access_deaccessioned_ca_objects</action>
+        <action>can_view_change_log_ca_objects</action>
+        <action>can_create_ca_object_lots</action>
+        <action>can_edit_ca_object_lots</action>
+        <action>can_search_ca_object_lots</action>
+        <action>can_browse_ca_object_lots</action>
+        <action>can_duplicate_ca_object_lots</action>
+        <action>can_export_ca_object_lots</action>
+        <action>can_quickadd_ca_object_lots</action>
+        <action>can_change_type_ca_object_lots</action>
+        <action>can_access_deaccessioned_ca_object_lots</action>
+        <action>can_view_change_log_ca_object_lots</action>
+        <action>can_create_ca_entities</action>
+        <action>can_edit_ca_entities</action>
+        <action>can_search_ca_entities</action>
+        <action>can_browse_ca_entities</action>
+        <action>can_quickadd_ca_entities</action>
+        <action>can_view_change_log_ca_entities</action>
+        <action>can_create_ca_places</action>
+        <action>can_edit_ca_places</action>
+        <action>can_search_ca_places</action>
+        <action>can_browse_ca_places</action>
+        <action>can_export_ca_places</action>
+        <action>can_quickadd_ca_places</action>
+        <action>can_change_type_ca_places</action>
+        <action>can_view_change_log_ca_places</action>
+        <action>can_create_ca_occurrences</action>
+        <action>can_edit_ca_occurrences</action>
+        <action>can_delete_ca_occurrences</action>
+        <action>can_search_ca_occurrences</action>
+        <action>can_browse_ca_occurrences</action>
+        <action>can_duplicate_ca_occurrences</action>
+        <action>can_export_ca_occurrences</action>
+        <action>can_quickadd_ca_occurrences</action>
+        <action>can_change_type_ca_occurrences</action>
+        <action>can_batch_edit_ca_occurrences</action>
+        <action>can_batch_delete_ca_occurrences</action>
+        <action>can_view_change_log_ca_occurrences</action>
+        <action>can_search_ca_collections</action>
+        <action>can_browse_ca_collections</action>
+        <action>can_export_ca_collections</action>
+        <action>can_view_change_log_ca_collections</action>
+        <action>can_search_ca_storage_locations</action>
+        <action>can_browse_ca_storage_locations</action>
+        <action>can_export_ca_storage_locations</action>
+        <action>can_view_change_log_ca_storage_locations</action>
+        <action>can_create_ca_loans</action>
+        <action>can_edit_ca_loans</action>
+        <action>can_search_ca_loans</action>
+        <action>can_browse_ca_loans</action>
+        <action>can_duplicate_ca_loans</action>
+        <action>can_export_ca_loans</action>
+        <action>can_quickadd_ca_loans</action>
+        <action>can_change_type_ca_loans</action>
+      </actions>
+      <!--tab Metadata has to be done manually in the UI-->
+      <!--Everything here is on "Read/edit"-->
+      <typeLevelAccessControl>
+        <permission table="ca_objects" type="object" access="edit"/>
+        <permission table="ca_objects" type="dnaSample" access="read"/>
+        <permission table="ca_objects" type="dnaTissue" access="read"/>
+        <permission table="ca_objects" type="dnaSoil" access="read"/>
+        <permission table="ca_objects" type="dnaWater" access="read"/>
+        <permission table="ca_objects" type="genotype" access="read"/>
+        <permission table="ca_objects" type="soilObject" access="read"/>
+        <permission table="ca_objects" type="plantSampleDried" access="read"/>
+        <permission table="ca_objects" type="geneticEntity" access="read"/>
+        <permission table="ca_objects" type="seedlot" access="read"/>
+        <permission table="ca_objects" type="plantObject" access="edit"/>
+        <permission table="ca_objects" type="animalObject" access="read"/>
+        <permission table="ca_objects" type="stemdisc" access="edit"/>
+        <permission table="ca_objects" type="forestTreePopulation" access="read"/>
+        <permission table="ca_objects" type="livingPlant" access="read"/>
+        <permission table="ca_objects" type="moss" access="read"/>
+        <permission table="ca_objects" type="fishEntireEthanol" access="read"/>
+        <permission table="ca_objects" type="fishTissueSample" access="read"/>
+        <permission table="ca_objects" type="taxidermySpecimen" access="read"/>
+        <permission table="ca_objects" type="mammalTissueSample" access="read"/>
+        <permission table="ca_objects" type="mammalBloodSample" access="read"/>
+        <permission table="ca_objects" type="mammalHairSample" access="read"/>
+        <permission table="ca_objects" type="mammalParasiteSample" access="read"/>
+      </typeLevelAccessControl>
+    </role>
+    <role code="STEMcataloguer">
+      <name>STEM cataloguer</name>
+      <description>Can change certain fields and cannot see storage locations</description>
+      <actions>
+        <action>can_quicksearch</action>
+        <action>can_batch_import_media</action>
+        <action>can_batch_import_metadata</action>
+        <action>allow_delete_media_after_import</action>
+        <action>can_batch_export_metadata</action>
+        <action>can_create_adv_search_forms</action>
+        <action>can_edit_adv_search_forms</action>
+        <action>can_use_adv_search_forms</action>
+        <action>can_use_searchbuilder</action>
+        <action>can_use_ca_bundle_displays</action>
+        <action>can_use_metadata_alerts</action>
+        <action>can_create_sets</action>
+        <action>can_edit_sets</action>
+        <action>can_delete_own_sets</action>
+        <action>can_view_sets</action>
+        <action>can_duplicate_ca_sets</action>
+        <action>can_quickadd_ca_sets</action>
+        <action>can_create_ca_objects</action>
+        <action>can_edit_ca_objects</action>
+        <action>can_search_ca_objects</action>
+        <action>can_browse_ca_objects</action>
+        <action>can_duplicate_ca_objects</action>
+        <action>can_quickadd_ca_objects</action>
+        <action>can_export_ca_objects</action>
+        <action>can_see_current_location_in_inspector_ca_objects</action>
+        <action>can_access_deaccessioned_ca_objects</action>
+        <action>can_view_change_log_ca_objects</action>
+        <action>can_create_ca_object_lots</action>
+        <action>can_edit_ca_object_lots</action>
+        <action>can_search_ca_object_lots</action>
+        <action>can_browse_ca_object_lots</action>
+        <action>can_duplicate_ca_object_lots</action>
+        <action>can_export_ca_object_lots</action>
+        <action>can_quickadd_ca_object_lots</action>
+        <action>can_access_deaccessioned_ca_object_lots</action>
+        <action>can_view_change_log_ca_object_lots</action>
+        <action>can_create_ca_entities</action>
+        <action>can_edit_ca_entities</action>
+        <action>can_search_ca_entities</action>
+        <action>can_browse_ca_entities</action>
+        <action>can_quickadd_ca_entities</action>
+        <action>can_view_change_log_ca_entities</action>
+        <action>can_create_ca_places</action>
+        <action>can_edit_ca_places</action>
+        <action>can_search_ca_places</action>
+        <action>can_browse_ca_places</action>
+        <action>can_export_ca_places</action>
+        <action>can_quickadd_ca_places</action>
+        <action>can_change_type_ca_places</action>
+        <action>can_view_change_log_ca_places</action>
+        <action>can_create_ca_occurrences</action>
+        <action>can_edit_ca_occurrences</action>
+        <action>can_search_ca_occurrences</action>
+        <action>can_browse_ca_occurrences</action>
+        <action>can_quickadd_ca_occurrences</action>
+        <action>can_view_change_log_ca_occurrences</action>
+        <action>can_search_ca_collections</action>
+        <action>can_browse_ca_collections</action>
+        <action>can_export_ca_collections</action>
+        <action>can_view_change_log_ca_collections</action>
+        <action>can_search_ca_storage_locations</action>
+        <action>can_browse_ca_storage_locations</action>
+        <action>can_export_ca_storage_locations</action>
+        <action>can_view_change_log_ca_storage_locations</action>
+      </actions>
+      <!--tab Metadata has to be done manually in the UI-->
+      <!--Everything here is on "Read/edit" except de ones below-->
+      <!--<permission table="ca_objects" bundle="ca_loans" access="read"/>-->
+      <!--<permission table="ca_objects" bundle="ca_loans_related_list" access="read"/>-->
+      <!--<permission table="ca_objects" bundle="ca_objects_deaccession" access="read"/>-->
+      <!--<permission table="ca_objects" bundle="ca_objects_disposition" access="read"/>-->
+      <!--<permission table="ca_objects" bundle="ca_storage_locations" access="none"/>-->
+      <!--<permission table="ca_objects" bundle="ca_storage_locations_related_list" access="none"/>-->
+      <!--Everything from the ca_loans table has to be on "none"-->
+      <typeLevelAccessControl>
+        <permission table="ca_objects" type="object" access="edit"/>
+        <permission table="ca_objects" type="dnaSample" access="read"/>
+        <permission table="ca_objects" type="dnaTissue" access="read"/>
+        <permission table="ca_objects" type="dnaSoil" access="read"/>
+        <permission table="ca_objects" type="dnaWater" access="read"/>
+        <permission table="ca_objects" type="genotype" access="read"/>
+        <permission table="ca_objects" type="soilObject" access="read"/>
+        <permission table="ca_objects" type="plantSampleDried" access="read"/>
+        <permission table="ca_objects" type="geneticEntity" access="read"/>
+        <permission table="ca_objects" type="seedlot" access="read"/>
+        <permission table="ca_objects" type="plantObject" access="edit"/>
+        <permission table="ca_objects" type="animalObject" access="read"/>
+        <permission table="ca_objects" type="stemdisc" access="edit"/>
+        <permission table="ca_objects" type="forestTreePopulation" access="read"/>
+        <permission table="ca_objects" type="livingPlant" access="read"/>
+        <permission table="ca_objects" type="moss" access="read"/>
+        <permission table="ca_objects" type="fishEntireEthanol" access="read"/>
+        <permission table="ca_objects" type="fishTissueSample" access="read"/>
+        <permission table="ca_objects" type="taxidermySpecimen" access="read"/>
+        <permission table="ca_objects" type="mammalTissueSample" access="read"/>
+        <permission table="ca_objects" type="mammalBloodSample" access="read"/>
+        <permission table="ca_objects" type="mammalHairSample" access="read"/>
+        <permission table="ca_objects" type="mammalParasiteSample" access="read"/>
+      </typeLevelAccessControl>
+    </role>
+    <role code="STEMarchivist">
+      <name>STEM archivist</name>
+      <description>This role is viewer + editor of storage location, curation events and measurements (volume, weight) for his/her collection.</description>
+      <actions>
+        <action>can_quicksearch</action>
+        <action>can_batch_import_media</action>
+        <action>can_batch_import_metadata</action>
+        <action>allow_delete_media_after_import</action>
+        <action>can_batch_export_metadata</action>
+        <action>can_create_adv_search_forms</action>
+        <action>can_edit_adv_search_forms</action>
+        <action>can_use_adv_search_forms</action>
+        <action>can_use_searchbuilder</action>
+        <action>can_use_ca_bundle_displays</action>
+        <action>can_use_metadata_alerts</action>
+        <action>can_create_sets</action>
+        <action>can_edit_sets</action>
+        <action>can_delete_own_sets</action>
+        <action>can_view_sets</action>
+        <action>can_duplicate_ca_sets</action>
+        <action>can_quickadd_ca_sets</action>
+        <action>can_edit_ca_objects</action>
+        <action>can_search_ca_objects</action>
+        <action>can_browse_ca_objects</action>
+        <action>can_export_ca_objects</action>
+        <action>can_batch_edit_ca_objects</action>
+        <action>can_see_current_location_in_inspector_ca_objects</action>
+        <action>can_search_ca_object_lots</action>
+        <action>can_browse_ca_object_lots</action>
+        <action>can_export_ca_object_lots</action>
+        <action>can_view_change_log_ca_object_lots</action>
+        <action>can_search_ca_places</action>
+        <action>can_browse_ca_places</action>
+        <action>can_export_ca_places</action>
+        <action>can_view_change_log_ca_places</action>
+        <action>can_create_ca_occurrences</action>
+        <action>can_edit_ca_occurrences</action>
+        <action>can_search_ca_occurrences</action>
+        <action>can_browse_ca_occurrences</action>
+        <action>can_duplicate_ca_occurrences</action>
+        <action>can_export_ca_occurrences</action>
+        <action>can_quickadd_ca_occurrences</action>
+        <action>can_change_type_ca_occurrences</action>
+        <action>can_view_change_log_ca_occurrences</action>
+        <action>can_search_ca_collections</action>
+        <action>can_browse_ca_collections</action>
+        <action>can_export_ca_collections</action>
+        <action>can_view_change_log_ca_collections</action>
+        <action>can_search_ca_storage_locations</action>
+        <action>can_browse_ca_storage_locations</action>
+        <action>can_export_ca_storage_locations</action>
+        <action>can_view_change_log_ca_storage_locations</action>
+        <action>can_edit_ca_loans</action>
+        <action>can_search_ca_loans</action>
+        <action>can_browse_ca_loans</action>
+        <action>can_view_change_log_ca_loans</action>
+      </actions>
+      <!--tab Metadata has to be done manually in the UI-->
+      <!--Everything here is on "Read" except de ones below-->
+      <!--For ca_occurrences everything is on "edit"-->
+      <!--For ca_sets everything is on "edit"-->
+      <!--EDIT-->
+      <!--<permission table="ca_objects" bundle="ca_objects_deaccession" access="edit"/>-->
+      <!--<permission table="ca_objects" bundle="ca_objects_disposition" access="edit"/>-->
+      <!--<permission table="ca_objects" bundle="ca_occurrences" access="edit"/>-->
+      <!--<permission table="ca_objects" bundle="ca_occurrences_related_list" access="edit"/>-->
+      <!--<permission table="ca_objects" bundle="ca_storage_locations" access="edit"/>-->
+      <!--<permission table="ca_objects" bundle="ca_storage_locations_related_list" access="edit"/>-->
+      <!--<permission table="ca_object_lots" bundle="ca_occurrences" access="edit"/>-->
+      <!--<permission table="ca_object_lots" bundle="ca_occurrences_related_list" access="edit"/>-->
+      <!--<permission table="ca_object_lots" bundle="ca_storage_locations" access="edit"/>-->
+      <!--<permission table="ca_object_lots" bundle="ca_storage_locations_related_list" access="edit"/>-->
+      <typeLevelAccessControl>
+        <permission table="ca_objects" type="object" access="edit"/>
+        <permission table="ca_objects" type="dnaSample" access="read"/>
+        <permission table="ca_objects" type="dnaTissue" access="read"/>
+        <permission table="ca_objects" type="dnaSoil" access="read"/>
+        <permission table="ca_objects" type="dnaWater" access="read"/>
+        <permission table="ca_objects" type="genotype" access="read"/>
+        <permission table="ca_objects" type="soilObject" access="read"/>
+        <permission table="ca_objects" type="plantSampleDried" access="read"/>
+        <permission table="ca_objects" type="geneticEntity" access="read"/>
+        <permission table="ca_objects" type="seedlot" access="read"/>
+        <permission table="ca_objects" type="plantObject" access="edit"/>
+        <permission table="ca_objects" type="animalObject" access="read"/>
+        <permission table="ca_objects" type="stemdisc" access="edit"/>
+        <permission table="ca_objects" type="forestTreePopulation" access="read"/>
+        <permission table="ca_objects" type="livingPlant" access="read"/>
+        <permission table="ca_objects" type="moss" access="read"/>
+        <permission table="ca_objects" type="fishEntireEthanol" access="read"/>
+        <permission table="ca_objects" type="fishTissueSample" access="read"/>
+        <permission table="ca_objects" type="taxidermySpecimen" access="read"/>
+        <permission table="ca_objects" type="mammalTissueSample" access="read"/>
+        <permission table="ca_objects" type="mammalBloodSample" access="read"/>
+        <permission table="ca_objects" type="mammalHairSample" access="read"/>
+        <permission table="ca_objects" type="mammalParasiteSample" access="read"/>
       </typeLevelAccessControl>
     </role>
     <role code="viewer">
@@ -20392,8 +21894,38 @@
 	    <roles></roles>
     </group>
     <group code="SEEDstaff">
-      <name>Seedlot collection staff</name>
-      <description>Seedlot collection staff</description>
+      <name>INBO seedbank staff</name>
+      <description>INBO seedbank collection staff</description>
+	    <roles></roles>
+    </group>
+    <group code="LPCstaff">
+      <name>Living Plant Collection staff</name>
+      <description>Living Plant Collection staff</description>
+	    <roles></roles>
+    </group>
+    <group code="STEMstaff">
+      <name>INBO Stemdic collection staff</name>
+      <description>INBO Stemdic collection staff</description>
+	    <roles></roles>
+    </group>
+    <group code="MTCstaff">
+      <name>INBO Mammal Tissue collection staff</name>
+      <description>INBO Mammal Tissue collection staff</description>
+	    <roles></roles>
+    </group>
+    <group code="FTCstaff">
+      <name>INBO Fish Tissue collection staff</name>
+      <description>INBO Fish Tissue collection staff</description>
+	    <roles></roles>
+    </group>
+    <group code="FISHstaff">
+      <name>INBO Fish collection staff</name>
+      <description>INBO Fish collection staff</description>
+	    <roles></roles>
+    </group>
+    <group code="MACstaff">
+      <name>INBO Mounted Animal collection staff</name>
+      <description>INBO Mounted Animal collection staff</description>
 	    <roles></roles>
     </group>
   </groups>
@@ -21482,6 +23014,72 @@
         <role code="SEEDarchivist"/>
         <group code="archivists"/>
         <group code="SEEDstaff"/>
+    </login>
+    <login user_name="LPCmanager" password="LPCmanager" email="collectiebeheer@inbo.be" fname="LPC" lname="Manager">
+        <role code="LPCmanager"/>
+        <group code="collectionmanagers"/>
+        <group code="LPCstaff"/>
+    </login>
+    <login user_name="LPCcataloguer" password="LPCcataloguer" email="collectiebeheer@inbo.be" fname="LPC" lname="Cataloguer">
+        <role code="LPCcataloguer"/>
+        <group code="cataloguers"/>
+    </login>
+    <login user_name="LPCarchivist" password="LPCarchivist" email="collectiebeheer@inbo.be" fname="LPC" lname="Archivist">
+        <role code="LPCarchivist"/>
+        <group code="archivists"/>
+        <group code="LPCstaff"/>
+    </login>
+    <login user_name="STEMmanager" password="STEMmanager" email="collectiebeheer@inbo.be" fname="STEM" lname="Manager">
+        <role code="STEMmanager"/>
+        <group code="collectionmanagers"/>
+        <group code="STEMstaff"/>
+    </login>
+    <login user_name="STEMcataloguer" password="STEMcataloguer" email="collectiebeheer@inbo.be" fname="STEM" lname="Cataloguer">
+        <role code="STEMcataloguer"/>
+        <group code="cataloguers"/>
+    </login>
+    <login user_name="STEMarchivist" password="STEMarchivist" email="collectiebeheer@inbo.be" fname="STEM" lname="Archivist">
+        <role code="STEMarchivist"/>
+        <group code="archivists"/>
+        <group code="STEMstaff"/>
+    </login>
+    <login user_name="MTCmanager" password="MTCmanager" email="collectiebeheer@inbo.be" fname="MTC" lname="Manager">
+        <role code="MTCmanager"/>
+        <group code="collectionmanagers"/>
+        <group code="MTCstaff"/>
+    </login>
+    <login user_name="MTCcataloguer" password="MTCcataloguer" email="collectiebeheer@inbo.be" fname="MTC" lname="Cataloguer">
+        <role code="MTCcataloguer"/>
+        <group code="cataloguers"/>
+    </login>
+    <login user_name="MTCarchivist" password="MTCarchivist" email="collectiebeheer@inbo.be" fname="MTC" lname="Archivist">
+        <role code="MTCarchivist"/>
+        <group code="archivists"/>
+        <group code="MTCstaff"/>
+    </login>
+    <login user_name="FTCmanager" password="FTCmanager" email="collectiebeheer@inbo.be" fname="FTC" lname="Manager">
+        <role code="FTCmanager"/>
+        <group code="collectionmanagers"/>
+        <group code="FTCstaff"/>
+    </login>
+    <login user_name="FTCcataloguer" password="FTCcataloguer" email="collectiebeheer@inbo.be" fname="FTC" lname="Cataloguer">
+        <role code="FTCcataloguer"/>
+        <group code="cataloguers"/>
+    </login>
+    <login user_name="FTCarchivist" password="FTCarchivist" email="collectiebeheer@inbo.be" fname="FTC" lname="Archivist">
+        <role code="FTCarchivist"/>
+        <group code="archivists"/>
+        <group code="FTCstaff"/>
+    </login>
+    <login user_name="FISHmanager" password="FISHmanager" email="collectiebeheer@inbo.be" fname="FISH" lname="Manager">
+        <role code="FISHmanager"/>
+        <group code="collectionmanagers"/>
+        <group code="FISHstaff"/>
+    </login>
+    <login user_name="MACmanager" password="MACmanager" email="collectiebeheer@inbo.be" fname="MAC" lname="Manager">
+        <role code="MACmanager"/>
+        <group code="collectionmanagers"/>
+        <group code="MACstaff"/>
     </login>
   </logins>
 </profile>
