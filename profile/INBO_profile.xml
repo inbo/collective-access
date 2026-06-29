@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.118</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.119</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--https://docs.collectiveaccess.org/--><!--https://providence.readthedocs.io/en/latest/-->
-  <!--Issues to check if succesful in v0.117-->
+  <!--Issues to check if succesful in v0.119-->
   <!--Check if each of the managers can only create NEW -> his/her collection type = OK-->
   <!--Check if each of the managers can only create NEW -> internal projects, object lots, curation, reuse, ... = OK-->
   <!--Check if each of the cataloguers can only create NEW -> his/her collection type = OK-->
   <!--Check if each of the cataloguers can only create NEW -> internal projects & object lots = OK-->
   <!--Check if each of the archivists can only create NEW -> curation-->
+  <!--https://github.com/inbo/collective-access/issues/498-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -7341,6 +7342,15 @@
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
+          <restriction code="r_fisEntireEthanol">
+            <table>ca_objects</table>
+            <type>fishEntireEthanol</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">50</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
         </typeRestrictions>
       </metadataElement>
 	    <metadataElement code="ageContainer" datatype="Container">
@@ -7924,6 +7934,15 @@
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">10</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_fisEntireEthanol">
+            <table>ca_objects</table>
+            <type>fishEntireEthanol</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">50</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
           </restriction>
