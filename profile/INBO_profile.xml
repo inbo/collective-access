@@ -11,6 +11,7 @@
   <!--Check if each of the archivists can only create NEW -> curation-->
   <!--https://github.com/inbo/collective-access/issues/498-->
   <!--https://github.com/inbo/collective-access/issues/497-->
+  <!--https://github.com/inbo/collective-access/issues/496-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -13316,15 +13317,6 @@
                 <setting name="missingRequirementMessage">You must select a storage location of type 'Spot'. Other types (like Boxes, Freezers, ..) are not allowed.</setting>
               </settings>
             </placement>
-            <placement code="ca_storage_location_lookup"><!--this is mainly added for dev purposes, could be deleted in UAT/PROD-->
-              <bundle>ca_storage_locations</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Object is stored at * (lookup)</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="useHierarchicalBrowser">0</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
           </bundlePlacements>
         </screen>
         <screen idno="obj_storage2" default="0">
@@ -14693,6 +14685,28 @@
                 <setting name="list_format">list</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
 				        <setting name="restrict_to_types">externalReuse</setting>
+              </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
+        <screen idno="obj_admin" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Admin</name>
+            </label>
+          </labels>
+          <groupAccess>
+            <permission group="admin" access="edit"/>
+            <permission group="nonadmin" access="none"/>
+          </groupAccess>
+          <bundlePlacements>
+            <placement code="ca_storage_location_lookup">
+              <bundle>ca_storage_locations</bundle>
+			        <settings>
+                <setting name="label" locale="en_US">Object is stored at * (lookup)</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="useHierarchicalBrowser">0</setting>
+                <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -22098,6 +22112,40 @@
       <description>System administrators</description>
       <roles>
         <role>admin</role>
+      </roles>
+    </group>
+    <group code="nonadmin">
+      <name>Non-Administrators</name>
+      <description>All roles accept the system administrators</description>
+      <roles>
+        <role>collectionSteward</role>
+        <role>DNAmanager</role>
+        <role>DNAcataloguer</role>
+        <role>DNAarchivist</role>
+        <role>FISHmanager</role>
+        <role>MACmanager</role>
+        <role>FTCmanager</role>
+        <role>FTCcataloguer</role>
+        <role>FTCarchivist</role>
+        <role>SOILmanager</role>
+        <role>SOILcataloguer</role>
+        <role>SOILarchivist</role>
+        <role>STEMmanager</role>
+        <role>STEMcataloguer</role>
+        <role>STEMarchivist</role>
+        <role>MTCmanager</role>
+        <role>MTCcataloguer</role>
+        <role>MTCarchivist</role>
+        <role>PACmanager</role>
+        <role>PACcataloguer</role>
+        <role>PACarchivist</role>
+        <role>LPCmanager</role>
+        <role>LPCcataloguer</role>
+        <role>LPCarchivist</role>
+        <role>SEEDmanager</role>
+        <role>SEEDcataloguer</role>
+        <role>SEEDarchivist</role>
+        <role>viewer</role>
       </roles>
     </group>
     <group code="collectionmanagers">
