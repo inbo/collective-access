@@ -22921,31 +22921,56 @@
       </bundlePlacements>
     </searchForm>
   </searchForms>
-  <metadataDictionary>
-    <entry bundle="DD_deaccession_storage" table="ca_objects">
+<metadataDictionary>
+    <entry bundle="ca_objects.minimumDepthInMeters" table="ca_objects">
       <labels>
         <label locale="en_US">
-          <name>DD_deaccession_storage</name>
-          <description>Ensures active records have a storage location, and deaccessioned records are stripped of locations.</description>
+          <name>DD001</name>
         </label>
       </labels>
       <settings>
-        <setting name="entry_type">Validation Rule</setting>
-        <setting name="rule_code">enforce_location_by_deaccession_status</setting>
-        <setting name="rule_level">Error</setting>
-        <setting name="expression">
-          <![CDATA[(ca_objects.is_deaccessioned == 1 && empty(ca_storage_locations.location_id)) || (ca_objects.is_deaccessioned == 0 && !empty(ca_storage_locations.location_id))]]>
-        </setting>
-        <setting name="show_as_prompt">1</setting>
-        <setting name="rule_violation_message" locale="en_US">Data conflict: If an item is deaccessioned, its storage location must be blank. If active, it must have a storage location assigned.</setting>
         <setting name="mandatory">0</setting>
-        <setting name="definition"></setting>
-        <setting name="restrict_to_types"></setting>
-        <setting name="restrict_to_relationship_types"></setting>
+        <setting name="definition">Please use a dot (.) instead of a comma (,) for your decimals.</setting>
+        <setting name="restrict_to_types"/>
+        <setting name="restrict_to_relationship_types"/>
       </settings>
+      <rules>
+        <rule code="DD001" level="ERR">
+          <expression><![CDATA[^ca_objects.minimumDepthInMeters !~ /,/]]></expression>
+          <settings>
+            <setting locale="en_US" name="label">DD001</setting>
+            <setting name="showasprompt">1</setting>
+            <setting locale="en_US" name="violationMessage">Please use a dot (.) instead of a comma (,) for your decimals.</setting>
+            <setting locale="en_US" name="description">Please use a dot (.) instead of a comma (,) for your decimals.</setting>
+          </settings>
+        </rule>
+      </rules>
     </entry>
-  </metadataDictionary>
-  <logins><!--Change passwords immediately after installation, for testing purposes only-->
+    <entry bundle="ca_objects.maximumDepthInMeters" table="ca_objects">
+      <labels>
+        <label locale="en_US">
+          <name>DD002</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="mandatory">0</setting>
+        <setting name="definition">Please use a point (.) instead of a comma (,) for your decimals.</setting>
+        <setting name="restrict_to_types"/>
+        <setting name="restrict_to_relationship_types"/>
+      </settings>
+      <rules>
+        <rule code="DD002A" level="ERR">
+          <expression><![CDATA[^ca_objects.maximumDepthInMeters !~ /,/]]></expression>
+          <settings>
+            <setting locale="en_US" name="label">DD002</setting>
+            <setting name="showasprompt">1</setting>
+            <setting locale="en_US" name="violationMessage">Please use a point (.) instead of a comma (,) for your decimals.</setting>
+            <setting locale="en_US" name="description">Please use a point (.) instead of a comma (,) for your decimals.</setting>
+          </settings>
+        </rule>
+      </rules>
+    </entry>
+  </metadataDictionary>  <logins><!--Change passwords immediately after installation, for testing purposes only-->
     <login user_name="administrator" password="administrator" email="collectiebeheer@inbo.be" fname="Admin" lname="Istrator">
         <role code="admin"/>
         <group code="admin"/>
