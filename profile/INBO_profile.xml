@@ -10,6 +10,7 @@
   <!--Check if each of the cataloguers can only create NEW -> internal projects & object lots = OK-->
   <!--Check if each of the archivists can only create NEW -> curation-->
   <!--https://github.com/inbo/collective-access/issues/498-->
+  <!--https://github.com/inbo/collective-access/issues/497-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -9396,7 +9397,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <!--<metadataElement code="georeferenceRemarks" datatype="Text">
+	    <metadataElement code="georeferenceRemarks" datatype="Text">
         <labels>
           <label locale="en_US">
             <name>Georeference remarks</name>
@@ -9458,7 +9459,7 @@
             </settings>
           </restriction>
         </typeRestrictions>
-      </metadataElement>-->
+      </metadataElement>
 	    <metadataElement code="minimumElevationInMeters" datatype="Numeric">
         <labels>
           <label locale="en_US">
@@ -11102,7 +11103,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>-->
-	    <metadataElement code="livingPlantverbatimLatitudeY" datatype="Text">
+	    <metadataElement code="livingPlantVerbatimLatitudeY" datatype="Text">
         <labels>
           <label locale="en_US">
             <name>FTP/LP: verbatim Latitude (Y)</name>
@@ -11165,7 +11166,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="livingPlantverbatimLongitudeX" datatype="Text">
+	    <metadataElement code="livingPlantVerbatimLongitudeX" datatype="Text">
         <labels>
           <label locale="en_US">
             <name>FTP/LP: verbatim Longitude (X)</name>
@@ -11228,7 +11229,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="livingPlantverbatimGeodDatum" datatype="List" list="geodetic_datum2">
+	    <metadataElement code="livingPlantVerbatimGeodDatum" datatype="List" list="geodetic_datum2">
         <labels>
           <label locale="en_US">
             <name>FTP/LP: verbatim geodetic datum</name>
@@ -11442,7 +11443,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="storageLocationDecimalLatY" datatype="Numeric">
+	    <metadataElement code="livingPlantDecimalLatY" datatype="Numeric">
         <labels>
           <label locale="en_US">
             <name>Decimal latitude (Y)</name>
@@ -11479,7 +11480,7 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="storageLocationdecimalLongX" datatype="Numeric">
+	    <metadataElement code="livingPlantDecimalLongX" datatype="Numeric">
         <labels>
           <label locale="en_US">
             <name>Decimal longitude (X)</name>
@@ -11543,7 +11544,161 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="storageLocationGeoreference" datatype="Geocode">
+	    <metadataElement code="livingPlantGeodeticDatum" datatype="List" list="geodetic_datum">
+        <labels>
+          <label locale="en_US">
+            <name>Geodetic datum</name>
+            <description>The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which the geographic coordinates given in dwc:decimalLatitude and dwc:decimalLongitude are based.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/dwc/terms/geodeticDatum</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">70</setting>
+          <setting name="fieldHeight">1</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+          <setting name="useSingular">1</setting>
+          <setting name="requireValue">1</setting>
+        </settings>
+	      <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_occurrences">
+            <table>ca_occurrences</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_forestTreePopulationSite">
+            <table>ca_storage_locations</table>
+            <type>forestTreePopulationSite</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_building">
+            <table>ca_storage_locations</table>
+            <type>building</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="livingPlantCUIMC" datatype="Container">
+        <labels>
+          <label locale="en_US">
+            <name>Coordinate uncertainty in meters</name>
+            <description>The horizontal distance (in meters) from the given dwc:decimalLatitude and dwc:decimalLongitude describing the smallest circle containing the whole of the dcterms:Location.</description>
+          </label>
+        </labels>
+	      <elements>
+          <metadataElement code="coordinateUncertaintyInMeters" datatype="Numeric">
+            <labels>
+              <label locale="en_US">
+                <name>Coordinate uncertainty in meters: value</name>
+                <description>Enter a numeric value (for decimals use a dot: [.] not a comma [,]). Use Geopick: https://geopick.gbif.org/ to get a correct value based on the locality uncertainty. It is impossible that this value is 0 (usually a GPS device has some uncertainty, e.g. 5 meters). The value cannot be left blank as this is often also interpreted as a precise location.</description>
+              </label>
+            </labels>
+            <documentationUrl>http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters</documentationUrl>
+            <settings>
+              <setting name="fieldWidth">30</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">100</setting>
+              <setting name="minValue">1</setting>
+              <setting name="mustNotBeBlank">1</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="CUIMCertainty" datatype="List" list="coord_uncertainty">
+            <labels>
+              <label locale="en_US">
+                <name>Value certainty</name>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+              <setting name="requireValue">1</setting>
+            </settings>
+          </metadataElement>
+	      </elements>
+	      <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">1</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_occurrences">
+            <table>ca_occurrences</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_forestTreePopulationSite">
+            <table>ca_storage_locations</table>
+            <type>forestTreePopulationSite</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_building">
+            <table>ca_storage_locations</table>
+            <type>building</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="livingPlantGeoreference" datatype="Geocode">
         <labels>
           <label locale="en_US">
             <name>WGS84 Standardised coordinates</name>
@@ -11712,6 +11867,69 @@
           <setting name="useSingular">1</setting>
         </settings>
         <typeRestrictions>
+          <restriction code="r_objects">
+            <table>ca_objects</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_occurrences">
+            <table>ca_occurrences</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_lots">
+            <table>ca_object_lots</table>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_forestTreePopulationSite">
+            <table>ca_storage_locations</table>
+            <type>forestTreePopulationSite</type>
+            <includeSubtypes>1</includeSubtypes>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_building">
+            <table>ca_storage_locations</table>
+            <type>building</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="livingPlantGeoreferenceRemarks" datatype="Text">
+        <labels>
+          <label locale="en_US">
+            <name>Georeference remarks</name>
+            <description>Notes or comments about the spatial description determination, explaining assumptions made in addition or opposition to the those formalized in the method referred to in dwc:georeferenceProtocol.</description>
+          </label>
+        </labels>
+        <documentationUrl>http://rs.tdwg.org/dwc/terms/georeferenceRemarks</documentationUrl>
+        <settings>
+          <setting name="fieldWidth">90</setting>
+          <setting name="fieldHeight">5</setting>
+          <setting name="minChars">0</setting>
+          <setting name="maxChars">65535</setting>
+        </settings>
+	      <typeRestrictions>
           <restriction code="r_objects">
             <table>ca_objects</table>
             <includeSubtypes>1</includeSubtypes>
@@ -13149,20 +13367,20 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
             </placement>
-            <placement code="livingPlantverbatimLatitudeY">
-              <bundle>ca_attribute_livingPlantverbatimLatitudeY</bundle>
+            <placement code="livingPlantVerbatimLongitudeX">
+              <bundle>ca_attribute_livingPlantVerbatimLongitudeX</bundle>
               <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="livingPlantverbatimLongitudeX">
-              <bundle>ca_attribute_livingPlantverbatimLongitudeX</bundle>
+            <placement code="livingPlantVerbatimLatitudeY">
+              <bundle>ca_attribute_livingPlantVerbatimLatitudeY</bundle>
               <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
-            <placement code="livingPlantverbatimGeodDatum">
-              <bundle>ca_attribute_livingPlantverbatimGeodDatum</bundle>
+            <placement code="livingPlantVerbatimGeodDatum">
+              <bundle>ca_attribute_livingPlantVerbatimGeodDatum</bundle>
               <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
@@ -13179,8 +13397,26 @@
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
 			      </placement>
+            <placement code="livingPlantGeodeticDatum">
+              <bundle>ca_attribute_livingPlantGeodeticDatum</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+            <placement code="livingPlantCUIMC">
+              <bundle>ca_attribute_livingPlantCUIMC</bundle>
+			        <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
             <placement code="livingPlantGeoreference">
               <bundle>ca_attribute_livingPlantGeoreference</bundle>
+              <settings>
+                <setting name="expand_collapse_no_value">collapse</setting>
+              </settings>
+			      </placement>
+            <placement code="livingPlantGeoreferenceRemarks">
+              <bundle>ca_attribute_livingPlantGeoreferenceRemarks</bundle>
               <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
               </settings>
@@ -13564,14 +13800,6 @@
                 <setting name="label" locale="en_US">Map representation of the sampling point (WGS84)</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
                 <setting name="description" locale="en_US">Please enter [decimalLatitidueX,decimalLongitudeY] in WGS84 format. This will allow to execute map searches within the INBO-CMS.</setting>
-              </settings>
-			      </placement>
-			      <placement code="georefVerif">
-              <bundle>ca_attribute_georefVerif</bundle>
-			        <settings>
-                <setting name="label" locale="en_US">Verification status of georeference</setting>
-                <setting name="expand_collapse_no_value">collapse</setting>
-                <setting name="description" locale="en_US">The map above is checked: do the decimal coordinates deliver the correct locality as described? If location is descriptive, use: https://geopick.gbif.org/ to link coordinates and a coordinate uncertainty to the locality.</setting>
               </settings>
 			      </placement>
             <placement code="georeferenceRemarks">
