@@ -1,21 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" infoUrl="http://providence.collectiveaccess.org/wiki/DefaultProfile">
-  <profileName>[INBO-CMS] INBO natural science collection v0.119</profileName>
+  <profileName>[INBO-CMS] INBO natural science collection v0.120</profileName>
   <profileDescription>Profile for the INBO natural science collection</profileDescription>
   <!--https://docs.collectiveaccess.org/--><!--https://providence.readthedocs.io/en/latest/-->
-  <!--Issues to check if succesful in v0.119-->
-  <!--Check if each of the managers can only create NEW -> his/her collection type = OK-->
-  <!--Check if each of the managers can only create NEW -> internal projects, object lots, curation, reuse, ... = OK-->
-  <!--Check if each of the cataloguers can only create NEW -> his/her collection type = OK-->
-  <!--Check if each of the cataloguers can only create NEW -> internal projects & object lots = OK-->
-  <!--Check if each of the archivists can only create NEW -> curation-->
-  <!--https://github.com/inbo/collective-access/issues/498-->
-  <!--https://github.com/inbo/collective-access/issues/497-->
-  <!--https://github.com/inbo/collective-access/issues/496-->
-  <!--https://github.com/inbo/collective-access/issues/494-->
-  <!--https://github.com/inbo/collective-access/issues/493-->
-  <!--https://github.com/inbo/collective-access/issues/492-->
-  <!--https://github.com/inbo/collective-access/issues/491-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -11452,111 +11439,10 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	    <metadataElement code="livingPlantDecimalLatY" datatype="Numeric">
-        <labels>
-          <label locale="en_US">
-            <name>Decimal latitude (Y)</name>
-            <description>The geographic latitude (in decimal degrees, using the WGS84 spatial reference system given in dwc:geodeticDatum) of the geographic center of a dcterms:Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive. Careful: latitude is N to S. For example the Herman Teirlinck building: 50.86638999067575. Enter a numeric value (for decimals use a dot: [.] not a comma [,]).</description>
-          </label>
-        </labels>
-        <documentationUrl>http://rs.tdwg.org/dwc/terms/decimalLatitude</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-          <setting name="mustNotBeBlank">0</setting>
-        </settings>
-	      <typeRestrictions>
-          <restriction code="r_forestTreePopulationSite">
-            <table>ca_storage_locations</table>
-            <type>forestTreePopulationSite</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_building">
-            <table>ca_storage_locations</table>
-            <type>building</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-	    <metadataElement code="livingPlantDecimalLongX" datatype="Numeric">
-        <labels>
-          <label locale="en_US">
-            <name>Decimal longitude (X)</name>
-            <description>The geographic longitude (in decimal degrees, using the WGS84 spatial reference system given in dwc:geodeticDatum) of the geographic center of a dcterms:Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive. Careful longitude is E to W. For example: For example the Herman Teirlinck building: 4.350147058474895. Enter a numeric value (for decimals use a dot: [.] not a comma [,])</description>
-          </label>
-        </labels>
-        <documentationUrl>http://rs.tdwg.org/dwc/terms/decimalLongitude</documentationUrl>
-        <settings>
-          <setting name="fieldWidth">70</setting>
-          <setting name="fieldHeight">1</setting>
-          <setting name="minChars">0</setting>
-          <setting name="maxChars">65535</setting>
-          <setting name="mustNotBeBlank">0</setting>
-        </settings>
-	      <typeRestrictions>
-          <restriction code="r_objects">
-            <table>ca_objects</table>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_occurrences">
-            <table>ca_occurrences</table>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_object_lots">
-            <table>ca_object_lots</table>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_forestTreePopulationSite">
-            <table>ca_storage_locations</table>
-            <type>forestTreePopulationSite</type>
-            <includeSubtypes>1</includeSubtypes>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_building">
-            <table>ca_storage_locations</table>
-            <type>building</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
 	    <metadataElement code="livingPlantGeodeticDatum" datatype="List" list="geodetic_datum">
         <labels>
           <label locale="en_US">
-            <name>Geodetic datum</name>
+            <name>FTP/LP: Geodetic datum</name>
             <description>The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which the geographic coordinates given in dwc:decimalLatitude and dwc:decimalLongitude are based.</description>
           </label>
         </labels>
@@ -11567,7 +11453,7 @@
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
           <setting name="useSingular">1</setting>
-          <setting name="requireValue">1</setting>
+          <setting name="requireValue">0</setting>
         </settings>
 	      <typeRestrictions>
           <restriction code="r_objects">
@@ -11621,7 +11507,7 @@
 	    <metadataElement code="livingPlantCUIMC" datatype="Container">
         <labels>
           <label locale="en_US">
-            <name>Coordinate uncertainty in meters</name>
+            <name>FTP/LP: Coordinate uncertainty in meters</name>
             <description>The horizontal distance (in meters) from the given dwc:decimalLatitude and dwc:decimalLongitude describing the smallest circle containing the whole of the dcterms:Location.</description>
           </label>
         </labels>
@@ -11904,7 +11790,7 @@
 	    <metadataElement code="livingPlantGeoreferenceRemarks" datatype="Text">
         <labels>
           <label locale="en_US">
-            <name>Georeference remarks</name>
+            <name>FTP/LP: Georeference remarks</name>
             <description>Notes or comments about the spatial description determination, explaining assumptions made in addition or opposition to the those formalized in the method referred to in dwc:georeferenceProtocol.</description>
           </label>
         </labels>
@@ -13267,7 +13153,7 @@
             <placement code="ca_collection">
               <bundle>ca_collections</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Specimen belongs to INBO collection *</setting>
+                <setting name="label" locale="en_US">Specimen belongs to INBO collection</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -13278,7 +13164,7 @@
             <placement code="ca_storage_location_hierarchy">
               <bundle>ca_storage_locations</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Object is stored at * (hierarchy)</setting>
+                <setting name="label" locale="en_US">Object is stored at (hierarchy)</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="useHierarchicalBrowser">1</setting>
@@ -13310,7 +13196,7 @@
             <placement code="ca_collection">
               <bundle>ca_collections</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Specimen belongs to INBO collection *</setting>
+                <setting name="label" locale="en_US">Specimen belongs to INBO collection</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -13321,7 +13207,7 @@
             <placement code="ca_storage_location_plantlot">
               <bundle>ca_storage_locations</bundle>
 			        <settings>
-                <setting name="label" locale="en_US">Object is stored at *</setting>
+                <setting name="label" locale="en_US">Object is stored at</setting>
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="useHierarchicalBrowser">1</setting>
