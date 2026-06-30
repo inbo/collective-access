@@ -23168,8 +23168,8 @@
         <group code="MACstaff"/>
     </login>
   </logins>
-  <!--<metadataDictionary>
-    <entry bundle="ca_objects.minimumDepthInMeters" table="ca_objects">
+  <metadataDictionary>
+    <!--<entry bundle="ca_objects.minimumDepthInMeters" table="ca_objects">
       <labels>
         <label locale="en_US">
           <name>DD001</name>
@@ -23189,10 +23189,106 @@
             <setting locale="en_US" name="label">DD001A</setting>
             <setting name="showasprompt">1</setting>
             <setting locale="en_US" name="violationMessage">Minimum depth in meters may not be blank for soil samples and DNA from soil samples.</setting>
-            <setting locale="en_US" name="description">Minimum depth in meters may not be blank for soil samples and DNA from soil samples.</setting>
+            <setting locale="en_US" name="description">Minimum depth in meters may not be blank for soil samples and DNA from soil samples</setting>
+          </settings>
+        </rule>
+      </rules>
+    </entry>-->
+    <entry bundle="ca_objects.mammalTissueSampleType" table="ca_objects">
+      <labels>
+        <label locale="en_US">
+          <name>DD002</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="mandatory">0</setting>
+        <setting name="definition">You must select a mammal tissue type from the list.</setting>
+        <setting name="restrict_to_types"/>
+        <setting name="restrict_to_relationship_types"/>
+      </settings>
+      <rules>
+        <rule code="DD002" level="ERR">
+          <expression><![CDATA[^ca_objects.mammalTissueSampleType = ""]]></expression>
+          <settings>
+            <setting locale="en_US" name="label">DD002</setting>
+            <setting name="showasprompt">1</setting>
+            <setting locale="en_US" name="violationMessage">You must select a mammal tissue type from the list.</setting>
+            <setting locale="en_US" name="description">You must select a mammal tissue type from the list.</setting>
           </settings>
         </rule>
       </rules>
     </entry>
-  </metadataDictionary>-->
+    <entry bundle="ca_objects.fishTissueSampleType" table="ca_objects">
+      <labels>
+        <label locale="en_US">
+          <name>DD003</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="mandatory">0</setting>
+        <setting name="definition"><![CDATA[Fish tissue sample type cannot be left blank ("not selected").]]></setting>
+        <setting name="restrict_to_types"/>
+        <setting name="restrict_to_relationship_types"/>
+      </settings>
+      <rules>
+        <rule code="DD003" level="ERR">
+          <expression><![CDATA[^ca_objects.fishTissueSampleType= ""]]></expression>
+          <settings>
+            <setting locale="en_US" name="label">DD003</setting>
+            <setting name="showasprompt">1</setting>
+            <setting locale="en_US" name="violationMessage"><![CDATA[Fish tissue sample type cannot be left blank ("not selected").]]></setting>
+            <setting locale="en_US" name="description"><![CDATA[Fish tissue sample type cannot be left blank ("not selected").]]></setting>
+          </settings>
+        </rule>
+      </rules>
+    </entry>
+    <entry bundle="ca_objects.matrixType" table="ca_objects">
+      <labels>
+        <label locale="en_US">
+          <name>DD004</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="mandatory">0</setting>
+        <setting name="definition"><![CDATA[Matrix type cannot stay empty ("not selected").]]></setting>
+        <setting name="restrict_to_types"/>
+        <setting name="restrict_to_relationship_types"/>
+      </settings>
+      <rules>
+        <rule code="DD004" level="ERR">
+          <expression><![CDATA[^ca_objects.matrixType = ""]]></expression>
+          <settings>
+            <setting locale="en_US" name="label">DD004</setting>
+            <setting name="showasprompt">1</setting>
+            <setting locale="en_US" name="violationMessage"><![CDATA[Matrix type cannot stay empty ("not selected").]]></setting>
+            <setting locale="en_US" name="description"><![CDATA[Matrix type cannot stay empty ("not selected").]]></setting>
+          </settings>
+        </rule>
+      </rules>
+    </entry>
+    <entry bundle="ca_objects.forestTreePopulationType" table="ca_objects">
+      <labels>
+        <label locale="en_US">
+          <name>DD005</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="mandatory">0</setting>
+        <setting name="definition"><![CDATA[Forest tree population type cannot stay empty ("not selected").]]></setting>
+        <setting name="restrict_to_types"/>
+        <setting name="restrict_to_relationship_types"/>
+      </settings>
+      <rules>
+        <rule code="DD005" level="ERR">
+          <expression><![CDATA[^ca_objects.forestTreePopulationType= ""]]></expression>
+          <settings>
+            <setting locale="en_US" name="label">DD005</setting>
+            <setting name="showasprompt">1</setting>
+            <setting locale="en_US" name="violationMessage"><![CDATA[Forest tree population type cannot stay empty ("not selected").]]></setting>
+            <setting locale="en_US" name="description"><![CDATA[Forest tree population type cannot stay empty ("not selected").]]></setting>
+          </settings>
+        </rule>
+      </rules>
+    </entry>
+  </metadataDictionary>
 </profile>
