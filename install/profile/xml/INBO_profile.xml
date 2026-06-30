@@ -14544,7 +14544,6 @@
           </labels>
           <groupAccess>
             <permission group="admin" access="edit"/>
-            <permission group="nonadmin" access="none"/>
           </groupAccess>
           <bundlePlacements>
             <placement code="ca_storage_location_lookup">
@@ -21961,40 +21960,6 @@
         <role>admin</role>
       </roles>
     </group>
-    <group code="nonadmin">
-      <name>Non-Administrators</name>
-      <description>All roles accept the system administrators</description>
-      <roles>
-        <role>collectionSteward</role>
-        <role>DNAmanager</role>
-        <role>DNAcataloguer</role>
-        <role>DNAarchivist</role>
-        <role>FISHmanager</role>
-        <role>MACmanager</role>
-        <role>FTCmanager</role>
-        <role>FTCcataloguer</role>
-        <role>FTCarchivist</role>
-        <role>SOILmanager</role>
-        <role>SOILcataloguer</role>
-        <role>SOILarchivist</role>
-        <role>STEMmanager</role>
-        <role>STEMcataloguer</role>
-        <role>STEMarchivist</role>
-        <role>MTCmanager</role>
-        <role>MTCcataloguer</role>
-        <role>MTCarchivist</role>
-        <role>PACmanager</role>
-        <role>PACcataloguer</role>
-        <role>PACarchivist</role>
-        <role>LPCmanager</role>
-        <role>LPCcataloguer</role>
-        <role>LPCarchivist</role>
-        <role>SEEDmanager</role>
-        <role>SEEDcataloguer</role>
-        <role>SEEDarchivist</role>
-        <role>viewer</role>
-      </roles>
-    </group>
     <group code="collectionmanagers">
       <name>Collection managers</name>
       <description>Collection managers</description>
@@ -23200,7 +23165,7 @@
         <group code="MACstaff"/>
     </login>
   </logins>
-  <metadataDictionary>
+  <!--<metadataDictionary>
     <entry bundle="ca_objects.minimumDepthInMeters" table="ca_objects">
       <labels>
         <label locale="en_US">
@@ -23209,45 +23174,22 @@
       </labels>
       <settings>
         <setting name="mandatory">0</setting>
-        <setting name="definition">Please use a dot (.) instead of a comma (,) for your decimals.</setting>
-        <setting name="restrict_to_types"/>
+        <setting name="definition">Minimum depth in meters may not be blank for soil samples and DNA from soil samples.</setting>
+        <setting name="restrict_to_types">dnaSoil</setting>
+        <setting name="restrict_to_types">soilObject</setting>
         <setting name="restrict_to_relationship_types"/>
       </settings>
       <rules>
-        <rule code="DD001" level="ERR">
-          <expression><![CDATA[^ca_objects.minimumDepthInMeters !~ /,/]]></expression>
+        <rule code="DD001A" level="ERR">
+          <expression><![CDATA[^ca_objects.minimumDepthInMeters =""]]></expression>
           <settings>
-            <setting locale="en_US" name="label">DD001</setting>
+            <setting locale="en_US" name="label">DD001A</setting>
             <setting name="showasprompt">1</setting>
-            <setting locale="en_US" name="violationMessage">Please use a dot (.) instead of a comma (,) for your decimals.</setting>
-            <setting locale="en_US" name="description">Please use a dot (.) instead of a comma (,) for your decimals.</setting>
+            <setting locale="en_US" name="violationMessage">Minimum depth in meters may not be blank for soil samples and DNA from soil samples.</setting>
+            <setting locale="en_US" name="description">Minimum depth in meters may not be blank for soil samples and DNA from soil samples</setting>
           </settings>
         </rule>
       </rules>
     </entry>
-    <entry bundle="ca_objects.maximumDepthInMeters" table="ca_objects">
-      <labels>
-        <label locale="en_US">
-          <name>DD002</name>
-        </label>
-      </labels>
-      <settings>
-        <setting name="mandatory">0</setting>
-        <setting name="definition">Please use a point (.) instead of a comma (,) for your decimals.</setting>
-        <setting name="restrict_to_types"/>
-        <setting name="restrict_to_relationship_types"/>
-      </settings>
-      <rules>
-        <rule code="DD002A" level="ERR">
-          <expression><![CDATA[^ca_objects.maximumDepthInMeters !~ /,/]]></expression>
-          <settings>
-            <setting locale="en_US" name="label">DD002</setting>
-            <setting name="showasprompt">1</setting>
-            <setting locale="en_US" name="violationMessage">Please use a point (.) instead of a comma (,) for your decimals.</setting>
-            <setting locale="en_US" name="description">Please use a point (.) instead of a comma (,) for your decimals.</setting>
-          </settings>
-        </rule>
-      </rules>
-    </entry>
-  </metadataDictionary>  
+  </metadataDictionary>-->
 </profile>
