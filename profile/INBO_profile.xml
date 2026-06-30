@@ -12,6 +12,10 @@
   <!--https://github.com/inbo/collective-access/issues/498-->
   <!--https://github.com/inbo/collective-access/issues/497-->
   <!--https://github.com/inbo/collective-access/issues/496-->
+  <!--https://github.com/inbo/collective-access/issues/494-->
+  <!--https://github.com/inbo/collective-access/issues/493-->
+  <!--https://github.com/inbo/collective-access/issues/492-->
+  <!--https://github.com/inbo/collective-access/issues/491-->
   <locales>
     <locale lang="en" country="US">English</locale>
   </locales>
@@ -5371,144 +5375,6 @@
           </restriction>
         </typeRestrictions>
       </metadataElement>
-	  	<metadataElement code="seedlotRelationSeeds" datatype="Container">
-        <labels>
-          <label locale="en_US">
-            <name>Seedlot relation of seeds</name>
-		        <description>The relation between the individual seeds of the seedlot</description>
-          </label>
-        </labels>
-        <elements>
-          <metadataElement code="relationSeeds" datatype="List" list="seedlot_relation_seeds">
-            <labels>
-              <label locale="en_US">
-                <name>Relation type</name>
-              </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">35</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
-          <metadataElement code="SeedsSpecification" datatype="Text">
-            <labels>
-              <label locale="en_US">
-                <name>Relation specification</name>
-                <description>Specification on the type of relation</description>
-              </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">35</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
-		    </elements>
-        <typeRestrictions>
-          <restriction code="r_seedlot">
-            <table>ca_objects</table>
-            <type>seedlot</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-	  	<metadataElement code="seedlotRelationSamplingPoint" datatype="Container">
-        <labels>
-          <label locale="en_US">
-            <name>Relation with sampling point / wild relative</name>
-		        <description>The type of relation to the original sampling point / wild relative.</description>
-          </label>
-        </labels>
-        <elements>
-          <metadataElement code="relationSamplingPoint" datatype="List" list="seedlot_relation_samplingPoint">
-            <labels>
-              <label locale="en_US">
-                <name>Relation type</name>
-              </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">35</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
-          <metadataElement code="SamplingPointSpecification" datatype="Text">
-            <labels>
-              <label locale="en_US">
-                <name>Relation specification</name>
-                <description>Specification on the type of relation</description>
-              </label>
-            </labels>
-            <settings>
-              <setting name="fieldWidth">35</setting>
-              <setting name="fieldHeight">1</setting>
-              <setting name="minChars">0</setting>
-              <setting name="maxChars">65535</setting>
-            </settings>
-          </metadataElement>
-		    </elements>
-        <typeRestrictions>
-          <restriction code="r_seedlot">
-            <table>ca_objects</table>
-            <type>seedlot</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-	    <metadataElement code="decompositionCategory" datatype="List" list="decomposition_category">
-        <labels>
-          <label locale="en_US">
-            <name>Decomposition category</name>
-		        <description>Decomposition category of the organism at the time of sampling. DCC1: extremely fresh (e.g. animal/plant was still alive at collection, or the animal was euthanized and collection occurred immediately after). DCC2: fresh (i.e. animal that has only recently died, no signs of decomposition / the collected leaves were fallen off the tree but still green). DCC3: moderate decomposition (for example: mammal its belly is swollen, hair detaches, fly eggs, .. / leaves start to turn brown). DCC4: advanced decomposition (for example: mammal its belly is swollen, hair detaches, maggots, ... / leaves are completely brown). DCC5: mummified (animal is (partly) decomposed).</description>
-          </label>
-        </labels>
-	      <settings>
-          <setting name="fieldWidth">40</setting>
-          <setting name="doesNotTakeLocale">1</setting>
-          <setting name="useSingular">1</setting>
-        </settings>
-	      <typeRestrictions>
-          <restriction code="r_object_mammalTissueSample">
-            <table>ca_objects</table>
-            <type>mammalTissueSample</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">20</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_object_mammalBloodSample">
-            <table>ca_objects</table>
-            <type>mammalBloodSample</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">20</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-          <restriction code="r_object_mammalHairSample">
-            <table>ca_objects</table>
-            <type>mammalHairSample</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">20</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
 		  <metadataElement code="externalSpecimen" datatype="Container">
         <labels>
           <label locale="en_US">
@@ -5736,6 +5602,147 @@
         </typeRestrictions>
       </metadataElement>
     <!--Measurements/Facts-->
+	  	<metadataElement code="seedlotRelationSeeds" datatype="Container">
+        <labels>
+          <label locale="en_US">
+            <name>Seedlot relation of seeds</name>
+		        <description>The relation between the individual seeds of the seedlot</description>
+          </label>
+        </labels>
+			  <settings>
+          <setting name="lineBreakAfterNumberOfElements">1</setting>
+        </settings>
+        <elements>
+          <metadataElement code="relationSeeds" datatype="List" list="seedlot_relation_seeds">
+            <labels>
+              <label locale="en_US">
+                <name>Relation type</name>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="SeedsSpecification" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Relation specification</name>
+                <description>Specification on the type of relation</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">70</setting>
+              <setting name="fieldHeight">2</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+		    </elements>
+        <typeRestrictions>
+          <restriction code="r_seedlot">
+            <table>ca_objects</table>
+            <type>seedlot</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	  	<metadataElement code="seedlotRelationSamplingPoint" datatype="Container">
+        <labels>
+          <label locale="en_US">
+            <name>Relation with sampling point / wild relative</name>
+		        <description>The type of relation to the original sampling point / wild relative.</description>
+          </label>
+        </labels>
+        <elements>
+          <metadataElement code="relationSamplingPoint" datatype="List" list="seedlot_relation_samplingPoint">
+            <labels>
+              <label locale="en_US">
+                <name>Relation type</name>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+          <metadataElement code="SamplingPointSpecification" datatype="Text">
+            <labels>
+              <label locale="en_US">
+                <name>Relation specification</name>
+                <description>Specification on the type of relation</description>
+              </label>
+            </labels>
+            <settings>
+              <setting name="fieldWidth">35</setting>
+              <setting name="fieldHeight">1</setting>
+              <setting name="minChars">0</setting>
+              <setting name="maxChars">65535</setting>
+            </settings>
+          </metadataElement>
+		    </elements>
+        <typeRestrictions>
+          <restriction code="r_seedlot">
+            <table>ca_objects</table>
+            <type>seedlot</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">1</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
+	    <metadataElement code="decompositionCategory" datatype="List" list="decomposition_category">
+        <labels>
+          <label locale="en_US">
+            <name>Decomposition category</name>
+		        <description>Decomposition category of the organism at the time of sampling. DCC1: extremely fresh (e.g. animal/plant was still alive at collection, or the animal was euthanized and collection occurred immediately after). DCC2: fresh (i.e. animal that has only recently died, no signs of decomposition / the collected leaves were fallen off the tree but still green). DCC3: moderate decomposition (for example: mammal its belly is swollen, hair detaches, fly eggs, .. / leaves start to turn brown). DCC4: advanced decomposition (for example: mammal its belly is swollen, hair detaches, maggots, ... / leaves are completely brown). DCC5: mummified (animal is (partly) decomposed).</description>
+          </label>
+        </labels>
+	      <settings>
+          <setting name="fieldWidth">40</setting>
+          <setting name="doesNotTakeLocale">1</setting>
+          <setting name="useSingular">1</setting>
+        </settings>
+	      <typeRestrictions>
+          <restriction code="r_object_mammalTissueSample">
+            <table>ca_objects</table>
+            <type>mammalTissueSample</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_mammalBloodSample">
+            <table>ca_objects</table>
+            <type>mammalBloodSample</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+          <restriction code="r_object_mammalHairSample">
+            <table>ca_objects</table>
+            <type>mammalHairSample</type>
+            <settings>
+              <setting name="minAttributesPerRow">0</setting>
+              <setting name="maxAttributesPerRow">20</setting>
+              <setting name="minimumAttributeBundlesToDisplay">1</setting>
+            </settings>
+          </restriction>
+        </typeRestrictions>
+      </metadataElement>
 		  <!--<metadataElement code="inbodem" datatype="Text">
         <labels>
           <label locale="en_US">
@@ -9710,7 +9717,6 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
-          <setting name="mustNotBeBlank">1</setting>
         </settings>
         <typeRestrictions>
           <restriction code="r_soilObject">
@@ -9727,7 +9733,7 @@
             <table>ca_objects</table>
             <type>dnaWater</type>
             <settings>
-              <setting name="minAttributesPerRow">1</setting>
+              <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
@@ -9739,6 +9745,7 @@
               <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              <setting name="mustNotBeBlank">1</setting>
             </settings>
           </restriction>
         </typeRestrictions>
@@ -9756,7 +9763,6 @@
           <setting name="fieldHeight">1</setting>
           <setting name="minChars">0</setting>
           <setting name="maxChars">65535</setting>
-          <setting name="mustNotBeBlank">1</setting>
         </settings>
         <typeRestrictions>
           <restriction code="r_soilObject">
@@ -9766,13 +9772,14 @@
               <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              <setting name="mustNotBeBlank">1</setting>
             </settings>
           </restriction>
           <restriction code="r_dnaWater">
             <table>ca_objects</table>
             <type>dnaWater</type>
             <settings>
-              <setting name="minAttributesPerRow">1</setting>
+              <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
             </settings>
@@ -9784,6 +9791,7 @@
               <setting name="minAttributesPerRow">1</setting>
               <setting name="maxAttributesPerRow">1</setting>
               <setting name="minimumAttributeBundlesToDisplay">1</setting>
+              <setting name="mustNotBeBlank">1</setting>
             </settings>
           </restriction>
         </typeRestrictions>
@@ -11618,7 +11626,7 @@
           </label>
         </labels>
 	      <elements>
-          <metadataElement code="coordinateUncertaintyInMeters" datatype="Numeric">
+          <metadataElement code="livingPlantCUIM" datatype="Numeric">
             <labels>
               <label locale="en_US">
                 <name>Coordinate uncertainty in meters: value</name>
@@ -11635,7 +11643,7 @@
               <setting name="mustNotBeBlank">1</setting>
             </settings>
           </metadataElement>
-          <metadataElement code="CUIMCertainty" datatype="List" list="coord_uncertainty">
+          <metadataElement code="livingPlantCUIMCertainty" datatype="List" list="coord_uncertainty">
             <labels>
               <label locale="en_US">
                 <name>Value certainty</name>
@@ -11691,29 +11699,6 @@
           <restriction code="r_building">
             <table>ca_storage_locations</table>
             <type>building</type>
-            <settings>
-              <setting name="minAttributesPerRow">0</setting>
-              <setting name="maxAttributesPerRow">1</setting>
-              <setting name="minimumAttributeBundlesToDisplay">1</setting>
-            </settings>
-          </restriction>
-        </typeRestrictions>
-      </metadataElement>
-	    <metadataElement code="livingPlantGeoreference" datatype="Geocode">
-        <labels>
-          <label locale="en_US">
-            <name>WGS84 Standardised coordinates</name>
-          </label>
-        </labels>
-        <settings>
-          <setting name="fieldHeight">1</setting>
-          <setting name="defaultLocation">50.503887,4.469936</setting>
-          <setting name="defaultZoomLevel">7</setting>
-        </settings>
-        <typeRestrictions>
-          <restriction code="r_objects">
-            <table>ca_objects</table>
-            <includeSubtypes>1</includeSubtypes>
             <settings>
               <setting name="minAttributesPerRow">0</setting>
               <setting name="maxAttributesPerRow">1</setting>
@@ -13043,8 +13028,8 @@
                 <setting name="list_format">list</setting>
                 <setting name="dontShowAddButton">0</setting>
                 <setting name="dontShowDeleteButton">0</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">2</setting>
+                <setting name="minRelationshipsPerRow">0</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="disableQuickadd">0</setting>
                 <setting name="sortDirection">ASC</setting>
                 <setting name="disableSorts">0</setting>
@@ -13483,12 +13468,6 @@
                 <setting name="restrict_to_relationship_types">association</setting>
               </settings>
             </placement>
-			      <placement code="seedlotRelationSeeds" typeRestrictions="seedlot">
-              <bundle>ca_attribute_seedlotRelationSeeds</bundle>
-			        <settings>
-                <setting name="expand_collapse_no_value">collapse</setting>
-              </settings>
-            </placement>
             <placement code="ca_object_lots">
               <bundle>ca_object_lots</bundle>
 			        <settings>
@@ -13892,7 +13871,7 @@
                 <setting name="description" locale="en_US">The vertical datum used as the reference upon which the values in the elevation terms are based.</setting>
               </settings>
 			      </placement>
-			      <placement code="verbatimDepth" typeRestrictions="dnaSoil,soilObject">
+			      <placement code="verbatimDepth" typeRestrictions="dnaSoil,soilObject, dnaWater">
               <bundle>ca_attribute_verbatimDepth</bundle>
               <settings>
                 <setting name="expand_collapse_no_value">collapse</setting>
@@ -23216,56 +23195,7 @@
       </bundlePlacements>
     </searchForm>
   </searchForms>
-<metadataDictionary>
-    <entry bundle="ca_objects.minimumDepthInMeters" table="ca_objects">
-      <labels>
-        <label locale="en_US">
-          <name>DD001</name>
-        </label>
-      </labels>
-      <settings>
-        <setting name="mandatory">0</setting>
-        <setting name="definition">Please use a dot (.) instead of a comma (,) for your decimals.</setting>
-        <setting name="restrict_to_types"/>
-        <setting name="restrict_to_relationship_types"/>
-      </settings>
-      <rules>
-        <rule code="DD001" level="ERR">
-          <expression><![CDATA[^ca_objects.minimumDepthInMeters !~ /,/]]></expression>
-          <settings>
-            <setting locale="en_US" name="label">DD001</setting>
-            <setting name="showasprompt">1</setting>
-            <setting locale="en_US" name="violationMessage">Please use a dot (.) instead of a comma (,) for your decimals.</setting>
-            <setting locale="en_US" name="description">Please use a dot (.) instead of a comma (,) for your decimals.</setting>
-          </settings>
-        </rule>
-      </rules>
-    </entry>
-    <entry bundle="ca_objects.maximumDepthInMeters" table="ca_objects">
-      <labels>
-        <label locale="en_US">
-          <name>DD002</name>
-        </label>
-      </labels>
-      <settings>
-        <setting name="mandatory">0</setting>
-        <setting name="definition">Please use a point (.) instead of a comma (,) for your decimals.</setting>
-        <setting name="restrict_to_types"/>
-        <setting name="restrict_to_relationship_types"/>
-      </settings>
-      <rules>
-        <rule code="DD002A" level="ERR">
-          <expression><![CDATA[^ca_objects.maximumDepthInMeters !~ /,/]]></expression>
-          <settings>
-            <setting locale="en_US" name="label">DD002</setting>
-            <setting name="showasprompt">1</setting>
-            <setting locale="en_US" name="violationMessage">Please use a point (.) instead of a comma (,) for your decimals.</setting>
-            <setting locale="en_US" name="description">Please use a point (.) instead of a comma (,) for your decimals.</setting>
-          </settings>
-        </rule>
-      </rules>
-    </entry>
-  </metadataDictionary>  <logins><!--Change passwords immediately after installation, for testing purposes only-->
+  <logins><!--Change passwords immediately after installation, for testing purposes only-->
     <login user_name="administrator" password="administrator" email="collectiebeheer@inbo.be" fname="Admin" lname="Istrator">
         <role code="admin"/>
         <group code="admin"/>
@@ -23402,4 +23332,54 @@
         <group code="MACstaff"/>
     </login>
   </logins>
+  <metadataDictionary>
+    <entry bundle="ca_objects.minimumDepthInMeters" table="ca_objects">
+      <labels>
+        <label locale="en_US">
+          <name>DD001</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="mandatory">0</setting>
+        <setting name="definition">Please use a dot (.) instead of a comma (,) for your decimals.</setting>
+        <setting name="restrict_to_types"/>
+        <setting name="restrict_to_relationship_types"/>
+      </settings>
+      <rules>
+        <rule code="DD001" level="ERR">
+          <expression><![CDATA[^ca_objects.minimumDepthInMeters !~ /,/]]></expression>
+          <settings>
+            <setting locale="en_US" name="label">DD001</setting>
+            <setting name="showasprompt">1</setting>
+            <setting locale="en_US" name="violationMessage">Please use a dot (.) instead of a comma (,) for your decimals.</setting>
+            <setting locale="en_US" name="description">Please use a dot (.) instead of a comma (,) for your decimals.</setting>
+          </settings>
+        </rule>
+      </rules>
+    </entry>
+    <entry bundle="ca_objects.maximumDepthInMeters" table="ca_objects">
+      <labels>
+        <label locale="en_US">
+          <name>DD002</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="mandatory">0</setting>
+        <setting name="definition">Please use a point (.) instead of a comma (,) for your decimals.</setting>
+        <setting name="restrict_to_types"/>
+        <setting name="restrict_to_relationship_types"/>
+      </settings>
+      <rules>
+        <rule code="DD002A" level="ERR">
+          <expression><![CDATA[^ca_objects.maximumDepthInMeters !~ /,/]]></expression>
+          <settings>
+            <setting locale="en_US" name="label">DD002</setting>
+            <setting name="showasprompt">1</setting>
+            <setting locale="en_US" name="violationMessage">Please use a point (.) instead of a comma (,) for your decimals.</setting>
+            <setting locale="en_US" name="description">Please use a point (.) instead of a comma (,) for your decimals.</setting>
+          </settings>
+        </rule>
+      </rules>
+    </entry>
+  </metadataDictionary>  
 </profile>
